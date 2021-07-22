@@ -25,6 +25,7 @@ Route::group(['prefix' => 'shared'], function () {
 
 Route::group(['prefix' => 'humanresource'], function () {
     Route::resource('employeeCertificates', 'Humanresource\EmployeeCertificatesController', ["as" => 'humanresource']);
+});
 
 Route::group(['prefix' => 'humanresource'], function () {
     Route::resource('employeeLanguages', 'Humanresource\EmployeeLanguageController', ["as" => 'humanresource']);
@@ -39,6 +40,7 @@ Route::group(['prefix' => 'humanresource'], function () {
 Route::group(['prefix' => 'humanresource'], function () {
     Route::resource('employeeChildrens', 'Humanresource\EmployeeChildrenController', ["as" => 'humanresource']);
     Route::resource('employeeNextOfKins', 'Humanresource\EmployeeNextOfKinController', ["as" => 'humanresource']);
+});
 
 Route::group(['prefix' => 'humanresource'], function () {
     Route::resource('employeeRecordTrackers', 'Humanresource\EmployeeRecordTrackerController', ["as" => 'humanresource']);
@@ -69,7 +71,7 @@ Route::group(['prefix' => 'humanresource'], function () {
 });
 
 
-Route::resource('employeePublicServices', 'EmployeePublicServiceController');
+
 
 Route::group(['prefix' => 'humanresource'], function () {
     Route::resource('employeeQualifications', 'Humanresource\EmployeeQualificationController', ["as" => 'humanresource']);
@@ -84,24 +86,32 @@ Route::group(['prefix' => 'humanresource'], function () {
 
 Route::group(['prefix' => 'shared'], function () {
     Route::resource('certificateTypes', 'Shared\CertificateTypeController', ["as" => 'shared']);
-
-Route::group(['prefix' => 'humanresources'], function () {
-    Route::resource('leaveTypes', 'Humanresources\LeaveTypeController', ["as" => 'humanresources']);
 });
+
 
 
 Route::group(['prefix' => 'shared'], function () {
     Route::resource('relationships', 'Shared\RelationshipController', ["as" => 'shared']);
+    Route::resource('localGovtAreas', 'Shared\LocalGovtAreaController', ["as" => 'shared']);
 });
 
 Route::group(['prefix' => 'humanresource'], function () {
     Route::resource('employees', 'Humanresource\EmployeeController', ["as" => 'humanresource']);
 });
-    Route::resource('localGovtAreas', 'Shared\LocalGovtAreaController', ["as" => 'shared']);
-});
+
 
 
 Route::group(['prefix' => 'humanresource'], function () {
     Route::resource('employeeForeignTours', 'Humanresource\EmployeeForeignToursController', ["as" => 'humanresource']);
     Route::resource('rankTypes', 'Shared\RankTypeController', ["as" => 'shared']);
+});
+
+
+Route::group(['prefix' => 'humanresource'], function () {
+    Route::resource('leaveTypes', 'Humanresource\LeaveTypeController', ["as" => 'humanresource']);
+});
+
+
+Route::group(['prefix' => 'humanresource'], function () {
+    Route::resource('employeeNextOfKins', 'Humanresource\EmployeeNextOfKinController', ["as" => 'humanresource']);
 });

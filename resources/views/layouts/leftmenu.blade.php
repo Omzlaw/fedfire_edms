@@ -13,16 +13,13 @@
             </a>
         </li>
 
-        <li {!! (Request::is('builder') ? 'class="active"' : '' ) !!}>
+        {{-- <li {!! (Request::is('builder') ? 'class="active"' : '' ) !!}>
             <a href="{{ URL::to('builder') }}">
                 <span class="mm-text ">Crud Builder</span>
                 <span class="menu-icon"><i class="im im-icon-Gift-Box"></i></span>
             </a>
-        </li>
+        </li> --}}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         {{-- <li {!! (Request::is('typography') ? 'class="active"' : '' ) !!}>
 =======
         <li {!! (Request::is('typography') ? 'class="active"' : '' ) !!}>
@@ -174,20 +171,7 @@
             </ul>
         </li>
 
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
  --}}
-=======
-
->>>>>>> origin/Michael.Chukwudi
-=======
-
->>>>>>> origin/samuel.adewale
-=======
-
->>>>>>> origin/samson.michael
 
 
 

@@ -3,13 +3,14 @@
 namespace App\Models\Humanresource;
 
 use Eloquent as Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class EmployeeNextOfKin
  * @package App\Models\Humanresource
- * @version July 22, 2021, 11:37 am UTC
+ * @version July 22, 2021, 10:59 pm UTC
  *
- * @property \App\Models\Humanresource\Employee $employee
+ * @property \App\Models\Humanresource\Relationship $relationship
  * @property \App\Models\Humanresource\Employee $employee
  * @property \App\Models\Humanresource\User $createdBy
  * @property \App\Models\Humanresource\User $updatedBy
@@ -24,9 +25,12 @@ use Eloquent as Model;
  */
 class EmployeeNextOfKin extends Model
 {
+    use SoftDeletes;
 
     public $table = 'employee_next_of_kins';
     
+
+    protected $dates = ['deleted_at'];
 
 
 
@@ -77,9 +81,9 @@ class EmployeeNextOfKin extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function employee()
+    public function relationship()
     {
-        return $this->belongsTo(\App\Models\Humanresource\Employee::class, 'employee_id', 'id');
+        return $this->belongsTo(\App\Models\Humanresource\Relationship::class, 'relationship_id', 'id');
     }
 
     /**

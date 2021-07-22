@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Humanresource;
 
+use App\DataTables\Humanresource\EmployeeNextOfKinDataTable;
+use App\Http\Requests\Humanresource;
 use App\Http\Requests\Humanresource\CreateEmployeeNextOfKinRequest;
 use App\Http\Requests\Humanresource\UpdateEmployeeNextOfKinRequest;
-use App\Http\Controllers\AppBaseController;
 use App\Models\Humanresource\EmployeeNextOfKin;
-use Illuminate\Http\Request;
 use Flash;
+use App\Http\Controllers\AppBaseController;
 use Response;
 
 class EmployeeNextOfKinController extends AppBaseController
@@ -15,17 +16,12 @@ class EmployeeNextOfKinController extends AppBaseController
     /**
      * Display a listing of the EmployeeNextOfKin.
      *
-     * @param Request $request
-     *
+     * @param EmployeeNextOfKinDataTable $employeeNextOfKinDataTable
      * @return Response
      */
-    public function index(Request $request)
+    public function index(EmployeeNextOfKinDataTable $employeeNextOfKinDataTable)
     {
-        /** @var EmployeeNextOfKin $employeeNextOfKins */
-        $employeeNextOfKins = EmployeeNextOfKin::paginate(10);
-
-        return view('humanresource.employee_next_of_kins.index')
-            ->with('employeeNextOfKins', $employeeNextOfKins);
+        return $employeeNextOfKinDataTable->render('humanresource.employee_next_of_kins.index');
     }
 
     /**
@@ -60,7 +56,7 @@ class EmployeeNextOfKinController extends AppBaseController
     /**
      * Display the specified EmployeeNextOfKin.
      *
-     * @param int $id
+     * @param  int $id
      *
      * @return Response
      */
@@ -81,7 +77,7 @@ class EmployeeNextOfKinController extends AppBaseController
     /**
      * Show the form for editing the specified EmployeeNextOfKin.
      *
-     * @param int $id
+     * @param  int $id
      *
      * @return Response
      */
@@ -102,7 +98,7 @@ class EmployeeNextOfKinController extends AppBaseController
     /**
      * Update the specified EmployeeNextOfKin in storage.
      *
-     * @param int $id
+     * @param  int              $id
      * @param UpdateEmployeeNextOfKinRequest $request
      *
      * @return Response
@@ -129,7 +125,7 @@ class EmployeeNextOfKinController extends AppBaseController
     /**
      * Remove the specified EmployeeNextOfKin from storage.
      *
-     * @param int $id
+     * @param  int $id
      *
      * @throws \Exception
      *
