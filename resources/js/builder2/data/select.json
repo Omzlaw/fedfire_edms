@@ -1,0 +1,240 @@
+[
+    {
+        "title": "Select Basic",
+        "type": "select",
+        "fields": {
+            "id": {
+                "label": "ID / Name",
+                "type": "input",
+                "value": "selectbasic"
+            },
+            "label": {
+                "label": "Label Text",
+                "type": "input",
+                "value": "Select Basic"
+            },
+            "options": {
+                "label": "Options",
+                "type": "textarea-split",
+                "value": [
+                    "Option one",
+                    "Option two"
+                ]
+            },
+            "values": {
+                "label": "Values",
+                "type": "textarea-split",
+                "value": [
+                    "1",
+                    "2"
+                ]
+            },
+            "inputsize": {
+                "label": "Input Size",
+                "type": "select",
+                "value": [
+                    {
+                        "value": "col-md-1",
+                        "label": "Mini",
+                        "selected": false
+                    },
+                    {
+                        "value": "col-md-2",
+                        "label": "Small",
+                        "selected": false
+                    },
+                    {
+                        "value": "col-md-4",
+                        "label": "Medium",
+                        "selected": false
+                    },
+                    {
+                        "value": "col-md-5",
+                        "label": "Large",
+                        "selected": true
+                    },
+                    {
+                        "value": "col-md-6",
+                        "label": "Xlarge",
+                        "selected": false
+                    },
+                    {
+                        "value": "col-md-8",
+                        "label": "Xxlarge",
+                        "selected": false
+                    }
+                ]
+            },
+            "dbType": {
+                "label": "DB Type",
+                "type": "select",
+                "value": [
+                    {
+                        "label": "string",
+                        "value": "string",
+                        "selected": true
+                    },
+                    {
+                        "label": "text",
+                        "value": "text",
+                        "selected": false
+                    },
+                    {
+                        "label": "integer",
+                        "value": "integer",
+                        "selected": false
+                    }
+                ]
+            },
+            "required": {
+                "type": "checkbox",
+                "label": "Required",
+                "value": false
+            },
+            "searchable": {
+                "type": "checkbox",
+                "label": "Searchable",
+                "value": false
+            },
+            "fillable": {
+                "type": "checkbox",
+                "label": "Fillable",
+                "value": false
+            },
+            "inForm": {
+                "type": "checkbox",
+                "label": "In Form",
+                "value": false
+            },
+            "inIndex": {
+                "type": "checkbox",
+                "label": "In Index",
+                "value": false
+            },
+            "inView": {
+                "type": "checkbox",
+                "label": "In View",
+                "value": false
+            }
+        }
+    },
+    {
+        "title": "Select Multiple",
+        "type": "select",
+        "fields": {
+            "id": {
+                "label": "ID / Name",
+                "type": "input",
+                "value": "selectmultiple"
+            },
+            "label": {
+                "label": "Label Text",
+                "type": "input",
+                "value": "Select Multiple"
+            },
+            "options": {
+                "label": "Options",
+                "type": "textarea-split",
+                "value": [
+                    "Option one",
+                    "Option two"
+                ]
+            },
+            "values": {
+                "label": "Values",
+                "type": "textarea-split",
+                "value": [
+                    "1",
+                    "2"
+                ]
+            },
+            "inputsize": {
+                "label": "Input Size",
+                "type": "select",
+                "value": [
+                    {
+                        "value": "col-md-1",
+                        "label": "Mini",
+                        "selected": false
+                    },
+                    {
+                        "value": "col-md-2",
+                        "label": "Small",
+                        "selected": false
+                    },
+                    {
+                        "value": "col-md-4",
+                        "label": "Medium",
+                        "selected": false
+                    },
+                    {
+                        "value": "col-md-5",
+                        "label": "Large",
+                        "selected": true
+                    },
+                    {
+                        "value": "col-md-6",
+                        "label": "Xlarge",
+                        "selected": false
+                    },
+                    {
+                        "value": "col-md-8",
+                        "label": "Xxlarge",
+                        "selected": false
+                    }
+                ]
+            },
+            "dbType": {
+                "label": "DB Type",
+                "type": "select",
+                "value": [
+                    {
+                        "label": "string",
+                        "value": "string",
+                        "selected": true
+                    },
+                    {
+                        "label": "text",
+                        "value": "text",
+                        "selected": false
+                    },
+                    {
+                        "label": "integer",
+                        "value": "integer",
+                        "selected": false
+                    }
+                ]
+            },
+            "required": {
+                "type": "checkbox",
+                "label": "Required",
+                "value": false
+            },
+            "searchable": {
+                "type": "checkbox",
+                "label": "Searchable",
+                "value": false
+            },
+            "fillable": {
+                "type": "checkbox",
+                "label": "Fillable",
+                "value": false
+            },
+            "inForm": {
+                "type": "checkbox",
+                "label": "In Form",
+                "value": false
+            },
+            "inIndex": {
+                "type": "checkbox",
+                "label": "In Index",
+                "value": false
+            },
+            "inView": {
+                "type": "checkbox",
+                "label": "In View",
+                "value": false
+            }
+        }
+    }
+]
