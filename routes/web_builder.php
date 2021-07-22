@@ -84,6 +84,9 @@ Route::group(['prefix' => 'humanresource'], function () {
 
 Route::group(['prefix' => 'shared'], function () {
     Route::resource('certificateTypes', 'Shared\CertificateTypeController', ["as" => 'shared']);
+
+Route::group(['prefix' => 'humanresources'], function () {
+    Route::resource('leaveTypes', 'Humanresources\LeaveTypeController', ["as" => 'humanresources']);
 });
 
 
@@ -100,4 +103,5 @@ Route::group(['prefix' => 'humanresource'], function () {
 
 Route::group(['prefix' => 'humanresource'], function () {
     Route::resource('employeeForeignTours', 'Humanresource\EmployeeForeignToursController', ["as" => 'humanresource']);
+    Route::resource('rankTypes', 'Shared\RankTypeController', ["as" => 'shared']);
 });

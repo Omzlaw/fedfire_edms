@@ -22,6 +22,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         {{-- <li {!! (Request::is('typography') ? 'class="active"' : '' ) !!}>
 =======
         <li {!! (Request::is('typography') ? 'class="active"' : '' ) !!}>
@@ -29,6 +30,9 @@
 =======
         <li {!! (Request::is('typography') ? 'class="active"' : '' ) !!}>
 >>>>>>> origin/samuel.adewale
+=======
+        <li {!! (Request::is('typography') ? 'class="active"' : '' ) !!}>
+>>>>>>> origin/samson.michael
             <a href="{{ URL::to('typography') }}">
                 <span class="mm-text ">Typography</span>
                 <span class="menu-icon"><i class="im im-icon-Italic-Text"></i></span>
@@ -173,6 +177,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  --}}
 =======
 
@@ -180,6 +185,9 @@
 =======
 
 >>>>>>> origin/samuel.adewale
+=======
+
+>>>>>>> origin/samson.michael
 
 
 

@@ -13,6 +13,9 @@
 <li class="{!! (Request::is('humanresource/employeeRecordTrackers*') ? 'active' : '' ) !!}">
     <a href="{{ route('humanresource.employeeRecordTrackers.index') }}">
         <span class="mm-text ">Employee Record Trackers</span>
+<li class="{!! (Request::is('humanresources/leaveTypes*') ? 'active' : '' ) !!}">
+    <a href="{{ route('humanresources.leaveTypes.index') }}">
+        <span class="mm-text ">Leave Types</span>
         <span class="menu-icon"><i class="im im-icon-Structure"></i></span>
     </a>
 </li>
@@ -136,6 +139,9 @@
 <li class="{!! (Request::is('humanresource/employeeForeignTours*') ? 'active' : '' ) !!}">
     <a href="{{ route('humanresource.employeeForeignTours.index') }}">
         <span class="mm-text ">Employee Foreign Tours</span>
+<li class="{!! (Request::is('shared/rankTypes*') ? 'active' : '' ) !!}">
+    <a href="{{ route('shared.rankTypes.index') }}">
+        <span class="mm-text ">Rank Types</span>
         <span class="menu-icon"><i class="im im-icon-Structure"></i></span>
     </a>
 </li>
