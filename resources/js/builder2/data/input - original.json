@@ -1,0 +1,577 @@
+[
+    {
+        "fields": {
+            "name": {
+                "type": "input",
+                "label": "ID / Name",
+                "value": "textinput"
+            },
+            "label": {
+                "type": "input",
+                "label": "Label Text",
+                "value": "Text Input"
+            },
+            "dbType": {
+                "label": "DB Type",
+                "type": "select",
+                "value": [
+                    {
+                        "label": "string",
+                        "value": "string",
+                        "selected": true
+                    },
+                    {
+                        "label": "text",
+                        "value": "text",
+                        "selected": false
+                    },
+                    {
+                        "label": "integer",
+                        "value": "integer",
+                        "selected": false
+                    }
+                ]
+            },
+            "required": {
+                "type": "checkbox",
+                "label": "Required",
+                "value": false
+            },
+            "searchable": {
+                "type": "checkbox",
+                "label": "Searchable",
+                "value": false
+            },
+            "fillable": {
+                "type": "checkbox",
+                "label": "Fillable",
+                "value": true
+            },
+            "inForm": {
+                "type": "checkbox",
+                "label": "In Form",
+                "value": true
+            },
+            "inIndex": {
+                "type": "checkbox",
+                "label": "In Index",
+                "value": true
+            },
+            "inView": {
+                "type": "checkbox",
+                "label": "In View",
+                "value": true
+            }
+        },
+        "title": "Text Input",
+        "type": "text"
+    },
+    {
+        "fields": {
+            "id": {
+                "type": "input",
+                "label": "ID / Name",
+                "value": "passwordinput"
+            },
+            "label": {
+                "type": "input",
+                "label": "Label Text",
+                "value": "Password Input"
+            },
+            "dbType": {
+                "label": "DB Type",
+                "type": "select",
+                "value": [
+                    {
+                        "label": "string",
+                        "value": "string",
+                        "selected": true
+                    },
+                    {
+                        "label": "text",
+                        "value": "text",
+                        "selected": false
+                    },
+                    {
+                        "label": "integer",
+                        "value": "integer",
+                        "selected": false
+                    }
+                ]
+            },
+            "required": {
+                "type": "checkbox",
+                "label": "Required",
+                "value": false
+            },
+            "searchable": {
+                "type": "checkbox",
+                "label": "Searchable",
+                "value": false
+            },
+            "fillable": {
+                "type": "checkbox",
+                "label": "Fillable",
+                "value": false
+            },
+            "inForm": {
+                "type": "checkbox",
+                "label": "In Form",
+                "value": false
+            },
+            "inIndex": {
+                "type": "checkbox",
+                "label": "In Index",
+                "value": false
+            },
+            "inView": {
+                "type": "checkbox",
+                "label": "In View",
+                "value": false
+            }
+        },
+        "title": "Password Input",
+        "type": "password"
+    },
+    {
+        "fields": {
+            "id": {
+                "type": "input",
+                "label": "ID / Name",
+                "value": "prependedtext"
+            },
+            "prepend": {
+                "type": "input",
+                "label": "Prepend",
+                "value": "prepend"
+            },
+            "label": {
+                "type": "input",
+                "label": "Label Text",
+                "value": "Prepended Text"
+            },
+            "dbType": {
+                "label": "DB Type",
+                "type": "select",
+                "value": [
+                    {
+                        "label": "string",
+                        "value": "string",
+                        "selected": true
+                    },
+                    {
+                        "label": "text",
+                        "value": "text",
+                        "selected": false
+                    },
+                    {
+                        "label": "integer",
+                        "value": "integer",
+                        "selected": false
+                    }
+                ]
+            },
+            "required": {
+                "type": "checkbox",
+                "label": "Required",
+                "value": false
+            },
+            "searchable": {
+                "type": "checkbox",
+                "label": "Searchable",
+                "value": false
+            },
+            "fillable": {
+                "type": "checkbox",
+                "label": "Fillable",
+                "value": false
+            },
+            "inForm": {
+                "type": "checkbox",
+                "label": "In Form",
+                "value": false
+            },
+            "inIndex": {
+                "type": "checkbox",
+                "label": "In Index",
+                "value": false
+            },
+            "inView": {
+                "type": "checkbox",
+                "label": "In View",
+                "value": false
+            }
+        },
+        "title": "Prepended Text",
+        "type": "text"
+    },
+    {
+        "fields": {
+            "id": {
+                "type": "input",
+                "label": "ID / Name",
+                "value": "appendedtext"
+            },
+            "append": {
+                "type": "input",
+                "label": "Append",
+                "value": "append"
+            },
+            "label": {
+                "type": "input",
+                "label": "Label Text",
+                "value": "Appended Text"
+            },
+            "dbType": {
+                "label": "DB Type",
+                "type": "select",
+                "value": [
+                    {
+                        "label": "string",
+                        "value": "string",
+                        "selected": true
+                    },
+                    {
+                        "label": "text",
+                        "value": "text",
+                        "selected": false
+                    },
+                    {
+                        "label": "integer",
+                        "value": "integer",
+                        "selected": false
+                    }
+                ]
+            },
+            "required": {
+                "type": "checkbox",
+                "label": "Required",
+                "value": false
+            },
+            "searchable": {
+                "type": "checkbox",
+                "label": "Searchable",
+                "value": false
+            },
+            "fillable": {
+                "type": "checkbox",
+                "label": "Fillable",
+                "value": false
+            },
+            "inForm": {
+                "type": "checkbox",
+                "label": "In Form",
+                "value": false
+            },
+            "inIndex": {
+                "type": "checkbox",
+                "label": "In Index",
+                "value": false
+            },
+            "inView": {
+                "type": "checkbox",
+                "label": "In View",
+                "value": false
+            }
+        },
+        "title": "Appended Text",
+        "type": "text"
+    },
+    {
+        "fields": {
+            "id": {
+                "type": "input",
+                "label": "ID / Name",
+                "value": "prependedcheckbox"
+            },
+            "label": {
+                "type": "input",
+                "label": "Label Text",
+                "value": "Prepended Checkbox"
+            },
+            "checked": {
+                "type": "checkbox",
+                "label": "Checked",
+                "value": false
+            },
+            "dbType": {
+                "label": "DB Type",
+                "type": "select",
+                "value": [
+                    {
+                        "label": "string",
+                        "value": "string",
+                        "selected": true
+                    },
+                    {
+                        "label": "text",
+                        "value": "text",
+                        "selected": false
+                    },
+                    {
+                        "label": "integer",
+                        "value": "integer",
+                        "selected": false
+                    }
+                ]
+            },
+            "required": {
+                "type": "checkbox",
+                "label": "Required",
+                "value": false
+            },
+            "searchable": {
+                "type": "checkbox",
+                "label": "Searchable",
+                "value": false
+            },
+            "fillable": {
+                "type": "checkbox",
+                "label": "Fillable",
+                "value": false
+            },
+            "inForm": {
+                "type": "checkbox",
+                "label": "In Form",
+                "value": false
+            },
+            "inIndex": {
+                "type": "checkbox",
+                "label": "In Index",
+                "value": false
+            },
+            "inView": {
+                "type": "checkbox",
+                "label": "In View",
+                "value": false
+            }
+        },
+        "title": "Prepended Checkbox",
+        "type": "text"
+    },
+    {
+        "fields": {
+            "id": {
+                "type": "input",
+                "label": "ID / Name",
+                "value": "appendedcheckbox"
+            },
+            "label": {
+                "type": "input",
+                "label": "Label Text",
+                "value": "Appended Checkbox"
+            },
+            "checked": {
+                "type": "checkbox",
+                "label": "Checked",
+                "value": false
+            },
+            "dbType": {
+                "label": "DB Type",
+                "type": "select",
+                "value": [
+                    {
+                        "label": "string",
+                        "value": "string",
+                        "selected": true
+                    },
+                    {
+                        "label": "text",
+                        "value": "text",
+                        "selected": false
+                    },
+                    {
+                        "label": "integer",
+                        "value": "integer",
+                        "selected": false
+                    }
+                ]
+            },
+            "required": {
+                "type": "checkbox",
+                "label": "Required",
+                "value": false
+            },
+            "searchable": {
+                "type": "checkbox",
+                "label": "Searchable",
+                "value": false
+            },
+            "fillable": {
+                "type": "checkbox",
+                "label": "Fillable",
+                "value": false
+            },
+            "inForm": {
+                "type": "checkbox",
+                "label": "In Form",
+                "value": false
+            },
+            "inIndex": {
+                "type": "checkbox",
+                "label": "In Index",
+                "value": false
+            },
+            "inView": {
+                "type": "checkbox",
+                "label": "In View",
+                "value": false
+            }
+        },
+        "title": "Appended Checkbox",
+        "type": "text"
+    },
+    {
+        "fields": {
+            "id": {
+                "type": "input",
+                "label": "ID / Name",
+                "value": "buttondropdown"
+            },
+            "buttonoptions": {
+                "type": "textarea-split",
+                "label": "Options",
+                "value": [
+                    "Option one",
+                    "Option two",
+                    "Option three"
+                ]
+            },
+            "buttontext": {
+                "type": "input",
+                "label": "Button Text",
+                "value": "Action"
+            },
+            "label": {
+                "type": "input",
+                "label": "Label Text",
+                "value": "Button Drop Down"
+            },
+            "dbType": {
+                "label": "DB Type",
+                "type": "select",
+                "value": [
+                    {
+                        "label": "string",
+                        "value": "string",
+                        "selected": true
+                    },
+                    {
+                        "label": "text",
+                        "value": "text",
+                        "selected": false
+                    },
+                    {
+                        "label": "integer",
+                        "value": "integer",
+                        "selected": false
+                    }
+                ]
+            },
+            "required": {
+                "type": "checkbox",
+                "label": "Required",
+                "value": false
+            },
+            "searchable": {
+                "type": "checkbox",
+                "label": "Searchable",
+                "value": false
+            },
+            "fillable": {
+                "type": "checkbox",
+                "label": "Fillable",
+                "value": false
+            },
+            "inForm": {
+                "type": "checkbox",
+                "label": "In Form",
+                "value": false
+            },
+            "inIndex": {
+                "type": "checkbox",
+                "label": "In Index",
+                "value": false
+            },
+            "inView": {
+                "type": "checkbox",
+                "label": "In View",
+                "value": false
+            }
+        },
+        "title": "Button Drop Down",
+        "type": "text"
+    },
+    {
+        "fields": {
+            "id": {
+                "type": "input",
+                "label": "ID / Name",
+                "value": "textarea"
+            },
+            "label": {
+                "type": "input",
+                "label": "Label Text",
+                "value": "Text Area"
+            },
+            "textarea": {
+                "type": "textarea",
+                "label": "Starting Text",
+                "value": "default text"
+            },
+            "dbType": {
+                "label": "DB Type",
+                "type": "select",
+                "value": [
+                    {
+                        "label": "string",
+                        "value": "string",
+                        "selected": true
+                    },
+                    {
+                        "label": "text",
+                        "value": "text",
+                        "selected": false
+                    },
+                    {
+                        "label": "integer",
+                        "value": "integer",
+                        "selected": false
+                    }
+                ]
+            },
+            "required": {
+                "type": "checkbox",
+                "label": "Required",
+                "value": false
+            },
+            "searchable": {
+                "type": "checkbox",
+                "label": "Searchable",
+                "value": false
+            },
+            "fillable": {
+                "type": "checkbox",
+                "label": "Fillable",
+                "value": false
+            },
+            "inForm": {
+                "type": "checkbox",
+                "label": "In Form",
+                "value": false
+            },
+            "inIndex": {
+                "type": "checkbox",
+                "label": "In Index",
+                "value": false
+            },
+            "inView": {
+                "type": "checkbox",
+                "label": "In View",
+                "value": false
+            }
+        },
+        "title": "Text Area",
+        "type": "textarea"
+    }
+]
