@@ -22,3 +22,29 @@ Route::group(['prefix' => 'shared'], function () {
     Route::resource('languages', 'Shared\LanguageController', ["as" => 'shared']);
     Route::resource('maritalStatuses', 'Shared\MaritalStatusController', ["as" => 'shared']);
 });
+
+Route::group(['prefix' => 'humanresource'], function () {
+    Route::resource('employeeCertificates', 'Humanresource\EmployeeCertificatesController', ["as" => 'humanresource']);
+});
+
+
+Route::group(['prefix' => 'humanresource'], function () {
+    Route::resource('employeeChildrens', 'Humanresource\EmployeeChildrenController', ["as" => 'humanresource']);
+});
+
+
+Route::group(['prefix' => 'humanresource'], function () {
+    Route::resource('employeeEducations', 'Humanresource\EmployeeEducationController', ["as" => 'humanresource']);
+});
+
+
+Route::group(['prefix' => 'humanresource'], function () {
+    Route::resource('employeeForceServices', 'Humanresource\EmployeeForceServiceController', ["as" => 'humanresource']);
+});
+
+
+
+
+Route::group(['prefix' => 'humanresource'], function () {
+    Route::resource('employeeGratuities', 'Humanresource\EmployeeGratuityController', ["as" => 'humanresource']);
+});

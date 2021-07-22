@@ -1,0 +1,218 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "number",
+        "validations": "",
+        "searchable": true,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": true,
+        "inView": true
+    },
+    {
+        "name": "school_name",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "Required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
+    },
+    {
+        "name": "certificate_id",
+        "dbType": "integer:unsigned:foreign,employee_certificate,id",
+        "htmlType": "select,",
+        "validations": "Required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
+    },
+    {
+        "name": "school_type_id",
+        "dbType": "integer:unsigned:foreign,school_types,id",
+        "htmlType": "select,",
+        "validations": "Required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
+    },
+    {
+        "name": "from_date",
+        "dbType": "dateTime",
+        "htmlType": "date",
+        "validations": "Required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
+    },
+    {
+        "name": "to_date",
+        "dbType": "dateTime",
+        "htmlType": "date",
+        "validations": "Required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
+    },
+    {
+        "name": "employee_id",
+        "dbType": "integer:unsigned:foreign,employees,id",
+        "htmlType": "number",
+        "validations": "Required",
+        "searchable": false,
+        "fillable": true,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false,
+        "inView": true
+    },
+    {
+        "name": "file_upload",
+        "dbType": "string",
+        "htmlType": "file",
+        "validations": "Required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
+    },
+    {
+        "name": "status",
+        "dbType": "integer",
+        "htmlType": "select,Active:1,Inactive:0",
+        "validations": "Required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
+    },
+    {
+        "name": "remark",
+        "dbType": "string",
+        "htmlType": "textarea",
+        "validations": "Required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
+    },
+    {
+        "name": "checked_by",
+        "dbType": "integer:unsigned:foreign,users,id",
+        "htmlType": "number",
+        "validations": "Required",
+        "searchable": false,
+        "fillable": true,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false,
+        "inView": true
+    },
+    {
+        "name": "checked_at",
+        "dbType": "dateTime",
+        "htmlType": "date",
+        "validations": "Required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
+    },
+    {
+        "name": "created_by",
+        "dbType": "integer:unsigned:foreign,users,id",
+        "htmlType": "number",
+        "validations": "Required",
+        "searchable": false,
+        "fillable": true,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false,
+        "inView": true
+    },
+    {
+        "name": "updated_by",
+        "dbType": "integer:unsigned:foreign,users,id",
+        "htmlType": "number",
+        "validations": "Required",
+        "searchable": false,
+        "fillable": true,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false,
+        "inView": true
+    },
+    {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "date",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": true,
+        "inView": true
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "date",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": true,
+        "inView": true
+    },
+    {
+        "type": "relation",
+        "relation": "mt1,EmployeeCertificate,certificate_id,id"
+    },
+    {
+        "type": "relation",
+        "relation": "mt1,SchoolType,school_type_id,id"
+    },
+    {
+        "type": "relation",
+        "relation": "mt1,Employee,employee_id,id"
+    },
+    {
+        "type": "relation",
+        "relation": "mt1,User,checked_by,id"
+    },
+    {
+        "type": "relation",
+        "relation": "mt1,User,created_by,id"
+    },
+    {
+        "type": "relation",
+        "relation": "mt1,User,updated_by,id"
+    }
+]
