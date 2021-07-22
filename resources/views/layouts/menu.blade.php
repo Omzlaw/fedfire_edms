@@ -7,6 +7,9 @@
 <li class="{!! (Request::is('humanresource/employeeCertificates*') ? 'active' : '' ) !!}">
     <a href="{{ route('humanresource.employeeCertificates.index') }}">
         <span class="mm-text ">Employee Certificates</span>
+<li class="{!! (Request::is('humanresource/employeeLanguages*') ? 'active' : '' ) !!}">
+    <a href="{{ route('humanresource.employeeLanguages.index') }}">
+        <span class="mm-text ">Employee Languages</span>
         <span class="menu-icon"><i class="im im-icon-Structure"></i></span>
     </a>
 </li>
@@ -24,6 +27,16 @@
 <li class="{!! (Request::is('humanresource/employeeWives*') ? 'active' : '' ) !!}">
     <a href="{{ route('humanresource.employeeWives.index') }}">
         <span class="mm-text ">Employee Wives</span>
+<li class="{!! (Request::is('humanresource/employeeLocalLeaves*') ? 'active' : '' ) !!}">
+    <a href="{{ route('humanresource.employeeLocalLeaves.index') }}">
+        <span class="mm-text ">Employee Local Leaves</span>
+        <span class="menu-icon"><i class="im im-icon-Structure"></i></span>
+    </a>
+</li>
+
+<li class="{!! (Request::is('humanresource/employeeNextOfKins*') ? 'active' : '' ) !!}">
+    <a href="{{ route('humanresource.employeeNextOfKins.index') }}">
+        <span class="mm-text ">Employee Next Of Kins</span>
         <span class="menu-icon"><i class="im im-icon-Structure"></i></span>
     </a>
 </li>
@@ -37,6 +50,9 @@
 <li class="{!! (Request::is('humanresource/employeeChildrens*') ? 'active' : '' ) !!}">
     <a href="{{ route('humanresource.employeeChildrens.index') }}">
         <span class="mm-text ">Employee Childrens</span>
+<li class="{!! (Request::is('humanresource/employeePublicServices*') ? 'active' : '' ) !!}">
+    <a href="{{ route('humanresource.employeePublicServices.index') }}">
+        <span class="mm-text ">Employee Public Services</span>
         <span class="menu-icon"><i class="im im-icon-Structure"></i></span>
     </a>
 </li>
@@ -50,6 +66,9 @@
 <li class="{!! (Request::is('humanresource/employeeEducations*') ? 'active' : '' ) !!}">
     <a href="{{ route('humanresource.employeeEducations.index') }}">
         <span class="mm-text ">Employee Educations</span>
+<li class="{!! (Request::is('employeePublicServices*') ? 'active' : '' ) !!}">
+    <a href="{{ route('employeePublicServices.index') }}">
+        <span class="mm-text ">Employee Public Services</span>
         <span class="menu-icon"><i class="im im-icon-Structure"></i></span>
     </a>
 </li>
@@ -63,6 +82,9 @@
 <li class="{!! (Request::is('humanresource/employeeForceServices*') ? 'active' : '' ) !!}">
     <a href="{{ route('humanresource.employeeForceServices.index') }}">
         <span class="mm-text ">Employee Force Services</span>
+<li class="{!! (Request::is('humanresource/employeeQualifications*') ? 'active' : '' ) !!}">
+    <a href="{{ route('humanresource.employeeQualifications.index') }}">
+        <span class="mm-text ">Employee Qualifications</span>
         <span class="menu-icon"><i class="im im-icon-Structure"></i></span>
     </a>
 </li>
@@ -73,6 +95,9 @@
 <li class="{!! (Request::is('shared/languages*') ? 'active' : '' ) !!}">
     <a href="{{ route('shared.languages.index') }}">
         <span class="mm-text ">Languages</span>
+<li class="{!! (Request::is('shared/relationships*') ? 'active' : '' ) !!}">
+    <a href="{{ route('shared.relationships.index') }}">
+        <span class="mm-text ">Relationships</span>
         <span class="menu-icon"><i class="im im-icon-Structure"></i></span>
     </a>
 </li>
@@ -84,6 +109,9 @@
 <li class="{!! (Request::is('humanresource/employeeGratuities*') ? 'active' : '' ) !!}">
     <a href="{{ route('humanresource.employeeGratuities.index') }}">
         <span class="mm-text ">Employee Gratuities</span>
+<li class="{!! (Request::is('humanresource/employees*') ? 'active' : '' ) !!}">
+    <a href="{{ route('humanresource.employees.index') }}">
+        <span class="mm-text ">Employees</span>
         <span class="menu-icon"><i class="im im-icon-Structure"></i></span>
     </a>
 </li>

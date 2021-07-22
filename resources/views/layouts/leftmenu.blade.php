@@ -20,7 +20,11 @@
             </a>
         </li>
 
+<<<<<<< HEAD
         {{-- <li {!! (Request::is('typography') ? 'class="active"' : '' ) !!}>
+=======
+        <li {!! (Request::is('typography') ? 'class="active"' : '' ) !!}>
+>>>>>>> origin/Michael.Chukwudi
             <a href="{{ URL::to('typography') }}">
                 <span class="mm-text ">Typography</span>
                 <span class="menu-icon"><i class="im im-icon-Italic-Text"></i></span>
@@ -163,7 +167,11 @@
         </li>
 
 
+<<<<<<< HEAD
  --}}
+=======
+
+>>>>>>> origin/Michael.Chukwudi
 
 
 
