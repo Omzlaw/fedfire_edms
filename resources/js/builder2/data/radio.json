@@ -1,0 +1,342 @@
+[
+    {
+        "title": "Multiple Radios",
+        "type": "radio",
+        "fields": {
+            "name": {
+                "label": "Group Name",
+                "type": "input",
+                "value": "radios"
+            },
+            "label": {
+                "label": "Label Text",
+                "type": "input",
+                "value": "Multiple Radios"
+            },
+            "radios": {
+                "label": "Radios",
+                "type": "textarea-split",
+                "value": [
+                    "Option one",
+                    "Option two"
+                ]
+            },
+            "radiosValues": {
+                "label": "Radios Values",
+                "type": "textarea-split",
+                "value": [
+                    "1",
+                    "2"
+                ]
+            },
+            "dbType": {
+                "label": "DB Type",
+                "type": "select",
+                "value": [
+                    {
+                        "label": "string",
+                        "value": "string",
+                        "selected": true
+                    },
+                    {
+                        "label": "text",
+                        "value": "text",
+                        "selected": false
+                    },
+                    {
+                        "label": "integer",
+                        "value": "integer",
+                        "selected": false
+                    }
+                ]
+            },
+            "required": {
+                "type": "checkbox",
+                "label": "Required",
+                "value": false
+            },
+            "searchable": {
+                "type": "checkbox",
+                "label": "Searchable",
+                "value": false
+            },
+            "fillable": {
+                "type": "checkbox",
+                "label": "Fillable",
+                "value": false
+            },
+            "inForm": {
+                "type": "checkbox",
+                "label": "In Form",
+                "value": false
+            },
+            "inIndex": {
+                "type": "checkbox",
+                "label": "In Index",
+                "value": false
+            },
+            "inView": {
+                "type": "checkbox",
+                "label": "In View",
+                "value": false
+            }
+        }
+    },
+    {
+        "title": "Multiple Radios Inline",
+        "type": "radio",
+        "fields": {
+            "name": {
+                "label": "Group Name",
+                "type": "input",
+                "value": "radios"
+            },
+            "label": {
+                "label": "Label Text",
+                "type": "input",
+                "value": "Inline Radios"
+            },
+            "radios": {
+                "label": "Radios",
+                "type": "textarea-split",
+                "value": [
+                    1,
+                    2,
+                    3,
+                    4
+                ]
+            },
+            "radiosValues": {
+                "label": "Radios Values",
+                "type": "textarea-split",
+                "value": [
+                    "1",
+                    "2",
+                    "3",
+                    "4"
+                ]
+            },
+            "dbType": {
+                "label": "DB Type",
+                "type": "select",
+                "value": [
+                    {
+                        "label": "string",
+                        "value": "string",
+                        "selected": true
+                    },
+                    {
+                        "label": "text",
+                        "value": "text",
+                        "selected": false
+                    },
+                    {
+                        "label": "integer",
+                        "value": "integer",
+                        "selected": false
+                    }
+                ]
+            },
+            "required": {
+                "type": "checkbox",
+                "label": "Required",
+                "value": false
+            },
+            "searchable": {
+                "type": "checkbox",
+                "label": "Searchable",
+                "value": false
+            },
+            "fillable": {
+                "type": "checkbox",
+                "label": "Fillable",
+                "value": false
+            },
+            "inForm": {
+                "type": "checkbox",
+                "label": "In Form",
+                "value": false
+            },
+            "inIndex": {
+                "type": "checkbox",
+                "label": "In Index",
+                "value": false
+            },
+            "inView": {
+                "type": "checkbox",
+                "label": "In View",
+                "value": false
+            }
+        }
+    },
+    {
+        "title": "Multiple Checkboxes",
+        "type": "radio",
+        "fields": {
+            "name": {
+                "label": "Group Name",
+                "type": "input",
+                "value": "checkboxes"
+            },
+            "label": {
+                "label": "Label Text",
+                "type": "input",
+                "value": "Multiple Checkboxes"
+            },
+            "checkboxes": {
+                "label": "Checkboxes",
+                "type": "textarea-split",
+                "value": [
+                    "Option one",
+                    "Option two"
+                ]
+            },
+            "checkboxesValues": {
+                "label": "Checkboxes Values",
+                "type": "textarea-split",
+                "value": [
+                    "1",
+                    "2"
+                ]
+            },
+            "dbType": {
+                "label": "DB Type",
+                "type": "select",
+                "value": [
+                    {
+                        "label": "string",
+                        "value": "string",
+                        "selected": true
+                    },
+                    {
+                        "label": "text",
+                        "value": "text",
+                        "selected": false
+                    },
+                    {
+                        "label": "integer",
+                        "value": "integer",
+                        "selected": false
+                    }
+                ]
+            },
+            "required": {
+                "type": "checkbox",
+                "label": "Required",
+                "value": false
+            },
+            "searchable": {
+                "type": "checkbox",
+                "label": "Searchable",
+                "value": false
+            },
+            "fillable": {
+                "type": "checkbox",
+                "label": "Fillable",
+                "value": false
+            },
+            "inForm": {
+                "type": "checkbox",
+                "label": "In Form",
+                "value": false
+            },
+            "inIndex": {
+                "type": "checkbox",
+                "label": "In Index",
+                "value": false
+            },
+            "inView": {
+                "type": "checkbox",
+                "label": "In View",
+                "value": false
+            }
+        }
+    },
+    {
+        "title": "Multiple Checkboxes Inline",
+        "type": "radio",
+        "fields": {
+            "name": {
+                "label": "Group Name",
+                "type": "input",
+                "value": "checkboxes"
+            },
+            "label": {
+                "label": "Label Text",
+                "type": "input",
+                "value": "Inline Checkboxes"
+            },
+            "checkboxes": {
+                "label": "Checkboxes",
+                "type": "textarea-split",
+                "value": [
+                    1,
+                    2,
+                    3,
+                    4
+                ]
+            },
+            "checkboxesValues": {
+                "label": "Checkboxes Values",
+                "type": "textarea-split",
+                "value": [
+                    "1",
+                    "2",
+                    "3",
+                    "4"
+                ]
+            },
+            "dbType": {
+                "label": "DB Type",
+                "type": "select",
+                "value": [
+                    {
+                        "label": "string",
+                        "value": "string",
+                        "selected": true
+                    },
+                    {
+                        "label": "text",
+                        "value": "text",
+                        "selected": false
+                    },
+                    {
+                        "label": "integer",
+                        "value": "integer",
+                        "selected": false
+                    }
+                ]
+            },
+            "required": {
+                "type": "checkbox",
+                "label": "Required",
+                "value": false
+            },
+            "searchable": {
+                "type": "checkbox",
+                "label": "Searchable",
+                "value": false
+            },
+            "fillable": {
+                "type": "checkbox",
+                "label": "Fillable",
+                "value": false
+            },
+            "inForm": {
+                "type": "checkbox",
+                "label": "In Form",
+                "value": false
+            },
+            "inIndex": {
+                "type": "checkbox",
+                "label": "In Index",
+                "value": false
+            },
+            "inView": {
+                "type": "checkbox",
+                "label": "In View",
+                "value": false
+            }
+        }
+    }
+]

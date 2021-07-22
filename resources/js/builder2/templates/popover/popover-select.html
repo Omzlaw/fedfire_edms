@@ -1,0 +1,12 @@
+<div class="form-group">
+    <label class='col control-label'>
+        {{ label }}
+    </label>
+    <div class="col">
+        <select class="form-control field" data-type="{{ type }}" id='{{ name }}'>
+            {{ #value }}
+            <option value="{{value}}" {{ #selected }}selected{{/selected}} >{{ label }}</option>
+            {{ /value }}
+        </select>
+    </div>
+</div>
