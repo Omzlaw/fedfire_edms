@@ -4,7 +4,7 @@
                     alt="image missing"></span></li>
 
         <a href="{{ URL::to('index') }}" class="logo navbar-brand mr-0">
-            <h1 class="text-center">JOSH</h1>
+            <h1 class="text-center">EDMS</h1>
         </a>
         <li {!! (Request::is('') ? 'class="active"' : '' ) !!}>
             <a href="{{ URL::to('') }}">
@@ -20,7 +20,7 @@
             </a>
         </li>
 
-        <li {!! (Request::is('typography') ? 'class="active"' : '' ) !!}>
+        {{-- <li {!! (Request::is('typography') ? 'class="active"' : '' ) !!}>
             <a href="{{ URL::to('typography') }}">
                 <span class="mm-text ">Typography</span>
                 <span class="menu-icon"><i class="im im-icon-Italic-Text"></i></span>
@@ -163,7 +163,7 @@
         </li>
 
 
-
+ --}}
 
 
 
