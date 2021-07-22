@@ -1,0 +1,151 @@
+<?php
+
+namespace App\Http\Controllers\Humanresource;
+
+use App\DataTables\Humanresource\EmployeePublicServiceDataTable;
+use App\Http\Requests\Humanresource;
+use App\Http\Requests\Humanresource\CreateEmployeePublicServiceRequest;
+use App\Http\Requests\Humanresource\UpdateEmployeePublicServiceRequest;
+use App\Models\Humanresource\EmployeePublicService;
+use Flash;
+use App\Http\Controllers\AppBaseController;
+use Response;
+
+class EmployeePublicServiceController extends AppBaseController
+{
+    /**
+     * Display a listing of the EmployeePublicService.
+     *
+     * @param EmployeePublicServiceDataTable $employeePublicServiceDataTable
+     * @return Response
+     */
+    public function index(EmployeePublicServiceDataTable $employeePublicServiceDataTable)
+    {
+        return $employeePublicServiceDataTable->render('humanresource.employee_public_services.index');
+    }
+
+    /**
+     * Show the form for creating a new EmployeePublicService.
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        return view('humanresource.employee_public_services.create');
+    }
+
+    /**
+     * Store a newly created EmployeePublicService in storage.
+     *
+     * @param CreateEmployeePublicServiceRequest $request
+     *
+     * @return Response
+     */
+    public function store(CreateEmployeePublicServiceRequest $request)
+    {
+        $input = $request->all();
+
+        /** @var EmployeePublicService $employeePublicService */
+        $employeePublicService = EmployeePublicService::create($input);
+
+        Flash::success('Employee Public Service saved successfully.');
+
+        return redirect(route('humanresource.employeePublicServices.index'));
+    }
+
+    /**
+     * Display the specified EmployeePublicService.
+     *
+     * @param  int $id
+     *
+     * @return Response
+     */
+    public function show($id)
+    {
+        /** @var EmployeePublicService $employeePublicService */
+        $employeePublicService = EmployeePublicService::find($id);
+
+        if (empty($employeePublicService)) {
+            Flash::error('Employee Public Service not found');
+
+            return redirect(route('humanresource.employeePublicServices.index'));
+        }
+
+        return view('humanresource.employee_public_services.show')->with('employeePublicService', $employeePublicService);
+    }
+
+    /**
+     * Show the form for editing the specified EmployeePublicService.
+     *
+     * @param  int $id
+     *
+     * @return Response
+     */
+    public function edit($id)
+    {
+        /** @var EmployeePublicService $employeePublicService */
+        $employeePublicService = EmployeePublicService::find($id);
+
+        if (empty($employeePublicService)) {
+            Flash::error('Employee Public Service not found');
+
+            return redirect(route('humanresource.employeePublicServices.index'));
+        }
+
+        return view('humanresource.employee_public_services.edit')->with('employeePublicService', $employeePublicService);
+    }
+
+    /**
+     * Update the specified EmployeePublicService in storage.
+     *
+     * @param  int              $id
+     * @param UpdateEmployeePublicServiceRequest $request
+     *
+     * @return Response
+     */
+    public function update($id, UpdateEmployeePublicServiceRequest $request)
+    {
+        /** @var EmployeePublicService $employeePublicService */
+        $employeePublicService = EmployeePublicService::find($id);
+
+        if (empty($employeePublicService)) {
+            Flash::error('Employee Public Service not found');
+
+            return redirect(route('humanresource.employeePublicServices.index'));
+        }
+
+        $employeePublicService->fill($request->all());
+        $employeePublicService->save();
+
+        Flash::success('Employee Public Service updated successfully.');
+
+        return redirect(route('humanresource.employeePublicServices.index'));
+    }
+
+    /**
+     * Remove the specified EmployeePublicService from storage.
+     *
+     * @param  int $id
+     *
+     * @throws \Exception
+     *
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        /** @var EmployeePublicService $employeePublicService */
+        $employeePublicService = EmployeePublicService::find($id);
+
+        if (empty($employeePublicService)) {
+            Flash::error('Employee Public Service not found');
+
+            return redirect(route('humanresource.employeePublicServices.index'));
+        }
+
+        $employeePublicService->delete();
+
+        Flash::success('Employee Public Service deleted successfully.');
+
+        return redirect(route('humanresource.employeePublicServices.index'));
+    }
+}
