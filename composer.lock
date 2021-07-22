@@ -10,6 +10,9 @@
             "name": "asm89/stack-cors",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "version": "v2.0.2",
             "source": {
                 "type": "git",
@@ -20,6 +23,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/asm89/stack-cors/zipball/8d8f88b3b3830916be94292c1fbce84433efb1aa",
                 "reference": "8d8f88b3b3830916be94292c1fbce84433efb1aa",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -37,6 +41,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -77,6 +83,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-29T16:03:21+00:00"
         },
         {
@@ -91,6 +100,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/brick/math/zipball/283a40c901101e66de7061bd359252c013dcc43c",
                 "reference": "283a40c901101e66de7061bd359252c013dcc43c",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -116,18 +126,24 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
                 "php": "^7.1|^8.0"
             },
             "require-dev": {
                 "php-coveralls/php-coveralls": "^2.2",
                 "phpunit/phpunit": "^7.5.15|^8.5",
                 "vimeo/psalm": "^3.5"
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -141,6 +157,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             },
             "type": "library",
             "autoload": {
@@ -165,6 +183,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -176,6 +195,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://tidelift.com/funding/github/packagist/brick/math",
@@ -184,6 +205,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-08-18T23:57:15+00:00"
         },
         {
@@ -218,12 +242,15 @@
             ],
             "description": "implementation of xdg base directory specification for php",
             "time": "2019-12-04T15:06:13+00:00"
+<<<<<<< HEAD
 =======
             "time": "2021-01-20T22:51:39+00:00"
 >>>>>>> origin/Emmanuel.Akintola
 =======
             "time": "2021-01-20T22:51:39+00:00"
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "doctrine/inflector",
@@ -302,6 +329,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -313,6 +341,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://www.doctrine-project.org/sponsorship.html",
@@ -391,6 +421,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -402,6 +433,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://www.doctrine-project.org/sponsorship.html",
@@ -422,6 +455,9 @@
             "name": "dragonmantank/cron-expression",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "version": "v3.0.2",
             "source": {
                 "type": "git",
@@ -436,6 +472,7 @@
             },
             "require": {
                 "php": "^7.1|^8.0"
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -458,11 +495,14 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             },
             "replace": {
                 "mtdowling/cron-expression": "^1.0"
             },
             "require-dev": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 "phpstan/phpstan": "^0.11|^0.12",
@@ -476,6 +516,9 @@
                 "phpstan/phpstan": "^0.12",
                 "phpstan/phpstan-webmozart-assert": "^0.12.7",
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "phpstan/phpstan": "^0.11|^0.12",
+>>>>>>> origin/samuel.adewale
                 "phpunit/phpunit": "^7.0|^8.0|^9.0"
             },
             "type": "library",
@@ -502,6 +545,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -513,6 +557,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/dragonmantank",
@@ -521,6 +567,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-13T01:26:01+00:00"
         },
         {
@@ -535,6 +584,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/ca90a3291eee1538cd48ff25163240695bd95448",
                 "reference": "ca90a3291eee1538cd48ff25163240695bd95448",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -556,6 +606,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -602,6 +654,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -613,12 +666,15 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/egulias",
                     "type": "github"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2020-11-14T15:56:27+00:00"
@@ -684,6 +740,9 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "time": "2020-11-14T15:56:27+00:00"
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "fideloper/proxy",
@@ -739,6 +798,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -750,12 +810,17 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-22T13:48:01+00:00"
         },
         {
             "name": "fruitcake/laravel-cors",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "version": "v2.0.3",
             "source": {
                 "type": "git",
@@ -766,6 +831,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/fruitcake/laravel-cors/zipball/01de0fe5f71c70d1930ee9a80385f9cc28e0f63a",
                 "reference": "01de0fe5f71c70d1930ee9a80385f9cc28e0f63a",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -783,6 +849,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -797,6 +865,7 @@
                 "laravel/framework": "^6|^7|^8",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "orchestra/testbench-dusk": "^4|^5|^6",
                 "phpunit/phpunit": "^6|^7|^8",
 =======
@@ -807,6 +876,10 @@
                 "orchestra/testbench-dusk": "^4|^5|^6|^7",
                 "phpunit/phpunit": "^6|^7|^8|^9",
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "orchestra/testbench-dusk": "^4|^5|^6",
+                "phpunit/phpunit": "^6|^7|^8",
+>>>>>>> origin/samuel.adewale
                 "squizlabs/php_codesniffer": "^3.5"
             },
             "type": "library",
@@ -848,6 +921,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -859,12 +933,15 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/barryvdh",
                     "type": "github"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2020-10-22T13:57:20+00:00"
@@ -874,6 +951,9 @@
 =======
             "time": "2021-04-26T11:24:25+00:00"
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "time": "2020-10-22T13:57:20+00:00"
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "graham-campbell/result-type",
@@ -927,6 +1007,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -938,6 +1019,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/GrahamCampbell",
@@ -954,6 +1037,9 @@
             "name": "guzzlehttp/guzzle",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "version": "7.2.0",
             "source": {
                 "type": "git",
@@ -964,6 +1050,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/guzzle/guzzle/zipball/0aa74dfb41ae110835923ef10a9d803a22d50e79",
                 "reference": "0aa74dfb41ae110835923ef10a9d803a22d50e79",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -981,11 +1068,14 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "guzzlehttp/promises": "^1.4",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 "guzzlehttp/psr7": "^1.7",
@@ -995,6 +1085,9 @@
 =======
                 "guzzlehttp/psr7": "^1.7 || ^2.0",
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "guzzlehttp/psr7": "^1.7",
+>>>>>>> origin/samuel.adewale
                 "php": "^7.2.5 || ^8.0",
                 "psr/http-client": "^1.0"
             },
@@ -1004,12 +1097,15 @@
             "require-dev": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                 "bamarni/composer-bin-plugin": "^1.4.1",
 >>>>>>> origin/Emmanuel.Akintola
 =======
                 "bamarni/composer-bin-plugin": "^1.4.1",
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "ext-curl": "*",
                 "php-http/client-integration-tests": "^3.0",
                 "phpunit/phpunit": "^8.5.5 || ^9.3.5",
@@ -1025,6 +1121,7 @@
                 "branch-alias": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "dev-master": "7.1-dev"
 =======
                     "dev-master": "7.3-dev"
@@ -1032,6 +1129,9 @@
 =======
                     "dev-master": "7.3-dev"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                    "dev-master": "7.1-dev"
+>>>>>>> origin/samuel.adewale
                 }
             },
             "autoload": {
@@ -1073,6 +1173,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -1084,6 +1185,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/GrahamCampbell",
@@ -1104,6 +1207,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-10T11:47:56+00:00"
         },
         {
@@ -1118,6 +1224,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/guzzle/promises/zipball/60d379c243457e073cff02bc323a2a86cb355631",
                 "reference": "60d379c243457e073cff02bc323a2a86cb355631",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -1139,6 +1246,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -1178,6 +1287,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-09-30T07:37:28+00:00"
         },
         {
@@ -1205,6 +1317,7 @@
             "require-dev": {
                 "ext-zlib": "*",
                 "phpunit/phpunit": "~4.8.36 || ^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.5.8 || ^9.3.10"
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -1246,6 +1359,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             },
             "suggest": {
                 "laminas/laminas-httphandlerrunner": "Emit PSR-7 responses"
@@ -1255,6 +1370,7 @@
                 "branch-alias": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "dev-master": "1.7-dev"
 =======
                     "dev-master": "2.0-dev"
@@ -1262,6 +1378,9 @@
 =======
                     "dev-master": "2.0-dev"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                    "dev-master": "1.7-dev"
+>>>>>>> origin/samuel.adewale
                 }
             },
             "autoload": {
@@ -1269,16 +1388,22 @@
                     "GuzzleHttp\\Psr7\\": "src/"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
                 },
                 "files": [
                     "src/functions_include.php"
                 ]
+<<<<<<< HEAD
 =======
                 }
 >>>>>>> origin/Emmanuel.Akintola
 =======
                 }
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1295,6 +1420,7 @@
                     "homepage": "https://github.com/Tobion"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -1307,6 +1433,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 }
             ],
             "description": "PSR-7 message implementation that also provides common utility methods",
@@ -1322,6 +1450,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2020-09-30T07:37:11+00:00"
 =======
 =======
@@ -1335,6 +1464,9 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "time": "2020-09-30T07:37:11+00:00"
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "infyomlabs/adminlte-templates",
@@ -1344,12 +1476,16 @@
                 "url": "https://github.com/InfyOmLabs/adminlte-templates.git",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
                 "reference": "4c04b8c2adade3459d276156ad14223467cc0df4"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/InfyOmLabs/adminlte-templates/zipball/4c04b8c2adade3459d276156ad14223467cc0df4",
                 "reference": "4c04b8c2adade3459d276156ad14223467cc0df4",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -1363,10 +1499,13 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": "^8.0",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 "php": "^7.3"
@@ -1376,6 +1515,9 @@
 =======
                 "php": "^7.3|^8.0"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "php": "^7.3"
+>>>>>>> origin/samuel.adewale
             },
             "type": "library",
             "extra": {
@@ -1411,6 +1553,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2020-09-13T04:08:04+00:00"
 =======
 =======
@@ -1430,6 +1573,9 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "time": "2020-09-13T04:08:04+00:00"
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "infyomlabs/generator-builder",
@@ -1439,12 +1585,16 @@
                 "url": "https://github.com/InfyOmLabs/generator-builder.git",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
                 "reference": "33fe2f154eb4dfc6430de8efa04c81b49eb47ba8"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/InfyOmLabs/generator-builder/zipball/33fe2f154eb4dfc6430de8efa04c81b49eb47ba8",
                 "reference": "33fe2f154eb4dfc6430de8efa04c81b49eb47ba8",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -1458,6 +1608,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -1466,12 +1618,15 @@
             },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "default-branch": true,
 >>>>>>> origin/Emmanuel.Akintola
 =======
             "default-branch": true,
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "type": "library",
             "extra": {
                 "laravel": {
@@ -1508,6 +1663,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2020-08-05T03:59:37+00:00"
 =======
 =======
@@ -1527,6 +1683,9 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "time": "2020-08-05T03:59:37+00:00"
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "infyomlabs/laravel-generator",
@@ -1536,12 +1695,16 @@
                 "url": "https://github.com/InfyOmLabs/laravel-generator.git",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
                 "reference": "2b7263684a5437847bbee075c0436b46ef526516"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/InfyOmLabs/laravel-generator/zipball/2b7263684a5437847bbee075c0436b46ef526516",
                 "reference": "2b7263684a5437847bbee075c0436b46ef526516",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -1555,6 +1718,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -1562,11 +1727,15 @@
                 "laracasts/flash": "^3.2",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
                 "php": "^7.3"
             },
             "require-dev": {
                 "mockery/mockery": "^1.3.1",
                 "phpunit/phpunit": "^9.0"
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -1579,6 +1748,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             },
             "type": "library",
             "extra": {
@@ -1622,6 +1793,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://opencollective.com/infyomlabs",
@@ -1629,6 +1803,7 @@
                 }
             ],
             "time": "2020-09-13T07:19:03+00:00"
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -1647,6 +1822,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "laracasts/flash",
@@ -1702,6 +1879,7 @@
             "description": "Easy flash notifications",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -1713,12 +1891,17 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-09-07T13:25:35+00:00"
         },
         {
             "name": "laravel/framework",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "version": "v8.15.0",
             "source": {
                 "type": "git",
@@ -1729,6 +1912,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/22e4182fa0885dea3772106c3b6df705b7c7363e",
                 "reference": "22e4182fa0885dea3772106c3b6df705b7c7363e",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -1746,6 +1930,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -1757,6 +1943,7 @@
                 "ext-openssl": "*",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "league/commonmark": "^1.3",
 =======
                 "league/commonmark": "^1.3|^2.0",
@@ -1764,6 +1951,9 @@
 =======
                 "league/commonmark": "^1.3|^2.0",
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "league/commonmark": "^1.3",
+>>>>>>> origin/samuel.adewale
                 "league/flysystem": "^1.1",
                 "monolog/monolog": "^2.0",
                 "nesbot/carbon": "^2.31",
@@ -1775,6 +1965,9 @@
                 "swiftmailer/swiftmailer": "^6.0",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
                 "symfony/console": "^5.1",
                 "symfony/error-handler": "^5.1",
                 "symfony/finder": "^5.1",
@@ -1784,6 +1977,7 @@
                 "symfony/process": "^5.1",
                 "symfony/routing": "^5.1",
                 "symfony/var-dumper": "^5.1",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -1800,6 +1994,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "tijsverkoyen/css-to-inline-styles": "^2.2.2",
                 "vlucas/phpdotenv": "^5.2",
                 "voku/portable-ascii": "^1.4.8"
@@ -1846,6 +2042,7 @@
             "require-dev": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "aws/aws-sdk-php": "^3.0",
 =======
                 "aws/aws-sdk-php": "^3.155",
@@ -1853,6 +2050,9 @@
 =======
                 "aws/aws-sdk-php": "^3.155",
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "aws/aws-sdk-php": "^3.0",
+>>>>>>> origin/samuel.adewale
                 "doctrine/dbal": "^2.6|^3.0",
                 "filp/whoops": "^2.8",
                 "guzzlehttp/guzzle": "^6.5.5|^7.0.1",
@@ -1860,6 +2060,9 @@
                 "mockery/mockery": "^1.4.2",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
                 "orchestra/testbench-core": "^6.5",
                 "pda/pheanstalk": "^4.0",
                 "phpunit/phpunit": "^8.5.8|^9.3.3",
@@ -1868,6 +2071,7 @@
             },
             "suggest": {
                 "aws/aws-sdk-php": "Required to use the SQS queue driver, DynamoDb failed job storage and SES mail driver (^3.0).",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -1884,6 +2088,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "doctrine/dbal": "Required to rename columns and drop SQLite columns (^2.6|^3.0).",
                 "ext-ftp": "Required to use the Flysystem FTP driver.",
                 "ext-gd": "Required to use Illuminate\\Http\\Testing\\FileFactory::image().",
@@ -1906,6 +2112,7 @@
                 "psr/http-message": "Required to allow Storage::put to accept a StreamInterface (^1.0).",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (^4.0).",
                 "symfony/cache": "Required to PSR-6 cache bridge (^5.1).",
                 "symfony/filesystem": "Required to enable support for relative symbolic links (^5.1).",
@@ -1919,6 +2126,11 @@
                 "symfony/cache": "Required to PSR-6 cache bridge (^5.1.4).",
                 "symfony/filesystem": "Required to enable support for relative symbolic links (^5.1.4).",
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (^4.0).",
+                "symfony/cache": "Required to PSR-6 cache bridge (^5.1).",
+                "symfony/filesystem": "Required to enable support for relative symbolic links (^5.1).",
+>>>>>>> origin/samuel.adewale
                 "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^2.0).",
                 "wildbit/swiftmailer-postmark": "Required to use Postmark mail driver (^3.0)."
             },
@@ -1961,6 +2173,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-11-17T14:53:20+00:00"
         },
         {
@@ -1975,6 +2190,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/tinker/zipball/45884b526e10a88a1b179fa1a1a24d5468c668c2",
                 "reference": "45884b526e10a88a1b179fa1a1a24d5468c668c2",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -2000,6 +2216,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -2052,6 +2270,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-29T13:07:12+00:00"
         },
         {
@@ -2072,6 +2293,7 @@
                 "illuminate/console": "^8.0",
                 "illuminate/filesystem": "^8.0",
                 "illuminate/support": "^8.0",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -2104,6 +2326,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "php": "^7.3|^8.0"
             },
             "type": "library",
@@ -2140,6 +2364,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-11-03T19:51:21+00:00"
         },
         {
@@ -2154,6 +2381,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/LaravelCollective/html/zipball/3bb99be7502feb2129b375cd026ccb0fa4b66628",
                 "reference": "3bb99be7502feb2129b375cd026ccb0fa4b66628",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -2178,6 +2406,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -2193,6 +2423,7 @@
                 "mockery/mockery": "~1.0",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "phpunit/phpunit": "~7.1"
 =======
                 "phpunit/phpunit": "~8.5"
@@ -2200,10 +2431,14 @@
 =======
                 "phpunit/phpunit": "~8.5"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "phpunit/phpunit": "~7.1"
+>>>>>>> origin/samuel.adewale
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     "dev-master": "6.0-dev"
@@ -2213,6 +2448,9 @@
 =======
                     "dev-master": "6.x-dev"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                    "dev-master": "6.0-dev"
+>>>>>>> origin/samuel.adewale
                 },
                 "laravel": {
                     "providers": [
@@ -2250,6 +2488,9 @@
             "homepage": "https://laravelcollective.com",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-09-07T19:59:40+00:00"
         },
         {
@@ -2264,6 +2505,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/11df9b36fd4f1d2b727a73bf14931d81373b9a54",
                 "reference": "11df9b36fd4f1d2b727a73bf14931d81373b9a54",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -2289,6 +2531,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -2308,6 +2552,7 @@
                 "mikehaertl/php-shellcommand": "^1.4",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "phpstan/phpstan": "^0.12",
 =======
                 "phpstan/phpstan": "^0.12.90",
@@ -2315,6 +2560,9 @@
 =======
                 "phpstan/phpstan": "^0.12.90",
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "phpstan/phpstan": "^0.12",
+>>>>>>> origin/samuel.adewale
                 "phpunit/phpunit": "^7.5 || ^8.5 || ^9.2",
                 "scrutinizer/ocular": "^1.5",
                 "symfony/finder": "^4.2"
@@ -2354,6 +2602,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -2367,6 +2616,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://enjoy.gitstore.app/repositories/thephpleague/commonmark",
@@ -2395,6 +2646,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-31T13:49:32+00:00"
         },
         {
@@ -2409,6 +2663,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/9be3b16c877d477357c015cec057548cf9b2a14a",
                 "reference": "9be3b16c877d477357c015cec057548cf9b2a14a",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -2430,6 +2685,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -2447,11 +2704,15 @@
             "suggest": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "ext-fileinfo": "Required for MimeType",
 =======
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "ext-fileinfo": "Required for MimeType",
+>>>>>>> origin/samuel.adewale
                 "ext-ftp": "Allows you to use FTP server storage",
                 "ext-openssl": "Allows you to use FTPS server storage",
                 "league/flysystem-aws-s3-v2": "Allows you to use S3 storage with AWS SDK v2",
@@ -2509,6 +2770,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -2520,6 +2782,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://offset.earth/frankdejonge",
@@ -2528,6 +2792,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-08-23T07:39:11+00:00"
         },
         {
@@ -2542,6 +2809,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/353f66d7555d8a90781f6f5e7091932f9a4250aa",
                 "reference": "353f66d7555d8a90781f6f5e7091932f9a4250aa",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -2563,6 +2831,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -2570,6 +2840,7 @@
                 "php": "^7.2 || ^8.0"
             },
             "require-dev": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 "phpstan/phpstan": "^0.12.36",
@@ -2584,6 +2855,10 @@
                 "phpstan/phpstan": "^0.12.68",
                 "phpunit/phpunit": "^8.5.8 || ^9.3"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "phpstan/phpstan": "^0.12.36",
+                "phpunit/phpunit": "^8.5.8"
+>>>>>>> origin/samuel.adewale
             },
             "type": "library",
             "autoload": {
@@ -2604,6 +2879,7 @@
             "description": "Mime-type detection for Flysystem",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -2615,6 +2891,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/frankdejonge",
@@ -2627,6 +2905,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-18T11:50:25+00:00"
         },
         {
@@ -2641,6 +2922,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/a3e56f1a60e49f21798fd242a3b3d2f4051eeda7",
                 "reference": "a3e56f1a60e49f21798fd242a3b3d2f4051eeda7",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -2662,10 +2944,13 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 "illuminate/support": "5.5.*|5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0",
@@ -2681,6 +2966,11 @@
                 "php": "^7.0|^8.0",
                 "phpoffice/phpspreadsheet": "^1.18"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "illuminate/support": "5.5.*|5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0",
+                "php": "^7.0",
+                "phpoffice/phpspreadsheet": "^1.14"
+>>>>>>> origin/samuel.adewale
             },
             "require-dev": {
                 "orchestra/testbench": "^6.0",
@@ -2726,6 +3016,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -2737,6 +3028,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://laravel-excel.com/commercial-support",
@@ -2749,6 +3042,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2020-11-13T10:37:36+00:00"
 =======
             "time": "2021-07-08T10:11:21+00:00"
@@ -2756,6 +3050,9 @@
 =======
             "time": "2021-07-08T10:11:21+00:00"
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "time": "2020-11-13T10:37:36+00:00"
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "maennchen/zipstream-php",
@@ -2818,6 +3115,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -2829,6 +3127,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://opencollective.com/zipstream",
@@ -2841,6 +3141,9 @@
             "name": "markbaker/complex",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "version": "2.0.0",
             "source": {
                 "type": "git",
@@ -2851,6 +3154,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/MarkBaker/PHPComplex/zipball/9999f1432fae467bc93c53f357105b4c31bb994c",
                 "reference": "9999f1432fae467bc93c53f357105b4c31bb994c",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -2868,6 +3172,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -2878,17 +3184,23 @@
                 "phpcompatibility/php-compatibility": "^9.0",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
                 "phpdocumentor/phpdocumentor": "2.*",
                 "phploc/phploc": "^4.0",
                 "phpmd/phpmd": "2.*",
                 "phpunit/phpunit": "^7.0 || ^8.0 || ^9.3",
                 "sebastian/phpcpd": "^4.0",
+<<<<<<< HEAD
 =======
                 "phpunit/phpunit": "^7.0 || ^8.0 || ^9.3",
 >>>>>>> origin/Emmanuel.Akintola
 =======
                 "phpunit/phpunit": "^7.0 || ^8.0 || ^9.3",
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "squizlabs/php_codesniffer": "^3.4"
             },
             "type": "library",
@@ -2959,6 +3271,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-08-26T10:42:07+00:00"
         },
         {
@@ -2977,6 +3292,7 @@
             },
             "require": {
                 "php": "^7.2 || ^8.0"
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -3006,6 +3322,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             },
             "require-dev": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
@@ -3025,6 +3343,9 @@
                 "files": [
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
                     "classes/src/functions/adjoint.php",
                     "classes/src/functions/antidiagonal.php",
                     "classes/src/functions/cofactors.php",
@@ -3041,6 +3362,7 @@
                     "classes/src/operations/multiply.php",
                     "classes/src/operations/divideby.php",
                     "classes/src/operations/divideinto.php"
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -3064,6 +3386,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3085,6 +3409,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-08-28T17:11:00+00:00"
         },
         {
@@ -3099,6 +3426,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/Seldaek/monolog/zipball/f9eee5cec93dfb313a38b6b288741e84e53f02d5",
                 "reference": "f9eee5cec93dfb313a38b6b288741e84e53f02d5",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -3124,6 +3452,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -3138,6 +3468,9 @@
                 "doctrine/couchdb": "~1.0@dev",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
                 "elasticsearch/elasticsearch": "^6.0",
                 "graylog2/gelf-php": "^1.4.2",
                 "php-amqplib/php-amqplib": "~2.4",
@@ -3148,6 +3481,7 @@
                 "predis/predis": "^1.1",
                 "rollbar/rollbar": "^1.3",
                 "ruflin/elastica": ">=0.90 <3.0",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -3166,6 +3500,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "swiftmailer/swiftmailer": "^5.3|^6.0"
             },
             "suggest": {
@@ -3187,6 +3523,7 @@
                 "branch-alias": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "dev-master": "2.x-dev"
 =======
                     "dev-main": "2.x-dev"
@@ -3194,6 +3531,9 @@
 =======
                     "dev-main": "2.x-dev"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                    "dev-master": "2.x-dev"
+>>>>>>> origin/samuel.adewale
                 }
             },
             "autoload": {
@@ -3211,11 +3551,15 @@
                     "email": "j.boggiano@seld.be",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
                     "homepage": "http://seld.be"
                 }
             ],
             "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
             "homepage": "http://github.com/Seldaek/monolog",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -3228,11 +3572,14 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "keywords": [
                 "log",
                 "logging",
                 "psr-3"
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -3246,6 +3593,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/Seldaek",
@@ -3258,6 +3607,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-07-23T08:41:23+00:00"
         },
         {
@@ -3272,6 +3624,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/myclabs/php-enum/zipball/d178027d1e679832db9f38248fcc7200647dc2b7",
                 "reference": "d178027d1e679832db9f38248fcc7200647dc2b7",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -3293,18 +3646,24 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
                 "php": ">=7.1"
             },
             "require-dev": {
                 "phpunit/phpunit": "^7",
                 "squizlabs/php_codesniffer": "1.*",
                 "vimeo/psalm": "^3.8"
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -3318,6 +3677,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             },
             "type": "library",
             "autoload": {
@@ -3342,6 +3703,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -3353,6 +3715,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/mnapoli",
@@ -3365,6 +3729,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-11-14T18:14:52+00:00"
         },
         {
@@ -3379,6 +3746,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/c4a9caf97cfc53adfc219043bcecf42bc663acee",
                 "reference": "c4a9caf97cfc53adfc219043bcecf42bc663acee",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -3400,6 +3768,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -3416,6 +3786,7 @@
                 "phpstan/extension-installer": "^1.0",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "phpstan/phpstan": "^0.12.35",
                 "phpunit/phpunit": "^7.5 || ^8.0",
 =======
@@ -3426,6 +3797,10 @@
                 "phpstan/phpstan": "^0.12.54",
                 "phpunit/phpunit": "^7.5.20 || ^8.5.14",
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "phpstan/phpstan": "^0.12.35",
+                "phpunit/phpunit": "^7.5 || ^8.0",
+>>>>>>> origin/samuel.adewale
                 "squizlabs/php_codesniffer": "^3.4"
             },
             "bin": [
@@ -3463,6 +3838,9 @@
                     "email": "brian@nesbot.com",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
                     "homepage": "http://nesbot.com"
                 },
                 {
@@ -3472,6 +3850,7 @@
             ],
             "description": "An API extension for DateTime that supports 281 different languages.",
             "homepage": "http://carbon.nesbot.com",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -3488,11 +3867,14 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "keywords": [
                 "date",
                 "datetime",
                 "time"
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -3506,6 +3888,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://opencollective.com/Carbon",
@@ -3518,6 +3902,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-23T06:02:30+00:00"
         },
         {
@@ -3532,6 +3919,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/658f1be311a230e0907f5dfe0213742aff0596de",
                 "reference": "658f1be311a230e0907f5dfe0213742aff0596de",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -3553,6 +3941,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -3593,6 +3983,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-09-26T10:30:38+00:00"
         },
         {
@@ -3607,6 +4000,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/opis/closure/zipball/943b5d70cc5ae7483f6aff6ff43d7e34592ca0f5",
                 "reference": "943b5d70cc5ae7483f6aff6ff43d7e34592ca0f5",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -3632,6 +4026,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -3681,6 +4077,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-11-07T02:01:34+00:00"
         },
         {
@@ -3695,6 +4094,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/a8e8068b31b8119e1daa5b1eb5715a3a8ea8305f",
                 "reference": "a8e8068b31b8119e1daa5b1eb5715a3a8ea8305f",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -3720,6 +4120,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -3738,10 +4140,14 @@
                 "ext-zlib": "*",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
                 "maennchen/zipstream-php": "^2.1",
                 "markbaker/complex": "^1.5|^2.0",
                 "markbaker/matrix": "^1.2|^2.0",
                 "php": "^7.2|^8.0",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -3754,6 +4160,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "psr/http-client": "^1.0",
                 "psr/http-factory": "^1.0",
                 "psr/simple-cache": "^1.0"
@@ -3761,12 +4169,16 @@
             "require-dev": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
                 "dompdf/dompdf": "^0.8.5",
                 "friendsofphp/php-cs-fixer": "^2.16",
                 "jpgraph/jpgraph": "^4.0",
                 "mpdf/mpdf": "^8.0",
                 "phpcompatibility/php-compatibility": "^9.3",
                 "phpunit/phpunit": "^8.5|^9.3",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -3783,6 +4195,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "squizlabs/php_codesniffer": "^3.5",
                 "tecnickcom/tcpdf": "^6.3"
             },
@@ -3836,6 +4250,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2020-10-11T13:20:59+00:00"
 =======
 =======
@@ -3849,6 +4264,9 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "time": "2020-10-11T13:20:59+00:00"
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "phpoption/phpoption",
@@ -3905,6 +4323,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -3916,6 +4335,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/GrahamCampbell",
@@ -3932,6 +4353,9 @@
             "name": "psr/container",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "version": "1.0.0",
             "source": {
                 "type": "git",
@@ -3953,6 +4377,7 @@
                     "dev-master": "1.0.x-dev"
                 }
             },
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -3976,6 +4401,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "autoload": {
                 "psr-4": {
                     "Psr\\Container\\": "src/"
@@ -3990,6 +4417,7 @@
                     "name": "PHP-FIG",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "homepage": "http://www.php-fig.org/"
 =======
                     "homepage": "https://www.php-fig.org/"
@@ -3997,6 +4425,9 @@
 =======
                     "homepage": "https://www.php-fig.org/"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                    "homepage": "http://www.php-fig.org/"
+>>>>>>> origin/samuel.adewale
                 }
             ],
             "description": "Common Container Interface (PHP FIG PSR-11)",
@@ -4008,6 +4439,7 @@
                 "container-interop",
                 "psr"
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2017-02-14T16:28:37+00:00"
@@ -4023,6 +4455,9 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "time": "2017-02-14T16:28:37+00:00"
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "psr/event-dispatcher",
@@ -4070,6 +4505,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -4081,6 +4517,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2019-01-08T18:20:26+00:00"
         },
         {
@@ -4132,6 +4570,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/php-fig/http-client/tree/master"
@@ -4142,6 +4581,8 @@
                 "source": "https://github.com/php-fig/http-client/tree/master"
             },
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-06-29T06:28:15+00:00"
         },
         {
@@ -4196,6 +4637,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/php-fig/http-factory/tree/master"
@@ -4206,6 +4648,8 @@
                 "source": "https://github.com/php-fig/http-factory/tree/master"
             },
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2019-04-30T12:38:16+00:00"
         },
         {
@@ -4258,6 +4702,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/php-fig/http-message/tree/master"
@@ -4268,12 +4713,17 @@
                 "source": "https://github.com/php-fig/http-message/tree/master"
             },
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2016-08-06T14:39:51+00:00"
         },
         {
             "name": "psr/log",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "version": "1.1.3",
             "source": {
                 "type": "git",
@@ -4284,6 +4734,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/php-fig/log/zipball/0f73288fd15629204f9d42b7055f72dacbe811fc",
                 "reference": "0f73288fd15629204f9d42b7055f72dacbe811fc",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -4301,6 +4752,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -4326,6 +4779,7 @@
                     "name": "PHP-FIG",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "homepage": "http://www.php-fig.org/"
 =======
                     "homepage": "https://www.php-fig.org/"
@@ -4333,6 +4787,9 @@
 =======
                     "homepage": "https://www.php-fig.org/"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                    "homepage": "http://www.php-fig.org/"
+>>>>>>> origin/samuel.adewale
                 }
             ],
             "description": "Common interface for logging libraries",
@@ -4342,6 +4799,7 @@
                 "psr",
                 "psr-3"
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2020-03-23T09:12:05+00:00"
@@ -4356,6 +4814,9 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "time": "2020-03-23T09:12:05+00:00"
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "psr/simple-cache",
@@ -4405,6 +4866,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/php-fig/simple-cache/tree/master"
@@ -4415,12 +4877,17 @@
                 "source": "https://github.com/php-fig/simple-cache/tree/master"
             },
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2017-10-23T01:57:42+00:00"
         },
         {
             "name": "psy/psysh",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "version": "v0.10.4",
             "source": {
                 "type": "git",
@@ -4435,6 +4902,7 @@
             },
             "require": {
                 "dnoegel/php-xdg-base-dir": "0.1.*",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -4455,6 +4923,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "ext-json": "*",
                 "ext-tokenizer": "*",
                 "nikic/php-parser": "~4.0|~3.0|~2.0|~1.3",
@@ -4481,6 +4951,7 @@
                 "branch-alias": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "dev-master": "0.10.x-dev"
 =======
                     "dev-main": "0.10.x-dev"
@@ -4488,6 +4959,9 @@
 =======
                     "dev-main": "0.10.x-dev"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                    "dev-master": "0.10.x-dev"
+>>>>>>> origin/samuel.adewale
                 }
             },
             "autoload": {
@@ -4519,6 +4993,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2020-05-03T19:32:03+00:00"
 =======
 =======
@@ -4532,6 +5007,9 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "time": "2020-05-03T19:32:03+00:00"
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "ralouphie/getallheaders",
@@ -4573,6 +5051,7 @@
             "description": "A polyfill for getallheaders.",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -4584,12 +5063,17 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2019-03-08T08:55:37+00:00"
         },
         {
             "name": "ramsey/collection",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "version": "1.1.1",
             "source": {
                 "type": "git",
@@ -4600,6 +5084,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/ramsey/collection/zipball/24d93aefb2cd786b7edd9f45b554aea20b28b9b1",
                 "reference": "24d93aefb2cd786b7edd9f45b554aea20b28b9b1",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -4617,6 +5102,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -4626,6 +5113,7 @@
                 "captainhook/captainhook": "^5.3",
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
                 "ergebnis/composer-normalize": "^2.6",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 "fzaninotto/faker": "^1.5",
@@ -4641,6 +5129,11 @@
                 "hamcrest/hamcrest-php": "^2",
                 "jangregor/phpstan-prophecy": "^0.8",
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "fzaninotto/faker": "^1.5",
+                "hamcrest/hamcrest-php": "^2",
+                "jangregor/phpstan-prophecy": "^0.6",
+>>>>>>> origin/samuel.adewale
                 "mockery/mockery": "^1.3",
                 "phpstan/extension-installer": "^1",
                 "phpstan/phpstan": "^0.12.32",
@@ -4648,11 +5141,15 @@
                 "phpstan/phpstan-phpunit": "^0.12.11",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
                 "phpunit/phpunit": "^8.5",
                 "psy/psysh": "^0.10.4",
                 "slevomat/coding-standard": "^6.3",
                 "squizlabs/php_codesniffer": "^3.5",
                 "vimeo/psalm": "^3.12.2"
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -4665,6 +5162,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             },
             "type": "library",
             "autoload": {
@@ -4694,6 +5193,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -4705,10 +5205,13 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/ramsey",
                     "type": "github"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 }
@@ -4728,6 +5231,11 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+                }
+            ],
+            "time": "2020-09-10T20:58:17+00:00"
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "ramsey/uuid",
@@ -4810,6 +5318,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -4822,6 +5331,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/ramsey",
@@ -4834,6 +5345,9 @@
             "name": "swiftmailer/swiftmailer",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "version": "v6.2.3",
             "source": {
                 "type": "git",
@@ -4848,6 +5362,7 @@
             },
             "require": {
                 "egulias/email-validator": "~2.0",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -4869,6 +5384,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "php": ">=7.0.0",
                 "symfony/polyfill-iconv": "^1.0",
                 "symfony/polyfill-intl-idn": "^1.10",
@@ -4877,12 +5394,16 @@
             "require-dev": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
                 "mockery/mockery": "~0.9.1",
                 "symfony/phpunit-bridge": "^3.4.19|^4.1.8"
             },
             "suggest": {
                 "ext-intl": "Needed to support internationalized email addresses",
                 "true/punycode": "Needed to support internationalized email addresses, if ext-intl is not installed"
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -4895,6 +5416,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             },
             "type": "library",
             "extra": {
@@ -4929,6 +5452,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2019-11-12T09:31:26+00:00"
         },
         {
@@ -4943,6 +5469,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/console/zipball/e0b2c29c0fa6a69089209bbe8fcff4df2a313d0e",
                 "reference": "e0b2c29c0fa6a69089209bbe8fcff4df2a313d0e",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -4990,6 +5517,12 @@
 =======
                 "symfony/deprecation-contracts": "^2.1",
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+>>>>>>> origin/samuel.adewale
                 "symfony/polyfill-mbstring": "~1.0",
                 "symfony/polyfill-php73": "^1.8",
                 "symfony/polyfill-php80": "^1.15",
@@ -5046,6 +5579,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
 =======
@@ -5066,6 +5600,10 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "description": "Symfony Console Component",
+            "homepage": "https://symfony.com",
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5082,6 +5620,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-24T12:01:57+00:00"
         },
         {
@@ -5096,6 +5637,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/css-selector/zipball/6cbebda22ffc0d4bb8fea0c1311c2ca54c4c8fa0",
                 "reference": "6cbebda22ffc0d4bb8fea0c1311c2ca54c4c8fa0",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -5117,6 +5659,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -5151,6 +5695,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
 =======
@@ -5165,6 +5710,10 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "description": "Symfony CssSelector Component",
+            "homepage": "https://symfony.com",
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5181,6 +5730,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-24T12:01:57+00:00"
         },
         {
@@ -5195,6 +5747,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/5fa56b4074d1ae755beb55617ddafe6f5d78f665",
                 "reference": "5fa56b4074d1ae755beb55617ddafe6f5d78f665",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -5216,6 +5769,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -5226,6 +5781,7 @@
                 "branch-alias": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "dev-master": "2.2-dev"
 =======
                     "dev-main": "2.4-dev"
@@ -5233,6 +5789,9 @@
 =======
                     "dev-main": "2.4-dev"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                    "dev-master": "2.2-dev"
+>>>>>>> origin/samuel.adewale
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -5262,6 +5821,7 @@
             "homepage": "https://symfony.com",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/deprecation-contracts/tree/v2.4.0"
@@ -5272,6 +5832,8 @@
                 "source": "https://github.com/symfony/deprecation-contracts/tree/v2.4.0"
             },
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5288,6 +5850,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-09-07T11:33:47+00:00"
         },
         {
@@ -5302,6 +5867,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/error-handler/zipball/a154f2b12fd1ec708559ba73ed58bd1304e55718",
                 "reference": "a154f2b12fd1ec708559ba73ed58bd1304e55718",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -5323,6 +5889,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -5361,6 +5929,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "description": "Symfony ErrorHandler Component",
             "homepage": "https://symfony.com",
 =======
@@ -5375,6 +5944,10 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "description": "Symfony ErrorHandler Component",
+            "homepage": "https://symfony.com",
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5391,6 +5964,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-24T12:01:57+00:00"
         },
         {
@@ -5405,6 +5981,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/26f4edae48c913fc183a3da0553fe63bdfbd361a",
                 "reference": "26f4edae48c913fc183a3da0553fe63bdfbd361a",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -5426,6 +6003,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -5480,6 +6059,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
 =======
@@ -5494,6 +6074,10 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "description": "Symfony EventDispatcher Component",
+            "homepage": "https://symfony.com",
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5510,6 +6094,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-24T12:01:57+00:00"
         },
         {
@@ -5524,6 +6111,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/event-dispatcher-contracts/zipball/0ba7d54483095a198fa51781bc608d17e84dffa2",
                 "reference": "0ba7d54483095a198fa51781bc608d17e84dffa2",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -5545,6 +6133,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -5559,6 +6149,7 @@
                 "branch-alias": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "dev-master": "2.2-dev"
 =======
                     "dev-main": "2.4-dev"
@@ -5566,6 +6157,9 @@
 =======
                     "dev-main": "2.4-dev"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                    "dev-master": "2.2-dev"
+>>>>>>> origin/samuel.adewale
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -5603,6 +6197,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/event-dispatcher-contracts/tree/v2.4.0"
@@ -5613,6 +6208,8 @@
                 "source": "https://github.com/symfony/event-dispatcher-contracts/tree/v2.4.0"
             },
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5629,6 +6226,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-09-07T11:33:47+00:00"
         },
         {
@@ -5643,6 +6243,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/finder/zipball/e70eb5a69c2ff61ea135a13d2266e8914a67b3a0",
                 "reference": "e70eb5a69c2ff61ea135a13d2266e8914a67b3a0",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -5664,6 +6265,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -5694,6 +6297,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
 =======
@@ -5708,6 +6312,10 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "description": "Symfony Finder Component",
+            "homepage": "https://symfony.com",
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5724,6 +6332,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-24T12:01:57+00:00"
         },
         {
@@ -5738,6 +6349,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/http-client-contracts/zipball/41db680a15018f9c1d4b23516059633ce280ca33",
                 "reference": "41db680a15018f9c1d4b23516059633ce280ca33",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -5759,6 +6371,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -5769,6 +6383,7 @@
             },
             "type": "library",
             "extra": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 "branch-version": "2.3",
@@ -5782,6 +6397,11 @@
                 "branch-alias": {
                     "dev-main": "2.4-dev"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "branch-version": "2.3",
+                "branch-alias": {
+                    "dev-main": "2.3-dev"
+>>>>>>> origin/samuel.adewale
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -5819,6 +6439,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/http-client-contracts/tree/v2.4.0"
@@ -5829,6 +6450,8 @@
                 "source": "https://github.com/symfony/http-client-contracts/tree/v2.4.0"
             },
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5845,6 +6468,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-14T17:08:19+00:00"
         },
         {
@@ -5859,6 +6485,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/http-foundation/zipball/a2860ec970404b0233ab1e59e0568d3277d32b6f",
                 "reference": "a2860ec970404b0233ab1e59e0568d3277d32b6f",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -5880,6 +6507,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -5922,6 +6551,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
 =======
@@ -5936,6 +6566,10 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "description": "Symfony HttpFoundation Component",
+            "homepage": "https://symfony.com",
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5952,6 +6586,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-24T12:01:57+00:00"
         },
         {
@@ -5966,6 +6603,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/http-kernel/zipball/a13b3c4d994a4fd051f4c6800c5e33c9508091dd",
                 "reference": "a13b3c4d994a4fd051f4c6800c5e33c9508091dd",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -5987,6 +6625,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -5998,6 +6638,7 @@
                 "symfony/http-client-contracts": "^1.1|^2",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "symfony/http-foundation": "^4.4|^5.0",
 =======
                 "symfony/http-foundation": "^5.3",
@@ -6005,6 +6646,9 @@
 =======
                 "symfony/http-foundation": "^5.3",
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "symfony/http-foundation": "^4.4|^5.0",
+>>>>>>> origin/samuel.adewale
                 "symfony/polyfill-ctype": "^1.8",
                 "symfony/polyfill-php73": "^1.9",
                 "symfony/polyfill-php80": "^1.15"
@@ -6016,6 +6660,7 @@
                 "symfony/console": "<4.4",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "symfony/dependency-injection": "<4.4",
 =======
                 "symfony/dependency-injection": "<5.3",
@@ -6023,6 +6668,9 @@
 =======
                 "symfony/dependency-injection": "<5.3",
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "symfony/dependency-injection": "<4.4",
+>>>>>>> origin/samuel.adewale
                 "symfony/doctrine-bridge": "<5.0",
                 "symfony/form": "<5.0",
                 "symfony/http-client": "<5.0",
@@ -6033,6 +6681,7 @@
                 "symfony/validator": "<5.0",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "twig/twig": "<2.4"
 =======
                 "twig/twig": "<2.13"
@@ -6040,11 +6689,15 @@
 =======
                 "twig/twig": "<2.13"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "twig/twig": "<2.4"
+>>>>>>> origin/samuel.adewale
             },
             "provide": {
                 "psr/log-implementation": "1.0"
             },
             "require-dev": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 "psr/cache": "~1.0",
@@ -6054,10 +6707,14 @@
 =======
                 "psr/cache": "^1.0|^2.0|^3.0",
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "psr/cache": "~1.0",
+>>>>>>> origin/samuel.adewale
                 "symfony/browser-kit": "^4.4|^5.0",
                 "symfony/config": "^5.0",
                 "symfony/console": "^4.4|^5.0",
                 "symfony/css-selector": "^4.4|^5.0",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 "symfony/dependency-injection": "^4.4|^5.0",
@@ -6067,6 +6724,9 @@
 =======
                 "symfony/dependency-injection": "^5.3",
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "symfony/dependency-injection": "^4.4|^5.0",
+>>>>>>> origin/samuel.adewale
                 "symfony/dom-crawler": "^4.4|^5.0",
                 "symfony/expression-language": "^4.4|^5.0",
                 "symfony/finder": "^4.4|^5.0",
@@ -6077,6 +6737,7 @@
                 "symfony/translation-contracts": "^1.1|^2",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "twig/twig": "^2.4|^3.0"
 =======
                 "twig/twig": "^2.13|^3.0.4"
@@ -6084,6 +6745,9 @@
 =======
                 "twig/twig": "^2.13|^3.0.4"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "twig/twig": "^2.4|^3.0"
+>>>>>>> origin/samuel.adewale
             },
             "suggest": {
                 "symfony/browser-kit": "",
@@ -6116,6 +6780,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
 =======
@@ -6130,6 +6795,10 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "description": "Symfony HttpKernel Component",
+            "homepage": "https://symfony.com",
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -6146,6 +6815,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-28T05:55:23+00:00"
         },
         {
@@ -6160,6 +6832,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/mime/zipball/f5485a92c24d4bcfc2f3fc648744fb398482ff1b",
                 "reference": "f5485a92c24d4bcfc2f3fc648744fb398482ff1b",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -6181,10 +6854,13 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2.5",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -6193,6 +6869,8 @@
 =======
                 "symfony/deprecation-contracts": "^2.1",
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "symfony/polyfill-intl-idn": "^1.10",
                 "symfony/polyfill-mbstring": "^1.0",
                 "symfony/polyfill-php80": "^1.15"
@@ -6200,11 +6878,15 @@
             "conflict": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
                 "symfony/mailer": "<4.4"
             },
             "require-dev": {
                 "egulias/email-validator": "^2.1.10",
                 "symfony/dependency-injection": "^4.4|^5.0"
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -6224,6 +6906,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             },
             "type": "library",
             "autoload": {
@@ -6250,6 +6934,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "description": "A library to manipulate MIME messages",
 =======
             "description": "Allows manipulating MIME messages",
@@ -6257,11 +6942,15 @@
 =======
             "description": "Allows manipulating MIME messages",
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "description": "A library to manipulate MIME messages",
+>>>>>>> origin/samuel.adewale
             "homepage": "https://symfony.com",
             "keywords": [
                 "mime",
                 "mime-type"
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -6274,6 +6963,8 @@
                 "source": "https://github.com/symfony/mime/tree/v5.3.2"
             },
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -6290,6 +6981,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-24T12:01:57+00:00"
         },
         {
@@ -6304,6 +6998,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/f4ba089a5b6366e453971d3aad5fe8e897b37f41",
                 "reference": "f4ba089a5b6366e453971d3aad5fe8e897b37f41",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -6325,6 +7020,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -6338,6 +7035,7 @@
                 "branch-alias": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "dev-main": "1.20-dev"
 =======
                     "dev-main": "1.23-dev"
@@ -6345,6 +7043,9 @@
 =======
                     "dev-main": "1.23-dev"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                    "dev-main": "1.20-dev"
+>>>>>>> origin/samuel.adewale
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -6383,6 +7084,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/polyfill-ctype/tree/v1.23.0"
@@ -6393,6 +7095,8 @@
                 "source": "https://github.com/symfony/polyfill-ctype/tree/v1.23.0"
             },
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -6409,6 +7113,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-23T14:02:19+00:00"
         },
         {
@@ -6423,6 +7130,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-iconv/zipball/c536646fdb4f29104dd26effc2fdcb9a5b085024",
                 "reference": "c536646fdb4f29104dd26effc2fdcb9a5b085024",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -6444,6 +7152,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -6457,6 +7167,7 @@
                 "branch-alias": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "dev-main": "1.20-dev"
 =======
                     "dev-main": "1.23-dev"
@@ -6464,6 +7175,9 @@
 =======
                     "dev-main": "1.23-dev"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                    "dev-main": "1.20-dev"
+>>>>>>> origin/samuel.adewale
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -6503,6 +7217,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/polyfill-iconv/tree/v1.23.0"
@@ -6513,6 +7228,8 @@
                 "source": "https://github.com/symfony/polyfill-iconv/tree/v1.23.0"
             },
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -6529,6 +7246,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-23T14:02:19+00:00"
         },
         {
@@ -6543,6 +7263,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/c7cf3f858ec7d70b89559d6e6eb1f7c2517d479c",
                 "reference": "c7cf3f858ec7d70b89559d6e6eb1f7c2517d479c",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -6564,6 +7285,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -6577,6 +7300,7 @@
                 "branch-alias": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "dev-main": "1.20-dev"
 =======
                     "dev-main": "1.23-dev"
@@ -6584,6 +7308,9 @@
 =======
                     "dev-main": "1.23-dev"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                    "dev-main": "1.20-dev"
+>>>>>>> origin/samuel.adewale
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -6624,6 +7351,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.23.0"
@@ -6634,6 +7362,8 @@
                 "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.23.0"
             },
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -6650,6 +7380,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-23T14:02:19+00:00"
         },
         {
@@ -6664,6 +7397,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/3b75acd829741c768bc8b1f84eb33265e7cc5117",
                 "reference": "3b75acd829741c768bc8b1f84eb33265e7cc5117",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -6685,6 +7419,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -6700,6 +7436,7 @@
                 "branch-alias": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "dev-main": "1.20-dev"
 =======
                     "dev-main": "1.23-dev"
@@ -6707,6 +7444,9 @@
 =======
                     "dev-main": "1.23-dev"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                    "dev-main": "1.20-dev"
+>>>>>>> origin/samuel.adewale
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -6751,6 +7491,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/polyfill-intl-idn/tree/v1.23.0"
@@ -6761,6 +7502,8 @@
                 "source": "https://github.com/symfony/polyfill-intl-idn/tree/v1.23.0"
             },
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -6777,6 +7520,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-23T14:02:19+00:00"
         },
         {
@@ -6791,6 +7537,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/727d1096295d807c309fb01a851577302394c897",
                 "reference": "727d1096295d807c309fb01a851577302394c897",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -6812,6 +7559,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -6825,6 +7574,7 @@
                 "branch-alias": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "dev-main": "1.20-dev"
 =======
                     "dev-main": "1.23-dev"
@@ -6832,6 +7582,9 @@
 =======
                     "dev-main": "1.23-dev"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                    "dev-main": "1.20-dev"
+>>>>>>> origin/samuel.adewale
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -6875,6 +7628,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.23.0"
@@ -6885,6 +7639,8 @@
                 "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.23.0"
             },
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -6901,6 +7657,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-23T14:02:19+00:00"
         },
         {
@@ -6915,6 +7674,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/39d483bdf39be819deabf04ec872eb0b2410b531",
                 "reference": "39d483bdf39be819deabf04ec872eb0b2410b531",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -6936,6 +7696,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -6949,6 +7711,7 @@
                 "branch-alias": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "dev-main": "1.20-dev"
 =======
                     "dev-main": "1.23-dev"
@@ -6956,6 +7719,9 @@
 =======
                     "dev-main": "1.23-dev"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                    "dev-main": "1.20-dev"
+>>>>>>> origin/samuel.adewale
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -6995,6 +7761,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.23.0"
@@ -7005,6 +7772,8 @@
                 "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.23.0"
             },
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -7021,6 +7790,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-23T14:02:19+00:00"
         },
         {
@@ -7035,6 +7807,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/cede45fcdfabdd6043b3592e83678e42ec69e930",
                 "reference": "cede45fcdfabdd6043b3592e83678e42ec69e930",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -7056,6 +7829,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -7066,6 +7841,7 @@
                 "branch-alias": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "dev-main": "1.20-dev"
 =======
                     "dev-main": "1.23-dev"
@@ -7073,6 +7849,9 @@
 =======
                     "dev-main": "1.23-dev"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                    "dev-main": "1.20-dev"
+>>>>>>> origin/samuel.adewale
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -7111,6 +7890,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/polyfill-php72/tree/v1.23.0"
@@ -7121,6 +7901,8 @@
                 "source": "https://github.com/symfony/polyfill-php72/tree/v1.23.0"
             },
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -7137,6 +7919,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-23T14:02:19+00:00"
         },
         {
@@ -7151,6 +7936,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/8ff431c517be11c78c48a39a66d37431e26a6bed",
                 "reference": "8ff431c517be11c78c48a39a66d37431e26a6bed",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -7172,6 +7958,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -7182,6 +7970,7 @@
                 "branch-alias": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "dev-main": "1.20-dev"
 =======
                     "dev-main": "1.23-dev"
@@ -7189,6 +7978,9 @@
 =======
                     "dev-main": "1.23-dev"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                    "dev-main": "1.20-dev"
+>>>>>>> origin/samuel.adewale
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -7230,6 +8022,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/polyfill-php73/tree/v1.23.0"
@@ -7240,6 +8033,8 @@
                 "source": "https://github.com/symfony/polyfill-php73/tree/v1.23.0"
             },
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -7256,6 +8051,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-23T14:02:19+00:00"
         },
         {
@@ -7270,6 +8068,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/e70aa8b064c5b72d3df2abd5ab1e90464ad009de",
                 "reference": "e70aa8b064c5b72d3df2abd5ab1e90464ad009de",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -7291,6 +8090,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -7301,6 +8102,7 @@
                 "branch-alias": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "dev-main": "1.20-dev"
 =======
                     "dev-main": "1.23-dev"
@@ -7308,6 +8110,9 @@
 =======
                     "dev-main": "1.23-dev"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                    "dev-main": "1.20-dev"
+>>>>>>> origin/samuel.adewale
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -7353,6 +8158,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/polyfill-php80/tree/v1.23.0"
@@ -7363,6 +8169,8 @@
                 "source": "https://github.com/symfony/polyfill-php80/tree/v1.23.0"
             },
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -7379,6 +8187,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-23T14:02:19+00:00"
         },
         {
@@ -7393,6 +8204,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/process/zipball/f00872c3f6804150d6a0f73b4151daab96248101",
                 "reference": "f00872c3f6804150d6a0f73b4151daab96248101",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -7414,6 +8226,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -7445,6 +8259,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
 =======
@@ -7459,6 +8274,10 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "description": "Symfony Process Component",
+            "homepage": "https://symfony.com",
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -7470,11 +8289,17 @@
                 },
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-24T12:01:57+00:00"
         },
         {
@@ -7489,6 +8314,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/routing/zipball/d6ceee2a37b61b41079005207bf37746d1bfe71f",
                 "reference": "d6ceee2a37b61b41079005207bf37746d1bfe71f",
+<<<<<<< HEAD
 =======
 =======
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
@@ -7514,6 +8340,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -7522,6 +8350,7 @@
                 "symfony/polyfill-php80": "^1.15"
             },
             "conflict": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 "symfony/config": "<5.0",
@@ -7533,10 +8362,14 @@
                 "doctrine/annotations": "<1.12",
                 "symfony/config": "<5.3",
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "symfony/config": "<5.0",
+>>>>>>> origin/samuel.adewale
                 "symfony/dependency-injection": "<4.4",
                 "symfony/yaml": "<4.4"
             },
             "require-dev": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 "doctrine/annotations": "~1.2",
@@ -7552,6 +8385,11 @@
                 "psr/log": "~1.0",
                 "symfony/config": "^5.3",
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "doctrine/annotations": "~1.2",
+                "psr/log": "~1.0",
+                "symfony/config": "^5.0",
+>>>>>>> origin/samuel.adewale
                 "symfony/dependency-injection": "^4.4|^5.0",
                 "symfony/expression-language": "^4.4|^5.0",
                 "symfony/http-foundation": "^4.4|^5.0",
@@ -7560,11 +8398,15 @@
             "suggest": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "doctrine/annotations": "For using the annotation loader",
 =======
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "doctrine/annotations": "For using the annotation loader",
+>>>>>>> origin/samuel.adewale
                 "symfony/config": "For using the all-in-one router or any loader",
                 "symfony/expression-language": "For using expression matching",
                 "symfony/http-foundation": "For using a Symfony Request object",
@@ -7595,6 +8437,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "description": "Symfony Routing Component",
 =======
             "description": "Maps an HTTP request to a set of configuration variables",
@@ -7602,6 +8445,9 @@
 =======
             "description": "Maps an HTTP request to a set of configuration variables",
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "description": "Symfony Routing Component",
+>>>>>>> origin/samuel.adewale
             "homepage": "https://symfony.com",
             "keywords": [
                 "router",
@@ -7611,6 +8457,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/routing/tree/v5.3.0"
@@ -7621,6 +8468,8 @@
                 "source": "https://github.com/symfony/routing/tree/v5.3.0"
             },
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -7637,6 +8486,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-24T12:01:57+00:00"
         },
         {
@@ -7651,6 +8503,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/service-contracts/zipball/d15da7ba4957ffb8f1747218be9e1a121fd298a1",
                 "reference": "d15da7ba4957ffb8f1747218be9e1a121fd298a1",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -7672,10 +8525,13 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2.5",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 "psr/container": "^1.0"
@@ -7685,6 +8541,9 @@
 =======
                 "psr/container": "^1.1"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "psr/container": "^1.0"
+>>>>>>> origin/samuel.adewale
             },
             "suggest": {
                 "symfony/service-implementation": ""
@@ -7694,6 +8553,7 @@
                 "branch-alias": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "dev-master": "2.2-dev"
 =======
                     "dev-main": "2.4-dev"
@@ -7701,6 +8561,9 @@
 =======
                     "dev-main": "2.4-dev"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                    "dev-master": "2.2-dev"
+>>>>>>> origin/samuel.adewale
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -7738,6 +8601,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/service-contracts/tree/v2.4.0"
@@ -7748,6 +8612,8 @@
                 "source": "https://github.com/symfony/service-contracts/tree/v2.4.0"
             },
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -7764,6 +8630,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-09-07T11:33:47+00:00"
         },
         {
@@ -7778,6 +8647,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/string/zipball/a97573e960303db71be0dd8fda9be3bca5e0feea",
                 "reference": "a97573e960303db71be0dd8fda9be3bca5e0feea",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -7799,6 +8669,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -7843,6 +8715,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "description": "Symfony String component",
 =======
             "description": "Provides an object-oriented API to strings and deals with bytes, UTF-8 code points and grapheme clusters in a unified way",
@@ -7850,6 +8723,9 @@
 =======
             "description": "Provides an object-oriented API to strings and deals with bytes, UTF-8 code points and grapheme clusters in a unified way",
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "description": "Symfony String component",
+>>>>>>> origin/samuel.adewale
             "homepage": "https://symfony.com",
             "keywords": [
                 "grapheme",
@@ -7861,6 +8737,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/string/tree/v5.3.3"
@@ -7871,6 +8748,8 @@
                 "source": "https://github.com/symfony/string/tree/v5.3.3"
             },
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -7887,6 +8766,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-24T12:01:57+00:00"
         },
         {
@@ -7901,6 +8783,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/translation/zipball/27980838fd261e04379fa91e94e81e662fe5a1b6",
                 "reference": "27980838fd261e04379fa91e94e81e662fe5a1b6",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -7922,10 +8805,13 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2.5",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 "symfony/polyfill-mbstring": "~1.0",
@@ -7942,6 +8828,11 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "symfony/polyfill-mbstring": "~1.0",
+                "symfony/polyfill-php80": "^1.15",
+                "symfony/translation-contracts": "^2"
+>>>>>>> origin/samuel.adewale
             },
             "conflict": {
                 "symfony/config": "<4.4",
@@ -7953,6 +8844,7 @@
             "provide": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "symfony/translation-implementation": "2.0"
 =======
                 "symfony/translation-implementation": "2.3"
@@ -7960,6 +8852,9 @@
 =======
                 "symfony/translation-implementation": "2.3"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "symfony/translation-implementation": "2.0"
+>>>>>>> origin/samuel.adewale
             },
             "require-dev": {
                 "psr/log": "~1.0",
@@ -7971,12 +8866,15 @@
                 "symfony/intl": "^4.4|^5.0",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                 "symfony/polyfill-intl-icu": "^1.21",
 >>>>>>> origin/Emmanuel.Akintola
 =======
                 "symfony/polyfill-intl-icu": "^1.21",
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "symfony/service-contracts": "^1.1.2|^2",
                 "symfony/yaml": "^4.4|^5.0"
             },
@@ -7989,6 +8887,7 @@
             "autoload": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                 "files": [
                     "Resources/functions.php"
@@ -7999,6 +8898,8 @@
                     "Resources/functions.php"
                 ],
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "psr-4": {
                     "Symfony\\Component\\Translation\\": ""
                 },
@@ -8022,6 +8923,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
 =======
@@ -8036,6 +8938,10 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "description": "Symfony Translation Component",
+            "homepage": "https://symfony.com",
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -8052,6 +8958,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-24T12:01:57+00:00"
         },
         {
@@ -8066,6 +8975,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/e2eaa60b558f26a4b0354e1bbb25636efaaad105",
                 "reference": "e2eaa60b558f26a4b0354e1bbb25636efaaad105",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -8087,6 +8997,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -8100,6 +9012,7 @@
                 "branch-alias": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "dev-master": "2.3-dev"
 =======
                     "dev-main": "2.4-dev"
@@ -8107,6 +9020,9 @@
 =======
                     "dev-main": "2.4-dev"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                    "dev-master": "2.3-dev"
+>>>>>>> origin/samuel.adewale
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -8144,6 +9060,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             "support": {
                 "source": "https://github.com/symfony/translation-contracts/tree/v2.4.0"
@@ -8154,6 +9071,8 @@
                 "source": "https://github.com/symfony/translation-contracts/tree/v2.4.0"
             },
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -8170,6 +9089,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-09-28T13:05:58+00:00"
         },
         {
@@ -8184,6 +9106,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/var-dumper/zipball/4e13f3fcefb1fcaaa5efb5403581406f4e840b9a",
                 "reference": "4e13f3fcefb1fcaaa5efb5403581406f4e840b9a",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -8205,6 +9128,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -8222,6 +9147,7 @@
                 "symfony/process": "^4.4|^5.0",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "twig/twig": "^2.4|^3.0"
 =======
                 "twig/twig": "^2.13|^3.0.4"
@@ -8229,6 +9155,9 @@
 =======
                 "twig/twig": "^2.13|^3.0.4"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "twig/twig": "^2.4|^3.0"
+>>>>>>> origin/samuel.adewale
             },
             "suggest": {
                 "ext-iconv": "To convert non-UTF-8 strings to UTF-8 (or symfony/polyfill-iconv in case ext-iconv cannot be used).",
@@ -8266,6 +9195,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "description": "Symfony mechanism for exploring and dumping PHP variables",
 =======
             "description": "Provides mechanisms for walking through any arbitrary PHP variable",
@@ -8273,11 +9203,15 @@
 =======
             "description": "Provides mechanisms for walking through any arbitrary PHP variable",
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "description": "Symfony mechanism for exploring and dumping PHP variables",
+>>>>>>> origin/samuel.adewale
             "homepage": "https://symfony.com",
             "keywords": [
                 "debug",
                 "dump"
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -8290,6 +9224,8 @@
                 "source": "https://github.com/symfony/var-dumper/tree/v5.3.3"
             },
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -8306,6 +9242,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2020-10-27T10:11:13+00:00"
 =======
             "time": "2021-06-24T08:13:00+00:00"
@@ -8313,6 +9250,9 @@
 =======
             "time": "2021-06-24T08:13:00+00:00"
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "time": "2020-10-27T10:11:13+00:00"
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "thomaswelton/gravatarlib",
@@ -8369,6 +9309,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -8380,6 +9321,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2014-03-02T18:29:18+00:00"
         },
         {
@@ -8498,6 +9441,7 @@
             "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -8509,12 +9453,17 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-07-13T06:12:54+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "version": "v5.2.0",
             "source": {
                 "type": "git",
@@ -8525,6 +9474,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/fba64139db67123c7a57072e5f8d3db10d160b66",
                 "reference": "fba64139db67123c7a57072e5f8d3db10d160b66",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -8542,6 +9492,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -8558,6 +9510,7 @@
                 "ext-filter": "*",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "phpunit/phpunit": "^7.5.20 || ^8.5.2 || ^9.0"
 =======
                 "phpunit/phpunit": "^7.5.20 || ^8.5.14 || ^9.5.1"
@@ -8565,6 +9518,9 @@
 =======
                 "phpunit/phpunit": "^7.5.20 || ^8.5.14 || ^9.5.1"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "phpunit/phpunit": "^7.5.20 || ^8.5.2 || ^9.0"
+>>>>>>> origin/samuel.adewale
             },
             "suggest": {
                 "ext-filter": "Required to use the boolean validator."
@@ -8574,6 +9530,7 @@
                 "branch-alias": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "dev-master": "5.2-dev"
 =======
                     "dev-master": "5.3-dev"
@@ -8581,6 +9538,9 @@
 =======
                     "dev-master": "5.3-dev"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                    "dev-master": "5.2-dev"
+>>>>>>> origin/samuel.adewale
                 }
             },
             "autoload": {
@@ -8612,6 +9572,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -8623,6 +9584,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/GrahamCampbell",
@@ -8635,6 +9598,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2020-09-14T15:57:31+00:00"
 =======
             "time": "2021-01-20T15:23:13+00:00"
@@ -8642,6 +9606,9 @@
 =======
             "time": "2021-01-20T15:23:13+00:00"
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "time": "2020-09-14T15:57:31+00:00"
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "voku/portable-ascii",
@@ -8691,6 +9658,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -8702,6 +9670,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://www.paypal.me/moelleken",
@@ -8719,6 +9689,7 @@
                     "url": "https://www.patreon.com/voku",
                     "type": "patreon"
                 },
+<<<<<<< HEAD
                 {
                     "url": "https://tidelift.com/funding/github/packagist/voku/portable-ascii",
                     "type": "tidelift"
@@ -8816,6 +9787,27 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/voku/portable-ascii",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-11-12T00:07:28+00:00"
+        },
+        {
+            "name": "yajra/laravel-datatables-buttons",
+            "version": "v4.10.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yajra/laravel-datatables-buttons.git",
+                "reference": "ae234f48ebb5885d5ca3e4428fb8803a9621c4eb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables-buttons/zipball/ae234f48ebb5885d5ca3e4428fb8803a9621c4eb",
+                "reference": "ae234f48ebb5885d5ca3e4428fb8803a9621c4eb",
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -8868,6 +9860,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -8879,6 +9872,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://www.paypal.me/yajra",
@@ -8891,6 +9886,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-11-05T08:23:51+00:00"
         },
         {
@@ -8905,6 +9903,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/yajra/laravel-datatables-html/zipball/b51c7a6e036ea685b292e8fe92138cbc2ecc28cc",
                 "reference": "b51c7a6e036ea685b292e8fe92138cbc2ecc28cc",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -8926,10 +9925,13 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 "laravelcollective/html": "^5.4|^6|^7",
@@ -8942,6 +9944,10 @@
                 "laravelcollective/html": "^5.4|^6",
                 "php": "^7.1.3|^8",
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "laravelcollective/html": "^5.4|^6|^7",
+                "php": ">=7.0",
+>>>>>>> origin/samuel.adewale
                 "yajra/laravel-datatables-oracle": "~9.0"
             },
             "require-dev": {
@@ -8984,6 +9990,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -8995,6 +10002,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://www.paypal.me/yajra",
@@ -9007,6 +10016,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2020-11-14T06:56:53+00:00"
 =======
             "time": "2021-06-20T12:32:31+00:00"
@@ -9014,6 +10024,9 @@
 =======
             "time": "2021-06-20T12:32:31+00:00"
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "time": "2020-11-14T06:56:53+00:00"
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "yajra/laravel-datatables-oracle",
@@ -9086,6 +10099,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -9097,6 +10111,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://www.paypal.me/yajra",
@@ -9115,6 +10131,9 @@
             "name": "barryvdh/laravel-debugbar",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "version": "v3.5.1",
             "source": {
                 "type": "git",
@@ -9125,6 +10144,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/233c10688f4c1a6e66ed2ef123038b1363d1bedc",
                 "reference": "233c10688f4c1a6e66ed2ef123038b1363d1bedc",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -9142,6 +10162,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -9156,12 +10178,15 @@
             "require-dev": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                 "mockery/mockery": "^1.3.3",
 >>>>>>> origin/Emmanuel.Akintola
 =======
                 "mockery/mockery": "^1.3.3",
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "orchestra/testbench-dusk": "^4|^5|^6",
                 "phpunit/phpunit": "^8.5|^9.0",
                 "squizlabs/php_codesniffer": "^3.5"
@@ -9208,6 +10233,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "funding": [
                 {
 =======
@@ -9227,10 +10253,15 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "funding": [
+                {
+>>>>>>> origin/samuel.adewale
                     "url": "https://github.com/barryvdh",
                     "type": "github"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2020-09-07T19:32:39+00:00"
@@ -9240,6 +10271,9 @@
 =======
             "time": "2021-06-14T14:29:26+00:00"
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "time": "2020-09-07T19:32:39+00:00"
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "doctrine/instantiator",
@@ -9292,6 +10326,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -9303,6 +10338,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://www.doctrine-project.org/sponsorship.html",
@@ -9323,6 +10360,9 @@
             "name": "facade/flare-client-php",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "version": "1.3.7",
             "source": {
                 "type": "git",
@@ -9333,6 +10373,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/facade/flare-client-php/zipball/fd688d3c06658f2b3b5f7bb19f051ee4ddf02492",
                 "reference": "fd688d3c06658f2b3b5f7bb19f051ee4ddf02492",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -9350,6 +10391,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -9393,6 +10436,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -9404,6 +10448,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/spatie",
@@ -9412,6 +10458,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-21T16:02:39+00:00"
         },
         {
@@ -9426,6 +10475,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/facade/ignition/zipball/08668034beb185fa2ac6f09b1034eaa440952ace",
                 "reference": "08668034beb185fa2ac6f09b1034eaa440952ace",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -9447,11 +10497,14 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-mbstring": "*",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 "facade/flare-client-php": "^1.3.7",
@@ -9465,6 +10518,11 @@
                 "facade/flare-client-php": "^1.6",
                 "facade/ignition-contracts": "^1.0.2",
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "facade/flare-client-php": "^1.3.7",
+                "facade/ignition-contracts": "^1.0.2",
+                "filp/whoops": "^2.4",
+>>>>>>> origin/samuel.adewale
                 "illuminate/support": "^7.0|^8.0",
                 "monolog/monolog": "^2.0",
                 "php": "^7.2.5|^8.0",
@@ -9516,6 +10574,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2020-11-17T09:18:51+00:00"
 =======
 =======
@@ -9531,6 +10590,9 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "time": "2020-11-17T09:18:51+00:00"
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "facade/ignition-contracts",
@@ -9581,6 +10643,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -9592,12 +10655,17 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-16T08:27:54+00:00"
         },
         {
             "name": "filp/whoops",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "version": "2.9.1",
             "source": {
                 "type": "git",
@@ -9608,6 +10676,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/filp/whoops/zipball/307fb34a5ab697461ec4c9db865b20ff2fd40771",
                 "reference": "307fb34a5ab697461ec4c9db865b20ff2fd40771",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -9625,6 +10694,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -9674,6 +10745,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-11-01T12:00:00+00:00"
         },
         {
@@ -9688,6 +10762,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/fc10d778e4b84d5bd315dad194661e091d307c6f",
                 "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -9719,6 +10794,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -9757,6 +10834,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "abandoned": true,
             "time": "2019-12-12T13:22:17+00:00"
 =======
@@ -9772,6 +10850,10 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "abandoned": true,
+            "time": "2019-12-12T13:22:17+00:00"
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -9820,6 +10902,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -9831,12 +10914,17 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-07-09T08:09:16+00:00"
         },
         {
             "name": "maximebf/debugbar",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "version": "v1.16.3",
             "source": {
                 "type": "git",
@@ -9851,6 +10939,7 @@
             },
             "require": {
                 "php": "^7.1",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -9872,10 +10961,13 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "psr/log": "^1.0",
                 "symfony/var-dumper": "^2.6|^3|^4|^5"
             },
             "require-dev": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 "phpunit/phpunit": "^5"
@@ -9885,6 +10977,9 @@
 =======
                 "phpunit/phpunit": "^7.5.20 || ^9.4.2"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "phpunit/phpunit": "^5"
+>>>>>>> origin/samuel.adewale
             },
             "suggest": {
                 "kriswallsmith/assetic": "The best way to manage assets",
@@ -9925,6 +11020,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-05-06T07:06:27+00:00"
         },
         {
@@ -9939,6 +11037,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/mockery/mockery/zipball/20cab678faed06fac225193be281ea0fddb43b93",
                 "reference": "20cab678faed06fac225193be281ea0fddb43b93",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -9964,6 +11063,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -10020,6 +11121,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2020-08-11T18:10:13+00:00"
 =======
 =======
@@ -10033,6 +11135,9 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "time": "2020-08-11T18:10:13+00:00"
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "myclabs/deep-copy",
@@ -10082,6 +11187,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -10093,6 +11199,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://tidelift.com/funding/github/packagist/myclabs/deep-copy",
@@ -10105,6 +11213,9 @@
             "name": "nunomaduro/collision",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "version": "v5.1.0",
             "source": {
                 "type": "git",
@@ -10115,6 +11226,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/nunomaduro/collision/zipball/7c2b95589bf81e274e61e47f7672a1b2c3e06eaa",
                 "reference": "7c2b95589bf81e274e61e47f7672a1b2c3e06eaa",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -10132,6 +11244,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -10143,6 +11257,9 @@
             "require-dev": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
                 "fideloper/proxy": "^4.4.0",
                 "friendsofphp/php-cs-fixer": "^2.16.4",
                 "fruitcake/laravel-cors": "^2.0.1",
@@ -10153,6 +11270,7 @@
                 "orchestra/testbench": "^6.0",
                 "phpstan/phpstan": "^0.12.36",
                 "phpunit/phpunit": "^9.3.3"
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -10170,6 +11288,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             },
             "type": "library",
             "extra": {
@@ -10209,6 +11329,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -10220,6 +11341,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=66BYDWAT92N6L",
@@ -10236,6 +11359,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-29T14:50:40+00:00"
         },
         {
@@ -10250,6 +11376,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/phar-io/manifest/zipball/85265efd3af7ba3ca4b2a2c34dbfc5788dd29133",
                 "reference": "85265efd3af7ba3ca4b2a2c34dbfc5788dd29133",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -10271,6 +11398,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -10315,6 +11444,9 @@
             "description": "Component for reading phar.io manifest information from a PHP Archive (PHAR)",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-06-27T14:33:11+00:00"
         },
         {
@@ -10329,6 +11461,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/phar-io/version/zipball/c6bb6825def89e0a32220f88337f8ceaf1975fa0",
                 "reference": "c6bb6825def89e0a32220f88337f8ceaf1975fa0",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -10354,6 +11487,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -10389,6 +11524,7 @@
             "description": "Library for handling version information and constraints",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2020-06-27T14:39:04+00:00"
 =======
 =======
@@ -10402,6 +11538,9 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "time": "2020-06-27T14:39:04+00:00"
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -10452,6 +11591,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -10463,6 +11603,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-06-27T09:03:43+00:00"
         },
         {
@@ -10517,6 +11659,7 @@
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -10528,6 +11671,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-09-03T19:13:55+00:00"
         },
         {
@@ -10575,6 +11720,7 @@
             "description": "A PSR-5 based resolver of Class names, Types and Structural Element Names",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -10586,12 +11732,17 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-09-17T18:55:26+00:00"
         },
         {
             "name": "phpspec/prophecy",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "version": "1.12.1",
             "source": {
                 "type": "git",
@@ -10602,6 +11753,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/phpspec/prophecy/zipball/8ce87516be71aae9b956f81906aaf0338e0d8a2d",
                 "reference": "8ce87516be71aae9b956f81906aaf0338e0d8a2d",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -10619,6 +11771,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -10632,6 +11786,7 @@
                 "phpspec/phpspec": "^6.0",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "phpunit/phpunit": "^8.0 || ^9.0 <9.3"
 =======
                 "phpunit/phpunit": "^8.0 || ^9.0"
@@ -10639,6 +11794,9 @@
 =======
                 "phpunit/phpunit": "^8.0 || ^9.0"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "phpunit/phpunit": "^8.0 || ^9.0 <9.3"
+>>>>>>> origin/samuel.adewale
             },
             "type": "library",
             "extra": {
@@ -10678,6 +11836,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-09-29T09:10:42+00:00"
         },
         {
@@ -10692,6 +11853,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/6b20e2055f7c29b56cb3870b3de7cc463d7add41",
                 "reference": "6b20e2055f7c29b56cb3870b3de7cc463d7add41",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -10717,6 +11879,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -10732,6 +11896,7 @@
                 "sebastian/environment": "^5.1.2",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "sebastian/lines-of-code": "^1.0",
 =======
                 "sebastian/lines-of-code": "^1.0.3",
@@ -10739,6 +11904,9 @@
 =======
                 "sebastian/lines-of-code": "^1.0.3",
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "sebastian/lines-of-code": "^1.0",
+>>>>>>> origin/samuel.adewale
                 "sebastian/version": "^3.0.1",
                 "theseer/tokenizer": "^1.2.0"
             },
@@ -10780,6 +11948,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -10791,12 +11960,15 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
                     "type": "github"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2020-10-30T10:46:41+00:00"
@@ -10806,6 +11978,9 @@
 =======
             "time": "2021-03-28T07:26:59+00:00"
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "time": "2020-10-30T10:46:41+00:00"
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -10857,6 +12032,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -10868,6 +12044,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
@@ -10929,6 +12107,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -10940,6 +12119,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
@@ -10997,6 +12178,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -11008,6 +12190,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
@@ -11065,6 +12249,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -11076,6 +12261,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
@@ -11088,6 +12275,9 @@
             "name": "phpunit/phpunit",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "version": "9.4.3",
             "source": {
                 "type": "git",
@@ -11098,6 +12288,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9fa359ff5ddaa5eb2be2bedb08a6a5787a5807ab",
                 "reference": "9fa359ff5ddaa5eb2be2bedb08a6a5787a5807ab",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -11115,6 +12306,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -11132,6 +12325,7 @@
                 "phpspec/prophecy": "^1.12.1",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "phpunit/php-code-coverage": "^9.2",
 =======
                 "phpunit/php-code-coverage": "^9.2.3",
@@ -11139,6 +12333,9 @@
 =======
                 "phpunit/php-code-coverage": "^9.2.3",
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "phpunit/php-code-coverage": "^9.2",
+>>>>>>> origin/samuel.adewale
                 "phpunit/php-file-iterator": "^3.0.5",
                 "phpunit/php-invoker": "^3.1.1",
                 "phpunit/php-text-template": "^2.0.3",
@@ -11154,6 +12351,7 @@
                 "sebastian/resource-operations": "^3.0.3",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "sebastian/type": "^2.3",
 =======
                 "sebastian/type": "^2.3.4",
@@ -11161,6 +12359,9 @@
 =======
                 "sebastian/type": "^2.3.4",
 >>>>>>> origin/Michael.Chukwudi
+=======
+                "sebastian/type": "^2.3",
+>>>>>>> origin/samuel.adewale
                 "sebastian/version": "^3.0.2"
             },
             "require-dev": {
@@ -11179,6 +12380,7 @@
                 "branch-alias": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "dev-master": "9.4-dev"
 =======
                     "dev-master": "9.5-dev"
@@ -11186,6 +12388,9 @@
 =======
                     "dev-master": "9.5-dev"
 >>>>>>> origin/Michael.Chukwudi
+=======
+                    "dev-master": "9.4-dev"
+>>>>>>> origin/samuel.adewale
                 }
             },
             "autoload": {
@@ -11216,6 +12421,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -11227,6 +12433,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://phpunit.de/donate.html",
@@ -11239,6 +12447,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2020-11-10T12:53:30+00:00"
 =======
             "time": "2021-07-19T06:14:47+00:00"
@@ -11246,6 +12455,9 @@
 =======
             "time": "2021-07-19T06:14:47+00:00"
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "time": "2020-11-10T12:53:30+00:00"
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "sebastian/cli-parser",
@@ -11293,6 +12505,7 @@
             "homepage": "https://github.com/sebastianbergmann/cli-parser",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -11304,6 +12517,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
@@ -11358,6 +12573,7 @@
             "homepage": "https://github.com/sebastianbergmann/code-unit",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -11369,6 +12585,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
@@ -11422,6 +12640,7 @@
             "homepage": "https://github.com/sebastianbergmann/code-unit-reverse-lookup/",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -11433,6 +12652,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
@@ -11505,6 +12726,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -11516,6 +12738,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
@@ -11571,6 +12795,7 @@
             "homepage": "https://github.com/sebastianbergmann/complexity",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -11582,6 +12807,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
@@ -11646,6 +12873,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -11657,6 +12885,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
@@ -11718,6 +12948,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -11729,6 +12960,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
@@ -11804,6 +13037,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -11815,6 +13049,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
@@ -11827,6 +13063,9 @@
             "name": "sebastian/global-state",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "version": "5.0.2",
             "source": {
                 "type": "git",
@@ -11837,6 +13076,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/a90ccbddffa067b51f574dea6eb25d5680839455",
                 "reference": "a90ccbddffa067b51f574dea6eb25d5680839455",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -11854,6 +13094,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -11896,6 +13138,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -11907,6 +13150,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
@@ -11915,6 +13160,9 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "time": "2020-10-26T15:55:19+00:00"
         },
         {
@@ -11929,6 +13177,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/lines-of-code/zipball/acf76492a65401babcf5283296fa510782783a7a",
                 "reference": "acf76492a65401babcf5283296fa510782783a7a",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -11950,6 +13199,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -11985,6 +13236,7 @@
             "homepage": "https://github.com/sebastianbergmann/lines-of-code",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -11996,12 +13248,15 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
                     "type": "github"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2020-10-26T17:03:56+00:00"
@@ -12011,6 +13266,9 @@
 =======
             "time": "2020-11-28T06:42:11+00:00"
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "time": "2020-10-26T17:03:56+00:00"
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "sebastian/object-enumerator",
@@ -12059,6 +13317,7 @@
             "homepage": "https://github.com/sebastianbergmann/object-enumerator/",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -12070,6 +13329,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
@@ -12123,6 +13384,7 @@
             "homepage": "https://github.com/sebastianbergmann/object-reflector/",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -12134,6 +13396,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
@@ -12195,6 +13459,7 @@
             "homepage": "http://www.github.com/sebastianbergmann/recursion-context",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -12206,6 +13471,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
@@ -12259,6 +13526,7 @@
             "homepage": "https://www.github.com/sebastianbergmann/resource-operations",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -12270,6 +13538,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
@@ -12282,6 +13552,9 @@
             "name": "sebastian/type",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "version": "2.3.1",
             "source": {
                 "type": "git",
@@ -12292,6 +13565,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/type/zipball/81cd61ab7bbf2de744aba0ea61fae32f721df3d2",
                 "reference": "81cd61ab7bbf2de744aba0ea61fae32f721df3d2",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -12309,6 +13583,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -12343,6 +13619,7 @@
             "homepage": "https://github.com/sebastianbergmann/type",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -12354,12 +13631,15 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
                     "type": "github"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2020-10-26T13:18:59+00:00"
@@ -12369,6 +13649,9 @@
 =======
             "time": "2021-06-15T12:49:02+00:00"
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "time": "2020-10-26T13:18:59+00:00"
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "sebastian/version",
@@ -12413,6 +13696,7 @@
             "homepage": "https://github.com/sebastianbergmann/version",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -12424,6 +13708,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
@@ -12436,6 +13722,9 @@
             "name": "symfony/debug",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
             "version": "v4.4.16",
             "source": {
                 "type": "git",
@@ -12446,6 +13735,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/debug/zipball/c87adf3fc1cd0bf4758316a3a150d50a8f957ef4",
                 "reference": "c87adf3fc1cd0bf4758316a3a150d50a8f957ef4",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -12463,6 +13753,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
                 "shasum": ""
             },
             "require": {
@@ -12501,6 +13793,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
 =======
@@ -12515,6 +13808,10 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "description": "Symfony Debug Component",
+            "homepage": "https://symfony.com",
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -12531,6 +13828,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2020-10-24T11:50:19+00:00"
 =======
             "time": "2021-05-26T17:39:37+00:00"
@@ -12538,6 +13836,9 @@
 =======
             "time": "2021-05-26T17:39:37+00:00"
 >>>>>>> origin/Michael.Chukwudi
+=======
+            "time": "2020-10-24T11:50:19+00:00"
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "theseer/tokenizer",
@@ -12579,6 +13880,7 @@
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/Michael.Chukwudi
@@ -12590,6 +13892,8 @@
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
             "funding": [
                 {
                     "url": "https://github.com/theseer",
@@ -12599,6 +13903,9 @@
             "time": "2020-07-12T23:59:07+00:00"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/samuel.adewale
         },
         {
             "name": "webmozart/assert",
@@ -12648,10 +13955,13 @@
                 "validate"
             ],
             "time": "2020-07-08T17:02:28+00:00"
+<<<<<<< HEAD
 =======
 >>>>>>> origin/Emmanuel.Akintola
 =======
 >>>>>>> origin/Michael.Chukwudi
+=======
+>>>>>>> origin/samuel.adewale
         }
     ],
     "aliases": [],
@@ -12670,6 +13980,7 @@
     "platform-dev": [],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "plugin-api-version": "1.1.0"
 =======
     "plugin-api-version": "2.0.0"
@@ -12677,4 +13988,7 @@
 =======
     "plugin-api-version": "2.0.0"
 >>>>>>> origin/Michael.Chukwudi
+=======
+    "plugin-api-version": "1.1.0"
+>>>>>>> origin/samuel.adewale
 }
