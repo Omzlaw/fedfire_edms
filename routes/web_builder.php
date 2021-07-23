@@ -115,3 +115,6 @@ Route::group(['prefix' => 'humanresource'], function () {
 Route::group(['prefix' => 'humanresource'], function () {
     Route::resource('employeeNextOfKins', 'Humanresource\EmployeeNextOfKinController', ["as" => 'humanresource']);
 });
+
+
+Route::resource('users', 'UserController')->middleware('auth');

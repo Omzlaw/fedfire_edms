@@ -1,3 +1,7 @@
+<li class="{{ Request::is('users*') ? 'active' : '' }}">
+    <a href="{!! route('users.index') !!}"><span>Users</span></a>
+</li>
+
 <li class="{!! Request::is('shared/qualificationTypes*') ? 'active' : '' !!}">
     <a href="{{ route('shared.qualificationTypes.index') }}">
         <span class="mm-text ">Qualification Types</span>
