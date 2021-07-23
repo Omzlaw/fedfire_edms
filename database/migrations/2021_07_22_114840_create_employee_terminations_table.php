@@ -40,7 +40,7 @@ class CreateEmployeeTerminationsTable extends Migration
             $table->integer('updated_by')->unsigned();
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('termination_id')->references('id')->on('employee_terminations');
+            $table->foreign('termination_id')->references('id')->on('termination_types');
             $table->foreign('employee_id')->references('id')->on('employees');
             $table->foreign('compiled_by')->references('id')->on('users');
             $table->foreign('created_by')->references('id')->on('users');

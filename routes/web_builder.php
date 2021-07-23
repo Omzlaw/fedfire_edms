@@ -118,3 +118,5 @@ Route::group(['prefix' => 'humanresource'], function () {
 
 
 Route::resource('users', 'UserController')->middleware('auth');
+
+Route::resource('/uploadfile','UploadFileController');
