@@ -46,7 +46,7 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('created_by', 'Created By:') !!}</th>
     <td>{{ $employeeForceService->created_by }}</td>
 </tr>
@@ -55,7 +55,7 @@
 <tr>
     <th scopre="row">{!! Form::label('updated_by', 'Updated By:') !!}</th>
     <td>{{ $employeeForceService->updated_by }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
@@ -64,7 +64,7 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('created_at', 'Created At:') !!}</th>
     <td>{{ $employeeForceService->created_at }}</td>
 </tr>
@@ -73,6 +73,6 @@
 <tr>
     <th scopre="row">{!! Form::label('updated_at', 'Updated At:') !!}</th>
     <td>{{ $employeeForceService->updated_at }}</td>
-</tr>
+</tr> --}}
 
 

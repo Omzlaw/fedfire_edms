@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Humanresource;
 
-use App\DataTables\Humanresource\EmployeeQualificationDataTable;
+use Flash;
+use Response;
 use App\Http\Requests\Humanresource;
+use App\Models\Humanresource\Employee;
+use App\Http\Controllers\AppBaseController;
+use App\Models\Humanresource\EmployeeQualification;
+use App\DataTables\Humanresource\EmployeeQualificationDataTable;
 use App\Http\Requests\Humanresource\CreateEmployeeQualificationRequest;
 use App\Http\Requests\Humanresource\UpdateEmployeeQualificationRequest;
-use App\Models\Humanresource\EmployeeQualification;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class EmployeeQualificationController extends AppBaseController
 {
@@ -31,7 +32,8 @@ class EmployeeQualificationController extends AppBaseController
      */
     public function create()
     {
-        return view('humanresource.employee_qualifications.create');
+        $employees = new Employee;
+        return view('humanresource.employee_qualifications.create', compact('employees'));
     }
 
     /**
@@ -91,8 +93,8 @@ class EmployeeQualificationController extends AppBaseController
 
             return redirect(route('humanresource.employeeQualifications.index'));
         }
-
-        return view('humanresource.employee_qualifications.edit')->with('employeeQualification', $employeeQualification);
+        $employees = new Employee;
+        return view('humanresource.employee_qualifications.edit', compact('employees'))->with('employeeQualification', $employeeQualification);
     }
 
     /**

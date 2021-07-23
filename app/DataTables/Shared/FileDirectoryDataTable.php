@@ -65,15 +65,14 @@ class FileDirectoryDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
+            // 'id',
             'file_name',
-            'file_type_id',
+            // 'file_type_id',
             'file_ext',
             'staff_no',
             'status',
             'remark',
-            'created_at' => ['searchable' => false],
-            'updated_at' => ['searchable' => false]
+
         ];
     }
 

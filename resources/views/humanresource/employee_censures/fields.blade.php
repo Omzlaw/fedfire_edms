@@ -33,7 +33,7 @@
 @section('footer_scripts')
 <script type="text/javascript">
     $('#date_recieved').datetimepicker({
-            format: 'YYYY-MM-DD HH:mm:ss',
+            format: 'YYYY-MM-DD',
             useCurrent: true,
             sideBySide: true
         })
@@ -44,9 +44,9 @@
 <!-- Employee Id Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('employee_id', 'Employee Id:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('employee_id', 'Employee:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('employee_id', ['' => ''], null, ['class' => 'form-control']) !!}
+            {!! Form::select('employee_id', modelDropdown($employees), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </>
@@ -68,7 +68,7 @@
     <div class="row">
         {!! Form::label('status', 'Status:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('status', ['1' => 'Active', '0' => 'Inactive'], null, ['class' => 'form-control']) !!}
+            {!! Form::select('status', enum_status(), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </>
@@ -98,7 +98,7 @@
 @section('footer_scripts')
 <script type="text/javascript">
     $('#compiled_at').datetimepicker({
-            format: 'YYYY-MM-DD HH:mm:ss',
+            format: 'YYYY-MM-DD',
             useCurrent: true,
             sideBySide: true
         })

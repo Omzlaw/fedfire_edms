@@ -72,20 +72,19 @@ class EmployeeDataTable extends DataTable
             'gender',
             'birthdate',
             'place_of_birth',
-            'birth_certificate_upload_id',
-            'marital_status_id',
-            'first_appointment_date',
-            'first_arrival_date',
-            'nationality',
-            'decorations',
-            'file_upload',
-            'remark',
-            'email',
-            'phone',
-            'status',
-            'current_appointment',
-            'created_at' => ['searchable' => false],
-            'updated_at' => ['searchable' => false]
+            // 'birth_certificate_upload',
+            // 'marital_status_id',
+            // 'first_appointment_date',
+            // 'first_arrival_date',
+            // 'nationality',
+            // 'decorations',
+            // 'file_upload',
+            // 'remark',
+            // 'email',
+            // 'phone',
+            // 'status',
+            // 'current_appointment',
+
         ];
     }
 

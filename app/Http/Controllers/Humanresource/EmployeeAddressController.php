@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers\Humanresource;
 
-use App\DataTables\Humanresource\EmployeeAddressDataTable;
+use Flash;
+use Response;
+use App\Models\Shared\State;
+use App\Models\Shared\Country;
 use App\Http\Requests\Humanresource;
+use App\Models\Humanresource\Employee;
+use App\Http\Controllers\AppBaseController;
+use App\Models\Humanresource\EmployeeAddress;
+use App\DataTables\Humanresource\EmployeeAddressDataTable;
 use App\Http\Requests\Humanresource\CreateEmployeeAddressRequest;
 use App\Http\Requests\Humanresource\UpdateEmployeeAddressRequest;
-use App\Models\Humanresource\EmployeeAddress;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class EmployeeAddressController extends AppBaseController
 {
@@ -31,7 +34,10 @@ class EmployeeAddressController extends AppBaseController
      */
     public function create()
     {
-        return view('humanresource.employee_addresses.create');
+        $employees = new Employee;
+        $states = new State;
+        $countries = new Country;
+        return view('humanresource.employee_addresses.create', compact('employees', 'states', 'countries'));
     }
 
     /**
@@ -91,8 +97,10 @@ class EmployeeAddressController extends AppBaseController
 
             return redirect(route('humanresource.employeeAddresses.index'));
         }
-
-        return view('humanresource.employee_addresses.edit')->with('employeeAddress', $employeeAddress);
+        $employees = new Employee;
+        $states = new State;
+        $countries = new Country;
+        return view('humanresource.employee_addresses.edit', compact('employees', 'states', 'countries'))->with('employeeAddress', $employeeAddress);
     }
 
     /**

@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Humanresource;
 
-use App\DataTables\Humanresource\EmployeeCensureDataTable;
+use Flash;
+use Response;
 use App\Http\Requests\Humanresource;
+use App\Models\Humanresource\Employee;
+use App\Http\Controllers\AppBaseController;
+use App\Models\Humanresource\EmployeeCensure;
+use App\DataTables\Humanresource\EmployeeCensureDataTable;
 use App\Http\Requests\Humanresource\CreateEmployeeCensureRequest;
 use App\Http\Requests\Humanresource\UpdateEmployeeCensureRequest;
-use App\Models\Humanresource\EmployeeCensure;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class EmployeeCensureController extends AppBaseController
 {
@@ -31,7 +32,8 @@ class EmployeeCensureController extends AppBaseController
      */
     public function create()
     {
-        return view('humanresource.employee_censures.create');
+        $employees = new Employee;
+        return view('humanresource.employee_censures.create', compact('employees'));
     }
 
     /**
@@ -91,8 +93,8 @@ class EmployeeCensureController extends AppBaseController
 
             return redirect(route('humanresource.employeeCensures.index'));
         }
-
-        return view('humanresource.employee_censures.edit')->with('employeeCensure', $employeeCensure);
+        $employees = new Employee;
+        return view('humanresource.employee_censures.edit', compact('employees'))->with('employeeCensure', $employeeCensure);
     }
 
     /**

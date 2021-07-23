@@ -18,7 +18,7 @@ File Directory @parent
             <div class="card-body">
                 {!! Form::open(['route' => 'shared.fileDirectories.store','class' => 'form-horizontal']) !!}
 
-                    @include('shared.file_directories.fields')
+                    @include('shared.file_directories.fields', [$file_types])
 
                 {!! Form::close() !!}
             </div>

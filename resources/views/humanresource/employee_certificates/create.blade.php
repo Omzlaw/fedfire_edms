@@ -18,7 +18,7 @@ Employee Certificates @parent
             <div class="card-body">
                 {!! Form::open(['route' => 'humanresource.employeeCertificates.store', 'files' => true,'class' => 'form-horizontal']) !!}
 
-                    @include('humanresource.employee_certificates.fields')
+                    @include('humanresource.employee_certificates.fields',[$employees])
 
                 {!! Form::close() !!}
             </div>

@@ -133,8 +133,8 @@ class EmployeeTermination extends Model
         'remark' => 'Required',
         'status' => 'Required',
         'compiled_by' => 'Required',
-        'created_by' => 'Required',
-        'updated_by' => 'Required'
+     //   'created_by' => 'Required',
+    //    'updated_by' => 'Required'
     ];
 
     /**
@@ -156,8 +156,16 @@ class EmployeeTermination extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function termination.id()
+    public function termination_type()
     {
-        return $this->belongsTo(\App\Models\Humanresource\EmployeeTermination::class, 'termination.id', 'id');
+        return $this->belongsTo(\App\Models\Humanresource\TerminationType::class, 'termination_id', 'id');
+    }
+
+        /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function employee()
+    {
+        return $this->belongsTo(\App\Models\Humanresource\Employee::class, 'employee_id', 'id');
     }
 }

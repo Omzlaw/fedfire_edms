@@ -18,7 +18,7 @@ Employee Public Service @parent
             <div class="card-body">
                 {!! Form::open(['route' => 'humanresource.employeePublicServices.store','class' => 'form-horizontal']) !!}
 
-                    @include('humanresource.employee_public_services.fields')
+                    @include('humanresource.employee_public_services.fields',[$employees])
 
                 {!! Form::close() !!}
             </div>

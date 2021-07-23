@@ -19,7 +19,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property integer $gender
  * @property string $birthdate
  * @property string $place_of_birth
- * @property integer $birth_certificate_upload_id
+ * @property integer $birth_certificate_upload
  * @property integer $marital_status_id
  * @property string $first_appointment_date
  * @property string $first_arrival_date
@@ -52,7 +52,7 @@ class Employee extends Model
         'gender',
         'birthdate',
         'place_of_birth',
-        'birth_certificate_upload_id',
+        'birth_certificate_upload',
         'marital_status_id',
         'first_appointment_date',
         'first_arrival_date',
@@ -81,11 +81,11 @@ class Employee extends Model
         'gender' => 'integer',
         'birthdate' => 'datetime',
         'place_of_birth' => 'string',
-        'birth_certificate_upload_id' => 'integer',
+        'birth_certificate_upload' => 'integer',
         'marital_status_id' => 'integer',
         'first_appointment_date' => 'datetime',
         'first_arrival_date' => 'datetime',
-        'nationality' => 'string',
+        'nationality' => 'integer',
         'decorations' => 'string',
         'file_upload' => 'string',
         'remark' => 'string',
@@ -109,7 +109,7 @@ class Employee extends Model
         'gender' => 'Required',
         'birthdate' => 'Required',
         'place_of_birth' => 'Required',
-        'birth_certificate_upload_id' => 'Required',
+        'birth_certificate_upload' => 'Required',
         'marital_status_id' => 'Required',
         'first_appointment_date' => 'Required',
         'first_arrival_date' => 'Required',
@@ -120,8 +120,8 @@ class Employee extends Model
         'email' => 'Required',
         'phone' => 'Required',
         'status' => 'Required',
-        'created_by' => 'Required',
-        'updated_by' => 'Required',
+     //   'created_by' => 'Required',
+    //    'updated_by' => 'Required',
         'current_appointment' => 'Required'
     ];
 
@@ -130,7 +130,7 @@ class Employee extends Model
      **/
     public function birthCertificateUpload()
     {
-        return $this->belongsTo(\App\Models\Humanresource\EmployeeCertificate::class, 'birth_certificate_upload_id', 'id');
+        return $this->belongsTo(\App\Models\Humanresource\EmployeeCertificate::class, 'birth_certificate_upload', 'id');
     }
 
     /**
@@ -139,6 +139,11 @@ class Employee extends Model
     public function maritalStatus()
     {
         return $this->belongsTo(\App\Models\Humanresource\MaritalStatus::class, 'marital_status_id', 'id');
+    }
+
+    public function country()
+    {
+        return $this->belongsTo(\App\Models\Shared\Country::class, 'nationality', 'id');
     }
 
     /**

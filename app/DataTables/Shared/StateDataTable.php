@@ -65,13 +65,12 @@ class StateDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
+            // 'id',
             'title',
             'description',
             'status',
             'country_id',
-            'created_at' => ['searchable' => false],
-            'updated_at' => ['searchable' => false]
+
         ];
     }
 

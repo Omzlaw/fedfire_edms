@@ -22,7 +22,7 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('created_by', 'Created By:') !!}</th>
     <td>{{ $qualificationType->created_by }}</td>
 </tr>
@@ -43,6 +43,6 @@
 <tr>
     <th scopre="row">{!! Form::label('updated_at', 'Updated At:') !!}</th>
     <td>{{ $qualificationType->updated_at }}</td>
-</tr>
+</tr> --}}
 
 

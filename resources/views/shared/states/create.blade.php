@@ -18,7 +18,7 @@ State @parent
             <div class="card-body">
                 {!! Form::open(['route' => 'shared.states.store','class' => 'form-horizontal']) !!}
 
-                    @include('shared.states.fields')
+                    @include('shared.states.fields', [$countries])
 
                 {!! Form::close() !!}
             </div>

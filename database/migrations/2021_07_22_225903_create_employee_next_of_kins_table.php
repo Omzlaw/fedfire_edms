@@ -19,16 +19,16 @@ class CreateEmployeeNextOfKinsTable extends Migration
             $table->string('address');
             $table->integer('relationship_id')->unsigned();
             $table->integer('employee_id')->unsigned();
-            $table->string('file_upload');
-            $table->string('remark');
-            $table->integer('created_by')->unsigned();
-            $table->integer('updated_by')->unsigned();
+            $table->string('file_upload')->nullable();
+            $table->string('remark')->nullable();
+            $table->integer('created_by')->unsigned()->nullable();
+            $table->integer('updated_by')->unsigned()->nullable();
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('relationship_id')->references('id')->on('relationships');
-            $table->foreign('employee_id')->references('id')->on('employees');
-            $table->foreign('created_by')->references('id')->on('users');
-            $table->foreign('updated_by')->references('id')->on('users');
+            //$table->foreign('relationship_id')->references('id')->on('relationships');
+            //$table->foreign('employee_id')->references('id')->on('employees');
+            //$table->foreign('created_by')->references('id')->on('users');
+            //$table->foreign('updated_by')->references('id')->on('users');
         });
     }
 

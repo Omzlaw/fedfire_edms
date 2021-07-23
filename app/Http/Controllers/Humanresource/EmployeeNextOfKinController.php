@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers\Humanresource;
 
-use App\DataTables\Humanresource\EmployeeNextOfKinDataTable;
+use Flash;
+use Response;
+use App\Models\Shared\Relationship;
 use App\Http\Requests\Humanresource;
+use App\Models\Humanresource\Employee;
+use App\Http\Controllers\AppBaseController;
+use App\Models\Humanresource\EmployeeNextOfKin;
+use App\DataTables\Humanresource\EmployeeNextOfKinDataTable;
 use App\Http\Requests\Humanresource\CreateEmployeeNextOfKinRequest;
 use App\Http\Requests\Humanresource\UpdateEmployeeNextOfKinRequest;
-use App\Models\Humanresource\EmployeeNextOfKin;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class EmployeeNextOfKinController extends AppBaseController
 {
@@ -31,7 +33,9 @@ class EmployeeNextOfKinController extends AppBaseController
      */
     public function create()
     {
-        return view('humanresource.employee_next_of_kins.create');
+        $employees = new Employee;
+        $relationship = new Relationship;
+        return view('humanresource.employee_next_of_kins.create', compact('employees', 'relationship'));
     }
 
     /**
@@ -91,8 +95,9 @@ class EmployeeNextOfKinController extends AppBaseController
 
             return redirect(route('humanresource.employeeNextOfKins.index'));
         }
-
-        return view('humanresource.employee_next_of_kins.edit')->with('employeeNextOfKin', $employeeNextOfKin);
+        $employees = new Employee;
+        $relationship = new Relationship;
+        return view('humanresource.employee_next_of_kins.edit', compact('employees','relationship'))->with('employeeNextOfKin', $employeeNextOfKin);
     }
 
     /**

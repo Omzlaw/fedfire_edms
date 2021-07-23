@@ -18,7 +18,7 @@ Employee @parent
            <div class="card-body">
                 {!! Form::model($employee, ['route' => ['humanresource.employees.update', $employee->id], 'method' => 'patch', 'files' => true,'class' => 'form-horizontal']) !!}
 
-                    @include('humanresource.employees.fields')
+                    @include('humanresource.employees.fields',[$marital_status])
 
                 {!! Form::close() !!}
            </div>

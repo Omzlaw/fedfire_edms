@@ -59,8 +59,8 @@ class Relationship extends Model
         'title' => 'Required',
         'description' => 'Required',
         'status' => 'Required',
-        'created_by' => 'Required',
-        'updated_by' => 'Required'
+     //   'created_by' => 'Required',
+    //    'updated_by' => 'Required'
     ];
 
     /**

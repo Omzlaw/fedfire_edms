@@ -18,7 +18,7 @@ Employee Action Sheet @parent
             <div class="card-body">
                 {!! Form::open(['route' => 'humanresource.employeeActionSheets.store','class' => 'form-horizontal']) !!}
 
-                    @include('humanresource.employee_action_sheets.fields')
+                    @include('humanresource.employee_action_sheets.fields',[$employees])  
 
                 {!! Form::close() !!}
             </div>

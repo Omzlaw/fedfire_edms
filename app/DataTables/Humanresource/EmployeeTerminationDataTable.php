@@ -65,29 +65,28 @@ class EmployeeTerminationDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
-            'termination_id',
-            'employee_id',
-            'file_upload',
+            // 'id',
+            // 'termination_id',
+            // 'employee_id',
+            // 'file_upload',
             'even_date',
             'is_pensionable',
             'pension_amount',
             'pension_start_date',
             'gratuity_amount',
-            'contract_gratuity',
-            'estate_gratuity_amount_paid',
-            'widow_pension_amount',
-            'widow_pension_start_date',
-            'orphan_pension_amonut',
-            'nigeria_total_service_years',
-            'nigeria_total_service_months',
-            'nigeria_total_service_days',
-            'total_naria_salary',
-            'summary',
-            'remark',
+            // 'contract_gratuity',
+            // 'estate_gratuity_amount_paid',
+            // 'widow_pension_amount',
+            // 'widow_pension_start_date',
+            // 'orphan_pension_amonut',
+            // 'nigeria_total_service_years',
+            // 'nigeria_total_service_months',
+            // 'nigeria_total_service_days',
+            // 'total_naria_salary',
+            // 'summary',
+            // 'remark',
             'status',
-            'created_at' => ['searchable' => false],
-            'updated_at' => ['searchable' => false]
+
         ];
     }
 

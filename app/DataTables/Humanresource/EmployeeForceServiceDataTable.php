@@ -70,12 +70,11 @@ class EmployeeForceServiceDataTable extends DataTable
             'service_no',
             'last_unit',
             'reason_for_leaving',
-            'employee_id',
-            'file_upload',
+            // 'employee_id',
+            // 'file_upload',
             'remark',
             'date_updated',
-            'created_at' => ['searchable' => false],
-            'updated_at' => ['searchable' => false]
+
         ];
     }
 

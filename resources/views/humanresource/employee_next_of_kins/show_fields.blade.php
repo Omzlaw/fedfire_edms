@@ -40,7 +40,7 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('created_by', 'Created By:') !!}</th>
     <td>{{ $employeeNextOfKin->created_by }}</td>
 </tr>
@@ -61,6 +61,6 @@
 <tr>
     <th scopre="row">{!! Form::label('updated_at', 'Updated At:') !!}</th>
     <td>{{ $employeeNextOfKin->updated_at }}</td>
-</tr>
+</tr> --}}
 
 

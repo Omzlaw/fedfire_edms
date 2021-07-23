@@ -73,8 +73,8 @@ class FileDirectory extends Model
         'staff_no' => 'Required',
         'status' => 'Required',
         'remark' => 'Required',
-        'created_by' => 'Required',
-        'updated_by' => 'Required'
+     //   'created_by' => 'Required',
+    //    'updated_by' => 'Required'
     ];
 
     /**

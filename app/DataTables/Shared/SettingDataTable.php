@@ -65,11 +65,10 @@ class SettingDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
+            // 'id',
             'key',
             'value',
-            'created_at' => ['searchable' => false],
-            'updated_at' => ['searchable' => false]
+
         ];
     }
 

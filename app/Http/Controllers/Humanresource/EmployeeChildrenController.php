@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Humanresource;
 
-use App\DataTables\Humanresource\EmployeeChildrenDataTable;
+use Flash;
+use Response;
 use App\Http\Requests\Humanresource;
+use App\Models\Humanresource\Employee;
+use App\Http\Controllers\AppBaseController;
+use App\Models\Humanresource\EmployeeChildren;
+use App\DataTables\Humanresource\EmployeeChildrenDataTable;
 use App\Http\Requests\Humanresource\CreateEmployeeChildrenRequest;
 use App\Http\Requests\Humanresource\UpdateEmployeeChildrenRequest;
-use App\Models\Humanresource\EmployeeChildren;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class EmployeeChildrenController extends AppBaseController
 {
@@ -31,7 +32,8 @@ class EmployeeChildrenController extends AppBaseController
      */
     public function create()
     {
-        return view('humanresource.employee_childrens.create');
+        $employees = new Employee;
+        return view('humanresource.employee_childrens.create', compact('employees'));
     }
 
     /**
@@ -91,8 +93,8 @@ class EmployeeChildrenController extends AppBaseController
 
             return redirect(route('humanresource.employeeChildrens.index'));
         }
-
-        return view('humanresource.employee_childrens.edit')->with('employeeChildren', $employeeChildren);
+        $employees = new Employee;
+        return view('humanresource.employee_childrens.edit', compact('employees'))->with('employeeChildren', $employeeChildren);
     }
 
     /**

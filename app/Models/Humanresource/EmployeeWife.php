@@ -78,8 +78,8 @@ class EmployeeWife extends Model
         'file_upload' => 'Required',
         'remark' => 'Required',
         'checked_by' => 'Required',
-        'created_by' => 'Required',
-        'updated_by' => 'Required'
+     //   'created_by' => 'Required',
+    //    'updated_by' => 'Required'
     ];
 
     /**

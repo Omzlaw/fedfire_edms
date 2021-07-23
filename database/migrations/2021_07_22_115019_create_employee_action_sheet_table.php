@@ -17,16 +17,18 @@ class CreateEmployeeActionSheetTable extends Migration
             $table->increments('id');
             $table->string('folio');
             $table->dateTime('action_at');
-            $table->integer('created_by')->unsigned();
-            $table->integer('updated_by')->unsigned();
+            $table->integer('created_by')->unsigned()->nullable();
+            $table->integer('updated_by')->unsigned()->nullable();
             $table->dateTime('date_cleared');
             $table->integer('action_by')->unsigned();
-            $table->string('remark');
+            $table->integer('employee_id')->unsigned();
+            $table->string('remark')->nullable();
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('created_by')->references('id')->on('users');
-            $table->foreign('updated_by')->references('id')->on('users');
-            $table->foreign('action_by')->references('id')->on('users');
+            //$table->foreign('employee_id')->references('id')->on('employees');
+            //$table->foreign('created_by')->references('id')->on('users');
+            //$table->foreign('updated_by')->references('id')->on('users');
+            //$table->foreign('action_by')->references('id')->on('users');
         });
     }
 

@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Shared;
 
-use App\DataTables\Shared\FileDirectoryDataTable;
+use Flash;
+use Response;
 use App\Http\Requests\Shared;
+use App\Models\Shared\FileType;
+use App\Models\Shared\FileDirectory;
+use App\Http\Controllers\AppBaseController;
+use App\DataTables\Shared\FileDirectoryDataTable;
 use App\Http\Requests\Shared\CreateFileDirectoryRequest;
 use App\Http\Requests\Shared\UpdateFileDirectoryRequest;
-use App\Models\Shared\FileDirectory;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class FileDirectoryController extends AppBaseController
 {
@@ -31,7 +32,8 @@ class FileDirectoryController extends AppBaseController
      */
     public function create()
     {
-        return view('shared.file_directories.create');
+        $file_types = new FileType;
+        return view('shared.file_directories.create', compact('file_types'));
     }
 
     /**
@@ -91,8 +93,8 @@ class FileDirectoryController extends AppBaseController
 
             return redirect(route('shared.fileDirectories.index'));
         }
-
-        return view('shared.file_directories.edit')->with('fileDirectory', $fileDirectory);
+        $file_types = new FileType;
+        return view('shared.file_directories.edit', compact('file_types'))->with('fileDirectory', $fileDirectory);
     }
 
     /**

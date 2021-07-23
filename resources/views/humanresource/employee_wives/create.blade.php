@@ -18,7 +18,7 @@ Employee Wife @parent
             <div class="card-body">
                 {!! Form::open(['route' => 'humanresource.employeeWives.store', 'files' => true,'class' => 'form-horizontal']) !!}
 
-                    @include('humanresource.employee_wives.fields')
+                    @include('humanresource.employee_wives.fields',[$employees])
 
                 {!! Form::close() !!}
             </div>

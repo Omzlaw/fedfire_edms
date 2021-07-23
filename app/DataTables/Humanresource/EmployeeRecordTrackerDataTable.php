@@ -65,14 +65,13 @@ class EmployeeRecordTrackerDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
-            'employee_id',
+            // 'id',
+            // 'employee_id',
             'status',
             'remark',
             'has_profile',
             'has_education',
-            'created_at' => ['searchable' => false],
-            'updated_at' => ['searchable' => false]
+
         ];
     }
 

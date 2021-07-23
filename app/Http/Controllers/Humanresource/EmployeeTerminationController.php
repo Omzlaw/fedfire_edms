@@ -9,6 +9,8 @@ use App\Http\Requests\Humanresource\UpdateEmployeeTerminationRequest;
 use App\Models\Humanresource\EmployeeTermination;
 use Flash;
 use App\Http\Controllers\AppBaseController;
+use App\Models\Humanresource\Employee;
+use App\Models\Humanresource\TerminationType;
 use Response;
 
 class EmployeeTerminationController extends AppBaseController
@@ -31,7 +33,9 @@ class EmployeeTerminationController extends AppBaseController
      */
     public function create()
     {
-        return view('humanresource.employee_terminations.create');
+        $employees = new Employee;
+        $termination_types = new TerminationType;
+        return view('humanresource.employee_terminations.create', compact('employees', 'termination_types'));
     }
 
     /**
@@ -91,8 +95,10 @@ class EmployeeTerminationController extends AppBaseController
 
             return redirect(route('humanresource.employeeTerminations.index'));
         }
+            $employees = new Employee;
+            $termination_types = new TerminationType;
 
-        return view('humanresource.employee_terminations.edit')->with('employeeTermination', $employeeTermination);
+        return view('humanresource.employee_terminations.edit', compact('employees', 'termination_types'))->with('employeeTermination', $employeeTermination);
     }
 
     /**

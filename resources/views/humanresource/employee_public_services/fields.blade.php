@@ -14,7 +14,7 @@
     <div class="row">
         {!! Form::label('from_date', 'From Date:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('from_date', null, ['class' => 'form-control']) !!}
+            {!! Form::date('from_date', null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div
@@ -25,7 +25,7 @@
     <div class="row">
         {!! Form::label('to_date', 'To Date:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('to_date', null, ['class' => 'form-control']) !!}
+            {!! Form::date('to_date', null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div
@@ -47,21 +47,21 @@
     <div class="row">
         {!! Form::label('employee_id', 'Employee Id:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('employee_id', null, ['class' => 'form-control']) !!}
+            {!! Form::select('employee_id', modelDropdown($employees), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div
 
 
-<!-- File Upload Id Field -->
+<!-- File Upload Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('file_upload_id', 'File Upload Id:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('file_upload_id', null, ['class' => 'form-control']) !!}
+        {!! Form::label('file_upload', 'File Upload:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">{!! Form::file('file_upload') !!}
         </div>
     </div>
-</div
+</div <div class="clearfix">
+</div>
 
 
 <!-- Total Years Served Field -->
@@ -102,13 +102,13 @@
     <div class="row">
         {!! Form::label('checked_by', 'Checked By:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('checked_by', null, ['class' => 'form-control']) !!}
+            {!! Form::select('checked_by', modelDropdown($employees), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div
 
 
-<!-- Created By Field -->
+{{-- <!-- Created By Field -->
 <div class="form-group">
     <div class="row">
         {!! Form::label('created_by', 'Created By:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
@@ -127,7 +127,7 @@
             {!! Form::text('updated_by', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div --}}
 
 
 <!-- Submit Field -->

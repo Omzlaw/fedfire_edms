@@ -69,9 +69,9 @@ class EmployeeActionSheetDataTable extends DataTable
             'folio',
             'action_at',
             'date_cleared',
-            'remark',
-            'created_at' => ['searchable' => false],
-            'updated_at' => ['searchable' => false]
+            // 'remark',
+            'employee_id',
+
         ];
     }
 

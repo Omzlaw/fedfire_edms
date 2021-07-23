@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Humanresource;
 
-use App\DataTables\Humanresource\EmployeeActionSheetDataTable;
+use Flash;
+use Response;
 use App\Http\Requests\Humanresource;
+use App\Models\Humanresource\Employee;
+use App\Http\Controllers\AppBaseController;
+use App\Models\Humanresource\EmployeeActionSheet;
+use App\DataTables\Humanresource\EmployeeActionSheetDataTable;
 use App\Http\Requests\Humanresource\CreateEmployeeActionSheetRequest;
 use App\Http\Requests\Humanresource\UpdateEmployeeActionSheetRequest;
-use App\Models\Humanresource\EmployeeActionSheet;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class EmployeeActionSheetController extends AppBaseController
 {
@@ -31,7 +32,8 @@ class EmployeeActionSheetController extends AppBaseController
      */
     public function create()
     {
-        return view('humanresource.employee_action_sheets.create');
+        $employees = new Employee;
+        return view('humanresource.employee_action_sheets.create', compact('employees'));
     }
 
     /**
@@ -91,8 +93,8 @@ class EmployeeActionSheetController extends AppBaseController
 
             return redirect(route('humanresource.employeeActionSheets.index'));
         }
-
-        return view('humanresource.employee_action_sheets.edit')->with('employeeActionSheet', $employeeActionSheet);
+        $employees = new Employee;
+        return view('humanresource.employee_action_sheets.edit', compact('employees'))->with('employeeActionSheet', $employeeActionSheet);
     }
 
     /**

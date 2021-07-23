@@ -69,13 +69,11 @@ class EmployeeCensureDataTable extends DataTable
             'title',
             'summary',
             'date_recieved',
-            'employee_id',
-            'file_upload',
+            // 'employee_id',
             'status',
             'remark',
-            'compiled_at',
-            'created_at' => ['searchable' => false],
-            'updated_at' => ['searchable' => false]
+            // 'compiled_at',
+
         ];
     }
 

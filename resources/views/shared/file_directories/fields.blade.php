@@ -14,7 +14,7 @@
     <div class="row">
         {!! Form::label('file_type_id', 'File Type Id:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('file_type_id', ['' => ''], null, ['class' => 'form-control']) !!}
+            {!! Form::select('file_type_id', modelDropdown($file_types), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </>
@@ -47,7 +47,7 @@
     <div class="row">
         {!! Form::label('status', 'Status:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('status', ['1' => 'Active', '0' => 'Inactive'], null, ['class' => 'form-control']) !!}
+            {!! Form::select('status', enum_status(), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </>

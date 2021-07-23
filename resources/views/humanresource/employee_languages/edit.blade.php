@@ -18,7 +18,7 @@ Employee Language @parent
            <div class="card-body">
                 {!! Form::model($employeeLanguage, ['route' => ['humanresource.employeeLanguages.update', $employeeLanguage->id], 'method' => 'patch', 'files' => true,'class' => 'form-horizontal']) !!}
 
-                    @include('humanresource.employee_languages.fields')
+                    @include('humanresource.employee_languages.fields', [$employees])
 
                 {!! Form::close() !!}
            </div>

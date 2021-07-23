@@ -65,15 +65,14 @@ class EmployeeQualificationDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
+            // 'id',
             'qualification_name',
             'date_obtained',
-            'employee_id',
-            'file_upload',
+            // 'employee_id',
+            // 'file_upload',
             'status',
             'remark',
-            'created_at' => ['searchable' => false],
-            'updated_at' => ['searchable' => false]
+
         ];
     }
 

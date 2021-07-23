@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Humanresource;
 
-use App\DataTables\Humanresource\EmployeeForceServiceDataTable;
+use Flash;
+use Response;
 use App\Http\Requests\Humanresource;
+use App\Models\Humanresource\Employee;
+use App\Http\Controllers\AppBaseController;
+use App\Models\Humanresource\EmployeeForceService;
+use App\DataTables\Humanresource\EmployeeForceServiceDataTable;
 use App\Http\Requests\Humanresource\CreateEmployeeForceServiceRequest;
 use App\Http\Requests\Humanresource\UpdateEmployeeForceServiceRequest;
-use App\Models\Humanresource\EmployeeForceService;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class EmployeeForceServiceController extends AppBaseController
 {
@@ -31,7 +32,8 @@ class EmployeeForceServiceController extends AppBaseController
      */
     public function create()
     {
-        return view('humanresource.employee_force_services.create');
+        $employees = new Employee;
+        return view('humanresource.employee_force_services.create', compact('employees'));
     }
 
     /**
@@ -91,8 +93,8 @@ class EmployeeForceServiceController extends AppBaseController
 
             return redirect(route('humanresource.employeeForceServices.index'));
         }
-
-        return view('humanresource.employee_force_services.edit')->with('employeeForceService', $employeeForceService);
+        $employees = new Employee;
+        return view('humanresource.employee_force_services.edit', compact('employees'))->with('employeeForceService', $employeeForceService);
     }
 
     /**

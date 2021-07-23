@@ -26,7 +26,7 @@ class EmployeeActionSheet extends Model
     use SoftDeletes;
 
     public $table = 'employee_action_sheet';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -66,12 +66,20 @@ class EmployeeActionSheet extends Model
     public static $rules = [
         'folio' => 'Required',
         'action_at' => 'Required',
-        'created_by' => 'Required',
-        'updated_by' => 'Required',
+        //   'created_by' => 'Required',
+        //    'updated_by' => 'Required',
         'date_cleared' => 'Required',
         'action_by' => 'Required',
         'remark' => 'Required'
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function employee()
+    {
+        return $this->belongsTo(\App\Models\Humanresource\Employee::class, 'employee_id', 'id');
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

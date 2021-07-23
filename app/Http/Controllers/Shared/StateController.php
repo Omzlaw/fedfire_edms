@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Shared;
 
-use App\DataTables\Shared\StateDataTable;
+use Flash;
+use Response;
+use App\Models\Shared\State;
 use App\Http\Requests\Shared;
+use App\Models\Shared\Country;
+use App\DataTables\Shared\StateDataTable;
+use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\Shared\CreateStateRequest;
 use App\Http\Requests\Shared\UpdateStateRequest;
-use App\Models\Shared\State;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class StateController extends AppBaseController
 {
@@ -31,7 +32,8 @@ class StateController extends AppBaseController
      */
     public function create()
     {
-        return view('shared.states.create');
+        $countries = new Country;
+        return view('shared.states.create', compact('countries'));
     }
 
     /**
@@ -91,8 +93,9 @@ class StateController extends AppBaseController
 
             return redirect(route('shared.states.index'));
         }
+        $countries = new Country;
 
-        return view('shared.states.edit')->with('state', $state);
+        return view('shared.states.edit', compact('countries'))->with('state', $state);
     }
 
     /**

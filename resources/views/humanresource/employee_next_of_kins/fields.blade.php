@@ -25,7 +25,7 @@
     <div class="row">
         {!! Form::label('relationship_id', 'Relationship Id:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('relationship_id', ['' => ''], null, ['class' => 'form-control']) !!}
+            {!! Form::select('relationship_id', modelDropdown($relationship), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </>
@@ -36,7 +36,7 @@
     <div class="row">
         {!! Form::label('employee_id', 'Employee Id:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('employee_id', ['' => ''], null, ['class' => 'form-control']) !!}
+            {!! Form::select('employee_id', modelDropdown($employees), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </>

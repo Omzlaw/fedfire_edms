@@ -62,7 +62,7 @@ class EmployeeCensure extends Model
         'summary' => 'string',
         'date_recieved' => 'datetime',
         'employee_id' => 'integer',
-        'file_upload' => 'integer',
+        'file_upload' => 'string',
         'status' => 'integer',
         'remark' => 'string',
         'compiled_by' => 'integer',
@@ -86,8 +86,8 @@ class EmployeeCensure extends Model
         'remark' => 'Required',
         'compiled_by' => 'Required',
         'compiled_at' => 'Required',
-        'created_by' => 'Required',
-        'updated_by' => 'Required'
+     //   'created_by' => 'Required',
+    //    'updated_by' => 'Required'
     ];
 
     /**

@@ -21,21 +21,21 @@ class CreateEmployeeEducationTable extends Migration
             $table->dateTime('from_date');
             $table->dateTime('to_date');
             $table->integer('employee_id')->unsigned();
-            $table->string('file_upload');
-            $table->integer('status');
-            $table->string('remark');
+            $table->string('file_upload')->nullable();
+            $table->integer('status')->default(1);
+            $table->string('remark')->nullable();
             $table->integer('checked_by')->unsigned();
             $table->dateTime('checked_at');
-            $table->integer('created_by')->unsigned();
-            $table->integer('updated_by')->unsigned();
+            $table->integer('created_by')->unsigned()->nullable();
+            $table->integer('updated_by')->unsigned()->nullable();
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('certificate_id')->references('id')->on('employee_certificate');
-            $table->foreign('school_type_id')->references('id')->on('school_types');
-            $table->foreign('employee_id')->references('id')->on('employees');
-            $table->foreign('checked_by')->references('id')->on('users');
-            $table->foreign('created_by')->references('id')->on('users');
-            $table->foreign('updated_by')->references('id')->on('users');
+            //$table->foreign('certificate_id')->references('id')->on('employee_certificate');
+            //$table->foreign('school_type_id')->references('id')->on('school_types');
+            //$table->foreign('employee_id')->references('id')->on('employees');
+            //$table->foreign('checked_by')->references('id')->on('users');
+            //$table->foreign('created_by')->references('id')->on('users');
+            //$table->foreign('updated_by')->references('id')->on('users');
         });
     }
 

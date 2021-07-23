@@ -70,11 +70,10 @@ class EmployeeChildrenDataTable extends DataTable
             'gender',
             'birthday',
             'employee_id',
-            'file_upload',
+            // 'file_upload',
             'remark',
-            'checked_at',
-            'created_at' => ['searchable' => false],
-            'updated_at' => ['searchable' => false]
+            // 'checked_at',
+
         ];
     }
 

@@ -39,7 +39,7 @@ class EmployeePublicService extends Model
         'to_date',
         'file_page_ref',
         'employee_id',
-        'file_upload_id',
+        'file_upload',
         'total_years_served',
         'total_paid',
         'remark',
@@ -60,7 +60,7 @@ class EmployeePublicService extends Model
         'to_date' => 'datetime',
         'file_page_ref' => 'string',
         'employee_id' => 'integer',
-        'file_upload_id' => 'integer',
+        'file_upload' => 'string',
         'total_years_served' => 'integer',
         'total_paid' => 'integer',
         'remark' => 'integer',
@@ -75,7 +75,16 @@ class EmployeePublicService extends Model
      * @var array
      */
     public static $rules = [
-        
+        'employer_name' => 'Required',
+        'from_date' => 'Required',
+        'to_date' => 'Required',
+        'file_page_ref' => 'Required',
+        'employee_id' => 'Required',
+        'file_upload' => 'Required',
+        'total_years_served' => 'Required',
+        'total_paid' => 'Required',
+        'remark' => 'Required',
+        'checked_by' => 'Required',
     ];
 
     

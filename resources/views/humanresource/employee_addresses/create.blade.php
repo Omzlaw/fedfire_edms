@@ -18,7 +18,7 @@ Employee Address @parent
             <div class="card-body">
                 {!! Form::open(['route' => 'humanresource.employeeAddresses.store', 'files' => true,'class' => 'form-horizontal']) !!}
 
-                    @include('humanresource.employee_addresses.fields')
+                    @include('humanresource.employee_addresses.fields',[$employees, $states, $countries])
 
                 {!! Form::close() !!}
             </div>

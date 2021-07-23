@@ -18,7 +18,7 @@ Employee Local Leave @parent
            <div class="card-body">
                 {!! Form::model($employeeLocalLeave, ['route' => ['humanresource.employeeLocalLeaves.update', $employeeLocalLeave->id], 'method' => 'patch', 'files' => true,'class' => 'form-horizontal']) !!}
 
-                    @include('humanresource.employee_local_leaves.fields')
+                    @include('humanresource.employee_local_leaves.fields',[$employees, $leave_types])
 
                 {!! Form::close() !!}
            </div>

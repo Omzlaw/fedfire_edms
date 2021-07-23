@@ -65,8 +65,8 @@ class LocalGovtArea extends Model
         'description' => 'Required',
         'state_id' => 'Required',
         'status' => 'Required',
-        'created_by' => 'Required',
-        'updated_by' => 'Required'
+     //   'created_by' => 'Required',
+    //    'updated_by' => 'Required'
     ];
 
     /**

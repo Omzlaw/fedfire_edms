@@ -58,7 +58,7 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('created_by', 'Created By:') !!}</th>
     <td>{{ $employeeCensure->created_by }}</td>
 </tr>
@@ -79,6 +79,6 @@
 <tr>
     <th scopre="row">{!! Form::label('updated_at', 'Updated At:') !!}</th>
     <td>{{ $employeeCensure->updated_at }}</td>
-</tr>
+</tr> --}}
 
 

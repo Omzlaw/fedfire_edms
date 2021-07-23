@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers\Humanresource;
 
-use App\DataTables\Humanresource\EmployeeEducationDataTable;
+use Flash;
+use Response;
+use App\Models\Shared\SchoolType;
 use App\Http\Requests\Humanresource;
+use App\Models\Humanresource\Employee;
+use App\Models\Shared\CertificateType;
+use App\Http\Controllers\AppBaseController;
+use App\Models\Humanresource\EmployeeEducation;
+use App\DataTables\Humanresource\EmployeeEducationDataTable;
 use App\Http\Requests\Humanresource\CreateEmployeeEducationRequest;
 use App\Http\Requests\Humanresource\UpdateEmployeeEducationRequest;
-use App\Models\Humanresource\EmployeeEducation;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class EmployeeEducationController extends AppBaseController
 {
@@ -31,7 +34,10 @@ class EmployeeEducationController extends AppBaseController
      */
     public function create()
     {
-        return view('humanresource.employee_educations.create');
+        $employees = new Employee;
+        $certificate_types = new CertificateType;
+        $school_types = new SchoolType;
+        return view('humanresource.employee_educations.create', compact('employees', 'certificate_types', 'school_types'));
     }
 
     /**
@@ -91,8 +97,10 @@ class EmployeeEducationController extends AppBaseController
 
             return redirect(route('humanresource.employeeEducations.index'));
         }
-
-        return view('humanresource.employee_educations.edit')->with('employeeEducation', $employeeEducation);
+        $employees = new Employee;
+        $certificate_types = new CertificateType;
+        $school_types = new SchoolType;
+        return view('humanresource.employee_educations.edit', compact('employees', 'certificate_types', 'school_types'))->with('employeeEducation', $employeeEducation);
     }
 
     /**

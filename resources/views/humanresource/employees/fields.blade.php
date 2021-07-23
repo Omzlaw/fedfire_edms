@@ -36,7 +36,7 @@
     <div class="row">
         {!! Form::label('gender', 'Gender:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('gender', ['1' => 'Female', '2' => 'Male'], null, ['class' => 'form-control']) !!}
+            {!! Form::select('gender', enum_gender(), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </>
@@ -47,7 +47,7 @@
     <div class="row">
         {!! Form::label('birthdate', 'Birthdate:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('birthdate', null, ['class' => 'form-control','id'=>'birthdate']) !!}
+            {!! Form::date('birthdate', null, ['class' => 'form-control','id'=>'birthdate']) !!}
         </div>
     </div>
 </div>
@@ -55,7 +55,7 @@
 @section('footer_scripts')
 <script type="text/javascript">
     $('#birthdate').datetimepicker({
-            format: 'YYYY-MM-DD HH:mm:ss',
+            format: 'YYYY-MM-DD',
             useCurrent: true,
             sideBySide: true
         })
@@ -77,9 +77,9 @@
 <!-- Birth Certificate Upload Id Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('birth_certificate_upload_id', 'Birth Certificate Upload Id:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('birth_certificate_upload', 'Birth Certificate Upload:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('birth_certificate_upload_id', ['' => ''], null, ['class' => 'form-control']) !!}
+            {!! Form::file('birth_certificate_upload') !!}
         </div>
     </div>
 </>
@@ -90,7 +90,7 @@
     <div class="row">
         {!! Form::label('marital_status_id', 'Marital Status Id:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('marital_status_id', ['' => ''], null, ['class' => 'form-control']) !!}
+            {!! Form::select('marital_status_id', modelDropdown($marital_status), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </>
@@ -109,7 +109,7 @@
 @section('footer_scripts')
 <script type="text/javascript">
     $('#first_appointment_date').datetimepicker({
-            format: 'YYYY-MM-DD HH:mm:ss',
+            format: 'YYYY-MM-DD',
             useCurrent: true,
             sideBySide: true
         })
@@ -130,7 +130,7 @@
 @section('footer_scripts')
 <script type="text/javascript">
     $('#first_arrival_date').datetimepicker({
-            format: 'YYYY-MM-DD HH:mm:ss',
+            format: 'YYYY-MM-DD',
             useCurrent: true,
             sideBySide: true
         })
@@ -167,7 +167,6 @@
         <div class="col-md-9 col-lg-9 col-12">{!! Form::file('file_upload') !!}
         </div>
     </div>
-</div <div class="clearfix">
 </div>
 
 
@@ -209,7 +208,7 @@
     <div class="row">
         {!! Form::label('status', 'Status:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('status', ['1' => 'Active', '0' => 'Inactive'], null, ['class' => 'form-control']) !!}
+            {!! Form::select('status', enum_status(), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </>

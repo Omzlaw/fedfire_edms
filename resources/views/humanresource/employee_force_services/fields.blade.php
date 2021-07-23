@@ -47,7 +47,7 @@
     <div class="row">
         {!! Form::label('employee_id', 'Employee Id:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('employee_id', ['' => ''], null, ['class' => 'form-control']) !!}
+            {!! Form::select('employee_id', modelDropdown($employees), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </>
@@ -80,7 +80,7 @@
     <div class="row">
         {!! Form::label('date_updated', 'Date Updated:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('date_updated', null, ['class' => 'form-control','id'=>'date_updated']) !!}
+            {!! Form::date('date_updated', null, ['class' => 'form-control','id'=>'date_updated']) !!}
         </div>
     </div>
 </div>
@@ -88,7 +88,7 @@
 @section('footer_scripts')
 <script type="text/javascript">
     $('#date_updated').datetimepicker({
-            format: 'YYYY-MM-DD HH:mm:ss',
+            format: 'YYYY-MM-DD',
             useCurrent: true,
             sideBySide: true
         })

@@ -18,7 +18,7 @@ Employee Action Sheet @parent
            <div class="card-body">
                 {!! Form::model($employeeActionSheet, ['route' => ['humanresource.employeeActionSheets.update', $employeeActionSheet->id], 'method' => 'patch','class' => 'form-horizontal']) !!}
 
-                    @include('humanresource.employee_action_sheets.fields')
+                    @include('humanresource.employee_action_sheets.fields', [$employees])
 
                 {!! Form::close() !!}
            </div>

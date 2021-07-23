@@ -65,15 +65,14 @@ class EmployeeNextOfKinDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
+            // 'id',
             'name',
             'address',
-            'relationship_id',
-            'employee_id',
-            'file_upload',
+            // 'relationship_id',
+            // 'employee_id',
+            // 'file_upload',
             'remark',
-            'created_at' => ['searchable' => false],
-            'updated_at' => ['searchable' => false]
+
         ];
     }
 

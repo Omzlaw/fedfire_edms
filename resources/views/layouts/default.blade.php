@@ -157,7 +157,7 @@
     <div class="wrapper">
 
         <!-- Left side column. contains the logo and sidebar -->
-        <aside class="left-aside">
+        <aside class="left-aside col-2">
             <!-- sidebar: style can be found in sidebar-->
             <section class="sidebar metismenu sidebar-res">
                 @include("layouts/leftmenu")

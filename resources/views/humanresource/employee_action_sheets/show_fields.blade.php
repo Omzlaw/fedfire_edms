@@ -22,7 +22,7 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('updated_by', 'Updated By:') !!}</th>
     <td>{{ $employeeActionSheet->updated_by }}</td>
 </tr>
@@ -31,7 +31,7 @@
 <tr>
     <th scopre="row">{!! Form::label('date_cleared', 'Date Cleared:') !!}</th>
     <td>{{ $employeeActionSheet->date_cleared }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
@@ -46,7 +46,7 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('created_at', 'Created At:') !!}</th>
     <td>{{ $employeeActionSheet->created_at }}</td>
 </tr>
@@ -55,6 +55,6 @@
 <tr>
     <th scopre="row">{!! Form::label('updated_at', 'Updated At:') !!}</th>
     <td>{{ $employeeActionSheet->updated_at }}</td>
-</tr>
+</tr> --}}
 
 

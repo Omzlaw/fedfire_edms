@@ -18,7 +18,7 @@ Employee Force Service @parent
            <div class="card-body">
                 {!! Form::model($employeeForceService, ['route' => ['humanresource.employeeForceServices.update', $employeeForceService->id], 'method' => 'patch', 'files' => true,'class' => 'form-horizontal']) !!}
 
-                    @include('humanresource.employee_force_services.fields')
+                    @include('humanresource.employee_force_services.fields',[$employees])
 
                 {!! Form::close() !!}
            </div>

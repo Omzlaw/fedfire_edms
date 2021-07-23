@@ -65,13 +65,12 @@ class LocalGovtAreaDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
+            // 'id',
             'title',
             'description',
             'state_id',
             'status',
-            'created_at' => ['searchable' => false],
-            'updated_at' => ['searchable' => false]
+
         ];
     }
 

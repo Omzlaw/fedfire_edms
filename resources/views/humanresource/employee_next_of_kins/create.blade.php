@@ -18,7 +18,7 @@ Employee Next Of Kin @parent
             <div class="card-body">
                 {!! Form::open(['route' => 'humanresource.employeeNextOfKins.store', 'files' => true,'class' => 'form-horizontal']) !!}
 
-                    @include('humanresource.employee_next_of_kins.fields')
+                    @include('humanresource.employee_next_of_kins.fields',[$employees, $relationship])
 
                 {!! Form::close() !!}
             </div>

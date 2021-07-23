@@ -79,8 +79,8 @@ class EmployeeForceService extends Model
         'employee_id' => 'Required',
         'file_upload' => 'Required',
         'remark' => 'Required',
-        'created_by' => 'Required',
-        'updated_by' => 'Required',
+     //   'created_by' => 'Required',
+    //    'updated_by' => 'Required',
         'date_updated' => 'Required'
     ];
 

@@ -65,8 +65,8 @@ class State extends Model
         'description' => 'Required',
         'status' => 'Required',
         'country_id' => 'Required',
-        'created_by' => 'Required',
-        'updated_by' => 'Required'
+     //   'created_by' => 'Required',
+    //    'updated_by' => 'Required'
     ];
 
     /**

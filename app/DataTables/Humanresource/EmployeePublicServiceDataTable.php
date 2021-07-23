@@ -65,21 +65,20 @@ class EmployeePublicServiceDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
+            // 'id',
             'employer_name',
             'from_date',
             'to_date',
             'file_page_ref',
             'employee_id',
-            'file_upload_id',
+            // 'file_upload',
             'total_years_served',
             'total_paid',
             'remark',
             'checked_by',
-            'created_by',
-            'updated_by',
-            'created_at' => ['searchable' => false],
-            'updated_at' => ['searchable' => false]
+            // 'created_by',
+            // 'updated_by',
+
         ];
     }
 

@@ -16,7 +16,7 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('created_at', 'Created At:') !!}</th>
     <td>{{ $setting->created_at }}</td>
 </tr>
@@ -25,6 +25,6 @@
 <tr>
     <th scopre="row">{!! Form::label('updated_at', 'Updated At:') !!}</th>
     <td>{{ $setting->updated_at }}</td>
-</tr>
+</tr> --}}
 
 

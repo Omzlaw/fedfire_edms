@@ -1,4 +1,4 @@
-//var left_side_width = 240; //Sidebar width in pixels
+var left_side_width = 240; //Sidebar width in pixels
 "use strict";
 $(function() {
     //hide menu in small screens
@@ -14,7 +14,7 @@ $(function() {
     //leftmenu init
     $('#menu').metisMenu();
     // INIT popovers
-    $("[data-toggle='popover']").popover();
+    // $("[data-toggle='popover']").popover();
     /************** alert messages **********/
 
     setTimeout(function() {

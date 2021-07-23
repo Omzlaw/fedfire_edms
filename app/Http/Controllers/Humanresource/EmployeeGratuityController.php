@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Humanresource;
 
-use App\DataTables\Humanresource\EmployeeGratuityDataTable;
+use Flash;
+use Response;
 use App\Http\Requests\Humanresource;
+use App\Models\Humanresource\Employee;
+use App\Http\Controllers\AppBaseController;
+use App\Models\Humanresource\EmployeeGratuity;
+use App\DataTables\Humanresource\EmployeeGratuityDataTable;
 use App\Http\Requests\Humanresource\CreateEmployeeGratuityRequest;
 use App\Http\Requests\Humanresource\UpdateEmployeeGratuityRequest;
-use App\Models\Humanresource\EmployeeGratuity;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class EmployeeGratuityController extends AppBaseController
 {
@@ -31,7 +32,8 @@ class EmployeeGratuityController extends AppBaseController
      */
     public function create()
     {
-        return view('humanresource.employee_gratuities.create');
+        $employees = new Employee;
+        return view('humanresource.employee_gratuities.create', compact('employees'));
     }
 
     /**
@@ -91,8 +93,8 @@ class EmployeeGratuityController extends AppBaseController
 
             return redirect(route('humanresource.employeeGratuities.index'));
         }
-
-        return view('humanresource.employee_gratuities.edit')->with('employeeGratuity', $employeeGratuity);
+        $employees = new Employee;
+        return view('humanresource.employee_gratuities.edit', compact('employees'))->with('employeeGratuity', $employeeGratuity);
     }
 
     /**

@@ -85,8 +85,8 @@ class EmployeeLocalLeave extends Model
         'to_date' => 'Required',
         'status' => 'Required',
         'remark' => 'Required',
-        'created_by' => 'Required',
-        'updated_by' => 'Required'
+     //   'created_by' => 'Required',
+    //    'updated_by' => 'Required'
     ];
 
     /**
@@ -100,7 +100,7 @@ class EmployeeLocalLeave extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function leaver()
+    public function leaveType()
     {
         return $this->belongsTo(\App\Models\Humanresource\Employee::class, 'leaver_id', 'id');
     }

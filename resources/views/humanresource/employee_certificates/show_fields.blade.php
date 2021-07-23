@@ -46,10 +46,10 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('updated_by', 'Updated By:') !!}</th>
     <td>{{ $employeeCertificates->updated_by }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
@@ -58,7 +58,7 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('created_by', 'Created By:') !!}</th>
     <td>{{ $employeeCertificates->created_by }}</td>
 </tr>
@@ -73,6 +73,6 @@
 <tr>
     <th scopre="row">{!! Form::label('updated_at', 'Updated At:') !!}</th>
     <td>{{ $employeeCertificates->updated_at }}</td>
-</tr>
+</tr> --}}
 
 

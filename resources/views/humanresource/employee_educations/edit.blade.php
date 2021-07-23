@@ -18,7 +18,7 @@ Employee Education @parent
            <div class="card-body">
                 {!! Form::model($employeeEducation, ['route' => ['humanresource.employeeEducations.update', $employeeEducation->id], 'method' => 'patch', 'files' => true,'class' => 'form-horizontal']) !!}
 
-                    @include('humanresource.employee_educations.fields')
+                    @include('humanresource.employee_educations.fields',[$employees, $certificate_types, $school_types])
 
                 {!! Form::close() !!}
            </div>

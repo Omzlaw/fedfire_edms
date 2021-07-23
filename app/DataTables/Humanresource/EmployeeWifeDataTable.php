@@ -65,15 +65,14 @@ class EmployeeWifeDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
+            // 'id',
             'wife_name',
             'wife_birthdate',
             'marriage_date',
-            'employee_id',
-            'file_upload',
+            // 'employee_id',
+            // 'file_upload',
             'remark',
-            'created_at' => ['searchable' => false],
-            'updated_at' => ['searchable' => false]
+
         ];
     }
 

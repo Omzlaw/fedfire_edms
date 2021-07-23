@@ -18,7 +18,7 @@ Employee Termination @parent
             <div class="card-body">
                 {!! Form::open(['route' => 'humanresource.employeeTerminations.store', 'files' => true,'class' => 'form-horizontal']) !!}
 
-                    @include('humanresource.employee_terminations.fields')
+                    @include('humanresource.employee_terminations.fields', [$employees, $termination_types])
 
                 {!! Form::close() !!}
             </div>

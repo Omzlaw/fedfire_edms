@@ -18,7 +18,7 @@ Employee Gratuity @parent
            <div class="card-body">
                 {!! Form::model($employeeGratuity, ['route' => ['humanresource.employeeGratuities.update', $employeeGratuity->id], 'method' => 'patch', 'files' => true,'class' => 'form-horizontal']) !!}
 
-                    @include('humanresource.employee_gratuities.fields')
+                    @include('humanresource.employee_gratuities.fields',[$employees])
 
                 {!! Form::close() !!}
            </div>

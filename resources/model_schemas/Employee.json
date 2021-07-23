@@ -84,7 +84,7 @@
         "inView": true
     },
     {
-        "name": "birth_certificate_upload_id",
+        "name": "birth_certificate_upload",
         "dbType": "integer:unsigned:foreign,employee_certificates,id",
         "htmlType": "select,",
         "validations": "Required",
@@ -277,7 +277,7 @@
     },
     {
         "type": "relation",
-        "relation": "mt1,EmployeeCertificate,birth_certificate_upload_id,id"
+        "relation": "mt1,EmployeeCertificate,birth_certificate_upload,id"
     },
     {
         "type": "relation",

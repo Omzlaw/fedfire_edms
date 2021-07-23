@@ -65,18 +65,17 @@ class EmployeeLocalLeaveDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
-            'employee_id',
-            'file_upload',
+            // 'id',
+            // 'employee_id',
+            // 'file_upload',
             'no_of_days',
             'file_page_no',
-            'leaver_id',
+            // 'leaver_id',
             'from_date',
             'to_date',
             'status',
             'remark',
-            'created_at' => ['searchable' => false],
-            'updated_at' => ['searchable' => false]
+
         ];
     }
 

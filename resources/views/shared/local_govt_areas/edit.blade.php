@@ -18,7 +18,7 @@ Local Govt Area @parent
            <div class="card-body">
                 {!! Form::model($localGovtArea, ['route' => ['shared.localGovtAreas.update', $localGovtArea->id], 'method' => 'patch','class' => 'form-horizontal']) !!}
 
-                    @include('shared.local_govt_areas.fields')
+                    @include('shared.local_govt_areas.fields', [$states])
 
                 {!! Form::close() !!}
            </div>

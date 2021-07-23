@@ -67,16 +67,16 @@ class EmployeeEducationDataTable extends DataTable
         return [
             'id',
             'school_name',
-            'certificate_id',
-            'school_type_id',
+            // 'certificate_id',
+            // 'school_type_id',
             'from_date',
             'to_date',
-            'file_upload',
+            'employee_id',
+            // 'file_upload',
             'status',
             'remark',
-            'checked_at',
-            'created_at' => ['searchable' => false],
-            'updated_at' => ['searchable' => false]
+            // 'checked_at',
+
         ];
     }
 

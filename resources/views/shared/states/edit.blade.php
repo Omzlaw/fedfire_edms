@@ -18,7 +18,7 @@ State @parent
            <div class="card-body">
                 {!! Form::model($state, ['route' => ['shared.states.update', $state->id], 'method' => 'patch','class' => 'form-horizontal']) !!}
 
-                    @include('shared.states.fields')
+                    @include('shared.states.fields', [$countries])
 
                 {!! Form::close() !!}
            </div>

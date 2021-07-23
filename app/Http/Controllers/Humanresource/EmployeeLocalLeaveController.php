@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers\Humanresource;
 
-use App\DataTables\Humanresource\EmployeeLocalLeaveDataTable;
+use Flash;
+use Response;
 use App\Http\Requests\Humanresource;
+use App\Models\Humanresource\Employee;
+use App\Models\Humanresource\LeaveType;
+use App\Http\Controllers\AppBaseController;
+use App\Models\Humanresource\EmployeeLocalLeave;
+use App\DataTables\Humanresource\EmployeeLocalLeaveDataTable;
 use App\Http\Requests\Humanresource\CreateEmployeeLocalLeaveRequest;
 use App\Http\Requests\Humanresource\UpdateEmployeeLocalLeaveRequest;
-use App\Models\Humanresource\EmployeeLocalLeave;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class EmployeeLocalLeaveController extends AppBaseController
 {
@@ -31,7 +33,9 @@ class EmployeeLocalLeaveController extends AppBaseController
      */
     public function create()
     {
-        return view('humanresource.employee_local_leaves.create');
+        $employees = new Employee;
+        $leave_types = new LeaveType;
+        return view('humanresource.employee_local_leaves.create', compact('employees', 'leave_types'));
     }
 
     /**
@@ -91,8 +95,9 @@ class EmployeeLocalLeaveController extends AppBaseController
 
             return redirect(route('humanresource.employeeLocalLeaves.index'));
         }
-
-        return view('humanresource.employee_local_leaves.edit')->with('employeeLocalLeave', $employeeLocalLeave);
+        $employees = new Employee;
+        $leave_types = new LeaveType;
+        return view('humanresource.employee_local_leaves.edit', compact('employees', 'leave_types'))->with('employeeLocalLeave', $employeeLocalLeave);
     }
 
     /**

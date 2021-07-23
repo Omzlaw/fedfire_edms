@@ -18,7 +18,7 @@ Employee Termination @parent
            <div class="card-body">
                 {!! Form::model($employeeTermination, ['route' => ['humanresource.employeeTerminations.update', $employeeTermination->id], 'method' => 'patch', 'files' => true,'class' => 'form-horizontal']) !!}
 
-                    @include('humanresource.employee_terminations.fields')
+                    @include('humanresource.employee_terminations.fields', [$employees, $termination_types])
 
                 {!! Form::close() !!}
            </div>

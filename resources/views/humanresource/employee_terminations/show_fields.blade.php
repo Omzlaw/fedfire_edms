@@ -1,18 +1,18 @@
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('id', 'Id:') !!}</th>
     <td>{{ $employeeTermination->id }}</td>
+</tr> --}}
+
+
+<tr>
+    <th scopre="row">{!! Form::label('termination_id', 'Termination Type:') !!}</th>
+    <td>{{ $employeeTermination->termination_type->title }}</td>
 </tr>
 
 
 <tr>
-    <th scopre="row">{!! Form::label('termination_id', 'Termination Id:') !!}</th>
-    <td>{{ $employeeTermination->termination_id }}</td>
-</tr>
-
-
-<tr>
-    <th scopre="row">{!! Form::label('employee_id', 'Employee Id:') !!}</th>
-    <td>{{ $employeeTermination->employee_id }}</td>
+    <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
+    <td>{{ $employeeTermination->employee->name }}</td>
 </tr>
 
 
@@ -120,7 +120,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('status', 'Status:') !!}</th>
-    <td>{{ $employeeTermination->status }}</td>
+    <td>{{ get_enum_value('enum_status', $employeeTermination->status) }}</td>
 </tr>
 
 
@@ -130,7 +130,7 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('created_by', 'Created By:') !!}</th>
     <td>{{ $employeeTermination->created_by }}</td>
 </tr>
@@ -139,10 +139,10 @@
 <tr>
     <th scopre="row">{!! Form::label('updated_by', 'Updated By:') !!}</th>
     <td>{{ $employeeTermination->updated_by }}</td>
-</tr>
+</tr> --}}
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('created_at', 'Created At:') !!}</th>
     <td>{{ $employeeTermination->created_at }}</td>
 </tr>
@@ -151,6 +151,6 @@
 <tr>
     <th scopre="row">{!! Form::label('updated_at', 'Updated At:') !!}</th>
     <td>{{ $employeeTermination->updated_at }}</td>
-</tr>
+</tr> --}}
 
 

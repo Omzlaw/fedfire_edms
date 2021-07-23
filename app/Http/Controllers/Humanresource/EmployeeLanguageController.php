@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Humanresource;
 
-use App\DataTables\Humanresource\EmployeeLanguageDataTable;
+use Flash;
+use Response;
 use App\Http\Requests\Humanresource;
+use App\Models\Humanresource\Employee;
+use App\Http\Controllers\AppBaseController;
+use App\Models\Humanresource\EmployeeLanguage;
+use App\DataTables\Humanresource\EmployeeLanguageDataTable;
 use App\Http\Requests\Humanresource\CreateEmployeeLanguageRequest;
 use App\Http\Requests\Humanresource\UpdateEmployeeLanguageRequest;
-use App\Models\Humanresource\EmployeeLanguage;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class EmployeeLanguageController extends AppBaseController
 {
@@ -31,7 +32,8 @@ class EmployeeLanguageController extends AppBaseController
      */
     public function create()
     {
-        return view('humanresource.employee_languages.create');
+        $employees = new Employee;
+        return view('humanresource.employee_languages.create', compact('employees'));
     }
 
     /**
@@ -91,8 +93,8 @@ class EmployeeLanguageController extends AppBaseController
 
             return redirect(route('humanresource.employeeLanguages.index'));
         }
-
-        return view('humanresource.employee_languages.edit')->with('employeeLanguage', $employeeLanguage);
+        $employees = new Employee;
+        return view('humanresource.employee_languages.edit', compact('employees'))->with('employeeLanguage', $employeeLanguage);
     }
 
     /**

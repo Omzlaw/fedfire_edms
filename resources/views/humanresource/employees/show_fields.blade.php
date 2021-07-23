@@ -41,8 +41,8 @@
 
 
 <tr>
-    <th scopre="row">{!! Form::label('birth_certificate_upload_id', 'Birth Certificate Upload Id:') !!}</th>
-    <td>{{ $employee->birth_certificate_upload_id }}</td>
+    <th scopre="row">{!! Form::label('birth_certificate_upload', 'Birth Certificate Upload Id:') !!}</th>
+    <td>{{ $employee->birth_certificate_upload }}</td>
 </tr>
 
 
@@ -106,7 +106,7 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('created_by', 'Created By:') !!}</th>
     <td>{{ $employee->created_by }}</td>
 </tr>
@@ -115,7 +115,7 @@
 <tr>
     <th scopre="row">{!! Form::label('updated_by', 'Updated By:') !!}</th>
     <td>{{ $employee->updated_by }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
@@ -124,7 +124,7 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('created_at', 'Created At:') !!}</th>
     <td>{{ $employee->created_at }}</td>
 </tr>
@@ -133,6 +133,6 @@
 <tr>
     <th scopre="row">{!! Form::label('updated_at', 'Updated At:') !!}</th>
     <td>{{ $employee->updated_at }}</td>
-</tr>
+</tr> --}}
 
 

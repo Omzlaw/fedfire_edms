@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Humanresource;
 
-use App\DataTables\Humanresource\EmployeeWifeDataTable;
+use Flash;
+use Response;
 use App\Http\Requests\Humanresource;
+use App\Models\Humanresource\Employee;
+use App\Models\Humanresource\EmployeeWife;
+use App\Http\Controllers\AppBaseController;
+use App\DataTables\Humanresource\EmployeeWifeDataTable;
 use App\Http\Requests\Humanresource\CreateEmployeeWifeRequest;
 use App\Http\Requests\Humanresource\UpdateEmployeeWifeRequest;
-use App\Models\Humanresource\EmployeeWife;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class EmployeeWifeController extends AppBaseController
 {
@@ -31,7 +32,8 @@ class EmployeeWifeController extends AppBaseController
      */
     public function create()
     {
-        return view('humanresource.employee_wives.create');
+        $employees = new Employee;
+        return view('humanresource.employee_wives.create', compact('employees'));
     }
 
     /**
@@ -91,8 +93,8 @@ class EmployeeWifeController extends AppBaseController
 
             return redirect(route('humanresource.employeeWives.index'));
         }
-
-        return view('humanresource.employee_wives.edit')->with('employeeWife', $employeeWife);
+        $employees = new Employee;
+        return view('humanresource.employee_wives.edit', compact('employees'))->with('employeeWife', $employeeWife);
     }
 
     /**

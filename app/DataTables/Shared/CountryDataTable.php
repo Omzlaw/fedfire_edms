@@ -18,7 +18,11 @@ class CountryDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'shared.countries.datatables_actions');
+        return $dataTable
+        ->addColumn('status', function($row){
+            return get_enum_value('enum_status', $row->status);
+        })
+        ->addColumn('action', 'shared.countries.datatables_actions');
     }
 
     /**
@@ -65,12 +69,11 @@ class CountryDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
+            // 'id',
             'title',
             'description',
             'status',
-            'created_at' => ['searchable' => false],
-            'updated_at' => ['searchable' => false]
+
         ];
     }
 

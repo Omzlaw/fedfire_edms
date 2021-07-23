@@ -18,7 +18,7 @@ Employee Foreign Tours @parent
             <div class="card-body">
                 {!! Form::open(['route' => 'humanresource.employeeForeignTours.store', 'files' => true,'class' => 'form-horizontal']) !!}
 
-                    @include('humanresource.employee_foreign_tours.fields')
+                    @include('humanresource.employee_foreign_tours.fields', [$employees, $leave_types])
 
                 {!! Form::close() !!}
             </div>

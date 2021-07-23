@@ -18,7 +18,7 @@ Employee Censure @parent
             <div class="card-body">
                 {!! Form::open(['route' => 'humanresource.employeeCensures.store', 'files' => true,'class' => 'form-horizontal']) !!}
 
-                    @include('humanresource.employee_censures.fields')
+                    @include('humanresource.employee_censures.fields',[$employees])
 
                 {!! Form::close() !!}
             </div>

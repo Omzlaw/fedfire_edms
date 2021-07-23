@@ -18,7 +18,7 @@ Employee Record Tracker @parent
             <div class="card-body">
                 {!! Form::open(['route' => 'humanresource.employeeRecordTrackers.store','class' => 'form-horizontal']) !!}
 
-                    @include('humanresource.employee_record_trackers.fields')
+                    @include('humanresource.employee_record_trackers.fields',[$employees])
 
                 {!! Form::close() !!}
             </div>

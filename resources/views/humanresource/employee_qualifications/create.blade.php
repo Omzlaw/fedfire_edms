@@ -18,7 +18,7 @@ Employee Qualification @parent
             <div class="card-body">
                 {!! Form::open(['route' => 'humanresource.employeeQualifications.store', 'files' => true,'class' => 'form-horizontal']) !!}
 
-                    @include('humanresource.employee_qualifications.fields')
+                    @include('humanresource.employee_qualifications.fields',[$employees])
 
                 {!! Form::close() !!}
             </div>

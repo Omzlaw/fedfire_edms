@@ -77,8 +77,8 @@ class EmployeeQualification extends Model
         'status' => 'Required',
         'remark' => 'Required',
         'checked_by' => 'Required',
-        'created_by' => 'Required',
-        'updated_by' => 'Required'
+     //   'created_by' => 'Required',
+    //    'updated_by' => 'Required'
     ];
 
     /**

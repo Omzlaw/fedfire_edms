@@ -65,23 +65,22 @@ class EmployeeGratuityDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
-            'employee_id',
-            'file_upload',
+            // 'id',
+            // 'employee_id',
+            // 'file_upload',
             'file_page_no',
             'payment_date',
             'from_date',
             'to_date',
-            'years',
-            'months',
-            'days',
+            // 'years',
+            // 'months',
+            // 'days',
             'status',
             'rate_per_annum',
             'amount_paid',
             'remark',
-            'checked_at',
-            'created_at' => ['searchable' => false],
-            'updated_at' => ['searchable' => false]
+            // 'checked_at',
+
         ];
     }
 

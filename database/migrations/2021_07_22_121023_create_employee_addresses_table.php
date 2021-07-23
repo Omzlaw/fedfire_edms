@@ -19,18 +19,18 @@ class CreateEmployeeAddressesTable extends Migration
             $table->integer('state_id')->unsigned();
             $table->integer('country_id')->unsigned();
             $table->integer('employee_id')->unsigned();
-            $table->string('file_upload');
-            $table->integer('status');
+            $table->string('file_upload')->nullable();
+            $table->integer('status')->default(1);
             $table->text('remark');
-            $table->integer('created_by')->unsigned();
-            $table->integer('updated_by')->unsigned();
+            $table->integer('created_by')->unsigned()->nullable();
+            $table->integer('updated_by')->unsigned()->nullable();
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('state_id')->references('id')->on('states');
-            $table->foreign('country_id')->references('id')->on('countries');
-            $table->foreign('employee_id')->references('id')->on('employees');
-            $table->foreign('created_by')->references('id')->on('users');
-            $table->foreign('updated_by')->references('id')->on('users');
+            //$table->foreign('state_id')->references('id')->on('states');
+            //$table->foreign('country_id')->references('id')->on('countries');
+            //$table->foreign('employee_id')->references('id')->on('employees');
+            //$table->foreign('created_by')->references('id')->on('users');
+            //$table->foreign('updated_by')->references('id')->on('users');
         });
     }
 

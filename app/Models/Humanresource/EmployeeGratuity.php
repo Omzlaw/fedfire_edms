@@ -109,8 +109,8 @@ class EmployeeGratuity extends Model
         'remark' => 'Required',
         'checked_by' => 'Required',
         'checked_at' => 'Required',
-        'created_by' => 'Required',
-        'updated_by' => 'Required'
+     //   'created_by' => 'Required',
+    //    'updated_by' => 'Required'
     ];
 
     /**

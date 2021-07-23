@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Humanresource;
 
-use App\DataTables\Humanresource\EmployeePublicServiceDataTable;
+use Flash;
+use Response;
 use App\Http\Requests\Humanresource;
+use App\Models\Humanresource\Employee;
+use App\Http\Controllers\AppBaseController;
+use App\Models\Humanresource\EmployeePublicService;
+use App\DataTables\Humanresource\EmployeePublicServiceDataTable;
 use App\Http\Requests\Humanresource\CreateEmployeePublicServiceRequest;
 use App\Http\Requests\Humanresource\UpdateEmployeePublicServiceRequest;
-use App\Models\Humanresource\EmployeePublicService;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class EmployeePublicServiceController extends AppBaseController
 {
@@ -31,7 +32,8 @@ class EmployeePublicServiceController extends AppBaseController
      */
     public function create()
     {
-        return view('humanresource.employee_public_services.create');
+        $employees = new Employee;
+        return view('humanresource.employee_public_services.create', compact('employees'));
     }
 
     /**
@@ -91,8 +93,8 @@ class EmployeePublicServiceController extends AppBaseController
 
             return redirect(route('humanresource.employeePublicServices.index'));
         }
-
-        return view('humanresource.employee_public_services.edit')->with('employeePublicService', $employeePublicService);
+        $employees = new Employee;
+        return view('humanresource.employee_public_services.edit', compact('employees'))->with('employeePublicService', $employeePublicService);
     }
 
     /**

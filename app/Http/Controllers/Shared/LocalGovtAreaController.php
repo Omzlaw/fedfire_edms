@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Shared;
 
-use App\DataTables\Shared\LocalGovtAreaDataTable;
+use Flash;
+use Response;
+use App\Models\Shared\State;
 use App\Http\Requests\Shared;
+use App\Models\Shared\LocalGovtArea;
+use App\Http\Controllers\AppBaseController;
+use App\DataTables\Shared\LocalGovtAreaDataTable;
 use App\Http\Requests\Shared\CreateLocalGovtAreaRequest;
 use App\Http\Requests\Shared\UpdateLocalGovtAreaRequest;
-use App\Models\Shared\LocalGovtArea;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class LocalGovtAreaController extends AppBaseController
 {
@@ -31,7 +32,8 @@ class LocalGovtAreaController extends AppBaseController
      */
     public function create()
     {
-        return view('shared.local_govt_areas.create');
+        $states = new State;
+        return view('shared.local_govt_areas.create', compact('states'));
     }
 
     /**
@@ -91,8 +93,9 @@ class LocalGovtAreaController extends AppBaseController
 
             return redirect(route('shared.localGovtAreas.index'));
         }
+        $states = new State;
 
-        return view('shared.local_govt_areas.edit')->with('localGovtArea', $localGovtArea);
+        return view('shared.local_govt_areas.edit', compact('states'))->with('localGovtArea', $localGovtArea);
     }
 
     /**

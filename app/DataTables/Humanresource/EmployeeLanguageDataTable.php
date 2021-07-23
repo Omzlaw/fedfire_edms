@@ -18,7 +18,17 @@ class EmployeeLanguageDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'humanresource.employee_languages.datatables_actions');
+        return $dataTable
+        ->addColumn('speaking_fluency', function($row){
+            return get_enum_value('enum_fluency', $row->speaking_fluency);
+        })
+        ->addColumn('writing_fluency', function($row){
+            return get_enum_value('enum_fluency', $row->writing_fluency);
+        })
+        ->addColumn('status', function($row){
+            return get_enum_value('enum_status', $row->status);
+        })
+        ->addColumn('action', 'humanresource.employee_languages.datatables_actions');
     }
 
     /**
@@ -65,17 +75,16 @@ class EmployeeLanguageDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
+            // 'id',
             'speaking_fluency',
             'writing_fluency',
             'exam_qualified',
-            'employee_id',
-            'file_upload',
+            // 'employee_id',
+            // 'file_upload',
             'status',
-            'remark',
-            'checked_at',
-            'created_at' => ['searchable' => false],
-            'updated_at' => ['searchable' => false]
+            // 'remark',
+            // 'checked_at',
+
         ];
     }
 

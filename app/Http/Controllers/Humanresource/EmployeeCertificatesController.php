@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Humanresource;
 
-use App\DataTables\Humanresource\EmployeeCertificatesDataTable;
+use Flash;
+use Response;
 use App\Http\Requests\Humanresource;
+use App\Models\Humanresource\Employee;
+use App\Http\Controllers\AppBaseController;
+use App\Models\Humanresource\EmployeeCertificates;
+use App\DataTables\Humanresource\EmployeeCertificatesDataTable;
 use App\Http\Requests\Humanresource\CreateEmployeeCertificatesRequest;
 use App\Http\Requests\Humanresource\UpdateEmployeeCertificatesRequest;
-use App\Models\Humanresource\EmployeeCertificates;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class EmployeeCertificatesController extends AppBaseController
 {
@@ -31,7 +32,8 @@ class EmployeeCertificatesController extends AppBaseController
      */
     public function create()
     {
-        return view('humanresource.employee_certificates.create');
+        $employees = new Employee;
+        return view('humanresource.employee_certificates.create', compact('employees'));
     }
 
     /**
@@ -91,8 +93,9 @@ class EmployeeCertificatesController extends AppBaseController
 
             return redirect(route('humanresource.employeeCertificates.index'));
         }
+        $employees = new Employee;
 
-        return view('humanresource.employee_certificates.edit')->with('employeeCertificates', $employeeCertificates);
+        return view('humanresource.employee_certificates.edit', compact('employees'))->with('employeeCertificates', $employeeCertificates);
     }
 
     /**

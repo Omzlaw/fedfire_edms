@@ -1,9 +1,11 @@
+
+
 <!-- Termination Id Field -->
 <div class="form-group">
     <div class="row">
         {!! Form::label('termination_id', 'Termination Id:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('termination_id', ['' => ''], null, ['class' => 'form-control']) !!}
+            {!! Form::select('termination_id', modelDropdown($termination_types, 'id', 'title'), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </>
@@ -14,7 +16,7 @@
     <div class="row">
         {!! Form::label('employee_id', 'Employee Id:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('employee_id', ['' => ''], null, ['class' => 'form-control']) !!}
+            {!! Form::select('employee_id', modelDropdown($employees), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </>
@@ -36,7 +38,7 @@
     <div class="row">
         {!! Form::label('even_date', 'Even Date:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('even_date', null, ['class' => 'form-control','id'=>'even_date']) !!}
+            {!! Form::date('even_date', null, ['class' => 'form-control','id'=>'even_date']) !!}
         </div>
     </div>
 </div>
@@ -44,7 +46,7 @@
 @section('footer_scripts')
 <script type="text/javascript">
     $('#even_date').datetimepicker({
-            format: 'YYYY-MM-DD HH:mm:ss',
+            format: 'YYYY-MM-DD',
             useCurrent: true,
             sideBySide: true
         })
@@ -57,7 +59,7 @@
     <div class="row">
         {!! Form::label('is_pensionable', 'Is Pensionable:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('is_pensionable', ['1' => 'Yes', '0' => 'No'], null, ['class' => 'form-control']) !!}
+            {!! Form::select('is_pensionable', enum_yes_no(), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </>
@@ -87,7 +89,7 @@
 @section('footer_scripts')
 <script type="text/javascript">
     $('#pension_start_date').datetimepicker({
-            format: 'YYYY-MM-DD HH:mm:ss',
+            format: 'YYYY-MM-DD',
             useCurrent: true,
             sideBySide: true
         })
@@ -152,7 +154,7 @@
 @section('footer_scripts')
 <script type="text/javascript">
     $('#widow_pension_start_date').datetimepicker({
-            format: 'YYYY-MM-DD HH:mm:ss',
+            format: 'YYYY-MM-DD',
             useCurrent: true,
             sideBySide: true
         })
@@ -242,7 +244,7 @@
     <div class="row">
         {!! Form::label('status', 'Status:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('status', ['1' => 'Active', '0' => 'Inactive'], null, ['class' => 'form-control']) !!}
+            {!! Form::select('status', enum_status(), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </>

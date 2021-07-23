@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateEmployeeTerminationsTable extends Migration
 {
@@ -15,36 +16,36 @@ class CreateEmployeeTerminationsTable extends Migration
     {
         Schema::create('employee_terminations', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('termination_id')->unsigned();
+            $table->integer('termination_id')->unsigned();
             $table->integer('employee_id')->unsigned();
-            $table->string('file_upload');
+            $table->string('file_upload')->nullable();
             $table->dateTime('even_date');
-            $table->integer('is_pensionable');
-            $table->decimal('pension_amount');
+            $table->integer('is_pensionable')->default(0);
+            $table->decimal('pension_amount')->default(0);
             $table->dateTime('pension_start_date');
-            $table->decimal('gratuity_amount');
+            $table->decimal('gratuity_amount')->default(0);
             $table->string('contract_gratuity');
             $table->decimal('estate_gratuity_amount_paid');
-            $table->decimal('widow_pension_amount');
+            $table->decimal('widow_pension_amount')->default(0);
             $table->dateTime('widow_pension_start_date');
-            $table->decimal('orphan_pension_amonut');
+            $table->decimal('orphan_pension_amonut')->default(0);
             $table->integer('nigeria_total_service_years');
             $table->integer('nigeria_total_service_months');
             $table->integer('nigeria_total_service_days');
             $table->decimal('total_naria_salary');
             $table->string('summary');
-            $table->string('remark');
-            $table->integer('status');
+            $table->string('remark')->nullable();
+            $table->integer('status')->default(1);
             $table->integer('compiled_by')->unsigned();
-            $table->integer('created_by')->unsigned();
-            $table->integer('updated_by')->unsigned();
+            $table->integer('created_by')->unsigned()->nullable();
+            $table->integer('updated_by')->unsigned()->nullable();
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('termination_id')->references('id')->on('termination_types');
-            $table->foreign('employee_id')->references('id')->on('employees');
-            $table->foreign('compiled_by')->references('id')->on('users');
-            $table->foreign('created_by')->references('id')->on('users');
-            $table->foreign('updated_by')->references('id')->on('users');
+            //$table->foreign('termination_id')->references('id')->on('termination_types');
+            //$table->foreign('employee_id')->references('id')->on('employees');
+            //$table->foreign('compiled_by')->references('id')->on('users');
+            //$table->foreign('created_by')->references('id')->on('users');
+            //$table->foreign('updated_by')->references('id')->on('users');
         });
     }
 

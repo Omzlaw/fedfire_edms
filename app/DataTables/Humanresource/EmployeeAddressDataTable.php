@@ -67,14 +67,12 @@ class EmployeeAddressDataTable extends DataTable
         return [
             'id',
             'address',
-            'state_id',
-            'country_id',
-            'employee_id',
-            'file_upload',
+            // 'state_id',
+            // 'country_id',
+            // 'employee_id',
             'status',
             'remark',
-            'created_at' => ['searchable' => false],
-            'updated_at' => ['searchable' => false]
+
         ];
     }
 

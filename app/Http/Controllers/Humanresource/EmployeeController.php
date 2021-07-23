@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Humanresource;
 
-use App\DataTables\Humanresource\EmployeeDataTable;
+use Flash;
+use Response;
 use App\Http\Requests\Humanresource;
+use App\Models\Shared\MaritalStatus;
+use App\Models\Humanresource\Employee;
+use App\Http\Controllers\AppBaseController;
+use App\DataTables\Humanresource\EmployeeDataTable;
 use App\Http\Requests\Humanresource\CreateEmployeeRequest;
 use App\Http\Requests\Humanresource\UpdateEmployeeRequest;
-use App\Models\Humanresource\Employee;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class EmployeeController extends AppBaseController
 {
@@ -31,7 +32,8 @@ class EmployeeController extends AppBaseController
      */
     public function create()
     {
-        return view('humanresource.employees.create');
+        $marital_status = new MaritalStatus;
+        return view('humanresource.employees.create', compact('marital_status'));
     }
 
     /**
@@ -91,8 +93,8 @@ class EmployeeController extends AppBaseController
 
             return redirect(route('humanresource.employees.index'));
         }
-
-        return view('humanresource.employees.edit')->with('employee', $employee);
+        $marital_status = new MaritalStatus;
+        return view('humanresource.employees.edit', compact('marital_status'))->with('employee', $employee);
     }
 
     /**

@@ -68,13 +68,12 @@ class EmployeeCertificatesDataTable extends DataTable
             'id',
             'certificate_name',
             'date_obtained',
-            'employee_id',
+            // 'employee_id',
             'status',
             'remark',
-            'checked_at',
-            'file_upload',
-            'created_at' => ['searchable' => false],
-            'updated_at' => ['searchable' => false]
+            // 'checked_at',
+            // 'file_upload',
+
         ];
     }
 

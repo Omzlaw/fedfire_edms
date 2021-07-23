@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers\Humanresource;
 
-use App\DataTables\Humanresource\EmployeeForeignToursDataTable;
+use Flash;
+use Response;
 use App\Http\Requests\Humanresource;
+use App\Models\Humanresource\Employee;
+use App\Models\Humanresource\LeaveType;
+use App\Http\Controllers\AppBaseController;
+use App\Models\Humanresource\EmployeeLocalLeave;
+use App\Models\Humanresource\EmployeeForeignTours;
+use App\DataTables\Humanresource\EmployeeForeignToursDataTable;
 use App\Http\Requests\Humanresource\CreateEmployeeForeignToursRequest;
 use App\Http\Requests\Humanresource\UpdateEmployeeForeignToursRequest;
-use App\Models\Humanresource\EmployeeForeignTours;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class EmployeeForeignToursController extends AppBaseController
 {
@@ -31,7 +34,9 @@ class EmployeeForeignToursController extends AppBaseController
      */
     public function create()
     {
-        return view('humanresource.employee_foreign_tours.create');
+        $employees = new Employee;
+        $leave_types = new LeaveType;
+        return view('humanresource.employee_foreign_tours.create', compact('employees', 'leave_types'));
     }
 
     /**
@@ -91,8 +96,9 @@ class EmployeeForeignToursController extends AppBaseController
 
             return redirect(route('humanresource.employeeForeignTours.index'));
         }
-
-        return view('humanresource.employee_foreign_tours.edit')->with('employeeForeignTours', $employeeForeignTours);
+        $employees = new Employee;
+        $employee_local_leave = new EmployeeLocalLeave;
+        return view('humanresource.employee_foreign_tours.edit', compact('employees', 'employee_local_leave'))->with('employeeForeignTours', $employeeForeignTours);
     }
 
     /**

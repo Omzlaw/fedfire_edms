@@ -1,18 +1,18 @@
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('id', 'Id:') !!}</th>
     <td>{{ $employeeLanguage->id }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
     <th scopre="row">{!! Form::label('speaking_fluency', 'Speaking Fluency:') !!}</th>
-    <td>{{ $employeeLanguage->speaking_fluency }}</td>
+    <td>{{ get_enum_value('enum_fluency', $employeeLanguage->speaking_fluency )}}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('writing_fluency', 'Writing Fluency:') !!}</th>
-    <td>{{ $employeeLanguage->writing_fluency }}</td>
+    <td>{{ get_enum_value('enum_fluency', $employeeLanguage->writing_fluency) }}</td>
 </tr>
 
 
@@ -23,8 +23,8 @@
 
 
 <tr>
-    <th scopre="row">{!! Form::label('employee_id', 'Employee Id:') !!}</th>
-    <td>{{ $employeeLanguage->employee_id }}</td>
+    <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
+    <td>{{ $employeeLanguage->employee->name }}</td>
 </tr>
 
 
@@ -36,7 +36,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('status', 'Status:') !!}</th>
-    <td>{{ $employeeLanguage->status }}</td>
+    <td>{{ get_enum_value('enum_status', $employeeLanguage->status) }}</td>
 </tr>
 
 
@@ -48,7 +48,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('checked_by', 'Checked By:') !!}</th>
-    <td>{{ $employeeLanguage->checked_by }}</td>
+    <td>{{ $employeeLanguage->checkedBy->name }}</td>
 </tr>
 
 
@@ -58,7 +58,7 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('created_by', 'Created By:') !!}</th>
     <td>{{ $employeeLanguage->created_by }}</td>
 </tr>
@@ -79,6 +79,6 @@
 <tr>
     <th scopre="row">{!! Form::label('updated_at', 'Updated At:') !!}</th>
     <td>{{ $employeeLanguage->updated_at }}</td>
-</tr>
+</tr> --}}
 
 

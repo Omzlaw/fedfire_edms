@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Humanresource;
 
-use App\DataTables\Humanresource\EmployeeRecordTrackerDataTable;
+use Flash;
+use Response;
 use App\Http\Requests\Humanresource;
+use App\Models\Humanresource\Employee;
+use App\Http\Controllers\AppBaseController;
+use App\Models\Humanresource\EmployeeRecordTracker;
+use App\DataTables\Humanresource\EmployeeRecordTrackerDataTable;
 use App\Http\Requests\Humanresource\CreateEmployeeRecordTrackerRequest;
 use App\Http\Requests\Humanresource\UpdateEmployeeRecordTrackerRequest;
-use App\Models\Humanresource\EmployeeRecordTracker;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class EmployeeRecordTrackerController extends AppBaseController
 {
@@ -31,7 +32,8 @@ class EmployeeRecordTrackerController extends AppBaseController
      */
     public function create()
     {
-        return view('humanresource.employee_record_trackers.create');
+        $employees = new Employee;
+        return view('humanresource.employee_record_trackers.create', compact('employees'));
     }
 
     /**
@@ -91,8 +93,8 @@ class EmployeeRecordTrackerController extends AppBaseController
 
             return redirect(route('humanresource.employeeRecordTrackers.index'));
         }
-
-        return view('humanresource.employee_record_trackers.edit')->with('employeeRecordTracker', $employeeRecordTracker);
+        $employees = new Employee;
+        return view('humanresource.employee_record_trackers.edit', compact('employees'))->with('employeeRecordTracker', $employeeRecordTracker);
     }
 
     /**
