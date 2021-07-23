@@ -15,9 +15,9 @@ class CreateFileDirectoriesTable extends Migration
     {
         Schema::create('file_directories', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('file_name');
+            $table->string('file_upload');
             $table->integer('file_type_id')->unsigned();
-            $table->string('file_ext');
+            $table->string('file_url');
             $table->integer('staff_no');
             $table->integer('status')->default(1);
             $table->string('remark')->nullable();

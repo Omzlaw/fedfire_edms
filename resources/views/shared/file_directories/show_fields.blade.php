@@ -5,8 +5,8 @@
 
 
 <tr>
-    <th scopre="row">{!! Form::label('file_name', 'File Name:') !!}</th>
-    <td>{{ $fileDirectory->file_name }}</td>
+    <th scopre="row">{!! Form::label('file_upload', 'File Name:') !!}</th>
+    <td>{{ $fileDirectory->file_upload }}</td>
 </tr>
 
 
@@ -17,8 +17,8 @@
 
 
 <tr>
-    <th scopre="row">{!! Form::label('file_ext', 'File Ext:') !!}</th>
-    <td>{{ $fileDirectory->file_ext }}</td>
+    <th scopre="row">{!! Form::label('file_url', 'File Ext:') !!}</th>
+    <td>{{ $fileDirectory->file_url }}</td>
 </tr>
 
 

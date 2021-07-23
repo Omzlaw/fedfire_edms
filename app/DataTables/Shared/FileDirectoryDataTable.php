@@ -66,9 +66,9 @@ class FileDirectoryDataTable extends DataTable
     {
         return [
             // 'id',
-            'file_name',
-            // 'file_type_id',
-            'file_ext',
+            // 'file_upload',
+            'file_type_id',
+            'file_url',
             'staff_no',
             'status',
             'remark',

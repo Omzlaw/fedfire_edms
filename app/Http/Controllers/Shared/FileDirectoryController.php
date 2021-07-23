@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Shared;
 
 use Flash;
 use Response;
+use App\Traits\FileUpload;
+use Illuminate\Http\Request;
 use App\Http\Requests\Shared;
 use App\Models\Shared\FileType;
 use App\Models\Shared\FileDirectory;
@@ -14,6 +16,7 @@ use App\Http\Requests\Shared\UpdateFileDirectoryRequest;
 
 class FileDirectoryController extends AppBaseController
 {
+    use FileUpload; 
     /**
      * Display a listing of the FileDirectory.
      *
@@ -45,10 +48,10 @@ class FileDirectoryController extends AppBaseController
      */
     public function store(CreateFileDirectoryRequest $request)
     {
-        $input = $request->all();
+        $input = $request->all();        
 
         /** @var FileDirectory $fileDirectory */
-        $fileDirectory = FileDirectory::create($input);
+        $status = $this->fileUpload($input);
 
         Flash::success('File Directory saved successfully.');
 
@@ -149,5 +152,29 @@ class FileDirectoryController extends AppBaseController
         Flash::success('File Directory deleted successfully.');
 
         return redirect(route('shared.fileDirectories.index'));
+    }
+
+//Using our created Trait to access in trait method
+
+    public function fileUpload($input) 
+    {
+        $file_upload_array = $input['file_upload'];
+        $staff_no = $input['staff_no'];
+        $file_type_id_array = $input['file_type_id'];
+        $db_data = array();
+   
+        // if ($input->hasFile('file_upload')) {
+
+            foreach($file_upload_array as $index=>$file){
+                $file_type_id = $file_type_id_array[$index];
+                $file_type_name = FileType::find($file_type_id);
+                $upload_time = now();
+                $file_path = $this->Upload($file, $staff_no, $file_type_name, $upload_time); //passing parameter to our trait method one after another using foreach loop
+                $db_data['file_type_id'] = $file_type_id;
+                $db_data['staff_no'] = $staff_no;
+                $db_data['file_path'] = $file_path;
+                $fileDirectory = FileDirectory::create($db_data);
+            }    
+        // }
     }
 }

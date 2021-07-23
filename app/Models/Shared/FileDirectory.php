@@ -13,9 +13,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property \App\Models\Shared\FileType $fileType
  * @property \App\Models\Shared\User $createdBy
  * @property \App\Models\Shared\User $updatedBy
- * @property string $file_name
+ * @property string $file_upload
  * @property integer $file_type_id
- * @property string $file_ext
+ * @property string $file_url
  * @property integer $staff_no
  * @property integer $status
  * @property string $remark
@@ -34,9 +34,9 @@ class FileDirectory extends Model
 
 
     public $fillable = [
-        'file_name',
+        'file_upload',
         'file_type_id',
-        'file_ext',
+        'file_url',
         'staff_no',
         'status',
         'remark',
@@ -51,9 +51,9 @@ class FileDirectory extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'file_name' => 'string',
+        'file_upload' => 'string',
         'file_type_id' => 'integer',
-        'file_ext' => 'string',
+        'file_url' => 'string',
         'staff_no' => 'integer',
         'status' => 'integer',
         'remark' => 'string',
@@ -67,11 +67,11 @@ class FileDirectory extends Model
      * @var array
      */
     public static $rules = [
-        'file_name' => 'Required',
+        'file_upload' => 'Required',
         'file_type_id' => 'Required',
-        'file_ext' => 'Required',
+        // 'file_url' => 'Required',
         'staff_no' => 'Required',
-        'status' => 'Required',
+        // 'status' => 'Required',
         'remark' => 'Required',
      //   'created_by' => 'Required',
     //    'updated_by' => 'Required'

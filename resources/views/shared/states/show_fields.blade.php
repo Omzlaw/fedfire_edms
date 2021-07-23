@@ -1,7 +1,7 @@
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('id', 'Id:') !!}</th>
     <td>{{ $state->id }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
@@ -18,13 +18,13 @@
 
 <tr>
     <th scopre="row">{!! Form::label('status', 'Status:') !!}</th>
-    <td>{{ $state->status }}</td>
+    <td>{{ get_enum_value('enum_status', $state->status) }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('country_id', 'Country Id:') !!}</th>
-    <td>{{ $state->country_id }}</td>
+    <td>{{ $state->country->title }}</td>
 </tr>
 
 

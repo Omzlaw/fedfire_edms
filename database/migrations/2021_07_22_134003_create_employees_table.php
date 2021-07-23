@@ -21,7 +21,7 @@ class CreateEmployeesTable extends Migration
             $table->integer('gender');
             $table->dateTime('birthdate');
             $table->string('place_of_birth');
-            $table->string('birth_certificate_upload')->unsigned()->nullable();
+            $table->string('birth_certificate_upload')->nullable();
             $table->integer('marital_status_id')->unsigned();
             $table->dateTime('first_appointment_date');
             $table->dateTime('first_arrival_date');

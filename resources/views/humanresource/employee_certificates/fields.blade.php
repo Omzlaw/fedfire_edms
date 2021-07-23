@@ -81,7 +81,6 @@
         <div class="col-md-9 col-lg-9 col-12">{!! Form::file('file_upload') !!}
         </div>
     </div>
-</div <div class="clearfix">
 </div>
 
 

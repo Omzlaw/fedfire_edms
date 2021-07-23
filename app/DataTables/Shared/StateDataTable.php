@@ -18,7 +18,14 @@ class StateDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'shared.states.datatables_actions');
+        return $dataTable
+        ->addColumn('status', function($row){
+            return get_enum_value('enum_status', $row->status);
+        })
+        ->addColumn('country_id', function($row){
+            return $row->country->title;
+        })
+        ->addColumn('action', 'shared.states.datatables_actions');
     }
 
     /**
