@@ -155,7 +155,6 @@
         </nav>
     </header>
     <div class="wrapper">
-
         <!-- Left side column. contains the logo and sidebar -->
         <aside class="left-aside col-2">
             <!-- sidebar: style can be found in sidebar-->
@@ -171,6 +170,7 @@
         <aside class="right-aside">
             @yield('content')
         </aside>
+        @include('layouts.modal')
     </div>
     <!-- ./wrapper -->
     <!-- Footer end -->

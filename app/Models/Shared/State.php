@@ -2,7 +2,7 @@
 
 namespace App\Models\Shared;
 
-use Eloquent as Model;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
@@ -33,7 +33,7 @@ class State extends Model
 
     public $fillable = [
         'title',
-        'description',
+        // 'description',
         'status',
         'country_id',
         'created_by',
@@ -48,7 +48,7 @@ class State extends Model
     protected $casts = [
         'id' => 'integer',
         'title' => 'string',
-        'description' => 'string',
+        // 'description' => 'string',
         'status' => 'integer',
         'country_id' => 'integer',
         'created_by' => 'integer',
@@ -62,7 +62,7 @@ class State extends Model
      */
     public static $rules = [
         'title' => 'Required',
-        'description' => 'Required',
+        // 'description' => 'Required',
         'status' => 'Required',
         'country_id' => 'Required',
      //   'created_by' => 'Required',

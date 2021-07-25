@@ -10,10 +10,10 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('description', 'Description:') !!}</th>
     <td>{{ $state->description }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>

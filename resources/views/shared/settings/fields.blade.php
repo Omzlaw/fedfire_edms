@@ -6,7 +6,7 @@
             {!! Form::text('key', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div>
 
 
 <!-- Value Field -->
@@ -17,7 +17,7 @@
             {!! Form::text('value', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div>
 
 
 <!-- Submit Field -->

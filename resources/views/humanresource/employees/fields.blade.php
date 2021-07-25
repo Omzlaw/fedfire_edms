@@ -6,7 +6,7 @@
             {!! Form::text('file_no', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div>
 
 
 <!-- First Name Field -->
@@ -17,7 +17,7 @@
             {!! Form::text('first_name', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div>
 
 
 <!-- Last Name Field -->
@@ -28,7 +28,7 @@
             {!! Form::text('last_name', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div>
 
 
 <!-- Gender Field -->
@@ -71,7 +71,7 @@
             {!! Form::text('place_of_birth', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div>
 
 
 <!-- Birth Certificate Upload Id Field -->
@@ -141,7 +141,7 @@
 <!-- Nationality Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('nationality', 'Nationality:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('nationality', 'Nationality:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}  
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::select('nationality', modelDropdown($countries, 'id', 'title'), null, ['class' => 'form-control']) !!}
         </div>

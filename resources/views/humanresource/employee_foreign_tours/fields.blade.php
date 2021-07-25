@@ -4,6 +4,7 @@
         {!! Form::label('employee_id', 'Employee:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::select('employee_id', modelDropdown($employees, 'id', 'staff_code'), null, ['class' => 'form-control']) !!}
+            <button id="model_modal_button" data-route="{{ route('humanresource.employees.create') }}" type="button" data-toggle="modal"  data-target="#model_modal">Add new</button>
         </div>
     </div>
 </div>
@@ -26,6 +27,7 @@
         {!! Form::label('leaver_id', 'Leave Type:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::select('leaver_id', modelDropdown($leave_types), null, ['class' => 'form-control']) !!}
+            <button id="model_modal_button" data-route="{{ route('humanresource.leaveTypes.create') }}" type="button" data-toggle="modal"  data-target="#model_modal">Add new</button>
         </div>
     </div>
 </div>
@@ -262,7 +264,7 @@
             {!! Form::text('passed_to_uk', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div>
 
 
 <!-- Passed From Uk Field -->
@@ -273,7 +275,7 @@
             {!! Form::text('passed_from_uk', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div>
 
 
 <!-- Resident Months Field -->

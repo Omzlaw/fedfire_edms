@@ -121,6 +121,10 @@ $(document).on('click', '.card-header .clickable', function(e){
     }
 });
 
+$(document).on('click', '#model_modal_button', function() {
+    $('#model_frame').attr('src', $(this).attr("data-route"));
+    $('#model_modal').modal('show');
+});
 
 
 $(document).on('click', '.card-header .removepanel', function(){

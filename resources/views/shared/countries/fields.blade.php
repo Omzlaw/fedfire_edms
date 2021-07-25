@@ -6,18 +6,28 @@
             {!! Form::text('title', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div>
 
 
-<!-- Description Field -->
+<!-- Code Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('description', 'Description:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('code', 'Code:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('description', null, ['class' => 'form-control']) !!}
+            {!! Form::text('code', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div>
+
+<!-- Code Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('phone_code', 'Phone Code:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::text('phone_code', null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
 
 
 <!-- Status Field -->

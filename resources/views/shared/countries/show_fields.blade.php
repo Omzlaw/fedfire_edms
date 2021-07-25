@@ -11,8 +11,13 @@
 
 
 <tr>
-    <th scopre="row">{!! Form::label('description', 'Description:') !!}</th>
-    <td>{{ $country->description }}</td>
+    <th scopre="row">{!! Form::label('code', 'Code:') !!}</th>
+    <td>{{ $country->code }}</td>
+</tr>
+
+<tr>
+    <th scopre="row">{!! Form::label('phone_code', 'Phone Code:') !!}</th>
+    <td>{{ $country->phone_code }}</td>
 </tr>
 
 

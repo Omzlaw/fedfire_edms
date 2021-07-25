@@ -9,6 +9,16 @@
 </div
 
 
+<!-- Country Id Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('country_id', 'Country:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::select('country_id', modelDropdown($countries), null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
 <!-- State Id Field -->
 <div class="form-group">
     <div class="row">
@@ -20,23 +30,13 @@
 </div>
 
 
-<!-- Country Id Field -->
-<div class="form-group">
-    <div class="row">
-        {!! Form::label('country_id', 'Country:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('country_id', modelDropdown($countries), null, ['class' => 'form-control']) !!}
-        </div>
-    </div>
-</div>
-
-
 <!-- Employee Id Field -->
 <div class="form-group">
     <div class="row">
         {!! Form::label('employee_id', 'Employee:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::select('employee_id', modelDropdown($employees, 'id', 'staff_code'), null, ['class' => 'form-control']) !!}
+            <button id="model_modal_button" data-route="{{ route('humanresource.employees.create') }}" type="button" data-toggle="modal"  data-target="#model_modal">Add new</button>
         </div>
     </div>
 </div>

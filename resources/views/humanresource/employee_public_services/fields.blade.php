@@ -17,7 +17,7 @@
             {!! Form::date('from_date', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div>
 
 
 <!-- To Date Field -->
@@ -28,7 +28,7 @@
             {!! Form::date('to_date', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div>
 
 
 <!-- File Page Ref Field -->
@@ -39,7 +39,7 @@
             {!! Form::text('file_page_ref', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div>
 
 
 <!-- Employee Id Field -->
@@ -48,9 +48,10 @@
         {!! Form::label('employee_id', 'Employee:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::select('employee_id', modelDropdown($employees, 'id', 'staff_code'), null, ['class' => 'form-control']) !!}
+            <button id="model_modal_button" data-route="{{ route('humanresource.employees.create') }}" type="button" data-toggle="modal"  data-target="#model_modal">Add new</button>
         </div>
     </div>
-</div
+</div>
 
 
 <!-- File Upload Field -->

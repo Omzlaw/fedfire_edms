@@ -6,18 +6,18 @@
             {!! Form::text('title', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div>
 
 
-<!-- Description Field -->
-<div class="form-group ">
+{{-- <!-- Description Field --> --}}
+{{-- <div class="form-group ">
     <div class="row">
         {!! Form::label('description', 'Description:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div>
+</div> --}}
 
 
 <!-- Status Field -->

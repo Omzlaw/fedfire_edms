@@ -6,6 +6,7 @@
         {!! Form::label('termination_id', 'Termination Type:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::select('termination_id', modelDropdown($termination_types, 'id', 'title'), null, ['class' => 'form-control']) !!}
+            <button id="model_modal_button" data-route="{{ route('humanresource.terminationTypes.create') }}" type="button" data-toggle="modal"  data-target="#model_modal">Add new</button>
         </div>
     </div>
 </div>
@@ -17,6 +18,7 @@
         {!! Form::label('employee_id', 'Employee:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::select('employee_id', modelDropdown($employees, 'id', 'staff_code'), null, ['class' => 'form-control']) !!}
+            <button id="model_modal_button" data-route="{{ route('humanresource.employees.create') }}" type="button" data-toggle="modal"  data-target="#model_modal">Add new</button>
         </div>
     </div>
 </div>

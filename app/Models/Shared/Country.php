@@ -31,7 +31,8 @@ class Country extends Model
 
     public $fillable = [
         'title',
-        'description',
+        'code',
+        'phone_code',
         'status',
         'created_by',
         'updated_by'
@@ -45,7 +46,8 @@ class Country extends Model
     protected $casts = [
         'id' => 'integer',
         'title' => 'string',
-        'description' => 'string',
+        'code' => 'string',
+        'phone_code' => 'string',
         'status' => 'integer',
         'created_by' => 'integer',
         'updated_by' => 'integer'
@@ -58,7 +60,8 @@ class Country extends Model
      */
     public static $rules = [
         'title' => 'Required',
-        'description' => 'Required',
+        'code' => 'Required',
+        'phone_code' => 'Required',
         'status' => 'Required',
      //   'created_by' => 'Required',
     //    'updated_by' => 'Required'

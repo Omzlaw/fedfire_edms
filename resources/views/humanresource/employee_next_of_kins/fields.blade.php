@@ -6,7 +6,7 @@
             {!! Form::text('name', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div>
 
 
 <!-- Address Field -->
@@ -17,7 +17,7 @@
             {!! Form::text('address', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div>
 
 
 <!-- Relationship Id Field -->
@@ -26,6 +26,7 @@
         {!! Form::label('relationship_id', 'Relationship:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::select('relationship_id', modelDropdown($relationship), null, ['class' => 'form-control']) !!}
+            <button id="model_modal_button" data-route="{{ route('shared.relationships.create') }}" type="button" data-toggle="modal"  data-target="#model_modal">Add new</button>
         </div>
     </div>
 </div>
@@ -37,6 +38,7 @@
         {!! Form::label('employee_id', 'Employee:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::select('employee_id', modelDropdown($employees, 'id', 'staff_code'), null, ['class' => 'form-control']) !!}
+            <button id="model_modal_button" data-route="{{ route('humanresource.employees.create') }}" type="button" data-toggle="modal"  data-target="#model_modal">Add new</button>
         </div>
     </div>
 </div>
@@ -61,7 +63,7 @@
             {!! Form::text('remark', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div>
 
 
 <!-- Submit Field -->
