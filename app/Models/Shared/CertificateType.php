@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @package App\Models\Shared
  * @version July 22, 2021, 12:35 pm UTC
  *
- * @property \App\Models\Shared\User $users
- * @property \App\Models\Shared\User $updatedBy
+ * @property \App\Models\User $users
+ * @property \App\Models\User $updatedBy
  * @property string $title
  * @property string $description
  * @property integer $status
@@ -67,9 +67,9 @@ class CertificateType extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function users()
+    public function createdBy()
     {
-        return $this->belongsTo(\App\Models\Shared\User::class, 'users', 'id', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'created_by', 'id');
     }
 
     /**
@@ -77,6 +77,6 @@ class CertificateType extends Model
      **/
     public function updatedBy()
     {
-        return $this->belongsTo(\App\Models\Shared\User::class, 'updated_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'updated_by', 'id');
     }
 }

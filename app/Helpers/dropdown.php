@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Model;
 
 if(!function_exists('modelDropdown')) {
     function modelDropdown(Model $model, $key = 'id', $value = 'name') {
-        $modelArray = array('-1'=>'Select...');
+        $modelArray = array(''=>'Select...');
         $modelData = $model::all();
         foreach($modelData as $row){
                $modelArray[$row->{$key}] = $row->{$value}; 

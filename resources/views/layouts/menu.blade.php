@@ -9,19 +9,19 @@
 </li>
 <li class="{!! Request::is('humanresource/employeeTerminations*') ? 'active' : '' !!}">
     <a href="{{ route('humanresource.employeeTerminations.index') }}">
-        <span class="mm-text ">Employee Terminations</span> </a>
+        <span class="mm-text ">Employee's Terminations</span> </a>
 </li>
 <li class="{!! Request::is('humanresource/employeeCertificates*') ? 'active' : '' !!}">
     <a href="{{ route('humanresource.employeeCertificates.index') }}">
-        <span class="mm-text ">Employee Certificates</span> </a>
+        <span class="mm-text ">Employee's Certificates</span> </a>
 </li>
 <li class="{!! Request::is('humanresource/employeeLanguages*') ? 'active' : '' !!}">
     <a href="{{ route('humanresource.employeeLanguages.index') }}">
-        <span class="mm-text ">Employee Languages</span> </a>
+        <span class="mm-text ">Employee's Languages</span> </a>
 </li>
 <li class="{!! Request::is('humanresource/employeeRecordTrackers*') ? 'active' : '' !!}">
     <a href="{{ route('humanresource.employeeRecordTrackers.index') }}">
-        <span class="mm-text ">Employee Record Trackers</span> </a>
+        <span class="mm-text ">Employee's Record Trackers</span> </a>
 </li>
 <li class="{!! Request::is('humanresource/salaryScales*') ? 'active' : '' !!}">
     <a href="{{ route('humanresource.salaryScales.index') }}"> <span class="mm-text ">Salary Scales</span> </a>
@@ -48,7 +48,7 @@
 
 <li class="{!! Request::is('humanresource/employeeActionSheets*') ? 'active' : '' !!}">
     <a href="{{ route('humanresource.employeeActionSheets.index') }}">
-        <span class="mm-text ">Employee Action Sheets</span>
+        <span class="mm-text ">Employee's Action Sheets</span>
 
     </a>
 </li>
@@ -59,11 +59,11 @@
 </li>
 <li class="{!! Request::is('humanresource/employeeWives*') ? 'active' : '' !!}">
     <a href="{{ route('humanresource.employeeWives.index') }}">
-        <span class="mm-text ">Employee Wives</span></a>
+        <span class="mm-text ">Employee's Wives</span></a>
 </li>
 <li class="{!! Request::is('humanresource/employeeChildrens*') ? 'active' : '' !!}">
     <a href="{{ route('humanresource.employeeChildrens.index') }}">
-        <span class="mm-text ">Employee Childrens</span></a>
+        <span class="mm-text ">Employee's Children</span></a>
 </li>
 <li class="{!! Request::is('humanresource/employeePublicServices*') ? 'active' : '' !!}">
     <a href="{{ route('humanresource.employeePublicServices.index') }}">
@@ -71,7 +71,7 @@
 </li>
 <li class="{!! Request::is('humanresource/employeeAddresses*') ? 'active' : '' !!}">
     <a href="{{ route('humanresource.employeeAddresses.index') }}">
-        <span class="mm-text ">Employee Addresses</span>
+        <span class="mm-text ">Employee's Addresses</span>
 
     </a>
 </li>
@@ -86,11 +86,11 @@
 </li>
 <li class="{!! Request::is('humanresource/employeeEducations*') ? 'active' : '' !!}">
     <a href="{{ route('humanresource.employeeEducations.index') }}">
-        <span class="mm-text ">Employee Educations</span></a>
+        <span class="mm-text ">Employee's Educations</span></a>
 </li>
 <li class="{!! Request::is('humanresource/employeeCensures*') ? 'active' : '' !!}">
     <a href="{{ route('humanresource.employeeCensures.index') }}">
-        <span class="mm-text ">Employee Censures</span>
+        <span class="mm-text ">Employee's Censures</span>
 
     </a>
 </li>
@@ -105,11 +105,11 @@
 </li>
 <li class="{!! Request::is('humanresource/employeeForceServices*') ? 'active' : '' !!}">
     <a href="{{ route('humanresource.employeeForceServices.index') }}">
-        <span class="mm-text ">Employee Force Services</span></a>
+        <span class="mm-text ">Employee's Force Services</span></a>
 </li>
 <li class="{!! Request::is('humanresource/employeeQualifications*') ? 'active' : '' !!}">
     <a href="{{ route('humanresource.employeeQualifications.index') }}">
-        <span class="mm-text ">Employee Qualifications</span></a>
+        <span class="mm-text ">Employee's Qualifications</span></a>
 </li>
 <li class="{!! Request::is('shared/certificateTypes*') ? 'active' : '' !!}">
     <a href="{{ route('shared.certificateTypes.index') }}">
@@ -137,14 +137,14 @@
     </a>
 </li>
 
-<li class="{!! Request::is('shared/maritalStatuses*') ? 'active' : '' !!}">
+{{-- <li class="{!! Request::is('shared/maritalStatuses*') ? 'active' : '' !!}">
     <a href="{{ route('shared.maritalStatuses.index') }}">
         <span class="mm-text ">Marital Statuses</span></a>
-</li>
+</li> --}}
 
 <li class="{!! Request::is('humanresource/employeeGratuities*') ? 'active' : '' !!}">
     <a href="{{ route('humanresource.employeeGratuities.index') }}">
-        <span class="mm-text ">Employee Gratuities</span></a>
+        <span class="mm-text ">Employee's Gratuities</span></a>
 </li>
 <li class="{!! Request::is('humanresource/employees*') ? 'active' : '' !!}">
     <a href="{{ route('humanresource.employees.index') }}">
@@ -152,7 +152,7 @@
 </li>
 <li class="{!! Request::is('humanresource/employeeForeignTours*') ? 'active' : '' !!}">
     <a href="{{ route('humanresource.employeeForeignTours.index') }}">
-        <span class="mm-text ">Employee Foreign Tours</span></a>
+        <span class="mm-text ">Employee's Foreign Tours</span></a>
 </li>
 <li class="{!! Request::is('shared/rankTypes*') ? 'active' : '' !!}">
     <a href="{{ route('shared.rankTypes.index') }}">
@@ -169,7 +169,7 @@
 </li>
 <li class="{!! (Request::is('humanresource/employeeNextOfKins*') ? 'active' : '' ) !!}">
     <a href="{{ route('humanresource.employeeNextOfKins.index') }}">
-        <span class="mm-text ">Employee Next Of Kins</span>
+        <span class="mm-text ">Employee's Next Of Kins</span>
     </a>
 </li>
 

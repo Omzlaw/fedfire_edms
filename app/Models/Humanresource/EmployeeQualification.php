@@ -10,9 +10,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @version July 22, 2021, 12:44 pm UTC
  *
  * @property \App\Models\Humanresource\Employee $employee
- * @property \App\Models\Humanresource\User $checkedBy
- * @property \App\Models\Humanresource\User $createdBy
- * @property \App\Models\Humanresource\User $updatedBy
+ * @property \App\Models\User $checkedBy
+ * @property \App\Models\User $createdBy
+ * @property \App\Models\User $updatedBy
  * @property string $qualification_name
  * @property string $date_obtained
  * @property integer $employee_id
@@ -94,7 +94,7 @@ class EmployeeQualification extends Model
      **/
     public function checkedBy()
     {
-        return $this->belongsTo(\App\Models\Humanresource\User::class, 'checked_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'checked_by', 'id');
     }
 
     /**
@@ -102,7 +102,7 @@ class EmployeeQualification extends Model
      **/
     public function createdBy()
     {
-        return $this->belongsTo(\App\Models\Humanresource\User::class, 'created_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'created_by', 'id');
     }
 
     /**
@@ -110,6 +110,6 @@ class EmployeeQualification extends Model
      **/
     public function updatedBy()
     {
-        return $this->belongsTo(\App\Models\Humanresource\User::class, 'updated_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'updated_by', 'id');
     }
 }

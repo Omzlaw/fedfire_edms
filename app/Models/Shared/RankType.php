@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @package App\Models\Shared
  * @version July 22, 2021, 12:58 pm UTC
  *
- * @property \App\Models\Shared\User $createdBy
- * @property \App\Models\Shared\User $updatedBy
+ * @property \App\Models\User $createdBy
+ * @property \App\Models\User $updatedBy
  * @property string $title
  * @property string $description
  * @property integer $status
@@ -69,7 +69,7 @@ class RankType extends Model
      **/
     public function createdBy()
     {
-        return $this->belongsTo(\App\Models\Shared\User::class, 'created_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'created_by', 'id');
     }
 
     /**
@@ -77,6 +77,6 @@ class RankType extends Model
      **/
     public function updatedBy()
     {
-        return $this->belongsTo(\App\Models\Shared\User::class, 'updated_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'updated_by', 'id');
     }
 }

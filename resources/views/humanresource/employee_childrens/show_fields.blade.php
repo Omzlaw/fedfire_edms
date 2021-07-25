@@ -1,7 +1,7 @@
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('id', 'Id:') !!}</th>
     <td>{{ $employeeChildren->id }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
@@ -12,19 +12,19 @@
 
 <tr>
     <th scopre="row">{!! Form::label('gender', 'Gender:') !!}</th>
-    <td>{{ $employeeChildren->gender }}</td>
+    <td>{{ get_enum_value('enum_gender', $employeeChildren->gender) }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('birthday', 'Birthday:') !!}</th>
-    <td>{{ $employeeChildren->birthday }}</td>
+    <td>{{ $employeeChildren->birthday->toDateString() }}</td>
 </tr>
 
 
 <tr>
-    <th scopre="row">{!! Form::label('employee_id', 'Employee Id:') !!}</th>
-    <td>{{ $employeeChildren->employee_id }}</td>
+    <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
+    <td>{{ $employeeChildren->employee->staff_code }}</td>
 </tr>
 
 
@@ -42,13 +42,13 @@
 
 <tr>
     <th scopre="row">{!! Form::label('checked_by', 'Checked By:') !!}</th>
-    <td>{{ $employeeChildren->checked_by }}</td>
+    <td>{{ $employeeChildren->checkedBy->name }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('checked_at', 'Checked At:') !!}</th>
-    <td>{{ $employeeChildren->checked_at }}</td>
+    <td>{{ $employeeChildren->checked_at->toDateString() }}</td>
 </tr>
 
 

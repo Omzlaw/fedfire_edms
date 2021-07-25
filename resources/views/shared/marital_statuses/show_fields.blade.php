@@ -1,7 +1,7 @@
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('id', 'Id:') !!}</th>
     <td>{{ $maritalStatus->id }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
@@ -18,7 +18,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('status', 'Status:') !!}</th>
-    <td>{{ $maritalStatus->status }}</td>
+    <td>{{ get_enum_value('enum_status', $maritalStatus->status) }}</td>
 </tr>
 
 

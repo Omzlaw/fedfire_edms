@@ -14,21 +14,31 @@
     <div class="row">
         {!! Form::label('date_obtained', 'Date Obtained:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('date_obtained', null, ['class' => 'form-control']) !!}
+            {!! Form::date('date_obtained', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div>
+
+@section('footer_scripts')
+<script type="text/javascript">
+    $('#date_obtained').datetimepicker({
+            format: 'YYYY-MM-DD',
+            useCurrent: true,
+            sideBySide: true
+        })
+</script>
+@endsection
 
 
 <!-- Employee Id Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('employee_id', 'Employee Id:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('employee_id', 'Employee:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('employee_id', modelDropdown($employees), null, ['class' => 'form-control']) !!}
+            {!! Form::select('employee_id', modelDropdown($employees, 'id', 'staff_code'), null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</>
+</div>
 
 
 <!-- Status Field -->
@@ -39,7 +49,7 @@
             {!! Form::select('status', enum_status(), null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</>
+</div>
 
 
 <!-- Remark Field -->
@@ -58,7 +68,7 @@
     <div class="row">
         {!! Form::label('checked_at', 'Checked At:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('checked_at', null, ['class' => 'form-control','id'=>'checked_at']) !!}
+            {!! Form::date('checked_at', null, ['class' => 'form-control','id'=>'checked_at']) !!}
         </div>
     </div>
 </div>

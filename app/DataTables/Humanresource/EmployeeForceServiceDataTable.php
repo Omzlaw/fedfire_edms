@@ -18,7 +18,17 @@ class EmployeeForceServiceDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'humanresource.employee_force_services.datatables_actions');
+        return $dataTable
+        ->addColumn('status', function($row){
+            return get_enum_value('enum_status', $row->status);
+        })
+        ->addColumn('date_updated', function($row){
+            return $row->date_updated->toDateString();
+        })
+        ->addColumn('employee', function($row){
+            return $row->employee->staff_code;
+        })
+        ->addColumn('action', 'humanresource.employee_force_services.datatables_actions');
     }
 
     /**
@@ -65,12 +75,12 @@ class EmployeeForceServiceDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
+            // 'id',
             'area_of_service',
             'service_no',
             'last_unit',
             'reason_for_leaving',
-            // 'employee_id',
+            'employee',
             // 'file_upload',
             'remark',
             'date_updated',

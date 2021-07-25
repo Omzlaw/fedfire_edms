@@ -24,7 +24,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
-    <td>{{ $employeeLanguage->employee->name }}</td>
+    <td>{{ $employeeLanguage->employee->staff_code }}</td>
 </tr>
 
 
@@ -54,7 +54,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('checked_at', 'Checked At:') !!}</th>
-    <td>{{ $employeeLanguage->checked_at }}</td>
+    <td>{{ $employeeLanguage->checked_at->toDateString() }}</td>
 </tr>
 
 

@@ -1,7 +1,7 @@
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('id', 'Id:') !!}</th>
     <td>{{ $employeeForceService->id }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
@@ -29,8 +29,8 @@
 
 
 <tr>
-    <th scopre="row">{!! Form::label('employee_id', 'Employee Id:') !!}</th>
-    <td>{{ $employeeForceService->employee_id }}</td>
+    <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
+    <td>{{ $employeeForceService->employee->staff_code }}</td>
 </tr>
 
 
@@ -60,7 +60,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('date_updated', 'Date Updated:') !!}</th>
-    <td>{{ $employeeForceService->date_updated }}</td>
+    <td>{{ $employeeForceService->date_updated->toDateString() }}</td>
 </tr>
 
 

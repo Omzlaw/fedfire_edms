@@ -1,7 +1,7 @@
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('id', 'Id:') !!}</th>
     <td>{{ $employeeNextOfKin->id }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
@@ -17,14 +17,14 @@
 
 
 <tr>
-    <th scopre="row">{!! Form::label('relationship_id', 'Relationship Id:') !!}</th>
-    <td>{{ $employeeNextOfKin->relationship_id }}</td>
+    <th scopre="row">{!! Form::label('relationship_id', 'Relationship :') !!}</th>
+    <td>{{ $employeeNextOfKin->relationship->title }}</td>
 </tr>
 
 
 <tr>
-    <th scopre="row">{!! Form::label('employee_id', 'Employee Id:') !!}</th>
-    <td>{{ $employeeNextOfKin->employee_id }}</td>
+    <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
+    <td>{{ $employeeNextOfKin->employee->staff_code }}</td>
 </tr>
 
 

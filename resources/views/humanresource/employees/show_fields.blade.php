@@ -1,7 +1,7 @@
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('id', 'Id:') !!}</th>
     <td>{{ $employee->id }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
@@ -24,13 +24,13 @@
 
 <tr>
     <th scopre="row">{!! Form::label('gender', 'Gender:') !!}</th>
-    <td>{{ $employee->gender }}</td>
+    <td>{{ get_enum_value('enum_gender', $employee->gender) }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('birthdate', 'Birthdate:') !!}</th>
-    <td>{{ $employee->birthdate }}</td>
+    <td>{{ $employee->birthdate->toDateString() }}</td>
 </tr>
 
 
@@ -41,32 +41,32 @@
 
 
 <tr>
-    <th scopre="row">{!! Form::label('birth_certificate_upload', 'Birth Certificate Upload Id:') !!}</th>
+    <th scopre="row">{!! Form::label('birth_certificate_upload', 'Birth Certificate Upload:') !!}</th>
     <td>{{ $employee->birth_certificate_upload }}</td>
 </tr>
 
 
 <tr>
-    <th scopre="row">{!! Form::label('marital_status_id', 'Marital Status Id:') !!}</th>
-    <td>{{ $employee->marital_status_id }}</td>
+    <th scopre="row">{!! Form::label('marital_status_id', 'Marital Status:') !!}</th>
+    <td>{{ get_enum_value('enum_marital_status', $employee->marital_status_id) }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('first_appointment_date', 'First Appointment Date:') !!}</th>
-    <td>{{ $employee->first_appointment_date }}</td>
+    <td>{{ $employee->first_appointment_date->toDateString() }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('first_arrival_date', 'First Arrival Date:') !!}</th>
-    <td>{{ $employee->first_arrival_date }}</td>
+    <td>{{ $employee->first_arrival_date->toDateString() }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('nationality', 'Nationality:') !!}</th>
-    <td>{{ $employee->nationality }}</td>
+    <td>{{ $employee->country->title }}</td>
 </tr>
 
 
@@ -102,7 +102,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('status', 'Status:') !!}</th>
-    <td>{{ $employee->status }}</td>
+    <td>{{ get_enum_value('enum_status', $employee->status) }}</td>
 </tr>
 
 

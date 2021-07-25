@@ -1,7 +1,7 @@
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('id', 'Id:') !!}</th>
     <td>{{ $employeeWife->id }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
@@ -12,19 +12,19 @@
 
 <tr>
     <th scopre="row">{!! Form::label('wife_birthdate', 'Wife Birthdate:') !!}</th>
-    <td>{{ $employeeWife->wife_birthdate }}</td>
+    <td>{{ $employeeWife->wife_birthdate->toDateString() }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('marriage_date', 'Marriage Date:') !!}</th>
-    <td>{{ $employeeWife->marriage_date }}</td>
+    <td>{{ $employeeWife->marriage_date->toDateString() }}</td>
 </tr>
 
 
 <tr>
-    <th scopre="row">{!! Form::label('employee_id', 'Employee Id:') !!}</th>
-    <td>{{ $employeeWife->employee_id }}</td>
+    <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
+    <td>{{ $employeeWife->employee->staff_code}}</td>
 </tr>
 
 
@@ -42,11 +42,11 @@
 
 <tr>
     <th scopre="row">{!! Form::label('checked_by', 'Checked By:') !!}</th>
-    <td>{{ $employeeWife->checked_by }}</td>
+    <td>{{ $employeeWife->checkedBy->name }}</td>
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('created_by', 'Created By:') !!}</th>
     <td>{{ $employeeWife->created_by }}</td>
 </tr>
@@ -55,18 +55,18 @@
 <tr>
     <th scopre="row">{!! Form::label('updated_by', 'Updated By:') !!}</th>
     <td>{{ $employeeWife->updated_by }}</td>
-</tr>
+</tr> --}}
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('created_at', 'Created At:') !!}</th>
-    <td>{{ $employeeWife->created_at }}</td>
+    <td>{{ $employeeWife->created_at->toDateString() }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('updated_at', 'Updated At:') !!}</th>
-    <td>{{ $employeeWife->updated_at }}</td>
-</tr>
+    <td>{{ $employeeWife->updated_at->toDateString() }}</td>
+</tr> --}}
 
 

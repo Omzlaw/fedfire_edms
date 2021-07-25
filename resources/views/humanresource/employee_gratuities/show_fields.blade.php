@@ -1,12 +1,12 @@
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('id', 'Id:') !!}</th>
     <td>{{ $employeeGratuity->id }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
-    <th scopre="row">{!! Form::label('employee_id', 'Employee Id:') !!}</th>
-    <td>{{ $employeeGratuity->employee_id }}</td>
+    <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
+    <td>{{ $employeeGratuity->employee->staff_code }}</td>
 </tr>
 
 
@@ -24,19 +24,19 @@
 
 <tr>
     <th scopre="row">{!! Form::label('payment_date', 'Payment Date:') !!}</th>
-    <td>{{ $employeeGratuity->payment_date }}</td>
+    <td>{{ $employeeGratuity->payment_date->toDateString() }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('from_date', 'From Date:') !!}</th>
-    <td>{{ $employeeGratuity->from_date }}</td>
+    <td>{{ $employeeGratuity->from_date->toDateString() }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('to_date', 'To Date:') !!}</th>
-    <td>{{ $employeeGratuity->to_date }}</td>
+    <td>{{ $employeeGratuity->to_date->toDateString() }}</td>
 </tr>
 
 
@@ -60,7 +60,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('status', 'Status:') !!}</th>
-    <td>{{ $employeeGratuity->status }}</td>
+    <td>{{ get_enum_value('enum_status', $employeeGratuity->status) }}</td>
 </tr>
 
 
@@ -84,7 +84,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('checked_by', 'Checked By:') !!}</th>
-    <td>{{ $employeeGratuity->checked_by }}</td>
+    <td>{{ $employeeGratuity->checkedBy->name }}</td>
 </tr>
 
 

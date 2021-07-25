@@ -11,8 +11,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @version July 22, 2021, 9:12 pm UTC
  *
  * @property \App\Models\Shared\Country $country
- * @property \App\Models\Shared\User $createdBy
- * @property \App\Models\Shared\User $updatedBy
+ * @property \App\Models\User $createdBy
+ * @property \App\Models\User $updatedBy
  * @property string $title
  * @property string $description
  * @property integer $status
@@ -82,7 +82,7 @@ class State extends Model
      **/
     public function createdBy()
     {
-        return $this->belongsTo(\App\Models\Shared\User::class, 'created_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'created_by', 'id');
     }
 
     /**
@@ -90,6 +90,6 @@ class State extends Model
      **/
     public function updatedBy()
     {
-        return $this->belongsTo(\App\Models\Shared\User::class, 'updated_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'updated_by', 'id');
     }
 }

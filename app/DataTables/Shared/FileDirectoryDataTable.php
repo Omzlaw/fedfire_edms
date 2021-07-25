@@ -18,7 +18,17 @@ class FileDirectoryDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'shared.file_directories.datatables_actions');
+        return $dataTable
+        ->addColumn('file_type', function($row){
+            return $row->fileType->title;
+        })
+        ->addColumn('employee', function($row){
+            return $row->employee->staff_code;
+        })
+        ->addColumn('status', function($row){
+            return get_enum_value('enum_status', $row->status);
+        })
+        ->addColumn('action', 'shared.file_directories.datatables_actions');
     }
 
     /**
@@ -67,9 +77,9 @@ class FileDirectoryDataTable extends DataTable
         return [
             // 'id',
             // 'file_upload',
-            'file_type_id',
-            'file_url',
-            'staff_no',
+            'file_name',
+            'file_type',
+            'employee',
             'status',
             'remark',
 

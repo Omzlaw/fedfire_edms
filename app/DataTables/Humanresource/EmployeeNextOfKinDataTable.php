@@ -18,7 +18,14 @@ class EmployeeNextOfKinDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'humanresource.employee_next_of_kins.datatables_actions');
+        return $dataTable
+        ->addColumn('employee', function($row){
+            return $row->employee->staff_code;
+        })
+        ->addColumn('relationship_type', function($row){
+            return $row->relationship->title;
+        })
+        ->addColumn('action', 'humanresource.employee_next_of_kins.datatables_actions');
     }
 
     /**
@@ -68,8 +75,8 @@ class EmployeeNextOfKinDataTable extends DataTable
             // 'id',
             'name',
             'address',
-            // 'relationship_id',
-            // 'employee_id',
+            'relationship_type',
+            'employee',
             // 'file_upload',
             'remark',
 

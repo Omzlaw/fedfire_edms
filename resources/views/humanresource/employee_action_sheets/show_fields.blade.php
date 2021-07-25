@@ -1,7 +1,7 @@
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('id', 'Id:') !!}</th>
     <td>{{ $employeeActionSheet->id }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
@@ -12,14 +12,14 @@
 
 <tr>
     <th scopre="row">{!! Form::label('action_at', 'Action At:') !!}</th>
-    <td>{{ $employeeActionSheet->action_at }}</td>
+    <td>{{ $employeeActionSheet->action_at->toDateString() }}</td>
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('created_by', 'Created By:') !!}</th>
     <td>{{ $employeeActionSheet->created_by }}</td>
-</tr>
+</tr> --}}
 
 
 {{-- <tr>
@@ -36,7 +36,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('action_by', 'Action By:') !!}</th>
-    <td>{{ $employeeActionSheet->action_by }}</td>
+    <td>{{ $employeeActionSheet->actionBy->name }}</td>
 </tr>
 
 

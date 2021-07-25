@@ -87,5 +87,35 @@ class EmployeePublicService extends Model
         'checked_by' => 'Required',
     ];
 
-    
+        /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function employee()
+    {
+        return $this->belongsTo(\App\Models\Humanresource\Employee::class, 'employee_id', 'id');
+    }
+
+        /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function checkedBy()
+    {
+        return $this->belongsTo(\App\Models\User::class, 'checked_by', 'id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function createdBy()
+    {
+        return $this->belongsTo(\App\Models\User::class, 'created_by', 'id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function updatedBy()
+    {
+        return $this->belongsTo(\App\Models\User::class, 'updated_by', 'id');
+    }
 }

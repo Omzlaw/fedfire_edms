@@ -1,12 +1,12 @@
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('id', 'Id:') !!}</th>
     <td>{{ $employeeLocalLeave->id }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
-    <th scopre="row">{!! Form::label('employee_id', 'Employee Id:') !!}</th>
-    <td>{{ $employeeLocalLeave->employee_id }}</td>
+    <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
+    <td>{{ $employeeLocalLeave->employee->staff_code }}</td>
 </tr>
 
 
@@ -29,26 +29,26 @@
 
 
 <tr>
-    <th scopre="row">{!! Form::label('leaver_id', 'Leaver Id:') !!}</th>
-    <td>{{ $employeeLocalLeave->leaver_id }}</td>
+    <th scopre="row">{!! Form::label('leaver_id', 'Leave Type:') !!}</th>
+    <td>{{ $employeeLocalLeave->leaveType->title }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('from_date', 'From Date:') !!}</th>
-    <td>{{ $employeeLocalLeave->from_date }}</td>
+    <td>{{ $employeeLocalLeave->from_date->toDateString() }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('to_date', 'To Date:') !!}</th>
-    <td>{{ $employeeLocalLeave->to_date }}</td>
+    <td>{{ $employeeLocalLeave->to_date->toDateString() }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('status', 'Status:') !!}</th>
-    <td>{{ $employeeLocalLeave->status }}</td>
+    <td>{{ get_enum_value('enum_status', $employeeLocalLeave->status) }}</td>
 </tr>
 
 

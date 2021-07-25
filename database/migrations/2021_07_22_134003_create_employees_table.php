@@ -18,6 +18,7 @@ class CreateEmployeesTable extends Migration
             $table->string('file_no');
             $table->string('first_name');
             $table->string('last_name');
+            $table->string('staff_code');
             $table->integer('gender');
             $table->dateTime('birthdate');
             $table->string('place_of_birth');

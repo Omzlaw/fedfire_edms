@@ -18,7 +18,20 @@ class EmployeeRecordTrackerDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'humanresource.employee_record_trackers.datatables_actions');
+        return $dataTable
+        ->addColumn('employee', function($row){
+            return $row->employee->staff_code;
+        })
+        ->addColumn('status', function($row){
+            return get_enum_value('enum_status', $row->status);
+        })
+        ->addColumn('has_profile', function($row){
+            return get_enum_value('enum_yes_no', $row->has_profile);
+        })
+        ->addColumn('has_education', function($row){
+            return get_enum_value('enum_yes_no', $row->has_education);
+        })
+        ->addColumn('action', 'humanresource.employee_record_trackers.datatables_actions');
     }
 
     /**
@@ -66,7 +79,7 @@ class EmployeeRecordTrackerDataTable extends DataTable
     {
         return [
             // 'id',
-            // 'employee_id',
+            'employee',
             'status',
             'remark',
             'has_profile',

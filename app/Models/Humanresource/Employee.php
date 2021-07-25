@@ -11,8 +11,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @property \App\Models\Humanresource\EmployeeCertificate $birthCertificateUpload
  * @property \App\Models\Humanresource\MaritalStatus $maritalStatus
- * @property \App\Models\Humanresource\User $createdBy
- * @property \App\Models\Humanresource\User $updatedBy
+ * @property \App\Models\User $createdBy
+ * @property \App\Models\User $updatedBy
  * @property string $file_no
  * @property string $first_name
  * @property string $last_name
@@ -49,6 +49,7 @@ class Employee extends Model
         'file_no',
         'first_name',
         'last_name',
+        'staff_code',
         'gender',
         'birthdate',
         'place_of_birth',
@@ -78,6 +79,7 @@ class Employee extends Model
         'file_no' => 'string',
         'first_name' => 'string',
         'last_name' => 'string',
+        'staff_code' => 'string',
         'gender' => 'integer',
         'birthdate' => 'datetime',
         'place_of_birth' => 'string',
@@ -109,14 +111,14 @@ class Employee extends Model
         'gender' => 'Required',
         'birthdate' => 'Required',
         'place_of_birth' => 'Required',
-        'birth_certificate_upload' => 'Required',
+        // 'birth_certificate_upload' => 'Required',
         'marital_status_id' => 'Required',
         'first_appointment_date' => 'Required',
         'first_arrival_date' => 'Required',
         'nationality' => 'Required',
-        'decorations' => 'Required',
-        'file_upload' => 'Required',
-        'remark' => 'Required',
+        // 'decorations' => 'Required',
+        // 'file_upload' => 'Required',
+        // 'remark' => 'Required',
         'email' => 'Required',
         'phone' => 'Required',
         'status' => 'Required',
@@ -133,13 +135,13 @@ class Employee extends Model
         return $this->belongsTo(\App\Models\Humanresource\EmployeeCertificate::class, 'birth_certificate_upload', 'id');
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     **/
-    public function maritalStatus()
-    {
-        return $this->belongsTo(\App\Models\Humanresource\MaritalStatus::class, 'marital_status_id', 'id');
-    }
+    // /**
+    //  * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+    //  **/
+    // public function maritalStatus()
+    // {
+    //     return $this->belongsTo(\App\Models\Humanresource\MaritalStatus::class, 'marital_status_id', 'id');
+    // }
 
     public function country()
     {
@@ -151,7 +153,7 @@ class Employee extends Model
      **/
     public function createdBy()
     {
-        return $this->belongsTo(\App\Models\Humanresource\User::class, 'created_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'created_by', 'id');
     }
 
     /**
@@ -159,6 +161,6 @@ class Employee extends Model
      **/
     public function updatedBy()
     {
-        return $this->belongsTo(\App\Models\Humanresource\User::class, 'updated_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'updated_by', 'id');
     }
 }

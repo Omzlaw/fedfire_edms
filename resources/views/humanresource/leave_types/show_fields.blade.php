@@ -1,7 +1,7 @@
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('id', 'Id:') !!}</th>
     <td>{{ $leaveType->id }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
@@ -18,7 +18,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('status', 'Status:') !!}</th>
-    <td>{{ $leaveType->status }}</td>
+    <td>{{ get_enum_value('enum_status', $leaveType->status) }}</td>
 </tr>
 
 

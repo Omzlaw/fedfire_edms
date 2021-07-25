@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @package App\Models\Humanresource
  * @version July 22, 2021, 11:48 am UTC
  *
- * @property \App\Models\Humanresource\User $compiledBy
- * @property \App\Models\Humanresource\User $createdBy
+ * @property \App\Models\User $compiledBy
+ * @property \App\Models\User $createdBy
  * @property \App\Models\Humanresource\EmployeeTermination $termination.id
  * @property string $termination_id
  * @property integer $employee_id
@@ -142,7 +142,7 @@ class EmployeeTermination extends Model
      **/
     public function compiledBy()
     {
-        return $this->belongsTo(\App\Models\Humanresource\User::class, 'compiled_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'compiled_by', 'id');
     }
 
     /**
@@ -150,7 +150,15 @@ class EmployeeTermination extends Model
      **/
     public function createdBy()
     {
-        return $this->belongsTo(\App\Models\Humanresource\User::class, 'created_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'created_by', 'id');
+    }
+
+        /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function updatedBy()
+    {
+        return $this->belongsTo(\App\Models\User::class, 'updated_by', 'id');
     }
 
     /**

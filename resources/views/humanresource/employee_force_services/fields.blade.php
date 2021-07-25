@@ -45,12 +45,12 @@
 <!-- Employee Id Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('employee_id', 'Employee Id:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('employee_id', 'Employee:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('employee_id', modelDropdown($employees), null, ['class' => 'form-control']) !!}
+            {!! Form::select('employee_id', modelDropdown($employees, 'id', 'staff_code'), null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</>
+</div>
 
 
 <!-- File Upload Field -->
@@ -60,7 +60,7 @@
         <div class="col-md-9 col-lg-9 col-12">{!! Form::file('file_upload') !!}
         </div>
     </div>
-</div <div class="clearfix">
+
 </div>
 
 

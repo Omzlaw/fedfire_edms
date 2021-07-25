@@ -8,7 +8,7 @@ Employee Children @parent
 @section('content')
    <section class="content-header">
     <div aria-label="breadcrumb" class="card-breadcrumb">
-        <h1>{{ __('Edit') }} Employee Children</h1>
+        <h1>{{ __('Edit') }} Employee's Child</h1>
     </div>
     <div class="separator-breadcrumb border-top"></div>
     </section>

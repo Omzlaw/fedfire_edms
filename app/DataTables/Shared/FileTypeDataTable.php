@@ -18,7 +18,11 @@ class FileTypeDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'shared.file_types.datatables_actions');
+        return $dataTable
+        ->addColumn('status', function($row){
+            return get_enum_value('enum_status', $row->status);
+        })
+        ->addColumn('action', 'shared.file_types.datatables_actions');
     }
 
     /**

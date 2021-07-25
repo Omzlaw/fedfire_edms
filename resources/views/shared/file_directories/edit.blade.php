@@ -16,9 +16,9 @@ File Directory @parent
        @include('adminlte-templates::common.errors')
        <div class="card">
            <div class="card-body">
-                {!! Form::model($fileDirectory, ['route' => ['shared.fileDirectories.update', $fileDirectory->id], 'method' => 'patch','class' => 'form-horizontal']) !!}
+                {!! Form::model($fileDirectory, ['route' => ['shared.fileDirectories.update', $fileDirectory->id], 'method' => 'patch','class' => 'form-horizontal', 'files' => true]) !!}
 
-                    @include('shared.file_directories.fields', [$file_types])
+                    @include('shared.file_directories.fields', [$file_types, $employees])
 
                 {!! Form::close() !!}
            </div>

@@ -12,9 +12,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property \App\Models\Humanresource\EmployeeCertificate $certificate
  * @property \App\Models\Humanresource\SchoolType $schoolType
  * @property \App\Models\Humanresource\Employee $employee
- * @property \App\Models\Humanresource\User $checkedBy
- * @property \App\Models\Humanresource\User $createdBy
- * @property \App\Models\Humanresource\User $updatedBy
+ * @property \App\Models\User $checkedBy
+ * @property \App\Models\User $createdBy
+ * @property \App\Models\User $updatedBy
  * @property string $school_name
  * @property integer $certificate_id
  * @property integer $school_type_id
@@ -104,7 +104,7 @@ class EmployeeEducation extends Model
      **/
     public function certificate()
     {
-        return $this->belongsTo(\App\Models\Humanresource\EmployeeCertificate::class, 'certificate_id', 'id');
+        return $this->belongsTo(\App\Models\Shared\CertificateType::class, 'certificate_id', 'id');
     }
 
     /**
@@ -112,7 +112,7 @@ class EmployeeEducation extends Model
      **/
     public function schoolType()
     {
-        return $this->belongsTo(\App\Models\Humanresource\SchoolType::class, 'school_type_id', 'id');
+        return $this->belongsTo(\App\Models\Shared\SchoolType::class, 'school_type_id', 'id');
     }
 
     /**
@@ -128,7 +128,7 @@ class EmployeeEducation extends Model
      **/
     public function checkedBy()
     {
-        return $this->belongsTo(\App\Models\Humanresource\User::class, 'checked_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'checked_by', 'id');
     }
 
     /**
@@ -136,7 +136,7 @@ class EmployeeEducation extends Model
      **/
     public function createdBy()
     {
-        return $this->belongsTo(\App\Models\Humanresource\User::class, 'created_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'created_by', 'id');
     }
 
     /**
@@ -144,6 +144,6 @@ class EmployeeEducation extends Model
      **/
     public function updatedBy()
     {
-        return $this->belongsTo(\App\Models\Humanresource\User::class, 'updated_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'updated_by', 'id');
     }
 }

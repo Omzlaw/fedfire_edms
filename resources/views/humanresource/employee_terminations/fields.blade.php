@@ -3,23 +3,23 @@
 <!-- Termination Id Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('termination_id', 'Termination Id:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('termination_id', 'Termination Type:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::select('termination_id', modelDropdown($termination_types, 'id', 'title'), null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</>
+</div>
 
 
 <!-- Employee Id Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('employee_id', 'Employee Id:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('employee_id', 'Employee:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('employee_id', modelDropdown($employees), null, ['class' => 'form-control']) !!}
+            {!! Form::select('employee_id', modelDropdown($employees, 'id', 'staff_code'), null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</>
+</div>
 
 
 <!-- File Upload Field -->
@@ -29,7 +29,7 @@
         <div class="col-md-9 col-lg-9 col-12">{!! Form::file('file_upload') !!}
         </div>
     </div>
-</div <div class="clearfix">
+
 </div>
 
 
@@ -62,7 +62,7 @@
             {!! Form::select('is_pensionable', enum_yes_no(), null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</>
+</div>
 
 
 <!-- Pension Amount Field -->
@@ -81,7 +81,7 @@
     <div class="row">
         {!! Form::label('pension_start_date', 'Pension Start Date:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('pension_start_date', null, ['class' => 'form-control','id'=>'pension_start_date']) !!}
+            {!! Form::date('pension_start_date', null, ['class' => 'form-control','id'=>'pension_start_date']) !!}
         </div>
     </div>
 </div>
@@ -146,7 +146,7 @@
     <div class="row">
         {!! Form::label('widow_pension_start_date', 'Widow Pension Start Date:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('widow_pension_start_date', null, ['class' => 'form-control','id'=>'widow_pension_start_date']) !!}
+            {!! Form::date('widow_pension_start_date', null, ['class' => 'form-control','id'=>'widow_pension_start_date']) !!}
         </div>
     </div>
 </div>
@@ -247,7 +247,7 @@
             {!! Form::select('status', enum_status(), null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</>
+</div>
 
 
 <!-- Submit Field -->

@@ -65,7 +65,7 @@ class EmployeeActionSheetDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
+            // 'id',
             'folio',
             'action_at',
             'date_cleared',

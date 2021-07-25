@@ -1,7 +1,7 @@
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('id', 'Id:') !!}</th>
     <td>{{ $employeePublicService->id }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
@@ -12,13 +12,13 @@
 
 <tr>
     <th scopre="row">{!! Form::label('from_date', 'From Date:') !!}</th>
-    <td>{{ $employeePublicService->from_date }}</td>
+    <td>{{ $employeePublicService->from_date->toDateString() }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('to_date', 'To Date:') !!}</th>
-    <td>{{ $employeePublicService->to_date }}</td>
+    <td>{{ $employeePublicService->to_date->toDateString() }}</td>
 </tr>
 
 
@@ -29,13 +29,13 @@
 
 
 <tr>
-    <th scopre="row">{!! Form::label('employee_id', 'Employee Id:') !!}</th>
-    <td>{{ $employeePublicService->employee_id }}</td>
+    <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
+    <td>{{ $employeePublicService->employee->staff_code}}</td>
 </tr>
 
 
 <tr>
-    <th scopre="row">{!! Form::label('file_upload_id', 'File Upload Id:') !!}</th>
+    <th scopre="row">{!! Form::label('file_upload_id', 'File Upload:') !!}</th>
     <td>{{ $employeePublicService->file_upload_id }}</td>
 </tr>
 
@@ -60,7 +60,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('checked_by', 'Checked By:') !!}</th>
-    <td>{{ $employeePublicService->checked_by }}</td>
+    <td>{{ $employeePublicService->checkedBy->name }}</td>
 </tr>
 
 

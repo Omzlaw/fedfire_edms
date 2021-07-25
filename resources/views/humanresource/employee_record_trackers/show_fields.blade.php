@@ -1,18 +1,18 @@
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('id', 'Id:') !!}</th>
     <td>{{ $employeeRecordTracker->id }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
-    <th scopre="row">{!! Form::label('employee_id', 'Employee Id:') !!}</th>
-    <td>{{ $employeeRecordTracker->employee_id }}</td>
+    <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
+    <td>{{ $employeeRecordTracker->employee->staff_code }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('status', 'Status:') !!}</th>
-    <td>{{ $employeeRecordTracker->status }}</td>
+    <td>{{ get_enum_value('enum_status', $employeeRecordTracker->status) }}</td>
 </tr>
 
 
@@ -36,13 +36,13 @@
 
 <tr>
     <th scopre="row">{!! Form::label('has_profile', 'Has Profile:') !!}</th>
-    <td>{{ $employeeRecordTracker->has_profile }}</td>
+    <td>{{ get_enum_value('enum_yes_no', $employeeRecordTracker->has_profile) }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('has_education', 'Has Education:') !!}</th>
-    <td>{{ $employeeRecordTracker->has_education }}</td>
+    <td>{{ get_enum_value('enum_yes_no', $employeeRecord->has_education) }}</td>
 </tr>
 
 

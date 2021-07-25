@@ -1,7 +1,7 @@
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('id', 'Id:') !!}</th>
     <td>{{ $setting->id }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>

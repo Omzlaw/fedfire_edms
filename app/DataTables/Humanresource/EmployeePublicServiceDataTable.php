@@ -18,7 +18,17 @@ class EmployeePublicServiceDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'humanresource.employee_public_services.datatables_actions');
+        return  $dataTable
+        ->addColumn('employee', function($row){
+            return $row->employee->staff_code;
+        })
+        ->addColumn('from_date', function($row){
+            return $row->from_date->toDateString();
+        })
+        ->addColumn('to_date', function($row){
+            return $row->to_date->toDateString();
+        })
+        ->addColumn('action', 'humanresource.employee_public_services.datatables_actions');
     }
 
     /**
@@ -70,12 +80,12 @@ class EmployeePublicServiceDataTable extends DataTable
             'from_date',
             'to_date',
             'file_page_ref',
-            'employee_id',
+            'employee',
             // 'file_upload',
             'total_years_served',
             'total_paid',
             'remark',
-            'checked_by',
+            // 'checked_by',
             // 'created_by',
             // 'updated_by',
 

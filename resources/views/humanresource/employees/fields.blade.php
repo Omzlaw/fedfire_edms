@@ -39,7 +39,7 @@
             {!! Form::select('gender', enum_gender(), null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</>
+</div>
 
 
 <!-- Birthdate Field -->
@@ -82,18 +82,18 @@
             {!! Form::file('birth_certificate_upload') !!}
         </div>
     </div>
-</>
+</div>
 
 
 <!-- Marital Status Id Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('marital_status_id', 'Marital Status Id:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('marital_status_id', 'Marital Status:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('marital_status_id', modelDropdown($marital_status), null, ['class' => 'form-control']) !!}
+            {!! Form::select('marital_status_id', enum_marital_status(), null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</>
+</div>
 
 
 <!-- First Appointment Date Field -->
@@ -101,7 +101,7 @@
     <div class="row">
         {!! Form::label('first_appointment_date', 'First Appointment Date:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('first_appointment_date', null, ['class' => 'form-control','id'=>'first_appointment_date']) !!}
+            {!! Form::date('first_appointment_date', null, ['class' => 'form-control','id'=>'first_appointment_date']) !!}
         </div>
     </div>
 </div>
@@ -122,7 +122,7 @@
     <div class="row">
         {!! Form::label('first_arrival_date', 'First Arrival Date:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('first_arrival_date', null, ['class' => 'form-control','id'=>'first_arrival_date']) !!}
+            {!! Form::date('first_arrival_date', null, ['class' => 'form-control','id'=>'first_arrival_date']) !!}
         </div>
     </div>
 </div>
@@ -143,7 +143,7 @@
     <div class="row">
         {!! Form::label('nationality', 'Nationality:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('nationality', null, ['class' => 'form-control']) !!}
+            {!! Form::select('nationality', modelDropdown($countries, 'id', 'title'), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div
@@ -159,6 +159,8 @@
     </div>
 </div
 
+<!-- Staff code -->
+    {!! Form::hidden('staff_code', null, ['class' => 'form-control']) !!}
 
 <!-- File Upload Field -->
 <div class="form-group">
@@ -211,7 +213,7 @@
             {!! Form::select('status', enum_status(), null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</>
+</div>
 
 
 <!-- Current Appointment Field -->

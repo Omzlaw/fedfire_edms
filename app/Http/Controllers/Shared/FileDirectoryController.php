@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Shared;
 
-use Flash;
 use Response;
 use App\Traits\FileUpload;
+use Laracasts\Flash\Flash;
 use Illuminate\Http\Request;
 use App\Http\Requests\Shared;
 use App\Models\Shared\FileType;
 use App\Models\Shared\FileDirectory;
+use App\Models\Humanresource\Employee;
 use App\Http\Controllers\AppBaseController;
 use App\DataTables\Shared\FileDirectoryDataTable;
 use App\Http\Requests\Shared\CreateFileDirectoryRequest;
@@ -16,7 +17,7 @@ use App\Http\Requests\Shared\UpdateFileDirectoryRequest;
 
 class FileDirectoryController extends AppBaseController
 {
-    use FileUpload; 
+    use FileUpload;
     /**
      * Display a listing of the FileDirectory.
      *
@@ -36,7 +37,8 @@ class FileDirectoryController extends AppBaseController
     public function create()
     {
         $file_types = new FileType;
-        return view('shared.file_directories.create', compact('file_types'));
+        $employees = new Employee;
+        return view('shared.file_directories.create', compact('file_types', 'employees'));
     }
 
     /**
@@ -48,11 +50,23 @@ class FileDirectoryController extends AppBaseController
      */
     public function store(CreateFileDirectoryRequest $request)
     {
-        $input = $request->all();        
-
         /** @var FileDirectory $fileDirectory */
-        $status = $this->fileUpload($input);
+        $input = $request->all();
+        $files = $input['file_upload'];
+        $staff_no = $input['staff_no'];
+        $file_url_array = [];
 
+        $file_type = FileType::find($input['file_type_id'])->title;
+        $staff = Employee::find($staff_no);
+
+        $file_name = now() . '_' . $staff->staff_code . '_' . $file_type;
+        $input['file_name'] = $file_name;
+        foreach ($files as $file)
+        {
+            $file_url_array[] = $this->Upload($file, $file_name, $staff->staff_code, $file_type);
+        }
+        $input['file_url'] = $file_url_array;
+        $fileDirectory = FileDirectory::create($input);
         Flash::success('File Directory saved successfully.');
 
         return redirect(route('shared.fileDirectories.index'));
@@ -97,7 +111,8 @@ class FileDirectoryController extends AppBaseController
             return redirect(route('shared.fileDirectories.index'));
         }
         $file_types = new FileType;
-        return view('shared.file_directories.edit', compact('file_types'))->with('fileDirectory', $fileDirectory);
+        $employees = new Employee;
+        return view('shared.file_directories.edit', compact('file_types', 'employees'))->with('fileDirectory', $fileDirectory);
     }
 
     /**
@@ -152,29 +167,5 @@ class FileDirectoryController extends AppBaseController
         Flash::success('File Directory deleted successfully.');
 
         return redirect(route('shared.fileDirectories.index'));
-    }
-
-//Using our created Trait to access in trait method
-
-    public function fileUpload($input) 
-    {
-        $file_upload_array = $input['file_upload'];
-        $staff_no = $input['staff_no'];
-        $file_type_id_array = $input['file_type_id'];
-        $db_data = array();
-   
-        // if ($input->hasFile('file_upload')) {
-
-            foreach($file_upload_array as $index=>$file){
-                $file_type_id = $file_type_id_array[$index];
-                $file_type_name = FileType::find($file_type_id);
-                $upload_time = now();
-                $file_path = $this->Upload($file, $staff_no, $file_type_name, $upload_time); //passing parameter to our trait method one after another using foreach loop
-                $db_data['file_type_id'] = $file_type_id;
-                $db_data['staff_no'] = $staff_no;
-                $db_data['file_path'] = $file_path;
-                $fileDirectory = FileDirectory::create($db_data);
-            }    
-        // }
     }
 }

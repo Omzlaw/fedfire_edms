@@ -18,7 +18,23 @@ class EmployeeForeignToursDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'humanresource.employee_foreign_tours.datatables_actions');
+        return $dataTable
+        ->addColumn('employee', function($row){
+            return $row->employee->staff_code;
+        })
+        ->addColumn('leave_type', function($row){
+            return $row->leaveType->title;
+        })
+        ->addColumn('from_date', function($row){
+            return $row->from_date->toDateString();
+        })
+        ->addColumn('to_date', function($row){
+            return $row->to_date->toDateString();
+        })
+        ->addColumn('status', function($row){
+            return get_enum_value('enum_status', $row->status);
+        })
+        ->addColumn('action', 'humanresource.employee_foreign_tours.datatables_actions');
     }
 
     /**
@@ -66,9 +82,9 @@ class EmployeeForeignToursDataTable extends DataTable
     {
         return [
             // 'id',
-            // 'employee_id',
+            'employee',
             // 'file_upload',
-            // 'leaver_id',
+            'leave_type',
             'from_date',
             'to_date',
             'status',

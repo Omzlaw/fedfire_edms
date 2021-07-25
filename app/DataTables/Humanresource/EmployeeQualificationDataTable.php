@@ -18,7 +18,17 @@ class EmployeeQualificationDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'humanresource.employee_qualifications.datatables_actions');
+        return $dataTable
+        ->addColumn('employee', function($row){
+            return $row->employee->staff_code;
+        })
+        ->addColumn('date_obtained', function($row){
+            return $row->from_date->toDateString();
+        })
+        ->addColumn('status', function($row){
+            return get_enum_value('enum_status', $row->status);
+        })
+        ->addColumn('action', 'humanresource.employee_qualifications.datatables_actions');
     }
 
     /**
@@ -68,7 +78,7 @@ class EmployeeQualificationDataTable extends DataTable
             // 'id',
             'qualification_name',
             'date_obtained',
-            // 'employee_id',
+            'employee',
             // 'file_upload',
             'status',
             'remark',

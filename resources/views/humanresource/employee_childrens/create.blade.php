@@ -2,13 +2,13 @@
 
 {{-- Page title --}}
 @section('title')
-Employee Children @parent
+Employee's Children @parent
 @stop
 
 @section('content')
     <section class="content-header">
     <div aria-label="breadcrumb" class="card-breadcrumb">
-        <h1>{{ __('Create New') }} Employee Children</h1>
+        <h1>{{ __('Create New') }} Employee's Child</h1>
     </div>
     <div class="separator-breadcrumb border-top"></div>
     </section>

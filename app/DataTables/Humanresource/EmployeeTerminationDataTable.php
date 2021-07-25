@@ -17,8 +17,26 @@ class EmployeeTerminationDataTable extends DataTable
     public function dataTable($query)
     {
         $dataTable = new EloquentDataTable($query);
-
-        return $dataTable->addColumn('action', 'humanresource.employee_terminations.datatables_actions');
+        return $dataTable
+        ->addColumn('status', function($row){
+            return get_enum_value('enum_status', $row->status);
+        })
+        ->addColumn('employee', function($row){
+            return $row->employee->staff_code;
+        })
+        ->addColumn('termination_type', function($row){
+            return $row->termination_type->title;
+        })
+        ->addColumn('is_pensionable', function($row){
+            return get_enum_value('enum_yes_no', $row->is_pensionable);
+        })
+        ->addColumn('even_date', function($row){
+            return $row->even_date->toDateString();
+        })
+        ->addColumn('pension_start_date', function($row){
+            return $row->pension_start_date->toDateString();
+        })
+        ->addColumn('action', 'humanresource.employee_terminations.datatables_actions');
     }
 
     /**
@@ -66,8 +84,8 @@ class EmployeeTerminationDataTable extends DataTable
     {
         return [
             // 'id',
-            // 'termination_id',
-            // 'employee_id',
+            'termination_type',
+            'employee',
             // 'file_upload',
             'even_date',
             'is_pensionable',

@@ -1,23 +1,23 @@
-<!-- File Name Field -->
+{{-- <!-- File Name Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('file_upload', 'File Name:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('file_name', 'File Name:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('file_upload', null, ['class' => 'form-control']) !!}
+            {!! Form::text('file_name', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div --}}
 
 
 <!-- File Type Id Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('file_type_id', 'File Type Id:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('file_type_id', 'File Type:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::select('file_type_id', modelDropdown($file_types, 'id', 'title'), null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</>
+</div>
 
 
 <!-- Staff No Field -->
@@ -25,7 +25,7 @@
     <div class="row">
         {!! Form::label('staff_no', 'Staff No:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::number('staff_no', null, ['class' => 'form-control']) !!}
+            {!! Form::select('staff_no', modelDropdown($employees, 'id', 'staff_code'), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div>
@@ -39,7 +39,7 @@
             {!! Form::select('status', enum_status(), null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</>
+</div>
 
 
 <!-- Remark Field -->
@@ -54,9 +54,9 @@
 
 <!-- File Upload Field -->
 <div class="form-group">
-    <div class="row">
+    <div class="row"> 
         {!! Form::label('file_upload', 'File Upload:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">{!! Form::file('file_upload') !!}
+        <div class="col-md-9 col-lg-9 col-12">{!! Form::file('file_upload[]', array('multiple' => true, 'class' => 'form-control')) !!}
         </div>
     </div>
 </div>

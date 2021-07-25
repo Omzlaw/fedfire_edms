@@ -11,8 +11,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @version July 22, 2021, 12:17 pm UTC
  *
  * @property \App\Models\Shared\FileType $fileType
- * @property \App\Models\Shared\User $createdBy
- * @property \App\Models\Shared\User $updatedBy
+ * @property \App\Models\User $createdBy
+ * @property \App\Models\User $updatedBy
  * @property string $file_upload
  * @property integer $file_type_id
  * @property string $file_url
@@ -34,6 +34,7 @@ class FileDirectory extends Model
 
 
     public $fillable = [
+        'file_name',
         'file_upload',
         'file_type_id',
         'file_url',
@@ -51,9 +52,9 @@ class FileDirectory extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'file_upload' => 'string',
+        'file_upload' => 'array',
         'file_type_id' => 'integer',
-        'file_url' => 'string',
+        'file_url' => 'array',
         'staff_no' => 'integer',
         'status' => 'integer',
         'remark' => 'string',
@@ -85,12 +86,20 @@ class FileDirectory extends Model
         return $this->belongsTo(\App\Models\Shared\FileType::class, 'file_type_id', 'id');
     }
 
+        /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function employee()
+    {
+        return $this->belongsTo(\App\Models\Humanresource\Employee::class, 'staff_no', 'id');
+    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
     public function createdBy()
     {
-        return $this->belongsTo(\App\Models\Shared\User::class, 'created_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'created_by', 'id');
     }
 
     /**
@@ -98,6 +107,6 @@ class FileDirectory extends Model
      **/
     public function updatedBy()
     {
-        return $this->belongsTo(\App\Models\Shared\User::class, 'Updated_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'Updated_by', 'id');
     }
 }

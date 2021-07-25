@@ -65,7 +65,7 @@ class EmployeeCensureDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
+            // 'id',
             'title',
             'summary',
             'date_recieved',

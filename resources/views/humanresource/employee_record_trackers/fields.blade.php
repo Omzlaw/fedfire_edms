@@ -1,12 +1,12 @@
 <!-- Employee Id Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('employee_id', 'Employee Id:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('employee_id', 'Employee:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('employee_id', modelDropdown($employees), null, ['class' => 'form-control']) !!}
+            {!! Form::select('employee_id', modelDropdown($employees, 'id', 'staff_code'), null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</>
+</div>
 
 
 <!-- Status Field -->
@@ -17,7 +17,7 @@
             {!! Form::select('status', enum_status(), null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</>
+</div>
 
 
 <!-- Remark Field -->
@@ -36,10 +36,10 @@
     <div class="row">
         {!! Form::label('has_profile', 'Has Profile:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('has_profile', ['1' => 'Yes', '0' => 'No'], null, ['class' => 'form-control']) !!}
+            {!! Form::select('has_profile', enum_yes_no(), null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</>
+</div>
 
 
 <!-- Has Education Field -->
@@ -47,10 +47,10 @@
     <div class="row">
         {!! Form::label('has_education', 'Has Education:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('has_education', ['1' => 'Yes', '0' => 'No'], null, ['class' => 'form-control']) !!}
+            {!! Form::select('has_education', enum_yes_no(), null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</>
+</div>
 
 
 <!-- Submit Field -->

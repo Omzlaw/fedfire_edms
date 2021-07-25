@@ -18,7 +18,23 @@ class EmployeeGratuityDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'humanresource.employee_gratuities.datatables_actions');
+        return $dataTable
+        ->addColumn('employee', function($row){
+            return $row->employee->staff_code;
+        })
+        ->addColumn('payment_date', function($row){
+            return $row->payment_date->toDateString();
+        })
+        ->addColumn('from_date', function($row){
+            return $row->from_date->toDateString();
+        })
+        ->addColumn('to_date', function($row){
+            return $row->to_date->toDateString();
+        })
+        ->addColumn('status', function($row){
+            return get_enum_value('enum_status', $row->status);
+        })
+        ->addColumn('action', 'humanresource.employee_gratuities.datatables_actions');
     }
 
     /**
@@ -66,7 +82,7 @@ class EmployeeGratuityDataTable extends DataTable
     {
         return [
             // 'id',
-            // 'employee_id',
+            'employee',
             // 'file_upload',
             'file_page_no',
             'payment_date',

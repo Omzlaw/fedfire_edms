@@ -16,12 +16,12 @@ class CreateEmployeeCertificateTable extends Migration
         Schema::create('employee_certificate', function (Blueprint $table) {
             $table->increments('id');
             $table->string('certificate_name');
-            $table->integer('date_obtained');
+            $table->datetime('date_obtained');
             $table->integer('employee_id')->unsigned();
             $table->integer('status')->default(1);
             $table->string('remark')->nullable();
             $table->integer('checked_by')->unsigned();
-            $table->integer('checked_at');
+            $table->datetime('checked_at');
             $table->integer('updated_by')->unsigned();
             $table->string('file_upload')->nullable();
             $table->integer('created_by')->unsigned();

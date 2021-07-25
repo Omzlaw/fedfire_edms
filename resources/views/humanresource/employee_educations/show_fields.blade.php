@@ -1,7 +1,7 @@
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('id', 'Id:') !!}</th>
     <td>{{ $employeeEducation->id }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
@@ -11,32 +11,32 @@
 
 
 <tr>
-    <th scopre="row">{!! Form::label('certificate_id', 'Certificate Id:') !!}</th>
-    <td>{{ $employeeEducation->certificate_id }}</td>
+    <th scopre="row">{!! Form::label('certificate_id', 'Certificate Type:') !!}</th>
+    <td>{{ $employeeEducation->certificateType->title }}</td>
 </tr>
 
 
 <tr>
-    <th scopre="row">{!! Form::label('school_type_id', 'School Type Id:') !!}</th>
-    <td>{{ $employeeEducation->school_type_id }}</td>
+    <th scopre="row">{!! Form::label('school_type_id', 'School Type:') !!}</th>
+    <td>{{ $employeeEducation->schoolType->title }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('from_date', 'From Date:') !!}</th>
-    <td>{{ $employeeEducation->from_date }}</td>
+    <td>{{ $employeeEducation->from_date->toDateString() }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('to_date', 'To Date:') !!}</th>
-    <td>{{ $employeeEducation->to_date }}</td>
+    <td>{{ $employeeEducation->to_date->toDateString() }}</td>
 </tr>
 
 
 <tr>
-    <th scopre="row">{!! Form::label('employee_id', 'Employee Id:') !!}</th>
-    <td>{{ $employeeEducation->employee_id }}</td>
+    <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
+    <td>{{ $employeeEducation->employee->staff_code }}</td>
 </tr>
 
 
@@ -48,7 +48,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('status', 'Status:') !!}</th>
-    <td>{{ $employeeEducation->status }}</td>
+    <td>{{ get_enum_value('enum_status', $employeeEducation->status) }}</td>
 </tr>
 
 
@@ -60,13 +60,13 @@
 
 <tr>
     <th scopre="row">{!! Form::label('checked_by', 'Checked By:') !!}</th>
-    <td>{{ $employeeEducation->checked_by }}</td>
+    <td>{{ $employeeEducation->checkedBy->name }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('checked_at', 'Checked At:') !!}</th>
-    <td>{{ $employeeEducation->checked_at }}</td>
+    <td>{{ $employeeEducation->checked_at-toDateString() }}</td>
 </tr>
 
 

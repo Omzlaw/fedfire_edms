@@ -23,12 +23,12 @@
 <!-- State Id Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('state_id', 'State Id:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('state_id', 'State:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::select('state_id', modelDropdown($states), null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</>
+</div>
 
 
 <!-- Status Field -->
@@ -39,7 +39,7 @@
             {!! Form::select('status', enum_status(), null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</>
+</div>
 
 
 <!-- Submit Field -->

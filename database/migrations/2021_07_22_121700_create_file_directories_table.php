@@ -15,16 +15,18 @@ class CreateFileDirectoriesTable extends Migration
     {
         Schema::create('file_directories', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('file_upload');
+            $table->string('file_name');
+            $table->json('file_upload');
             $table->integer('file_type_id')->unsigned();
-            $table->string('file_url');
-            $table->integer('staff_no');
+            $table->json('file_url');
+            $table->integer('staff_no')->unsigned();
             $table->integer('status')->default(1);
             $table->string('remark')->nullable();
             $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();
             $table->timestamps();
             $table->softDeletes();
+            //$table->foreign('staff_no')->references('id')->on('employees');
             //$table->foreign('file_type_id')->references('id')->on('file_types');
             //$table->foreign('created_by')->references('id')->on('users');
             //$table->foreign('updated_by')->references('id')->on('users');

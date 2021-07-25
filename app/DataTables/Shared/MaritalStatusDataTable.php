@@ -18,7 +18,11 @@ class MaritalStatusDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'shared.marital_statuses.datatables_actions');
+        return $dataTable
+        ->addColumn('status', function($row){
+            return $row->state->title;
+        })
+        ->addColumn('action', 'shared.marital_statuses.datatables_actions');
     }
 
     /**

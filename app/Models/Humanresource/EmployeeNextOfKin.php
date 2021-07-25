@@ -12,8 +12,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @property \App\Models\Humanresource\Relationship $relationship
  * @property \App\Models\Humanresource\Employee $employee
- * @property \App\Models\Humanresource\User $createdBy
- * @property \App\Models\Humanresource\User $updatedBy
+ * @property \App\Models\User $createdBy
+ * @property \App\Models\User $updatedBy
  * @property string $name
  * @property string $address
  * @property integer $relationship_id
@@ -83,7 +83,7 @@ class EmployeeNextOfKin extends Model
      **/
     public function relationship()
     {
-        return $this->belongsTo(\App\Models\Humanresource\Relationship::class, 'relationship_id', 'id');
+        return $this->belongsTo(\App\Models\Shared\Relationship::class, 'relationship_id', 'id');
     }
 
     /**
@@ -99,7 +99,7 @@ class EmployeeNextOfKin extends Model
      **/
     public function createdBy()
     {
-        return $this->belongsTo(\App\Models\Humanresource\User::class, 'created_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'created_by', 'id');
     }
 
     /**
@@ -107,6 +107,6 @@ class EmployeeNextOfKin extends Model
      **/
     public function updatedBy()
     {
-        return $this->belongsTo(\App\Models\Humanresource\User::class, 'updated_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'updated_by', 'id');
     }
 }

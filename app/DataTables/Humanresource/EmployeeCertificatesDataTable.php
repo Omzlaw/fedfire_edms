@@ -18,7 +18,14 @@ class EmployeeCertificatesDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'humanresource.employee_certificates.datatables_actions');
+        return $dataTable
+        ->addColumn('date_obtained', function($row){
+            return $row->date_obtained->toDateString();
+        })
+        ->addColumn('status', function($row){
+            return get_enum_value('enum_status', $row->status);
+        })
+        ->addColumn('action', 'humanresource.employee_certificates.datatables_actions');
     }
 
     /**
@@ -65,7 +72,7 @@ class EmployeeCertificatesDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
+            // 'id',
             'certificate_name',
             'date_obtained',
             // 'employee_id',

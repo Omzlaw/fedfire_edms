@@ -65,7 +65,7 @@ class EmployeeAddressDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
+            // 'id',
             'address',
             // 'state_id',
             // 'country_id',

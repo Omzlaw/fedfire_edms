@@ -12,8 +12,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @property \App\Models\Humanresource\Employee $employee
  * @property \App\Models\Humanresource\EmployeeLocalLeave $leaver
- * @property \App\Models\Humanresource\User $createdBy
- * @property \App\Models\Humanresource\User $updatedBy
+ * @property \App\Models\User $createdBy
+ * @property \App\Models\User $updatedBy
  * @property integer $employee_id
  * @property string $file_upload
  * @property integer $leaver_id
@@ -153,9 +153,9 @@ class EmployeeForeignTours extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function leaver()
+    public function leaveType()
     {
-        return $this->belongsTo(\App\Models\Humanresource\EmployeeLocalLeave::class, 'leaver_id', 'id');
+        return $this->belongsTo(\App\Models\Humanresource\LeaveType::class, 'leaver_id', 'id');
     }
 
     /**
@@ -163,7 +163,7 @@ class EmployeeForeignTours extends Model
      **/
     public function createdBy()
     {
-        return $this->belongsTo(\App\Models\Humanresource\User::class, 'created_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'created_by', 'id');
     }
 
     /**
@@ -171,6 +171,6 @@ class EmployeeForeignTours extends Model
      **/
     public function updatedBy()
     {
-        return $this->belongsTo(\App\Models\Humanresource\User::class, 'updated_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'updated_by', 'id');
     }
 }

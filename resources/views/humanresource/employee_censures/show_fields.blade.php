@@ -1,7 +1,7 @@
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('id', 'Id:') !!}</th>
     <td>{{ $employeeCensure->id }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
@@ -18,13 +18,13 @@
 
 <tr>
     <th scopre="row">{!! Form::label('date_recieved', 'Date Recieved:') !!}</th>
-    <td>{{ $employeeCensure->date_recieved }}</td>
+    <td>{{ $employeeCensure->date_recieved->toDateString() }}</td>
 </tr>
 
 
 <tr>
-    <th scopre="row">{!! Form::label('employee_id', 'Employee Id:') !!}</th>
-    <td>{{ $employeeCensure->employee_id }}</td>
+    <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
+    <td>{{ $employeeCensure->employee->staff_code }}</td>
 </tr>
 
 
@@ -36,7 +36,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('status', 'Status:') !!}</th>
-    <td>{{ $employeeCensure->status }}</td>
+    <td>{{ get_enum_value('enum_status', $employeeCensure->status) }}</td>
 </tr>
 
 
@@ -48,13 +48,13 @@
 
 <tr>
     <th scopre="row">{!! Form::label('compiled_by', 'Compiled By:') !!}</th>
-    <td>{{ $employeeCensure->compiled_by }}</td>
+    <td>{{ $employeeCensure->compiledBy->name }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('compiled_at', 'Compiled At:') !!}</th>
-    <td>{{ $employeeCensure->compiled_at }}</td>
+    <td>{{ $employeeCensure->compiled_at->toDateString() }}</td>
 </tr>
 
 

@@ -1,7 +1,7 @@
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('id', 'Id:') !!}</th>
     <td>{{ $employeeAddress->id }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
@@ -11,20 +11,20 @@
 
 
 <tr>
-    <th scopre="row">{!! Form::label('state_id', 'State Id:') !!}</th>
-    <td>{{ $employeeAddress->state_id }}</td>
+    <th scopre="row">{!! Form::label('state_id', 'State:') !!}</th>
+    <td>{{ $employeeAddress->state->title }}</td>
 </tr>
 
 
 <tr>
-    <th scopre="row">{!! Form::label('country_id', 'Country Id:') !!}</th>
-    <td>{{ $employeeAddress->country_id }}</td>
+    <th scopre="row">{!! Form::label('country_id', 'Country:') !!}</th>
+    <td>{{ $employeeAddress->country->title }}</td>
 </tr>
 
 
 <tr>
-    <th scopre="row">{!! Form::label('employee_id', 'Employee Id:') !!}</th>
-    <td>{{ $employeeAddress->employee_id }}</td>
+    <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
+    <td>{{ $employeeAddress->employee->staff_code }}</td>
 </tr>
 
 
@@ -36,7 +36,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('status', 'Status:') !!}</th>
-    <td>{{ $employeeAddress->status }}</td>
+    <td>{{ get_enum_value('enum_status', $employeeAddress->status) }}</td>
 </tr>
 
 

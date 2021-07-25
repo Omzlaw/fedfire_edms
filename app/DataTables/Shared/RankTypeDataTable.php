@@ -18,7 +18,11 @@ class RankTypeDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'shared.rank_types.datatables_actions');
+        return $dataTable
+        ->addColumn('status', function($row){
+            return $row->state->title;
+        })
+        ->addColumn('action', 'shared.rank_types.datatables_actions');
     }
 
     /**

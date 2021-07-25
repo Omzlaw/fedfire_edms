@@ -10,9 +10,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @package App\Models\Humanresource
  * @version July 22, 2021, 11:50 am UTC
  *
- * @property \App\Models\Humanresource\User $actionBy
- * @property \App\Models\Humanresource\User $createdBy
- * @property \App\Models\Humanresource\User $updatedBy
+ * @property \App\Models\User $actionBy
+ * @property \App\Models\User $createdBy
+ * @property \App\Models\User $updatedBy
  * @property string $folio
  * @property string $action_at
  * @property integer $created_by
@@ -86,7 +86,7 @@ class EmployeeActionSheet extends Model
      **/
     public function actionBy()
     {
-        return $this->belongsTo(\App\Models\Humanresource\User::class, 'action_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'action_by', 'id');
     }
 
     /**
@@ -94,7 +94,7 @@ class EmployeeActionSheet extends Model
      **/
     public function createdBy()
     {
-        return $this->belongsTo(\App\Models\Humanresource\User::class, 'created_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'created_by', 'id');
     }
 
     /**
@@ -102,6 +102,6 @@ class EmployeeActionSheet extends Model
      **/
     public function updatedBy()
     {
-        return $this->belongsTo(\App\Models\Humanresource\User::class, 'updated_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'updated_by', 'id');
     }
 }

@@ -11,8 +11,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @property \App\Models\Humanresource\Employee $employee
  * @property \App\Models\Humanresource\Employee $leaver
- * @property \App\Models\Humanresource\User $createdBy
- * @property \App\Models\Humanresource\User $updatedBy
+ * @property \App\Models\User $createdBy
+ * @property \App\Models\User $updatedBy
  * @property integer $employee_id
  * @property string $file_upload
  * @property integer $no_of_days
@@ -102,7 +102,7 @@ class EmployeeLocalLeave extends Model
      **/
     public function leaveType()
     {
-        return $this->belongsTo(\App\Models\Humanresource\Employee::class, 'leaver_id', 'id');
+        return $this->belongsTo(\App\Models\Humanresource\LeaveType::class, 'leaver_id', 'id');
     }
 
     /**
@@ -110,7 +110,7 @@ class EmployeeLocalLeave extends Model
      **/
     public function createdBy()
     {
-        return $this->belongsTo(\App\Models\Humanresource\User::class, 'created_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'created_by', 'id');
     }
 
     /**
@@ -118,6 +118,6 @@ class EmployeeLocalLeave extends Model
      **/
     public function updatedBy()
     {
-        return $this->belongsTo(\App\Models\Humanresource\User::class, 'updated_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'updated_by', 'id');
     }
 }

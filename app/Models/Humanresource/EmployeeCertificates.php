@@ -10,9 +10,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @version July 22, 2021, 11:10 am UTC
  *
  * @property \App\Models\Humanresource\Employee $employee
- * @property \App\Models\Humanresource\User $checkedBy
- * @property \App\Models\Humanresource\User $updatedBy
- * @property \App\Models\Humanresource\User $createdBy
+ * @property \App\Models\User $checkedBy
+ * @property \App\Models\User $updatedBy
+ * @property \App\Models\User $createdBy
  * @property string $certificate_name
  * @property integer $date_obtained
  * @property integer $employee_id
@@ -56,12 +56,12 @@ class EmployeeCertificates extends Model
     protected $casts = [
         'id' => 'integer',
         'certificate_name' => 'string',
-        'date_obtained' => 'integer',
+        'date_obtained' => 'datetime',
         'employee_id' => 'integer',
         'status' => 'integer',
         'remark' => 'string',
         'checked_by' => 'integer',
-        'checked_at' => 'integer',
+        'checked_at' => 'datetime',
         'updated_by' => 'integer',
         'file_upload' => 'string',
         'created_by' => 'integer'
@@ -78,11 +78,11 @@ class EmployeeCertificates extends Model
         'employee_id' => 'Required',
         'status' => 'Required',
         'remark' => 'Required',
-        'checked_by' => 'Required',
+        // 'checked_by' => 'Required',
         'checked_at' => 'Required',
-        'updated_by' => 'Required',
-        'file_upload' => 'Required',
-        'created_by' => 'Required'
+        // 'updated_by' => 'Required',
+        // 'file_upload' => 'Required',
+        // 'created_by' => 'Required'
     ];
 
     /**
@@ -98,7 +98,7 @@ class EmployeeCertificates extends Model
      **/
     public function checkedBy()
     {
-        return $this->belongsTo(\App\Models\Humanresource\User::class, 'checked_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'checked_by', 'id');
     }
 
     /**
@@ -106,7 +106,7 @@ class EmployeeCertificates extends Model
      **/
     public function updatedBy()
     {
-        return $this->belongsTo(\App\Models\Humanresource\User::class, 'updated_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'updated_by', 'id');
     }
 
     /**
@@ -114,6 +114,6 @@ class EmployeeCertificates extends Model
      **/
     public function createdBy()
     {
-        return $this->belongsTo(\App\Models\Humanresource\User::class, 'created_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'created_by', 'id');
     }
 }

@@ -1,36 +1,36 @@
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('id', 'Id:') !!}</th>
     <td>{{ $fileDirectory->id }}</td>
+</tr> --}}
+
+
+<tr>
+    <th scopre="row">{!! Form::label('file_name', 'File Name:') !!}</th>
+    <td>{{ $fileDirectory->file_name }}</td>
 </tr>
 
 
 <tr>
-    <th scopre="row">{!! Form::label('file_upload', 'File Name:') !!}</th>
-    <td>{{ $fileDirectory->file_upload }}</td>
+    <th scopre="row">{!! Form::label('file_type_id', 'File Type:') !!}</th>
+    <td>{{ $fileDirectory->fileType->title }}</td>
 </tr>
 
 
-<tr>
-    <th scopre="row">{!! Form::label('file_type_id', 'File Type Id:') !!}</th>
-    <td>{{ $fileDirectory->file_type_id }}</td>
-</tr>
-
-
-<tr>
-    <th scopre="row">{!! Form::label('file_url', 'File Ext:') !!}</th>
+{{-- <tr>
+    <th scopre="row">{!! Form::label('file_url', 'File URL:') !!}</th>
     <td>{{ $fileDirectory->file_url }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
     <th scopre="row">{!! Form::label('staff_no', 'Staff No:') !!}</th>
-    <td>{{ $fileDirectory->staff_no }}</td>
+    <td>{{ $fileDirectory->employee->staff_code }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('status', 'Status:') !!}</th>
-    <td>{{ $fileDirectory->status }}</td>
+    <td>{{get_enum_value('enum_status', $fileDirectory->status)}}</td>
 </tr>
 
 

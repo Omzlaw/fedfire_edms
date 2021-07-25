@@ -18,7 +18,20 @@ class EmployeeEducationDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'humanresource.employee_educations.datatables_actions');
+        return $dataTable
+        ->addColumn('employee', function($row){
+            return $row->employee->staff_code;
+        })
+        ->addColumn('status', function($row){
+            return get_enum_value('enum_status', $row->status);
+        })
+        ->addColumn('from_date', function($row){
+            return $row->from_date->toDateString();
+        })
+        ->addColumn('to_date', function($row){
+            return $row->to_date->toDateString();
+        })
+        ->addColumn('action', 'humanresource.employee_educations.datatables_actions');
     }
 
     /**
@@ -65,13 +78,13 @@ class EmployeeEducationDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
+            // 'id',
             'school_name',
             // 'certificate_id',
             // 'school_type_id',
             'from_date',
             'to_date',
-            'employee_id',
+            'employee',
             // 'file_upload',
             'status',
             'remark',

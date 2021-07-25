@@ -12,8 +12,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @property \App\Models\Humanresource\State $state
  * @property \App\Models\Humanresource\Country $country
- * @property \App\Models\Humanresource\User $createdBy
- * @property \App\Models\Humanresource\User $updatedBy
+ * @property \App\Models\User $createdBy
+ * @property \App\Models\User $updatedBy
  * @property string $address
  * @property integer $state_id
  * @property integer $country_id
@@ -95,7 +95,7 @@ class EmployeeAddress extends Model
      **/
     public function state()
     {
-        return $this->belongsTo(\App\Models\Humanresource\State::class, 'state_id', 'id');
+        return $this->belongsTo(\App\Models\Shared\State::class, 'state_id', 'id');
     }
 
     /**
@@ -103,7 +103,7 @@ class EmployeeAddress extends Model
      **/
     public function country()
     {
-        return $this->belongsTo(\App\Models\Humanresource\Country::class, 'country_id', 'id');
+        return $this->belongsTo(\App\Models\Shared\Country::class, 'country_id', 'id');
     }
 
     /**
@@ -111,7 +111,7 @@ class EmployeeAddress extends Model
      **/
     public function createdBy()
     {
-        return $this->belongsTo(\App\Models\Humanresource\User::class, 'created_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'created_by', 'id');
     }
 
     /**
@@ -119,6 +119,6 @@ class EmployeeAddress extends Model
      **/
     public function updatedBy()
     {
-        return $this->belongsTo(\App\Models\Humanresource\User::class, 'updated_by', 'id');
+        return $this->belongsTo(\App\Models\User::class, 'updated_by', 'id');
     }
 }

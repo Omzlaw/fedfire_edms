@@ -1,12 +1,12 @@
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('id', 'Id:') !!}</th>
     <td>{{ $employeeForeignTours->id }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
-    <th scopre="row">{!! Form::label('employee_id', 'Employee Id:') !!}</th>
-    <td>{{ $employeeForeignTours->employee_id }}</td>
+    <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
+    <td>{{ $employeeForeignTours->employee->staff_code }}</td>
 </tr>
 
 
@@ -17,26 +17,26 @@
 
 
 <tr>
-    <th scopre="row">{!! Form::label('leaver_id', 'Leaver Id:') !!}</th>
-    <td>{{ $employeeForeignTours->leaver_id }}</td>
+    <th scopre="row">{!! Form::label('leaver_id', 'Leave Type:') !!}</th>
+    <td>{{ $employeeForeignTours->leaveType->title }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('from_date', 'From Date:') !!}</th>
-    <td>{{ $employeeForeignTours->from_date }}</td>
+    <td>{{ $employeeForeignTours->from_date->toDateString() }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('to_date', 'To Date:') !!}</th>
-    <td>{{ $employeeForeignTours->to_date }}</td>
+    <td>{{ $employeeForeignTours->to_date->toDateString() }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('status', 'Status:') !!}</th>
-    <td>{{ $employeeForeignTours->status }}</td>
+    <td>{{ get_enum_value('enum_status', $employeeForeignTours->status) }}</td>
 </tr>
 
 
@@ -60,7 +60,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('date_started', 'Date Started:') !!}</th>
-    <td>{{ $employeeForeignTours->date_started }}</td>
+    <td>{{ $employeeForeignTours->date_started->toDateString() }}</td>
 </tr>
 
 
@@ -78,13 +78,13 @@
 
 <tr>
     <th scopre="row">{!! Form::label('leave_due_date', 'Leave Due Date:') !!}</th>
-    <td>{{ $employeeForeignTours->leave_due_date }}</td>
+    <td>{{ $employeeForeignTours->leave_due_date->toDateString() }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('leave_departure_date', 'Leave Departure Date:') !!}</th>
-    <td>{{ $employeeForeignTours->leave_departure_date }}</td>
+    <td>{{ $employeeForeignTours->leave_departure_date->toDateString() }}</td>
 </tr>
 
 
@@ -96,19 +96,19 @@
 
 <tr>
     <th scopre="row">{!! Form::label('return_due_date', 'Return Due Date:') !!}</th>
-    <td>{{ $employeeForeignTours->return_due_date }}</td>
+    <td>{{ $employeeForeignTours->return_due_date->toDateString() }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('granted_extension_date', 'Granted Extension Date:') !!}</th>
-    <td>{{ $employeeForeignTours->granted_extension_date }}</td>
+    <td>{{ $employeeForeignTours->granted_extension_date->toDateString() }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('duty_resumption_date', 'Duty Resumption Date:') !!}</th>
-    <td>{{ $employeeForeignTours->duty_resumption_date }}</td>
+    <td>{{ $employeeForeignTours->duty_resumption_date->toDateString() }}</td>
 </tr>
 
 

@@ -18,7 +18,17 @@ class EmployeeWifeDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'humanresource.employee_wives.datatables_actions');
+        return $dataTable
+        ->addColumn('employee', function($row){
+            return $row->employee->staff_code;
+        })
+        ->addColumn('wife_birthdate', function($row){
+            return $row->wife_birthdate->toDateString();
+        })
+        ->addColumn('marriage_date', function($row){
+            return $row->marriage_date->toDateString();
+        })
+        ->addColumn('action', 'humanresource.employee_wives.datatables_actions');
     }
 
     /**
@@ -69,7 +79,7 @@ class EmployeeWifeDataTable extends DataTable
             'wife_name',
             'wife_birthdate',
             'marriage_date',
-            // 'employee_id',
+            'employee',
             // 'file_upload',
             'remark',
 

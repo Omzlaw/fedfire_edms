@@ -1,7 +1,7 @@
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('id', 'Id:') !!}</th>
     <td>{{ $employeeQualification->id }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
@@ -12,13 +12,13 @@
 
 <tr>
     <th scopre="row">{!! Form::label('date_obtained', 'Date Obtained:') !!}</th>
-    <td>{{ $employeeQualification->date_obtained }}</td>
+    <td>{{ $employeeQualification->date_obtained->toDateString() }}</td>
 </tr>
 
 
 <tr>
-    <th scopre="row">{!! Form::label('employee_id', 'Employee Id:') !!}</th>
-    <td>{{ $employeeQualification->employee_id }}</td>
+    <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
+    <td>{{ $employeeQualification->employee->staff_code }}</td>
 </tr>
 
 
@@ -42,7 +42,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('checked_by', 'Checked By:') !!}</th>
-    <td>{{ $employeeQualification->checked_by }}</td>
+    <td>{{ $employeeQualification->checkedBy->name }}</td>
 </tr>
 
 

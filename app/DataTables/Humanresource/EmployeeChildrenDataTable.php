@@ -18,7 +18,17 @@ class EmployeeChildrenDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'humanresource.employee_childrens.datatables_actions');
+        return $dataTable
+        ->addColumn('gender', function($row){
+            return get_enum_value('enum_gender', $row->gender);
+        })
+        ->addColumn('birthday', function($row){
+            return $row->birthday->toDateString();
+        })
+        ->addColumn('employee', function($row){
+            return $row->employee->staff_code;
+        })
+        ->addColumn('action', 'humanresource.employee_childrens.datatables_actions');
     }
 
     /**
@@ -65,11 +75,11 @@ class EmployeeChildrenDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
+            // 'id',
             'name',
             'gender',
             'birthday',
-            'employee_id',
+            'employee',
             // 'file_upload',
             'remark',
             // 'checked_at',

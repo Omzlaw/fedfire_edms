@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Humanresource;
 
 use Flash;
 use Response;
+use App\Models\Shared\Country;
 use App\Http\Requests\Humanresource;
 use App\Models\Shared\MaritalStatus;
 use App\Models\Humanresource\Employee;
@@ -33,7 +34,8 @@ class EmployeeController extends AppBaseController
     public function create()
     {
         $marital_status = new MaritalStatus;
-        return view('humanresource.employees.create', compact('marital_status'));
+        $countries = new Country;
+        return view('humanresource.employees.create', compact('marital_status', 'countries'));
     }
 
     /**
@@ -46,7 +48,7 @@ class EmployeeController extends AppBaseController
     public function store(CreateEmployeeRequest $request)
     {
         $input = $request->all();
-
+        $input['staff_code'] = $input['first_name'] . '_' . $input['last_name'] . '_' . $input['file_no'] ;
         /** @var Employee $employee */
         $employee = Employee::create($input);
 
@@ -94,7 +96,8 @@ class EmployeeController extends AppBaseController
             return redirect(route('humanresource.employees.index'));
         }
         $marital_status = new MaritalStatus;
-        return view('humanresource.employees.edit', compact('marital_status'))->with('employee', $employee);
+        $countries = new Country;
+        return view('humanresource.employees.edit', compact('marital_status', 'countries'))->with('employee', $employee);
     }
 
     /**
