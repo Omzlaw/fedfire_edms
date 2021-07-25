@@ -4,7 +4,7 @@
                     alt="image missing"></span></li>
 
         <a href="{{ URL::to('index') }}" class="logo navbar-brand mr-0">
-            <h1 class="text-center">EDMS</h1>
+            <h1 class="text-center text-white">EDMS</h1>
         </a>
         <li {!! (Request::is('') ? 'class="active"' : '' ) !!}>
             <a href="{{ URL::to('') }}">

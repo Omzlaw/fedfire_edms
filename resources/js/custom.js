@@ -121,10 +121,18 @@ $(document).on('click', '.card-header .clickable', function(e){
     }
 });
 
-$(document).on('click', '#model_modal_button', function() {
-    $('#model_frame').attr('src', $(this).attr("data-route"));
-    $('#model_modal').modal('show');
+
+$( ".model_modal_button" ).each(function( index ) {
+    $(this).click(function() {
+        $('#model_frame').attr('src', $(this).attr("data-route"));
+        $('#model_modal').modal('show');
+    })
 });
+
+
+$('#model_modal').on('hidden.bs.modal', function () {
+    location.reload();
+})
 
 
 $(document).on('click', '.card-header .removepanel', function(){
