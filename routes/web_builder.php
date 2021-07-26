@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Shared\FileDirectoryController;
 
 Route::group(['prefix' => 'humanresource'], function () {
     Route::resource('salaryScales', 'Humanresource\SalaryScaleController', ["as" => 'humanresource']);
@@ -119,4 +120,5 @@ Route::group(['prefix' => 'humanresource'], function () {
 
 Route::resource('users', 'UserController')->middleware('auth');
 
-Route::resource('/uploadfile','UploadFileController');
+Route::get('fileDirectories', [FileDirectoryController::class, 'getSearch'])->name('shared.fileDirectories.getSearch');
+Route::post('fileDirectories', [FileDirectoryController::class, 'search'])->name('searchEmployeeRecord');

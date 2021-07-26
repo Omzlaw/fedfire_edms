@@ -1,3 +1,9 @@
+<li class="{!! Request::is('shared/fileDirectories*') ? 'active' : '' !!}">
+    <a href="{{ route('shared.fileDirectories.getSearch') }}">
+        <span class="mm-text ">Search</span>
+    </a>
+</li>
+
 <li class="{!! Request::is('shared/certificateTypes*') ? 'active' : '' !!}">
     <a href="{{ route('shared.certificateTypes.index') }}">
         <span class="mm-text ">Certificate Types</span>

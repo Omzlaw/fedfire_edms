@@ -57,13 +57,19 @@ class FileDirectoryController extends AppBaseController
         $file_url_array = [];
 
         $file_type = FileType::find($input['file_type_id'])->title;
+
         $staff = Employee::find($staff_no);
 
-        $file_name = now() . '_' . $staff->staff_code . '_' . $file_type;
+        // $time = str_replace(' ', '_', now()->timestamp);
+        // $staff_code = str_replace(' ', '_', $staff->staff_code);
+        $file_type_name = str_replace(' ', '-', $file_type);
+
+        $file_name = now()->timestamp . '_' . $staff->staff_code . '_' . $file_type_name;
+
         $input['file_name'] = $file_name;
         foreach ($files as $file)
         {
-            $file_url_array[] = $this->Upload($file, $file_name, $staff->staff_code, $file_type);
+            $file_url_array[] = $this->Upload($file, $file_name, $staff->staff_code, $file_type_name);
         }
         $input['file_url'] = $file_url_array;
         $fileDirectory = FileDirectory::create($input);
@@ -92,6 +98,21 @@ class FileDirectoryController extends AppBaseController
 
         return view('shared.file_directories.show')->with('fileDirectory', $fileDirectory);
     }
+
+    public function getSearch() {
+        return view('shared.file_directories.search');
+    }
+
+    public function search(Request $request) {
+        $employee = Employee::where('file_no', '=', $request['file_no'])->firstOrFail();
+        if (empty($employee)) {
+            // Flash::error('Employee not found');
+            return view('shared.file_directories.search');
+        }
+        $file_directories = FileDirectory::where('staff_no', '=', $employee->id)->get();
+        $file_types = new FileType;
+        return view('shared.file_directories.search', compact('employee', 'file_directories', 'file_types'));
+    }  
 
     /**
      * Show the form for editing the specified FileDirectory.

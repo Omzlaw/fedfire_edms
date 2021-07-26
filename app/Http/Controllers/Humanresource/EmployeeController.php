@@ -97,7 +97,7 @@ class EmployeeController extends AppBaseController
         }
         $marital_status = new MaritalStatus;
         $countries = new Country;
-        return view('humanresource.employees.edit', compact('marital_status', 'countries'))->with('employee', $employee);
+        return view('humanresource.employees.edit', compact('marital_status', 'countries', 'id'))->with('employee', $employee);
     }
 
     /**

@@ -58,7 +58,7 @@
 <div class="form-group">
     <div class="row"> 
         {!! Form::label('file_upload', 'File Upload:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">{!! Form::file('file_upload[]', array('multiple' => true, 'class' => 'form-control')) !!}
+        <div class="col-md-9 col-lg-9 col-12">{!! Form::file('file_upload[]', array('class' => 'form-control', 'accept' => 'image/*,.pdf')) !!}
         </div>
     </div>
 </div>

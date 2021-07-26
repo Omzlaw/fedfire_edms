@@ -22,7 +22,10 @@ class EmployeeActionSheetDataTable extends DataTable
         ->addColumn('employee', function($row){
             return $row->employee->staff_code;
         })
-        ->addColumn('action', 'humanresource.employee_action_sheets.datatables_actions');
+        ->addColumn('action', 'humanresource.employee_action_sheets.datatables_actions')
+        ->filter(function ($query){
+            
+        });
     }
 
     /**
@@ -50,6 +53,7 @@ class EmployeeActionSheetDataTable extends DataTable
             ->parameters([
                 'dom'       => 'Bfrtip',
                 'stateSave' => true,
+                'responsive' => true,
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
                     ['extend' => 'create', 'className' => 'btn btn-default btn-sm no-corner',],

@@ -14,7 +14,7 @@
     <div class="row">
         {!! Form::label('action_at', 'Action At:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('action_at', null, ['class' => 'form-control','id'=>'action_at']) !!}
+            {!! Form::date('action_at', null, ['class' => 'form-control','id'=>'action_at']) !!}
         </div>
     </div>
 </div>
@@ -35,7 +35,7 @@
     <div class="row">
         {!! Form::label('date_cleared', 'Date Cleared:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('date_cleared', null, ['class' => 'form-control','id'=>'date_cleared']) !!}
+            {!! Form::date('date_cleared', null, ['class' => 'form-control','id'=>'date_cleared']) !!}
         </div>
     </div>
 </div>

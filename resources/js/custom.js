@@ -20,7 +20,7 @@ $(document).ready(function () {
                 'margin-left': '-175px',
                 'transition': 'margin-left 0.3s linear'
             });
-            $("#demo .navbar-brand h1").replaceWith('<h1 class="navbrand">E</h1>');
+            $("#demo .navbar-brand h1").replaceWith('<h1 class="navbrand">EDMS</h1>');
         });
 
     var arr;
