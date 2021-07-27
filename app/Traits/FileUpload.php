@@ -12,9 +12,10 @@ trait FileUpload
     {
         $file_extension = $file->getClientOriginalExtension();
         $file_url = $file->storeAs(
-            'uploads/' . $staff_code . '/' . $file_type, $file_name . '.' . $file_extension
+            'public/uploads/' . $staff_code . '/' . $file_type, $file_name . '.' . $file_extension
         );
-        return $file_url;
+        $file_path = str_replace('public/', 'storage/', $file_url);
+        return $file_path;
     }
 
 }

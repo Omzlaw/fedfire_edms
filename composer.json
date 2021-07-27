@@ -26,6 +26,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^v3.0.0",
         "laravelcollective/html": "^v6.2.0",
+        "santigarcor/laratrust": "^6.3",
         "thomaswelton/laravel-gravatar": "dev-update-laravel_8",
         "yajra/laravel-datatables-buttons": "^4.9",
         "yajra/laravel-datatables-oracle": "~v9.11.0"

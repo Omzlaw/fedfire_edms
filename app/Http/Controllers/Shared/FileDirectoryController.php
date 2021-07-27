@@ -10,6 +10,7 @@ use App\Http\Requests\Shared;
 use App\Models\Shared\FileType;
 use App\Models\Shared\FileDirectory;
 use App\Models\Humanresource\Employee;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\AppBaseController;
 use App\DataTables\Shared\FileDirectoryDataTable;
 use App\Http\Requests\Shared\CreateFileDirectoryRequest;
@@ -104,10 +105,10 @@ class FileDirectoryController extends AppBaseController
     }
 
     public function search(Request $request) {
-        $employee = Employee::where('file_no', '=', $request['file_no'])->firstOrFail();
+        $employee = Employee::where('file_no', '=', $request['file_no'])->first();
         if (empty($employee)) {
-            // Flash::error('Employee not found');
-            return view('shared.file_directories.search');
+            Flash::error('Employee not found');
+            return redirect(route('searchEmployeeRecord'));
         }
         $file_directories = FileDirectory::where('staff_no', '=', $employee->id)->get();
         $file_types = new FileType;
@@ -182,6 +183,9 @@ class FileDirectoryController extends AppBaseController
 
             return redirect(route('shared.fileDirectories.index'));
         }
+
+        $file_url = str_replace('storage/', 'public/', $fileDirectory->file_url);
+        Storage::delete($file_url);
 
         $fileDirectory->delete();
 
