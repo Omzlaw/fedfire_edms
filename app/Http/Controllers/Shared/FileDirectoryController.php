@@ -54,12 +54,12 @@ class FileDirectoryController extends AppBaseController
         /** @var FileDirectory $fileDirectory */
         $input = $request->all();
         $files = $input['file_upload'];
-        $staff_no = $input['staff_no'];
+        $employee_id = $input['employee_id'];
         $file_url_array = [];
 
         $file_type = FileType::find($input['file_type_id'])->title;
 
-        $staff = Employee::find($staff_no);
+        $staff = Employee::find($employee_id);
 
         // $time = str_replace(' ', '_', now()->timestamp);
         // $staff_code = str_replace(' ', '_', $staff->staff_code);
@@ -110,7 +110,7 @@ class FileDirectoryController extends AppBaseController
             Flash::error('Employee not found');
             return redirect(route('searchEmployeeRecord'));
         }
-        $file_directories = FileDirectory::where('staff_no', '=', $employee->id)->get();
+        $file_directories = FileDirectory::where('employee_id', '=', $employee->id)->get();
         $file_types = new FileType;
         return view('shared.file_directories.search', compact('employee', 'file_directories', 'file_types'));
     }  

@@ -48,7 +48,7 @@
         "inView": true
     },
     {
-        "name": "staff_no",
+        "name": "employee_id",
         "dbType": "integer",
         "htmlType": "number",
         "validations": "Required",

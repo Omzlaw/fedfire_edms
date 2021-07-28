@@ -23,7 +23,7 @@
 
 
 <tr>
-    <th scopre="row">{!! Form::label('staff_no', 'Staff No:') !!}</th>
+    <th scopre="row">{!! Form::label('employee_id', 'Staff No:') !!}</th>
     <td>{{ $fileDirectory->employee->staff_code }}</td>
 </tr>
 

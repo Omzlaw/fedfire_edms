@@ -4,10 +4,13 @@ namespace App\Http\Controllers\Humanresource;
 
 use Flash;
 use Response;
+use Illuminate\Http\Request;
 use App\Models\Shared\Country;
+use Yajra\DataTables\DataTables;
 use App\Http\Requests\Humanresource;
 use App\Models\Shared\MaritalStatus;
 use App\Models\Humanresource\Employee;
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\AppBaseController;
 use App\DataTables\Humanresource\EmployeeDataTable;
 use App\Http\Requests\Humanresource\CreateEmployeeRequest;
@@ -64,8 +67,9 @@ class EmployeeController extends AppBaseController
      *
      * @return Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
+
         /** @var Employee $employee */
         $employee = Employee::find($id);
 
@@ -74,6 +78,8 @@ class EmployeeController extends AppBaseController
 
             return redirect(route('humanresource.employees.index'));
         }
+
+        Session::put('employee_id', $id);
 
         return view('humanresource.employees.show')->with('employee', $employee);
     }

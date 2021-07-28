@@ -15,83 +15,108 @@
     </section>
     <div class="content">
         @include('adminlte-templates::common.errors')
+        @include('flash::message')
         <div class="card">
-            <div class="card-body">
-                {!! Form::open(['route' => 'searchEmployeeRecord', 'class' => 'form-horizontal', 'files' => true]) !!}
+            <div class="card-body ml-15">
 
                 <div class="row">
-                    <div class="form-group col-4">
-                        {!! Form::text('file_no', null, ['class' => 'form-control', 'placeholder' => 'Please enter file number']) !!}
-                    </div>
-                    <div class="form-group col-8">
-                        {!! Form::submit('Search', ['class' => 'btn btn-primary']) !!}
-                    </div>
+                    <div class='col-12'>
+                        {!! Form::open(['route' => 'searchEmployeeRecord', 'class' => 'form-horizontal', 'files' => true]) !!}
+                            <div class="row">
+                                <div class="form-group col-4">
+                                    {!! Form::text('file_no', null, ['class' => 'form-control', 'placeholder' => 'Search by File Number']) !!}
+                                </div>
+                                <div class="form-group col-8">
+                                    {!! Form::submit('Search', ['class' => 'btn btn-primary']) !!}
+                                </div>
+                            </div>
+                        {!! Form::close() !!}
+                    </div> 
                 </div>
+                               
+                <div class="row">
+                    @if (isset($employee))
+                    
+                            <div class="col-5 card">
 
-                @if (isset($employee))
-                    <div class="row">
-                        <div class="col-6">
-                            {!! Form::label('file_types', 'Select file type:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
-                            {!! Form::select('file_types', modelDropdown($file_types, 'id', 'title'), null, ['class' => 'form-control', 'oninput' => 'filterTable()']) !!}
+                                <div class="row mt-5 pt-5">
+                                        <br/>
+                                        <div class="col-3">
+                                            {!! Form::label('file_types', 'Select File Type:', ['class' => 'control-label']) !!}
+                                        </div>
+                                        <div class="">
+                                        {!! Form::select('file_types', modelDropdown($file_types, 'id', 'title'), null, ['class' => 'form-control custom-select', 'oninput' => 'filterTable()']) !!}
+                                        </div>
+                                </div>  
+                                
+
+                                <div class="mt-5 pt-5">
+                                    
+                                    <table class="table table-striped table-border">
+                                        <col width='40%'>
+                                        <col width='60%'>
+                                        <tbody>
+                                            <tr><th scope="col">File Number</th><td>{{ $employee->file_no }}</td></tr>
+                                            <tr><th scope="col">First Name</th><td>{{ $employee->first_name }}</td></tr>
+                                            <tr><th scope="col">Last Name</th><td>{{ $employee->last_name }}</td></tr>    
+                                            {{-- <tr><th scope="col">Other Records</th><td>  --}}
+                                                <div class="">
+                                                    <br>
+                                                    <div class='mt-5'>
+                                                        {{-- @include('shared.file_directories.dropdown') --}}
+                                                    </div>                                                      
+                                                </div>
+                                                
+                                            </td> </tr>                               
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="col-7">
+                                    <div class="row ml-1 mr-1 card">
+                                        <span class="text-center h2 mt-2">File records</span>    
+                                    
+                                        <table id="file_directories" class="table table-striped" style="display:none">
+                                            <thead>
+                                                <tr> 
+                                                    <th scope="col" width='25%'>File Type</th>
+                                                    <th scope="col" width='25%'>Date Uploaded</th>                                                    
+                                                    <th scope="col" width='40%'>Remark</th>
+                                                    <th scope="col" width='10%'>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (isset($file_directories))
+                                                    @foreach ($file_directories as $file)
+                                                        <tr>
+                                                            <td style="display: none;">{{ $file->file_type_id }}</td>
+                                                            <?php 
+                                                                //get the date file was uploaded
+                                                                $name_arr = explode('_',$file->file_name);
+                                                                $date_uploaded = (date("F d, Y h:i:s", $name_arr[0]));
+                                                            ?> 
+                                                            <td>{{ $file->fileType->title }}</td>                                                           
+                                                            <td>{{ $date_uploaded }}</td>                                                            
+                                                            <td>{{ $file->remark }}</td>
+                                                            <td><a target="blank" href="{{ route('viewFile', $file->id) }}" class="btn btn-primary">view</a></td>
+                                                        </tr>
+                                                    @endforeach
+                                                @else
+                                                    <tr><td colspan='4'> <h5>File does not exist</h5></td></tr>                                                   
+                                                @endif
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                            </div>                       
+                    @else
+                        <div class="">
+                            <h6 class="ml-3">Search for an employee</h6>
                         </div>
-                        <div class="col-6">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">File Number</th>
-                                        <th scope="col">First Name</th>
-                                        <th scope="col">Last Name</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>{{ $employee->file_no }}</td>
-                                        <td>{{ $employee->first_name }}</td>
-                                        <td>{{ $employee->last_name }}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
 
-                    <div class="row ml-1 mr-1">
-                        <table id="file_directories" class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th scope="col">File Name</th>
-                                    <th scope="col">File Type</th>
-                                    <th scope="col">Remark</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @if (isset($file_directories))
-                                    @foreach ($file_directories as $file)
-                                        <tr>
-                                            <td style="display: none;">{{ $file->file_type_id }}</td>
-                                            <td>{{ $file->file_name }}</td>
-                                            <td>{{ $file->fileType->title }}</td>
-                                            <td>{{ $file->remark }}</td>
-                                            <td><a target="blank" href="{{ $file->file_url[0] }}" class="btn btn-primary">view</a></td>
-                                        </tr>
-                                    @endforeach
-                                @else
-                                    <h5>File does not exist</h5>
-                                @endif
-                            </tbody>
-                        </table>
-                    </div>
-
-                @else
-                    <div class="row">
-                        <h6 class="ml-3">Record not found</h6>
-                    </div>
-
-                @endif
-
-
-                {!! Form::close() !!}
-
+                    @endif
+                 </div>
             </div>
         </div>
     </div>
@@ -110,6 +135,7 @@
             cells = row.getElementsByTagName("td");
             row.style.display = "none"; // hides this row
         }
+        table.style.display='block';
     }
 
     function filterTable() {

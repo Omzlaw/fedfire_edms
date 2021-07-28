@@ -25,7 +25,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <h2 class="text-center">
-                                            <span>JOSH</span>
+                                            <span>EDMS</span>
                                         </h2>
                                     </div>
                                 </div>

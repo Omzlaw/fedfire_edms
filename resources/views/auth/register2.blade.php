@@ -24,7 +24,7 @@
                             <h2 class="text-center">
                                 {{--                            <img src="{{ asset('img/logo_white.png')}}"
                                 alt="Logo">--}}
-                                <span>JOSH</span>
+                                <span>EDMS</span>
                             </h2>
                         </div>
                     </div>

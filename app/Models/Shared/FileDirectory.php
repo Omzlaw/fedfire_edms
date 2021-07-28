@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $file_upload
  * @property integer $file_type_id
  * @property string $file_url
- * @property integer $staff_no
+ * @property integer $employee_id
  * @property integer $status
  * @property string $remark
  * @property integer $created_by
@@ -38,7 +38,7 @@ class FileDirectory extends Model
         'file_upload',
         'file_type_id',
         'file_url',
-        'staff_no',
+        'employee_id',
         'status',
         'remark',
         'created_by',
@@ -55,7 +55,7 @@ class FileDirectory extends Model
         'file_upload' => 'array',
         'file_type_id' => 'integer',
         'file_url' => 'array',
-        'staff_no' => 'integer',
+        'employee_id' => 'integer',
         'status' => 'integer',
         'remark' => 'string',
         'created_by' => 'integer',
@@ -71,7 +71,7 @@ class FileDirectory extends Model
         'file_upload' => 'Required',
         'file_type_id' => 'Required',
         // 'file_url' => 'Required',
-        'staff_no' => 'Required',
+        'employee_id' => 'Required',
         // 'status' => 'Required',
         'remark' => 'Required',
      //   'created_by' => 'Required',
@@ -91,7 +91,7 @@ class FileDirectory extends Model
      **/
     public function employee()
     {
-        return $this->belongsTo(\App\Models\Humanresource\Employee::class, 'staff_no', 'id');
+        return $this->belongsTo(\App\Models\Humanresource\Employee::class, 'employee_id', 'id');
     }
 
     /**

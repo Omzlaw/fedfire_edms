@@ -28,7 +28,7 @@ Employee Childrens @parent
             </table>
         </div>
     </div>
-    <a href="{{ route('humanresource.employeeChildrens.index') }}"
-                class="btn btn-primary">Back</a>
+    {{-- <a href="{{ route('humanresource.employeeChildrens.index') }}"
+                class="btn btn-primary">Back</a> --}}
 </div>
 @endsection

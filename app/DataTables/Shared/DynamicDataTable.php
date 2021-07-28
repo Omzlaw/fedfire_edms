@@ -1,12 +1,12 @@
 <?php
 
-namespace App\DataTables\Humanresource;
+namespace App\DataTables\Shared;
 
-use App\Models\Humanresource\EmployeeChildren;
+use App\Models\Shared\FileDirectory;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
 
-class EmployeeChildrenDataTable extends DataTable
+class DynamicDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -19,30 +19,23 @@ class EmployeeChildrenDataTable extends DataTable
         $dataTable = new EloquentDataTable($query);
 
         return $dataTable
-        ->addColumn('gender', function($row){
-            return get_enum_value('enum_gender', $row->gender);
-        })
-        ->addColumn('birthday', function($row){
-            return $row->birthday->toDateString();
-        })
-        ->addColumn('employee', function($row){
-            return $row->employee->staff_code;
-        })
-        ->addColumn('action', 'humanresource.employee_childrens.datatables_actions');
+        ->addColumn('action', 'shared.file_directories.datatables_actions');
     }
 
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\EmployeeChildren $model
+     * @param \App\Models\DYNAMIC $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(EmployeeChildren $model)
+    public function query($query)
     {
-        
-        return $model->newQuery();
+        return $query;
     }
+    
+    public function model() {
 
+    }
     /**
      * Optional method if you want to use html builder.
      *
@@ -76,14 +69,7 @@ class EmployeeChildrenDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            // 'id',
-            'name',
-            'gender',
-            'birthday',
-            'employee',
-            // 'file_upload',
-            'remark',
-            // 'checked_at',
+
 
         ];
     }

@@ -1,5 +1,5 @@
 <!-- Employee Id Field -->
-<div class="form-group">
+{{-- <div class="form-group">
     <div class="row">
         {!! Form::label('employee_id', 'Employee:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
@@ -7,7 +7,8 @@
             <button  class="model_modal_button" data-route="{{ route('humanresource.employees.create') }}" type="button" data-toggle="modal"  data-target="#model_modal">Add new</button>
         </div>
     </div>
-</div>
+</div> --}}
+{!! Form::hidden('employee_id', Session::get('employee_id'), ['class' => 'form-control']) !!}
 
 
 <!-- File Upload Field -->

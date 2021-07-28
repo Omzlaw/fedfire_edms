@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Humanresource;
 
 use Flash;
 use Response;
+use Illuminate\Http\Request;
 use App\Http\Requests\Humanresource;
 use App\Models\Humanresource\Employee;
+use Illuminate\Support\Facades\Schema;
 use App\Http\Controllers\AppBaseController;
 use App\Models\Humanresource\EmployeeChildren;
 use App\DataTables\Humanresource\EmployeeChildrenDataTable;

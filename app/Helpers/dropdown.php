@@ -25,6 +25,15 @@ if(!function_exists('modelDropdown')) {
     }   
 }
 
+
+if(!function_exists('getModelColumns')) {
+    function getModelColumns(Model $model) {
+        $modelColumns = $model::columns();
+        return $modelColumns;
+    }   
+}
+
+
 /**
  * CodeIgniter
  *

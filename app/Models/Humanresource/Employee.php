@@ -3,6 +3,7 @@
 namespace App\Models\Humanresource;
 
 use Eloquent as Model;
+use App\Models\Shared\FileDirectory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Employee
@@ -162,5 +163,98 @@ class Employee extends Model
     public function updatedBy()
     {
         return $this->belongsTo(\App\Models\User::class, 'updated_by', 'id');
+    }
+
+        /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function fileDirectories()
+    {
+        return $this->hasMany(FileDirectory::class);
+    }
+
+    public function actionSheets()
+    {
+        return $this->hasMany(EmployeeActionSheet::class);
+    }
+
+    public function addresses()
+    {
+        return $this->hasMany(EmployeeAddress::class);
+    }
+
+    public function censures()
+    {
+        return $this->hasMany(EmployeeCensure::class);
+    }
+
+    public function certificates()
+    {
+        return $this->hasMany(EmployeeCertificates::class);
+    }
+
+    public function children()
+    {
+        return $this->hasMany(EmployeeChildren::class)->select('id', 'name', 'gender', 'birthday');
+    }
+
+    public function educations()
+    { 
+        return $this->hasMany(EmployeeEducation::class);
+    }
+
+    public function forceServices()
+    {
+        return $this->hasMany(EmployeeForceService::class);
+    }
+
+    public function foreignTours()
+    {
+        return $this->hasMany(EmployeeForeignTours::class);
+    }
+
+    public function gratuities()
+    {
+        return $this->hasMany(EmployeeGratuity::class);
+    }
+
+    public function languages()
+    {
+        return $this->hasMany(EmployeeLanguage::class);
+    }
+
+    public function localLeaves()
+    {
+        return $this->hasMany(EmployeeLocalLeave::class);
+    }
+
+    public function nextOfKins()
+    {
+        return $this->hasMany(EmployeeNextOfKin::class);
+    }
+
+    public function publicServices()
+    {
+        return $this->hasMany(EmployeePublicService::class);
+    }
+
+    public function qualifications()
+    {
+        return $this->hasMany(EmployeeQualification::class);
+    }
+
+    public function recordTrackers()
+    {
+        return $this->hasMany(EmployeeRecordTracker::class);
+    }
+
+    public function terminations()
+    {
+        return $this->hasMany(EmployeeTermination::class);
+    }
+
+    public function spouse()
+    {
+        return $this->hasMany(EmployeeWife::class);
     }
 }
