@@ -5,21 +5,3 @@
         </div>
     </div>
 </div>
-
-{{-- <script type="text/javascript">
-    window.onload = loadModal;
-
-    function loadModal() {
-        $(".model_modal_button").each(function(index) {
-            $(this).click(function() {
-                $('#model_frame').attr('src', $(this).attr("data-route"));
-                $('#model_modal').modal('show');
-            })
-        });
-
-
-        $('#model_modal').on('hidden.bs.modal', function() {
-            // location.reload();
-        })
-    }
-</script> --}}

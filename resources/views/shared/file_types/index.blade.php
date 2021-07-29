@@ -25,7 +25,7 @@ File Types @parent
         <section class="card-header">
             <h5 class="card-title d-inline">File Types</h5>
             <span class="float-right">
-                <a class="btn btn-primary pull-right" href="{{ route('shared.fileTypes.create') }}">Add New</a>
+                <a class="btn btn-danger pull-right" href="{{ route('shared.fileTypes.create') }}">Add New</a>
             </span>
         </section>
         <div class="card-body">

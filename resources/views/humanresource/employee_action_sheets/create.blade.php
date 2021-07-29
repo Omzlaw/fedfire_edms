@@ -1,4 +1,5 @@
-@extends('layouts.default')
+{{-- @extends('layouts.default') --}}
+@extends('layouts.custom')
 
 {{-- Page title --}}
 @section('title')
@@ -6,7 +7,7 @@ Employee Action Sheet @parent
 @stop
 
 @section('content')
-    <section class="content-header">
+    <section class="content-header" >
     <div aria-label="breadcrumb" class="card-breadcrumb">
         <h1>{{ __('Create New') }} Employee Action Sheet</h1>
     </div>

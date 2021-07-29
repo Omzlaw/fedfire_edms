@@ -25,7 +25,7 @@ Employee Public Services @parent
         <section class="card-header">
             <h5 class="card-title d-inline">Employee Public Services</h5>
             <span class="float-right">
-                <a class="btn btn-primary pull-right" href="{{ route('humanresource.employeePublicServices.create') }}">Add New</a>
+                <a class="btn btn-danger pull-right" href="{{ route('humanresource.employeePublicServices.create') }}">Add New</a>
             </span>
         </section>
         <div class="card-body">

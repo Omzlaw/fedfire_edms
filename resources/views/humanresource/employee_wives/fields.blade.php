@@ -65,14 +65,14 @@
 
 
 <!-- File Upload Field -->
-<div class="form-group">
+{{--<div class="form-group">
     <div class="row">
         {!! Form::label('file_upload', 'File Upload:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">{!! Form::file('file_upload') !!}
         </div>
     </div>
 
-</div>
+</div>--}}
 
 
 <!-- Remark Field -->
@@ -89,5 +89,5 @@
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    <a href="{{ route('humanresource.employeeWives.index') }}" class="btn btn-default">Cancel</a>
+    {{-- <a href="#" class="btn btn-default modal-cancel">Cancel</a> --}}
 </div>

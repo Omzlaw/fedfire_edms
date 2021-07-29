@@ -1,32 +1,32 @@
 
          
                 <li class="{!! Request::is('shared/fileDirectories*') ? 'active' : '' !!}">
-                    <a href="{{ route('shared.fileDirectories.getSearch') }}">
+                    <a href="{{ route('shared.fileDirectories.getSearch') }}" class="mm-a">
                         <span class="mm-text ">Search</span>
                         <span class="menu-icon"><i class="fa fa-search"></i></span>
                     </a>
                 </li>
 
                 <li class="{!! Request::is('shared/fileDirectories*') ? 'active' : '' !!}">
-                    <a href="{{ route('shared.fileDirectories.index') }}">
+                    <a href="{{ route('shared.fileDirectories.index') }}" class="mm-a">
                         <span class="mm-text ">File Directory</span>
                         <span class="menu-icon"><i class="fa fa-folder"></i></span>
                     </a>
                 </li>
 
                 <li class="{!! Request::is('humanresource/employees*') ? 'active' : '' !!}">
-                    <a href="{{ route('humanresource.employees.index') }}">
+                    <a href="{{ route('humanresource.employees.index') }}" class="mm-a">
                         <span class="mm-text ">Employees</span>
                         <span class="menu-icon"><i class="fa fa-users"></i></span>
                     </a>
                 </li>
 
-                <li class="{!! Request::is('humanresource/employeeActionSheets*') ? 'active' : '' !!}">
+                {{-- <li class="{!! Request::is('humanresource/employeeActionSheets*') ? 'active' : '' !!}">
                     <a href="{{ route('humanresource.employeeActionSheets.index') }}">
                         <span class="mm-text ">Action Sheets</span>
                         <span class="menu-icon"><i class="fa fa-file"></i></span>
                     </a>
-                </li>
+                </li> --}}
                 
  
 
@@ -133,21 +133,21 @@
 
 <li {!! (Request::is('table') || Request::is('data_table') ? 'class="menu-dropdown active"'
             : "class='menu-dropdown'" ) !!}>
-            <a href="#">
+            <a href="#" class="mm-a">
                 <span class="mm-text ">Manage Settings</span>
                 <span class="menu-icon "> <i class="far fa-gear"></i></span>
                 <span class="im im-icon-Arrow-Right imicon"></span>
             </a>
-            <ul class="sub-menu list-unstyled">
+            <ul class="sub-menu list-unstyled bg-danger bg-gradient">
                 <li class="{!! Request::is('shared/certificateTypes*') ? 'active' : '' !!}">
-                    <a href="{{ route('shared.certificateTypes.index') }}">
+                    <a href="{{ route('shared.certificateTypes.index') }}" class="mm-a">
                         <span class="mm-text ">Certificate</span>
 
                     </a>
                 </li>
 
                 <li class="{!! Request::is('shared/countries*') ? 'active' : '' !!}">
-                    <a href="{{ route('shared.countries.index') }}">
+                    <a href="{{ route('shared.countries.index') }}" class="mm-a">
                         <span class="mm-text ">Countries</span>
 
                     </a>
@@ -159,24 +159,24 @@
                 </li> --}}
 
                 <li class="{!! Request::is('shared/fileTypes*') ? 'active' : '' !!}">
-                    <a href="{{ route('shared.fileTypes.index') }}">
+                    <a href="{{ route('shared.fileTypes.index') }}" class="mm-a">
                         <span class="mm-text ">File type</span></a>
                 </li>
 
                 <li class="{!! Request::is('shared/languages*') ? 'active' : '' !!}">
-                    <a href="{{ route('shared.languages.index') }}">
+                    <a href="{{ route('shared.languages.index') }}" class="mm-a">
                         <span class="mm-text ">Languages</span></a>
                 </li>
 
                 <li class="{!! Request::is('humanresource/leaveTypes*') ? 'active' : '' !!}">
-                    <a href="{{ route('humanresource.leaveTypes.index') }}">
+                    <a href="{{ route('humanresource.leaveTypes.index') }}" class="mm-a">
                         <span class="mm-text ">Leave</span>
 
                     </a>
                 </li>
 
                 <li class="{!! Request::is('shared/localGovtAreas*') ? 'active' : '' !!}">
-                    <a href="{{ route('shared.localGovtAreas.index') }}">
+                    <a href="{{ route('shared.localGovtAreas.index') }}" class="mm-a">
                         <span class="mm-text ">Local Govt Areas</span>
 
                     </a>
@@ -185,7 +185,7 @@
 
 
                 <li class="{!! Request::is('shared/qualificationTypes*') ? 'active' : '' !!}">
-                    <a href="{{ route('shared.qualificationTypes.index') }}">
+                    <a href="{{ route('shared.qualificationTypes.index') }}" class="mm-a">
                         <span class="mm-text ">Qualification</span>
                     </a>
                 </li>
@@ -193,77 +193,64 @@
 
 
                 <li class="{!! Request::is('shared/rankTypes*') ? 'active' : '' !!}">
-                    <a href="{{ route('shared.rankTypes.index') }}">
+                    <a href="{{ route('shared.rankTypes.index') }}" class="mm-a">
                         <span class="mm-text ">Rank</span>
 
                     </a>
                 </li>
 
                 <li class="{!! Request::is('shared/relationships*') ? 'active' : '' !!}">
-                    <a href="{{ route('shared.relationships.index') }}">
+                    <a href="{{ route('shared.relationships.index') }}" class="mm-a">
                         <span class="mm-text ">Relationships</span></a>
                 </li>
 
                 <li class="{!! Request::is('humanresource/salaryScales*') ? 'active' : '' !!}">
-                    <a href="{{ route('humanresource.salaryScales.index') }}"> 
+                    <a href="{{ route('humanresource.salaryScales.index') }}" class="mm-a"> 
                         <span class="mm-text ">Salary Scales</span> </a>
                 </li>
 
                 <li class="{!! Request::is('shared/schoolTypes*') ? 'active' : '' !!}">
-                    <a href="{{ route('shared.schoolTypes.index') }}">
+                    <a href="{{ route('shared.schoolTypes.index') }}" class="mm-a">
                         <span class="mm-text ">School</span></a>
                 </li>
 
                 <li class="{!! Request::is('shared/serviceExitTypes*') ? 'active' : '' !!}">
-                    <a href="{{ route('shared.serviceExitTypes.index') }}">
+                    <a href="{{ route('shared.serviceExitTypes.index') }}" class="mm-a">
                         <span class="mm-text ">Service Exit</span></a>
                 </li>
 
                 <li class="{!! Request::is('shared/settings*') ? 'active' : '' !!}">
-                    <a href="{{ route('shared.settings.index') }}">
+                    <a href="{{ route('shared.settings.index') }}" class="mm-a">
                         <span class="mm-text ">Settings</span></a>
                 </li>
 
                 <li class="{!! Request::is('shared/states*') ? 'active' : '' !!}">
-                    <a href="{{ route('shared.states.index') }}">
+                    <a href="{{ route('shared.states.index') }}" class="mm-a">
                         <span class="mm-text ">States</span></a>
                 </li>
 
                 <li class="{!! Request::is('humanresource/terminationTypes*') ? 'active' : '' !!}">
-                    <a href="{{ route('humanresource.terminationTypes.index') }}">
+                    <a href="{{ route('humanresource.terminationTypes.index') }}" class="mm-a">
                         <span class="mm-text ">Termination</span></a>
                 </li>
             </ul>
 </li>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="{{ Request::is('users*') ? 'active' : '' }}">
-    <a href="{!! route('users.index') !!}"><span>Users</span></a>
+    <a href="{!! route('users.index') !!}" class="mm-a"><span>Users</span></a>
 </li>
+
+
+
+{{-- 
+@push('custom-scripts')
+    <script type="text/javascript">
+        window.onload = editSidebar;
+
+        function editSidebar() {
+            $('.left-side').removeClass('collapse-left');
+            $('.right-side').addClass('strech');    
+        }
+    </script>
+@endpush --}}

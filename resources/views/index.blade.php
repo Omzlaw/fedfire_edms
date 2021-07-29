@@ -27,28 +27,26 @@ Dashboard @parent
         <div class="col-md-6 col-xl-3 col-12 mb-20">
             <div class="  bg-white dashboard-col pl-15 pb-15 pt-15">
                 <i class="im im-icon-Add-Cart im-icon-set float-right bg-primary"></i>
-                <h3>35K</h3>
-                <p>Number of Sales</p>
+                <h3>102</h3>
+                <p>Number of Employees</p>
                 <div class="progress meter mr-15">
                     <div id="progress-primary"
                         class=" progress-bar bg-primary progress-bar-striped progress-bar-animated" role="progressbar"
                         style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <p class="mb-0 mt-3 "><span>Gained: 655</span> <span class="float-right pr-15">Lost: 56</span></p>
             </div>
         </div>
 
         <div class="col-md-6 col-xl-3 col-12  mb-20">
             <div class="bg-white dashboard-col pl-15 pb-15 pt-15">
                 <i class="im im-icon-Eye-Scan im-icon-set float-right bg-success"></i>
-                <h3>10K</h3>
-                <p>Page Views</p>
+                <h3>1265</h3>
+                <p>Number of Files</p>
                 <div class="progress mr-15">
                     <div id="progress-success"
                         class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar"
                         style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <p class="mb-0 mt-3 "><span>Unique Pageviews: </span> <span class="float-right pr-15">4.7K</span>
                 </p>
             </div>
         </div>
@@ -57,13 +55,12 @@ Dashboard @parent
             <div class="bg-white dashboard-col pl-15 pb-15 pt-15">
                 <i class="im im-icon-Love-User im-icon-set float-right bg-info"></i>
                 <h3>23K</h3>
-                <p>Number of Fans</p>
+                <p>Number</p>
                 <div class="progress mr-15">
                     <div id="progress-info" class="progress-bar bg-info progress-bar-striped progress-bar-animated"
                         role="progressbar" style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100">
                     </div>
                 </div>
-                <p class="mb-0 mt-3 "><span>Gained: 655</span> <span class="float-right pr-15">Lost: 56</span></p>
             </div>
         </div>
 
@@ -78,14 +75,13 @@ Dashboard @parent
                         role="progressbar" style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100">
                     </div>
                 </div>
-                <p class="mb-0 mt-3 "><span>To Prev. Period: 655</span> <span class="float-right pr-15">+72%</span>
                 </p>
             </div>
         </div>
     </div>
 
 
-    {{--<div class="col-12">--}}
+    {{-- <div class="col-12">
     <div class="row">
         <div class="col-md-12 col-lg-7 mt-20 col-12 ">
             <div class="dashboard-col">
@@ -157,7 +153,7 @@ Dashboard @parent
             <div class="bg-white dashboard-col">
                 <h5 class="card-header">Registered Users</h5>
                 {{--<div class="card">--}}
-                <div class="table-responsive">
+                {{-- <div class="table-responsive">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -202,13 +198,13 @@ Dashboard @parent
                             </tr>
                         </tbody>
                     </table>
-                </div>
+                </div> --}}
 
-            </div>
+            {{-- </div>
 
             {{--</div>--}}
         </div>
-        <div class="col-xl-5 col-12 mt-20 ">
+        {{-- <div class="col-xl-5 col-12 mt-20 ">
             <div class="card p-0">
                 <div class="bg-white dashboard-col">
                     <div class="card-header bg-primary">
@@ -274,8 +270,8 @@ Dashboard @parent
                     <a href="" class="card-footer text-center bg-white d-block ">View All Blogs</a>
                 </div>
             </div>
-        </div>
-    </div>
+        </div> --}}
+    </div> --}}
     {{--</div>--}}
 </section>
 

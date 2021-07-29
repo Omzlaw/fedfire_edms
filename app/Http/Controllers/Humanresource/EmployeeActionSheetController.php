@@ -51,8 +51,8 @@ class EmployeeActionSheetController extends AppBaseController
         $employeeActionSheet = EmployeeActionSheet::create($input);
 
         Flash::success('Employee Action Sheet saved successfully.');
-
-        return redirect(route('humanresource.employeeActionSheets.index'));
+        close_modal_refresh();
+        // return redirect(route('humanresource.employeeActionSheets.index'));
     }
 
     /**

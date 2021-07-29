@@ -21,10 +21,10 @@ class CreateEmployeeCertificateTable extends Migration
             $table->integer('status')->default(1);
             $table->string('remark')->nullable();
             $table->integer('checked_by')->unsigned();
-            $table->datetime('checked_at');
-            $table->integer('updated_by')->unsigned();
+            $table->datetime('checked_at')->nullable();;
+            $table->integer('updated_by')->unsigned()->nullable();
             $table->string('file_upload')->nullable();
-            $table->integer('created_by')->unsigned();
+            $table->integer('created_by')->unsigned()->nullable();;
             $table->timestamps();
             $table->softDeletes();
             //$table->foreign('employee_id')->references('id')->on('employees');

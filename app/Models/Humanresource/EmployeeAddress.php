@@ -75,7 +75,7 @@ class EmployeeAddress extends Model
         'state_id' => 'Required',
         'country_id' => 'Required',
         'employee_id' => 'Required',
-        'file_upload' => 'Required',
+        // 'file_upload' => 'Required',
         'status' => 'Required',
         'remark' => 'Required',
      //   'created_by' => 'Required',

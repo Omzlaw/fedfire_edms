@@ -21,7 +21,7 @@
 
 
 <!-- Relationship Id Field -->
-<div class="form-group">
+{{-- <div class="form-group">
     <div class="row">
         {!! Form::label('relationship_id', 'Relationship:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
@@ -29,7 +29,7 @@
             <button  class="model_modal_button" data-route="{{ route('shared.relationships.create') }}" type="button" data-toggle="modal"  data-target="#model_modal">Add new</button>
         </div>
     </div>
-</div>
+</div> --}}
 
 
 <!-- Employee Id Field -->
@@ -45,14 +45,14 @@
 {!! Form::hidden('employee_id', Session::get('employee_id'), ['class' => 'form-control']) !!}
 
 <!-- File Upload Field -->
-<div class="form-group">
+{{--<div class="form-group">
     <div class="row">
         {!! Form::label('file_upload', 'File Upload:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">{!! Form::file('file_upload') !!}
         </div>
     </div>
 
-</div>
+</div>--}}
 
 
 <!-- Remark Field -->
@@ -69,5 +69,5 @@
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    <a href="{{ route('humanresource.employeeNextOfKins.index') }}" class="btn btn-default">Cancel</a>
+    {{-- <a href="#" class="btn btn-default modal-cancel">Cancel</a> --}}
 </div>

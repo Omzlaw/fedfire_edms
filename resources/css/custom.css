@@ -79,9 +79,10 @@ body > .header .navbar {
 
 /****** 3.LEFT SIDEBAR ******/
 .left-aside {
-  width: 240px;
+  width: 300px;
   background: #f1f3fa;
-  border-right: 5px solid #EEE; }
+  border-right: 5px solid #EEE;
+}
 
 .content-header h1 {
   color: #6c757d;
@@ -94,15 +95,16 @@ body > .header .navbar {
 
 #menu li.active > a {
   padding: 11px 20px 11px 17px;
-  color: #727CF5;
-  border-left: 3px solid #727CF5;
+  color:#000000;
+  border: 1px solid #000;
   transition: none; }
 
 #menu li > a:hover {
-  color:#727CF5;
+  color:#000000;
+  border: 1px solid #000;
 }
 #menu li.active > a i {
-  color: #727CF5;
+  color: #000;
   font-weight: 700;
 }
 #menu li > a i
@@ -227,4 +229,16 @@ body > .header .navbar_fixed_top{
 .cursor
 {
   cursor: pointer;
+}
+
+
+
+.mm-a {
+  color: #fff;
+  font-weight: bold;
+}
+
+.employee-detail-cards {
+  height: 40%;
+  overflow-y: scroll;
 }

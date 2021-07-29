@@ -1,4 +1,5 @@
-@extends('layouts.default')
+{{-- @extends('layouts.default') --}}
+@extends('layouts.custom')
 
 {{-- Page title --}}
 @section('title')
@@ -28,7 +29,7 @@ Employee Record Trackers @parent
             </table>
         </div>
     </div>
-    <a href="{{ route('humanresource.employeeRecordTrackers.index') }}"
-                class="btn btn-primary">Back</a>
+    {{-- <a href="{{ route('humanresource.employeeRecordTrackers.index') }}"
+                class="btn btn-primary">Back</a> --}}
 </div>
 @endsection

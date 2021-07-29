@@ -42,7 +42,7 @@
 </div> --}}
 {!! Form::hidden('employee_id', Session::get('employee_id'), ['class' => 'form-control']) !!}
 
-
+{!! Form::hidden('checked_by', Auth::user()->id, ['class' => 'form-control']) !!}
 <!-- Status Field -->
 <div class="form-group">
     <div class="row">
@@ -81,23 +81,23 @@
             format: 'YYYY-MM-DD',
             useCurrent: true,
             sideBySide: true
-        })
+        });
 </script>
 @endsection
 
 
 <!-- File Upload Field -->
-<div class="form-group">
+{{-- <div class="form-group">
     <div class="row">
         {!! Form::label('file_upload', 'File Upload:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">{!! Form::file('file_upload') !!}
         </div>
     </div>
-</div>
+</div> --}}
 
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    <a href="{{ route('humanresource.employeeCertificates.index') }}" class="btn btn-default">Cancel</a>
+    {{-- <a href="#" class="btn btn-default modal-cancel">Cancel</a> --}}
 </div>

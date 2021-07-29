@@ -25,7 +25,7 @@ Employee Next Of Kins @parent
         <section class="card-header">
             <h5 class="card-title d-inline">Employee Next Of Kins</h5>
             <span class="float-right">
-                <a class="btn btn-primary pull-right" href="{{ route('humanresource.employeeNextOfKins.create') }}">Add New</a>
+                <a class="btn btn-danger pull-right" href="{{ route('humanresource.employeeNextOfKins.create') }}">Add New</a>
             </span>
         </section>
         <div class="card-body">

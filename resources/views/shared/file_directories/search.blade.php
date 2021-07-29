@@ -67,7 +67,7 @@
                                                     </div>                                                      
                                                 </div>
                                                 
-                                            </td> </tr>                               
+                                            <tr><td><a target="blank" href="{{ route('humanresource.employees.show', $employee->id) }}" class="btn btn-primary">view</a></td></tr>                             
                                         </tbody>
                                     </table>
                                 </div>
@@ -75,7 +75,7 @@
 
                             <div class="col-7">
                                     <div class="row ml-1 mr-1 card">
-                                        <span class="text-center h2 mt-2">File records</span>    
+                                        <span class="text-center h5 mt-3">File Records</span>    
                                     
                                         <table id="file_directories" class="table table-striped" style="display:none">
                                             <thead>
@@ -99,8 +99,12 @@
                                                             <td>{{ $file->fileType->title }}</td>                                                           
                                                             <td>{{ $date_uploaded }}</td>                                                            
                                                             <td>{{ $file->remark }}</td>
-                                                            <td><a target="blank" href="{{ route('viewFile', $file->id) }}" class="btn btn-primary">view</a></td>
+                                                            {{-- <td><a target="blank" href="{{ route('viewFile', $file->id) }}" class="btn btn-primary">view</a></td> --}}
+                                                            {{-- <td><a target="blank" href="{{ $file->file_url }}" class="btn btn-primary">view</a></td> --}}
+                                                            <td><a target="blank" href="{{ $file->file_url[0] }}" class="btn btn-primary">view</a></td>
+                                                            <td><a download href="{{ $file->file_url[0] }}" class="btn btn-success">download</a></td>
                                                         </tr>
+
                                                     @endforeach
                                                 @else
                                                     <tr><td colspan='4'> <h5>File does not exist</h5></td></tr>                                                   

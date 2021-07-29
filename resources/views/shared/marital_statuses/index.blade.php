@@ -25,7 +25,7 @@ Marital Statuses @parent
         <section class="card-header">
             <h5 class="card-title d-inline">Marital Statuses</h5>
             <span class="float-right">
-                <a class="btn btn-primary pull-right" href="{{ route('shared.maritalStatuses.create') }}">Add New</a>
+                <a class="btn btn-danger pull-right" href="{{ route('shared.maritalStatuses.create') }}">Add New</a>
             </span>
         </section>
         <div class="card-body">

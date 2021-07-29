@@ -180,7 +180,7 @@ class Employee extends Model
 
     public function addresses()
     {
-        return $this->hasMany(EmployeeAddress::class);
+        return $this->hasMany(EmployeeAddress::class)->select('id', 'address', 'status');
     }
 
     public function censures()

@@ -1,4 +1,4 @@
-<div id="menu" role="navigation">
+<div id="menu" role="navigation" class="bg-danger bg-gradient">
     <ul class="navigation list-unstyled" id="demo">
         <li><span class="close-icon d-xl-none d-lg-block"><img src="{{asset('img/images/input-disabled.png')}}"
                     alt="image missing"></span></li>
@@ -7,8 +7,8 @@
             <h1 class="text-center text-white">EDMS</h1>
         </a>
         <li {!! (Request::is('') ? 'class="active"' : '' ) !!}>
-            <a href="{{ URL::to('') }}">
-                <span class="mm-text ">Dashboard</span>
+            <a href="{{ URL::to('') }}" class="mm-a">
+                <span class="mm-text">Dashboard</span>
                 <span class="menu-icon"><i class="im im-icon-Home"></i></span>
             </a>
         </li>

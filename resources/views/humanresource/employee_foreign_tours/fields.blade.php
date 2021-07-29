@@ -12,14 +12,14 @@
 
 
 <!-- File Upload Field -->
-<div class="form-group">
+{{--<div class="form-group">
     <div class="row">
         {!! Form::label('file_upload', 'File Upload:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">{!! Form::file('file_upload') !!}
         </div>
     </div>
 
-</div>
+</div>--}}
 
 
 <!-- Leaver Id Field -->
@@ -28,7 +28,7 @@
         {!! Form::label('leaver_id', 'Leave Type:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::select('leaver_id', modelDropdown($leave_types), null, ['class' => 'form-control']) !!}
-            <button  class="model_modal_button" data-route="{{ route('humanresource.leaveTypes.create') }}" type="button" data-toggle="modal"  data-target="#model_modal">Add new</button>
+            {{-- <button  class="model_modal_button" data-route="{{ route('humanresource.leaveTypes.create') }}" type="button" data-toggle="modal"  data-target="#model_modal">Add new</button> --}}
         </div>
     </div>
 </div>
@@ -326,5 +326,5 @@
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    <a href="{{ route('humanresource.employeeForeignTours.index') }}" class="btn btn-default">Cancel</a>
+{{-- <a href="" class="btn btn-default modal-cancel">Cancel</a> --}}
 </div>

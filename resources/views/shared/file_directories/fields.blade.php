@@ -15,7 +15,7 @@
         {!! Form::label('file_type_id', 'File Type:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::select('file_type_id', modelDropdown($file_types, 'id', 'title'), null, ['class' => 'form-control']) !!}
-            <button  class="model_modal_button" data-route="{{ route('shared.fileTypes.create') }}" type="button" data-toggle="modal"  data-target="#model_modal">Add new</button>
+            <a  class="btn btn-primary" href="{{ route('shared.fileTypes.create') }}" >Add new</a>
         </div>
     </div>
 </div>
@@ -27,7 +27,7 @@
         {!! Form::label('Employee', 'Staff No:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::select('employee_id', modelDropdown($employees, 'id', 'staff_code'), null, ['class' => 'form-control']) !!}
-            <button  class="model_modal_button" data-route="{{ route('humanresource.employees.create') }}" type="button" data-toggle="modal"  data-target="#model_modal">Add new</button>
+            <a  class="btn btn-primary" href="{{ route('humanresource.employees.create') }}">Add new</a>
         </div>
     </div>
 </div>

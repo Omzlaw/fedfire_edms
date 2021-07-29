@@ -130,6 +130,12 @@ $(".model_modal_button").each(function(index) {
     })
 });
 
+$('.modal-cancel').each(function(index) {
+    $(this).click(function () {
+        $('#model_modal').modal('hide');
+    })
+})
+
 
 $('#model_modal').on('shown.bs.modal', function() {
 })

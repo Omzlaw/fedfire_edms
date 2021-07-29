@@ -58,7 +58,7 @@
             format: 'YYYY-MM-DD',
             useCurrent: true,
             sideBySide: true
-        })
+        });
 </script>
 @endsection
 
@@ -75,14 +75,14 @@
 
 
 <!-- Birth Certificate Upload Id Field -->
-<div class="form-group">
+{{-- <div class="form-group">
     <div class="row">
         {!! Form::label('birth_certificate_upload', 'Birth Certificate Upload:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::file('birth_certificate_upload') !!}
         </div>
     </div>
-</div>
+</div> --}}
 
 
 <!-- Marital Status Id Field -->
@@ -112,7 +112,7 @@
             format: 'YYYY-MM-DD',
             useCurrent: true,
             sideBySide: true
-        })
+        });
 </script>
 @endsection
 
@@ -133,7 +133,7 @@
             format: 'YYYY-MM-DD',
             useCurrent: true,
             sideBySide: true
-        })
+        });
 </script>
 @endsection
 
@@ -146,7 +146,7 @@
             {!! Form::select('nationality', modelDropdown($countries, 'id', 'title'), null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div>
 
 
 <!-- Decorations Field -->
@@ -157,19 +157,19 @@
             {!! Form::text('decorations', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div>
 
 <!-- Staff code -->
     {!! Form::hidden('staff_code', null, ['class' => 'form-control']) !!}
 
 <!-- File Upload Field -->
-<div class="form-group">
+{{-- <div class="form-group">
     <div class="row">
         {!! Form::label('file_upload', 'File Upload:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">{!! Form::file('file_upload') !!}
         </div>
     </div>
-</div>
+</div> --}}
 
 
 <!-- Remark Field -->
@@ -191,7 +191,7 @@
             {!! Form::email('email', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div>
 
 
 <!-- Phone Field -->
@@ -202,7 +202,7 @@
             {!! Form::text('phone', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div>
 
 
 <!-- Status Field -->
@@ -224,7 +224,7 @@
             {!! Form::text('current_appointment', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div>
 
 
 <!-- Submit Field -->
