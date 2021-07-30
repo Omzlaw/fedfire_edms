@@ -287,6 +287,7 @@
                     </div>`;
         }
 
+
         function confirmation() {
             let result = confirm('Are you sure you want to delete');
             if(result) {
@@ -311,6 +312,7 @@
                 $(this).click(function() {
                     let createRoute = host + "/" + $(this).data("route") + "/create";
                     $('#model_frame').attr('src', createRoute);
+
                     $('#basic-info-table').hide();
                     $('#details-div').show();
 
@@ -376,8 +378,6 @@
                             ],
                         });
 
-
-                        // $('#details-table tbody')
 
                         $(".action-buttons").each(function(index) {
                             $(this).click(function() {

@@ -1,3 +1,13 @@
+<!-- Writing Fluency Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('language_id', 'Language:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::select('language_id', modelDropdown($languages, 'id', 'title'), null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
 <!-- Speaking Fluency Field -->
 <div class="form-group">
     <div class="row">

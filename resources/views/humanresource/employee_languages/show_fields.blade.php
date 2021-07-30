@@ -5,6 +5,11 @@
 
 
 <tr>
+    <th scopre="row">{!! Form::label('language_id', 'Language:') !!}</th>
+    <td>{{ $employeeLanguage->language->title }}</td>
+</tr>
+
+<tr>
     <th scopre="row">{!! Form::label('speaking_fluency', 'Speaking Fluency:') !!}</th>
     <td>{{ get_enum_value('enum_fluency', $employeeLanguage->speaking_fluency )}}</td>
 </tr>

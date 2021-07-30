@@ -1,7 +1,7 @@
 <!-- Address Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('address', 'Address:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('address', 'Address:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::text('address', null, ['class' => 'form-control']) !!}
         </div>
@@ -12,9 +12,9 @@
 <!-- Country Id Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('country_id', 'Country:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('country_id', 'Country:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('country_id', modelDropdown($countries, 'id', 'title'), null, ['class' => 'form-control']) !!}
+            {!! Form::select('country_id', modelDropdown($countries, 'id', 'title'), null, ['id' => 'countrySelector', 'class' => 'form-control', 'onchange' => 'countryStateSelector()']) !!}
         </div>
     </div>
 </div>
@@ -22,9 +22,9 @@
 <!-- State Id Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('state_id', 'State:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('state_id', 'State:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('state_id', modelDropdown($states, 'id', 'title'), null, ['class' => 'form-control']) !!}
+            {!! Form::select('state_id', stateDropdown($states, 'id', 'title'), null, ['id' => 'stateSelector', 'class' => 'form-control']) !!}
         </div>
     </div>
 </div>
@@ -44,20 +44,20 @@
 
 
 <!-- File Upload Field -->
-{{--<div class="form-group">
+{{-- <div class="form-group">
     <div class="row">
         {!! Form::label('file_upload', 'File Upload:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">{!! Form::file('file_upload') !!}
         </div>
     </div>
 
-</div>--}}
+</div> --}}
 
 
 <!-- Status Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('status', 'Status:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('status', 'Status:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::select('status', enum_status(), null, ['class' => 'form-control']) !!}
         </div>
@@ -68,7 +68,7 @@
 <!-- Remark Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('remark', 'Remark:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('remark', 'Remark:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::text('remark', null, ['class' => 'form-control']) !!}
         </div>
@@ -79,5 +79,27 @@
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    {{-- <a href="#" class="btn btn-default modal-cancel">Cancel</a> --}} 
+    {{-- <a href="#" class="btn btn-default modal-cancel">Cancel</a> --}}
 </div>
+
+<script>
+
+    window.onload = function () { 
+        $('#stateSelector').prop('disabled', 'disabled');
+    }
+    function countryStateSelector(event) {
+
+        var countrySelect = $('#countrySelector');
+        var stateSelect = $('#stateSelector');
+        var id = $(countrySelect).children("option:selected").val();
+        $("#stateSelector > option").each(function() {
+            let country_id = this.value.split("-")[1];
+            if (id == country_id) {
+                $(this).removeAttr('disabled').show();
+            } else {
+                $(this).attr('disabled', 'disabled').hide();
+            }
+        });
+        $('#stateSelector').prop('disabled', false);
+    }
+</script>

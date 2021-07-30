@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Humanresource;
 
 use Flash;
 use Response;
+use App\Models\Shared\Language;
 use App\Http\Requests\Humanresource;
 use App\Models\Humanresource\Employee;
 use App\Http\Controllers\AppBaseController;
@@ -33,7 +34,8 @@ class EmployeeLanguageController extends AppBaseController
     public function create()
     {
         $employees = new Employee;
-        return view('humanresource.employee_languages.create', compact('employees'));
+        $languages = new Language;
+        return view('humanresource.employee_languages.create', compact('employees', 'languages'));
     }
 
     /**
@@ -94,7 +96,8 @@ class EmployeeLanguageController extends AppBaseController
             //return redirect(route('humanresource.employeeLanguages.index'));
         }
         $employees = new Employee;
-        return view('humanresource.employee_languages.edit', compact('employees'))->with('employeeLanguage', $employeeLanguage);
+        $languages = new Language;
+        return view('humanresource.employee_languages.edit', compact('employees', 'languages'))->with('employeeLanguage', $employeeLanguage);
     }
 
     /**

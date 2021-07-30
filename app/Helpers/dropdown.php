@@ -25,6 +25,17 @@ if(!function_exists('modelDropdown')) {
     }   
 }
 
+if(!function_exists('stateDropdown')) {
+    function stateDropdown(Model $model, $key = 'id', $value = 'name') {
+        $modelArray = array(''=>'Select...');
+        $modelData = $model::all();
+        foreach($modelData as $row){
+               $modelArray[$row->{$key} . '-' . $row->country_id] = $row->{$value}; 
+        }
+        return $modelArray;
+    }   
+}
+
 
 if(!function_exists('getModelColumns')) {
     function getModelColumns(Model $model) {

@@ -40,6 +40,7 @@ class EmployeeLanguage extends Model
         'writing_fluency',
         'exam_qualified',
         'employee_id',
+        'language_id',
         'file_upload',
         'status',
         'remark',
@@ -60,6 +61,7 @@ class EmployeeLanguage extends Model
         'writing_fluency' => 'integer',
         'exam_qualified' => 'string',
         'employee_id' => 'integer',
+        'language_id' => 'integer',
         'file_upload' => 'string',
         'status' => 'integer',
         'remark' => 'string',
@@ -79,10 +81,11 @@ class EmployeeLanguage extends Model
         'writing_fluency' => 'Required',
         'exam_qualified' => 'Required',
         'employee_id' => 'Required',
-        'file_upload' => 'Required',
+        'language_id' => 'Required',
+        // 'file_upload' => 'Required',
         'status' => 'Required',
         'remark' => 'Required',
-        'checked_by' => 'Required',
+        // 'checked_by' => 'Required',
         'checked_at' => 'Required',
      //   'created_by' => 'Required',
     //    'updated_by' => 'Required'
@@ -94,6 +97,14 @@ class EmployeeLanguage extends Model
     public function employee()
     {
         return $this->belongsTo(\App\Models\Humanresource\Employee::class, 'employee_id', 'id');
+    }
+
+        /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function language()
+    {
+        return $this->belongsTo(\App\Models\Shared\Language::class, 'language_id', 'id');
     }
 
     /**
