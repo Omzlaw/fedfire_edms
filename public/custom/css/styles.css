@@ -19,6 +19,11 @@
 
 .section2 {
   display: flex;
+  margin-top: 8rem;
+}
+
+.login-card {
+  margin-left: 13rems;
 }
 
 @media (min-width: 300px) {

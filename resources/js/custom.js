@@ -3,15 +3,22 @@ $(document).ready(function () {
     $y = $(".right-aside").height();
     $z = $(window).height() + 500;
     if ($z > $x) {
-        $(".left-aside .navigation").css({"height": $z});
+        $(".left-aside .navigation").css({
+            "height": $z
+        });
     } else {
-        $(".left-aside .navigation").css({"height": $z});
+        $(".left-aside .navigation").css({
+            "height": $z
+        });
     }
     var ps = new PerfectScrollbar('#demo');
     $("#demo .navbar-brand h1").replaceWith('<h1 class="navbrand">E</h1>');
 
     $(".left-aside").hover(function () {
-            $("#demo .navbar-brand").css({'margin-left': '0', 'transition': 'margin-left 0.3s linear'});
+            $("#demo .navbar-brand").css({
+                'margin-left': '0',
+                'transition': 'margin-left 0.3s linear'
+            });
             $("#demo .navbar-brand h1").replaceWith('<h1 class="text-center">EDMS</h1>');
 
         },
@@ -33,28 +40,28 @@ $(document).ready(function () {
 
 
 
-        var text=$(this).attr('data-color');
+        var text = $(this).attr('data-color');
 
-        $(this).parents('.card-body').find('.alert-class').children('span').replaceWith('<span>add class = "'+text+'"</span>');
+        $(this).parents('.card-body').find('.alert-class').children('span').replaceWith('<span>add class = "' + text + '"</span>');
 
 
 
     });
-    $(".card-class span").click(function() {
+    $(".card-class span").click(function () {
         $(this).parents('.card-body').find('.alert').removeClass('alert-danger alert-warning alert-light alert-primary alert-success alert-secondary alert-info alert-dark')
             .addClass($(this).data("color"));
     });
 
 
     $(".toggle-right").click(function () {
-        $(".left-aside .sidebar").css("margin-left","0").removeClass('sidebar-res');
+        $(".left-aside .sidebar").css("margin-left", "0").removeClass('sidebar-res');
         $("#demo .navbar-brand h1").replaceWith('<h1 class="text-center">EDMS</h1>');
-        $("#demo .navbar-brand").css("margin-left","0");
+        $("#demo .navbar-brand").css("margin-left", "0");
 
         $(".close-icon").show();
     });
     $(".close-icon").click(function () {
-        $(".left-aside .sidebar").css("margin-left","-175px").addClass('sidebar-res');
+        $(".left-aside .sidebar").css("margin-left", "-175px").addClass('sidebar-res');
         $("#demo .navbar-brand h1").replaceWith('<h1 class="text-right mr-10">J</h1>');
         $(this).hide();
 
@@ -63,7 +70,7 @@ $(document).ready(function () {
 //leftmenu collapse in active
 jQuery(function ($) {
     $("#menu ul a")
-        .click(function(e) {
+        .click(function (e) {
             var link = $(this);
 
 
@@ -87,7 +94,7 @@ jQuery(function ($) {
                 e.preventDefault();
             }
         })
-        .each(function() {
+        .each(function () {
             var link = $(this);
             if (link.get(0).href === location.href) {
                 link.parents('.menu-dropdown').find('.imicon').addClass('imarrow');
@@ -101,26 +108,32 @@ jQuery(function ($) {
 
 
 //card collapse code
-$(document).on('click', '.card-header .clickable', function(e){
+$(document).on('click', '.card-header .clickable', function (e) {
     var $this = $(this);
-    if(!$this.hasClass('panel-collapsed')) {
+    if (!$this.hasClass('panel-collapsed')) {
         $this.parents('.card').find('.card-body').slideUp();
         $this.addClass('panel-collapsed');
         $this.closest('i').removeClass('fa-chevron-up').addClass('fa-chevron-down');
-        $('.showhide').attr('title','Show Panel content');
+        $('.showhide').attr('title', 'Show Panel content');
         $this.parents('.card-header').removeClass('border')
 
     } else {
         $this.parents('.card').find('.card-body').slideDown();
         $this.removeClass('panel-collapsed');
         $this.closest('i').removeClass('fa-chevron-down').addClass('fa-chevron-up');
-        $('.showhide').attr('title','Hide Panel content');
+        $('.showhide').attr('title', 'Hide Panel content');
         $this.parents('.card-header').addClass('border')
 
 
     }
 });
 
+// $('.save-button').each(function (index) {
+//     $(this).click(function () {
+//         $('#model_modal').modal('hide');
+//         location.reload;
+//     })
+// })
 
 // $(".model_modal_button").each(function(index) {
 //     $(this).click(function() {
@@ -143,7 +156,7 @@ $(document).on('click', '.card-header .clickable', function(e){
 //     // location.reload();
 // })
 
-$(document).on('click', '.card-header .removepanel', function(){
+$(document).on('click', '.card-header .removepanel', function () {
     var $this = $(this);
     $this.parents('.card').hide("slow");
 

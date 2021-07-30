@@ -23,7 +23,7 @@ Route::view('login3', 'auth.login3');
 Route::view('register2', 'auth.register2');
 Route::view('register3', 'auth.register3');
 
-Route::get('/', function () {
+Route::get('/dashboard', function () {
     return view('index');
 })->middleware('auth')->name('dashboard');
 
@@ -47,5 +47,5 @@ Route::group(['middleware' => 'auth'], function () {
     )->name('io_generator_builder_generate_from_file');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('{name?}', 'JoshController@showView');

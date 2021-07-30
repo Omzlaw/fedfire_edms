@@ -339,10 +339,48 @@
                     if (data[0] != null || data[0] != undefined) {
                         columnNames = Object.keys(data[0]);
                         for (var i in columnNames) {
-                            columns.push({
+                            if(columnNames[i] == 'status') {
+                                columns.push({
+                                    title: 'status',
+                                    render: (data, type, row, meta) => {
+                                        switch (row.status) {
+                                            case 1:
+                                                return 'Active'
+                                                break;
+                                            case 0:
+                                                return 'inactive'
+                                                break;
+                                        
+                                            default:
+                                                break;
+                                        }
+                                    }
+                                })
+                            }
+                            // else if(columnNames[i] == 'gender') {
+                            //     columns.push({
+                            //         title: 'gender',
+                            //         render: (data, type, row, meta) => {
+                            //             switch (row.gender) {
+                            //                 case 1:
+                            //                     return 'Male'
+                            //                     break;
+                            //                 case 0:
+                            //                     return 'Female'
+                            //                     break;
+                                        
+                            //                 default:
+                            //                     break;
+                            //             }
+                            //         }
+                            //     })
+                            // }
+                            else {
+                                columns.push({
                                 data: columnNames[i],
                                 title: columnNames[i],
                             });
+                            }
                         }
 
                         columns.push({

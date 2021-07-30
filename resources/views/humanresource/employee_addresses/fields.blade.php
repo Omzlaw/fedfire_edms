@@ -78,7 +78,7 @@
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
-    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+    {!! Form::submit('Save', ['class' => 'btn btn-primary save-button']) !!}
     {{-- <a href="#" class="btn btn-default modal-cancel">Cancel</a> --}}
 </div>
 
@@ -93,7 +93,7 @@
         var stateSelect = $('#stateSelector');
         var id = $(countrySelect).children("option:selected").val();
         $("#stateSelector > option").each(function() {
-            let country_id = this.value.split("-")[1];
+            let country_id = this.textContent.split("-")[1];
             if (id == country_id) {
                 $(this).removeAttr('disabled').show();
             } else {

@@ -195,8 +195,11 @@ class Employee extends Model
 
     public function children()
     {
-        return $this->hasMany(EmployeeChildren::class)->select('id', 'name', 'gender', 'birthday');
+       $children = $this->hasMany(EmployeeChildren::class)->select('id', 'name', 'gender', 'birthday');
+
+       return $children;   
     }
+        
 
     public function educations()
     { 

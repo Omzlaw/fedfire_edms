@@ -9,7 +9,7 @@
 
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}" />
+    <link rel="shortcut icon" href="{{ asset('custom/img/logo.png') }}" />
     <link rel="stylesheet" href="{{asset('fonts/iconmind.css')}}">
 
     <!-- global css -->

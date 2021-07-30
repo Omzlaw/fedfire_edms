@@ -7,7 +7,7 @@
             <h1 class="text-center text-white">EDMS</h1>
         </a>
         <li {!! (Request::is('') ? 'class="active"' : '' ) !!}>
-            <a href="{{ URL::to('') }}" class="mm-a">
+            <a href="{{ URL::to('/dashboard') }}" class="mm-a">
                 <span class="mm-text">Dashboard</span>
                 <span class="menu-icon"><i class="im im-icon-Home"></i></span>
             </a>

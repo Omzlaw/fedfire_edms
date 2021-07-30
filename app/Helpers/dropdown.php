@@ -30,7 +30,7 @@ if(!function_exists('stateDropdown')) {
         $modelArray = array(''=>'Select...');
         $modelData = $model::all();
         foreach($modelData as $row){
-               $modelArray[$row->{$key} . '-' . $row->country_id] = $row->{$value}; 
+               $modelArray[$row->{$key}] = $row->{$value} . '-' . $row->country_id; 
         }
         return $modelArray;
     }   
