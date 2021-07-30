@@ -52,7 +52,7 @@ class EmployeeCertificatesController extends AppBaseController
 
         Flash::success('Employee Certificates saved successfully.');
 
-        return redirect(route('humanresource.employeeCertificates.index'));
+        //return redirect(route('humanresource.employeeCertificates.index'));
     }
 
     /**
@@ -70,7 +70,7 @@ class EmployeeCertificatesController extends AppBaseController
         if (empty($employeeCertificates)) {
             Flash::error('Employee Certificates not found');
 
-            return redirect(route('humanresource.employeeCertificates.index'));
+            //return redirect(route('humanresource.employeeCertificates.index'));
         }
 
         return view('humanresource.employee_certificates.show')->with('employeeCertificates', $employeeCertificates);
@@ -91,7 +91,7 @@ class EmployeeCertificatesController extends AppBaseController
         if (empty($employeeCertificates)) {
             Flash::error('Employee Certificates not found');
 
-            return redirect(route('humanresource.employeeCertificates.index'));
+            //return redirect(route('humanresource.employeeCertificates.index'));
         }
         $employees = new Employee;
 
@@ -114,7 +114,7 @@ class EmployeeCertificatesController extends AppBaseController
         if (empty($employeeCertificates)) {
             Flash::error('Employee Certificates not found');
 
-            return redirect(route('humanresource.employeeCertificates.index'));
+            //return redirect(route('humanresource.employeeCertificates.index'));
         }
 
         $employeeCertificates->fill($request->all());
@@ -122,7 +122,7 @@ class EmployeeCertificatesController extends AppBaseController
 
         Flash::success('Employee Certificates updated successfully.');
 
-        return redirect(route('humanresource.employeeCertificates.index'));
+        //return redirect(route('humanresource.employeeCertificates.index'));
     }
 
     /**
@@ -142,13 +142,13 @@ class EmployeeCertificatesController extends AppBaseController
         if (empty($employeeCertificates)) {
             Flash::error('Employee Certificates not found');
 
-            return redirect(route('humanresource.employeeCertificates.index'));
+            //return redirect(route('humanresource.employeeCertificates.index'));
         }
 
         $employeeCertificates->delete();
 
         Flash::success('Employee Certificates deleted successfully.');
 
-        return redirect(route('humanresource.employeeCertificates.index'));
+        //return redirect(route('humanresource.employeeCertificates.index'));
     }
 }

@@ -56,7 +56,7 @@ class EmployeeEducationController extends AppBaseController
 
         Flash::success('Employee Education saved successfully.');
 
-        return redirect(route('humanresource.employeeEducations.index'));
+        //return redirect(route('humanresource.employeeEducations.index'));
     }
 
     /**
@@ -74,7 +74,7 @@ class EmployeeEducationController extends AppBaseController
         if (empty($employeeEducation)) {
             Flash::error('Employee Education not found');
 
-            return redirect(route('humanresource.employeeEducations.index'));
+            //return redirect(route('humanresource.employeeEducations.index'));
         }
 
         return view('humanresource.employee_educations.show')->with('employeeEducation', $employeeEducation);
@@ -95,7 +95,7 @@ class EmployeeEducationController extends AppBaseController
         if (empty($employeeEducation)) {
             Flash::error('Employee Education not found');
 
-            return redirect(route('humanresource.employeeEducations.index'));
+            //return redirect(route('humanresource.employeeEducations.index'));
         }
         $employees = new Employee;
         $certificate_types = new CertificateType;
@@ -119,7 +119,7 @@ class EmployeeEducationController extends AppBaseController
         if (empty($employeeEducation)) {
             Flash::error('Employee Education not found');
 
-            return redirect(route('humanresource.employeeEducations.index'));
+            //return redirect(route('humanresource.employeeEducations.index'));
         }
 
         $employeeEducation->fill($request->all());
@@ -127,7 +127,7 @@ class EmployeeEducationController extends AppBaseController
 
         Flash::success('Employee Education updated successfully.');
 
-        return redirect(route('humanresource.employeeEducations.index'));
+        //return redirect(route('humanresource.employeeEducations.index'));
     }
 
     /**
@@ -147,13 +147,13 @@ class EmployeeEducationController extends AppBaseController
         if (empty($employeeEducation)) {
             Flash::error('Employee Education not found');
 
-            return redirect(route('humanresource.employeeEducations.index'));
+            //return redirect(route('humanresource.employeeEducations.index'));
         }
 
         $employeeEducation->delete();
 
         Flash::success('Employee Education deleted successfully.');
 
-        return redirect(route('humanresource.employeeEducations.index'));
+        //return redirect(route('humanresource.employeeEducations.index'));
     }
 }

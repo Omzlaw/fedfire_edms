@@ -54,7 +54,7 @@ class EmployeeTerminationController extends AppBaseController
 
         Flash::success('Employee Termination saved successfully.');
 
-        return redirect(route('humanresource.employeeTerminations.index'));
+        //return redirect(route('humanresource.employeeTerminations.index'));
     }
 
     /**
@@ -72,7 +72,7 @@ class EmployeeTerminationController extends AppBaseController
         if (empty($employeeTermination)) {
             Flash::error('Employee Termination not found');
 
-            return redirect(route('humanresource.employeeTerminations.index'));
+            //return redirect(route('humanresource.employeeTerminations.index'));
         }
 
         return view('humanresource.employee_terminations.show')->with('employeeTermination', $employeeTermination);
@@ -93,7 +93,7 @@ class EmployeeTerminationController extends AppBaseController
         if (empty($employeeTermination)) {
             Flash::error('Employee Termination not found');
 
-            return redirect(route('humanresource.employeeTerminations.index'));
+            //return redirect(route('humanresource.employeeTerminations.index'));
         }
             $employees = new Employee;
             $termination_types = new TerminationType;
@@ -117,7 +117,7 @@ class EmployeeTerminationController extends AppBaseController
         if (empty($employeeTermination)) {
             Flash::error('Employee Termination not found');
 
-            return redirect(route('humanresource.employeeTerminations.index'));
+            //return redirect(route('humanresource.employeeTerminations.index'));
         }
 
         $employeeTermination->fill($request->all());
@@ -125,7 +125,7 @@ class EmployeeTerminationController extends AppBaseController
 
         Flash::success('Employee Termination updated successfully.');
 
-        return redirect(route('humanresource.employeeTerminations.index'));
+        //return redirect(route('humanresource.employeeTerminations.index'));
     }
 
     /**
@@ -145,13 +145,13 @@ class EmployeeTerminationController extends AppBaseController
         if (empty($employeeTermination)) {
             Flash::error('Employee Termination not found');
 
-            return redirect(route('humanresource.employeeTerminations.index'));
+            //return redirect(route('humanresource.employeeTerminations.index'));
         }
 
         $employeeTermination->delete();
 
         Flash::success('Employee Termination deleted successfully.');
 
-        return redirect(route('humanresource.employeeTerminations.index'));
+        //return redirect(route('humanresource.employeeTerminations.index'));
     }
 }

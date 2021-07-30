@@ -52,7 +52,7 @@ class EmployeeActionSheetController extends AppBaseController
 
         Flash::success('Employee Action Sheet saved successfully.');
         close_modal_refresh();
-        // return redirect(route('humanresource.employeeActionSheets.index'));
+        // //return redirect(route('humanresource.employeeActionSheets.index'));
     }
 
     /**
@@ -70,7 +70,7 @@ class EmployeeActionSheetController extends AppBaseController
         if (empty($employeeActionSheet)) {
             Flash::error('Employee Action Sheet not found');
 
-            return redirect(route('humanresource.employeeActionSheets.index'));
+            //return redirect(route('humanresource.employeeActionSheets.index'));
         }
 
         return view('humanresource.employee_action_sheets.show')->with('employeeActionSheet', $employeeActionSheet);
@@ -91,7 +91,7 @@ class EmployeeActionSheetController extends AppBaseController
         if (empty($employeeActionSheet)) {
             Flash::error('Employee Action Sheet not found');
 
-            return redirect(route('humanresource.employeeActionSheets.index'));
+            //return redirect(route('humanresource.employeeActionSheets.index'));
         }
         $employees = new Employee;
         return view('humanresource.employee_action_sheets.edit', compact('employees'))->with('employeeActionSheet', $employeeActionSheet);
@@ -113,7 +113,7 @@ class EmployeeActionSheetController extends AppBaseController
         if (empty($employeeActionSheet)) {
             Flash::error('Employee Action Sheet not found');
 
-            return redirect(route('humanresource.employeeActionSheets.index'));
+            // //return redirect(route('humanresource.employeeActionSheets.index'));
         }
 
         $employeeActionSheet->fill($request->all());
@@ -121,7 +121,7 @@ class EmployeeActionSheetController extends AppBaseController
 
         Flash::success('Employee Action Sheet updated successfully.');
 
-        return redirect(route('humanresource.employeeActionSheets.index'));
+        // //return redirect(route('humanresource.employeeActionSheets.index'));
     }
 
     /**
@@ -141,13 +141,14 @@ class EmployeeActionSheetController extends AppBaseController
         if (empty($employeeActionSheet)) {
             Flash::error('Employee Action Sheet not found');
 
-            return redirect(route('humanresource.employeeActionSheets.index'));
+            // //return redirect(route('humanresource.employeeActionSheets.index'));
         }
 
         $employeeActionSheet->delete();
 
         Flash::success('Employee Action Sheet deleted successfully.');
+        close_modal_refresh();
 
-        return redirect(route('humanresource.employeeActionSheets.index'));
+        // //return redirect(route('humanresource.employeeActionSheets.index'));
     }
 }

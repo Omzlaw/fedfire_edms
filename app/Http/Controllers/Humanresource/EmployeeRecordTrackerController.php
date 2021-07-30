@@ -52,7 +52,7 @@ class EmployeeRecordTrackerController extends AppBaseController
 
         Flash::success('Employee Record Tracker saved successfully.');
 
-        return redirect(route('humanresource.employeeRecordTrackers.index'));
+        //return redirect(route('humanresource.employeeRecordTrackers.index'));
     }
 
     /**
@@ -70,7 +70,7 @@ class EmployeeRecordTrackerController extends AppBaseController
         if (empty($employeeRecordTracker)) {
             Flash::error('Employee Record Tracker not found');
 
-            return redirect(route('humanresource.employeeRecordTrackers.index'));
+            //return redirect(route('humanresource.employeeRecordTrackers.index'));
         }
 
         return view('humanresource.employee_record_trackers.show')->with('employeeRecordTracker', $employeeRecordTracker);
@@ -91,7 +91,7 @@ class EmployeeRecordTrackerController extends AppBaseController
         if (empty($employeeRecordTracker)) {
             Flash::error('Employee Record Tracker not found');
 
-            return redirect(route('humanresource.employeeRecordTrackers.index'));
+            //return redirect(route('humanresource.employeeRecordTrackers.index'));
         }
         $employees = new Employee;
         return view('humanresource.employee_record_trackers.edit', compact('employees'))->with('employeeRecordTracker', $employeeRecordTracker);
@@ -113,7 +113,7 @@ class EmployeeRecordTrackerController extends AppBaseController
         if (empty($employeeRecordTracker)) {
             Flash::error('Employee Record Tracker not found');
 
-            return redirect(route('humanresource.employeeRecordTrackers.index'));
+            //return redirect(route('humanresource.employeeRecordTrackers.index'));
         }
 
         $employeeRecordTracker->fill($request->all());
@@ -121,7 +121,7 @@ class EmployeeRecordTrackerController extends AppBaseController
 
         Flash::success('Employee Record Tracker updated successfully.');
 
-        return redirect(route('humanresource.employeeRecordTrackers.index'));
+        //return redirect(route('humanresource.employeeRecordTrackers.index'));
     }
 
     /**
@@ -141,13 +141,13 @@ class EmployeeRecordTrackerController extends AppBaseController
         if (empty($employeeRecordTracker)) {
             Flash::error('Employee Record Tracker not found');
 
-            return redirect(route('humanresource.employeeRecordTrackers.index'));
+            //return redirect(route('humanresource.employeeRecordTrackers.index'));
         }
 
         $employeeRecordTracker->delete();
 
         Flash::success('Employee Record Tracker deleted successfully.');
 
-        return redirect(route('humanresource.employeeRecordTrackers.index'));
+        //return redirect(route('humanresource.employeeRecordTrackers.index'));
     }
 }

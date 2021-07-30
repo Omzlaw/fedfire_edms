@@ -35,6 +35,7 @@ class EmployeeActionSheet extends Model
     public $fillable = [
         'folio',
         'action_at',
+        'employee_id',
         'created_by',
         'updated_by',
         'date_cleared',
@@ -50,6 +51,7 @@ class EmployeeActionSheet extends Model
     protected $casts = [
         'id' => 'integer',
         'folio' => 'string',
+        'employee_id' => 'integer',
         'action_at' => 'datetime',
         'created_by' => 'integer',
         'updated_by' => 'integer',
@@ -64,6 +66,7 @@ class EmployeeActionSheet extends Model
      * @var array
      */
     public static $rules = [
+        'employee_id' => 'Required',
         'folio' => 'Required',
         'action_at' => 'Required',
         //   'created_by' => 'Required',

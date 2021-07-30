@@ -54,7 +54,7 @@ class EmployeeNextOfKinController extends AppBaseController
 
         Flash::success('Employee Next Of Kin saved successfully.');
 
-        return redirect(route('humanresource.employeeNextOfKins.index'));
+        //return redirect(route('humanresource.employeeNextOfKins.index'));
     }
 
     /**
@@ -72,7 +72,7 @@ class EmployeeNextOfKinController extends AppBaseController
         if (empty($employeeNextOfKin)) {
             Flash::error('Employee Next Of Kin not found');
 
-            return redirect(route('humanresource.employeeNextOfKins.index'));
+            //return redirect(route('humanresource.employeeNextOfKins.index'));
         }
 
         return view('humanresource.employee_next_of_kins.show')->with('employeeNextOfKin', $employeeNextOfKin);
@@ -93,7 +93,7 @@ class EmployeeNextOfKinController extends AppBaseController
         if (empty($employeeNextOfKin)) {
             Flash::error('Employee Next Of Kin not found');
 
-            return redirect(route('humanresource.employeeNextOfKins.index'));
+            //return redirect(route('humanresource.employeeNextOfKins.index'));
         }
         $employees = new Employee;
         $relationship = new Relationship;
@@ -116,7 +116,7 @@ class EmployeeNextOfKinController extends AppBaseController
         if (empty($employeeNextOfKin)) {
             Flash::error('Employee Next Of Kin not found');
 
-            return redirect(route('humanresource.employeeNextOfKins.index'));
+            //return redirect(route('humanresource.employeeNextOfKins.index'));
         }
 
         $employeeNextOfKin->fill($request->all());
@@ -124,7 +124,7 @@ class EmployeeNextOfKinController extends AppBaseController
 
         Flash::success('Employee Next Of Kin updated successfully.');
 
-        return redirect(route('humanresource.employeeNextOfKins.index'));
+        //return redirect(route('humanresource.employeeNextOfKins.index'));
     }
 
     /**
@@ -144,13 +144,13 @@ class EmployeeNextOfKinController extends AppBaseController
         if (empty($employeeNextOfKin)) {
             Flash::error('Employee Next Of Kin not found');
 
-            return redirect(route('humanresource.employeeNextOfKins.index'));
+            //return redirect(route('humanresource.employeeNextOfKins.index'));
         }
 
         $employeeNextOfKin->delete();
 
         Flash::success('Employee Next Of Kin deleted successfully.');
 
-        return redirect(route('humanresource.employeeNextOfKins.index'));
+        //return redirect(route('humanresource.employeeNextOfKins.index'));
     }
 }

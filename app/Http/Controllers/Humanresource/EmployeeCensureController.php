@@ -52,7 +52,7 @@ class EmployeeCensureController extends AppBaseController
 
         Flash::success('Employee Censure saved successfully.');
 
-        return redirect(route('humanresource.employeeCensures.index'));
+        //return redirect(route('humanresource.employeeCensures.index'));
     }
 
     /**
@@ -70,7 +70,7 @@ class EmployeeCensureController extends AppBaseController
         if (empty($employeeCensure)) {
             Flash::error('Employee Censure not found');
 
-            return redirect(route('humanresource.employeeCensures.index'));
+            //return redirect(route('humanresource.employeeCensures.index'));
         }
 
         return view('humanresource.employee_censures.show')->with('employeeCensure', $employeeCensure);
@@ -91,7 +91,7 @@ class EmployeeCensureController extends AppBaseController
         if (empty($employeeCensure)) {
             Flash::error('Employee Censure not found');
 
-            return redirect(route('humanresource.employeeCensures.index'));
+            //return redirect(route('humanresource.employeeCensures.index'));
         }
         $employees = new Employee;
         return view('humanresource.employee_censures.edit', compact('employees'))->with('employeeCensure', $employeeCensure);
@@ -113,7 +113,7 @@ class EmployeeCensureController extends AppBaseController
         if (empty($employeeCensure)) {
             Flash::error('Employee Censure not found');
 
-            return redirect(route('humanresource.employeeCensures.index'));
+            //return redirect(route('humanresource.employeeCensures.index'));
         }
 
         $employeeCensure->fill($request->all());
@@ -121,7 +121,7 @@ class EmployeeCensureController extends AppBaseController
 
         Flash::success('Employee Censure updated successfully.');
 
-        return redirect(route('humanresource.employeeCensures.index'));
+        //return redirect(route('humanresource.employeeCensures.index'));
     }
 
     /**
@@ -141,13 +141,13 @@ class EmployeeCensureController extends AppBaseController
         if (empty($employeeCensure)) {
             Flash::error('Employee Censure not found');
 
-            return redirect(route('humanresource.employeeCensures.index'));
+            //return redirect(route('humanresource.employeeCensures.index'));
         }
 
         $employeeCensure->delete();
 
         Flash::success('Employee Censure deleted successfully.');
 
-        return redirect(route('humanresource.employeeCensures.index'));
+        //return redirect(route('humanresource.employeeCensures.index'));
     }
 }

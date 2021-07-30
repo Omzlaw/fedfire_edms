@@ -52,7 +52,7 @@ class EmployeeQualificationController extends AppBaseController
 
         Flash::success('Employee Qualification saved successfully.');
 
-        return redirect(route('humanresource.employeeQualifications.index'));
+        //return redirect(route('humanresource.employeeQualifications.index'));
     }
 
     /**
@@ -70,7 +70,7 @@ class EmployeeQualificationController extends AppBaseController
         if (empty($employeeQualification)) {
             Flash::error('Employee Qualification not found');
 
-            return redirect(route('humanresource.employeeQualifications.index'));
+            //return redirect(route('humanresource.employeeQualifications.index'));
         }
 
         return view('humanresource.employee_qualifications.show')->with('employeeQualification', $employeeQualification);
@@ -91,7 +91,7 @@ class EmployeeQualificationController extends AppBaseController
         if (empty($employeeQualification)) {
             Flash::error('Employee Qualification not found');
 
-            return redirect(route('humanresource.employeeQualifications.index'));
+            //return redirect(route('humanresource.employeeQualifications.index'));
         }
         $employees = new Employee;
         return view('humanresource.employee_qualifications.edit', compact('employees'))->with('employeeQualification', $employeeQualification);
@@ -113,7 +113,7 @@ class EmployeeQualificationController extends AppBaseController
         if (empty($employeeQualification)) {
             Flash::error('Employee Qualification not found');
 
-            return redirect(route('humanresource.employeeQualifications.index'));
+            //return redirect(route('humanresource.employeeQualifications.index'));
         }
 
         $employeeQualification->fill($request->all());
@@ -121,7 +121,7 @@ class EmployeeQualificationController extends AppBaseController
 
         Flash::success('Employee Qualification updated successfully.');
 
-        return redirect(route('humanresource.employeeQualifications.index'));
+        //return redirect(route('humanresource.employeeQualifications.index'));
     }
 
     /**
@@ -141,13 +141,13 @@ class EmployeeQualificationController extends AppBaseController
         if (empty($employeeQualification)) {
             Flash::error('Employee Qualification not found');
 
-            return redirect(route('humanresource.employeeQualifications.index'));
+            //return redirect(route('humanresource.employeeQualifications.index'));
         }
 
         $employeeQualification->delete();
 
         Flash::success('Employee Qualification deleted successfully.');
 
-        return redirect(route('humanresource.employeeQualifications.index'));
+        //return redirect(route('humanresource.employeeQualifications.index'));
     }
 }

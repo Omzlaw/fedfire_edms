@@ -54,7 +54,7 @@ class EmployeeLocalLeaveController extends AppBaseController
 
         Flash::success('Employee Local Leave saved successfully.');
 
-        return redirect(route('humanresource.employeeLocalLeaves.index'));
+        //return redirect(route('humanresource.employeeLocalLeaves.index'));
     }
 
     /**
@@ -72,7 +72,7 @@ class EmployeeLocalLeaveController extends AppBaseController
         if (empty($employeeLocalLeave)) {
             Flash::error('Employee Local Leave not found');
 
-            return redirect(route('humanresource.employeeLocalLeaves.index'));
+            //return redirect(route('humanresource.employeeLocalLeaves.index'));
         }
 
         return view('humanresource.employee_local_leaves.show')->with('employeeLocalLeave', $employeeLocalLeave);
@@ -93,7 +93,7 @@ class EmployeeLocalLeaveController extends AppBaseController
         if (empty($employeeLocalLeave)) {
             Flash::error('Employee Local Leave not found');
 
-            return redirect(route('humanresource.employeeLocalLeaves.index'));
+            //return redirect(route('humanresource.employeeLocalLeaves.index'));
         }
         $employees = new Employee;
         $leave_types = new LeaveType;
@@ -116,7 +116,7 @@ class EmployeeLocalLeaveController extends AppBaseController
         if (empty($employeeLocalLeave)) {
             Flash::error('Employee Local Leave not found');
 
-            return redirect(route('humanresource.employeeLocalLeaves.index'));
+            //return redirect(route('humanresource.employeeLocalLeaves.index'));
         }
 
         $employeeLocalLeave->fill($request->all());
@@ -124,7 +124,7 @@ class EmployeeLocalLeaveController extends AppBaseController
 
         Flash::success('Employee Local Leave updated successfully.');
 
-        return redirect(route('humanresource.employeeLocalLeaves.index'));
+        //return redirect(route('humanresource.employeeLocalLeaves.index'));
     }
 
     /**
@@ -144,13 +144,13 @@ class EmployeeLocalLeaveController extends AppBaseController
         if (empty($employeeLocalLeave)) {
             Flash::error('Employee Local Leave not found');
 
-            return redirect(route('humanresource.employeeLocalLeaves.index'));
+            //return redirect(route('humanresource.employeeLocalLeaves.index'));
         }
 
         $employeeLocalLeave->delete();
 
         Flash::success('Employee Local Leave deleted successfully.');
 
-        return redirect(route('humanresource.employeeLocalLeaves.index'));
+        //return redirect(route('humanresource.employeeLocalLeaves.index'));
     }
 }

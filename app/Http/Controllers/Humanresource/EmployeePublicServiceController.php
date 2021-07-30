@@ -52,7 +52,7 @@ class EmployeePublicServiceController extends AppBaseController
 
         Flash::success('Employee Public Service saved successfully.');
 
-        return redirect(route('humanresource.employeePublicServices.index'));
+        //return redirect(route('humanresource.employeePublicServices.index'));
     }
 
     /**
@@ -70,7 +70,7 @@ class EmployeePublicServiceController extends AppBaseController
         if (empty($employeePublicService)) {
             Flash::error('Employee Public Service not found');
 
-            return redirect(route('humanresource.employeePublicServices.index'));
+            //return redirect(route('humanresource.employeePublicServices.index'));
         }
 
         return view('humanresource.employee_public_services.show')->with('employeePublicService', $employeePublicService);
@@ -91,7 +91,7 @@ class EmployeePublicServiceController extends AppBaseController
         if (empty($employeePublicService)) {
             Flash::error('Employee Public Service not found');
 
-            return redirect(route('humanresource.employeePublicServices.index'));
+            //return redirect(route('humanresource.employeePublicServices.index'));
         }
         $employees = new Employee;
         return view('humanresource.employee_public_services.edit', compact('employees'))->with('employeePublicService', $employeePublicService);
@@ -113,7 +113,7 @@ class EmployeePublicServiceController extends AppBaseController
         if (empty($employeePublicService)) {
             Flash::error('Employee Public Service not found');
 
-            return redirect(route('humanresource.employeePublicServices.index'));
+            //return redirect(route('humanresource.employeePublicServices.index'));
         }
 
         $employeePublicService->fill($request->all());
@@ -121,7 +121,7 @@ class EmployeePublicServiceController extends AppBaseController
 
         Flash::success('Employee Public Service updated successfully.');
 
-        return redirect(route('humanresource.employeePublicServices.index'));
+        //return redirect(route('humanresource.employeePublicServices.index'));
     }
 
     /**
@@ -141,13 +141,13 @@ class EmployeePublicServiceController extends AppBaseController
         if (empty($employeePublicService)) {
             Flash::error('Employee Public Service not found');
 
-            return redirect(route('humanresource.employeePublicServices.index'));
+            //return redirect(route('humanresource.employeePublicServices.index'));
         }
 
         $employeePublicService->delete();
 
         Flash::success('Employee Public Service deleted successfully.');
 
-        return redirect(route('humanresource.employeePublicServices.index'));
+        //return redirect(route('humanresource.employeePublicServices.index'));
     }
 }

@@ -52,7 +52,7 @@ class EmployeeForceServiceController extends AppBaseController
 
         Flash::success('Employee Force Service saved successfully.');
 
-        return redirect(route('humanresource.employeeForceServices.index'));
+        //return redirect(route('humanresource.employeeForceServices.index'));
     }
 
     /**
@@ -70,7 +70,7 @@ class EmployeeForceServiceController extends AppBaseController
         if (empty($employeeForceService)) {
             Flash::error('Employee Force Service not found');
 
-            return redirect(route('humanresource.employeeForceServices.index'));
+            //return redirect(route('humanresource.employeeForceServices.index'));
         }
 
         return view('humanresource.employee_force_services.show')->with('employeeForceService', $employeeForceService);
@@ -91,7 +91,7 @@ class EmployeeForceServiceController extends AppBaseController
         if (empty($employeeForceService)) {
             Flash::error('Employee Force Service not found');
 
-            return redirect(route('humanresource.employeeForceServices.index'));
+            //return redirect(route('humanresource.employeeForceServices.index'));
         }
         $employees = new Employee;
         return view('humanresource.employee_force_services.edit', compact('employees'))->with('employeeForceService', $employeeForceService);
@@ -113,7 +113,7 @@ class EmployeeForceServiceController extends AppBaseController
         if (empty($employeeForceService)) {
             Flash::error('Employee Force Service not found');
 
-            return redirect(route('humanresource.employeeForceServices.index'));
+            //return redirect(route('humanresource.employeeForceServices.index'));
         }
 
         $employeeForceService->fill($request->all());
@@ -121,7 +121,7 @@ class EmployeeForceServiceController extends AppBaseController
 
         Flash::success('Employee Force Service updated successfully.');
 
-        return redirect(route('humanresource.employeeForceServices.index'));
+        //return redirect(route('humanresource.employeeForceServices.index'));
     }
 
     /**
@@ -141,13 +141,13 @@ class EmployeeForceServiceController extends AppBaseController
         if (empty($employeeForceService)) {
             Flash::error('Employee Force Service not found');
 
-            return redirect(route('humanresource.employeeForceServices.index'));
+            //return redirect(route('humanresource.employeeForceServices.index'));
         }
 
         $employeeForceService->delete();
 
         Flash::success('Employee Force Service deleted successfully.');
 
-        return redirect(route('humanresource.employeeForceServices.index'));
+        //return redirect(route('humanresource.employeeForceServices.index'));
     }
 }

@@ -52,7 +52,7 @@ class EmployeeLanguageController extends AppBaseController
 
         Flash::success('Employee Language saved successfully.');
 
-        return redirect(route('humanresource.employeeLanguages.index'));
+        //return redirect(route('humanresource.employeeLanguages.index'));
     }
 
     /**
@@ -70,7 +70,7 @@ class EmployeeLanguageController extends AppBaseController
         if (empty($employeeLanguage)) {
             Flash::error('Employee Language not found');
 
-            return redirect(route('humanresource.employeeLanguages.index'));
+            //return redirect(route('humanresource.employeeLanguages.index'));
         }
 
         return view('humanresource.employee_languages.show')->with('employeeLanguage', $employeeLanguage);
@@ -91,7 +91,7 @@ class EmployeeLanguageController extends AppBaseController
         if (empty($employeeLanguage)) {
             Flash::error('Employee Language not found');
 
-            return redirect(route('humanresource.employeeLanguages.index'));
+            //return redirect(route('humanresource.employeeLanguages.index'));
         }
         $employees = new Employee;
         return view('humanresource.employee_languages.edit', compact('employees'))->with('employeeLanguage', $employeeLanguage);
@@ -113,7 +113,7 @@ class EmployeeLanguageController extends AppBaseController
         if (empty($employeeLanguage)) {
             Flash::error('Employee Language not found');
 
-            return redirect(route('humanresource.employeeLanguages.index'));
+            //return redirect(route('humanresource.employeeLanguages.index'));
         }
 
         $employeeLanguage->fill($request->all());
@@ -121,7 +121,7 @@ class EmployeeLanguageController extends AppBaseController
 
         Flash::success('Employee Language updated successfully.');
 
-        return redirect(route('humanresource.employeeLanguages.index'));
+        //return redirect(route('humanresource.employeeLanguages.index'));
     }
 
     /**
@@ -141,13 +141,13 @@ class EmployeeLanguageController extends AppBaseController
         if (empty($employeeLanguage)) {
             Flash::error('Employee Language not found');
 
-            return redirect(route('humanresource.employeeLanguages.index'));
+            //return redirect(route('humanresource.employeeLanguages.index'));
         }
 
         $employeeLanguage->delete();
 
         Flash::success('Employee Language deleted successfully.');
 
-        return redirect(route('humanresource.employeeLanguages.index'));
+        //return redirect(route('humanresource.employeeLanguages.index'));
     }
 }

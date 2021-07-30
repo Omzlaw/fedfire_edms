@@ -52,7 +52,7 @@ class EmployeeGratuityController extends AppBaseController
 
         Flash::success('Employee Gratuity saved successfully.');
 
-        return redirect(route('humanresource.employeeGratuities.index'));
+        //return redirect(route('humanresource.employeeGratuities.index'));
     }
 
     /**
@@ -70,7 +70,7 @@ class EmployeeGratuityController extends AppBaseController
         if (empty($employeeGratuity)) {
             Flash::error('Employee Gratuity not found');
 
-            return redirect(route('humanresource.employeeGratuities.index'));
+            //return redirect(route('humanresource.employeeGratuities.index'));
         }
 
         return view('humanresource.employee_gratuities.show')->with('employeeGratuity', $employeeGratuity);
@@ -91,7 +91,7 @@ class EmployeeGratuityController extends AppBaseController
         if (empty($employeeGratuity)) {
             Flash::error('Employee Gratuity not found');
 
-            return redirect(route('humanresource.employeeGratuities.index'));
+            //return redirect(route('humanresource.employeeGratuities.index'));
         }
         $employees = new Employee;
         return view('humanresource.employee_gratuities.edit', compact('employees'))->with('employeeGratuity', $employeeGratuity);
@@ -113,7 +113,7 @@ class EmployeeGratuityController extends AppBaseController
         if (empty($employeeGratuity)) {
             Flash::error('Employee Gratuity not found');
 
-            return redirect(route('humanresource.employeeGratuities.index'));
+            //return redirect(route('humanresource.employeeGratuities.index'));
         }
 
         $employeeGratuity->fill($request->all());
@@ -121,7 +121,7 @@ class EmployeeGratuityController extends AppBaseController
 
         Flash::success('Employee Gratuity updated successfully.');
 
-        return redirect(route('humanresource.employeeGratuities.index'));
+        //return redirect(route('humanresource.employeeGratuities.index'));
     }
 
     /**
@@ -141,13 +141,13 @@ class EmployeeGratuityController extends AppBaseController
         if (empty($employeeGratuity)) {
             Flash::error('Employee Gratuity not found');
 
-            return redirect(route('humanresource.employeeGratuities.index'));
+            //return redirect(route('humanresource.employeeGratuities.index'));
         }
 
         $employeeGratuity->delete();
 
         Flash::success('Employee Gratuity deleted successfully.');
 
-        return redirect(route('humanresource.employeeGratuities.index'));
+        //return redirect(route('humanresource.employeeGratuities.index'));
     }
 }

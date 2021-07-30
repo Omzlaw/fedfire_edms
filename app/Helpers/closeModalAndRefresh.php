@@ -4,7 +4,7 @@
         function close_modal_refresh()
         {        
             echo '<script>
-                $("#model_modal").modal("hide");
+                document.getElementById("model_modal").hide()
                 location.reload();
             </script>';
         }

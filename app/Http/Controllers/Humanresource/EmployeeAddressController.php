@@ -56,7 +56,7 @@ class EmployeeAddressController extends AppBaseController
 
         Flash::success('Employee Address saved successfully.');
 
-        return redirect(route('humanresource.employeeAddresses.index'));
+        //return redirect(route('humanresource.employeeAddresses.index'));
     }
 
     /**
@@ -74,7 +74,7 @@ class EmployeeAddressController extends AppBaseController
         if (empty($employeeAddress)) {
             Flash::error('Employee Address not found');
 
-            return redirect(route('humanresource.employeeAddresses.index'));
+            //return redirect(route('humanresource.employeeAddresses.index'));
         }
 
         return view('humanresource.employee_addresses.show')->with('employeeAddress', $employeeAddress);
@@ -95,7 +95,7 @@ class EmployeeAddressController extends AppBaseController
         if (empty($employeeAddress)) {
             Flash::error('Employee Address not found');
 
-            return redirect(route('humanresource.employeeAddresses.index'));
+            //return redirect(route('humanresource.employeeAddresses.index'));
         }
         $employees = new Employee;
         $states = new State;
@@ -119,7 +119,7 @@ class EmployeeAddressController extends AppBaseController
         if (empty($employeeAddress)) {
             Flash::error('Employee Address not found');
 
-            return redirect(route('humanresource.employeeAddresses.index'));
+            //return redirect(route('humanresource.employeeAddresses.index'));
         }
 
         $employeeAddress->fill($request->all());
@@ -127,7 +127,7 @@ class EmployeeAddressController extends AppBaseController
 
         Flash::success('Employee Address updated successfully.');
 
-        return redirect(route('humanresource.employeeAddresses.index'));
+        //return redirect(route('humanresource.employeeAddresses.index'));
     }
 
     /**
@@ -147,13 +147,13 @@ class EmployeeAddressController extends AppBaseController
         if (empty($employeeAddress)) {
             Flash::error('Employee Address not found');
 
-            return redirect(route('humanresource.employeeAddresses.index'));
+            //return redirect(route('humanresource.employeeAddresses.index'));
         }
 
         $employeeAddress->delete();
 
         Flash::success('Employee Address deleted successfully.');
 
-        return redirect(route('humanresource.employeeAddresses.index'));
+        //return redirect(route('humanresource.employeeAddresses.index'));
     }
 }

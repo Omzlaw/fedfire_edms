@@ -54,7 +54,7 @@ class EmployeeChildrenController extends AppBaseController
 
         Flash::success('Employee Children saved successfully.');
 
-        return redirect(route('humanresource.employeeChildrens.index'));
+        //return redirect(route('humanresource.employeeChildrens.index'));
     }
 
     /**
@@ -72,7 +72,7 @@ class EmployeeChildrenController extends AppBaseController
         if (empty($employeeChildren)) {
             Flash::error('Employee Children not found');
 
-            return redirect(route('humanresource.employeeChildrens.index'));
+            //return redirect(route('humanresource.employeeChildrens.index'));
         }
 
         return view('humanresource.employee_childrens.show')->with('employeeChildren', $employeeChildren);
@@ -93,7 +93,7 @@ class EmployeeChildrenController extends AppBaseController
         if (empty($employeeChildren)) {
             Flash::error('Employee Children not found');
 
-            return redirect(route('humanresource.employeeChildrens.index'));
+            //return redirect(route('humanresource.employeeChildrens.index'));
         }
         $employees = new Employee;
         return view('humanresource.employee_childrens.edit', compact('employees'))->with('employeeChildren', $employeeChildren);
@@ -115,7 +115,7 @@ class EmployeeChildrenController extends AppBaseController
         if (empty($employeeChildren)) {
             Flash::error('Employee Children not found');
 
-            return redirect(route('humanresource.employeeChildrens.index'));
+            //return redirect(route('humanresource.employeeChildrens.index'));
         }
 
         $employeeChildren->fill($request->all());
@@ -123,7 +123,7 @@ class EmployeeChildrenController extends AppBaseController
 
         Flash::success('Employee Children updated successfully.');
 
-        return redirect(route('humanresource.employeeChildrens.index'));
+        //return redirect(route('humanresource.employeeChildrens.index'));
     }
 
     /**
@@ -143,13 +143,13 @@ class EmployeeChildrenController extends AppBaseController
         if (empty($employeeChildren)) {
             Flash::error('Employee Children not found');
 
-            return redirect(route('humanresource.employeeChildrens.index'));
+            //return redirect(route('humanresource.employeeChildrens.index'));
         }
 
         $employeeChildren->delete();
 
         Flash::success('Employee Children deleted successfully.');
 
-        return redirect(route('humanresource.employeeChildrens.index'));
+        //return redirect(route('humanresource.employeeChildrens.index'));
     }
 }

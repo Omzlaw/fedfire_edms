@@ -52,7 +52,7 @@ class EmployeeWifeController extends AppBaseController
 
         Flash::success('Employee Wife saved successfully.');
 
-        return redirect(route('humanresource.employeeWives.index'));
+        //return redirect(route('humanresource.employeeWives.index'));
     }
 
     /**
@@ -70,7 +70,7 @@ class EmployeeWifeController extends AppBaseController
         if (empty($employeeWife)) {
             Flash::error('Employee Wife not found');
 
-            return redirect(route('humanresource.employeeWives.index'));
+            //return redirect(route('humanresource.employeeWives.index'));
         }
 
         return view('humanresource.employee_wives.show')->with('employeeWife', $employeeWife);
@@ -91,7 +91,7 @@ class EmployeeWifeController extends AppBaseController
         if (empty($employeeWife)) {
             Flash::error('Employee Wife not found');
 
-            return redirect(route('humanresource.employeeWives.index'));
+            //return redirect(route('humanresource.employeeWives.index'));
         }
         $employees = new Employee;
         return view('humanresource.employee_wives.edit', compact('employees'))->with('employeeWife', $employeeWife);
@@ -113,7 +113,7 @@ class EmployeeWifeController extends AppBaseController
         if (empty($employeeWife)) {
             Flash::error('Employee Wife not found');
 
-            return redirect(route('humanresource.employeeWives.index'));
+            //return redirect(route('humanresource.employeeWives.index'));
         }
 
         $employeeWife->fill($request->all());
@@ -121,7 +121,7 @@ class EmployeeWifeController extends AppBaseController
 
         Flash::success('Employee Wife updated successfully.');
 
-        return redirect(route('humanresource.employeeWives.index'));
+        //return redirect(route('humanresource.employeeWives.index'));
     }
 
     /**
@@ -141,13 +141,13 @@ class EmployeeWifeController extends AppBaseController
         if (empty($employeeWife)) {
             Flash::error('Employee Wife not found');
 
-            return redirect(route('humanresource.employeeWives.index'));
+            //return redirect(route('humanresource.employeeWives.index'));
         }
 
         $employeeWife->delete();
 
         Flash::success('Employee Wife deleted successfully.');
 
-        return redirect(route('humanresource.employeeWives.index'));
+        //return redirect(route('humanresource.employeeWives.index'));
     }
 }

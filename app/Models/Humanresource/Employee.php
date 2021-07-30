@@ -175,7 +175,7 @@ class Employee extends Model
 
     public function actionSheets()
     {
-        return $this->hasMany(EmployeeActionSheet::class);
+        return $this->hasMany(EmployeeActionSheet::class)->select('id', 'folio', 'action_at','date_cleared', 'remark');
     }
 
     public function addresses()
