@@ -357,24 +357,24 @@
                                     }
                                 })
                             }
-                            // else if(columnNames[i] == 'gender') {
-                            //     columns.push({
-                            //         title: 'gender',
-                            //         render: (data, type, row, meta) => {
-                            //             switch (row.gender) {
-                            //                 case 1:
-                            //                     return 'Male'
-                            //                     break;
-                            //                 case 0:
-                            //                     return 'Female'
-                            //                     break;
+                            else if(columnNames[i] == 'gender') {
+                                columns.push({
+                                    title: 'gender',
+                                    render: (data, type, row, meta) => {
+                                        switch (row.gender) {
+                                            case 1:
+                                                return 'Male'
+                                                break;
+                                            case 0:
+                                                return 'Female'
+                                                break;
                                         
-                            //                 default:
-                            //                     break;
-                            //             }
-                            //         }
-                            //     })
-                            // }
+                                            default:
+                                                break;
+                                        }
+                                    }
+                                })
+                            }
                             else {
                                 columns.push({
                                 data: columnNames[i],

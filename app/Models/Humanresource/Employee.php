@@ -195,9 +195,8 @@ class Employee extends Model
 
     public function children()
     {
-       $children = $this->hasMany(EmployeeChildren::class)->select('id', 'name', 'gender', 'birthday');
-
-       return $children;   
+       return $this->hasMany(EmployeeChildren::class)->select('id', 'name', 'gender', 'birthday');
+ 
     }
         
 
