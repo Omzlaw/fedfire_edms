@@ -12,14 +12,14 @@ $(document).ready(function () {
         });
     }
     var ps = new PerfectScrollbar('#demo');
-    $("#demo .navbar-brand h1").replaceWith('<h1 class="navbrand">E</h1>');
+    $("#demo .navbar-brand h1").replaceWith('<img src="{{ asset("images/logo.png") }}">');
 
     $(".left-aside").hover(function () {
             $("#demo .navbar-brand").css({
                 'margin-left': '0',
                 'transition': 'margin-left 0.3s linear'
             });
-            $("#demo .navbar-brand h1").replaceWith('<h1 class="text-center">EDMS</h1>');
+            $("#demo .navbar-brand h1").replaceWith('<img src="{{ asset("images/logo.png") }}">');
 
         },
         function () {
@@ -27,7 +27,7 @@ $(document).ready(function () {
                 'margin-left': '-175px',
                 'transition': 'margin-left 0.3s linear'
             });
-            $("#demo .navbar-brand h1").replaceWith('<h1 class="navbrand">EDMS</h1>');
+            $("#demo .navbar-brand h1").replaceWith('<img src="{{ asset("images/logo.png") }}">');
         });
 
     var arr;

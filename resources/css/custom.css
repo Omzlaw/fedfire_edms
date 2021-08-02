@@ -242,3 +242,20 @@ body > .header .navbar_fixed_top{
   height: 40%;
   overflow-y: scroll;
 }
+
+.default-color {
+  background-color: #db2016
+}
+
+.default-color-secondary {
+  background-color: #e5625b !important;
+}
+
+.secondary-color {
+  color: #060c38;
+}
+
+.secondary-color-bg {
+  background-color: #060c38;
+  color: #fff
+}

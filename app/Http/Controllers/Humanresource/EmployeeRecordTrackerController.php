@@ -51,6 +51,7 @@ class EmployeeRecordTrackerController extends AppBaseController
         $employeeRecordTracker = EmployeeRecordTracker::create($input);
 
         Flash::success('Employee Record Tracker saved successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeRecordTrackers.index'));
     }
@@ -112,6 +113,7 @@ class EmployeeRecordTrackerController extends AppBaseController
 
         if (empty($employeeRecordTracker)) {
             Flash::error('Employee Record Tracker not found');
+            close_modal_refresh();
 
             //return redirect(route('humanresource.employeeRecordTrackers.index'));
         }
@@ -120,6 +122,7 @@ class EmployeeRecordTrackerController extends AppBaseController
         $employeeRecordTracker->save();
 
         Flash::success('Employee Record Tracker updated successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeRecordTrackers.index'));
     }

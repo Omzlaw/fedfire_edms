@@ -51,6 +51,7 @@ class EmployeeGratuityController extends AppBaseController
         $employeeGratuity = EmployeeGratuity::create($input);
 
         Flash::success('Employee Gratuity saved successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeGratuities.index'));
     }
@@ -112,6 +113,7 @@ class EmployeeGratuityController extends AppBaseController
 
         if (empty($employeeGratuity)) {
             Flash::error('Employee Gratuity not found');
+            close_modal_refresh();
 
             //return redirect(route('humanresource.employeeGratuities.index'));
         }
@@ -120,6 +122,7 @@ class EmployeeGratuityController extends AppBaseController
         $employeeGratuity->save();
 
         Flash::success('Employee Gratuity updated successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeGratuities.index'));
     }

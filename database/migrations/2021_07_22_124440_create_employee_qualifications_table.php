@@ -21,7 +21,7 @@ class CreateEmployeeQualificationsTable extends Migration
             $table->string('file_upload')->nullable();
             $table->smallInteger('status');
             $table->text('remark')->nullable();
-            $table->integer('checked_by')->unsigned();
+            $table->integer('checked_by')->unsigned()->nullable();
             $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();
             $table->timestamps();

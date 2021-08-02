@@ -3,21 +3,21 @@
                 <li class="{!! Request::is('shared/fileDirectories*') ? 'active' : '' !!}">
                     <a href="{{ route('shared.fileDirectories.getSearch') }}" class="mm-a">
                         <span class="mm-text ">Search</span>
-                        <span class="menu-icon"><i class="fa fa-search"></i></span>
+                        <span class="menu-icon"><i class="fa fa-search text-white"></i></span>
                     </a>
                 </li>
 
                 <li class="{!! Request::is('shared/fileDirectories*') ? 'active' : '' !!}">
                     <a href="{{ route('shared.fileDirectories.index') }}" class="mm-a">
                         <span class="mm-text ">File Directory</span>
-                        <span class="menu-icon"><i class="fa fa-folder"></i></span>
+                        <span class="menu-icon"><i class="fa fa-folder text-white"></i></span>
                     </a>
                 </li>
 
                 <li class="{!! Request::is('humanresource/employees*') ? 'active' : '' !!}">
                     <a href="{{ route('humanresource.employees.index') }}" class="mm-a">
                         <span class="mm-text ">Employees</span>
-                        <span class="menu-icon"><i class="fa fa-users"></i></span>
+                        <span class="menu-icon"><i class="fa fa-users text-white"></i></span>
                     </a>
                 </li>
 
@@ -135,10 +135,10 @@
             : "class='menu-dropdown'" ) !!}>
             <a href="#" class="mm-a">
                 <span class="mm-text ">Manage Settings</span>
-                <span class="menu-icon "> <i class="far fa-gear"></i></span>
+                <span class="menu-icon "> <i class="far fa-gear text-white"></i></span>
                 <span class="im im-icon-Arrow-Right imicon"></span>
             </a>
-            <ul class="sub-menu list-unstyled bg-danger bg-gradient">
+            <ul class="sub-menu list-unstyled default-color-secondary">
                 <li class="{!! Request::is('shared/certificateTypes*') ? 'active' : '' !!}">
                     <a href="{{ route('shared.certificateTypes.index') }}" class="mm-a">
                         <span class="mm-text ">Certificate</span>

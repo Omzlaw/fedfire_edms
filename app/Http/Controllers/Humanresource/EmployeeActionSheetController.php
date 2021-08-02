@@ -112,6 +112,7 @@ class EmployeeActionSheetController extends AppBaseController
 
         if (empty($employeeActionSheet)) {
             Flash::error('Employee Action Sheet not found');
+            close_modal_refresh();
 
             // //return redirect(route('humanresource.employeeActionSheets.index'));
         }
@@ -120,6 +121,7 @@ class EmployeeActionSheetController extends AppBaseController
         $employeeActionSheet->save();
 
         Flash::success('Employee Action Sheet updated successfully.');
+        close_modal_refresh();
 
         // //return redirect(route('humanresource.employeeActionSheets.index'));
     }

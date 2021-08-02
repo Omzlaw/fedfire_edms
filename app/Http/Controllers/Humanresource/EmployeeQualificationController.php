@@ -51,6 +51,7 @@ class EmployeeQualificationController extends AppBaseController
         $employeeQualification = EmployeeQualification::create($input);
 
         Flash::success('Employee Qualification saved successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeQualifications.index'));
     }
@@ -112,6 +113,7 @@ class EmployeeQualificationController extends AppBaseController
 
         if (empty($employeeQualification)) {
             Flash::error('Employee Qualification not found');
+            close_modal_refresh();
 
             //return redirect(route('humanresource.employeeQualifications.index'));
         }
@@ -120,6 +122,7 @@ class EmployeeQualificationController extends AppBaseController
         $employeeQualification->save();
 
         Flash::success('Employee Qualification updated successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeQualifications.index'));
     }

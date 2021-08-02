@@ -54,6 +54,7 @@ class EmployeeForeignToursController extends AppBaseController
         $employeeForeignTours = EmployeeForeignTours::create($input);
 
         Flash::success('Employee Foreign Tours saved successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeForeignTours.index'));
     }
@@ -116,7 +117,7 @@ class EmployeeForeignToursController extends AppBaseController
 
         if (empty($employeeForeignTours)) {
             Flash::error('Employee Foreign Tours not found');
-
+            close_modal_refresh();
             //return redirect(route('humanresource.employeeForeignTours.index'));
         }
 
@@ -124,6 +125,7 @@ class EmployeeForeignToursController extends AppBaseController
         $employeeForeignTours->save();
 
         Flash::success('Employee Foreign Tours updated successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeForeignTours.index'));
     }

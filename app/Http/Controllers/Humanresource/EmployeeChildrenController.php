@@ -53,6 +53,7 @@ class EmployeeChildrenController extends AppBaseController
         $employeeChildren = EmployeeChildren::create($input);
 
         Flash::success('Employee Children saved successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeChildrens.index'));
     }
@@ -114,6 +115,7 @@ class EmployeeChildrenController extends AppBaseController
 
         if (empty($employeeChildren)) {
             Flash::error('Employee Children not found');
+            close_modal_refresh();
 
             //return redirect(route('humanresource.employeeChildrens.index'));
         }
@@ -122,6 +124,7 @@ class EmployeeChildrenController extends AppBaseController
         $employeeChildren->save();
 
         Flash::success('Employee Children updated successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeChildrens.index'));
     }

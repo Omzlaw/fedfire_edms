@@ -53,6 +53,7 @@ class EmployeeTerminationController extends AppBaseController
         $employeeTermination = EmployeeTermination::create($input);
 
         Flash::success('Employee Termination saved successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeTerminations.index'));
     }
@@ -116,6 +117,7 @@ class EmployeeTerminationController extends AppBaseController
 
         if (empty($employeeTermination)) {
             Flash::error('Employee Termination not found');
+            close_modal_refresh();
 
             //return redirect(route('humanresource.employeeTerminations.index'));
         }
@@ -124,6 +126,7 @@ class EmployeeTerminationController extends AppBaseController
         $employeeTermination->save();
 
         Flash::success('Employee Termination updated successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeTerminations.index'));
     }

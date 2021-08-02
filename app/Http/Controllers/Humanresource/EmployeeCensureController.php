@@ -51,6 +51,7 @@ class EmployeeCensureController extends AppBaseController
         $employeeCensure = EmployeeCensure::create($input);
 
         Flash::success('Employee Censure saved successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeCensures.index'));
     }
@@ -112,6 +113,7 @@ class EmployeeCensureController extends AppBaseController
 
         if (empty($employeeCensure)) {
             Flash::error('Employee Censure not found');
+            close_modal_refresh();
 
             //return redirect(route('humanresource.employeeCensures.index'));
         }
@@ -120,6 +122,7 @@ class EmployeeCensureController extends AppBaseController
         $employeeCensure->save();
 
         Flash::success('Employee Censure updated successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeCensures.index'));
     }

@@ -55,6 +55,7 @@ class EmployeeAddressController extends AppBaseController
         $employeeAddress = EmployeeAddress::create($input);
 
         Flash::success('Employee Address saved successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeAddresses.index'));
     }
@@ -118,6 +119,7 @@ class EmployeeAddressController extends AppBaseController
 
         if (empty($employeeAddress)) {
             Flash::error('Employee Address not found');
+            close_modal_refresh();
 
             //return redirect(route('humanresource.employeeAddresses.index'));
         }
@@ -126,6 +128,7 @@ class EmployeeAddressController extends AppBaseController
         $employeeAddress->save();
 
         Flash::success('Employee Address updated successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeAddresses.index'));
     }

@@ -51,6 +51,7 @@ class EmployeeWifeController extends AppBaseController
         $employeeWife = EmployeeWife::create($input);
 
         Flash::success('Employee Wife saved successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeWives.index'));
     }
@@ -112,6 +113,7 @@ class EmployeeWifeController extends AppBaseController
 
         if (empty($employeeWife)) {
             Flash::error('Employee Wife not found');
+            close_modal_refresh();
 
             //return redirect(route('humanresource.employeeWives.index'));
         }
@@ -120,6 +122,7 @@ class EmployeeWifeController extends AppBaseController
         $employeeWife->save();
 
         Flash::success('Employee Wife updated successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeWives.index'));
     }

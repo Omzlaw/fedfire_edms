@@ -53,6 +53,7 @@ class EmployeeLocalLeaveController extends AppBaseController
         $employeeLocalLeave = EmployeeLocalLeave::create($input);
 
         Flash::success('Employee Local Leave saved successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeLocalLeaves.index'));
     }
@@ -115,6 +116,7 @@ class EmployeeLocalLeaveController extends AppBaseController
 
         if (empty($employeeLocalLeave)) {
             Flash::error('Employee Local Leave not found');
+            close_modal_refresh();
 
             //return redirect(route('humanresource.employeeLocalLeaves.index'));
         }
@@ -123,6 +125,7 @@ class EmployeeLocalLeaveController extends AppBaseController
         $employeeLocalLeave->save();
 
         Flash::success('Employee Local Leave updated successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeLocalLeaves.index'));
     }

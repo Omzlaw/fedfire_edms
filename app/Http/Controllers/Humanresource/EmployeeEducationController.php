@@ -55,6 +55,7 @@ class EmployeeEducationController extends AppBaseController
         $employeeEducation = EmployeeEducation::create($input);
 
         Flash::success('Employee Education saved successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeEducations.index'));
     }
@@ -118,6 +119,7 @@ class EmployeeEducationController extends AppBaseController
 
         if (empty($employeeEducation)) {
             Flash::error('Employee Education not found');
+            close_modal_refresh();
 
             //return redirect(route('humanresource.employeeEducations.index'));
         }
@@ -126,6 +128,7 @@ class EmployeeEducationController extends AppBaseController
         $employeeEducation->save();
 
         Flash::success('Employee Education updated successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeEducations.index'));
     }

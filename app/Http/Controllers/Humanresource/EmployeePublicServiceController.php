@@ -51,6 +51,7 @@ class EmployeePublicServiceController extends AppBaseController
         $employeePublicService = EmployeePublicService::create($input);
 
         Flash::success('Employee Public Service saved successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeePublicServices.index'));
     }
@@ -112,6 +113,7 @@ class EmployeePublicServiceController extends AppBaseController
 
         if (empty($employeePublicService)) {
             Flash::error('Employee Public Service not found');
+            close_modal_refresh();
 
             //return redirect(route('humanresource.employeePublicServices.index'));
         }
@@ -120,6 +122,7 @@ class EmployeePublicServiceController extends AppBaseController
         $employeePublicService->save();
 
         Flash::success('Employee Public Service updated successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeePublicServices.index'));
     }

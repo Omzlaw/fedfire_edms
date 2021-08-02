@@ -185,12 +185,12 @@ class Employee extends Model
 
     public function censures()
     {
-        return $this->hasMany(EmployeeCensure::class);
+        return $this->hasMany(EmployeeCensure::class)->select('id', 'title', 'summary', 'compiled_at');
     }
 
     public function certificates()
     {
-        return $this->hasMany(EmployeeCertificates::class);
+        return $this->hasMany(EmployeeCertificates::class)->select('id', 'certificate_name', 'date_obtained', 'status');
     }
 
     public function children()
@@ -202,61 +202,61 @@ class Employee extends Model
 
     public function educations()
     { 
-        return $this->hasMany(EmployeeEducation::class);
+        return $this->hasMany(EmployeeEducation::class)->select('id', 'school_name', 'certificate_id', 'school_type_id', 'remark');
     }
 
     public function forceServices()
     {
-        return $this->hasMany(EmployeeForceService::class);
+        return $this->hasMany(EmployeeForceService::class)->select('id', 'area_of_service', 'service_no', 'last_unit', 'reason_for_leaving', 'remark');
     }
 
     public function foreignTours()
     {
-        return $this->hasMany(EmployeeForeignTours::class);
+        return $this->hasMany(EmployeeForeignTours::class)->select('id', 'leaver_id', 'from_date', 'to_date', 'status', 'remark');
     }
 
     public function gratuities()
     {
-        return $this->hasMany(EmployeeGratuity::class);
+        return $this->hasMany(EmployeeGratuity::class)->select('id', 'file_page_no', 'payment_date', 'from_date', 'to_date', 'status');
     }
 
     public function languages()
     {
-        return $this->hasMany(EmployeeLanguage::class);
+        return $this->hasMany(EmployeeLanguage::class)->select('id', 'language_id', 'writing_fluency', 'speaking_fluency');
     }
 
     public function localLeaves()
     {
-        return $this->hasMany(EmployeeLocalLeave::class);
+        return $this->hasMany(EmployeeLocalLeave::class)->select('id', 'no_of_days', 'file_page_no', 'leaver_id', 'from_date', 'to_date');
     }
 
     public function nextOfKins()
     {
-        return $this->hasMany(EmployeeNextOfKin::class);
+        return $this->hasMany(EmployeeNextOfKin::class)->select('id', 'name', 'address', 'relationship_id');
     }
 
     public function publicServices()
     {
-        return $this->hasMany(EmployeePublicService::class);
+        return $this->hasMany(EmployeePublicService::class)->select('id', 'employer_name', 'from_date', 'to_date', 'file_page_ref');
     }
 
     public function qualifications()
     {
-        return $this->hasMany(EmployeeQualification::class);
+        return $this->hasMany(EmployeeQualification::class)->select('id', 'qualification_name', 'date_obtained', 'status', 'remark');
     }
 
     public function recordTrackers()
     {
-        return $this->hasMany(EmployeeRecordTracker::class);
+        return $this->hasMany(EmployeeRecordTracker::class)->select('id', 'status', 'remark', 'has_profile', 'has_education');
     }
 
     public function terminations()
     {
-        return $this->hasMany(EmployeeTermination::class);
+        return $this->hasMany(EmployeeTermination::class)->select('id', 'termination_id', 'even_date', 'is_pensionable', 'pension_amount');
     }
 
     public function spouse()
     {
-        return $this->hasMany(EmployeeWife::class);
+        return $this->hasMany(EmployeeWife::class)->select('id', 'wife_name', 'wife_birthdate', 'marriage_date', 'remark');
     }
 }

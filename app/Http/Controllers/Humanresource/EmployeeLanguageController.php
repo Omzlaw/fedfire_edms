@@ -53,6 +53,7 @@ class EmployeeLanguageController extends AppBaseController
         $employeeLanguage = EmployeeLanguage::create($input);
 
         Flash::success('Employee Language saved successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeLanguages.index'));
     }
@@ -115,7 +116,7 @@ class EmployeeLanguageController extends AppBaseController
 
         if (empty($employeeLanguage)) {
             Flash::error('Employee Language not found');
-
+            close_modal_refresh();
             //return redirect(route('humanresource.employeeLanguages.index'));
         }
 
@@ -123,6 +124,7 @@ class EmployeeLanguageController extends AppBaseController
         $employeeLanguage->save();
 
         Flash::success('Employee Language updated successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeLanguages.index'));
     }

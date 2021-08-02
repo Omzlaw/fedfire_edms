@@ -53,6 +53,7 @@ class EmployeeNextOfKinController extends AppBaseController
         $employeeNextOfKin = EmployeeNextOfKin::create($input);
 
         Flash::success('Employee Next Of Kin saved successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeNextOfKins.index'));
     }
@@ -115,6 +116,7 @@ class EmployeeNextOfKinController extends AppBaseController
 
         if (empty($employeeNextOfKin)) {
             Flash::error('Employee Next Of Kin not found');
+            close_modal_refresh();
 
             //return redirect(route('humanresource.employeeNextOfKins.index'));
         }
@@ -123,6 +125,7 @@ class EmployeeNextOfKinController extends AppBaseController
         $employeeNextOfKin->save();
 
         Flash::success('Employee Next Of Kin updated successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeNextOfKins.index'));
     }

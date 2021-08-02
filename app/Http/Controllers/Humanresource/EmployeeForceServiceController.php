@@ -51,6 +51,7 @@ class EmployeeForceServiceController extends AppBaseController
         $employeeForceService = EmployeeForceService::create($input);
 
         Flash::success('Employee Force Service saved successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeForceServices.index'));
     }
@@ -112,6 +113,7 @@ class EmployeeForceServiceController extends AppBaseController
 
         if (empty($employeeForceService)) {
             Flash::error('Employee Force Service not found');
+            close_modal_refresh();
 
             //return redirect(route('humanresource.employeeForceServices.index'));
         }
@@ -120,6 +122,7 @@ class EmployeeForceServiceController extends AppBaseController
         $employeeForceService->save();
 
         Flash::success('Employee Force Service updated successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeForceServices.index'));
     }

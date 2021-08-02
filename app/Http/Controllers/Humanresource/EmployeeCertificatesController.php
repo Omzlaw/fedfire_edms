@@ -51,7 +51,7 @@ class EmployeeCertificatesController extends AppBaseController
         $employeeCertificates = EmployeeCertificates::create($input);
 
         Flash::success('Employee Certificates saved successfully.');
-
+        close_modal_refresh();
         //return redirect(route('humanresource.employeeCertificates.index'));
     }
 
@@ -113,7 +113,7 @@ class EmployeeCertificatesController extends AppBaseController
 
         if (empty($employeeCertificates)) {
             Flash::error('Employee Certificates not found');
-
+            close_modal_refresh();
             //return redirect(route('humanresource.employeeCertificates.index'));
         }
 
@@ -121,6 +121,7 @@ class EmployeeCertificatesController extends AppBaseController
         $employeeCertificates->save();
 
         Flash::success('Employee Certificates updated successfully.');
+        close_modal_refresh();
 
         //return redirect(route('humanresource.employeeCertificates.index'));
     }
