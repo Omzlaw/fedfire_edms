@@ -59,7 +59,7 @@ class EmployeeAddress extends Model
         'country_id' => 'integer',
         'employee_id' => 'integer',
         'file_upload' => 'string',
-        'status' => 'integer',
+        'status' => 'string',
         'remark' => 'string',
         'created_by' => 'integer',
         'updated_by' => 'integer'

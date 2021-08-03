@@ -153,6 +153,7 @@ class EmployeeNextOfKinController extends AppBaseController
         $employeeNextOfKin->delete();
 
         Flash::success('Employee Next Of Kin deleted successfully.');
+        return redirect(route('humanresource.employees.show', session('employee_id')));
 
         //return redirect(route('humanresource.employeeNextOfKins.index'));
     }

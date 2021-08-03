@@ -51,10 +51,10 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('checked_by', 'Checked By:') !!}</th>
     <td>{{ $employeeLanguage->checkedBy->name }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>

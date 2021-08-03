@@ -73,7 +73,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group mt-20px">
-                                    <input type="submit" value="Sign In" class="btn btn-primary btn-block" />
+                                    <input type="submit" value="Sign In" class="btn secondary-color-bg btn-block" />
                                 </div>
                             </div>
                             <div class="col-md-12">

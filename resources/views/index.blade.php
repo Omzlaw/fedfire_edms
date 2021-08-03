@@ -26,7 +26,7 @@ Dashboard @parent
     <div class="row">
         <div class="col-md-6 col-xl-3 col-12 mb-20">
             <div class="  bg-white dashboard-col pl-15 pb-15 pt-15">
-                <i class="im im-icon-Add-Cart im-icon-set float-right bg-primary"></i>
+                <i class="im im-icon-Checked-User im-icon-set float-right bg-primary"></i>
                 <h3>102</h3>
                 <p>Number of Employees</p>
                 <div class="progress meter mr-15">

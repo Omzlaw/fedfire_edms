@@ -150,6 +150,7 @@ class EmployeeWifeController extends AppBaseController
         $employeeWife->delete();
 
         Flash::success('Employee Wife deleted successfully.');
+        return redirect(route('humanresource.employees.show', session('employee_id')));
 
         //return redirect(route('humanresource.employeeWives.index'));
     }

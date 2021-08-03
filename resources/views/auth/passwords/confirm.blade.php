@@ -57,7 +57,7 @@
 
                                             <div class="form-group">
                                                 <input type="submit" value="{{ __('Confirm Password') }}"
-                                                    class="btn btn-primary btn-block" />
+                                                    class="btn secondary-color-bg btn-block" />
                                             </div>
 
                                         </form>

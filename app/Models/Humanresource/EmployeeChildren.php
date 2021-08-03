@@ -56,7 +56,7 @@ class EmployeeChildren extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
-        'gender' => 'integer',
+        'gender' => 'string',
         'birthday' => 'date',
         'employee_id' => 'integer',
         'file_upload' => 'string',
@@ -116,4 +116,5 @@ class EmployeeChildren extends Model
     {
         return $this->belongsTo(\App\Models\User::class, 'updated_by', 'id');
     }
+
 }

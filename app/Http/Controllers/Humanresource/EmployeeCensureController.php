@@ -150,6 +150,7 @@ class EmployeeCensureController extends AppBaseController
         $employeeCensure->delete();
 
         Flash::success('Employee Censure deleted successfully.');
+        return redirect(route('humanresource.employees.show', session('employee_id')));
 
         //return redirect(route('humanresource.employeeCensures.index'));
     }

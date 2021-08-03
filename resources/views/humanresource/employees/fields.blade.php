@@ -229,6 +229,6 @@
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
-    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    <a href="{{ route('humanresource.employees.index') }}" class="btn btn-default">Cancel</a>
+    {!! Form::submit('Save', ['class' => 'btn secondary-color-bg']) !!}
+    <a href="{{ route('humanresource.employees.index') }}" class="btn btn-default text-danger">Cancel</a>
 </div>

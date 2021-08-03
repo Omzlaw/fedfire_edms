@@ -81,7 +81,7 @@
                                 <div class="form-position">
                                     <div class="row">
                                         <div class="col-md-12  col-sm-12 col-12  col-lg-12 text-right">
-                                            <button type="submit" class="btn btn-responsive btn-primary">Submit</button>
+                                            <button type="submit" class="btn btn-responsive secondary-color-bg">Submit</button>
                                         </div>
                                     </div>
                                 </div>
@@ -423,7 +423,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-primary" type="submit">Submit form</button>
+                <button class="btn secondary-color-bg" type="submit">Submit form</button>
             </form>
                 </div>
             </div>

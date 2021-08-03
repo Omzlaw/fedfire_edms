@@ -171,6 +171,7 @@
             @yield('content')
         </aside>
         @include('layouts.modal')
+        @include('layouts.footer')
     </div>
     <!-- ./wrapper -->
     <!-- Footer end -->

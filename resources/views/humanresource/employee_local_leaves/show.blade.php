@@ -30,6 +30,6 @@ Employee Local Leaves @parent
         </div>
     </div>
     {{-- <a href="{{ route('humanresource.employeeLocalLeaves.index') }}"
-                class="btn btn-primary">Back</a> --}}
+                class="btn secondary-color-bg">Back</a> --}}
 </div>
 @endsection

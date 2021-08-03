@@ -29,6 +29,6 @@ Local Govt Areas @parent
         </div>
     </div>
     <a href="{{ route('shared.localGovtAreas.index') }}"
-                class="btn btn-primary">Back</a>
+                class="btn secondary-color-bg">Back</a>
 </div>
 @endsection

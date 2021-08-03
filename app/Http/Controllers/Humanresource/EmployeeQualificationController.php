@@ -150,6 +150,7 @@ class EmployeeQualificationController extends AppBaseController
         $employeeQualification->delete();
 
         Flash::success('Employee Qualification deleted successfully.');
+        return redirect(route('humanresource.employees.show', session('employee_id')));
 
         //return redirect(route('humanresource.employeeQualifications.index'));
     }

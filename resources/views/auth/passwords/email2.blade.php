@@ -55,7 +55,7 @@
                             <div class="col-md-12">
                                 <div class="form-group mt-20px">
                                     <input type="submit" value="{{ __('Send Password Reset Link') }}"
-                                        class="btn btn-primary btn-block" />
+                                        class="btn secondary-color-bg btn-block" />
                                 </div>
                             </div>
                         </form>

@@ -22,6 +22,6 @@
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
-    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+    {!! Form::submit('Save', ['class' => 'btn secondary-color-bg']) !!}
     <a href="{{ route('shared.settings.index') }}" class="btn btn-default">Cancel</a>
 </div>

@@ -157,7 +157,7 @@ Cards @parent
                     <h6 class="card-title">Card title text</h6>
                     <p class="card-text mt-2">With supporting text below as a natural lead-in to additional content.
                     </p>
-                    <a href="#" class="btn btn-primary btn-round">Go somewhere</a>
+                    <a href="#" class="btn secondary-color-bg btn-round">Go somewhere</a>
                 </div>
             </div>
         </div>
@@ -185,7 +185,7 @@ Cards @parent
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum, cumque!</p>
                         </div>
                         <div class="col-xl-8 col-lg-10 mb-20">
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a href="#" class="btn secondary-color-bg">Go somewhere</a>
 
                         </div>
                     </div>

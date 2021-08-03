@@ -153,6 +153,7 @@ class EmployeeForeignToursController extends AppBaseController
         $employeeForeignTours->delete();
 
         Flash::success('Employee Foreign Tours deleted successfully.');
+        return redirect(route('humanresource.employees.show', session('employee_id')));
 
         //return redirect(route('humanresource.employeeForeignTours.index'));
     }

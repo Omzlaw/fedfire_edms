@@ -150,6 +150,7 @@ class EmployeePublicServiceController extends AppBaseController
         $employeePublicService->delete();
 
         Flash::success('Employee Public Service deleted successfully.');
+        return redirect(route('humanresource.employees.show', session('employee_id')));
 
         //return redirect(route('humanresource.employeePublicServices.index'));
     }

@@ -51,7 +51,7 @@ class EmployeeController extends AppBaseController
     public function store(CreateEmployeeRequest $request)
     {
         $input = $request->all();
-        $input['staff_code'] = $input['first_name'] . '_' . $input['last_name'] . '_' . $input['file_no'] ;
+        $input['staff_code'] = $input['first_name'] . '_' . $input['last_name'] . '_' . $input['file_no'];
         /** @var Employee $employee */
         $employee = Employee::create($input);
 
@@ -73,15 +73,133 @@ class EmployeeController extends AppBaseController
         /** @var Employee $employee */
         $employee = Employee::find($id);
 
+        // dd($data['children']);
+
+
         if (empty($employee)) {
             Flash::error('Employee not found');
 
             return redirect(route('humanresource.employees.index'));
         }
 
-        Session::put('employee_id', $id);
+        $data['employee'] = $employee;
 
-        return view('humanresource.employees.show')->with('employee', $employee);
+        //get the children
+
+        $data['children'] = $employee->children->map(function ($item) {
+            $item->gender = get_enum_value('enum_gender', $item->gender);
+            $item->birthday = format_date($item->birthday);
+            return $item;
+        });
+
+        //get the action sheets
+
+        $data['actionSheets'] = $employee->actionSheets->map(function ($item) {
+            return $item;
+        });
+
+        //get the addresses
+
+        $data['addresses'] = $employee->addresses->map(function ($item) {
+            $item->status = get_enum_value('enum_status', $item->status);
+            return $item;
+        });
+
+        //get the censures
+
+        $data['censures'] = $employee->censures->map(function ($item) {
+            return $item;
+        });
+
+        //get the certificates
+
+        $data['certificates'] = $employee->certificates->map(function ($item) {
+            return $item;
+        });
+
+        //get the educations
+
+        $data['educations'] = $employee->educations->map(function ($item) {
+            return $item;
+        });
+
+        //get the addresses
+
+        $data['addresses'] = $employee->addresses->map(function ($item) {
+            return $item;
+        });
+
+        //get the forceServices
+
+        $data['forceServices'] = $employee->forceServices->map(function ($item) {
+            return $item;
+        });
+
+        //get the foreignTours
+
+        $data['foreignTours'] = $employee->foreignTours->map(function ($item) {
+            return $item;
+        });
+
+        //get the gratuities
+
+        $data['gratuities'] = $employee->gratuities->map(function ($item) {
+            return $item;
+        });
+
+        //get the languages
+
+        $data['languages'] = $employee->languages->map(function ($item) {
+            $item->speaking_fluency = get_enum_value('enum_fluency', $item->speaking_fluency);
+            $item->writing_fluency = get_enum_value('enum_fluency', $item->writing_fluency);
+            $item->language_id = $item->language->title;
+            return $item;
+        });
+
+        //get the localLeaves
+
+        $data['localLeaves'] = $employee->localLeaves->map(function ($item) {
+            return $item;
+        });
+
+        //get the nextOfKins
+
+        $data['nextOfKins'] = $employee->nextOfKins->map(function ($item) {
+            return $item;
+        });
+
+        //get the publicServices
+
+        $data['publicServices'] = $employee->publicServices->map(function ($item) {
+            return $item;
+        });
+
+        //get the qualifications
+
+        $data['qualifications'] = $employee->qualifications->map(function ($item) {
+            return $item;
+        });
+
+        //get the recordTrackers
+
+        $data['recordTrackers'] = $employee->recordTrackers->map(function ($item) {
+            return $item;
+        });
+
+        //get the terminations
+
+        $data['terminations'] = $employee->terminations->map(function ($item) {
+            return $item;
+        });
+
+        //get the spouse
+
+        $data['spouse'] = $employee->spouse->map(function ($item) {
+            return $item;
+        });
+
+        Session::put('employee_id', $id);
+        return view('humanresource.employees.show')->with('data', $data);
     }
 
     /**

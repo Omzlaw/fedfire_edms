@@ -150,6 +150,7 @@ class EmployeeGratuityController extends AppBaseController
         $employeeGratuity->delete();
 
         Flash::success('Employee Gratuity deleted successfully.');
+        return redirect(route('humanresource.employees.show', session('employee_id')));
 
         //return redirect(route('humanresource.employeeGratuities.index'));
     }

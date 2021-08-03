@@ -150,6 +150,7 @@ class EmployeeForceServiceController extends AppBaseController
         $employeeForceService->delete();
 
         Flash::success('Employee Force Service deleted successfully.');
+        return redirect(route('humanresource.employees.show', session('employee_id')));
 
         //return redirect(route('humanresource.employeeForceServices.index'));
     }

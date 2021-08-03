@@ -150,6 +150,7 @@ class EmployeeRecordTrackerController extends AppBaseController
         $employeeRecordTracker->delete();
 
         Flash::success('Employee Record Tracker deleted successfully.');
+        return redirect(route('humanresource.employees.show', session('employee_id')));
 
         //return redirect(route('humanresource.employeeRecordTrackers.index'));
     }

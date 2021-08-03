@@ -105,7 +105,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group mt-25">
-                                <input type="submit" value="Sign Up" class="btn btn-primary btn-block" />
+                                <input type="submit" value="Sign Up" class="btn secondary-color-bg btn-block" />
                             </div>
                         </div>
                         <div class="col-md-12">

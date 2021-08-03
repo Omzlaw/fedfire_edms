@@ -27,7 +27,7 @@
                                 {!! Form::text('file_no', null, ['class' => 'form-control', 'placeholder' => 'Search by File Number']) !!}
                             </div>
                             <div class="form-group col-8">
-                                {!! Form::submit('Search', ['class' => 'btn btn-primary']) !!}
+                                {!! Form::submit('Search', ['class' => 'btn secondary-color-bg']) !!}
                             </div>
                         </div>
                         {!! Form::close() !!}
@@ -79,7 +79,7 @@
                                         <tr>
                                             <td><a target="blank"
                                                     href="{{ route('humanresource.employees.show', $employee->id) }}"
-                                                    class="btn btn-primary">view</a></td>
+                                                    class="btn secondary-color-bg">view</a></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -114,7 +114,7 @@
                                                     <td>{{ $file->remark }}</td>
                                                     <td><a target="blank" title="View File"
                                                             href="{{ $file->file_url[0] }}"
-                                                            class='btn btn-outline-primary btn-xs'><i
+                                                            class='btn custom-outline-primary btn-xs'><i
                                                                 class="im im-icon-Information"></i>
                                                         </a></td>
                                                     <td><a download title="Download File" href="{{ $file->file_url[0] }}"

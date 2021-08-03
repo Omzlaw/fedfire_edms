@@ -30,6 +30,6 @@ Employee Force Services @parent
         </div>
     </div>
     {{-- <a href="{{ route('humanresource.employeeForceServices.index') }}"
-                class="btn btn-primary">Back</a> --}}
+                class="btn secondary-color-bg">Back</a> --}}
 </div>
 @endsection

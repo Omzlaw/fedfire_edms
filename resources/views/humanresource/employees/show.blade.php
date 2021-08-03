@@ -1,3 +1,25 @@
+<?php
+
+    $employee = $data['employee'];
+    $children = $data['children'];
+    $actionSheets = $data['actionSheets'];
+    $censures = $data['censures'];
+    $spouse = $data['spouse'];
+    $addresses = $data['addresses'];
+    $terminations = $data['terminations'];
+    $foreignTours = $data['foreignTours'];
+    $localLeaves = $data['localLeaves'];
+    $languages = $data['languages'];
+    $gratuities = $data['gratuities'];
+    $forceServices = $data['forceServices'];
+    $certificates = $data['certificates'];
+    $publicServices = $data['publicServices'];
+    $educations = $data['educations'];
+    $recordTrackers = $data['recordTrackers'];
+    $nextOfKins = $data['nextOfKins'];
+    $qualifications = $data['qualifications'];
+
+?>
 @extends('layouts.default')
 
 {{-- Page title --}}
@@ -32,7 +54,7 @@
                                     {!! Form::hidden('file_no', $employee->file_no, ['class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group col-8">
-                                    {!! Form::submit('View Files', ['class' => 'btn btn-danger  ']) !!}
+                                    {!! Form::submit('View Files', ['class' => 'btn custom-outline-primary   ']) !!}
                                 </div>
                             </div>
                         {!! Form::close() !!}
@@ -45,11 +67,11 @@
                                 </li>
                                 <li class="list-group-item">
                                     <a class="dt" data-route="humanresource/employeeAddresses"
-                                        data-model="{{ $employee->addresses }}" href="#">Address</a>
+                                        data-model="{{ $addresses }}" href="#">Address</a>
                                 </li>
                                 </li>
                                 <li class="list-group-item"><a class="dt" data-route="humanresource/employeeLanguages"
-                                        data-model="{{ $employee->languages }}" href="#">Languages</a>
+                                        data-model="{{ $languages }}" href="#">Languages</a>
                                 </li>
                             </ul>
                             <div class="card-header bg-secondary bg-gradient">
@@ -58,14 +80,14 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
                                     <a class="dt" data-route="humanresource/employeeChildrens"
-                                        data-model="{{ $employee->children }}" href="#">Children</a>
+                                        data-model="{{ $children }}" href="#">Children</a>
                                 </li>
                                 </li>
                                 <li class="list-group-item"><a class="dt" data-route="humanresource/employeeWives"
-                                        data-model="{{ $employee->spouse }}" href="#">Spouse</a>
+                                        data-model="{{ $spouse }}" href="#">Spouse</a>
                                 </li>
                                 <li class="list-group-item"><a class="dt" data-route="humanresource/employeeNextOfKins"
-                                        data-model="{{ $employee->nextOfKins }}" href="#">Next
+                                        data-model="{{ $nextOfKins }}" href="#">Next
                                         of
                                         Kins</a>
                                 </li>
@@ -76,14 +98,14 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
                                     <a class="dt" data-route="humanresource/employeeCertificates"
-                                        data-model="{{ $employee->certificates }}" href="#">Certificates</a>
+                                        data-model="{{ $certificates }}" href="#">Certificates</a>
                                 </li>
                                 </li>
                                 <li class="list-group-item"><a class="dt" data-route="humanresource/employeeEducations"
-                                        data-model="{{ $employee->educations }}" href="#">Education</a>
+                                        data-model="{{ $educations }}" href="#">Education</a>
                                 </li>
                                 <li class="list-group-item"><a class="dt" data-route="humanresource/employeeQualifications"
-                                        data-model="{{ $employee->qualifications }}" href="#">Qualifications</a>
+                                        data-model="{{ $qualifications }}" href="#">Qualifications</a>
                                 </li>
                             </ul>
                             <div class="card-header bg-secondary bg-gradient">
@@ -92,15 +114,15 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
                                     <a class="dt" data-route="humanresource/employeeActionSheets"
-                                        data-model="{{ $employee->actionSheets }}" href="#">Action
+                                        data-model="{{ $actionSheets }}" href="#">Action
                                         Sheets</a>
                                 </li>
                                 </li>
                                 <li class="list-group-item"><a class="dt" data-route="humanresource/employeeCensures"
-                                        data-model="{{ $employee->censures }}" href="#">Censures</a>
+                                        data-model="{{ $censures }}" href="#">Censures</a>
                                 </li>
                                 <li class="list-group-item"><a class="dt" data-route="humanresource/employeeRecordTrackers"
-                                        data-model="{{ $employee->recordTrackers }}" href="#">Record
+                                        data-model="{{ $recordTrackers }}" href="#">Record
                                         Trackers</a>
                                 </li>
                             </ul>
@@ -110,12 +132,12 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
                                     <a class="dt" data-route="humanresource/employeeForceServices"
-                                        data-model="{{ $employee->forceServices }}" href="#">Force
+                                        data-model="{{ $forceServices }}" href="#">Force
                                         Services</a>
                                 </li>
                                 </li>
                                 <li class="list-group-item"><a class="dt" data-route="humanresource/employeePublicServices"
-                                        data-model="{{ $employee->publicServices }}" href="#">Public
+                                        data-model="{{ $publicServices }}" href="#">Public
                                         Services</a>
                                 </li>
                             </ul>
@@ -125,11 +147,11 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
                                     <a class="dt" data-route="humanresource/employeeGratuities"
-                                        data-model="{{ $employee->gratuities }}" href="#">Gratuity</a>
+                                        data-model="{{ $gratuities }}" href="#">Gratuity</a>
                                 </li>
                                 </li>
                                 <li class="list-group-item"><a class="dt" data-route="humanresource/employeeTerminations"
-                                        data-model="{{ $employee->terminations }}" href="#">Termination</a>
+                                        data-model="{{ $terminations }}" href="#">Termination</a>
                                 </li>
                             </ul>
                             <div class="card-header bg-secondary bg-gradient">
@@ -138,12 +160,12 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
                                     <a class="dt" data-route="humanresource/employeeForeignTours"
-                                        data-model="{{ $employee->foreignTours }}" href="#">Foreign
+                                        data-model="{{ $foreignTours }}" href="#">Foreign
                                         Tours</a>
                                 </li>
                                 </li>
                                 <li class="list-group-item"><a class="dt" data-route="humanresource/employeeLocalLeaves"
-                                        data-model="{{ $employee->localLeaves }}" href="#">Local
+                                        data-model="{{ $localLeaves }}" href="#">Local
                                         Leaves</a>
                                 </li>
                             </ul>
@@ -202,7 +224,7 @@
                                 <h5 id="details-header" class="card-title d-inline"></h5>
                                 <span class="float-right">
                                     <a id="add-new-button" data-route="" data-toggle="modal" data-target='#model_modal'
-                                        class="btn btn-danger pull-right" href="#">Add New
+                                        class="btn secondary-color-bg  pull-right" href="#">Add New
                                     </a>
                                 </span>
                             </div>
@@ -245,11 +267,16 @@
 
      
 
-        {{-- <a href="humanresource.employees.index" class="btn btn-primary">Back</a> --}}
+        {{-- <a href="humanresource.employees.index" class="btn secondary-color-bg">Back</a> --}}
     </div>
 
     <script>
-        window.onload = buildTable;
+        window.onload = intialiseFunctions;
+
+        function intialiseFunctions(){
+            buildTable();
+        }
+
 
         function getActions(id, url) {
             let host = window.location.protocol + "//" + window.location.host;
@@ -260,7 +287,7 @@
                                     data-id="${id}" 
                                     data-route="${host}/${url}/${id}" 
                                     href="#" title='show'
-                                    class='btn btn-outline-info btn-xs action-buttons'>
+                                    class='btn custom-outline-primary btn-xs action-buttons'>
                                     <i class="im im-icon-Information"></i>
                                 </a>
 
@@ -270,16 +297,16 @@
                                     data-id="${id}" 
                                     data-route="${host}/${url}/${id}/edit" 
                                     href="#" title='edit'
-                                    class='btn btn-outline-primary btn-xs action-buttons'>
+                                    class='btn custom-outline-primary btn-xs action-buttons'>
                                     <i class="im im-icon-File-Edit"></i>
                                 </a>
-                                <form id="delete-form" action="${host}/${url}/${id}" method="post">
+                                <form id="delete-form-${id}" action="${host}/${url}/${id}" method="post">
                                     @csrf
                                     <input name="_method" type="hidden" value="DELETE">
                                     <button type="button"  
                                         title='delete'
-                                        class='btn btn-outline-danger btn-xs delete-button'
-                                        onclick="confirmation()">
+                                        class='btn btn-outline-danger btn-xs'
+                                        onclick="confirmation(${id})">
                                         <i class="im im-icon-Remove"></i>
                                     </button>
                                 </form>
@@ -288,10 +315,10 @@
         }
 
 
-        function confirmation() {
+        function confirmation(id) {
             let result = confirm('Are you sure you want to delete');
             if(result) {
-                $('#delete-form').submit();
+                $('#delete-form-' + id).submit();
             }
         }
 
@@ -339,48 +366,10 @@
                     if (data[0] != null || data[0] != undefined) {
                         columnNames = Object.keys(data[0]);
                         for (var i in columnNames) {
-                            if(columnNames[i] == 'status') {
-                                columns.push({
-                                    title: 'status',
-                                    render: (data, type, row, meta) => {
-                                        switch (row.status) {
-                                            case 1:
-                                                return 'Active'
-                                                break;
-                                            case 0:
-                                                return 'inactive'
-                                                break;
-                                        
-                                            default:
-                                                break;
-                                        }
-                                    }
-                                })
-                            }
-                            else if(columnNames[i] == 'gender') {
-                                columns.push({
-                                    title: 'gender',
-                                    render: (data, type, row, meta) => {
-                                        switch (row.gender) {
-                                            case 1:
-                                                return 'Male'
-                                                break;
-                                            case 0:
-                                                return 'Female'
-                                                break;
-                                        
-                                            default:
-                                                break;
-                                        }
-                                    }
-                                })
-                            }
-                            else {
                                 columns.push({
                                 data: columnNames[i],
                                 title: columnNames[i],
                             });
-                            }
                         }
 
                         columns.push({
@@ -392,7 +381,7 @@
                                 }
                         })
 
-                        $('#details-table').DataTable({
+                        let table = $('#details-table').DataTable({
                             "filter": true, // this is for disable filter (search box)
                             "orderMulti": false, // for disable multiple column at once
                             "bDestroy": true, //for reinitialize the datatable
@@ -416,6 +405,7 @@
                             ],
                         });
 
+                        table.column( 0 ).visible( false );
 
                         $(".action-buttons").each(function(index) {
                             $(this).click(function() {

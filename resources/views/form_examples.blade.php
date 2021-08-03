@@ -48,7 +48,7 @@ Form Examples @parent
                         <div class="form-position">
                             <div class="row">
                                 <div class="col-md-offset-3 col-md-9 ml-auto  mb-3">
-                                    <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-sm secondary-color-bg">Submit</button>
                                     &nbsp;
                                     <button type="button" class="btn btn-sm btn-danger">Cancel</button>
                                     &nbsp;
@@ -278,7 +278,7 @@ Form Examples @parent
                         <div class="form-actions">
                             <div class="row">
                                 <div class="col-md-offset-3 col-md-9 ml-auto  mb-3">
-                                    <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-sm secondary-color-bg">Submit</button>
                                     &nbsp;
                                     <button type="button" class="btn btn-sm btn-danger">Cancel</button>
                                     &nbsp;
@@ -305,7 +305,7 @@ Form Examples @parent
                     <form action="#" class="form-horizontal">
                         <div class="form-position row">
                             <div class="col-md-offset-3 col-md-9 ml-auto mb-3">
-                                <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-sm secondary-color-bg">Submit</button>
                                 &nbsp;
                                 <button type="button" class="btn btn-sm btn-danger">Cancel</button>
                                 &nbsp;
@@ -414,7 +414,7 @@ Form Examples @parent
                         </div>
                         <div class="form-position row">
                             <div class="col-md-offset-3 col-md-9 ml-auto mb-3">
-                                <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-sm secondary-color-bg">Submit</button>
                                 &nbsp;
                                 <button type="button" class="btn btn-sm btn-danger">Cancel</button>
                                 &nbsp;
@@ -441,7 +441,7 @@ Form Examples @parent
                 <div class="card-body">
                     <form action="#">
                         <div class="form-position mb-3">
-                            <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-sm secondary-color-bg">Submit</button>
                             &nbsp;
                             <button type="button" class="btn btn-sm btn-danger">Cancel</button>
                             &nbsp;
@@ -548,7 +548,7 @@ Form Examples @parent
                             </div>
                         </div>
                         <div class="form-actions">
-                            <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-sm secondary-color-bg">Submit</button>
                             &nbsp;
                             <button type="button" class="btn btn-sm btn-danger">Cancel</button>
                             &nbsp;
@@ -572,7 +572,7 @@ Form Examples @parent
                 <div class="card-body">
                     <form action="#">
                         <div class="form-position text-right mb-3">
-                            <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-sm secondary-color-bg">Submit</button>
                             &nbsp;
                             <button type="button" class="btn btn-sm btn-danger">Cancel</button>
                             &nbsp;
@@ -679,7 +679,7 @@ Form Examples @parent
                             </div>
                         </div>
                         <div class="form-actions text-right ">
-                            <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-sm secondary-color-bg">Submit</button>
                             &nbsp;
                             <button type="button" class="btn btn-sm btn-danger">Cancel</button>
                             &nbsp;

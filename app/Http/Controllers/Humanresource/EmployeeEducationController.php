@@ -156,6 +156,7 @@ class EmployeeEducationController extends AppBaseController
         $employeeEducation->delete();
 
         Flash::success('Employee Education deleted successfully.');
+        return redirect(route('humanresource.employees.show', session('employee_id')));
 
         //return redirect(route('humanresource.employeeEducations.index'));
     }

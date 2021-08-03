@@ -34,12 +34,12 @@
                                     <p class="text-center">Welcome Back, Please login to your account</p>
                                     <div class="row social-buttons">
                                         <div class="  col-sm-8 col-md-10 col-10 text-center mx-auto">
-                                            <button type="button" class="btn btn-primary   m-t-10 btn-block"><span
+                                            <button type="button" class="btn secondary-color-bg   m-t-10 btn-block"><span
                                                     class="mr-15"><i class="im im-icon-Facebook-2"></i></span> Sign In
                                                 with Facebook</button>
                                         </div>
                                         <div class=" col-sm-8 col-md-10 col-10 text-center mx-auto">
-                                            <button type="button" class="btn btn-primary    m-t-10 btn-block"><span
+                                            <button type="button" class="btn secondary-color-bg    m-t-10 btn-block"><span
                                                     class="mr-15"><i class="im im-icon-Twitter"></i></span> Sign In with
                                                 Twitter</button>
                                         </div>
@@ -94,7 +94,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group mt-4">
                                             <input type="submit" value="Sign In"
-                                                class="btn btn-primary btn-block signin-btn" />
+                                                class="btn secondary-color-bg btn-block signin-btn" />
                                         </div>
                                     </div>
                                     <div class="col-md-12">

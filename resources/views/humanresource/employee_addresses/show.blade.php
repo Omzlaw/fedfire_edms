@@ -30,6 +30,6 @@ Employee Addresses @parent
         </div>
     </div>
     {{-- <a href="{{ route('humanresource.employeeAddresses.index') }}"
-                class="btn btn-primary">Back</a> --}}
+                class="btn secondary-color-bg">Back</a> --}}
 </div>
 @endsection

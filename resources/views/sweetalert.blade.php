@@ -35,63 +35,63 @@ SweetAlert @parent
 
         <div class="col-md-6 col-lg-3 col-12   mb-30">
             <div class="text-center bg-white basic">
-                <button class="btn btn-primary" id="simple">Basic Alert</button>
+                <button class="btn secondary-color-bg" id="simple">Basic Alert</button>
             </div>
         </div>
         <div class="col-md-6 col-lg-3 col-12   mb-30">
             <div class="text-center bg-white basic">
-                <button class="btn btn-primary" id="description">Description Alert</button>
+                <button class="btn secondary-color-bg" id="description">Description Alert</button>
             </div>
         </div>
         <div class="col-md-6 col-lg-3 col-12 mb-30">
             <div class="text-center bg-white basic">
-                <button class="btn btn-primary" id="questionalert">Question Alert</button>
+                <button class="btn secondary-color-bg" id="questionalert">Question Alert</button>
             </div>
         </div>
         <div class="col-md-6 col-lg-3 col-12  mb-30">
             <div class="text-center bg-white basic">
-                <button class="btn btn-primary" id="basic">Success Alert</button>
+                <button class="btn secondary-color-bg" id="basic">Success Alert</button>
             </div>
         </div>
 
         <div class="col-md-6 col-lg-3 col-12  mb-30">
             <div class="text-center bg-white basic">
-                <button class="btn btn-primary" id="customposition">Custom Position</button>
+                <button class="btn secondary-color-bg" id="customposition">Custom Position</button>
             </div>
         </div>
         <div class="col-md-6 col-lg-3 col-12  mb-30">
             <div class="text-center bg-white basic">
-                <button class="btn btn-primary" id="warningalert">Warning Alert</button>
+                <button class="btn secondary-color-bg" id="warningalert">Warning Alert</button>
             </div>
         </div>
         <div class="col-md-6 col-lg-3 col-12  mb-30">
             <div class="text-center bg-white basic">
-                <button class="btn btn-primary" id="htmlalert">HTML Tag</button>
+                <button class="btn secondary-color-bg" id="htmlalert">HTML Tag</button>
             </div>
         </div>
         <div class="col-md-6 col-lg-3 col-12  mb-30">
             <div class="text-center bg-white basic">
-                <button class="btn btn-primary" id="customalert">Custom Alert</button>
+                <button class="btn secondary-color-bg" id="customalert">Custom Alert</button>
             </div>
         </div>
         <div class="col-md-6 col-lg-3 col-12  mb-30">
             <div class="text-center bg-white basic">
-                <button class="btn btn-primary" id="animatealert">Animate Alert</button>
+                <button class="btn secondary-color-bg" id="animatealert">Animate Alert</button>
             </div>
         </div>
         <div class="col-md-6 col-lg-3 col-12  mb-30">
             <div class="text-center bg-white basic">
-                <button class="btn btn-primary" id="autoclose">Autoclose</button>
+                <button class="btn secondary-color-bg" id="autoclose">Autoclose</button>
             </div>
         </div>
         <div class="col-md-6 col-lg-3 col-12  mb-30">
             <div class="text-center bg-white basic">
-                <button class="btn btn-primary" id="ajaxrequest">Ajax Request</button>
+                <button class="btn secondary-color-bg" id="ajaxrequest">Ajax Request</button>
             </div>
         </div>
         <div class="col-md-6 col-lg-3 col-12  mb-30">
             <div class="text-center bg-white basic">
-                <button class="btn btn-primary" id="Chaining">Chaining Modal</button>
+                <button class="btn secondary-color-bg" id="Chaining">Chaining Modal</button>
             </div>
         </div>
     </div>

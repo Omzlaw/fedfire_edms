@@ -56,7 +56,7 @@
                         </div>
         
                         <div class="form-group" style="font-family: 'Source Sans Pro', sans-serif;"><button
-                                class="btn btn-primary d-xl-flex" type="submit"
+                                class="btn secondary-color-bg text-white d-xl-flex" type="submit"
                                 style="background-color: rgb(6,12,56);padding-right: 95px;padding-left: 95px;margin-left: 40px;">LOG
                                 IN</button>
                         </div>

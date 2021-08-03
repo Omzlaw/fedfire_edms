@@ -30,6 +30,6 @@ Employee Next Of Kins @parent
         </div>
     </div>
     {{-- <a href="{{ route('humanresource.employeeNextOfKins.index') }}"
-                class="btn btn-primary">Back</a> --}}
+                class="btn secondary-color-bg">Back</a> --}}
 </div>
 @endsection

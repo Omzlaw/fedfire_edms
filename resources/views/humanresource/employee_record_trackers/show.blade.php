@@ -30,6 +30,6 @@ Employee Record Trackers @parent
         </div>
     </div>
     {{-- <a href="{{ route('humanresource.employeeRecordTrackers.index') }}"
-                class="btn btn-primary">Back</a> --}}
+                class="btn secondary-color-bg">Back</a> --}}
 </div>
 @endsection

@@ -103,7 +103,7 @@
                         <div class="btn-group float-right" style="margin-top: 5px">
                             <button type="button" class="btn btn-secondary" id="saveForm">Save Current Form
                                 Layout</button>
-                            <label class="btn btn-primary" style="margin-bottom: 0px">Load Form Layout From File
+                            <label class="btn secondary-color-bg" style="margin-bottom: 0px">Load Form Layout From File
                                 <input type="file" id="loadForm" style="display: none;">
                             </label>
                         </div>
@@ -224,7 +224,7 @@
         <div class="card-footer">
             <div class="form-inline col-md-12" style="padding:15px 15px;text-align: right">
                 <div class="form-group" style="border-color: transparent;padding-left: 10px">
-                    <button type="submit" class="btn btn-flat btn-primary btn-blue" id="btnGenerate">Generate
+                    <button type="submit" class="btn btn-flat secondary-color-bg btn-blue" id="btnGenerate">Generate
                     </button>
                 </div>
                 <div class="form-group" style="border-color: transparent;padding-left: 10px">

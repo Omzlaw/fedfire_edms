@@ -154,6 +154,7 @@ class EmployeeTerminationController extends AppBaseController
         $employeeTermination->delete();
 
         Flash::success('Employee Termination deleted successfully.');
+        return redirect(route('humanresource.employees.show', session('employee_id')));
 
         //return redirect(route('humanresource.employeeTerminations.index'));
     }

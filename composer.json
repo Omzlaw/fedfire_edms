@@ -55,7 +55,7 @@
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         },
-        "files": ["app/Helpers/dropdown.php", "app/Helpers/closeModalAndRefresh.php"]
+        "files": ["app/Helpers/dropdown.php", "app/Helpers/closeModalAndRefresh.php", "app/Helpers/dateTimeHelper.php"]
     },
     "autoload-dev": {
         "psr-4": {

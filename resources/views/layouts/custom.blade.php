@@ -34,7 +34,6 @@
         <div class="mt-3">
             @yield('content')
         </div>
-        @include('layouts.modal')
     </div>
     <!-- ./wrapper -->
     <!-- Footer end -->

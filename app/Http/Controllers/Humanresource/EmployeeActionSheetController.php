@@ -52,7 +52,7 @@ class EmployeeActionSheetController extends AppBaseController
 
         Flash::success('Employee Action Sheet saved successfully.');
         close_modal_refresh();
-        // //return redirect(route('humanresource.employeeActionSheets.index'));
+        // return redirect(route('humanresource.employeeActionSheets.index'));
     }
 
     /**
@@ -114,7 +114,7 @@ class EmployeeActionSheetController extends AppBaseController
             Flash::error('Employee Action Sheet not found');
             close_modal_refresh();
 
-            // //return redirect(route('humanresource.employeeActionSheets.index'));
+            // return redirect(route('humanresource.employeeActionSheets.index'));
         }
 
         $employeeActionSheet->fill($request->all());
@@ -149,7 +149,7 @@ class EmployeeActionSheetController extends AppBaseController
         $employeeActionSheet->delete();
 
         Flash::success('Employee Action Sheet deleted successfully.');
-        close_modal_refresh();
+        return redirect(route('humanresource.employees.show', session('employee_id')));
 
         // //return redirect(route('humanresource.employeeActionSheets.index'));
     }

@@ -153,6 +153,7 @@ class EmployeeLocalLeaveController extends AppBaseController
         $employeeLocalLeave->delete();
 
         Flash::success('Employee Local Leave deleted successfully.');
+        return redirect(route('humanresource.employees.show', session('employee_id')));
 
         //return redirect(route('humanresource.employeeLocalLeaves.index'));
     }

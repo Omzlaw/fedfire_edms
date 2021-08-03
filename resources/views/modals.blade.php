@@ -37,7 +37,7 @@
 
                     <div class="col-12 py-3">
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        <button type="button" class="btn secondary-color-bg" data-toggle="modal" data-target="#exampleModal">
                             Launch demo modal
                         </button>
 
@@ -58,7 +58,7 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
                                         </button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                        <button type="button" class="btn secondary-color-bg">Save changes</button>
                                     </div>
                                 </div>
                             </div>
@@ -79,7 +79,7 @@
                     <div class="col-12 py-3">
 
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                        <button type="button" class="btn secondary-color-bg" data-toggle="modal" data-target="#exampleModalLong">
                             Launch demo modal
                         </button>
 
@@ -115,7 +115,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                        <button type="button" class="btn secondary-color-bg">Save changes</button>
                                     </div>
                                 </div>
                             </div>
@@ -138,7 +138,7 @@
 
                     <div class="col-12 py-3">
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                        <button type="button" class="btn secondary-color-bg" data-toggle="modal" data-target="#exampleModalCenter">
                             Launch demo modal
                         </button>
 
@@ -160,7 +160,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                        <button type="button" class="btn secondary-color-bg">Save changes</button>
                                     </div>
                                 </div>
                             </div>
@@ -180,7 +180,7 @@
                     <div class="col-12 py-3">
 
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                        <button type="button" class="btn secondary-color-bg" data-toggle="modal" data-target="#exampleModalLong">
                             Launch demo modal
                         </button>
 
@@ -216,7 +216,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                        <button type="button" class="btn secondary-color-bg">Save changes</button>
                                     </div>
                                 </div>
                             </div>

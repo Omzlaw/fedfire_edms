@@ -1,7 +1,7 @@
 <div class="">
 
                 <div class="btn-group ">
-                    <button type="button" class="btn btn-primary w-140px dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="btn secondary-color-bg w-140px dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Manage
                     </button>
                     <div class="dropdown-menu">
@@ -70,7 +70,7 @@
                         
         <div class="modal-footer justify-content-between">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#modal-add-internal-respondent">Proceed </button>
+          <button type="button" class="btn secondary-color-bg" data-dismiss="modal" data-toggle="modal" data-target="#modal-add-internal-respondent">Proceed </button>
         </div>
       </div>
       <!-- /.modal-content -->

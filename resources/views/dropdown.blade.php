@@ -49,7 +49,7 @@
             <div class="col-lg-2 col-md-3 col-sm-4 col-12 mb-15">
 
                 <div class="btn-group ">
-                    <button type="button" class="btn btn-primary w-140px dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="btn secondary-color-bg w-140px dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Primary
                     </button>
                     <div class="dropdown-menu">
@@ -151,7 +151,7 @@
             <div class="col-lg-2 col-md-3 col-sm-4 col-12 mb-15">
 
                 <div class="btn-group dropup">
-                    <button type="button" class="btn btn-primary w-140px dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="btn secondary-color-bg w-140px dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Primary
                     </button>
                     <div class="dropdown-menu">
@@ -249,8 +249,8 @@
 <div class="row dropdown-page">
         <div class="col-md-4 col-lg-3 col-sm-4 col-12 mt-15 col-xl-2 ">
                 <div class="btn-group">
-                    <button type="button" class="btn btn-primary w-140px">Primary</button>
-                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="btn secondary-color-bg w-140px">Primary</button>
+                    <button type="button" class="btn secondary-color-bg dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="sr-only">Toggle Dropdown</span>
                     </button>
                     <div class="dropdown-menu">
@@ -349,7 +349,7 @@
             <!-- Large button groups (default and split) -->
             <div class="col-md-3 col-12 col-sm-6">
                 <div class="btn-group">
-                    <button class="btn btn-primary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn secondary-color-bg btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Large button
                     </button>
                     <div class="dropdown-menu">
@@ -362,7 +362,7 @@
             <!-- Small button groups (default and split) -->
             <div class="col-md-3 col-12 col-sm-6 align-self-lg-center">
                 <div class="btn-group">
-                    <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn secondary-color-bg btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Small button
                     </button>
                     <div class="dropdown-menu">
@@ -374,10 +374,10 @@
             </div>
             <div class="col-md-3 col-12 col-sm-6">
                 <div class="btn-group">
-                    <button class="btn btn-primary btn-lg" type="button">
+                    <button class="btn secondary-color-bg btn-lg" type="button">
                         Large split button
                     </button>
-                    <button type="button" class="btn btn-lg btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="btn btn-lg secondary-color-bg dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="sr-only">Toggle Dropdown</span>
                     </button>
                     <div class="dropdown-menu">
@@ -391,10 +391,10 @@
 
             <div class="col-md-3 col-12 col-sm-6 align-self-lg-center">
                 <div class="btn-group">
-                    <button class="btn btn-primary btn-sm" type="button">
+                    <button class="btn secondary-color-bg btn-sm" type="button">
                         Small split button
                     </button>
-                    <button type="button" class="btn btn-sm btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="btn btn-sm secondary-color-bg dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="sr-only">Toggle Dropdown</span>
                     </button>
                     <div class="dropdown-menu">

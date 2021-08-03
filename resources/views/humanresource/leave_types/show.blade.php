@@ -29,6 +29,6 @@ Leave Types @parent
         </div>
     </div>
     <a href="{{ route('humanresource.leaveTypes.index') }}"
-                class="btn btn-primary">Back</a>
+                class="btn secondary-color-bg">Back</a>
 </div>
 @endsection

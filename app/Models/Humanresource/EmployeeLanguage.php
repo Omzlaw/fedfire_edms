@@ -57,11 +57,11 @@ class EmployeeLanguage extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'speaking_fluency' => 'integer',
-        'writing_fluency' => 'integer',
+        'speaking_fluency' => 'string',
+        'writing_fluency' => 'string',
         'exam_qualified' => 'string',
         'employee_id' => 'integer',
-        'language_id' => 'integer',
+        'language_id' => 'string',
         'file_upload' => 'string',
         'status' => 'integer',
         'remark' => 'string',

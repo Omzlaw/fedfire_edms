@@ -88,6 +88,6 @@
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
-    {!! Form::submit('Save', ['class' => 'btn btn-primary save-button']) !!}
+    {!! Form::submit('Save', ['class' => 'btn secondary-color-bg save-button']) !!}
     {{-- <a href="#" class="btn btn-default modal-cancel">Cancel</a> --}}
 </div>

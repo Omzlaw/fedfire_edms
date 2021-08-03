@@ -463,7 +463,7 @@ Form Layouts @parent
                         <div class="form-group">
                             <div class="row">
                                 <div class=" col-12">
-                                    <button type="submit" class="btn btn-primary">Login</button>
+                                    <button type="submit" class="btn secondary-color-bg">Login</button>
                                 </div>
                             </div>
                         </div>

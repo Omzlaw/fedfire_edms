@@ -222,7 +222,7 @@ Crud Builder @parent
                         <div class="row">
                             <div class="form-inline col-md-12" style="padding:15px 15px;text-align: right">
                                 <div class="form-group" style="border-color: transparent;padding-left: 10px">
-                                    <button type="submit" class="btn btn-flat btn-primary btn-blue"
+                                    <button type="submit" class="btn btn-flat secondary-color-bg btn-blue"
                                         id="btnGenerate">Generate
                                     </button>
                                 </div>
@@ -306,7 +306,7 @@ Crud Builder @parent
                         </div>
                         <div class="form-inline col-md-12" style="padding:15px 15px;text-align: right">
                             <div class="form-group" style="border-color: transparent;padding-left: 10px">
-                                <button type="submit" class="btn btn-flat btn-primary btn-blue"
+                                <button type="submit" class="btn btn-flat secondary-color-bg btn-blue"
                                     id="btnRollback">Rollback
                                 </button>
                             </div>
@@ -353,7 +353,7 @@ Crud Builder @parent
                         </div>
                         <div class="form-inline col-md-12" style="padding:15px 15px;text-align: right">
                             <div class="form-group" style="border-color: transparent;padding-left: 10px">
-                                <button type="submit" class="btn btn-flat btn-primary btn-blue"
+                                <button type="submit" class="btn btn-flat secondary-color-bg btn-blue"
                                     id="btnSmGenerate">Generate
                                 </button>
                             </div>

@@ -259,3 +259,19 @@ body > .header .navbar_fixed_top{
   background-color: #060c38;
   color: #fff
 }
+
+.page-item.active .page-link {
+  background-color: #1e244b;
+  border-color: #1e244b;
+}
+
+.custom-outline-primary {
+  color: #060c38;
+  border-color: #060c38;
+}
+
+.modal-buttons { 
+  width: 17%;
+  display: inline-block;
+
+}

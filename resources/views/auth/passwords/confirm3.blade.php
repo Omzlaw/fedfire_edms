@@ -52,7 +52,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group mt-4">
                                             <input type="submit" value="{{ __('Confirm Password') }}"
-                                                class="btn btn-primary btn-block signin-btn" />
+                                                class="btn secondary-color-bg btn-block signin-btn" />
                                         </div>
                                     </div>
                                 </form>

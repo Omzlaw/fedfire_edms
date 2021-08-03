@@ -152,6 +152,7 @@ class EmployeeLanguageController extends AppBaseController
         $employeeLanguage->delete();
 
         Flash::success('Employee Language deleted successfully.');
+        return redirect(route('humanresource.employees.show', session('employee_id')));
 
         //return redirect(route('humanresource.employeeLanguages.index'));
     }

@@ -30,6 +30,6 @@ Employee Foreign Tours @parent
         </div>
     </div>
     {{-- <a href="{{ route('humanresource.employeeForeignTours.index') }}"
-                class="btn btn-primary">Back</a> --}}
+                class="btn secondary-color-bg">Back</a> --}}
 </div>
 @endsection

@@ -57,7 +57,7 @@ class EmployeeAddressController extends AppBaseController
         Flash::success('Employee Address saved successfully.');
         close_modal_refresh();
 
-        //return redirect(route('humanresource.employeeAddresses.index'));
+        // return redirect(route('humanresource.employeeAddresses.index'));
     }
 
     /**
@@ -130,7 +130,7 @@ class EmployeeAddressController extends AppBaseController
         Flash::success('Employee Address updated successfully.');
         close_modal_refresh();
 
-        //return redirect(route('humanresource.employeeAddresses.index'));
+        // return redirect(route('humanresource.employeeAddresses.index'));
     }
 
     /**
@@ -156,6 +156,7 @@ class EmployeeAddressController extends AppBaseController
         $employeeAddress->delete();
 
         Flash::success('Employee Address deleted successfully.');
+        return redirect(route('humanresource.employees.show', session('employee_id')));
 
         //return redirect(route('humanresource.employeeAddresses.index'));
     }

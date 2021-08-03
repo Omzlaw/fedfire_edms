@@ -30,6 +30,6 @@ User @parent
         </div>
     </div>
     <a href="{{ route('users.index') }}"
-                class="btn btn-primary">Back</a>
+                class="btn secondary-color-bg">Back</a>
 </div>
 @endsection

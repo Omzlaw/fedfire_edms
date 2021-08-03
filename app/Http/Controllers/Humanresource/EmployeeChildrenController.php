@@ -154,5 +154,6 @@ class EmployeeChildrenController extends AppBaseController
         Flash::success('Employee Children deleted successfully.');
 
         //return redirect(route('humanresource.employeeChildrens.index'));
+        return redirect(route('humanresource.employees.show', session('employee_id')));
     }
 }
