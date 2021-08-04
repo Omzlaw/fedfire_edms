@@ -38,6 +38,7 @@ class EmployeeAddress extends Model
     public $fillable = [
         'address',
         'state_id',
+        'local_govt_area_id',
         'country_id',
         'employee_id',
         'file_upload',
@@ -56,6 +57,7 @@ class EmployeeAddress extends Model
         'id' => 'integer',
         'address' => 'string',
         'state_id' => 'integer',
+        'local_govt_area_id' => 'integer',
         'country_id' => 'integer',
         'employee_id' => 'integer',
         'file_upload' => 'string',
@@ -73,6 +75,7 @@ class EmployeeAddress extends Model
     public static $rules = [
         'address' => 'Required',
         'state_id' => 'Required',
+        // 'local_govt_area_id' => 'Required',
         'country_id' => 'Required',
         'employee_id' => 'Required',
         // 'file_upload' => 'Required',
@@ -96,6 +99,14 @@ class EmployeeAddress extends Model
     public function state()
     {
         return $this->belongsTo(\App\Models\Shared\State::class, 'state_id', 'id');
+    }
+
+        /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function localGovtArea()
+    {
+        return $this->belongsTo(\App\Models\Shared\LocalGovtArea::class, 'local_govt_area_id', 'id');
     }
 
     /**

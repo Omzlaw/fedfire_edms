@@ -75,6 +75,7 @@ class EmployeeAddressDataTable extends DataTable
             // 'id',
             'address',
             // 'state_id',
+            // 'local_govt_area_id',
             // 'country_id',
             'employee',
             'status',

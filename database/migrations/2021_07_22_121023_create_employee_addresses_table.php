@@ -17,6 +17,7 @@ class CreateEmployeeAddressesTable extends Migration
             $table->increments('id');
             $table->string('address');
             $table->integer('state_id')->unsigned();
+            $table->integer('local_govt_area_id')->unsigned()->nullable();
             $table->integer('country_id')->unsigned();
             $table->integer('employee_id')->unsigned();
             $table->string('file_upload')->nullable();
@@ -27,6 +28,7 @@ class CreateEmployeeAddressesTable extends Migration
             $table->timestamps();
             $table->softDeletes();
             //$table->foreign('state_id')->references('id')->on('states');
+            //$table->foreign('local_govt_area_id')->references('id')->on('local_govt_areas');
             //$table->foreign('country_id')->references('id')->on('countries');
             //$table->foreign('employee_id')->references('id')->on('employees');
             //$table->foreign('created_by')->references('id')->on('users');

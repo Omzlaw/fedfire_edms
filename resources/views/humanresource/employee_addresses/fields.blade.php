@@ -30,7 +30,7 @@
 </div> --}}
 
 
-{!! Form::macro('fancySelect', function($statesModel)
+{!! Form::macro('stateSelect', function($statesModel)
 {
     $states = $statesModel::orderBy('title')->get();
     $options = array();
@@ -42,7 +42,7 @@
         $options[] = $option;
     }
     $list = implode('', $options);
-    return "<select id='stateSelector' name='state_id' class='form-control'>{$list}</select>";
+    return "<select id='stateSelector' name='state_id' class='form-control' onchange='stateLocalGovtAreaSelector()'>{$list}</select>";
 }); !!}
 
 
@@ -50,7 +50,32 @@
     <div class="row">
         {!! Form::label('state_id', 'State:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::fancySelect($states) !!}
+            {!! Form::stateSelect($states) !!}
+        </div>
+    </div>
+</div>
+
+{!! Form::macro('localGovtAreaSelect', function($localGovtAreaModel)
+{
+    $localGovtAreas = $localGovtAreaModel::orderBy('title')->get();
+    $options = array();
+    $defaultOption = '<option value="">Select...</option>';
+    $options[] = $defaultOption;
+    foreach ($localGovtAreas as $localGovtArea) {
+
+        $option = '<option value=' . $localGovtArea->id . ' data-state_id=' . $localGovtArea->state_id . '>' . $localGovtArea->title . '</option>';
+        $options[] = $option;
+    }
+    $list = implode('', $options);
+    return "<select id='localGovtAreaSelector' name='local_govt_area_id' class='form-control'>{$list}</select>";
+}); !!}
+
+
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('local_govt_area_id', 'Local Govt Area:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::localGovtAreaSelect($local_govt_areas) !!}
         </div>
     </div>
 </div>
@@ -113,7 +138,9 @@
 
     window.onload = function () { 
         $('#stateSelector').prop('disabled', 'disabled');
+        $('#localGovtAreaSelector').prop('disabled', 'disabled');
     }
+
     function countryStateSelector(event) {
 
         var countrySelect = $('#countrySelector');
@@ -127,6 +154,22 @@
                 $(this).attr('disabled', 'disabled').hide();
             }
         });
-        $('#stateSelector').prop('disabled', false);
+        stateSelect.prop('disabled', false);
+    }
+
+    function stateLocalGovtAreaSelector(event) {
+
+        var stateSelect = $('#countrySelector');
+        var localGovtAreaSelect = $('#localGovtAreaSelector');
+        var id = $(stateSelect).children("option:selected").val();
+        $("#localGovtAreaSelector > option").each(function() {
+            let state_id = $(this).data("state_id");
+            if (id == state_id) {
+                $(this).removeAttr('disabled').show();
+            } else {
+                $(this).attr('disabled', 'disabled').hide();
+            }
+        });
+        localGovtAreaSelect.prop('disabled', false);
     }
 </script>

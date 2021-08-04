@@ -7,6 +7,7 @@ use Response;
 use App\Models\Shared\State;
 use App\Models\Shared\Country;
 use App\Http\Requests\Humanresource;
+use App\Models\Shared\LocalGovtArea;
 use App\Models\Humanresource\Employee;
 use App\Http\Controllers\AppBaseController;
 use App\Models\Humanresource\EmployeeAddress;
@@ -35,9 +36,10 @@ class EmployeeAddressController extends AppBaseController
     public function create()
     {
         $employees = new Employee;
+        $local_govt_areas = new LocalGovtArea;
         $states = new State;
         $countries = new Country;
-        return view('humanresource.employee_addresses.create', compact('employees', 'states', 'countries'));
+        return view('humanresource.employee_addresses.create', compact('employees', 'states', 'countries', 'local_govt_areas'));
     }
 
     /**
@@ -100,8 +102,9 @@ class EmployeeAddressController extends AppBaseController
         }
         $employees = new Employee;
         $states = new State;
+        $local_govt_areas = new LocalGovtArea;
         $countries = new Country;
-        return view('humanresource.employee_addresses.edit', compact('employees', 'states', 'countries'))->with('employeeAddress', $employeeAddress);
+        return view('humanresource.employee_addresses.edit', compact('employees', 'states', 'countries', 'local_govt_areas'))->with('employeeAddress', $employeeAddress);
     }
 
     /**

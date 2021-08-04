@@ -11,14 +11,22 @@
 
 
 <tr>
+    <th scopre="row">{!! Form::label('country_id', 'Country:') !!}</th>
+    <td>{{ $employeeAddress->country->title }}</td>
+</tr>
+
+<tr>
     <th scopre="row">{!! Form::label('state_id', 'State:') !!}</th>
     <td>{{ $employeeAddress->state->title }}</td>
 </tr>
 
-
 <tr>
-    <th scopre="row">{!! Form::label('country_id', 'Country:') !!}</th>
-    <td>{{ $employeeAddress->country->title }}</td>
+    <th scopre="row">{!! Form::label('local_govt_area_id', 'Local Govt Area:') !!}</th>
+    @if (isset($employeeAddress->localGovtArea->title))
+        <td>{{ $employeeAddress->localGovtArea->title }}</td>
+    @else
+        <td></td>
+    @endif
 </tr>
 
 
@@ -68,5 +76,3 @@
     <th scopre="row">{!! Form::label('updated_at', 'Updated At:') !!}</th>
     <td>{{ $employeeAddress->updated_at }}</td>
 </tr> --}}
-
-
