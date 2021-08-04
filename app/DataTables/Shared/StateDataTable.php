@@ -22,15 +22,15 @@ class StateDataTable extends DataTable
         ->addColumn('status', function($row){
             return get_enum_value('enum_status', $row->status);
         })
+        ->addColumn('country', function($row){
+            return $row->country->title;
+        })
         ->addColumn('geoPoliticalZone', function($row){
             if(isset($row->geoPoliticalZone->title))
             {
                 return $row->geoPoliticalZone->title;
             }
             return '';
-        })
-        ->addColumn('country', function($row){
-            return $row->country->title;
         })
         ->addColumn('action', 'shared.states.datatables_actions');
     }
@@ -83,8 +83,8 @@ class StateDataTable extends DataTable
             'title',
             // 'description',
             'status',
-            'geoPoliticalZone',
             'country',
+            'geoPoliticalZone'
 
         ];
     }

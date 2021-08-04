@@ -83,7 +83,7 @@ class State extends Model
         /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function geoPoliticalZones()
+    public function geoPoliticalZone()
     {
         return $this->belongsTo(\App\Models\Shared\GeoPoliticalZone::class, 'geo_political_zone_id', 'id');
     }
