@@ -20,14 +20,41 @@
 </div>
 
 <!-- State Id Field -->
+{{-- <div class="form-group">
+    <div class="row">
+        {!! Form::label('state_id', 'State:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::select('state_id', modelDropdown($states, 'id', 'title'), null, ['id' => 'stateSelector', 'class' => 'form-control']) !!}
+        </div>
+    </div>
+</div> --}}
+
+
+{!! Form::macro('fancySelect', function($statesModel)
+{
+    $states = $statesModel::orderBy('title')->get();
+    $options = array();
+    $defaultOption = '<option value="">Select...</option>';
+    $options[] = $defaultOption;
+    foreach ($states as $state) {
+
+        $option = '<option value=' . $state->id . ' data-country_id=' . $state->country_id . '>' . $state->title . '</option>';
+        $options[] = $option;
+    }
+    $list = implode('', $options);
+    return "<select id='stateSelector' name='state_id' class='form-control'>{$list}</select>";
+}); !!}
+
+
 <div class="form-group">
     <div class="row">
         {!! Form::label('state_id', 'State:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('state_id', stateDropdown($states, 'id', 'title'), null, ['id' => 'stateSelector', 'class' => 'form-control']) !!}
+            {!! Form::fancySelect($states) !!}
         </div>
     </div>
 </div>
+
 
 
 <!-- Employee Id Field -->
@@ -93,7 +120,7 @@
         var stateSelect = $('#stateSelector');
         var id = $(countrySelect).children("option:selected").val();
         $("#stateSelector > option").each(function() {
-            let country_id = this.textContent.split("-")[1];
+            let country_id = $(this).data("country_id");
             if (id == country_id) {
                 $(this).removeAttr('disabled').show();
             } else {

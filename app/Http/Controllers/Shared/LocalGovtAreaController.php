@@ -7,6 +7,7 @@ use Response;
 use App\Models\Shared\State;
 use App\Http\Requests\Shared;
 use App\Models\Shared\LocalGovtArea;
+use App\Models\Shared\SenatorialZone;
 use App\Http\Controllers\AppBaseController;
 use App\DataTables\Shared\LocalGovtAreaDataTable;
 use App\Http\Requests\Shared\CreateLocalGovtAreaRequest;
@@ -33,7 +34,8 @@ class LocalGovtAreaController extends AppBaseController
     public function create()
     {
         $states = new State;
-        return view('shared.local_govt_areas.create', compact('states'));
+        $senatorial_zones = new SenatorialZone;
+        return view('shared.local_govt_areas.create', compact('states', 'senatorial_zones'));
     }
 
     /**
@@ -94,8 +96,9 @@ class LocalGovtAreaController extends AppBaseController
             return redirect(route('shared.localGovtAreas.index'));
         }
         $states = new State;
+        $senatorial_zones = new SenatorialZone;
 
-        return view('shared.local_govt_areas.edit', compact('states'))->with('localGovtArea', $localGovtArea);
+        return view('shared.local_govt_areas.edit', compact('states', 'senatorial_zones'))->with('localGovtArea', $localGovtArea);
     }
 
     /**

@@ -4,12 +4,17 @@ namespace App\Http\Controllers\Humanresource;
 
 use Flash;
 use Response;
+use App\Traits\FileUpload;
+use App\Models\Shared\State;
 use Illuminate\Http\Request;
 use App\Models\Shared\Country;
 use Yajra\DataTables\DataTables;
 use App\Http\Requests\Humanresource;
+use App\Models\Shared\LocalGovtArea;
 use App\Models\Shared\MaritalStatus;
+use App\Models\Shared\SenatorialZone;
 use App\Models\Humanresource\Employee;
+use App\Models\Shared\GeoPoliticalZone;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\AppBaseController;
 use App\DataTables\Humanresource\EmployeeDataTable;
@@ -18,6 +23,7 @@ use App\Http\Requests\Humanresource\UpdateEmployeeRequest;
 
 class EmployeeController extends AppBaseController
 {
+    use FileUpload;
     /**
      * Display a listing of the Employee.
      *
@@ -36,9 +42,12 @@ class EmployeeController extends AppBaseController
      */
     public function create()
     {
-        $marital_status = new MaritalStatus;
         $countries = new Country;
-        return view('humanresource.employees.create', compact('marital_status', 'countries'));
+        $geo_political_zones = new GeoPoliticalZone;
+        $states = new State;
+        $senatorial_zones = new SenatorialZone;
+        $local_govt_areas = new LocalGovtArea;
+        return view('humanresource.employees.create', compact('countries', 'geo_political_zones', 'states', 'senatorial_zones', 'local_govt_areas'));
     }
 
     /**
@@ -51,9 +60,24 @@ class EmployeeController extends AppBaseController
     public function store(CreateEmployeeRequest $request)
     {
         $input = $request->all();
-        $input['staff_code'] = $input['first_name'] . '_' . $input['last_name'] . '_' . $input['file_no'];
+        if($input['middle_name'] == '')
+        {
+            $input['staff_code'] = $input['first_name'] . '_' . $input['last_name'] . '_' . $input['file_no'];
+        }
+        else{
+            $input['staff_code'] = $input['first_name'] . '_' . $input['middle_name'] . '_' . $input['last_name'] . '_' . $input['file_no'];
+        }
+
+        if($request->hasFile('profile_picture'))
+        {     
+            $employee = Employee::create($this->saveFile($input));
+        }
+
+        else {
+            $employee = Employee::create($input);
+        }
         /** @var Employee $employee */
-        $employee = Employee::create($input);
+        
 
         Flash::success('Employee saved successfully.');
 
@@ -219,9 +243,12 @@ class EmployeeController extends AppBaseController
 
             return redirect(route('humanresource.employees.index'));
         }
-        $marital_status = new MaritalStatus;
         $countries = new Country;
-        return view('humanresource.employees.edit', compact('marital_status', 'countries', 'id'))->with('employee', $employee);
+        $geo_political_zones = new GeoPoliticalZone;
+        $states = new State;
+        $senatorial_zones = new SenatorialZone;
+        $local_govt_areas = new LocalGovtArea;
+        return view('humanresource.employees.edit', compact('countries', 'geo_political_zones', 'states', 'senatorial_zones', 'local_govt_areas'))->with('employee', $employee);
     }
 
     /**
@@ -242,8 +269,24 @@ class EmployeeController extends AppBaseController
 
             return redirect(route('humanresource.employees.index'));
         }
+        $input = $request->all();
+        if($input['middle_name'] == '')
+        {
+            $input['staff_code'] = $input['first_name'] . '_' . $input['last_name'] . '_' . $input['file_no'];
+        }
+        else{
+            $input['staff_code'] = $input['first_name'] . '_' . $input['middle_name'] . '_' . $input['last_name'] . '_' . $input['file_no'];
+        }
 
-        $employee->fill($request->all());
+        if($request->hasFile('profile_picture'))
+        {     
+            $employee->fill($this->saveFile($input));
+        }
+
+        else {
+            $employee->fill($input);
+        }
+
         $employee->save();
 
         Flash::success('Employee updated successfully.');
@@ -271,10 +314,31 @@ class EmployeeController extends AppBaseController
             return redirect(route('humanresource.employees.index'));
         }
 
+        $profile_picture = str_replace('storage/', 'public/', $employee->profile_picture);
+        Storage::delete($profile_picture);
+
         $employee->delete();
 
         Flash::success('Employee deleted successfully.');
 
         return redirect(route('humanresource.employees.index'));
+    }
+
+    public function saveFile($input) {
+
+        $staff_code = $input['staff_code'];
+
+        $file = $input['profile_picture'];
+
+        $file_type = 'profile_picture';
+
+
+        $file_name = now()->timestamp . '_' . $staff_code . '_' . $file_type;
+
+        $input['file_name'] = $file_name;
+
+        $input['profile_picture'] = $this->Upload($file, $file_name, $staff_code, $file_type);;
+
+        return $input;
     }
 }

@@ -25,7 +25,19 @@ class EmployeeDataTable extends DataTable
         ->addColumn('birthdate', function($row){
             return $row->birthdate->toDateString();
         })
-        ->addColumn('action', 'humanresource.employees.datatables_actions');
+        ->addColumn('nationality', function($row){
+            return $row->country->title;
+        })
+        ->addColumn('stateOfOrigin', function($row){
+            if(isset($row->stateOfOrigin->title))
+            {
+                return $row->stateOfOrigin->title;
+            }
+            return '';
+        })
+        ->addColumn('profile_picture', 'humanresource.employees.profile_picture')
+        ->addColumn('action', 'humanresource.employees.datatables_actions')
+        ->rawColumns(['profile_picture', 'action']);
     }
 
     /**
@@ -78,12 +90,14 @@ class EmployeeDataTable extends DataTable
             'last_name',
             'gender',
             'birthdate',
-            'place_of_birth',
+            // 'place_of_birth',
+            'profile_picture',
             // 'birth_certificate_upload',
             // 'marital_status_id',
             // 'first_appointment_date',
             // 'first_arrival_date',
-            // 'nationality',
+            'nationality',
+            'stateOfOrigin',
             // 'decorations',
             // 'file_upload',
             // 'remark',

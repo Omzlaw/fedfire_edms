@@ -47,6 +47,10 @@
             <div class="col-3">
                 <div class="row employee-detail-cards">
                     <div class="col-lg-3 col-md-6">
+                        <div class="ml-3 mb-3">
+                            <img src="{{asset($employee->profile_picture)}}" border="0" width="100" height="100" class="rounded-circle" align="center" alt="profile picture for {{ $employee->first_name . ' ' . $employee->last_name}}"/>
+                        </div>
+                        
                         <div class="card" style="width: 18rem;">
                             {!! Form::open(['route' => 'searchEmployeeRecord', 'class' => 'form-horizontal', 'files' => true]) !!}
                             <div class="">

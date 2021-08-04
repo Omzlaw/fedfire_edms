@@ -15,6 +15,14 @@
     <td>{{ $localGovtArea->description }}</td>
 </tr>
 
+<tr>
+    <th scopre="row">{!! Form::label('senatorial_zone_id', 'Senatorial Zone:') !!}</th>
+    @if (isset($state->senatorialZone->title))
+        <td>{{ $state->senatorialZone->title }}</td>
+    @else
+        <td></td>
+    @endif
+</tr>
 
 <tr>
     <th scopre="row">{!! Form::label('state_id', 'State:') !!}</th>

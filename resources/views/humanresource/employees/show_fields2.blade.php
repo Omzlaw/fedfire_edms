@@ -1,11 +1,24 @@
 <tr>
-    <th scopre="row">{!! Form::label('first_arrival_date', 'First Arrival Date:') !!}</th>
-    <td>{{ $employee->first_arrival_date->toDateString() }}</td>
+    <th scopre="row">{!! Form::label('senatorial_zone', 'Senatorial Zone:') !!}</th>
+    @if (isset($state->senatorialZone->title))
+        <td>{{ $state->senatorialZone->title }}</td>
+    @else
+        <td></td>
+    @endif
 </tr>
 
 <tr>
-    <th scopre="row">{!! Form::label('nationality', 'Nationality:') !!}</th>
-    <td>{{ $employee->country->title }}</td>
+    <th scopre="row">{!! Form::label('local_govt_area', 'Local Govt Area:') !!}</th>
+    @if (isset($state->localGovtArea->title))
+        <td>{{ $state->localGovtArea->title }}</td>
+    @else
+        <td></td>
+    @endif
+</tr>
+
+<tr>
+    <th scopre="row">{!! Form::label('first_arrival_date', 'First Arrival Date:') !!}</th>
+    <td>{{ $employee->first_arrival_date->toDateString() }}</td>
 </tr>
 
 
@@ -13,6 +26,7 @@
     <th scopre="row">{!! Form::label('decorations', 'Decorations:') !!}</th>
     <td>{{ $employee->decorations }}</td>
 </tr>
+
 
 
 {{-- <tr>

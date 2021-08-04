@@ -55,7 +55,7 @@ Dashboard @parent
             <div class="bg-white dashboard-col pl-15 pb-15 pt-15">
                 <i class="im im-icon-Love-User im-icon-set float-right bg-info"></i>
                 <h3>23K</h3>
-                <p>Number</p>
+                <p>Number of Senior Officers</p>
                 <div class="progress mr-15">
                     <div id="progress-info" class="progress-bar bg-info progress-bar-striped progress-bar-animated"
                         role="progressbar" style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100">
@@ -69,7 +69,7 @@ Dashboard @parent
             <div class="bg-white dashboard-col pl-15 pb-15 pt-15">
                 <i class="im im-icon-Checked-User im-icon-set float-right bg-danger"></i>
                 <h3>400</h3>
-                <p>Total Actions</p>
+                <p>Number of Junior Officers</p>
                 <div class="progress mr-15">
                     <div id="progress-danger" class="progress-bar bg-danger progress-bar-striped progress-bar-animated"
                         role="progressbar" style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100">
@@ -271,7 +271,7 @@ Dashboard @parent
                 </div>
             </div>
         </div> --}}
-    </div> --}}
+    </div>
     {{--</div>--}}
 </section>
 

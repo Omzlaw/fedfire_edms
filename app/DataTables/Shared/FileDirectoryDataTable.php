@@ -23,7 +23,10 @@ class FileDirectoryDataTable extends DataTable
             return $row->fileType->title;
         })
         ->addColumn('employee', function($row){
-            return $row->employee->staff_code;
+            return $row->employee->getFullName();
+        })
+        ->addColumn('file_no', function($row){
+            return $row->employee->file_no;
         })
         ->addColumn('status', function($row){
             return get_enum_value('enum_status', $row->status);
@@ -77,9 +80,9 @@ class FileDirectoryDataTable extends DataTable
         return [
             // 'id',
             // 'file_upload',
-            'file_name',
-            'file_type',
             'employee',
+            'file_no',
+            'file_type',
             'status',
             'remark',
 

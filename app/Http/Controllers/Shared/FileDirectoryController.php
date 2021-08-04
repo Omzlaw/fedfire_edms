@@ -53,27 +53,7 @@ class FileDirectoryController extends AppBaseController
     {
         /** @var FileDirectory $fileDirectory */
         $input = $request->all();
-        $files = $input['file_upload'];
-        $employee_id = $input['employee_id'];
-        $file_url_array = [];
-
-        $file_type = FileType::find($input['file_type_id'])->title;
-
-        $staff = Employee::find($employee_id);
-
-        // $time = str_replace(' ', '_', now()->timestamp);
-        // $staff_code = str_replace(' ', '_', $staff->staff_code);
-        $file_type_name = str_replace(' ', '-', $file_type);
-
-        $file_name = now()->timestamp . '_' . $staff->staff_code . '_' . $file_type_name;
-
-        $input['file_name'] = $file_name;
-        foreach ($files as $file)
-        {
-            $file_url_array[] = $this->Upload($file, $file_name, $staff->staff_code, $file_type_name);
-        }
-        $input['file_url'] = $file_url_array;
-        $fileDirectory = FileDirectory::create($input);
+        $fileDirectory = FileDirectory::create($this->saveFile($input));
         Flash::success('File Directory saved successfully.');
 
         return redirect(route('shared.fileDirectories.index'));
@@ -155,8 +135,12 @@ class FileDirectoryController extends AppBaseController
 
             return redirect(route('shared.fileDirectories.index'));
         }
+        $input = $request->all();
 
-        $fileDirectory->fill($request->all());
+        $file_url = str_replace('storage/', 'public/', $fileDirectory->file_url);
+        Storage::delete($file_url);
+        
+        $fileDirectory->fill($this->saveFile($input));
         $fileDirectory->save();
 
         Flash::success('File Directory updated successfully.');
@@ -192,5 +176,31 @@ class FileDirectoryController extends AppBaseController
         Flash::success('File Directory deleted successfully.');
 
         return redirect(route('shared.fileDirectories.index'));
+    }
+
+    public function saveFile($input) {
+
+        $files = $input['file_upload'];
+        $employee_id = $input['employee_id'];
+        $file_url_array = [];
+
+        $file_type = FileType::find($input['file_type_id'])->title;
+
+        $staff = Employee::find($employee_id);
+
+        // $time = str_replace(' ', '_', now()->timestamp);
+        // $staff_code = str_replace(' ', '_', $staff->staff_code);
+        $file_type_name = str_replace(' ', '-', $file_type);
+
+        $file_name = now()->timestamp . '_' . $staff->staff_code . '_' . $file_type_name;
+
+        $input['file_name'] = $file_name;
+        foreach ($files as $file)
+        {
+            $file_url_array[] = $this->Upload($file, $file_name, $staff->staff_code, $file_type_name);
+        }
+        $input['file_url'] = $file_url_array;
+
+        return $input;
     }
 }

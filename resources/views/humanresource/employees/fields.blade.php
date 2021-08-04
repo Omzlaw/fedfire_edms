@@ -19,6 +19,16 @@
     </div>
 </div>
 
+<!-- Middle Name Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('middle_name', 'Middle Name:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::text('middle_name', null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
 
 <!-- Last Name Field -->
 <div class="form-group">
@@ -74,15 +84,15 @@
 </div>
 
 
-<!-- Birth Certificate Upload Id Field -->
-{{-- <div class="form-group">
+<!-- Profile Picture  Field -->
+<div class="form-group">
     <div class="row">
-        {!! Form::label('birth_certificate_upload', 'Birth Certificate Upload:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('profile_picture', 'Profie Picture:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::file('birth_certificate_upload') !!}
+            {!! Form::file('profile_picture') !!}
         </div>
     </div>
-</div> --}}
+</div>
 
 
 <!-- Marital Status Id Field -->
@@ -144,6 +154,47 @@
         {!! Form::label('nationality', 'Nationality:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}  
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::select('nationality', modelDropdown($countries, 'id', 'title'), null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
+
+<!-- Geo-Political Zone Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('geo_politcal_zone', 'Geo-Political Zone:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}  
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::select('geo_politcal_zone', modelDropdown($geo_political_zones, 'id', 'title'), null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
+<!-- State of Origin Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('state_of_origin', 'State of Origin:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}  
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::select('state_of_origin', modelDropdown($states, 'id', 'title'), null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
+<!-- Senatorial Zone Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('senatorial_zone', 'Senatorial Zone:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}  
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::select('senatorial_zone', modelDropdown($senatorial_zones, 'id', 'title'), null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
+<!-- Local Govt Area Zone Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('local_govt_area', 'Local Govt Area:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}  
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::select('local_govt_area', modelDropdown($local_govt_areas, 'id', 'title'), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div>

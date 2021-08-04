@@ -150,6 +150,10 @@ body > .header .navbar {
 
 /****** wrapper RIGHT SIDE  *******/
 .right-aside {
+  background-image: url("/images/watermark_bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   padding: 0 10px 10px 10px;
   width: 100%;
 }
@@ -161,6 +165,7 @@ body > .header .navbar {
   position: relative;
   top: -70px;
   z-index: 9999;
+  height: 65px;
 }
 
 
@@ -274,4 +279,10 @@ body > .header .navbar_fixed_top{
   width: 17%;
   display: inline-block;
 
+}
+
+footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
 }

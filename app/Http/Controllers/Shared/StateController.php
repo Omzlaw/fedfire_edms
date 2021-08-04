@@ -7,6 +7,7 @@ use Response;
 use App\Models\Shared\State;
 use App\Http\Requests\Shared;
 use App\Models\Shared\Country;
+use App\Models\Shared\GeoPoliticalZone;
 use App\DataTables\Shared\StateDataTable;
 use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\Shared\CreateStateRequest;
@@ -33,7 +34,8 @@ class StateController extends AppBaseController
     public function create()
     {
         $countries = new Country;
-        return view('shared.states.create', compact('countries'));
+        $geo_political_zones = new GeoPoliticalZone;
+        return view('shared.states.create', compact('countries', 'geo_political_zones'));
     }
 
     /**
@@ -94,8 +96,10 @@ class StateController extends AppBaseController
             return redirect(route('shared.states.index'));
         }
         $countries = new Country;
+        $geo_political_zones = new GeoPoliticalZone;
 
-        return view('shared.states.edit', compact('countries'))->with('state', $state);
+
+        return view('shared.states.edit', compact('countries', 'geo_political_zones'))->with('state', $state);
     }
 
     /**

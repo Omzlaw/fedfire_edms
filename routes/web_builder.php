@@ -122,3 +122,13 @@ Route::resource('users', 'UserController')->middleware('auth');
 
 Route::get('fileDirectories', [FileDirectoryController::class, 'getSearch'])->name('shared.fileDirectories.getSearch');
 Route::post('fileDirectories', [FileDirectoryController::class, 'search'])->name('searchEmployeeRecord');
+
+
+Route::group(['prefix' => 'shared'], function () {
+    Route::resource('geoPoliticalZones', 'Shared\GeoPoliticalZoneController', ["as" => 'shared']);
+});
+
+
+Route::group(['prefix' => 'shared'], function () {
+    Route::resource('senatorialZones', 'Shared\SenatorialZoneController', ["as" => 'shared']);
+});

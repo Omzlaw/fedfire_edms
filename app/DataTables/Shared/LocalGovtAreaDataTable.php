@@ -22,7 +22,14 @@ class LocalGovtAreaDataTable extends DataTable
         ->addColumn('status', function($row){
             return get_enum_value('enum_status', $row->status);
         })
-        ->addColumn('status', function($row){
+        ->addColumn('senatorialZone', function($row){
+            if(isset($row->senatorialZone->title))
+            {
+                return $row->senatorialZone->title;
+            }
+            return '';
+        })
+        ->addColumn('state', function($row){
             return $row->state->title;
         })
         ->addColumn('action', 'shared.local_govt_areas.datatables_actions');
@@ -75,6 +82,7 @@ class LocalGovtAreaDataTable extends DataTable
             // 'id',
             'title',
             'description',
+            'senatorialZone',
             'state',
             'status',
 

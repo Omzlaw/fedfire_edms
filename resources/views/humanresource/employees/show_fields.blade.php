@@ -15,6 +15,10 @@
     <td>{{ $employee->first_name }}</td>
 </tr>
 
+<tr>
+    <th scopre="row">{!! Form::label('middle_name', 'Middle Name:') !!}</th>
+    <td>{{ $employee->middle_name }}</td>
+</tr>
 
 <tr>
     <th scopre="row">{!! Form::label('last_name', 'Last Name:') !!}</th>
@@ -33,6 +37,28 @@
     <td>{{ $employee->birthdate->toDateString() }}</td>
 </tr>
 
+<tr>
+    <th scopre="row">{!! Form::label('nationality', 'Nationality:') !!}</th>
+    <td>{{ $employee->country->title }}</td>
+</tr>
+
+<tr>
+    <th scopre="row">{!! Form::label('geo_political_zone', 'Geo-Politcal Zone:') !!}</th>
+    @if (isset($state->geoPoliticalZone->title))
+        <td>{{ $state->geoPoliticalZone->title }}</td>
+    @else
+        <td></td>
+    @endif
+</tr>
+
+<tr>
+    <th scopre="row">{!! Form::label('state_of_origin', 'State of Origin:') !!}</th>
+    @if (isset($state->stateOfOrigin->title))
+        <td>{{ $state->stateOfOrigin->title }}</td>
+    @else
+        <td></td>
+    @endif
+</tr>
 
 <tr>
     <th scopre="row">{!! Form::label('place_of_birth', 'Place Of Birth:') !!}</th>

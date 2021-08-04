@@ -17,20 +17,9 @@ use Illuminate\Database\Eloquent\Model;
 if(!function_exists('modelDropdown')) {
     function modelDropdown(Model $model, $key = 'id', $value = 'name') {
         $modelArray = array(''=>'Select...');
-        $modelData = $model::all();
+        $modelData = $model::orderBy($value)->get(); 
         foreach($modelData as $row){
                $modelArray[$row->{$key}] = $row->{$value}; 
-        }
-        return $modelArray;
-    }   
-}
-
-if(!function_exists('stateDropdown')) {
-    function stateDropdown(Model $model, $key = 'id', $value = 'name') {
-        $modelArray = array(''=>'Select...');
-        $modelData = $model::all();
-        foreach($modelData as $row){
-               $modelArray[$row->{$key}] = $row->{$value} . '-' . $row->country_id; 
         }
         return $modelArray;
     }   

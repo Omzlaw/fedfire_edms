@@ -21,9 +21,17 @@
     <td>{{ get_enum_value('enum_status', $state->status) }}</td>
 </tr>
 
+<tr>
+    <th scopre="row">{!! Form::label('geo_political_zone_id', 'Geo-Politcal Zone:') !!}</th>
+    @if (isset($state->geoPoliticalZone->title))
+        <td>{{ $state->geoPoliticalZone->title }}</td>
+    @else
+        <td></td>
+    @endif
+</tr>
 
 <tr>
-    <th scopre="row">{!! Form::label('country_id', 'Country Id:') !!}</th>
+    <th scopre="row">{!! Form::label('country_id', 'Country:') !!}</th>
     <td>{{ $state->country->title }}</td>
 </tr>
 

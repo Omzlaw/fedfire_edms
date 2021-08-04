@@ -25,10 +25,21 @@
     <div class="row">
         {!! Form::label('state_id', 'State:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('state_id', modelDropdown($states), null, ['class' => 'form-control']) !!}
+            {!! Form::select('state_id', modelDropdown($states, 'id', 'title'), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div>
+
+<!-- Senatorial Zone Id Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('senatorial_zone_id', 'Senatorial Zone:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::select('senatorial_zone_id', modelDropdown($senatorial_zones, 'id', 'title'), null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
 
 
 <!-- Status Field -->

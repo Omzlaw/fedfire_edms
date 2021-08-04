@@ -49,16 +49,21 @@ class Employee extends Model
     public $fillable = [
         'file_no',
         'first_name',
+        'middle_name',
         'last_name',
         'staff_code',
         'gender',
         'birthdate',
         'place_of_birth',
-        'birth_certificate_upload',
+        'profile_picture',
         'marital_status_id',
         'first_appointment_date',
         'first_arrival_date',
         'nationality',
+        'geo_political_zone',
+        'state_of_origin',
+        'senatorial_zone',
+        'local_govt_area',
         'decorations',
         'file_upload',
         'remark',
@@ -79,16 +84,21 @@ class Employee extends Model
         'id' => 'integer',
         'file_no' => 'string',
         'first_name' => 'string',
+        'middle_name' => 'string',
         'last_name' => 'string',
         'staff_code' => 'string',
         'gender' => 'integer',
         'birthdate' => 'datetime',
         'place_of_birth' => 'string',
-        'birth_certificate_upload' => 'integer',
+        'profile_picture' => 'string',
         'marital_status_id' => 'integer',
         'first_appointment_date' => 'datetime',
         'first_arrival_date' => 'datetime',
         'nationality' => 'integer',
+        'geo_political_zone' => 'integer',
+        'state_of_origin' => 'integer',
+        'senatorial_zone' => 'integer',
+        'local_govt_area' => 'integer',
         'decorations' => 'string',
         'file_upload' => 'string',
         'remark' => 'string',
@@ -108,15 +118,20 @@ class Employee extends Model
     public static $rules = [
         'file_no' => 'Required',
         'first_name' => 'Required',
+        // 'middle_name' => 'Required',
         'last_name' => 'Required',
         'gender' => 'Required',
         'birthdate' => 'Required',
         'place_of_birth' => 'Required',
-        // 'birth_certificate_upload' => 'Required',
+        // 'profile_picture' => 'Required',
         'marital_status_id' => 'Required',
         'first_appointment_date' => 'Required',
         'first_arrival_date' => 'Required',
         'nationality' => 'Required',
+        // 'geo_political_zone' => 'Required',
+        // 'state_of_origin' => 'Required',
+        // 'senatorial_zone' => 'Required',
+        // 'local_govt_area' => 'Required',
         // 'decorations' => 'Required',
         // 'file_upload' => 'Required',
         // 'remark' => 'Required',
@@ -127,6 +142,18 @@ class Employee extends Model
     //    'updated_by' => 'Required',
         'current_appointment' => 'Required'
     ];
+
+    public function getFullName() {
+        
+        if($this->attributes['middle_name'] == ''){
+            return $this->attributes['first_name'] . " " . $this->attributes['last_name'];
+        }
+
+        else {
+            return $this->attributes['first_name'] . " " . $this->attributes['middle_name'] . " " . $this->attributes['last_name'];
+        }
+        
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -147,6 +174,26 @@ class Employee extends Model
     public function country()
     {
         return $this->belongsTo(\App\Models\Shared\Country::class, 'nationality', 'id');
+    }
+
+    public function geoPoliticalZone()
+    {
+        return $this->belongsTo(\App\Models\Shared\GeoPoliticalZone::class, 'geo_political_zone', 'id');
+    }
+
+    public function stateOfOrigin()
+    {
+        return $this->belongsTo(\App\Models\Shared\State::class, 'state_of_origin', 'id');
+    }
+
+    public function senatorialZone()
+    {
+        return $this->belongsTo(\App\Models\Shared\SenatorialZone::class, 'senatorial_zone', 'id');
+    }
+
+    public function localGovtArea()
+    {
+        return $this->belongsTo(\App\Models\Shared\LocalGovtArea::class, 'local_govt_area', 'id');
     }
 
     /**

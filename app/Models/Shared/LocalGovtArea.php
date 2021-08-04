@@ -34,6 +34,7 @@ class LocalGovtArea extends Model
     public $fillable = [
         'title',
         'description',
+        'senatorial_zone_id',
         'state_id',
         'status',
         'created_by',
@@ -49,6 +50,7 @@ class LocalGovtArea extends Model
         'id' => 'integer',
         'title' => 'string',
         'description' => 'string',
+        'senatorial_zone_id' => 'integer',
         'state_id' => 'integer',
         'status' => 'integer',
         'created_by' => 'integer',
@@ -63,11 +65,20 @@ class LocalGovtArea extends Model
     public static $rules = [
         'title' => 'Required',
         'description' => 'Required',
+        // 'senatorial_zone_id' => 'Required',
         'state_id' => 'Required',
         'status' => 'Required',
      //   'created_by' => 'Required',
     //    'updated_by' => 'Required'
     ];
+
+        /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function senatorialZone()
+    {
+        return $this->belongsTo(\App\Models\Shared\SenatorialZone::class, 'senatorial_zone_id', 'id');
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

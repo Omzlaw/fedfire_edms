@@ -3,7 +3,7 @@
 
 <head>
     <title>
-        @section('title')| Fire Service EDMS @show
+        @section('title')| Federal Fire Service EDMS @show
     </title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -39,6 +39,8 @@
 
 
             </a>
+
+            <div class="navbar-center ml-auto"><strong>FEDERAL FIRE SERIVICE EDMS</strong></div>
             <!-- Header Navbar: style can be found in header-->
             <!-- Sidebar toggle button-->
 
@@ -156,7 +158,7 @@
     </header>
     <div class="wrapper">
         <!-- Left side column. contains the logo and sidebar -->
-        <aside class="left-aside col-2">
+        <aside class="left-aside">
             <!-- sidebar: style can be found in sidebar-->
             <section class="sidebar metismenu sidebar-res">
                 @include("layouts/leftmenu")
@@ -169,8 +171,8 @@
         <!--            right side bar ----------->
         <aside class="right-aside">
             @yield('content')
+            @include('layouts.modal')
         </aside>
-        @include('layouts.modal')
         @include('layouts.footer')
     </div>
     <!-- ./wrapper -->

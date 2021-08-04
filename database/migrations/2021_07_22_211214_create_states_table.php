@@ -19,10 +19,12 @@ class CreateStatesTable extends Migration
             // $table->string('description');
             $table->integer('status')->default(1);
             $table->integer('country_id')->unsigned();
+            $table->integer('geo_political_zone_id')->unsigned()->nullable();
             $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();
             $table->timestamps();
             $table->softDeletes();
+            //$table->foreign('geo_political_zone_id')->references('id')->on('geo_political_zones');
             //$table->foreign('country_id')->references('id')->on('countries');
             //$table->foreign('created_by')->references('id')->on('users');
             //$table->foreign('updated_by')->references('id')->on('users');

@@ -18,7 +18,7 @@ Employee @parent
             <div class="card-body">
                 {!! Form::open(['route' => 'humanresource.employees.store', 'files' => true,'class' => 'form-horizontal']) !!}
 
-                    @include('humanresource.employees.fields', [$marital_status, $countries])
+                    @include('humanresource.employees.fields', [$countries, $geo_political_zones, $states, $senatorial_zones, $local_govt_areas])
 
                 {!! Form::close() !!}
             </div>
