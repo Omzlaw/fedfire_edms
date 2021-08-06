@@ -15,6 +15,10 @@
     <td>{{ $rankType->description }}</td>
 </tr>
 
+<tr>
+    <th scopre="row">{!! Form::label('type', 'Rank Type:') !!}</th>
+    <td>{{ get_enum_value('enum_rank_type', $rankType->type) }}</td>
+</tr>
 
 <tr>
     <th scopre="row">{!! Form::label('status', 'Status:') !!}</th>

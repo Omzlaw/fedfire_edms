@@ -138,12 +138,15 @@ class EmployeeController extends AppBaseController
         //get the certificates
 
         $data['certificates'] = $employee->certificates->map(function ($item) {
+            $item->status = get_enum_value('enum_status', $item->status);
             return $item;
         });
 
         //get the educations
 
         $data['educations'] = $employee->educations->map(function ($item) {
+            $item->certificate_id = $item->certificate->title;
+            $item->school_type_id = $item->schoolType->title;
             return $item;
         });
 
@@ -189,6 +192,7 @@ class EmployeeController extends AppBaseController
         //get the nextOfKins
 
         $data['nextOfKins'] = $employee->nextOfKins->map(function ($item) {
+            $item->relationship_id = $item->relationship->title;
             return $item;
         });
 
@@ -201,12 +205,16 @@ class EmployeeController extends AppBaseController
         //get the qualifications
 
         $data['qualifications'] = $employee->qualifications->map(function ($item) {
+            $item->status = get_enum_value('enum_status', $item->status);
             return $item;
         });
 
         //get the recordTrackers
 
         $data['recordTrackers'] = $employee->recordTrackers->map(function ($item) {
+            $item->status = get_enum_value('enum_status', $item->status);
+            $item->has_profile = get_enum_value('enum_yes_no', $item->has_profile);
+            $item->has_education = get_enum_value('enum_yes_no', $item->has_education);
             return $item;
         });
 
@@ -336,6 +344,7 @@ class EmployeeController extends AppBaseController
         $file_name = now()->timestamp . '_' . $staff_code . '_' . $file_type;
 
         $input['file_name'] = $file_name;
+
 
         $input['profile_picture'] = $this->Upload($file, $file_name, $staff_code, $file_type);;
 

@@ -58,7 +58,7 @@ class EmployeeCertificates extends Model
         'certificate_name' => 'string',
         'date_obtained' => 'datetime',
         'employee_id' => 'integer',
-        'status' => 'integer',
+        'status' => 'string',
         'remark' => 'string',
         'checked_by' => 'integer',
         'checked_at' => 'datetime',

@@ -20,8 +20,8 @@
         <div class="row col-12">
             <div class="col-md-6 col-sm-12">
                 <img class=""
-                src="{{ asset('custom/img/bg2.png') }}"
-                style="width: 334px;height: 433px;margin-left: 120px;margin-top: 20px;">
+                src="{{ asset('custom/img/bg2.jpg') }}"
+                style="width: 334px;height: 433px; margin-left: 120px; margin-top: 20px;">
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="ml-3 login-card">

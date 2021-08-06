@@ -32,6 +32,7 @@ class RankType extends Model
     public $fillable = [
         'title',
         'description',
+        'type',
         'status',
         'created_by',
         'updated_by'
@@ -46,6 +47,7 @@ class RankType extends Model
         'id' => 'integer',
         'title' => 'string',
         'description' => 'string',
+        'type' => 'integer',
         'status' => 'integer',
         'created_by' => 'integer',
         'updated_by' => 'integer'
@@ -59,6 +61,7 @@ class RankType extends Model
     public static $rules = [
         'title' => 'Required',
         'description' => 'Required',
+        'type' => 'Required',
         'status' => 'Required',
      //   'created_by' => 'Required',
     //    'updated_by' => 'Required'

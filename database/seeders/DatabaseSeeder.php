@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
         $this->call(CountrySeeder::class);
         $this->call(GeoPoliticalZoneSeeder::class);
         $this->call(StateSeeder::class);
+        $this->call(SenatorialZoneSeeder::class);
         $this->call(LanguageSeeder::class);
+        $this->call(RankTypeSeeder::class);
     }
 }

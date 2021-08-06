@@ -18,8 +18,8 @@ class CreateStatesTable extends Migration
             $table->string('title');
             // $table->string('description');
             $table->integer('status')->default(1);
+            $table->integer('geo_political_zone_id')->default(0)->unsigned()->nullable();
             $table->integer('country_id')->unsigned();
-            $table->integer('geo_political_zone_id')->unsigned()->nullable();
             $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();
             $table->timestamps();

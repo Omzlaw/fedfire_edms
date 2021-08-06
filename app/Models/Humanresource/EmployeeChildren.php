@@ -3,6 +3,7 @@
 namespace App\Models\Humanresource;
 
 use Eloquent as Model;
+use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class EmployeeChildren
@@ -84,6 +85,7 @@ class EmployeeChildren extends Model
      //   'created_by' => 'Required',
     //    'updated_by' => 'Required'
     ];
+
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

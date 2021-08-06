@@ -14,7 +14,7 @@
     <div class="row">
         {!! Form::label('certificate_id', 'Certificate Type:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('certificate_id', modelDropdown($certificate_types), null, ['class' => 'form-control']) !!}
+            {!! Form::select('certificate_id', modelDropdown($certificate_types, 'id', 'title'), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div>
@@ -25,7 +25,7 @@
     <div class="row">
         {!! Form::label('school_type_id', 'School Type:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('school_type_id', modelDropdown($school_types), null, ['class' => 'form-control']) !!}
+            {!! Form::select('school_type_id', modelDropdown($school_types, 'id', 'title'), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div>

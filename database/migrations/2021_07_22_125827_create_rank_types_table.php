@@ -17,6 +17,7 @@ class CreateRankTypesTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('description');
+            $table->integer('type');
             $table->integer('status')->default(1);
             $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();

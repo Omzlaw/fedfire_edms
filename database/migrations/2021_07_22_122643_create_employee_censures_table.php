@@ -22,7 +22,7 @@ class CreateEmployeeCensuresTable extends Migration
             $table->string('file_upload')->nullable();
             $table->integer('status')->default(1);
             $table->text('remark');
-            $table->integer('compiled_by')->unsigned();
+            $table->integer('compiled_by')->unsigned()->nullable();
             $table->dateTime('compiled_at');
             $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();

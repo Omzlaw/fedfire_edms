@@ -24,7 +24,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
-    <td>{{ $employeeCensure->employee->staff_code }}</td>
+    <td>{{ $employeeCensure->employee->getFullName() }}</td>
 </tr>
 
 
@@ -46,10 +46,10 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('compiled_by', 'Compiled By:') !!}</th>
     <td>{{ $employeeCensure->compiledBy->name }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>

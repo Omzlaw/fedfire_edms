@@ -318,6 +318,11 @@
                     </div>`;
         }
 
+        function firstLetterUpper(theString) {
+                var newString = theString.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g,function(c){return c.toUpperCase()});
+            return newString;
+        }
+
 
         function confirmation(id) {
             let result = confirm('Are you sure you want to delete');
@@ -372,7 +377,7 @@
                         for (var i in columnNames) {
                                 columns.push({
                                 data: columnNames[i],
-                                title: columnNames[i],
+                                title: firstLetterUpper(columnNames[i].replace('_', ' ').replace('id', '').replace('_', ''))
                             });
                         }
 

@@ -54,7 +54,7 @@ class EmployeeNextOfKin extends Model
         'id' => 'integer',
         'name' => 'string',
         'address' => 'string',
-        'relationship_id' => 'integer',
+        'relationship_id' => 'string',
         'employee_id' => 'integer',
         'file_upload' => 'string',
         'remark' => 'string',
@@ -72,7 +72,7 @@ class EmployeeNextOfKin extends Model
         'address' => 'Required',
         'relationship_id' => 'Required',
         'employee_id' => 'Required',
-        'file_upload' => 'Required',
+        // 'file_upload' => 'Required',
         'remark' => 'Required',
      //   'created_by' => 'Required',
     //    'updated_by' => 'Required'

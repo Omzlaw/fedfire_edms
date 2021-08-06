@@ -64,8 +64,8 @@ class EmployeeEducation extends Model
     protected $casts = [
         'id' => 'integer',
         'school_name' => 'string',
-        'certificate_id' => 'integer',
-        'school_type_id' => 'integer',
+        'certificate_id' => 'string',
+        'school_type_id' => 'string',
         'from_date' => 'datetime',
         'to_date' => 'datetime',
         'employee_id' => 'integer',
@@ -90,10 +90,10 @@ class EmployeeEducation extends Model
         'from_date' => 'Required',
         'to_date' => 'Required',
         'employee_id' => 'Required',
-        'file_upload' => 'Required',
+        // 'file_upload' => 'Required',
         'status' => 'Required',
         'remark' => 'Required',
-        'checked_by' => 'Required',
+        // 'checked_by' => 'Required',
         'checked_at' => 'Required',
      //   'created_by' => 'Required',
     //    'updated_by' => 'Required'

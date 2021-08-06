@@ -93,6 +93,16 @@ if(!function_exists('getModelColumns')) {
         }
     }
 
+    if( ! function_exists('enum_rank_type')){
+        function enum_rank_type($add_Select = TRUE){
+            $option['-1'] = 'Select...';
+            $option['0'] = 'Officers Rank';
+            $option['1'] = 'Rank & File';
+            if(!$add_Select){unset($option['-1']);}
+            return $option;
+        }
+    }
+
     if( ! function_exists('enum_religion')){
         function enum_religion($add_Select = TRUE){
             $option['-1'] = 'Select...';

@@ -151,50 +151,116 @@
 <!-- Nationality Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('nationality', 'Nationality:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}  
+        {!! Form::label('country_id', 'Country:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('nationality', modelDropdown($countries, 'id', 'title'), null, ['class' => 'form-control']) !!}
+            {!! Form::select('nationality', modelDropdown($countries, 'id', 'title'), null, ['class' => 'form-control', 'onchange' => 'countryGeoPoliticalZoneSelector()', 'id' => 'countrySelector']) !!}
         </div>
     </div>
 </div>
 
 
 <!-- Geo-Political Zone Field -->
+{!! Form::macro('geoPoliticalZoneSelect', function($geoPoliticalZoneModel)
+{
+    $geoPoliticalZones = $geoPoliticalZoneModel::orderBy('title')->get();
+    $options = array();
+    $defaultOption = '<option value="">Select...</option>';
+    $options[] = $defaultOption;
+    foreach ($geoPoliticalZones as $geoPoliticalZone) {
+
+        $option = '<option value=' . $geoPoliticalZone->id . ' data-country_id=' . $geoPoliticalZone->country_id . '>' . $geoPoliticalZone->title . '</option>';
+        $options[] = $option;
+    }
+    $list = implode('', $options);
+    return "<select id='geoPoliticalZoneSelector' name='geo_political_zone_id' class='form-control' onchange='geoPoliticalZoneStateSelector()'>{$list}</select>";
+}); !!}
+
+
 <div class="form-group">
     <div class="row">
-        {!! Form::label('geo_politcal_zone', 'Geo-Political Zone:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}  
+        {!! Form::label('geo_political_zone_id', 'Geo-Political Zone:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('geo_politcal_zone', modelDropdown($geo_political_zones, 'id', 'title'), null, ['class' => 'form-control']) !!}
+            {!! Form::geoPoliticalZoneSelect($geo_political_zones) !!}
         </div>
     </div>
 </div>
+
 
 <!-- State of Origin Field -->
+{!! Form::macro('stateSelect', function($stateModel)
+{
+    $states = $stateModel::orderBy('title')->get();
+    $options = array();
+    $defaultOption = '<option value="">Select...</option>';
+    $options[] = $defaultOption;
+    foreach ($states as $state) {
+
+        $option = '<option value=' . $state->id . ' data-geo_political_zone_id=' . $state->geo_political_zone_id . '>' . $state->title . '</option>';
+        $options[] = $option;
+    }
+    $list = implode('', $options);
+    return "<select id='stateSelector' name='state_id' class='form-control' onchange='stateSenatorialZoneSelector()'>{$list}</select>";
+}); !!}
+
+
 <div class="form-group">
     <div class="row">
-        {!! Form::label('state_of_origin', 'State of Origin:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}  
+        {!! Form::label('state_id', 'State:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('state_of_origin', modelDropdown($states, 'id', 'title'), null, ['class' => 'form-control']) !!}
+            {!! Form::stateSelect($states) !!}
         </div>
     </div>
 </div>
 
+
 <!-- Senatorial Zone Field -->
+{!! Form::macro('senatorialZoneSelect', function($senatorialZoneModel)
+{
+    $senatorialZones = $senatorialZoneModel::orderBy('title')->get();
+    $options = array();
+    $defaultOption = '<option value="">Select...</option>';
+    $options[] = $defaultOption;
+    foreach ($senatorialZones as $senatorialZone) {
+
+        $option = '<option value=' . $senatorialZone->id . ' data-state_id=' . $senatorialZone->state_id . '>' . $senatorialZone->title . '</option>';
+        $options[] = $option;
+    }
+    $list = implode('', $options);
+    return "<select id='senatorialZoneSelector' name='senatorial_zone_id' class='form-control' onchange='senatorialZoneLocalGovtAreaSelector()'>{$list}</select>";
+}); !!}
+
+
 <div class="form-group">
     <div class="row">
-        {!! Form::label('senatorial_zone', 'Senatorial Zone:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}  
+        {!! Form::label('senatorial_zone_id', 'Senatorial Zone:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('senatorial_zone', modelDropdown($senatorial_zones, 'id', 'title'), null, ['class' => 'form-control']) !!}
+            {!! Form::senatorialZoneSelect($senatorial_zones) !!}
         </div>
     </div>
 </div>
 
 <!-- Local Govt Area Zone Field -->
+{!! Form::macro('localGovtAreaSelect', function($localGovtAreaModel)
+{
+    $localGovtAreas = $localGovtAreaModel::orderBy('title')->get();
+    $options = array();
+    $defaultOption = '<option value="">Select...</option>';
+    $options[] = $defaultOption;
+    foreach ($localGovtAreas as $localGovtArea) {
+
+        $option = '<option value=' . $localGovtArea->id . ' data-senatorial_zone_id=' . $localGovtArea->senatorial_zone_id . '>' . $localGovtArea->title . '</option>';
+        $options[] = $option;
+    }
+    $list = implode('', $options);
+    return "<select id='localGovtAreaSelector' name='local_govt_area_id' class='form-control'>{$list}</select>";
+}); !!}
+
+
 <div class="form-group">
     <div class="row">
-        {!! Form::label('local_govt_area', 'Local Govt Area:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}  
+        {!! Form::label('local_govt_area_id', 'Local Govt Area:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('local_govt_area', modelDropdown($local_govt_areas, 'id', 'title'), null, ['class' => 'form-control']) !!}
+            {!! Form::localGovtAreaSelect($local_govt_areas) !!}
         </div>
     </div>
 </div>
@@ -283,3 +349,80 @@
     {!! Form::submit('Save', ['class' => 'btn secondary-color-bg']) !!}
     <a href="{{ route('humanresource.employees.index') }}" class="btn btn-default text-danger">Cancel</a>
 </div>
+
+
+
+<script>
+
+    window.onload = function () { 
+        $('#geoPoliticalZoneSelector').prop('disabled', 'disabled');
+        $('#stateSelector').prop('disabled', 'disabled');
+        $('#senatorialZoneSelector').prop('disabled', 'disabled');
+        $('#localGovtAreaSelector').prop('disabled', 'disabled');
+    }
+
+    function countryGeoPoliticalZoneSelector(event) {
+
+        var countrySelect = $('#countrySelector');
+        var geoPolitcalZoneSelect = $('#geoPoliticalZoneSelector');
+        var id = countrySelect.children("option:selected").val();
+        $("#GeoPoliticalZoneSelector > option").each(function() {
+            let country_id = $(this).data("country_id");
+            if (id == country_id) {
+                $(this).removeAttr('disabled').show();
+            } else {
+                $(this).attr('disabled', 'disabled').hide();
+            }
+        });
+        geoPolitcalZoneSelect.prop('disabled', false);
+    }
+
+    function geoPoliticalZoneStateSelector(event) {
+
+        var stateSelect = $('#stateSelector');
+        var geoPolitcalZoneSelect = $('#geoPoliticalZoneSelector');
+        var id = geoPolitcalZoneSelect.children("option:selected").val();
+        $("#stateSelector > option").each(function() {
+            let geo_political_zone_id = $(this).data("geo_political_zone_id");
+            if (id == geo_political_zone_id) {
+                $(this).removeAttr('disabled').show();
+            } else {
+                $(this).attr('disabled', 'disabled').hide();
+            }
+        });
+        stateSelect.prop('disabled', false);
+    }
+
+    function stateSenatorialZoneSelector(event) {
+
+        var stateSelect = $('#stateSelector');
+        var senatorialZoneSelect = $('#senatorialZoneSelector');
+        var id = stateSelect.children("option:selected").val();
+        $("#senatorialZoneSelector > option").each(function() {
+            let state_id = $(this).data("state_id");
+            if (id == state_id) {
+                $(this).removeAttr('disabled').show();
+            } else {
+                $(this).attr('disabled', 'disabled').hide();
+            }
+        });
+        senatorialZoneSelect.prop('disabled', false);
+    }
+
+    function senatorialZoneLocalGovtAreaSelector(event) {
+
+        var senatorialZoneSelect = $('#senatorialZoneSelector');
+        var localGovtAreaSelect = $('#localGovtAreaSelector');
+        var id = senatorialZoneSelect.children("option:selected").val();
+        $("#localGovtAreaSelector > option").each(function() {
+            let senatorial_zone_id = $(this).data("senatorial_zone_id");
+            if (id == senatorial_zone_id) {
+                $(this).removeAttr('disabled').show();
+            } else {
+                $(this).attr('disabled', 'disabled').hide();
+            }
+        });
+        localGovtAreaSelect.prop('disabled', false);
+    }
+
+</script>

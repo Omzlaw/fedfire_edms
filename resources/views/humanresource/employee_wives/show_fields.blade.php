@@ -24,7 +24,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
-    <td>{{ $employeeWife->employee->staff_code}}</td>
+    <td>{{ $employeeWife->employee->getFullName() }}</td>
 </tr>
 
 
@@ -40,10 +40,10 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('checked_by', 'Checked By:') !!}</th>
     <td>{{ $employeeWife->checkedBy->name }}</td>
-</tr>
+</tr> --}}
 
 
 {{-- <tr>

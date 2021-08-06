@@ -20,7 +20,10 @@ class RankTypeDataTable extends DataTable
 
         return $dataTable
         ->addColumn('status', function($row){
-            return $row->state->title;
+            return get_enum_value('enum_status', $row->status);
+        })
+        ->addColumn('type', function($row){
+            return get_enum_value('enum_rank_type', $row->type);
         })
         ->addColumn('action', 'shared.rank_types.datatables_actions');
     }
@@ -72,6 +75,7 @@ class RankTypeDataTable extends DataTable
             // 'id',
             'title',
             'description',
+            'type',
             'status',
 
         ];

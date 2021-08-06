@@ -19,6 +19,16 @@
     </div>
 </div>
 
+<!-- Rank Type Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('rank_type', 'Rank Type:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::select('type', enum_rank_type(), null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
 
 <!-- Status Field -->
 <div class="form-group">

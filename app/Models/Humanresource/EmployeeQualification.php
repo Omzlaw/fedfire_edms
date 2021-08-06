@@ -57,7 +57,7 @@ class EmployeeQualification extends Model
         'date_obtained' => 'datetime',
         'employee_id' => 'integer',
         'file_upload' => 'string',
-        'status' => 'integer',
+        'status' => 'string',
         'remark' => 'string',
         'checked_by' => 'integer',
         'created_by' => 'integer',

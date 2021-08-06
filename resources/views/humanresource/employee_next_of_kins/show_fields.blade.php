@@ -17,21 +17,21 @@
 
 
 <tr>
-    <th scopre="row">{!! Form::label('relationship_id', 'Relationship :') !!}</th>
+    <th scopre="row">{!! Form::label('relationship_id', 'Relationship:') !!}</th>
     <td>{{ $employeeNextOfKin->relationship->title }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
-    <td>{{ $employeeNextOfKin->employee->staff_code }}</td>
+    <td>{{ $employeeNextOfKin->employee->getFullName() }}</td>
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('file_upload', 'File Upload:') !!}</th>
     <td>{{ $employeeNextOfKin->file_upload }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>

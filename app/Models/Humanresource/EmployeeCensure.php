@@ -81,10 +81,10 @@ class EmployeeCensure extends Model
         'summary' => 'Required',
         'date_recieved' => 'Required',
         'employee_id' => 'Required',
-        'file_upload' => 'Required',
+        // 'file_upload' => 'Required',
         'status' => 'Required',
         'remark' => 'Required',
-        'compiled_by' => 'Required',
+        // 'compiled_by' => 'Required',
         'compiled_at' => 'Required',
      //   'created_by' => 'Required',
     //    'updated_by' => 'Required'

@@ -20,7 +20,7 @@ class RelationshipDataTable extends DataTable
 
         return $dataTable
         ->addColumn('status', function($row){
-            return $row->state->title;
+            return get_enum_value('enum_status', $row->status);
         })
         ->addColumn('action', 'shared.relationships.datatables_actions');
     }

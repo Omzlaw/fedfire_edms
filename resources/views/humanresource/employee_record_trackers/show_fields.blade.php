@@ -6,7 +6,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
-    <td>{{ $employeeRecordTracker->employee->staff_code }}</td>
+    <td>{{ $employeeRecordTracker->employee->getFullName() }}</td>
 </tr>
 
 
@@ -42,7 +42,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('has_education', 'Has Education:') !!}</th>
-    <td>{{ get_enum_value('enum_yes_no', $employeeRecord->has_education) }}</td>
+    <td>{{ get_enum_value('enum_yes_no', $employeeRecordTracker->has_education) }}</td>
 </tr>
 
 

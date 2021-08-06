@@ -85,13 +85,13 @@ class EmployeeDataTable extends DataTable
     {
         return [
             // 'id',
+            'profile_picture',
             'file_no',
             'first_name',
             'last_name',
             'gender',
             'birthdate',
             // 'place_of_birth',
-            'profile_picture',
             // 'birth_certificate_upload',
             // 'marital_status_id',
             // 'first_appointment_date',

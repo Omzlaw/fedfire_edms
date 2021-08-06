@@ -1,3 +1,14 @@
+<!-- Relationship Id Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('relationship_id', 'Relationship:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::select('relationship_id', modelDropdown($relationship, 'id', 'title'), null, ['class' => 'form-control']) !!}
+            {{-- <button  class="model_modal_button" data-route="{{ route('humanresource.leaveTypes.create') }}" type="button" data-toggle="modal"  data-target="#model_modal">Add new</button> --}}
+        </div>
+    </div>
+</div>
+
 <!-- Name Field -->
 <div class="form-group">
     <div class="row">

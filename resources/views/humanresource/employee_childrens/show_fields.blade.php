@@ -24,7 +24,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
-    <td>{{ $employeeChildren->employee->staff_code }}</td>
+    <td>{{ $employeeChildren->employee->getFullName()}}</td>
 </tr>
 
 

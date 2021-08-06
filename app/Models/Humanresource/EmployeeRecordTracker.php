@@ -50,12 +50,12 @@ class EmployeeRecordTracker extends Model
     protected $casts = [
         'id' => 'integer',
         'employee_id' => 'integer',
-        'status' => 'integer',
+        'status' => 'string',
         'remark' => 'string',
         'created_by' => 'integer',
         'updated_by' => 'integer',
-        'has_profile' => 'integer',
-        'has_education' => 'integer'
+        'has_profile' => 'string',
+        'has_education' => 'string'
     ];
 
     /**

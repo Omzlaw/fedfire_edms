@@ -24,7 +24,7 @@ class CreateEmployeeEducationTable extends Migration
             $table->string('file_upload')->nullable();
             $table->integer('status')->default(1);
             $table->string('remark')->nullable();
-            $table->integer('checked_by')->unsigned();
+            $table->integer('checked_by')->unsigned()->nullable();
             $table->dateTime('checked_at');
             $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();
