@@ -12,13 +12,13 @@
 
 <tr>
     <th scopre="row">{!! Form::label('wife_birthdate', 'Wife Birthdate:') !!}</th>
-    <td>{{ $employeeWife->wife_birthdate->toDateString() }}</td>
+    <td>{{ $employeeWife->wife_birthdate }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('marriage_date', 'Marriage Date:') !!}</th>
-    <td>{{ $employeeWife->marriage_date->toDateString() }}</td>
+    <td>{{ $employeeWife->marriage_date }}</td>
 </tr>
 
 
@@ -60,13 +60,13 @@
 
 {{-- <tr>
     <th scopre="row">{!! Form::label('created_at', 'Created At:') !!}</th>
-    <td>{{ $employeeWife->created_at->toDateString() }}</td>
+    <td>{{ $employeeWife->created_at }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('updated_at', 'Updated At:') !!}</th>
-    <td>{{ $employeeWife->updated_at->toDateString() }}</td>
+    <td>{{ $employeeWife->updated_at }}</td>
 </tr> --}}
 
 

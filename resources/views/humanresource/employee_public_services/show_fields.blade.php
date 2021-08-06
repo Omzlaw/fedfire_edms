@@ -12,13 +12,13 @@
 
 <tr>
     <th scopre="row">{!! Form::label('from_date', 'From Date:') !!}</th>
-    <td>{{ $employeePublicService->from_date->toDateString() }}</td>
+    <td>{{ $employeePublicService->from_date }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('to_date', 'To Date:') !!}</th>
-    <td>{{ $employeePublicService->to_date->toDateString() }}</td>
+    <td>{{ $employeePublicService->to_date }}</td>
 </tr>
 
 
@@ -30,7 +30,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
-    <td>{{ $employeePublicService->employee->staff_code}}</td>
+    <td>{{ $employeePublicService->employee->getFullName()}}</td>
 </tr>
 
 

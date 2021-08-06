@@ -32,7 +32,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
-    <td>{{ $employeeAddress->employee->staff_code }}</td>
+    <td>{{ $employeeAddress->employee->getFullName() }}</td>
 </tr>
 
 

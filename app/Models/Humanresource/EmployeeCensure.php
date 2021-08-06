@@ -60,13 +60,13 @@ class EmployeeCensure extends Model
         'id' => 'integer',
         'title' => 'string',
         'summary' => 'string',
-        'date_recieved' => 'datetime',
+        'date_recieved' => 'string',
         'employee_id' => 'integer',
         'file_upload' => 'string',
         'status' => 'integer',
         'remark' => 'string',
         'compiled_by' => 'integer',
-        'compiled_at' => 'datetime',
+        'compiled_at' => 'string',
         'created_by' => 'integer',
         'updated_by' => 'integer'
     ];

@@ -88,12 +88,12 @@ class Employee extends Model
         'last_name' => 'string',
         'staff_code' => 'string',
         'gender' => 'integer',
-        'birthdate' => 'datetime',
+        'birthdate' => 'string',
         'place_of_birth' => 'string',
         'profile_picture' => 'string',
         'marital_status_id' => 'integer',
-        'first_appointment_date' => 'datetime',
-        'first_arrival_date' => 'datetime',
+        'first_appointment_date' => 'string',
+        'first_arrival_date' => 'string',
         'nationality' => 'integer',
         'geo_political_zone' => 'integer',
         'state_of_origin' => 'integer',
@@ -259,7 +259,7 @@ class Employee extends Model
 
     public function foreignTours()
     {
-        return $this->hasMany(EmployeeForeignTours::class)->select('id', 'leaver_id', 'from_date', 'to_date', 'status', 'remark');
+        return $this->hasMany(EmployeeForeignTours::class)->select('id', 'leave_type_id', 'from_date', 'to_date', 'status', 'remark');
     }
 
     public function gratuities()
@@ -274,7 +274,7 @@ class Employee extends Model
 
     public function localLeaves()
     {
-        return $this->hasMany(EmployeeLocalLeave::class)->select('id', 'no_of_days', 'file_page_no', 'leaver_id', 'from_date', 'to_date');
+        return $this->hasMany(EmployeeLocalLeave::class)->select('id', 'no_of_days', 'file_page_no', 'leave_type_id', 'from_date', 'to_date');
     }
 
     public function nextOfKins()

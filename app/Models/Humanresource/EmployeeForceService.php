@@ -63,7 +63,7 @@ class EmployeeForceService extends Model
         'remark' => 'string',
         'created_by' => 'integer',
         'updated_by' => 'integer',
-        'date_updated' => 'datetime'
+        'date_updated' => 'string'
     ];
 
     /**

@@ -59,7 +59,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('checked_at', 'Checked At:') !!}</th>
-    <td>{{ $employeeLanguage->checked_at->toDateString() }}</td>
+    <td>{{ $employeeLanguage->checked_at }}</td>
 </tr>
 
 

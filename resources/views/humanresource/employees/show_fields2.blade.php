@@ -1,7 +1,7 @@
 <tr>
     <th scopre="row">{!! Form::label('senatorial_zone', 'Senatorial Zone:') !!}</th>
-    @if (isset($state->senatorialZone->title))
-        <td>{{ $state->senatorialZone->title }}</td>
+    @if (isset($employee->senatorialZone->title))
+        <td>{{ $employee->senatorialZone->title }}</td>
     @else
         <td></td>
     @endif
@@ -9,8 +9,8 @@
 
 <tr>
     <th scopre="row">{!! Form::label('local_govt_area', 'Local Govt Area:') !!}</th>
-    @if (isset($state->localGovtArea->title))
-        <td>{{ $state->localGovtArea->title }}</td>
+    @if (isset($employee->localGovtArea->title))
+        <td>{{ $employee->localGovtArea->title }}</td>
     @else
         <td></td>
     @endif
@@ -18,7 +18,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('first_arrival_date', 'First Arrival Date:') !!}</th>
-    <td>{{ $employee->first_arrival_date->toDateString() }}</td>
+    <td>{{ $employee->first_arrival_date }}</td>
 </tr>
 
 

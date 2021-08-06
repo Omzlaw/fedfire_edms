@@ -24,19 +24,19 @@
 
 <tr>
     <th scopre="row">{!! Form::label('from_date', 'From Date:') !!}</th>
-    <td>{{ $employeeEducation->from_date->toDateString() }}</td>
+    <td>{{ $employeeEducation->from_date }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('to_date', 'To Date:') !!}</th>
-    <td>{{ $employeeEducation->to_date->toDateString() }}</td>
+    <td>{{ $employeeEducation->to_date }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
-    <td>{{ $employeeEducation->employee->staff_code }}</td>
+    <td>{{ $employeeEducation->employee->getFullName() }}</td>
 </tr>
 
 

@@ -19,9 +19,9 @@ class CreateEmployeeLocalLeavesTable extends Migration
             $table->string('file_upload')->nullable();
             $table->integer('no_of_days');
             $table->integer('file_page_no');
-            $table->integer('leaver_id')->unsigned();
-            $table->dateTime('from_date');
-            $table->integer('to_date');
+            $table->integer('leave_type_id')->unsigned();
+            $table->date('from_date');
+            $table->date('to_date');
             $table->smallInteger('status');
             $table->text('remark');
             $table->integer('created_by')->unsigned()->nullable();
@@ -29,7 +29,7 @@ class CreateEmployeeLocalLeavesTable extends Migration
             $table->timestamps();
             $table->softDeletes();
             //$table->foreign('employee_id')->references('id')->on('employees');
-            //$table->foreign('leaver_id')->references('id')->on('leave_types');
+            //$table->foreign('leave_type_id')->references('id')->on('leave_types');
             //$table->foreign('created_by')->references('id')->on('users');
             //$table->foreign('updated_by')->references('id')->on('users');
         });

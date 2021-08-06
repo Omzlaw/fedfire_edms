@@ -34,7 +34,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('birthdate', 'Birthdate:') !!}</th>
-    <td>{{ $employee->birthdate->toDateString() }}</td>
+    <td>{{ $employee->birthdate }}</td>
 </tr>
 
 <tr>
@@ -44,8 +44,8 @@
 
 <tr>
     <th scopre="row">{!! Form::label('geo_political_zone', 'Geo-Politcal Zone:') !!}</th>
-    @if (isset($state->geoPoliticalZone->title))
-        <td>{{ $state->geoPoliticalZone->title }}</td>
+    @if (isset($employee->geoPoliticalZone->title))
+        <td>{{ $employee->geoPoliticalZone->title }}</td>
     @else
         <td></td>
     @endif
@@ -53,10 +53,9 @@
 
 <tr>
     <th scopre="row">{!! Form::label('state_of_origin', 'State of Origin:') !!}</th>
-    @if (isset($state->stateOfOrigin->title))
-        <td>{{ $state->stateOfOrigin->title }}</td>
+    @if (isset($employee->stateOfOrigin->title))
+        <td>{{ $employee->stateOfOrigin->title }}</td>
     @else
-        <td></td>
     @endif
 </tr>
 
@@ -79,7 +78,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('first_appointment_date', 'First Appointment Date:') !!}</th>
-    <td>{{ $employee->first_appointment_date->toDateString() }}</td>
+    <td>{{ $employee->first_appointment_date }}</td>
 </tr>
 
 

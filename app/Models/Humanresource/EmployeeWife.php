@@ -55,8 +55,8 @@ class EmployeeWife extends Model
     protected $casts = [
         'id' => 'integer',
         'wife_name' => 'string',
-        'wife_birthdate' => 'datetime',
-        'marriage_date' => 'datetime',
+        'wife_birthdate' => 'string',
+        'marriage_date' => 'string',
         'employee_id' => 'integer',
         'file_upload' => 'string',
         'remark' => 'string',

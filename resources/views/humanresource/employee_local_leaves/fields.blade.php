@@ -47,9 +47,9 @@
 <!-- Leaver Id Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('leaver_id', 'Leave Type:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('leave_type_id', 'Leave Type:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('leaver_id', modelDropdown($leave_types), null, ['class' => 'form-control']) !!}
+            {!! Form::select('leave_type_id', modelDropdown($leave_types, 'id', 'title'), null, ['class' => 'form-control']) !!}
             {{-- <button  class="model_modal_button" data-route="{{ route('humanresource.leaveTypes.create') }}" type="button" data-toggle="modal"  data-target="#model_modal">Add new</button> --}}
         </div>
     </div>

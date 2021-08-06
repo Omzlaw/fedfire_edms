@@ -12,7 +12,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('action_at', 'Action At:') !!}</th>
-    <td>{{ $employeeActionSheet->action_at->toDateString() }}</td>
+    <td>{{ $employeeActionSheet->action_at }}</td>
 </tr>
 
 

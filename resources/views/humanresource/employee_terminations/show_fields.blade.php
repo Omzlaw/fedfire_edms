@@ -12,7 +12,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
-    <td>{{ $employeeTermination->employee->staff_code }}</td>
+    <td>{{ $employeeTermination->employee->getFullName() }}</td>
 </tr>
 
 
@@ -24,7 +24,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('even_date', 'Even Date:') !!}</th>
-    <td>{{ $employeeTermination->even_date->toDateString() }}</td>
+    <td>{{ $employeeTermination->even_date }}</td>
 </tr>
 
 
@@ -42,7 +42,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('pension_start_date', 'Pension Start Date:') !!}</th>
-    <td>{{ $employeeTermination->pension_start_date->toDateString() }}</td>
+    <td>{{ $employeeTermination->pension_start_date }}</td>
 </tr>
 
 
@@ -72,7 +72,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('widow_pension_start_date', 'Widow Pension Start Date:') !!}</th>
-    <td>{{ $employeeTermination->widow_pension_start_date->toDateString() }}</td>
+    <td>{{ $employeeTermination->widow_pension_start_date }}</td>
 </tr>
 
 
@@ -124,10 +124,10 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('compiled_by', 'Compiled By:') !!}</th>
     <td>{{ $employeeTermination->compiledBy->name }}</td>
-</tr>
+</tr> --}}
 
 
 {{-- <tr>

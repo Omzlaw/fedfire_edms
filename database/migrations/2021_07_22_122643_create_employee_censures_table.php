@@ -17,13 +17,13 @@ class CreateEmployeeCensuresTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('summary');
-            $table->dateTime('date_recieved');
+            $table->date('date_recieved');
             $table->integer('employee_id')->unsigned();
             $table->string('file_upload')->nullable();
             $table->integer('status')->default(1);
             $table->text('remark');
             $table->integer('compiled_by')->unsigned()->nullable();
-            $table->dateTime('compiled_at');
+            $table->date('compiled_at');
             $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();
             $table->timestamps();

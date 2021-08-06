@@ -24,7 +24,7 @@ class CreateEmployeeLanguagesTable extends Migration
             $table->smallInteger('status');
             $table->text('remark');
             $table->integer('checked_by')->unsigned()->nullable();
-            $table->dateTime('checked_at');
+            $table->date('checked_at');
             $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();
             $table->timestamps();

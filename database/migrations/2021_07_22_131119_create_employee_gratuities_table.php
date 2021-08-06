@@ -18,9 +18,9 @@ class CreateEmployeeGratuitiesTable extends Migration
             $table->integer('employee_id')->unsigned();
             $table->string('file_upload')->nullable();
             $table->integer('file_page_no');
-            $table->dateTime('payment_date');
-            $table->dateTime('from_date');
-            $table->dateTime('to_date');
+            $table->date('payment_date');
+            $table->date('from_date');
+            $table->date('to_date');
             $table->integer('years')->nullable();
             $table->integer('months')->nullable();
             $table->integer('days')->nullable();
@@ -28,8 +28,8 @@ class CreateEmployeeGratuitiesTable extends Migration
             $table->decimal('rate_per_annum');
             $table->decimal('amount_paid');
             $table->string('remark')->nullable();
-            $table->integer('checked_by')->unsigned();
-            $table->dateTime('checked_at')->nullable();
+            $table->integer('checked_by')->unsigned()->nullable();
+            $table->date('checked_at')->nullable();
             $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();
             $table->timestamps();

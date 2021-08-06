@@ -22,7 +22,7 @@ class CreateEmployeesChildrenTable extends Migration
             $table->string('file_upload')->nullable();
             $table->string('remark')->nullable();
             $table->integer('checked_by')->unsigned();
-            $table->dateTime('checked_at');
+            $table->date('checked_at');
             $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();
             $table->timestamps();

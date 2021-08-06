@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property \App\Models\User $updatedBy
  * @property integer $employee_id
  * @property string $file_upload
- * @property integer $leaver_id
+ * @property integer $leave_type_id
  * @property string $from_date
  * @property string $to_date
  * @property integer $status
@@ -53,7 +53,7 @@ class EmployeeForeignTours extends Model
     public $fillable = [
         'employee_id',
         'file_upload',
-        'leaver_id',
+        'leave_type_id',
         'from_date',
         'to_date',
         'status',
@@ -86,22 +86,22 @@ class EmployeeForeignTours extends Model
         'id' => 'integer',
         'employee_id' => 'integer',
         'file_upload' => 'string',
-        'leaver_id' => 'integer',
-        'from_date' => 'datetime',
-        'to_date' => 'datetime',
-        'status' => 'integer',
+        'leave_type_id' => 'string',
+        'from_date' => 'string',
+        'to_date' => 'string',
+        'status' => 'string',
         'remark' => 'string',
         'created_by' => 'integer',
         'updated_by' => 'integer',
-        'date_started' => 'datetime',
+        'date_started' => 'string',
         'tour_gazette_no' => 'integer',
         'tour_length' => 'double',
-        'leave_due_date' => 'datetime',
-        'leave_departure_date' => 'datetime',
+        'leave_due_date' => 'string',
+        'leave_departure_date' => 'string',
         'leave_gazette_no' => 'integer',
-        'return_due_date' => 'datetime',
-        'granted_extension_date' => 'datetime',
-        'duty_resumption_date' => 'datetime',
+        'return_due_date' => 'string',
+        'granted_extension_date' => 'string',
+        'duty_resumption_date' => 'string',
         'passed_to_uk' => 'string',
         'passed_from_uk' => 'string',
         'resident_months' => 'integer',
@@ -117,8 +117,8 @@ class EmployeeForeignTours extends Model
      */
     public static $rules = [
         'employee_id' => 'Required',
-        'file_upload' => 'Required',
-        'leaver_id' => 'Required',
+        // 'file_upload' => 'Required',
+        'leave_type_id' => 'Required',
         'from_date' => 'Required',
         'to_date' => 'Required',
         'status' => 'Required',
@@ -155,7 +155,7 @@ class EmployeeForeignTours extends Model
      **/
     public function leaveType()
     {
-        return $this->belongsTo(\App\Models\Humanresource\LeaveType::class, 'leaver_id', 'id');
+        return $this->belongsTo(\App\Models\Humanresource\LeaveType::class, 'leave_type_id', 'id');
     }
 
     /**

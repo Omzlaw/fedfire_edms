@@ -112,7 +112,6 @@ class EmployeeController extends AppBaseController
 
         $data['children'] = $employee->children->map(function ($item) {
             $item->gender = get_enum_value('enum_gender', $item->gender);
-            $item->birthday = format_date($item->birthday);
             return $item;
         });
 
@@ -165,12 +164,15 @@ class EmployeeController extends AppBaseController
         //get the foreignTours
 
         $data['foreignTours'] = $employee->foreignTours->map(function ($item) {
+            $item->status = get_enum_value('enum_status', $item->status);
+            $item->leave_type_id = $item->leaveType->title;
             return $item;
         });
 
         //get the gratuities
 
         $data['gratuities'] = $employee->gratuities->map(function ($item) {
+            $item->status = get_enum_value('enum_status', $item->status);
             return $item;
         });
 
@@ -186,6 +188,7 @@ class EmployeeController extends AppBaseController
         //get the localLeaves
 
         $data['localLeaves'] = $employee->localLeaves->map(function ($item) {
+            $item->leave_type_id = $item->leaveType->title;
             return $item;
         });
 
@@ -221,6 +224,8 @@ class EmployeeController extends AppBaseController
         //get the terminations
 
         $data['terminations'] = $employee->terminations->map(function ($item) {
+            $item->termination_id = $item->termination_type->title;
+            $item->is_pensionable = get_enum_value('enum_yes_no', $item->is_pensionable);
             return $item;
         });
 

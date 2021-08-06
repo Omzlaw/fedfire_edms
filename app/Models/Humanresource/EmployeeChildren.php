@@ -58,12 +58,12 @@ class EmployeeChildren extends Model
         'id' => 'integer',
         'name' => 'string',
         'gender' => 'string',
-        'birthday' => 'date',
+        'birthday' => 'string',
         'employee_id' => 'integer',
         'file_upload' => 'string',
         'remark' => 'string',
         'checked_by' => 'integer',
-        'checked_at' => 'datetime',
+        'checked_at' => 'string',
         'created_by' => 'integer',
         'updated_by' => 'integer'
     ];

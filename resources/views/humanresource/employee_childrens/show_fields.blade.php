@@ -18,7 +18,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('birthday', 'Birthday:') !!}</th>
-    <td>{{ $employeeChildren->birthday->toDateString() }}</td>
+    <td>{{ $employeeChildren->birthday }}</td>
 </tr>
 
 
@@ -48,7 +48,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('checked_at', 'Checked At:') !!}</th>
-    <td>{{ $employeeChildren->checked_at->toDateString() }}</td>
+    <td>{{ $employeeChildren->checked_at }}</td>
 </tr>
 
 

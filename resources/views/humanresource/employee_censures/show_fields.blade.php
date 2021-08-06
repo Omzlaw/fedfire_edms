@@ -18,7 +18,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('date_recieved', 'Date Recieved:') !!}</th>
-    <td>{{ $employeeCensure->date_recieved->toDateString() }}</td>
+    <td>{{ $employeeCensure->date_recieved }}</td>
 </tr>
 
 
@@ -54,7 +54,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('compiled_at', 'Compiled At:') !!}</th>
-    <td>{{ $employeeCensure->compiled_at->toDateString() }}</td>
+    <td>{{ $employeeCensure->compiled_at }}</td>
 </tr>
 
 

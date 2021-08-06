@@ -52,10 +52,10 @@ class EmployeeActionSheet extends Model
         'id' => 'integer',
         'folio' => 'string',
         'employee_id' => 'integer',
-        'action_at' => 'datetime',
+        'action_at' => 'string',
         'created_by' => 'integer',
         'updated_by' => 'integer',
-        'date_cleared' => 'datetime',
+        'date_cleared' => 'string',
         'action_by' => 'integer',
         'remark' => 'string'
     ];

@@ -12,13 +12,13 @@
 
 <tr>
     <th scopre="row">{!! Form::label('date_obtained', 'Date Obtained:') !!}</th>
-    <td>{{ $employeeQualification->date_obtained->toDateString() }}</td>
+    <td>{{ $employeeQualification->date_obtained }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
-    <td>{{ $employeeQualification->employee->staff_code }}</td>
+    <td>{{ $employeeQualification->employee->getFullName() }}</td>
 </tr>
 
 

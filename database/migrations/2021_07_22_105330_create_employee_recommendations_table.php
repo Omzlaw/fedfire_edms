@@ -17,7 +17,7 @@ class CreateEmployeeRecommendationsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('summary');
-            $table->dateTime('date_received');
+            $table->date('date_received');
             $table->integer('employee_id')->unsigned();
             $table->string('file_upload')->nullable();
             $table->integer('status')->default(1);

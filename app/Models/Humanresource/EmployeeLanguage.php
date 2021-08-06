@@ -66,7 +66,7 @@ class EmployeeLanguage extends Model
         'status' => 'integer',
         'remark' => 'string',
         'checked_by' => 'integer',
-        'checked_at' => 'datetime',
+        'checked_at' => 'string',
         'created_by' => 'integer',
         'updated_by' => 'integer'
     ];

@@ -21,12 +21,12 @@ class CreateEmployeesTable extends Migration
             $table->string('last_name');
             $table->string('staff_code');
             $table->integer('gender');
-            $table->dateTime('birthdate');
+            $table->date('birthdate');
             $table->string('place_of_birth');
             $table->string('profile_picture')->nullable();
             $table->integer('marital_status_id')->unsigned();
-            $table->dateTime('first_appointment_date');
-            $table->dateTime('first_arrival_date');
+            $table->date('first_appointment_date');
+            $table->date('first_arrival_date');
             $table->integer('nationality')->unsigned();
             $table->integer('geo_political_zone')->unsigned()->nullable();
             $table->integer('state_of_origin')->unsigned()->nullable();

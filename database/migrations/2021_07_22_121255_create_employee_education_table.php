@@ -18,14 +18,14 @@ class CreateEmployeeEducationTable extends Migration
             $table->string('school_name');
             $table->integer('certificate_id')->unsigned();
             $table->integer('school_type_id')->unsigned();
-            $table->dateTime('from_date');
-            $table->dateTime('to_date');
+            $table->date('from_date');
+            $table->date('to_date');
             $table->integer('employee_id')->unsigned();
             $table->string('file_upload')->nullable();
             $table->integer('status')->default(1);
             $table->string('remark')->nullable();
             $table->integer('checked_by')->unsigned()->nullable();
-            $table->dateTime('checked_at');
+            $table->date('checked_at');
             $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();
             $table->timestamps();

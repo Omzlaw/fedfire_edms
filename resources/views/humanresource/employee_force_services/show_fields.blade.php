@@ -30,7 +30,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
-    <td>{{ $employeeForceService->employee->staff_code }}</td>
+    <td>{{ $employeeForceService->employee->getFullName() }}</td>
 </tr>
 
 
@@ -60,7 +60,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('date_updated', 'Date Updated:') !!}</th>
-    <td>{{ $employeeForceService->date_updated->toDateString() }}</td>
+    <td>{{ $employeeForceService->date_updated }}</td>
 </tr>
 
 

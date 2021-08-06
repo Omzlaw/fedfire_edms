@@ -70,7 +70,7 @@
     <div class="row">
         {!! Form::label('total_years_served', 'Total Years Served:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('total_years_served', null, ['class' => 'form-control']) !!}
+            {!! Form::number('total_years_served', null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div>
@@ -81,7 +81,7 @@
     <div class="row">
         {!! Form::label('total_paid', 'Total Paid:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('total_paid', null, ['class' => 'form-control']) !!}
+            {!! Form::number('total_paid', null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div>

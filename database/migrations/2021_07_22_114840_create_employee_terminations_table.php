@@ -19,15 +19,15 @@ class CreateEmployeeTerminationsTable extends Migration
             $table->integer('termination_id')->unsigned();
             $table->integer('employee_id')->unsigned();
             $table->string('file_upload')->nullable();
-            $table->dateTime('even_date');
+            $table->date('even_date');
             $table->integer('is_pensionable')->default(0);
             $table->decimal('pension_amount')->default(0);
-            $table->dateTime('pension_start_date');
+            $table->date('pension_start_date');
             $table->decimal('gratuity_amount')->default(0);
             $table->string('contract_gratuity');
             $table->decimal('estate_gratuity_amount_paid');
             $table->decimal('widow_pension_amount')->default(0);
-            $table->dateTime('widow_pension_start_date');
+            $table->date('widow_pension_start_date');
             $table->decimal('orphan_pension_amonut')->default(0);
             $table->integer('nigeria_total_service_years');
             $table->integer('nigeria_total_service_months');

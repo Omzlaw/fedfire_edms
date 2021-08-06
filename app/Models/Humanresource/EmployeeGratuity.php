@@ -72,18 +72,18 @@ class EmployeeGratuity extends Model
         'employee_id' => 'integer',
         'file_upload' => 'string',
         'file_page_no' => 'integer',
-        'payment_date' => 'datetime',
-        'from_date' => 'datetime',
-        'to_date' => 'datetime',
+        'payment_date' => 'string',
+        'from_date' => 'string',
+        'to_date' => 'string',
         'years' => 'integer',
         'months' => 'integer',
         'days' => 'integer',
-        'status' => 'integer',
+        'status' => 'string',
         'rate_per_annum' => 'decimal:2',
         'amount_paid' => 'decimal:2',
         'remark' => 'string',
         'checked_by' => 'integer',
-        'checked_at' => 'datetime',
+        'checked_at' => 'string',
         'created_by' => 'integer',
         'updated_by' => 'integer'
     ];
@@ -95,7 +95,7 @@ class EmployeeGratuity extends Model
      */
     public static $rules = [
         'employee_id' => 'Required',
-        'file_upload' => 'Required',
+        // 'file_upload' => 'Required',
         'file_page_no' => 'Required',
         'payment_date' => 'Required',
         'from_date' => 'Required',
@@ -107,7 +107,7 @@ class EmployeeGratuity extends Model
         'rate_per_annum' => 'Required',
         'amount_paid' => 'Required',
         'remark' => 'Required',
-        'checked_by' => 'Required',
+        // 'checked_by' => 'Required',
         'checked_at' => 'Required',
      //   'created_by' => 'Required',
     //    'updated_by' => 'Required'

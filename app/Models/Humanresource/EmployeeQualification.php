@@ -54,7 +54,7 @@ class EmployeeQualification extends Model
     protected $casts = [
         'id' => 'integer',
         'qualification_name' => 'string',
-        'date_obtained' => 'datetime',
+        'date_obtained' => 'string',
         'employee_id' => 'integer',
         'file_upload' => 'string',
         'status' => 'string',

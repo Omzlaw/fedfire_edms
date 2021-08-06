@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $file_upload
  * @property integer $no_of_days
  * @property integer $file_page_no
- * @property integer $leaver_id
+ * @property integer $leave_type_id
  * @property string $from_date
  * @property integer $to_date
  * @property integer $status
@@ -41,7 +41,7 @@ class EmployeeLocalLeave extends Model
         'file_upload',
         'no_of_days',
         'file_page_no',
-        'leaver_id',
+        'leave_type_id',
         'from_date',
         'to_date',
         'status',
@@ -61,10 +61,10 @@ class EmployeeLocalLeave extends Model
         'file_upload' => 'string',
         'no_of_days' => 'integer',
         'file_page_no' => 'integer',
-        'leaver_id' => 'integer',
-        'from_date' => 'datetime',
-        'to_date' => 'integer',
-        'status' => 'integer',
+        'leave_type_id' => 'string',
+        'from_date' => 'string',
+        'to_date' => 'string',
+        'status' => 'string',
         'remark' => 'string',
         'created_by' => 'integer',
         'updated_by' => 'integer'
@@ -77,10 +77,10 @@ class EmployeeLocalLeave extends Model
      */
     public static $rules = [
         'employee_id' => 'Required',
-        'file_upload' => 'Required',
+        // 'file_upload' => 'Required',
         'no_of_days' => 'Required',
         'file_page_no' => 'Required',
-        'leaver_id' => 'Required',
+        'leave_type_id' => 'Required',
         'from_date' => 'Required',
         'to_date' => 'Required',
         'status' => 'Required',
@@ -102,7 +102,7 @@ class EmployeeLocalLeave extends Model
      **/
     public function leaveType()
     {
-        return $this->belongsTo(\App\Models\Humanresource\LeaveType::class, 'leaver_id', 'id');
+        return $this->belongsTo(\App\Models\Humanresource\LeaveType::class, 'leave_type_id', 'id');
     }
 
     /**

@@ -60,7 +60,7 @@
         "inView": true
     },
     {
-        "name": "leaver_id",
+        "name": "leave_type_id",
         "dbType": "integer:unsigned:foreign,employees,id",
         "htmlType": "select,",
         "validations": "Required",
@@ -173,7 +173,7 @@
     },
     {
         "type": "relation",
-        "relation": "mt1,Employee,leaver_id,id"
+        "relation": "mt1,Employee,leave_type_id,id"
     },
     {
         "type": "relation",

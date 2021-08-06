@@ -172,7 +172,7 @@
         $options[] = $option;
     }
     $list = implode('', $options);
-    return "<select id='geoPoliticalZoneSelector' name='geo_political_zone_id' class='form-control' onchange='geoPoliticalZoneStateSelector()'>{$list}</select>";
+    return "<select id='geoPoliticalZoneSelector' name='geo_political_zone' class='form-control' onchange='geoPoliticalZoneStateSelector()'>{$list}</select>";
 }); !!}
 
 
@@ -199,13 +199,13 @@
         $options[] = $option;
     }
     $list = implode('', $options);
-    return "<select id='stateSelector' name='state_id' class='form-control' onchange='stateSenatorialZoneSelector()'>{$list}</select>";
+    return "<select id='stateSelector' name='state_of_origin' class='form-control' onchange='stateSenatorialZoneSelector()'>{$list}</select>";
 }); !!}
 
 
 <div class="form-group">
     <div class="row">
-        {!! Form::label('state_id', 'State:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('state_id', 'State of Origin:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::stateSelect($states) !!}
         </div>
@@ -226,7 +226,7 @@
         $options[] = $option;
     }
     $list = implode('', $options);
-    return "<select id='senatorialZoneSelector' name='senatorial_zone_id' class='form-control' onchange='senatorialZoneLocalGovtAreaSelector()'>{$list}</select>";
+    return "<select id='senatorialZoneSelector' name='senatorial_zone' class='form-control' onchange='senatorialZoneLocalGovtAreaSelector()'>{$list}</select>";
 }); !!}
 
 
@@ -252,7 +252,7 @@
         $options[] = $option;
     }
     $list = implode('', $options);
-    return "<select id='localGovtAreaSelector' name='local_govt_area_id' class='form-control'>{$list}</select>";
+    return "<select id='localGovtAreaSelector' name='local_govt_area' class='form-control'>{$list}</select>";
 }); !!}
 
 

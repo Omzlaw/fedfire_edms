@@ -56,12 +56,12 @@ class EmployeeCertificates extends Model
     protected $casts = [
         'id' => 'integer',
         'certificate_name' => 'string',
-        'date_obtained' => 'datetime',
+        'date_obtained' => 'string',
         'employee_id' => 'integer',
         'status' => 'string',
         'remark' => 'string',
         'checked_by' => 'integer',
-        'checked_at' => 'datetime',
+        'checked_at' => 'string',
         'updated_by' => 'integer',
         'file_upload' => 'string',
         'created_by' => 'integer'

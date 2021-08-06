@@ -6,7 +6,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
-    <td>{{ $employeeLocalLeave->employee->staff_code }}</td>
+    <td>{{ $employeeLocalLeave->employee->getFullName() }}</td>
 </tr>
 
 
@@ -29,20 +29,20 @@
 
 
 <tr>
-    <th scopre="row">{!! Form::label('leaver_id', 'Leave Type:') !!}</th>
+    <th scopre="row">{!! Form::label('leave_type_id', 'Leave Type:') !!}</th>
     <td>{{ $employeeLocalLeave->leaveType->title }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('from_date', 'From Date:') !!}</th>
-    <td>{{ $employeeLocalLeave->from_date->toDateString() }}</td>
+    <td>{{ $employeeLocalLeave->from_date }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('to_date', 'To Date:') !!}</th>
-    <td>{{ $employeeLocalLeave->to_date->toDateString() }}</td>
+    <td>{{ $employeeLocalLeave->to_date }}</td>
 </tr>
 
 

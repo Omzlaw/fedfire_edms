@@ -6,7 +6,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
-    <td>{{ $employeeGratuity->employee->staff_code }}</td>
+    <td>{{ $employeeGratuity->employee->getFullName() }}</td>
 </tr>
 
 
@@ -24,19 +24,19 @@
 
 <tr>
     <th scopre="row">{!! Form::label('payment_date', 'Payment Date:') !!}</th>
-    <td>{{ $employeeGratuity->payment_date->toDateString() }}</td>
+    <td>{{ $employeeGratuity->payment_date }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('from_date', 'From Date:') !!}</th>
-    <td>{{ $employeeGratuity->from_date->toDateString() }}</td>
+    <td>{{ $employeeGratuity->from_date }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('to_date', 'To Date:') !!}</th>
-    <td>{{ $employeeGratuity->to_date->toDateString() }}</td>
+    <td>{{ $employeeGratuity->to_date }}</td>
 </tr>
 
 
@@ -82,10 +82,10 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('checked_by', 'Checked By:') !!}</th>
     <td>{{ $employeeGratuity->checkedBy->name }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>

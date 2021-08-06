@@ -16,10 +16,10 @@ class CreateEmployeeActionSheetTable extends Migration
         Schema::create('employee_action_sheet', function (Blueprint $table) {
             $table->increments('id');
             $table->string('folio');
-            $table->dateTime('action_at');
+            $table->date('action_at');
             $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();
-            $table->dateTime('date_cleared');
+            $table->date('date_cleared');
             $table->integer('action_by')->unsigned();
             $table->integer('employee_id')->unsigned();
             $table->string('remark')->nullable();

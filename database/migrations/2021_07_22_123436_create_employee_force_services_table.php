@@ -24,7 +24,7 @@ class CreateEmployeeForceServicesTable extends Migration
             $table->string('remark')->nullable();
             $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();
-            $table->dateTime('date_updated');
+            $table->date('date_updated');
             $table->timestamps();
             $table->softDeletes();
             //$table->foreign('employee_id')->references('id')->on('employees');

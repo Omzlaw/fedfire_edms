@@ -66,14 +66,14 @@ class EmployeeEducation extends Model
         'school_name' => 'string',
         'certificate_id' => 'string',
         'school_type_id' => 'string',
-        'from_date' => 'datetime',
-        'to_date' => 'datetime',
+        'from_date' => 'string',
+        'to_date' => 'string',
         'employee_id' => 'integer',
         'file_upload' => 'string',
         'status' => 'integer',
         'remark' => 'string',
         'checked_by' => 'integer',
-        'checked_at' => 'datetime',
+        'checked_at' => 'string',
         'created_by' => 'integer',
         'updated_by' => 'integer'
     ];

@@ -12,13 +12,13 @@
 
 <tr>
     <th scopre="row">{!! Form::label('date_obtained', 'Date Obtained:') !!}</th>
-    <td>{{ $employeeCertificates->date_obtained->toDateString() }}</td>
+    <td>{{ $employeeCertificates->date_obtained }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
-    <td>{{ $employeeCertificates->employee->staff_code}}</td>
+    <td>{{ $employeeCertificates->employee->getFullName()}}</td>
 </tr>
 
 
@@ -42,7 +42,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('checked_at', 'Checked At:') !!}</th>
-    <td>{{ $employeeCertificates->checked_at->toDateString() }}</td>
+    <td>{{ $employeeCertificates->checked_at }}</td>
 </tr>
 
 

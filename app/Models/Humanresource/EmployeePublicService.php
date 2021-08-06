@@ -56,8 +56,8 @@ class EmployeePublicService extends Model
     protected $casts = [
         'id' => 'integer',
         'employer_name' => 'string',
-        'from_date' => 'datetime',
-        'to_date' => 'datetime',
+        'from_date' => 'string',
+        'to_date' => 'string',
         'file_page_ref' => 'string',
         'employee_id' => 'integer',
         'file_upload' => 'string',
@@ -80,11 +80,11 @@ class EmployeePublicService extends Model
         'to_date' => 'Required',
         'file_page_ref' => 'Required',
         'employee_id' => 'Required',
-        'file_upload' => 'Required',
+        // 'file_upload' => 'Required',
         'total_years_served' => 'Required',
         'total_paid' => 'Required',
         'remark' => 'Required',
-        'checked_by' => 'Required',
+        // 'checked_by' => 'Required',
     ];
 
         /**

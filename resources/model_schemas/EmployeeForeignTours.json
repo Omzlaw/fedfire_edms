@@ -36,7 +36,7 @@
         "inView": true
     },
     {
-        "name": "leaver_id",
+        "name": "leave_type_id",
         "dbType": "integer:unsigned:foreign,employee_local_leaves,id",
         "htmlType": "select,",
         "validations": "Required",
@@ -329,7 +329,7 @@
     },
     {
         "type": "relation",
-        "relation": "mt1,EmployeeLocalLeave,leaver_id,id"
+        "relation": "mt1,EmployeeLocalLeave,leave_type_id,id"
     },
     {
         "type": "relation",
