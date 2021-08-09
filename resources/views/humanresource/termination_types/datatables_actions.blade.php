@@ -1,8 +1,8 @@
 {!! Form::open(['route' => ['humanresource.terminationTypes.destroy', $id], 'method' => 'delete']) !!}
 <div class='btn-group'>
-    <a href="{{ route('humanresource.terminationTypes.show', $id) }}" class='btn btn-outline-primary btn-xs'><i class="im im-icon-Information"></i>
+    <a href="{{ route('humanresource.terminationTypes.show', $id) }}" class='btn custom-outline-primary btn-xs'><i class="im im-icon-Information"></i>
     </a>
-    <a href="{{ route('humanresource.terminationTypes.edit', $id) }}" class='btn btn-outline-primary btn-xs'><i
+    <a href="{{ route('humanresource.terminationTypes.edit', $id) }}" class='btn custom-outline-primary btn-xs'><i
                                 class="im im-icon-File-Edit"></i>
     </a>
     {!! Form::button('<i class="im im-icon-Remove"></i>', [

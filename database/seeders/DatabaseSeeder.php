@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Shared\LocalGovtArea;
 use Illuminate\Database\Seeder;
 use Database\Seeders\CountrySeeder;
 
@@ -19,7 +20,9 @@ class DatabaseSeeder extends Seeder
         $this->call(GeoPoliticalZoneSeeder::class);
         $this->call(StateSeeder::class);
         $this->call(SenatorialZoneSeeder::class);
+        $this->call(LocalGovtAreaSeeder::class);
         $this->call(LanguageSeeder::class);
         $this->call(RankTypeSeeder::class);
+        $this->call(LaratrustSeeder::class);
     }
 }

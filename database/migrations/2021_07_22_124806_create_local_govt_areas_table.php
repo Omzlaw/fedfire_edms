@@ -16,7 +16,7 @@ class CreateLocalGovtAreasTable extends Migration
         Schema::create('local_govt_areas', function (Blueprint $table) {
             $table->increments('id');
             $table->text('title');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->integer('senatorial_zone_id')->unsigned()->nullable();
             $table->integer('state_id')->unsigned();
             $table->integer('status')->default(1);

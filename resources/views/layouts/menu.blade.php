@@ -127,8 +127,8 @@
 </li> -->
 
 
-
-<li {!! Request::is('table') || Request::is('data_table') ? 'class="menu-dropdown active"' : "class='menu-dropdown'" !!}>
+@role('superadministrator')
+   <li {!! Request::is('table') || Request::is('data_table') ? 'class="menu-dropdown active"' : "class='menu-dropdown'" !!}>
     <a href="#" class="mm-a">
         <span class="mm-text ">Manage Settings</span>
         <span class="menu-icon "> <i class="far fa-gear text-white"></i></span>
@@ -137,7 +137,7 @@
     <ul class="sub-menu list-unstyled default-color-secondary">
         <li class="{!! Request::is('shared/certificateTypes*') ? 'active' : '' !!}">
             <a href="{{ route('shared.certificateTypes.index') }}" class="mm-a">
-                <span class="mm-text ">Certificate</span>
+                <span class="mm-text ">Certificate Types</span>
 
             </a>
         </li>
@@ -156,7 +156,7 @@
 
         <li class="{!! Request::is('shared/fileTypes*') ? 'active' : '' !!}">
             <a href="{{ route('shared.fileTypes.index') }}" class="mm-a">
-                <span class="mm-text ">File type</span></a>
+                <span class="mm-text ">File types</span></a>
         </li>
 
         <li class="{!! (Request::is('shared/geoPoliticalZones*') ? 'active' : '' ) !!}">
@@ -172,7 +172,7 @@
 
         <li class="{!! Request::is('humanresource/leaveTypes*') ? 'active' : '' !!}">
             <a href="{{ route('humanresource.leaveTypes.index') }}" class="mm-a">
-                <span class="mm-text ">Leave</span>
+                <span class="mm-text ">Leave Types</span>
 
             </a>
         </li>
@@ -188,7 +188,7 @@
 
         <li class="{!! Request::is('shared/qualificationTypes*') ? 'active' : '' !!}">
             <a href="{{ route('shared.qualificationTypes.index') }}" class="mm-a">
-                <span class="mm-text ">Qualification</span>
+                <span class="mm-text ">Qualification Types</span>
             </a>
         </li>
 
@@ -196,7 +196,7 @@
 
         <li class="{!! Request::is('shared/rankTypes*') ? 'active' : '' !!}">
             <a href="{{ route('shared.rankTypes.index') }}" class="mm-a">
-                <span class="mm-text ">Rank</span>
+                <span class="mm-text ">Rank Types</span>
 
             </a>
         </li>
@@ -206,6 +206,11 @@
                 <span class="mm-text ">Relationships</span></a>
         </li>
 
+        <li class="{!! Request::is('shared/rolesAndPermissions*') ? 'active' : '' !!}">
+            <a href="/shared/rolesAndPermissions/roles-assignment" class="mm-a">
+                <span class="mm-text ">Roles and Permissions</span></a>
+        </li>
+
         <li class="{!! Request::is('humanresource/salaryScales*') ? 'active' : '' !!}">
             <a href="{{ route('humanresource.salaryScales.index') }}" class="mm-a">
                 <span class="mm-text ">Salary Scales</span> </a>
@@ -213,7 +218,7 @@
 
         <li class="{!! Request::is('shared/schoolTypes*') ? 'active' : '' !!}">
             <a href="{{ route('shared.schoolTypes.index') }}" class="mm-a">
-                <span class="mm-text ">School</span></a>
+                <span class="mm-text ">School Types</span></a>
         </li>
 
         <li class="{!! (Request::is('shared/senatorialZones*') ? 'active' : '' ) !!}">
@@ -224,7 +229,7 @@
 
         <li class="{!! Request::is('shared/serviceExitTypes*') ? 'active' : '' !!}">
             <a href="{{ route('shared.serviceExitTypes.index') }}" class="mm-a">
-                <span class="mm-text ">Service Exit</span></a>
+                <span class="mm-text ">Service Exits</span></a>
         </li>
 
         <li class="{!! Request::is('shared/settings*') ? 'active' : '' !!}">
@@ -239,15 +244,17 @@
 
         <li class="{!! Request::is('humanresource/terminationTypes*') ? 'active' : '' !!}">
             <a href="{{ route('humanresource.terminationTypes.index') }}" class="mm-a">
-                <span class="mm-text ">Termination</span></a>
+                <span class="mm-text ">Termination Types</span></a>
+        </li>
+
+        <li class="{{ Request::is('users*') ? 'active' : '' }}">
+            <a href="{!! route('users.index') !!}" class="mm-a"><span>Users</span></a>
         </li>
         
     </ul>
-</li>
+</li> 
+@endrole
 
 
-<li class="{{ Request::is('users*') ? 'active' : '' }}">
-    <a href="{!! route('users.index') !!}" class="mm-a"><span>Users</span></a>
-</li>
 
 

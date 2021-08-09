@@ -10,10 +10,10 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('file_upload', 'File Upload:') !!}</th>
     <td>{{ $employeeForeignTours->file_upload }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
@@ -114,13 +114,13 @@
 
 <tr>
     <th scopre="row">{!! Form::label('passed_to_uk', 'Passed To Uk:') !!}</th>
-    <td>{{ $employeeForeignTours->passed_to_uk }}</td>
+    <td>{{ get_enum_value('enum_yes_no', $employeeForeignTours->passed_to_uk) }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('passed_from_uk', 'Passed From Uk:') !!}</th>
-    <td>{{ $employeeForeignTours->passed_from_uk }}</td>
+    <td>{{ get_enum_value('enum_yes_no', $employeeForeignTours->passed_from_uk) }}</td>
 </tr>
 
 

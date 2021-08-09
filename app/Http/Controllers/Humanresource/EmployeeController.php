@@ -60,24 +60,19 @@ class EmployeeController extends AppBaseController
     public function store(CreateEmployeeRequest $request)
     {
         $input = $request->all();
-        if($input['middle_name'] == '')
-        {
+        if ($input['middle_name'] == '') {
             $input['staff_code'] = $input['first_name'] . '_' . $input['last_name'] . '_' . $input['file_no'];
-        }
-        else{
+        } else {
             $input['staff_code'] = $input['first_name'] . '_' . $input['middle_name'] . '_' . $input['last_name'] . '_' . $input['file_no'];
         }
 
-        if($request->hasFile('profile_picture'))
-        {     
+        if ($request->hasFile('profile_picture')) {
             $employee = Employee::create($this->saveFile($input));
-        }
-
-        else {
+        } else {
             $employee = Employee::create($input);
         }
         /** @var Employee $employee */
-        
+
 
         Flash::success('Employee saved successfully.');
 
@@ -146,7 +141,8 @@ class EmployeeController extends AppBaseController
         $data['educations'] = $employee->educations->map(function ($item) {
             $item->certificate_id = $item->certificate->title;
             $item->school_type_id = $item->schoolType->title;
-            return $item;
+            return ['id' => $item['id'], 'school_name' => $item['school_name'], 'certificate_id' => $item['certificate_id'], 'school_type_id' => $item['school_type_id'], 'remark' => $item['remark']];
+            // return $item;
         });
 
         //get the addresses
@@ -166,7 +162,8 @@ class EmployeeController extends AppBaseController
         $data['foreignTours'] = $employee->foreignTours->map(function ($item) {
             $item->status = get_enum_value('enum_status', $item->status);
             $item->leave_type_id = $item->leaveType->title;
-            return $item;
+            return ['id' => $item['id'], 'leave_type_id' => $item['leave_type_id'], 'from_date' => $item['from_date'], 'to_date' => $item['to_date'], 'status' => $item['status'], 'remark' => $item['remark'],];
+            // return $item;
         });
 
         //get the gratuities
@@ -177,26 +174,28 @@ class EmployeeController extends AppBaseController
         });
 
         //get the languages
-
         $data['languages'] = $employee->languages->map(function ($item) {
             $item->speaking_fluency = get_enum_value('enum_fluency', $item->speaking_fluency);
             $item->writing_fluency = get_enum_value('enum_fluency', $item->writing_fluency);
             $item->language_id = $item->language->title;
-            return $item;
+            return ['id' => $item['id'], 'language_id' => $item['language_id'], 'writing_fluency' => $item['writing_fluency'], 'speaking_fluency' => $item['speaking_fluency']];
+            // return $item;
         });
 
         //get the localLeaves
 
         $data['localLeaves'] = $employee->localLeaves->map(function ($item) {
             $item->leave_type_id = $item->leaveType->title;
-            return $item;
+            return ['id' => $item['id'], 'no_of_days' => $item['no_of_days'], 'file_page_no' => $item['file_page_no'], 'leave_type_id' => $item['leave_type_id'], 'from_date' => $item['from_date'], 'to_date' => $item['to_date']];
+            // return $item;
         });
 
         //get the nextOfKins
 
         $data['nextOfKins'] = $employee->nextOfKins->map(function ($item) {
             $item->relationship_id = $item->relationship->title;
-            return $item;
+            return ['id' => $item['id'], 'name' => $item['name'], 'address' => $item['address'], 'relationship_id' => $item['relationship_id']];
+            // return $item;
         });
 
         //get the publicServices
@@ -226,7 +225,8 @@ class EmployeeController extends AppBaseController
         $data['terminations'] = $employee->terminations->map(function ($item) {
             $item->termination_id = $item->termination_type->title;
             $item->is_pensionable = get_enum_value('enum_yes_no', $item->is_pensionable);
-            return $item;
+            return ['id' => $item->id, 'termination_id' => $item['termination_id'], 'even_date' => $item['even_date'], 'is_pensionable' => $item['is_pensionable'], 'pension_amount' => $item['pension_amount']];
+            // return $item;
         });
 
         //get the spouse
@@ -283,20 +283,15 @@ class EmployeeController extends AppBaseController
             return redirect(route('humanresource.employees.index'));
         }
         $input = $request->all();
-        if($input['middle_name'] == '')
-        {
+        if ($input['middle_name'] == '') {
             $input['staff_code'] = $input['first_name'] . '_' . $input['last_name'] . '_' . $input['file_no'];
-        }
-        else{
+        } else {
             $input['staff_code'] = $input['first_name'] . '_' . $input['middle_name'] . '_' . $input['last_name'] . '_' . $input['file_no'];
         }
 
-        if($request->hasFile('profile_picture'))
-        {     
+        if ($request->hasFile('profile_picture')) {
             $employee->fill($this->saveFile($input));
-        }
-
-        else {
+        } else {
             $employee->fill($input);
         }
 
@@ -337,7 +332,8 @@ class EmployeeController extends AppBaseController
         return redirect(route('humanresource.employees.index'));
     }
 
-    public function saveFile($input) {
+    public function saveFile($input)
+    {
 
         $staff_code = $input['staff_code'];
 

@@ -30,7 +30,11 @@ class LocalGovtAreaDataTable extends DataTable
             return '';
         })
         ->addColumn('state', function($row){
-            return $row->state->title;
+            if(isset($row->state->title))
+            {
+                return $row->state->title;
+            }
+            return '';
         })
         ->addColumn('action', 'shared.local_govt_areas.datatables_actions');
     }
@@ -81,7 +85,7 @@ class LocalGovtAreaDataTable extends DataTable
         return [
             // 'id',
             'title',
-            'description',
+            // 'description',
             'senatorialZone',
             'state',
             'status',

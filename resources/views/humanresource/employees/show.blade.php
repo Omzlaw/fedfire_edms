@@ -375,10 +375,12 @@
                     if (data[0] != null || data[0] != undefined) {
                         columnNames = Object.keys(data[0]);
                         for (var i in columnNames) {
-                                columns.push({
-                                data: columnNames[i],
-                                title: firstLetterUpper(columnNames[i].replace('_', ' ').replace('id', '').replace('_', ''))
-                            });
+
+                            columns.push({
+                                        data: columnNames[i],
+                                        title: firstLetterUpper(columnNames[i].replace('_', ' ').replace('id', '').replace('_', ''))
+                                    });
+                                
                         }
 
                         columns.push({
@@ -404,17 +406,12 @@
                             "fnRowCallback": function(nRow, aData, iDisplayIndex) {
                                 nRow.setAttribute('id', aData[0]);
                             },
-                            // dom: 'id',
-                            dom: 'Bfrtip',
-                            buttons: [
-                                'pdf',
-                                'excel',
-                                'print',
-                                'csv'
-                            ],
+                            // dom: 'Bfrtip',
+                            dom: 'lfrtip'
                         });
 
                         table.column( 0 ).visible( false );
+                        
 
                         $(".action-buttons").each(function(index) {
                             $(this).click(function() {

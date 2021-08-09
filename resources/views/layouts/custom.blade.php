@@ -15,6 +15,7 @@
     <!-- global css -->
     <link type="text/css" href="{{ asset('css/app.css')}}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('vendors/perfect-scrollbar/css/perfect-scrollbar.css')}}">
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/dateTimePicker.min.css')}}"> --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('css/custom.css')}}">
     <style>
         #demo {
@@ -43,6 +44,8 @@
     <!-- end of page level js -->
     <!-- Start of vendor js -->
     <script src="{{ asset('vendors/perfect-scrollbar/js/perfect-scrollbar.js')}}"></script>
+    {{-- <script src="{{ asset('js/moment.min.js')}}"></script>
+    <script src="{{ asset('js/dateTimePicker.min.js')}}"></script> --}}
     <script src="{{ asset('js/custom.js')}}"></script>
     @yield('footer_scripts')
 

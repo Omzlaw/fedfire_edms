@@ -72,7 +72,7 @@ class SenatorialZoneDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            // 'id',
+            'id',
             'title',
             'status',
             'state',

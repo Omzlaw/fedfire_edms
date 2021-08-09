@@ -10,15 +10,15 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('description', 'Description:') !!}</th>
     <td>{{ $localGovtArea->description }}</td>
-</tr>
+</tr> --}}
 
 <tr>
     <th scopre="row">{!! Form::label('senatorial_zone_id', 'Senatorial Zone:') !!}</th>
-    @if (isset($state->senatorialZone->title))
-        <td>{{ $state->senatorialZone->title }}</td>
+    @if (isset($localGovtArea->senatorialZone->title))
+        <td>{{ $localGovtArea->senatorialZone->title }}</td>
     @else
         <td></td>
     @endif
@@ -26,7 +26,11 @@
 
 <tr>
     <th scopre="row">{!! Form::label('state_id', 'State:') !!}</th>
-    <td>{{ $localGovtArea->state->title }}</td>
+    @if (isset($localGovtArea->state->title))
+        <td>{{ $localGovtArea->state->title }}</td>
+    @else
+        <td></td>
+    @endif
 </tr>
 
 
@@ -58,5 +62,3 @@
     <th scopre="row">{!! Form::label('updated_at', 'Updated At:') !!}</th>
     <td>{{ $localGovtArea->updated_at }}</td>
 </tr> --}}
-
-

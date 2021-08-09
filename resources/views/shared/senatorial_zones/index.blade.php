@@ -25,7 +25,7 @@ Senatorial Zones @parent
         <section class="card-header">
             <h5 class="card-title d-inline">Senatorial Zones</h5>
             <span class="float-right">
-                <a class="btn btn-danger pull-right" href="{{ route('shared.senatorialZones.create') }}">Add New</a>
+                <a class="btn secondary-color-bg pull-right" href="{{ route('shared.senatorialZones.create') }}">Add New</a>
             </span>
         </section>
         <div class="card-body">

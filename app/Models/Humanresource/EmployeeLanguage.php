@@ -107,6 +107,7 @@ class EmployeeLanguage extends Model
         return $this->belongsTo(\App\Models\Shared\Language::class, 'language_id', 'id');
     }
 
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/

@@ -15,6 +15,8 @@
     <!-- global css -->
     <link type="text/css" href="{{ asset('css/app.css')}}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('vendors/perfect-scrollbar/css/perfect-scrollbar.css')}}">
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/selectize.min.css')}}"> --}}
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/dateTimePicker.min.css')}}"> --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('css/custom.css')}}">
     <style>
         #demo {
@@ -157,6 +159,7 @@
         </nav>
     </header>
     <div class="wrapper">
+
         <!-- Left side column. contains the logo and sidebar -->
         <aside class="left-aside">
             <!-- sidebar: style can be found in sidebar-->
@@ -172,8 +175,8 @@
         <aside class="right-aside">
             @yield('content')
             @include('layouts.modal')
+            @include('layouts.footer')
         </aside>
-        @include('layouts.footer')
     </div>
     <!-- ./wrapper -->
     <!-- Footer end -->
@@ -183,7 +186,11 @@
     <!-- end of page level js -->
     <!-- Start of vendor js -->
     <script src="{{ asset('vendors/perfect-scrollbar/js/perfect-scrollbar.js')}}"></script>
+    {{-- <script src="{{ asset('js/selectize.min.js')}}"></script> --}}
+    {{-- <script src="{{ asset('js/moment.min.js')}}"></script>
+    <script src="{{ asset('js/dateTimePicker.min.js')}}"></script> --}}
     <script src="{{ asset('js/custom.js')}}"></script>
+    
     @yield('footer_scripts')
 
 </body>

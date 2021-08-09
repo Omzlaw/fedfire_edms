@@ -22,9 +22,6 @@ class EmployeeDataTable extends DataTable
         ->addColumn('gender', function($row){
             return get_enum_value('enum_gender', $row->gender);
         })
-        ->addColumn('birthdate', function($row){
-            return $row->birthdate->toDateString();
-        })
         ->addColumn('nationality', function($row){
             return $row->country->title;
         })

@@ -28,11 +28,12 @@
 </tr>
 
 
-<tr>
+ --}}
+
+ <tr>
     <th scopre="row">{!! Form::label('date_cleared', 'Date Cleared:') !!}</th>
     <td>{{ $employeeActionSheet->date_cleared }}</td>
-</tr> --}}
-
+</tr>
 
 <tr>
     <th scopre="row">{!! Form::label('action_by', 'Action By:') !!}</th>

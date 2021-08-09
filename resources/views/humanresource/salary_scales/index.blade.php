@@ -25,7 +25,7 @@ Salary Scales @parent
         <section class="card-header">
             <h5 class="card-title d-inline">Salary Scales</h5>
             <span class="float-right">
-                <a class="btn btn-danger pull-right" href="{{ route('humanresource.salaryScales.create') }}">Add New</a>
+                <a class="btn secondary-color-bgpull-right" href="{{ route('humanresource.salaryScales.create') }}">Add New</a>
             </span>
         </section>
         <div class="card-body">

@@ -98,8 +98,8 @@ class EmployeeForeignToursController extends AppBaseController
             //return redirect(route('humanresource.employeeForeignTours.index'));
         }
         $employees = new Employee;
-        $employee_local_leave = new EmployeeLocalLeave;
-        return view('humanresource.employee_foreign_tours.edit', compact('employees', 'employee_local_leave'))->with('employeeForeignTours', $employeeForeignTours);
+        $leave_types = new LeaveType;
+        return view('humanresource.employee_foreign_tours.edit', compact('employees', 'leave_types'))->with('employeeForeignTours', $employeeForeignTours);
     }
 
     /**

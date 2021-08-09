@@ -22,7 +22,7 @@
 </div>--}}
 
 
-<!-- Leaver Id Field -->
+<!-- Leave Type Id Field -->
 <div class="form-group">
     <div class="row">
         {!! Form::label('leave_type_id', 'Leave Type:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
@@ -262,7 +262,7 @@
     <div class="row">
         {!! Form::label('passed_to_uk', 'Passed To Uk:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('passed_to_uk', null, ['class' => 'form-control']) !!}
+            {!! Form::select('passed_to_uk', enum_yes_no(), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div>
@@ -273,7 +273,7 @@
     <div class="row">
         {!! Form::label('passed_from_uk', 'Passed From Uk:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('passed_from_uk', null, ['class' => 'form-control']) !!}
+            {!! Form::select('passed_from_uk', enum_yes_no(), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div>
