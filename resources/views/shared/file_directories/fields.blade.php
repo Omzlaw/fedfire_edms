@@ -70,8 +70,9 @@
     <a href="{{ route('shared.fileDirectories.index') }}" class="btn btn-default">Cancel</a>
 </div>
 
+<script type="text/javascript" src="http://tst.dynamsoft.com/libs/dwt/15.0/dynamsoft.webtwain.min.js"> </script>
 {{-- <script src="{{ asset('dynamsoft/dynamsoft.webtwain.initiate.js') }}"></script>
-<script src="{{ asset('dynamsoft/dynamsoft.webtwain.config.js') }}"></script>
+<script src="{{ asset('dynamsoft/dynamsoft.webtwain.config.js') }}"></script> --}}
 
 <script>
     var DWObject;
@@ -131,4 +132,4 @@
             OnSuccess, OnFailure
         );
     }
-</script> --}}
+</script>

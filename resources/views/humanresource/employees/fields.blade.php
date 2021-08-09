@@ -372,7 +372,7 @@
 
 <script>
     window.onload = function() {
-        $('#countrySelector').prop('disabled', 'disabled');
+        // $('#countrySelector').prop('disabled', 'disabled');
         // $('#stateSelector').prop('disabled', 'disabled');
         $('#geoPoliticalZoneSelector').prop('disabled', 'disabled');
         $('#senatorialZoneSelector').prop('disabled', 'disabled');

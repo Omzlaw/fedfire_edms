@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Shared;
 use App\Models\Shared\FileType;
 use App\Models\Shared\FileDirectory;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Humanresource\Employee;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\AppBaseController;
@@ -25,6 +26,9 @@ class FileDirectoryController extends AppBaseController
      * @param FileDirectoryDataTable $fileDirectoryDataTable
      * @return Response
      */
+
+     
+
     public function index(FileDirectoryDataTable $fileDirectoryDataTable)
     {
         return $fileDirectoryDataTable->render('shared.file_directories.index');
@@ -80,11 +84,13 @@ class FileDirectoryController extends AppBaseController
         return view('shared.file_directories.show')->with('fileDirectory', $fileDirectory);
     }
 
-    public function getSearch() {
+    public function getSearch()
+    {
         return view('shared.file_directories.search');
     }
 
-    public function search(Request $request) {
+    public function search(Request $request)
+    {
         $employee = Employee::where('file_no', '=', $request['file_no'])->first();
         if (empty($employee)) {
             Flash::error('Employee not found');
@@ -93,7 +99,7 @@ class FileDirectoryController extends AppBaseController
         $file_directories = FileDirectory::where('employee_id', '=', $employee->id)->get();
         $file_types = new FileType;
         return view('shared.file_directories.search', compact('employee', 'file_directories', 'file_types'));
-    }  
+    }
 
     /**
      * Show the form for editing the specified FileDirectory.
@@ -139,7 +145,7 @@ class FileDirectoryController extends AppBaseController
 
         $file_url = str_replace('storage/', 'public/', $fileDirectory->file_url);
         Storage::delete($file_url);
-        
+
         $fileDirectory->fill($this->saveFile($input));
         $fileDirectory->save();
 
@@ -178,7 +184,8 @@ class FileDirectoryController extends AppBaseController
         return redirect(route('shared.fileDirectories.index'));
     }
 
-    public function saveFile($input) {
+    public function saveFile($input)
+    {
 
         $files = $input['file_upload'];
         $employee_id = $input['employee_id'];
@@ -195,8 +202,7 @@ class FileDirectoryController extends AppBaseController
         $file_name = now()->timestamp . '_' . $staff->staff_code . '_' . $file_type_name;
 
         $input['file_name'] = $file_name;
-        foreach ($files as $file)
-        {
+        foreach ($files as $file) {
             $file_url_array[] = $this->Upload($file, $file_name, $staff->staff_code, $file_type_name);
         }
         $input['file_url'] = $file_url_array;

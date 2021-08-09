@@ -145,6 +145,14 @@ class EmployeeController extends AppBaseController
             // return $item;
         });
 
+        $data['ranks'] = $employee->ranks->map(function ($item) {
+            $item->employee_id = $item->employee->getFullName();
+            $item->rank_type_id = $item->rankType->description;
+            $item->status = get_enum_value('enum_status', $item->status);
+            return ['id' => $item['id'], 'rank_type_id' => $item['rank_type_id'], 'employee_id' => $item['employee_id'], 'status' => $item['status']];
+            // return $item;
+        });
+
         //get the addresses
 
         $data['addresses'] = $employee->addresses->map(function ($item) {

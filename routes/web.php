@@ -23,9 +23,9 @@ Route::view('login3', 'auth.login3');
 Route::view('register2', 'auth.register2');
 Route::view('register3', 'auth.register3');
 
-Route::get('/dashboard', function () {
-    return view('index');
-})->middleware('auth')->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('index');
+// })->middleware('auth')->name('dashboard');
 
 // Route::resource('users', 'UsersController');
 
@@ -48,4 +48,5 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'HomeController@dashboard')->middleware('auth')->name('dashboard');
 Route::get('{name?}', 'JoshController@showView');

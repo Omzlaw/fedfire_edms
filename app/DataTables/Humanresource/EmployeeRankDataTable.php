@@ -2,11 +2,11 @@
 
 namespace App\DataTables\Humanresource;
 
-use App\Models\Humanresource\EmployeeNextOfKin;
+use App\Models\Humanresource\EmployeeRank;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
 
-class EmployeeNextOfKinDataTable extends DataTable
+class EmployeeRankDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -19,22 +19,25 @@ class EmployeeNextOfKinDataTable extends DataTable
         $dataTable = new EloquentDataTable($query);
 
         return $dataTable
+        ->addColumn('status', function($row){
+            return get_enum_value('enum_status', $row->status);
+        })
         ->addColumn('employee', function($row){
             return $row->employee->getFullName();
         })
-        ->addColumn('relationship_type', function($row){
-            return $row->relationship->title;
+        ->addColumn('rank_type', function($row){
+            return $row->rankType->title;
         })
-        ->addColumn('action', 'humanresource.employee_next_of_kins.datatables_actions');
+        ->addColumn('action', 'humanresource.employee_ranks.datatables_actions');
     }
 
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\EmployeeNextOfKin $model
+     * @param \App\Models\EmployeeRank $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(EmployeeNextOfKin $model)
+    public function query(EmployeeRank $model)
     {
         return $model->newQuery();
     }
@@ -56,7 +59,7 @@ class EmployeeNextOfKinDataTable extends DataTable
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
                     ['extend' => 'create', 'className' => 'btn btn-default btn-sm no-corner',],
-                    ['extend' => 'excel', 'className' => 'btn btn-default btn-sm no-corner',],
+                    ['extend' => 'export', 'className' => 'btn btn-default btn-sm no-corner',],
                     ['extend' => 'print', 'className' => 'btn btn-default btn-sm no-corner',],
                     ['extend' => 'reset', 'className' => 'btn btn-default btn-sm no-corner',],
                     ['extend' => 'reload', 'className' => 'btn btn-default btn-sm no-corner',],
@@ -73,13 +76,11 @@ class EmployeeNextOfKinDataTable extends DataTable
     {
         return [
             // 'id',
-            'name',
-            'address',
-            'relationship_type',
             'employee',
-            // 'file_upload',
-            'remark',
-
+            'rank_type',
+            'status',
+            // 'created_at' => ['searchable' => false],
+            // 'updated_at' => ['searchable' => false]
         ];
     }
 

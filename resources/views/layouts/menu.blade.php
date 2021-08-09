@@ -1,3 +1,4 @@
+@role('administrator')
 <li class="{!! Request::is('shared/fileDirectories*') ? 'active' : '' !!}">
     <a href="{{ route('shared.fileDirectories.getSearch') }}" class="mm-a">
         <span class="mm-text ">Search</span>
@@ -11,6 +12,7 @@
         <span class="menu-icon"><i class="fa fa-folder text-white"></i></span>
     </a>
 </li>
+@endrole
 
 <li class="{!! Request::is('humanresource/employees*') ? 'active' : '' !!}">
     <a href="{{ route('humanresource.employees.index') }}" class="mm-a">
@@ -257,4 +259,19 @@
 
 
 
+
+
+{{-- <li class="{!! (Request::is('humanresource/employeeRanks*') ? 'active' : '' ) !!}">
+    <a href="{{ route('humanresource.employeeRanks.index') }}">
+        <span class="mm-text ">Employee Ranks</span>
+        <span class="menu-icon"><i class="im im-icon-Structure"></i></span>
+    </a>
+</li>
+
+<li class="{!! (Request::is('humanresource/employeeRanks*') ? 'active' : '' ) !!}">
+    <a href="{{ route('humanresource.employeeRanks.index') }}">
+        <span class="mm-text ">Employee Ranks</span>
+        <span class="menu-icon"><i class="im im-icon-Structure"></i></span>
+    </a>
+</li> --}}
 

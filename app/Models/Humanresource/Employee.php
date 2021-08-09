@@ -252,6 +252,11 @@ class Employee extends Model
         return $this->hasMany(EmployeeEducation::class)->select('id', 'school_name', 'certificate_id', 'school_type_id', 'remark');
     }
 
+    public function ranks()
+    { 
+        return $this->hasMany(EmployeeRank::class)->select('id', 'employee_id', 'rank_type_id', 'status');
+    }
+
     public function forceServices()
     {
         return $this->hasMany(EmployeeForceService::class)->select('id', 'area_of_service', 'service_no', 'last_unit', 'reason_for_leaving', 'remark');

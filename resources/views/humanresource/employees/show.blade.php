@@ -18,6 +18,7 @@
     $recordTrackers = $data['recordTrackers'];
     $nextOfKins = $data['nextOfKins'];
     $qualifications = $data['qualifications'];
+    $ranks = $data['ranks'];
 
 ?>
 @extends('layouts.default')
@@ -129,6 +130,9 @@
                                         data-model="{{ $recordTrackers }}" href="#">Record
                                         Trackers</a>
                                 </li>
+                                <li class="list-group-item"><a class="dt" data-route="humanresource/employeeRanks"
+                                    data-model="{{ $ranks }}" href="#">Ranks</a>
+                            </li>
                             </ul>
                             <div class="card-header bg-secondary bg-gradient">
                                 <h6>Services</h6>
