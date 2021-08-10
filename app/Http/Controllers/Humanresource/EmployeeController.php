@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Humanresource;
 
-use Flash;
 use Response;
 use App\Traits\FileUpload;
+use Laracasts\Flash\Flash;
 use App\Models\Shared\State;
 use Illuminate\Http\Request;
 use App\Models\Shared\Country;

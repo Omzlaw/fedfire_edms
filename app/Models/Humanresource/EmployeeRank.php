@@ -34,6 +34,8 @@ class EmployeeRank extends Model
         'rank_type_id',
         'employee_id',
         'status',
+        'type',
+        'employee_gender',
         'created_by',
         'updated_by'
     ];
@@ -49,7 +51,7 @@ class EmployeeRank extends Model
         'employee_id' => 'string',
         'status' => 'string',
         'created_by' => 'integer',
-        'updated_by' => 'integer'
+        'updated_by' => 'integer',
     ];
 
     /**

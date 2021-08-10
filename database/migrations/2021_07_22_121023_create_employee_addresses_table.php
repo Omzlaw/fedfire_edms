@@ -22,7 +22,7 @@ class CreateEmployeeAddressesTable extends Migration
             $table->integer('employee_id')->unsigned();
             $table->string('file_upload')->nullable();
             $table->integer('status')->default(1);
-            $table->text('remark');
+            $table->text('remark')->nullable();
             $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();
             $table->timestamps();

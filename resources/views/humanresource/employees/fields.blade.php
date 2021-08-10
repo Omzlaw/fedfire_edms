@@ -158,18 +158,16 @@
     </div>
 </div> --}}
 {!! Form::macro('countrySelect', function ($countryModel) {
-    $countries = $countryModel::orderBy('title')->get();
+    $countries = $countryModel::orderBy('title')->where('id', '=', '160')->get();
     $options = [];
     $defaultOption = '<option value="">Select...</option>';
     $options[] = $defaultOption;
     foreach ($countries as $country) {
-        if ($country->id === 160) {
-            $option = '<option value=' . $country->id . ' selected="selected"' . '>' . $country->title . '</option>';
+            $option = '<option value=' . $country->id . '' . '>' . $country->title . '</option>';
             $options[] = $option;
-        }
     }
     $list = implode('', $options);
-    return "<select id='countrySelector' name='nationality' class='form-control' onchange=''>{$list}</select>";
+    return "<select id='countrySelector' name='nationality' class='form-control' onchange='countryStateSelector()'>{$list}</select>";
 }) !!}
 
 
@@ -185,15 +183,13 @@
 
 <!-- State of Origin Field -->
 {!! Form::macro('stateSelect', function ($stateModel) {
-    $states = $stateModel::orderBy('title')->get();
+    $states = $stateModel::orderBy('title')->where('country_id', '=', '160')->get();
     $options = [];
     $defaultOption = '<option value="">Select...</option>';
     $options[] = $defaultOption;
     foreach ($states as $state) {
-        if ($state->country_id === 160) {
-            $option = '<option value=' . $state->id . ' data-geo_political_zone_id=' . $state->geo_political_zone_id . '>' . $state->title . '</option>';
+            $option = '<option value=' . $state->id . ' data-country_id=' . $state->country_id . ' data-geo_political_zone_id=' . $state->geo_political_zone_id . '>' . $state->title . '</option>';
             $options[] = $option;
-        }
     }
     $list = implode('', $options);
     return "<select id='stateSelector' name='state_of_origin' class='form-control' onchange='stateLocalGovtAreaSelector()'>{$list}</select>";
@@ -373,29 +369,49 @@
 <script>
     window.onload = function() {
         // $('#countrySelector').prop('disabled', 'disabled');
-        // $('#stateSelector').prop('disabled', 'disabled');
+        $('#stateSelector').prop('disabled', 'disabled');
         $('#geoPoliticalZoneSelector').prop('disabled', 'disabled');
         $('#senatorialZoneSelector').prop('disabled', 'disabled');
         $('#localGovtAreaSelector').prop('disabled', 'disabled');
+    }
+
+    function countryStateSelector(event) {
+
+        var countrySelect = $('#countrySelector');
+        var stateSelect = $('#stateSelector');
+        stateSelect.prop("selectedIndex", 0).val();
+        var id = $(countrySelect).children("option:selected").val();
+        $("#stateSelector > option").each(function() {
+            let country_id = $(this).data("country_id");
+            if (id == country_id) {
+                $(this).removeAttr('disabled').show();
+            } else {
+                $(this).attr('disabled', 'disabled').hide();
+            }
+        });
+        stateSelect.prop('disabled', false);
     }
 
     function stateLocalGovtAreaSelector() {
         let stateSelect = $('#stateSelector');
         let localGovtAreaSelect = $('#localGovtAreaSelector');
         let geoPolitcalZoneSelect = $('#geoPoliticalZoneSelector');
-
+        localGovtAreaSelect.prop("selectedIndex", 0).val();
+        geoPolitcalZoneSelect.prop("selectedIndex", 0).val();
         let geo_political_zone_id = stateSelect.children("option:selected").data("geo_political_zone_id");
 
         $("#geoPoliticalZoneSelector > option").each(function() {
             let geo_zone_id = $(this).val();
             if (geo_political_zone_id == geo_zone_id) {
-                $(this).attr('selected', true);
+                // $(this).attr('selected', true);
                 $(this).removeAttr('disabled').show();
             } else {
                 $(this).attr('disabled', 'disabled').hide();
-                $(this).attr('selected', false);
+                // $(this).attr('selected', false);
             }
         });
+
+        geoPolitcalZoneSelect.prop('disabled', false);
 
         $("#localGovtAreaSelector > option").each(function() {
             let id = stateSelect.children("option:selected").val();
@@ -413,20 +429,21 @@
     function localGovtSelector() {
         var localGovtAreaSelect = $('#localGovtAreaSelector');
         var senatorialZoneSelect = $('#senatorialZoneSelector');
-
+        senatorialZoneSelect.prop("selectedIndex", 0).val();
         var id = localGovtAreaSelect.children("option:selected").val();
         var senatorial_zone_id = localGovtAreaSelect.children("option:selected").data("senatorial_zone_id");
 
         $("#senatorialZoneSelector > option").each(function() {
             let senate_zone_id = $(this).val();
             if (senatorial_zone_id == senate_zone_id) {
-                $(this).attr('selected', true);
+                // $(this).attr('selected', true);
                 $(this).removeAttr('disabled').show();
             } else {
                 $(this).attr('disabled', 'disabled').hide();
-                $(this).attr('selected', false);
+                // $(this).attr('selected', false);
             }
         });
+        senatorialZoneSelect.prop('disabled', false);
     }
 
     // function countryStateSelector(event) {

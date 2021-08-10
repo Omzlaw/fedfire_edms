@@ -106,7 +106,7 @@ class EmployeeGratuity extends Model
         'status' => 'Required',
         'rate_per_annum' => 'Required',
         'amount_paid' => 'Required',
-        'remark' => 'Required',
+      //        'remark' => 'Required',
         // 'checked_by' => 'Required',
         'checked_at' => 'Required',
      //   'created_by' => 'Required',

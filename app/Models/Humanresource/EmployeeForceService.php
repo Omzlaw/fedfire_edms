@@ -78,7 +78,7 @@ class EmployeeForceService extends Model
         'reason_for_leaving' => 'Required',
         'employee_id' => 'Required',
         // 'file_upload' => 'Required',
-        'remark' => 'Required',
+      //        'remark' => 'Required',
      //   'created_by' => 'Required',
     //    'updated_by' => 'Required',
         'date_updated' => 'Required'

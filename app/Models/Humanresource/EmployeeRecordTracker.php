@@ -66,7 +66,7 @@ class EmployeeRecordTracker extends Model
     public static $rules = [
         'employee_id' => 'Required',
         'status' => 'Required',
-        'remark' => 'Required',
+      //        'remark' => 'Required',
      //   'created_by' => 'Required',
     //    'updated_by' => 'Required',
         'has_profile' => 'Required',

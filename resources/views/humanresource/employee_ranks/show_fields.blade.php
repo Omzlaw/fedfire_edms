@@ -5,13 +5,13 @@
 
 
 <tr>
-    <th scopre="row">{!! Form::label('rank_type_id', 'Rank Type Id:') !!}</th>
-    <td>{{ $employeeRank->rankType->title }}</td>
+    <th scopre="row">{!! Form::label('rank_type_id', 'Rank:') !!}</th>
+    <td>{{ $employeeRank->rankType->description }}</td>
 </tr>
 
 
 <tr>
-    <th scopre="row">{!! Form::label('employee_id', 'Employee Id:') !!}</th>
+    <th scopre="row">{!! Form::label('employee_id', 'Employee:') !!}</th>
     <td>{{ $employeeRank->employee->getFullName() }}</td>
 </tr>
 

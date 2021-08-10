@@ -1,7 +1,7 @@
 <!-- Rank Type Id Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('rank_type_id', 'Rank Type:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('rank_type_id', 'Rank:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::select('rank_type_id', modelDropdown($rank_types, 'id', 'description'), null, ['class' => 'form-control']) !!}
         </div>

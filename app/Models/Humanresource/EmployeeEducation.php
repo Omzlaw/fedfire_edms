@@ -92,7 +92,7 @@ class EmployeeEducation extends Model
         'employee_id' => 'Required',
         // 'file_upload' => 'Required',
         'status' => 'Required',
-        'remark' => 'Required',
+      //        'remark' => 'Required',
         // 'checked_by' => 'Required',
         'checked_at' => 'Required',
      //   'created_by' => 'Required',

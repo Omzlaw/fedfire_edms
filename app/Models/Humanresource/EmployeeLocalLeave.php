@@ -84,7 +84,7 @@ class EmployeeLocalLeave extends Model
         'from_date' => 'Required',
         'to_date' => 'Required',
         'status' => 'Required',
-        'remark' => 'Required',
+      //        'remark' => 'Required',
      //   'created_by' => 'Required',
     //    'updated_by' => 'Required'
     ];

@@ -82,4 +82,8 @@ class RankType extends Model
     {
         return $this->belongsTo(\App\Models\User::class, 'updated_by', 'id');
     }
+
+    public function employeeRanks() {
+        return $this->hasMany(\App\Models\Humanresource\EmployeeRank::class, 'rank_type_id', 'id');
+    }
 }

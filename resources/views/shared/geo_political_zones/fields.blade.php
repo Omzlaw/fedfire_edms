@@ -25,7 +25,7 @@
     <div class="row">
         {!! Form::label('country_id', 'Country:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('country_id', modelDropdown($countries, 'id', 'title'), null, ['class' => 'form-control']) !!}
+            {!! Form::select('country_id', modelDropdown($countries, 'id', 'title', 'nigeria_only'), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div>

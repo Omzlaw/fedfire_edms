@@ -83,7 +83,7 @@ class EmployeePublicService extends Model
         // 'file_upload' => 'Required',
         'total_years_served' => 'Required',
         'total_paid' => 'Required',
-        'remark' => 'Required',
+      //        'remark' => 'Required',
         // 'checked_by' => 'Required',
     ];
 

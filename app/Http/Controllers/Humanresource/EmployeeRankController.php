@@ -6,6 +6,7 @@ use Flash;
 use Response;
 use App\Models\Shared\RankType;
 use App\Http\Requests\Humanresource;
+use App\Models\Humanresource\Employee;
 use App\Models\Humanresource\EmployeeRank;
 use App\Http\Controllers\AppBaseController;
 use App\DataTables\Humanresource\EmployeeRankDataTable;
@@ -46,7 +47,11 @@ class EmployeeRankController extends AppBaseController
     public function store(CreateEmployeeRankRequest $request)
     {
         $input = $request->all();
-
+        $rank = RankType::find($input['rank_type_id']);
+        $employee = Employee::find($input['employee_id']);
+        
+        $input['type'] = $rank->type;
+        $input['employee_gender'] = $employee->gender;
         /** @var EmployeeRank $employeeRank */
         $employeeRank = EmployeeRank::create($input);
 
@@ -119,8 +124,15 @@ class EmployeeRankController extends AppBaseController
             // return redirect(route('humanresource.employeeRanks.index'));
         }
 
-        $employeeRank->fill($request->all());
+        $input = $request->all();
+        $rank = RankType::find($input['rank_type_id']);
+        $employee = Employee::find($input['employee_id']);
+
+        $input['type'] = $rank->type;
+        $input['employee_gender'] = $employee->gender;
+        $employeeRank->fill($input);
         $employeeRank->save();
+
 
         Flash::success('Employee Rank updated successfully.');
         close_modal_refresh();

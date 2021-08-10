@@ -18,6 +18,8 @@ class CreateEmployeeRanksTable extends Migration
             $table->integer('rank_type_id')->unsigned();
             $table->integer('employee_id')->unsigned();
             $table->integer('status')->default(1);
+            $table->integer('type')->unsigned()->nullable();
+            $table->integer('employee_gender')->unsigned()->nullable();
             $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();
             $table->timestamps();

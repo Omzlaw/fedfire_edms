@@ -76,7 +76,7 @@ class EmployeeWife extends Model
         'marriage_date' => 'Required',
         'employee_id' => 'Required',
         // 'file_upload' => 'Required',
-        'remark' => 'Required',
+      //        'remark' => 'Required',
         // 'checked_by' => 'Required',
      //   'created_by' => 'Required',
     //    'updated_by' => 'Required'

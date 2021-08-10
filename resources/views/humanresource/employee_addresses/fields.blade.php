@@ -14,7 +14,7 @@
     <div class="row">
         {!! Form::label('country_id', 'Country:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('country_id', modelDropdown($countries, 'id', 'title'), null, ['id' => 'countrySelector', 'class' => 'form-control', 'onchange' => 'countryStateSelector()']) !!}
+            {!! Form::select('country_id', modelDropdown($countries, 'id', 'title', 'nigeria_only'), null, ['id' => 'countrySelector', 'class' => 'form-control', 'onchange' => 'countryStateSelector()']) !!}
         </div>
     </div>
 </div>
@@ -28,22 +28,19 @@
         </div>
     </div>
 </div> --}}
-
-
-{!! Form::macro('stateSelect', function($statesModel)
-{
-    $states = $statesModel::orderBy('title')->get();
-    $options = array();
+{!! Form::macro('stateSelect', function ($statesModel) {
+    $states = $statesModel
+        ::orderBy('title')->where('country_id', '=', '160')->get();
+    $options = [];
     $defaultOption = '<option value="">Select...</option>';
     $options[] = $defaultOption;
     foreach ($states as $state) {
-
         $option = '<option value=' . $state->id . ' data-country_id=' . $state->country_id . '>' . $state->title . '</option>';
         $options[] = $option;
     }
     $list = implode('', $options);
     return "<select id='stateSelector' name='state_id' class='form-control' onchange='stateLocalGovtAreaSelector()'>{$list}</select>";
-}); !!}
+}) !!}
 
 
 <div class="form-group">
@@ -55,20 +52,18 @@
     </div>
 </div>
 
-{!! Form::macro('localGovtAreaSelect', function($localGovtAreaModel)
-{
+{!! Form::macro('localGovtAreaSelect', function ($localGovtAreaModel) {
     $localGovtAreas = $localGovtAreaModel::orderBy('title')->get();
-    $options = array();
+    $options = [];
     $defaultOption = '<option value="">Select...</option>';
     $options[] = $defaultOption;
     foreach ($localGovtAreas as $localGovtArea) {
-
         $option = '<option value=' . $localGovtArea->id . ' data-state_id=' . $localGovtArea->state_id . '>' . $localGovtArea->title . '</option>';
         $options[] = $option;
     }
     $list = implode('', $options);
     return "<select id='localGovtAreaSelector' name='local_govt_area_id' class='form-control'>{$list}</select>";
-}); !!}
+}) !!}
 
 
 <div class="form-group">
@@ -135,8 +130,7 @@
 </div>
 
 <script>
-
-    window.onload = function () { 
+    window.onload = function() {
         $('#stateSelector').prop('disabled', 'disabled');
         $('#localGovtAreaSelector').prop('disabled', 'disabled');
     }
@@ -145,6 +139,7 @@
 
         var countrySelect = $('#countrySelector');
         var stateSelect = $('#stateSelector');
+        stateSelect.prop("selectedIndex", 0).val();
         var id = $(countrySelect).children("option:selected").val();
         $("#stateSelector > option").each(function() {
             let country_id = $(this).data("country_id");
@@ -159,8 +154,9 @@
 
     function stateLocalGovtAreaSelector(event) {
 
-        var stateSelect = $('#countrySelector');
+        var stateSelect = $('#stateSelector');
         var localGovtAreaSelect = $('#localGovtAreaSelector');
+        localGovtAreaSelect.prop("selectedIndex", 0).val();
         var id = $(stateSelect).children("option:selected").val();
         $("#localGovtAreaSelector > option").each(function() {
             let state_id = $(this).data("state_id");

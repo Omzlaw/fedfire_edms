@@ -77,7 +77,7 @@ class EmployeeCertificates extends Model
         'date_obtained' => 'Required',
         'employee_id' => 'Required',
         'status' => 'Required',
-        'remark' => 'Required',
+      //        'remark' => 'Required',
         // 'checked_by' => 'Required',
         'checked_at' => 'Required',
         // 'updated_by' => 'Required',
