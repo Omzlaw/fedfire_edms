@@ -1,12 +1,12 @@
-<div id="menu" role="navigation" class="default-color">
+<div id="menu" role="navigation" class="">
     <ul class="navigation list-unstyled" id="demo">
-        <li><span class="close-icon d-xl-none d-lg-block"><img src="{{asset('img/images/input-disabled.png')}}"
-                    alt="image missing"></span></li>
 
-        <a href="{{ URL::to('index') }}" class="logo navbar-brand mr-0 text-center">
+
+        <a href="{{ URL::to('index') }}" class="logo navbar-brand mr-0 text-center mb-3">
             <img src="{{ asset('images/logo.png') }}">
         </a>
-        <li {!! (Request::is('') ? 'class="active"' : '' ) !!}>
+
+        <li {!! (Request::is('dashboard*') ? 'class="active"' : '' ) !!}>
             <a href="{{ URL::to('/dashboard') }}" class="mm-a">
                 <span class="mm-text">Dashboard</span>
                 <span class="menu-icon"><i class="im im-icon-Home text-white"></i></span>

@@ -1,5 +1,5 @@
 @role('administrator')
-<li class="{!! Request::is('shared/fileDirectories*') ? 'active' : '' !!}">
+<li class="{!! Request::is('fileDirectories*') ? 'active' : '' !!}">
     <a href="{{ route('shared.fileDirectories.getSearch') }}" class="mm-a">
         <span class="mm-text ">Search</span>
         <span class="menu-icon"><i class="fa fa-search text-white"></i></span>

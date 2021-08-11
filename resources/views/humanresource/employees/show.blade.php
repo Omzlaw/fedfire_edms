@@ -1,24 +1,24 @@
 <?php
 
-    $employee = $data['employee'];
-    $children = $data['children'];
-    $actionSheets = $data['actionSheets'];
-    $censures = $data['censures'];
-    $spouse = $data['spouse'];
-    $addresses = $data['addresses'];
-    $terminations = $data['terminations'];
-    $foreignTours = $data['foreignTours'];
-    $localLeaves = $data['localLeaves'];
-    $languages = $data['languages'];
-    $gratuities = $data['gratuities'];
-    $forceServices = $data['forceServices'];
-    $certificates = $data['certificates'];
-    $publicServices = $data['publicServices'];
-    $educations = $data['educations'];
-    $recordTrackers = $data['recordTrackers'];
-    $nextOfKins = $data['nextOfKins'];
-    $qualifications = $data['qualifications'];
-    $ranks = $data['ranks'];
+$employee = $data['employee'];
+$children = $data['children'];
+$actionSheets = $data['actionSheets'];
+$censures = $data['censures'];
+$spouse = $data['spouse'];
+$addresses = $data['addresses'];
+$terminations = $data['terminations'];
+$foreignTours = $data['foreignTours'];
+$localLeaves = $data['localLeaves'];
+$languages = $data['languages'];
+$gratuities = $data['gratuities'];
+$forceServices = $data['forceServices'];
+$certificates = $data['certificates'];
+$publicServices = $data['publicServices'];
+$educations = $data['educations'];
+$recordTrackers = $data['recordTrackers'];
+$nextOfKins = $data['nextOfKins'];
+$qualifications = $data['qualifications'];
+$ranks = $data['ranks'];
 
 ?>
 @extends('layouts.default')
@@ -49,9 +49,11 @@
                 <div class="row employee-detail-cards">
                     <div class="col-lg-3 col-md-6">
                         <div class="ml-3 mb-3">
-                            <img src="{{asset($employee->profile_picture)}}" border="0" width="100" height="100" class="rounded-circle" align="center" alt="profile picture for {{ $employee->first_name . ' ' . $employee->last_name}}"/>
+                            <img src="{{ asset($employee->profile_picture) }}" border="0" width="100" height="100"
+                                class="rounded-circle" align="center"
+                                alt="profile picture for {{ $employee->first_name . ' ' . $employee->last_name }}" />
                         </div>
-                        
+
                         <div class="card" style="width: 18rem;">
                             {!! Form::open(['route' => 'searchEmployeeRecord', 'class' => 'form-horizontal', 'files' => true]) !!}
                             <div class="">
@@ -62,7 +64,7 @@
                                     {!! Form::submit('View Files', ['class' => 'btn custom-outline-primary   ']) !!}
                                 </div>
                             </div>
-                        {!! Form::close() !!}
+                            {!! Form::close() !!}
                             <div class="card-header bg-secondary bg-gradient">
                                 <h6>Bio-Data</h6>
                             </div>
@@ -131,8 +133,8 @@
                                         Trackers</a>
                                 </li>
                                 <li class="list-group-item"><a class="dt" data-route="humanresource/employeeRanks"
-                                    data-model="{{ $ranks }}" href="#">Ranks</a>
-                            </li>
+                                        data-model="{{ $ranks }}" href="#">Ranks</a>
+                                </li>
                             </ul>
                             <div class="card-header bg-secondary bg-gradient">
                                 <h6>Services</h6>
@@ -203,7 +205,7 @@
 
                         </div>
                     </div>
-        
+
                     <div class="col-lg-3 col-md-6">
                         <div class="card" style="width: 18rem;">
 
@@ -236,32 +238,32 @@
                                     </a>
                                 </span>
                             </div>
-        
+
                             <div class="card-body">
                                 <div id="details" class="table-responsive">
-        
+
                                 </div>
                             </div>
-        
+
                         </div>
                     </div>
                 </div>
-        
-        
-        
+
+
+
                 <div id="basic-info-table" class="card">
                     <div class="">
                         <div class="row">
                             <div class="col-6 table-responsive">
                                 <table class="table table-default table-striped">
                                     @include('humanresource.employees.show_fields')
-                
+
                                 </table>
                             </div>
                             <div class="col-6 table-responsive">
                                 <table class="table table-default table-striped">
                                     @include('humanresource.employees.show_fields2')
-                
+
                                 </table>
                             </div>
                         </div>
@@ -273,7 +275,7 @@
 
 
 
-     
+
 
         {{-- <a href="humanresource.employees.index" class="btn secondary-color-bg">Back</a> --}}
     </div>
@@ -281,7 +283,7 @@
     <script>
         window.onload = intialiseFunctions;
 
-        function intialiseFunctions(){
+        function intialiseFunctions() {
             buildTable();
         }
 
@@ -323,14 +325,16 @@
         }
 
         function firstLetterUpper(theString) {
-                var newString = theString.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g,function(c){return c.toUpperCase()});
+            var newString = theString.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g, function(c) {
+                return c.toUpperCase()
+            });
             return newString;
         }
 
 
         function confirmation(id) {
             let result = confirm('Are you sure you want to delete');
-            if(result) {
+            if (result) {
                 $('#delete-form-' + id).submit();
             }
         }
@@ -381,19 +385,20 @@
                         for (var i in columnNames) {
 
                             columns.push({
-                                        data: columnNames[i],
-                                        title: firstLetterUpper(columnNames[i].replace('_', ' ').replace('id', '').replace('_', ''))
-                                    });
-                                
+                                data: columnNames[i],
+                                title: firstLetterUpper(columnNames[i].replace('_', ' ').replace(
+                                    'id', '').replace('_', ''))
+                            });
+
                         }
 
                         columns.push({
-                                title: 'Actions',
-                                render: (data, type, row, meta) => {
-                                    return [   
-                                        getActions(row.id, route)
-                                    ].join('');
-                                }
+                            title: 'Actions',
+                            render: (data, type, row, meta) => {
+                                return [
+                                    getActions(row.id, route)
+                                ].join('');
+                            }
                         })
 
                         let table = $('#details-table').DataTable({
@@ -414,8 +419,8 @@
                             dom: 'lfrtip'
                         });
 
-                        table.column( 0 ).visible( false );
-                        
+                        table.column(0).visible(false);
+
 
                         $(".action-buttons").each(function(index) {
                             $(this).click(function() {

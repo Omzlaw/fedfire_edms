@@ -1,14 +1,14 @@
 $(document).ready(function () {
     $x = $(".left-aside").height();
     $y = $(".right-aside").height();
-    $z = $(window).height() + 0;
+    $z = $(window).height();
     if ($z > $x) {
         $(".left-aside .navigation").css({
             "height": $z
         });
     } else {
         $(".left-aside .navigation").css({
-            "height": $z
+            "height": $x
         });
     }
     var ps = new PerfectScrollbar('#demo');

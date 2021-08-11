@@ -83,7 +83,14 @@ body > .header .navbar {
   width: 300px;
   background: #f1f3fa;
   border-right: 5px solid #EEE;
+  position: relative;
+  height: 100%;
+	overflow: auto;
+  /* top: -70px; */
+  /* z-index: 9999; */
+
 }
+
 
 .content-header h1 {
   color: #6c757d;
@@ -96,18 +103,27 @@ body > .header .navbar {
 
 #menu li.active > a {
   padding: 11px 20px 11px 17px;
-  color:#000000;
-  border: 1px solid #000;
+  color:#fff;
+  /* border: 1px solid #000; */
+  background-color: #060c38;
   transition: none; }
 
 #menu li > a:hover {
-  color:#000000;
-  border: 1px solid #000;
+  color:#060c38;
+  border: 1px solid #060c38;
 }
+
+#menu li.active > a:hover {
+  color:#fff;
+  border: 1px solid #060c38;
+}
+
 #menu li.active > a i {
-  color: #000;
+  color: #060c38;
   font-weight: 700;
 }
+
+
 #menu li > a i
 {
   font-weight: 700;
@@ -162,12 +178,7 @@ body > .header .navbar {
   margin: 24px -10px 24px -10px;
   height: 65px;
 }
-.left-aside {
-  position: relative;
-  /* top: -70px; */
-  /* z-index: 9999; */
-  height: 65px;
-}
+
 
 
 

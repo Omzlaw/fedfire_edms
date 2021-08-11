@@ -68,7 +68,7 @@
                 <div class="bg-white dashboard-col pl-15 pb-15 pt-15">
                     <i class="im im-icon-Eye-Scan im-icon-set float-right bg-success"></i>
                     <h3>{{ $file_inactive_count }}</h3>
-                    <p>Number of inctive Files</p>
+                    <p>Number of Inactive Files</p>
                     {{-- <div class="progress mr-15">
                     <div id="progress-success"
                         class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar"
@@ -109,7 +109,7 @@
                 <div class="bg-white dashboard-col pl-15 pb-15 pt-15">
                     <i class="im im-icon-Checked-User im-icon-set float-right bg-danger"></i>
                     <h3>{{ $rank_and_file_officers_count_male }}</h3>
-                    <p>Number of Male Rank and File Officers</p>
+                    <p>Number of Male Rank and File</p>
                     {{-- <div class="progress mr-15">
                     <div id="progress-danger" class="progress-bar bg-danger progress-bar-striped progress-bar-animated"
                         role="progressbar" style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100">
@@ -123,7 +123,7 @@
                 <div class="bg-white dashboard-col pl-15 pb-15 pt-15">
                     <i class="im im-icon-Checked-User im-icon-set float-right bg-danger"></i>
                     <h3>{{ $rank_and_file_officers_count_female }}</h3>
-                    <p>Number of female Rank and File Officers</p>
+                    <p>Number of Female Rank and File</p>
                     {{-- <div class="progress mr-15">
                     <div id="progress-danger" class="progress-bar bg-danger progress-bar-striped progress-bar-animated"
                         role="progressbar" style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100">
@@ -241,7 +241,7 @@
                 options: {
                     title: {
                         display: true,
-                        text: 'Rank and File Officers'
+                        text: 'Rank and File'
                     },
                     legend: {
                         display: true,
