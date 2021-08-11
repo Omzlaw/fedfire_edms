@@ -187,3 +187,10 @@ mix.scripts(
         srcJs + 'leftmenu.js'
     ], destJs + 'app.js');
 
+// mix.scripts(
+//     [
+//         'node_modules/dwt/dist/dynamsoft.webtwain.min.js'
+//     ], 'public/js/dynamsoft.js'
+// );
+
+mix.copyDirectory('node_modules/dwt', 'public/dynamsoft')

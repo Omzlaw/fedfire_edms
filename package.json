@@ -29,6 +29,7 @@
         "datatables.net-bs4": "^1.10.21",
         "datatables.net-buttons": "^1.6.2",
         "datatables.net-buttons-bs4": "^1.6.2",
+        "dwt": "^17.1.10",
         "jasny-bootstrap": "^4.0.0",
         "jquery": "^3.5.1",
         "jquery-backstretch": "^2.1.18",

@@ -24,6 +24,9 @@
     <!-- /.content -->
     <section class="content">
         <div class="row">
+            <div class="col-12 mb-3">
+                Hello {{ Auth::user()->name }}
+            </div>
             <div class="col-md-6 col-xl-3 col-12 mb-20">
                 <div class="  bg-white dashboard-col pl-15 pb-15 pt-15">
                     <i class="im im-icon-Checked-User im-icon-set float-right bg-primary"></i>
@@ -151,20 +154,20 @@
 
     <script>
         window.onload = function() {
-            $(document).ready(function() {
-                $("#progress-primary").animate({
-                    width: '45%'
-                }, 'slow', 'linear');
-                $("#progress-info").animate({
-                    width: '45%'
-                }, 'slow', 'linear');
-                $("#progress-success").animate({
-                    width: '45%'
-                }, 'slow', 'linear');
-                $("#progress-danger").animate({
-                    width: '45%'
-                }, 'slow', 'linear');
-            });
+            // $(document).ready(function() {
+            //     $("#progress-primary").animate({
+            //         width: '45%'
+            //     }, 'slow', 'linear');
+            //     $("#progress-info").animate({
+            //         width: '45%'
+            //     }, 'slow', 'linear');
+            //     $("#progress-success").animate({
+            //         width: '45%'
+            //     }, 'slow', 'linear');
+            //     $("#progress-danger").animate({
+            //         width: '45%'
+            //     }, 'slow', 'linear');
+            // });
             var ctx = $('#myChart');
             var ctx2 = $('#myChart2');
 

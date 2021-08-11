@@ -1,4 +1,54 @@
+function startTime() {
+    const today = new Date();
+    let h = today.getHours();
+    let m = today.getMinutes();
+    let s = today.getSeconds();
+    let mm = today.getMonth();
+    let y = today.getFullYear();
+    let d = today.getDate();
+    let day;
+    switch (today.getDay()) {
+        case 0:
+            day = "Sunday";
+            break;
+        case 1:
+            day = "Monday";
+            break;
+        case 2:
+            day = "Tuesday";
+            break;
+        case 3:
+            day = "Wednesday";
+            break;
+        case 4:
+            day = "Thursday";
+            break;
+        case 5:
+            day = "Friday";
+            break;
+        case 6:
+            day = "Saturday";
+            break;
+
+        default:
+            break;
+    }
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+    document.getElementById('date').innerHTML = day + ", " + d + "/" + mm + "/" + y
+    setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+    if (i < 10) {
+        i = "0" + i
+    }; // add zero in front of numbers < 10
+    return i;
+}
+
 $(document).ready(function () {
+    startTime();
     $x = $(".left-aside").height();
     $y = $(".right-aside").height();
     $z = $(window).height();
@@ -70,6 +120,7 @@ $(document).ready(function () {
     // $('select').selectize({
     //     sortField: 'text'
     // });
+
 });
 //leftmenu collapse in active
 jQuery(function ($) {

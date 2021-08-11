@@ -30,6 +30,7 @@
 
     <!-- vendors  css -->
     @yield('header_styles')
+    <script src="{{ asset('dynamsoft/dist/dynamsoft.webtwain.min.js') }}"></script>
 </head>
 
 <body>
@@ -57,13 +58,15 @@
 
 
                     </a>
-
-                    <div class="navbar-center ml-auto"><strong>FEDERAL FIRE SERIVICE EDMS</strong></div>
+                    <div href="#" id="time" class="mt-15"></div>
+                    <div class="navbar-center ml-auto text-center"><strong>FEDERAL FIRE SERIVICE EDMS
+                    </strong>
+                    </div>
                     <!-- Header Navbar: style can be found in header-->
                     <!-- Sidebar toggle button-->
-
                     <div class="navbar-right ml-auto">
                         <ul class="navbar-nav nav">
+                            <div href="#" id="date" class="mt-15"></div>
                             <li class="dropdown notifications-menu nav-item dropdown">
                                 <a href="javascript:void(0)" class="dropdown-toggle nav-link dropdown-toggle"
                                     data-toggle="dropdown" id="navbarDropdown">
@@ -73,7 +76,6 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-notifications table-striped"
                                     aria-labelledby="navbarDropdown">
-
                                     <li class="dropdown-footer">
                                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
@@ -111,6 +113,9 @@
     {{-- <script src="{{ asset('js/moment.min.js')}}"></script>
     <script src="{{ asset('js/dateTimePicker.min.js')}}"></script> --}}
     <script src="{{ asset('js/custom.js') }}"></script>
+
+    <script>
+    </script>
 
     @yield('footer_scripts')
 

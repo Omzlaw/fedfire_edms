@@ -1,135 +1,159 @@
-{{-- <!-- File Name Field -->
-<div class="form-group">
-    <div class="row">
-        {!! Form::label('file_name', 'File Name:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('file_name', null, ['class' => 'form-control']) !!}
+<div class="row">
+    <div class="col-6">
+        {{-- <!-- File Name Field -->
+    <div class="form-group">
+        <div class="row">
+            {!! Form::label('file_name', 'File Name:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+            <div class="col-md-9 col-lg-9 col-12">
+                {!! Form::text('file_name', null, ['class' => 'form-control']) !!}
+            </div>
+        </div>
+    </div --}}
+
+
+        <!-- File Type Id Field -->
+        <div class="form-group">
+            <div class="row">
+                {!! Form::label('file_type_id', 'File Type:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+                <div class="col-md-9 col-lg-9 col-12">
+                    {!! Form::select('file_type_id', modelDropdown($file_types, 'id', 'title'), null, ['class' => 'form-control']) !!}
+                    <a class="btn secondary-color-bg" href="{{ route('shared.fileTypes.create') }}">Add new</a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Staff No Field -->
+        <div class="form-group">
+            <div class="row">
+                {!! Form::label('Employee', 'Staff No:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+                <div class="col-md-9 col-lg-9 col-12">
+                    {!! Form::select('employee_id', modelDropdown($employees, 'id', 'staff_code'), null, ['class' => 'form-control']) !!}
+                    <a class="btn secondary-color-bg" href="{{ route('humanresource.employees.create') }}">Add new</a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Status Field -->
+        <div class="form-group">
+            <div class="row">
+                {!! Form::label('status', 'Status:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+                <div class="col-md-9 col-lg-9 col-12">
+                    {!! Form::select('status', enum_status(), null, ['class' => 'form-control']) !!}
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Remark Field -->
+        <div class="form-group ">
+            <div class="row">
+                {!! Form::label('remark', 'Remark:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+                <div class="col-md-9 col-lg-9 col-12">
+                    {!! Form::textarea('remark', null, ['class' => 'form-control']) !!}
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row ml-0">
+                <div class="custom-control custom-switch col-md-9 col-lg-9 col-12">
+                    <input type="checkbox" class="custom-control-input" id="toggle-upload">
+                    <label class="custom-control-label" for="toggle-upload">Scan</label>
+                  </div>
+            </div>
+        </div>
+
+        <!-- File Upload Field -->
+        <div id="upload_row" class="form-group">
+            <div class="row">
+                {!! Form::label('file_upload', 'File Upload:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+                <div class="col-md-9 col-lg-9 col-12">{!! Form::file('file_upload[]', ['class' => 'form-control', 'id' => 'file_upload', 'accept' => 'image/*,.pdf']) !!}
+                </div>
+            </div>
+        </div>
+
+        <div id="scan_row" class="form-group" style="display: none">
+            <div class="row">
+                {!! Form::label('file_upload', 'File Upload:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+                <div class="col-md-9 col-lg-9 col-12">
+                    <input type="button" class="btn secondary-color-bg" value="Scan Image" onclick="acquireImage();" />
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Submit Field -->
+        <div class="form-group col-sm-12">
+            {!! Form::submit('Save', ['class' => 'btn secondary-color-bg']) !!}
+            <a href="{{ route('shared.fileDirectories.index') }}" class="btn btn-default">Cancel</a>
         </div>
     </div>
-</div --}}
 
-
-<!-- File Type Id Field -->
-<div class="form-group">
-    <div class="row">
-        {!! Form::label('file_type_id', 'File Type:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('file_type_id', modelDropdown($file_types, 'id', 'title'), null, ['class' => 'form-control']) !!}
-            <a  class="btn secondary-color-bg" href="{{ route('shared.fileTypes.create') }}" >Add new</a>
-        </div>
+    <div class="col-6">
+        <div id="dwtcontrolContainer" class=""></div>
+        <div><embed id="preview"  alt="preview" src="" height= "50%" width="50%"></div>
     </div>
 </div>
-
-
-<!-- Staff No Field -->
-<div class="form-group">
-    <div class="row">
-        {!! Form::label('Employee', 'Staff No:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('employee_id', modelDropdown($employees, 'id', 'staff_code'), null, ['class' => 'form-control']) !!}
-            <a  class="btn secondary-color-bg" href="{{ route('humanresource.employees.create') }}">Add new</a>
-        </div>
-    </div>
-</div>
-
-
-<!-- Status Field -->
-<div class="form-group">
-    <div class="row">
-        {!! Form::label('status', 'Status:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('status', enum_status(), null, ['class' => 'form-control']) !!}
-        </div>
-    </div>
-</div>
-
-
-<!-- Remark Field -->
-<div class="form-group ">
-    <div class="row">
-        {!! Form::label('remark', 'Remark:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::textarea('remark', null, ['class' => 'form-control']) !!}
-        </div>
-    </div>
-</div>
-
-<!-- File Upload Field -->
-<div class="form-group">
-    <div class="row"> 
-        {!! Form::label('file_upload', 'File Upload:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">{!! Form::file('file_upload[]', array('class' => 'form-control', 'accept' => 'image/*,.pdf')) !!}
-        </div>
-    </div>
-</div>
-
-
-<!-- Submit Field -->
-<div class="form-group col-sm-12">
-    {!! Form::submit('Save', ['class' => 'btn secondary-color-bg']) !!}
-    <a href="{{ route('shared.fileDirectories.index') }}" class="btn btn-default">Cancel</a>
-</div>
-
-<script type="text/javascript" src="http://tst.dynamsoft.com/libs/dwt/15.0/dynamsoft.webtwain.min.js"> </script>
-{{-- <script src="{{ asset('dynamsoft/dynamsoft.webtwain.initiate.js') }}"></script>
-<script src="{{ asset('dynamsoft/dynamsoft.webtwain.config.js') }}"></script> --}}
 
 <script>
+    let toggleUpload = document.getElementById('toggle-upload');
+    toggleUpload.onchange = event => {
+        let toggleStatus = event.target.checked;
+        if(toggleStatus){
+            document.getElementById('upload_row').style.display = 'none';
+            document.getElementById('scan_row').style.display = 'block';
+
+            document.getElementById('preview').style.display = 'none';
+            document.getElementById('dwtcontrolContainer').style.display = 'block';
+
+        }
+        else {
+            document.getElementById('upload_row').style.display = 'block';
+            document.getElementById('scan_row').style.display = 'none';
+
+            document.getElementById('preview').style.display = 'block';
+            document.getElementById('dwtcontrolContainer').style.display = 'none';
+        }
+    }
+    let file_upload = document.getElementById('file_upload');
+    let preview = document.getElementById('preview');
+
+    file_upload.onchange = evt => {
+        const [file] = file_upload.files
+        if (file) {
+            preview.src = URL.createObjectURL(file)
+        }
+    }
+</script>
+
+
+<script>
+    console.log(Dynamsoft);
+    Dynamsoft.DWT.ResourcesPath = "{{ asset('dynamsoft/dist') }}";
     var DWObject;
-    Dynamsoft.WebTwainEnv.AutoLoad = false;
-    Dynamsoft.WebTwainEnv.Containers = [{
+    Dynamsoft.DWT.Containers = [{
         ContainerId: 'dwtcontrolContainer',
         Width: '480px',
         Height: '640px'
     }];
-    Dynamsoft.WebTwainEnv.RegisterEvent('OnWebTwainReady', Dynamsoft_OnReady);
-    Dynamsoft.WebTwainEnv.Trial = true;
-    Dynamsoft.WebTwainEnv.ProductKey = "LICENSE-KEY";
-    Dynamsoft.WebTwainEnv.Load();
-
+    Dynamsoft.DWT.RegisterEvent('OnWebTwainReady', Dynamsoft_OnReady);
+    Dynamsoft.DWT.ProductKey = 'f0078xQAAAC9Ai95ZaTJwafPTnV4iN2NLB42dv5oSr4gK++LUUtoru7rnATrhQRcwSW2OUqzRlC0mwu3dtd3itDh3LJcFl4xiYGpoDAACZCbz';
+    Dynamsoft.DWT.Load();
     function Dynamsoft_OnReady() {
-        DWObject = Dynamsoft.WebTwainEnv.GetWebTwain('dwtcontrolContainer');
-        var token = document.querySelector("meta[name='_token']").getAttribute("content");
-        DWObject.SetHTTPFormField('_token', token);
-    }
-
-    function loadImage() {
-        var OnSuccess = function() {};
-        var OnFailure = function(errorCode, errorString) {};
-        if (DWObject) {
-            DWObject.IfShowFileDialog = true;
-            DWObject.LoadImageEx("", EnumDWT_ImageType.IT_ALL, OnSuccess, OnFailure);
-        }
+        DWObject = Dynamsoft.DWT.GetWebTwain('dwtcontrolContainer');
     }
 
     function acquireImage() {
         if (DWObject) {
             DWObject.IfShowUI = false;
-            DWObject.IfDisableSourceAfterAcquire =
-                true; // Scanner source will be disabled/closed automatically after the scan.
+            DWObject.IfDisableSourceAfterAcquire = true; // Scanner source will be disabled/closed automatically after the scan.
             DWObject.SelectSource(); // Select a Data Source (a device like scanner) from the Data Source Manager.
-            DWObject
-                .OpenSource(); // Open the source. You can set resolution, pixel type, etc. after this method. Please refer to the sample 'Scan' -> 'Custom Scan' for more info.
-            DWObject
-                .AcquireImage(); // Acquire image(s) from the Data Source. Please NOTE this is a asynchronous method. In other words, it doesn't wait for the Data Source to come back.
+            DWObject.OpenSource(); // Open the source. You can set resolution, pixel type, etc. after this method. Please refer to the sample 'Scan' -> 'Custom Scan' for more info.
+            DWObject.AcquireImage(); // Acquire image(s) from the Data Source. Please NOTE this is a asynchronous method. In other words, it doesn't wait for the Data Source to come back.
         }
     }
 
-    function upload() {
-        var OnSuccess = function(httpResponse) {
-            alert("Succesfully uploaded");
-        };
-        var OnFailure = function(errorCode, errorString, httpResponse) {
-            alert(httpResponse);
-        };
-        var date = new Date();
-        DWObject.HTTPUploadThroughPostEx(
-            "{{ route('shared.fileDirectories.store') }}",
-            DWObject.CurrentImageIndexInBuffer,
-            '',
-            date.getTime() + ".jpg",
-            1, // JPEG
-            OnSuccess, OnFailure
-        );
-    }
 </script>
+
