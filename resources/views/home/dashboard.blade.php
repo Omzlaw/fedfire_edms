@@ -329,18 +329,18 @@
             <div class="col-md-6 col-12  mb-20">
                 <div class="secondary-color-bg dashboard-col pl-15 pb-15 pt-15">
                     {{-- <canvas id="myChart3" style="width:100%;max-width:100%"></canvas> --}}
-                    <div class="col-12 mb-3 text-center">
+                    <div class="mt-40 col-12 mb-3 text-center">
                         <i class="fa fa-user text-secondary" style="font-size: 4rem"></i>
                     </div>
                     <div class="col-12 mb-3 text-center">
                         Hello {{ Auth::user()->name }}
                     </div>
-                    <div class="mb-3 col-12 mb-60 text-center">
+                    <div class="col-12 mb-10 text-center">
                         <h3 id="dayTime" class="text-white"></h3>
                     </div>
                     <div class="col-12 text-center">
                         <h5 class="text-white">Active quote</h5>
-                        <h3 id="quote" class="text-white"></h3>
+                        <blockquote id="quote" class="text-white font-italic blockquote"></blockquote>
                     </div>
                 </div>
             </div>
@@ -526,12 +526,12 @@
                 
             ]
 
-            document.getElementById('quote').innerHTML = qoutes[0];
+            document.getElementById('quote').innerHTML = '"' + qoutes[0] + '"' 
 
             function changeQuote() {
                 setInterval(() => {
                     let randNumber = Math.floor(Math.random() * (qoutes.length));
-                    document.getElementById('quote').innerHTML = qoutes[randNumber];
+                    document.getElementById('quote').innerHTML = '"' + qoutes[randNumber] + '"' ;
                     console.log(qoutes[randNumber]);
                 }, 1000 * 10);
             }
