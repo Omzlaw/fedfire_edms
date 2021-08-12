@@ -7,6 +7,10 @@ function startTime() {
     let y = today.getFullYear();
     let d = today.getDate();
     let day;
+    let ampm = h >= 12 ? 'pm' : 'am';
+    h = h % 12;
+    h = h ? h : 12; // the hour '0' should be '12'
+    // m = m < 10 ? '0'+m : m;
     switch (today.getDay()) {
         case 0:
             day = "Sunday";
@@ -35,7 +39,7 @@ function startTime() {
     }
     m = checkTime(m);
     s = checkTime(s);
-    document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+    document.getElementById('time').innerHTML = h + ":" + m + ":" + s + " " + ampm;
     document.getElementById('date').innerHTML = day + ", " + d + "/" + mm + "/" + y
     setTimeout(startTime, 1000);
 }
@@ -74,7 +78,7 @@ $(document).ready(function () {
         },
         function () {
             $("#demo .navbar-brand").css({
-                'margin-left': '-175px',
+                // 'margin-left': '-175px',
                 'transition': 'margin-left 0.3s linear'
             });
             $("#demo .navbar-brand h1").replaceWith('<img src="{{ asset("images/logo.png") }}">');

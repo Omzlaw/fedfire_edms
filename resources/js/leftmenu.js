@@ -6,7 +6,7 @@ $(function() {
         $(".wrapper").addClass("hide_menu");
     }
     //Enable sidebar toggle
-    $("[data-toggle='offcanvas'].sidebar-toggle").on('click', function(e) {
+    $("#toggle-link").on('click', function(e) {
         e.preventDefault();
         //Toggle Menu
         $(".wrapper").toggleClass("hide_menu");

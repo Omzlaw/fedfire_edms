@@ -32,7 +32,8 @@ body {
 /******  2.HEADER STYLES   ******/
 body > .header .navbar {
   margin-bottom: 0;
-  background-color: #fff;
+  background-color: #060c38;
+  color: #fff;
   box-shadow: 0 0 35px 0 rgba(154,161,171,.15);
   border-width: 0;
 }
@@ -82,7 +83,7 @@ body > .header .navbar {
 .left-aside {
   width: 300px;
   background: #f1f3fa;
-  border-right: 5px solid #EEE;
+  /* border-right: 5px solid #EEE; */
   position: relative;
   height: 100%;
 	overflow: auto;

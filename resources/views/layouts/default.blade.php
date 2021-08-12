@@ -34,6 +34,7 @@
 </head>
 
 <body>
+
     <div class="wrapper">
 
         <!-- Left side column. contains the logo and sidebar -->
@@ -46,42 +47,39 @@
             <!-- /.sidebar -->
         </aside>
 
-
         <!--            right side bar ----------->
-        <aside class="right-aside">
-            <!-- header logo: style can be found in header-->
-            <header class="header bg-white sticky-top">
+        <aside class="right-aside bg-grey">
+            <header class="secondary-color-bg header sticky-top">
                 <nav class="navbar navbar-expand-lg navbar-light navbar-static-top" role="navigation">
-                    <a href="javascript:void(0)" class="ml-100 toggle-right d-xl-none d-lg-block">
+                    <a id="toggle-link" href="javascript:void(0)" class="mr-15 toggle-right d-xl-none d-lg-block">
                         <!-- Add the class icon to your logo image or logo icon to add the margining -->
-                        <img src="{{ asset('img/images/toggle.png') }}" alt="logo" />
-
-
+                        {{-- <img src="{{ asset('img/images/toggle.png') }}" alt="logo" class="" /> --}}
+        
+                        <i class="im im-icon-Boy text-white"></i>
                     </a>
-                    <div href="#" id="time" class="mt-15"></div>
+                    <div href="#" id="time" class=""></div>
                     <div class="navbar-center ml-auto text-center"><strong>FEDERAL FIRE SERIVICE EDMS
-                    </strong>
+                        </strong>
+                        <div href="#" id="date" class=""></div>
                     </div>
                     <!-- Header Navbar: style can be found in header-->
                     <!-- Sidebar toggle button-->
                     <div class="navbar-right ml-auto">
                         <ul class="navbar-nav nav">
-                            <div href="#" id="date" class="mt-15"></div>
                             <li class="dropdown notifications-menu nav-item dropdown">
-                                <a href="javascript:void(0)" class="dropdown-toggle nav-link dropdown-toggle"
+                                <a href="javascript:void(0)" class="dropdown-toggle nav-link dropdown-toggle text-white"
                                     data-toggle="dropdown" id="navbarDropdown">
-                                    <i class="im im-icon-Boy fs-16"></i>
-
-
+                                    <i class="im im-icon-Boy text-white fs-16"></i>
+        
+        
                                 </a>
-                                <ul class="dropdown-menu dropdown-notifications table-striped"
-                                    aria-labelledby="navbarDropdown">
+                                <ul class="dropdown-menu dropdown-notifications table-striped" aria-labelledby="navbarDropdown">
                                     <li class="dropdown-footer">
                                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
-
+        
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                             style="display: none;">
                                             @csrf
@@ -94,11 +92,12 @@
                     </div>
                 </nav>
             </header>
-            @yield('content')
-            @include('layouts.modal')
-            <div class="mb-3">
-            </div>
-            @include('layouts.footer')
+                <!-- header logo: style can be found in header-->
+                @yield('content')
+                @include('layouts.modal')
+                <div class="mb-3">
+                </div>
+                @include('layouts.footer')
         </aside>
     </div>
     <!-- ./wrapper -->
