@@ -53,7 +53,13 @@ Route::resource('salaryScales', 'Humanresource\SalaryScaleController', ["as" => 
 Route::resource('terminationTypes', 'Humanresource\TerminationTypeController', ["as" => 'humanresource'])->middleware('role:superadministrator');
 Route::resource('leaveTypes', 'Humanresource\LeaveTypeController', ["as" => 'humanresource'])->middleware('role:superadministrator');
 
-Route::get('fileDirectories', [FileDirectoryController::class, 'getSearch'])->name('shared.fileDirectories.getSearch')->middleware('role:superadministrator');
-Route::post('fileDirectories', [FileDirectoryController::class, 'search'])->name('searchEmployeeRecord')->middleware('role:superadministrator');
+
+
+Route::get('fileDirectories', [FileDirectoryController::class, 'getSearch'])->name('getSearch')->middleware('role:superadministrator');
+
+Route::post('fileDirectories', [FileDirectoryController::class, 'search'])->name('employeeSearch')->middleware('role:superadministrator');
+
+Route::post('fileDirectories/records', [FileDirectoryController::class, 'records'])->name('records')->middleware('role:superadministrator');
+
 Route::resource('users', 'UserController')->middleware('role:superadministrator', 'auth');
 

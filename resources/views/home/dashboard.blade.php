@@ -324,6 +324,7 @@
     </section>
     <!-- /.content -->
     <section class="content">
+        @include('flash::message')
 
         <div class="row">
             <div class="col-md-6 col-12  mb-20">

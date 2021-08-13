@@ -54,32 +54,40 @@
                     <a id="toggle-link" href="javascript:void(0)" class="mr-15 toggle-right d-xl-none d-lg-block">
                         <!-- Add the class icon to your logo image or logo icon to add the margining -->
                         {{-- <img src="{{ asset('img/images/toggle.png') }}" alt="logo" class="" /> --}}
-        
+
                         <i class="im im-icon-Boy text-white"></i>
                     </a>
                     <div href="#" id="time" class=""></div>
-                    <div class="navbar-center ml-auto text-center"><strong>FEDERAL FIRE SERIVICE EDMS
+                    <div class="navbar-center ml-auto mr-auto text-center"><strong>FEDERAL FIRE SERIVICE EDMS
                         </strong>
                         <div href="#" id="date" class=""></div>
                     </div>
                     <!-- Header Navbar: style can be found in header-->
                     <!-- Sidebar toggle button-->
-                    <div class="navbar-right ml-auto">
+                    <span>
+                        {!! Form::open(['route' => 'records', 'id' => 'search-form', 'class' => 'form-horizontal', 'files' => true]) !!}
+                        <span class="mt-10" style="display:flex">
+                            {!! Form::text('search_query', null, ['required', 'class' => 'form-control', 'placeholder' => 'Employee search']) !!}
+                            <a onclick="event.preventDefault();
+                            document.getElementById('search-form').submit();"><i class="fa fa-search text-white fs-16"></i></a>
+                        </span>
+                        {!! Form::close() !!}
+                    </span>
+                    <div class="navbar-right">
                         <ul class="navbar-nav nav">
                             <li class="dropdown notifications-menu nav-item dropdown">
                                 <a href="javascript:void(0)" class="dropdown-toggle nav-link dropdown-toggle text-white"
                                     data-toggle="dropdown" id="navbarDropdown">
                                     <i class="im im-icon-Boy text-white fs-16"></i>
-        
-        
                                 </a>
-                                <ul class="dropdown-menu dropdown-notifications table-striped" aria-labelledby="navbarDropdown">
+                                <ul class="dropdown-menu dropdown-notifications table-striped"
+                                    aria-labelledby="navbarDropdown">
                                     <li class="dropdown-footer">
                                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
-        
+
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                             style="display: none;">
                                             @csrf
@@ -92,12 +100,12 @@
                     </div>
                 </nav>
             </header>
-                <!-- header logo: style can be found in header-->
-                @yield('content')
-                @include('layouts.modal')
-                <div class="mb-3">
-                </div>
-                @include('layouts.footer')
+            <!-- header logo: style can be found in header-->
+            @yield('content')
+            @include('layouts.modal')
+            <div class="mb-3">
+            </div>
+            @include('layouts.footer')
         </aside>
     </div>
     <!-- ./wrapper -->
@@ -113,8 +121,6 @@
     <script src="{{ asset('js/dateTimePicker.min.js')}}"></script> --}}
     <script src="{{ asset('js/custom.js') }}"></script>
 
-    <script>
-    </script>
 
     @yield('footer_scripts')
 

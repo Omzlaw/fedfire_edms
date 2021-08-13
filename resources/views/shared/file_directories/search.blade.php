@@ -21,7 +21,7 @@
 
                 <div class="row">
                     <div class='col-12'>
-                        {!! Form::open(['route' => 'searchEmployeeRecord', 'class' => 'form-horizontal', 'files' => true]) !!}
+                        {!! Form::open(['route' => 'employeeSearch', 'class' => 'form-horizontal', 'files' => true]) !!}
                         <div class="row">
                             <div class="form-group col-4">
                                 {!! Form::text('file_no', null, ['class' => 'form-control', 'placeholder' => 'Search by File Number']) !!}

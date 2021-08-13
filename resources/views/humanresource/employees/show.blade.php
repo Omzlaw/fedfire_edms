@@ -55,7 +55,7 @@ $ranks = $data['ranks'];
                         </div>
 
                         <div class="card" style="width: 18rem;">
-                            {!! Form::open(['route' => 'searchEmployeeRecord', 'class' => 'form-horizontal', 'files' => true]) !!}
+                            {!! Form::open(['route' => 'employeeSearch', 'class' => 'form-horizontal', 'files' => true]) !!}
                             <div class="">
                                 <div class="form-group col-4">
                                     {!! Form::hidden('file_no', $employee->file_no, ['class' => 'form-control']) !!}

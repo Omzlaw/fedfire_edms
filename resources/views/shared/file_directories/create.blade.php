@@ -16,11 +16,7 @@
         @include('adminlte-templates::common.errors')
         <div class="card">
             <div class="card-body">
-                        {!! Form::open(['route' => 'shared.fileDirectories.store', 'class' => 'form-horizontal', 'files' => true]) !!}
-
-                        @include('shared.file_directories.fields', [$file_types, $employees])
-
-                        {!! Form::close() !!}
+                @include('shared.file_directories.fields', [$file_types, $employees])
             </div>
         </div>
     </div>

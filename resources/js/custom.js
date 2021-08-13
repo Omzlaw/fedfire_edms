@@ -51,6 +51,7 @@ function checkTime(i) {
     return i;
 }
 
+
 $(document).ready(function () {
     startTime();
     $x = $(".left-aside").height();

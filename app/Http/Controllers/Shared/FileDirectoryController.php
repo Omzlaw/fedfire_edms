@@ -94,11 +94,35 @@ class FileDirectoryController extends AppBaseController
         $employee = Employee::where('file_no', '=', $request['file_no'])->first();
         if (empty($employee)) {
             Flash::error('Employee not found');
-            return redirect(route('searchEmployeeRecord'));
+            return redirect(route('employeeSearch'));
         }
         $file_directories = FileDirectory::where('employee_id', '=', $employee->id)->get();
         $file_types = new FileType;
         return view('shared.file_directories.search', compact('employee', 'file_directories', 'file_types'));
+    }
+
+    public function records(Request $request)
+    {
+        $request->validate([
+            'search_query' => 'required'
+        ]);
+        
+        $employees = Employee::select('id', 'file_no', 'first_name','middle_name', 'last_name')
+        ->where('first_name', 'LIKE', $request['search_query'])
+        ->orWhere('last_name', 'LIKE', $request['search_query'])
+        ->orWhere('middle_name', 'LIKE', $request['search_query'])
+        ->orWhere('file_no', 'LIKE', $request['search_query'])
+        ->orderBy('file_no')
+        ->get();
+
+        // dd($employees);
+
+        if ($employees->isEmpty()) {
+            Flash::error('No Record(s) found');
+            return redirect()->back();
+        }
+
+        return view('shared.file_directories.global_search', compact('employees'));
     }
 
     /**
