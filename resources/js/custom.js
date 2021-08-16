@@ -37,10 +37,14 @@ function startTime() {
         default:
             break;
     }
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+
     m = checkTime(m);
     s = checkTime(s);
     document.getElementById('time').innerHTML = h + ":" + m + ":" + s + " " + ampm;
-    document.getElementById('date').innerHTML = today;
+    document.getElementById('date').innerHTML = day + ",\t" + monthNames[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear();
     setTimeout(startTime, 1000);
 }
 
@@ -70,9 +74,10 @@ $(document).ready(function () {
     $("#demo .navbar-brand h1").replaceWith('<img src="{{ asset("images/logo.png") }}">');
 
     $(".left-aside").hover(function () {
-            if($('.left-aside .sidebar').hasClass('sidebar-res')){
+            if ($('.left-aside .sidebar').hasClass('sidebar-res')) {
                 $(".left-aside .sidebar").css("margin-left", "0px")
                 $("#footer-text").css("margin-left", "-130px");
+                $('#mini-logo').hide();
             }
             $("#demo .navbar-brand").css({
                 'margin-left': '0',
@@ -82,9 +87,10 @@ $(document).ready(function () {
 
         },
         function () {
-            if($('.left-aside .sidebar').hasClass('sidebar-res')){
+            if ($('.left-aside .sidebar').hasClass('sidebar-res')) {
                 $('.left-aside .sidebar').css("margin-left", "-175px");
                 $("#footer-text").css("margin-left", "-40px");
+                $('#mini-logo').show();
             }
             $("#demo .navbar-brand").css({
                 'transition': 'margin-left 0.3s linear'
@@ -117,16 +123,17 @@ $(document).ready(function () {
 
     $(".toggle-right").click(
         function () {
-            if($(".left-aside .sidebar").hasClass('sidebar-res')){
+            if ($(".left-aside .sidebar").hasClass('sidebar-res')) {
                 $(".left-aside .sidebar").css("margin-left", "0px").removeClass('sidebar-res');
+                $('#mini-logo').hide();
                 $("#footer-text").css("margin-left", "-130px");
                 $("#demo .navbar-brand h1").replaceWith('<img src="{{ asset("images/logo.png") }}">');
 
-            }
-            else {
+            } else {
                 $(".left-aside .sidebar").css("margin-left", "-175px").addClass('sidebar-res');
                 $("#demo .navbar-brand h1").replaceWith('<img src="{{ asset("images/logo.png") }}">');
                 $("#footer-text").css("margin-left", "-40px");
+                $('#mini-logo').show();
             }
         },
     );

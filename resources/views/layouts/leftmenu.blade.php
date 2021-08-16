@@ -4,6 +4,7 @@
 
         <a href="{{ URL::to('dashboard') }}" class="logo navbar-brand mr-0 text-center mb-3">
             <img src="{{ asset('images/logo.png') }}">
+            <img id="mini-logo" src="{{ asset('images/logo.png') }}" height="40" width="40" class="ml-100">
         </a>
 
 

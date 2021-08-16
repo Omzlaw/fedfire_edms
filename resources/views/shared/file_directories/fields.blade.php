@@ -333,11 +333,13 @@
             'dwtcontrolContainer'
         ); // Get the Dynamic Web TWAIN object that is embeded in the div with id 'dwtcontrolContainer'
         if (DWObject) {
+            document.getElementById('dwtcontrolContainer').style.display = 'none';
             var count = DWObject.SourceCount;
             for (var i = 0; i < count; i++)
                 document.getElementById("source").options.add(new Option(DWObject.GetSourceNameItems(i), i));
         }
     }
+
 
 
 

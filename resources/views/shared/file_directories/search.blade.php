@@ -91,13 +91,15 @@
                                 <span class="text-center h5 mt-3">File Records</span>
 
                                 <div class="table-responsive">
-                                    <table id="file_directories" class="table table-striped table-bordered" style="display:none">
+                                    <table id="file_directories" class="table table-striped table-bordered"
+                                        style="display:none">
                                         <thead>
                                             <tr>
                                                 <th scope="col" width='25%'>File Type</th>
                                                 <th scope="col" width='25%'>Date Uploaded</th>
                                                 <th scope="col" width='40%'>Remark</th>
-                                                <th scope="col" width='10%'>Action</th>
+                                                <th scope="col" width='5%'>View</th>
+                                                <th scope="col" width='5%'>Download</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -118,12 +120,13 @@
                                                                 class='btn custom-outline-primary btn-xs'><i
                                                                     class="im im-icon-Information"></i>
                                                             </a></td>
-                                                        <td><a download title="Download File" href="{{ $file->file_url[0] }}"
+                                                        <td><a download title="Download File"
+                                                                href="{{ $file->file_url[0] }}"
                                                                 class='btn btn-outline-success btn-xs'><i
                                                                     class="im im-icon-File-Edit"></i>
                                                             </a></td>
                                                     </tr>
-    
+
                                                 @endforeach
                                             @else
                                                 <tr>

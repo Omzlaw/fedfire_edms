@@ -129,7 +129,6 @@ class FileDirectoryController extends AppBaseController
 
             if (!$employees->isEmpty()) {
                 $employees = Employee::select('id', 'file_no', 'first_name', 'middle_name', 'last_name')->where('current_rank', '=', $rank_type_id)->get();
-                dd($employees);
             }
         }
 
