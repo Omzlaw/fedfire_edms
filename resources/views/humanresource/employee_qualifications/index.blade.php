@@ -11,7 +11,7 @@ Employee Qualifications @parent
     <div aria-label="breadcrumb" class="card-breadcrumb">
         <h1>Employee Qualifications</h1>
     </div>
-    <div class="separator-breadcrumb border-top"></div>
+    {{-- <div class="separator-breadcrumb border-top"></div> --}}
 </section>
 
 <!-- Main content -->

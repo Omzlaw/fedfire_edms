@@ -16,7 +16,7 @@ Created by: Jyostna Designs
 */
 /*****  1.RESET STYLES  *****/
 html {
-  background: none repeat scroll 0 0 #EEE;
+  background: none repeat scroll 0 0 #fff;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   transition: all .25s ease-out;
@@ -25,7 +25,7 @@ html {
 body {
    -webkit-font-smoothing: antialiased;
   transition: all .25s ease-out;
-  background-color: #fafbfe;
+  background-color: #fff;
   overflow-x: hidden;
 }
 
@@ -144,6 +144,7 @@ body > .header .navbar {
   font-size: 16px;
   }
 
+
 #menu .navigation {
   padding: 0 0 15px 0; }
 
@@ -174,6 +175,7 @@ body > .header .navbar {
   background-position: center;
   /* padding: 0 10px 10px 10px; */
   width: 100%;
+  background-color: #fff;
 }
 .right-aside > .content-header {
   margin: 24px -10px 24px -10px;
@@ -257,7 +259,7 @@ body > .header .navbar_fixed_top{
 }
 
 .employee-detail-cards {
-  height: 40%;
+  height: 45%;
   overflow-y: scroll;
 }
 
@@ -278,6 +280,11 @@ body > .header .navbar_fixed_top{
   color: #fff
 }
 
+.white-color-bg {
+  background-color: #fff;
+  color: #060c38
+}
+
 .page-item.active .page-link {
   background-color: #1e244b;
   border-color: #1e244b;
@@ -294,8 +301,17 @@ body > .header .navbar_fixed_top{
 
 }
 
+
+
 footer {
   position:absolute;
   bottom:0;
   width:100%;
 }
+
+.main-sidebar, .main-sidebar:before {
+  transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+  width: 270px;
+}
+
+

@@ -11,7 +11,7 @@ Service Exit Types @parent
     <div aria-label="breadcrumb" class="card-breadcrumb">
         <h1>Service Exit Type</h1>
     </div>
-    <div class="separator-breadcrumb border-top"></div>
+    {{-- <div class="separator-breadcrumb border-top"></div> --}}
 </section>
 
 <div class="content">

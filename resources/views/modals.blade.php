@@ -21,7 +21,7 @@
                 <li class="breadcrumb-item active" aria-current="page">Modals</li>
             </ol>
         </div>
-        <div class="separator-breadcrumb border-top"></div>
+        {{-- <div class="separator-breadcrumb border-top"></div> --}}
     </section>
     <!-- Main content -->
     <section class="content">

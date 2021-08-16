@@ -6,10 +6,11 @@
             <img src="{{ asset('images/logo.png') }}">
         </a>
 
+
         <li {!! (Request::is('dashboard*') ? 'class="active"' : '' ) !!}>
             <a href="{{ URL::to('/dashboard') }}" class="mm-a">
                 <span class="mm-text">Dashboard</span>
-                <span class="menu-icon"><i class="im im-icon-Home text-white"></i></span>
+                <span class="menu-icon"><i class="fas fa-tachometer-alt text-white"></i></span>
             </a>
         </li>
 

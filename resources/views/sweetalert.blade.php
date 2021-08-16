@@ -26,7 +26,7 @@ SweetAlert @parent
             <li class="breadcrumb-item active" aria-current="page">SweetAlert</li>
         </ol>
     </div>
-    <div class="separator-breadcrumb border-top"></div>
+    {{-- <div class="separator-breadcrumb border-top"></div> --}}
 </section>
 <!-- /.content -->
 <section class="content">

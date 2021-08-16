@@ -11,7 +11,7 @@ Geo Political Zones @parent
     <div aria-label="breadcrumb" class="card-breadcrumb">
         <h1>Geo Political Zone</h1>
     </div>
-    <div class="separator-breadcrumb border-top"></div>
+    {{-- <div class="separator-breadcrumb border-top"></div> --}}
 </section>
 
 <div class="content">

@@ -70,6 +70,9 @@ $(document).ready(function () {
     $("#demo .navbar-brand h1").replaceWith('<img src="{{ asset("images/logo.png") }}">');
 
     $(".left-aside").hover(function () {
+            if($('.left-aside .sidebar').hasClass('sidebar-res')){
+                $(".left-aside .sidebar").css("margin-left", "0px")
+            }
             $("#demo .navbar-brand").css({
                 'margin-left': '0',
                 'transition': 'margin-left 0.3s linear'
@@ -78,8 +81,10 @@ $(document).ready(function () {
 
         },
         function () {
+            if($('.left-aside .sidebar').hasClass('sidebar-res')){
+                $('.left-aside .sidebar').css("margin-left", "-175px");
+            }
             $("#demo .navbar-brand").css({
-                // 'margin-left': '-175px',
                 'transition': 'margin-left 0.3s linear'
             });
             $("#demo .navbar-brand h1").replaceWith('<img src="{{ asset("images/logo.png") }}">');
@@ -108,19 +113,19 @@ $(document).ready(function () {
     });
 
 
-    $(".toggle-right").click(function () {
-        $(".left-aside .sidebar").css("margin-left", "0").removeClass('sidebar-res');
-        $("#demo .navbar-brand h1").replaceWith('<h1 class="text-center">EDMS</h1>');
-        $("#demo .navbar-brand").css("margin-left", "0");
+    $(".toggle-right").click(
+        function () {
+            if($(".left-aside .sidebar").hasClass('sidebar-res')){
+                $(".left-aside .sidebar").css("margin-left", "0px").removeClass('sidebar-res');
+                $("#demo .navbar-brand h1").replaceWith('<img src="{{ asset("images/logo.png") }}">');
 
-        $(".close-icon").show();
-    });
-    $(".close-icon").click(function () {
-        $(".left-aside .sidebar").css("margin-left", "-175px").addClass('sidebar-res');
-        $("#demo .navbar-brand h1").replaceWith('<h1 class="text-right mr-10">J</h1>');
-        $(this).hide();
-
-    });
+            }
+            else {
+                $(".left-aside .sidebar").css("margin-left", "-175px").addClass('sidebar-res');
+                $("#demo .navbar-brand h1").replaceWith('<img src="{{ asset("images/logo.png") }}">');
+            }
+        },
+    );
 
     // $('select').selectize({
     //     sortField: 'text'

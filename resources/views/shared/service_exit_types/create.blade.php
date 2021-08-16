@@ -10,7 +10,7 @@ Service Exit Type @parent
     <div aria-label="breadcrumb" class="card-breadcrumb">
         <h1>{{ __('Create New') }} Service Exit Type</h1>
     </div>
-    <div class="separator-breadcrumb border-top"></div>
+    {{-- <div class="separator-breadcrumb border-top"></div> --}}
     </section>
     <div class="content">
         @include('adminlte-templates::common.errors')

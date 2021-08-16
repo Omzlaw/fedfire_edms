@@ -19,7 +19,7 @@ Dashboard @parent
         <h1>Dashboard</h1>
 
     </div>
-    <div class="separator-breadcrumb border-top"></div>
+    {{-- <div class="separator-breadcrumb border-top"></div> --}}
 </section>
 <!-- /.content -->
 <section class="content">

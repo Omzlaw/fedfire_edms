@@ -27,7 +27,7 @@ Advanced Data Tables @parent
             <li class="breadcrumb-item active" aria-current="page">Advanced Data Tables</li>
         </ol>
     </div>
-    <div class="separator-breadcrumb border-top"></div>
+    {{-- <div class="separator-breadcrumb border-top"></div> --}}
 
 
 </section>

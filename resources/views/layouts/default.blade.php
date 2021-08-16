@@ -25,6 +25,29 @@
             overflow: auto;
         }
 
+        /* .side-nav {
+            position: fixed;
+            width: 235px;
+            height: 100vh;
+            left: 0;
+            right: 0;
+            overflow-y: scroll;
+        }
+
+        #content-wrapper {
+            margin: 0px 0 0 230px;
+            overflow-y: scroll;
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+        }
+
+        footer {
+            position : fixed;
+        } */
+
+
     </style>
     <!-- end of global css -->
 
@@ -38,8 +61,9 @@
     <div class="wrapper">
 
         <!-- Left side column. contains the logo and sidebar -->
-        <aside class="left-aside default-color">
+        <aside class="left-aside sidebar default-color elevation-4 main-sidebar side-nav">
             <!-- sidebar: style can be found in sidebar-->
+
             <section class="sidebar metismenu sidebar-res">
                 @include("layouts/leftmenu")
                 <!-- menu -->
@@ -48,14 +72,12 @@
         </aside>
 
         <!--            right side bar ----------->
-        <aside class="right-aside bg-grey">
-            <header class="secondary-color-bg header sticky-top">
+        <aside id="content-wrapper" class="right-aside bg-grey">
+            <header class="white-color-bg header border-bottom">
                 <nav class="navbar navbar-expand-lg navbar-light navbar-static-top" role="navigation">
-                    <a id="toggle-link" href="javascript:void(0)" class="mr-15 toggle-right d-xl-none d-lg-block">
-                        <!-- Add the class icon to your logo image or logo icon to add the margining -->
-                        {{-- <img src="{{ asset('img/images/toggle.png') }}" alt="logo" class="" /> --}}
+                    <a id="toggle-link" href="javascript:void(0)" class="mr-20 toggle-right d-lg-block">
 
-                        <i class="im im-icon-Boy text-white"></i>
+                        <i class="fa fa-th-list secondary-color"></i>
                     </a>
                     <div href="#" id="time" class=""></div>
                     <div class="navbar-center ml-auto mr-auto text-center"><strong>FEDERAL FIRE SERIVICE EDMS
@@ -64,21 +86,23 @@
                     </div>
                     <!-- Header Navbar: style can be found in header-->
                     <!-- Sidebar toggle button-->
-                    <span>
+                    <span class="">
                         {!! Form::open(['route' => 'records', 'id' => 'search-form', 'class' => 'form-horizontal', 'files' => true]) !!}
-                        <span class="mt-10" style="display:flex">
+                        <span class="" style="display:flex">
                             {!! Form::text('search_query', null, ['required', 'class' => 'form-control', 'placeholder' => 'Employee search']) !!}
                             <a onclick="event.preventDefault();
-                            document.getElementById('search-form').submit();"><i class="fa fa-search text-white fs-16"></i></a>
+                            document.getElementById('search-form').submit();"><i
+                                    class="fa fa-search secondary-color fs-16 mt-10 ml-10 mr-10"></i></a>
                         </span>
                         {!! Form::close() !!}
                     </span>
                     <div class="navbar-right">
                         <ul class="navbar-nav nav">
                             <li class="dropdown notifications-menu nav-item dropdown">
-                                <a href="javascript:void(0)" class="dropdown-toggle nav-link dropdown-toggle text-white"
+                                <a href="javascript:void(0)"
+                                    class="dropdown-toggle nav-link dropdown-toggle secondary-color"
                                     data-toggle="dropdown" id="navbarDropdown">
-                                    <i class="im im-icon-Boy text-white fs-16"></i>
+                                    <i class="im im-icon-Boy secondary-color fs-16"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-notifications table-striped"
                                     aria-labelledby="navbarDropdown">

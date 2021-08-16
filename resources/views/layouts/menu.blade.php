@@ -133,8 +133,7 @@
    <li {!! Request::is('table') || Request::is('data_table') ? 'class="menu-dropdown active"' : "class='menu-dropdown'" !!}>
     <a href="#" class="mm-a">
         <span class="mm-text ">Manage Settings</span>
-        <span class="menu-icon "> <i class="far fa-gear text-white"></i></span>
-        <span class="im im-icon-Arrow-Right imicon"></span>
+        <span class="menu-icon"> <i class="fa fa-cog text-white"></i></span>
     </a>
     <ul class="sub-menu list-unstyled default-color-secondary">
         <li class="{!! Request::is('shared/certificateTypes*') ? 'active' : '' !!}">

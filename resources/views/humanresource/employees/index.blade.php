@@ -11,7 +11,7 @@ Employees @parent
     <div aria-label="breadcrumb" class="card-breadcrumb">
         <h1>Employees</h1>
     </div>
-    <div class="separator-breadcrumb border-top"></div>
+    {{-- <div class="separator-breadcrumb border-top"></div> --}}
 </section>
 
 <!-- Main content -->

@@ -11,7 +11,7 @@ States @parent
     <div aria-label="breadcrumb" class="card-breadcrumb">
         <h1>State</h1>
     </div>
-    <div class="separator-breadcrumb border-top"></div>
+    {{-- <div class="separator-breadcrumb border-top"></div> --}}
 </section>
 
 <div class="content">

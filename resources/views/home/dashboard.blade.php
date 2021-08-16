@@ -320,150 +320,152 @@
             <h1>Dashboard</h1>
 
         </div>
-        <div class="separator-breadcrumb border-top"></div>
+        {{-- <div class="separator-breadcrumb border-top"></div> --}}
     </section>
     <!-- /.content -->
     <section class="content">
         @include('flash::message')
 
         <div class="row">
-            <div class="col-md-6 col-12  mb-20">
-                <div class="secondary-color-bg dashboard-col pl-15 pb-15 pt-15">
-                    {{-- <canvas id="myChart3" style="width:100%;max-width:100%"></canvas> --}}
-                    <div class="mt-40 col-12 mb-3 text-center">
-                        <i class="fa fa-user text-secondary" style="font-size: 4rem"></i>
+            <div class="col-md-6 col-12 mb-3">
+                <div class="secondary-color-bg dashboard-col pl-15 pb-15 pt-15 card">
+                    <div>
+                        <div class="mt-40 col-12 mb-3 text-center">
+                            <i class="fa fa-user text-secondary" style="font-size: 4rem"></i>
+                        </div>
+                        <div class="col-12 mb-3 text-center">
+                            Hello {{ Auth::user()->name }}
+                        </div>
+                        <div class="col-12 mb-10 text-center">
+                            <h3 id="dayTime" class="text-white"></h3>
+                        </div>
+                        <div class="col-12 text-center">
+                            <h5 class="text-white">Active quote</h5>
+                            <blockquote id="quote" class="text-white font-italic blockquote"></blockquote>
+                        </div>
                     </div>
-                    <div class="col-12 mb-3 text-center">
-                        Hello {{ Auth::user()->name }}
-                    </div>
-                    <div class="col-12 mb-10 text-center">
-                        <h3 id="dayTime" class="text-white"></h3>
-                    </div>
-                    <div class="col-12 text-center">
-                        <h5 class="text-white">Active quote</h5>
-                        <blockquote id="quote" class="text-white font-italic blockquote"></blockquote>
-                    </div>
+
                 </div>
             </div>
-            <div class="col-md-6 col-12  mb-20">
-                <div class="bg-white dashboard-col pl-15 pb-15 pt-15">
-                    <canvas id="myChart" style="width:100%;max-width:100%"></canvas>
+            <div class="col-md-6 col-12 mb-3">
+                <div class="bg-white dashboard-col pl-15 pb-15 pt-15 card">
+                    <canvas id="myChart" class=""></canvas>
                 </div>
             </div>
 
         </div>
 
         <div class="row">
-            <div class="col-md-6 col-xl-3 col-12 mb-20">
-                <div class="bg-primary bg-gradient dashboard-col pl-15 pb-15 pt-15">
+            <div class="col-md-6 col-xl-3 col-12 mb-3">
+                <div class="bg-success bg-gradient-success dashboard-col pl-15 pb-15 pt-15 card">
                     <div class="row">
                         <span class="col-4">
                             <i class="fa fa-users text-secondary" style="font-size: 4rem"></i>
                         </span>
                         <span class="text col-8 text-align-center">
                             <h3 class="text-white">{{ $employee_active }}
-                                <p class="text-white " style="font-size: 1.5rem">Active Employees</p>
+                                <p class="text-white " style="font-size: 1.0rem">Active Employees</p>
                         </span>
                     </div>
                 </div>
 
             </div>
 
-            <div class="col-md-6 col-xl-3 col-12 mb-20">
-                <div class="bg-success bg-gradient-success dashboard-col pl-15 pb-15 pt-15">
+            <div class="col-md-6 col-xl-3 col-12 mb-3">
+                <div class="bg-warning bg-gradient-warning dashboard-col pl-15 pb-15 pt-15 card">
                     <div class="row">
                         <span class="col-4">
                             <i class="fa fa-users-slash text-secondary" style="font-size: 4rem"></i>
                         </span>
                         <span class="text col-8 text-align-center">
                             <h3 class="text-white">{{ $employee_inactive }}
-                                <p class="text-white " style="font-size: 1.5rem">Inactive Employees</p>
+                                <p class="text-white " style="font-size: 1.0rem">Inactive Employees</p>
                         </span>
                     </div>
 
                 </div>
             </div>
 
-            <div class="col-md-6 col-xl-3 col-12  mb-20">
-                <div class="bg-info bg-gradient-info dashboard-col pl-15 pb-15 pt-15">
+            <div class="col-md-6 col-xl-3 col-12 mb-3">
+                <div class="bg-success bg-gradient-success dashboard-col pl-15 pb-15 pt-15 card">
                     <div class="row">
                         <span class="col-4">
                             <i class="fa fa-folder text-secondary" style="font-size: 4rem"></i>
                         </span>
                         <span class="text col-8 text-align-center">
                             <h3 class="text-white">{{ $file_active_count }}
-                                <p class="text-white " style="font-size: 1.5rem">Active Files</p>
+                                <p class="text-white " style="font-size: 1.0rem">Active Files</p>
                         </span>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-6 col-xl-3 col-12  mb-20">
-                <div class="bg-dark bg-gradient-dark dashboard-col pl-15 pb-15 pt-15">
+            <div class="col-md-6 col-xl-3 col-12 mb-3">
+                <div class="bg-warning bg-gradient-warning dashboard-col pl-15 pb-15 pt-15 card">
                     <div class="row">
                         <span class="col-4">
                             <i class="fa fa-folder text-secondary" style="font-size: 4rem"></i>
                         </span>
                         <span class="text col-8 text-align-center">
                             <h3 class="text-white">{{ $file_inactive_count }}
-                                <p class="text-white " style="font-size: 1.5rem">Inactive Files</p>
+                                <p class="text-white " style="font-size: 1.0rem">Inactive Files</p>
                         </span>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-6 col-xl-3 col-12  mb-20">
-                <div class="bg-danger bg-gradient-danger dashboard-col pl-15 pb-15 pt-15">
+            <div class="col-md-6 col-xl-3 col-12 mb-3">
+                <div class="bg-primary bg-gradient-primary dashboard-col pl-15 pb-15 pt-15 card">
                     <div class="row">
                         <span class="col-4">
                             <i class="fa fa-user text-secondary" style="font-size: 4rem"></i>
                         </span>
                         <span class="text col-8 text-align-center">
                             <h3 class="text-white">{{ $senior_officers_count_male }}
-                                <p class="text-white " style="font-size: 1.5rem">Male Senior Officers</p>
+                                <p class="text-white " style="font-size: 1.0rem">Male Senior Officers</p>
                         </span>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-6 col-xl-3 col-12  mb-20">
-                <div class="bg-warning bg-gradient-warning dashboard-col pl-15 pb-15 pt-15">
+            <div class="col-md-6 col-xl-3 col-12 mb-3">
+                <div class="bg-danger bg-gradient-danger dashboard-col pl-15 pb-15 pt-15 card">
                     <div class="row">
                         <span class="col-4">
                             <i class="fa fa-user text-secondary" style="font-size: 4rem"></i>
                         </span>
                         <span class="text col-8 text-align-center">
                             <h3 class="text-white">{{ $senior_officers_count_female }}
-                                <p class="text-white" style="font-size: 1.5rem">Female Senior Officers</p>
+                                <p class="text-white" style="font-size: 1.0rem">Female Senior Officers</p>
                         </span>
                     </div>
                 </div>
             </div>
 
 
-            <div class="col-md-6 col-xl-3 col-12  mb-20">
-                <div class="bg-danger bg-gradient-danger dashboard-col pl-15 pb-15 pt-15">
+            <div class="col-md-6 col-xl-3 col-12 mb-3">
+                <div class="bg-primary bg-gradient-primary dashboard-col pl-15 pb-15 pt-15 card">
                     <div class="row">
                         <span class="col-4">
                             <i class="fa fa-user-circle text-secondary" style="font-size: 4rem"></i>
                         </span>
                         <span class="text col-8 text-align-center">
                             <h3 class="text-white">{{ $rank_and_file_officers_count_male }}
-                                <p class="text-white " style="font-size: 1.5rem">Male Rank and File</p>
+                                <p class="text-white " style="font-size: 1.0rem">Male Rank and File</p>
                         </span>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-6 col-xl-3 col-12  mb-20">
-                <div class="bg-warning bg-gradient-warning dashboard-col pl-15 pb-15 pt-15">
+            <div class="col-md-6 col-xl-3 col-12 mb-3">
+                <div class="bg-danger bg-gradient-danger dashboard-col pl-15 pb-15 pt-15 card">
                     <div class="row">
                         <span class="col-4">
                             <i class="fa fa-user-circle text-secondary" style="font-size: 4rem"></i>
                         </span>
                         <span class="text col-8 text-align-center">
                             <h3 class="text-white">{{ $rank_and_file_officers_count_female }}
-                                <p class="text-white " style="font-size: 1.5rem">Female Rank and File</p>
+                                <p class="text-white " style="font-size: 1.0rem">Female Rank and File</p>
                         </span>
                     </div>
                 </div>
@@ -471,15 +473,15 @@
 
         </div>
         <div class="row">
-            <div class="col-md-6 col-12  mb-20">
-                <div class="bg-white dashboard-col pl-15 pb-15 pt-15">
-                    <canvas id="myChart2" style="width:100%;max-width:100%"></canvas>
+            <div class="col-md-6 col-12  mb-3">
+                <div class="bg-white dashboard-col pl-15 pb-15 pt-15 card">
+                    <canvas id="myChart2"></canvas>
                 </div>
             </div>
-            <div class="col-md-6 col-12  mb-20">
-                <div class="secondary-color-bg dashboard-col pl-15 pb-15 pt-15">
+            <div class="col-md-6 col-12 mb-3">
+                <div class="secondary-color-bg dashboard-col pl-15 pb-15 pt-15 card">
                     {{-- <canvas id="myChart4" style="width:100%;max-width:100%"></canvas> --}}
-                    <div class="calendar" style="width:100%;max-width:100%">
+                    <div class="calendar w-100">
                         <div class="calendar-header">
                             <span class="month-picker" id="month-picker">February</span>
                             <div class="year-picker">
@@ -675,7 +677,7 @@
             calendar_days.innerHTML = ''
 
             let currDate = new Date()
-            if (currDate.getHours() > 12) {
+            if (currDate.getHours() > 12 && currDate.getHours() < 17) {
                 dayTimeH3.innerHTML = "Good Afternoon";
             } else if (currDate.getHours() < 12) {
                 dayTimeH3.innerHTML = "Good Morning";

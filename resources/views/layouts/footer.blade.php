@@ -1,8 +1,8 @@
 
 
-<footer class="mt-3 page-footer secondary-color-bg">
-    <div class="footer-copyright text-center py-3">© <span id="currentYear"></span>
-        <strong>Fed Fire | Department of Adminstration and Supply</strong>
+<footer class="mt-10 page-footer white-color-bg pl-auto pr-auto border-top text-center">
+    <div class="footer-copyright py-3">© <span id="currentYear"></span>
+        <strong class="">Fed Fire | Department of Adminstration and Supply</strong>
     </div>
 </footer>
 

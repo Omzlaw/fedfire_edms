@@ -34,7 +34,7 @@ $ranks = $data['ranks'];
         <div aria-label="breadcrumb" class="card-breadcrumb">
             <h1>Employee</h1>
         </div>
-        <div class="separator-breadcrumb border-top"></div>
+        {{-- <div class="separator-breadcrumb border-top"></div> --}}
     </section>
 
     <div class="content">
@@ -181,49 +181,6 @@ $ranks = $data['ranks'];
                             </ul>
                         </div>
                     </div>
-                    {{-- <div class="col-lg-3 col-md-6">
-                        <div class="card" style="width: 18rem;">
-
-                        </div>
-                    </div> --}}
-                    {{-- <div class="col-lg-3 col-md-6">
-                        <div class="card" style="width: 18rem;">
-
-                    </div> --}}
-                    {{-- <div class="col-lg-3 col-md-6">
-                        <div class="card" style="width: 18rem;">
-
-                        </div>
-                    </div> --}}
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card" style="width: 18rem;">
-
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card" style="width: 18rem;">
-
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card" style="width: 18rem;">
-
-                        </div>
-                    </div>
-                    {{-- <div class="col-lg-3 col-md-6">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-header">
-                                <h6>Files</h6>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                </li>
-                                <li class="list-group-item"><a class="dt" data-route="shared/fileDirectories"
-                                        data-model="{{ $employee->fileDirectories }}" href="#">File Directory</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div> --}}
                 </div>
             </div>
             <div class="col-9">

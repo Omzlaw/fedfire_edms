@@ -11,7 +11,7 @@ Employee Local Leaves @parent
     <div aria-label="breadcrumb" class="card-breadcrumb">
         <h1>Employee Local Leaves</h1>
     </div>
-    <div class="separator-breadcrumb border-top"></div>
+    {{-- <div class="separator-breadcrumb border-top"></div> --}}
 </section>
 
 <!-- Main content -->
