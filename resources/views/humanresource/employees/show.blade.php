@@ -45,13 +45,17 @@ $ranks = $data['ranks'];
         <div class="clearfix"></div>
 
         <div class="row">
-            <div class="col-3">
+            <div class="col-lg-3 col-md-12 col-md-12">
                 <div class="row employee-detail-cards">
                     <div class="col-lg-3 col-md-6">
                         <div class="ml-3 mb-3">
-                            <img src="{{ asset($employee->profile_picture) }}" border="0" width="100" height="100"
-                                class="rounded-circle" align="center"
-                                alt="profile picture for {{ $employee->first_name . ' ' . $employee->last_name }}" />
+                            @if (isset($employee->profile_picture))
+                                <img src="{{ asset($employee->profile_picture) }}" border="0" width="100" height="100"
+                                    class="rounded-circle" align="center"
+                                    alt="profile picture for {{ $employee->first_name . ' ' . $employee->last_name }}" />
+                            @else
+                                <span>No Image</span>
+                            @endif
                         </div>
 
                         <div class="card" style="width: 18rem;">
@@ -183,7 +187,7 @@ $ranks = $data['ranks'];
                     </div>
                 </div>
             </div>
-            <div class="col-9">
+            <div class="col-lg-9 col-md-12 col-md-12">
                 <div id="details-div" class="row">
                     <div class="col-lg-12 col-md-6">
                         <div class="card">
@@ -211,13 +215,13 @@ $ranks = $data['ranks'];
                 <div id="basic-info-table" class="card">
                     <div class="">
                         <div class="row">
-                            <div class="col-6 table-responsive">
+                            <div class="col-lg-6 col-md-12 col-sm-12 table-responsive">
                                 <table class="table table-default table-striped">
                                     @include('humanresource.employees.show_fields')
 
                                 </table>
                             </div>
-                            <div class="col-6 table-responsive">
+                            <div class="col-lg-6 col-md-12 col-sm-12 table-responsive">
                                 <table class="table table-default table-striped">
                                     @include('humanresource.employees.show_fields2')
 

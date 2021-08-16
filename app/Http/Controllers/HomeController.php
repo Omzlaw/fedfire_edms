@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Shared\RankType;
 use App\Models\Shared\FileDirectory;
 use App\Models\Humanresource\Employee;
+use App\Models\Humanresource\EmployeeForeignTours;
 use App\Models\Humanresource\EmployeeRank;
+use App\Models\Humanresource\EmployeeLocalLeave;
 
 class HomeController extends Controller
 {
@@ -51,6 +53,9 @@ class HomeController extends Controller
         $senior_officers_count_male = $employee_ranks->where('status', '=', 1)->where('type', '=', 0)->where('employee_gender', '=', 1)->count();
         $rank_and_file_officers_count_male = $employee_ranks->where('status', '=', 1)->where('type', '=', 1)->where('employee_gender', '=', 1)->count();
 
+        $staff_on_local_leave = EmployeeLocalLeave::where('status', '=', 1)->count();
+        $staff_on_foreign_tour = EmployeeForeignTours::where('status', '=', 1)->count();
+
 
         $rank_and_file_count_male_array = [];
         $rank_and_file_count_female_array = [];
@@ -83,6 +88,7 @@ class HomeController extends Controller
             $senior_officer_rank_array[] = $rank->title;
         }
 
+
         return view('home.dashboard', compact(
             'employee_active',
             'employee_inactive',
@@ -97,7 +103,10 @@ class HomeController extends Controller
             'senior_officer_count_female_array',
             'rank_and_file_rank_array',
             'rank_and_file_count_male_array',
-            'rank_and_file_count_female_array'
+            'rank_and_file_count_female_array',
+            'staff_on_local_leave',
+            'staff_on_foreign_tour'
+
         ));
     }
 }

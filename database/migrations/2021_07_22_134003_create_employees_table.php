@@ -40,6 +40,7 @@ class CreateEmployeesTable extends Migration
             $table->integer('status')->default(1);
             $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();
+            $table->integer('current_rank')->unsigned()->nullable();
             $table->string('current_appointment');
             $table->timestamps();
             $table->softDeletes();

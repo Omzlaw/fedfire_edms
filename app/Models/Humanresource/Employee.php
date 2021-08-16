@@ -72,7 +72,8 @@ class Employee extends Model
         'status',
         'created_by',
         'updated_by',
-        'current_appointment'
+        'current_appointment',
+        'current_rank'
     ];
 
     /**
@@ -107,7 +108,8 @@ class Employee extends Model
         'status' => 'integer',
         'created_by' => 'integer',
         'updated_by' => 'integer',
-        'current_appointment' => 'string'
+        'current_appointment' => 'string',
+        'current_rank' => 'integer'
     ];
 
     /**
@@ -154,6 +156,11 @@ class Employee extends Model
         }
         
     }
+
+    // public function getCurrentRank() {
+    //     $active_rank = EmployeeRank::where('status', '=', '1')->where('employee_id', '=', $this->attributes['id'])->first();
+    //     return $active_rank['id'];
+    // }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

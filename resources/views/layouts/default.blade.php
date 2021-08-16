@@ -1,3 +1,8 @@
+<?php
+use App\Models\Shared\RankType;
+$rank_types = new RankType();
+?>
+
 <!DOCTYPE html>
 <html lang="en-US">
 
@@ -47,7 +52,6 @@
             position : fixed;
         } */
 
-
     </style>
     <!-- end of global css -->
 
@@ -80,8 +84,9 @@
                         <i class="fa fa-th-list secondary-color"></i>
                     </a>
                     <div href="#" id="time" class=""></div>
-                    <div class="navbar-center ml-auto mr-auto text-center"><strong>FEDERAL FIRE SERIVICE EDMS
+                    <div class="navbar-center ml-auto mr-auto text-center"><strong>FEDERAL FIRE SERIVICE
                         </strong>
+                        <div class=""><strong>EDMS</strong></div>
                         <div href="#" id="date" class=""></div>
                     </div>
                     <!-- Header Navbar: style can be found in header-->
@@ -89,6 +94,7 @@
                     <span class="">
                         {!! Form::open(['route' => 'records', 'id' => 'search-form', 'class' => 'form-horizontal', 'files' => true]) !!}
                         <span class="" style="display:flex">
+                            {!! Form::select('rank_type', modelDropdown($rank_types, 'id', 'title'), null, ['class' => 'form-control mr-3']) !!}
                             {!! Form::text('search_query', null, ['required', 'class' => 'form-control', 'placeholder' => 'Employee search']) !!}
                             <a onclick="event.preventDefault();
                             document.getElementById('search-form').submit();"><i

@@ -52,8 +52,13 @@ class EmployeeRankController extends AppBaseController
         
         $input['type'] = $rank->type;
         $input['employee_gender'] = $employee->gender;
+
         /** @var EmployeeRank $employeeRank */
         $employeeRank = EmployeeRank::create($input);
+
+        $employee['current_rank'] = $input['rank_type_id'];
+        $employee->save();
+        
 
         Flash::success('Employee Rank saved successfully.');
         close_modal_refresh();
@@ -132,6 +137,9 @@ class EmployeeRankController extends AppBaseController
         $input['employee_gender'] = $employee->gender;
         $employeeRank->fill($input);
         $employeeRank->save();
+
+        $employee['current_rank'] = $input['rank_type_id'];
+        $employee->save();
 
 
         Flash::success('Employee Rank updated successfully.');

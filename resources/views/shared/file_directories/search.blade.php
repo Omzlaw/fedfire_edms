@@ -17,10 +17,10 @@
         @include('adminlte-templates::common.errors')
         @include('flash::message')
         <div class="card">
-            <div class="card-body ml-15">
+            <div class="card-body ml-15 mr-15">
 
                 <div class="row">
-                    <div class='col-12'>
+                    <div class='col-lg-12 col-md-12 col-sm12'>
                         {!! Form::open(['route' => 'employeeSearch', 'class' => 'form-horizontal', 'files' => true]) !!}
                         <div class="row">
                             <div class="form-group col-4">
@@ -37,7 +37,7 @@
                 <div class="row">
                     @if (isset($employee))
 
-                        <div class="col-5 card">
+                        <div class="col-lg-4 col-md-12 col-sm-12 card">
 
                             <div class="row mt-5 pt-5">
                                 <br />
@@ -52,7 +52,7 @@
 
                             <div class="mt-5 pt-5">
 
-                                <table class="table table-striped table-border">
+                                <table class="table table-striped table-bordered">
                                     <col width='40%'>
                                     <col width='60%'>
                                     <tbody>
@@ -86,53 +86,55 @@
                             </div>
                         </div>
 
-                        <div class="col-7">
-                            <div class="row ml-1 mr-1 card">
+                        <div class="col-lg-8 col-md-12 col-sm-12">
+                            <div class="ml-1 row card mr-1">
                                 <span class="text-center h5 mt-3">File Records</span>
 
-                                <table id="file_directories" class="table table-striped" style="display:none">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col" width='25%'>File Type</th>
-                                            <th scope="col" width='25%'>Date Uploaded</th>
-                                            <th scope="col" width='40%'>Remark</th>
-                                            <th scope="col" width='10%'>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @if (isset($file_directories))
-                                            @foreach ($file_directories as $file)
-                                                <tr>
-                                                    <td style="display: none;">{{ $file->file_type_id }}</td>
-                                                    <?php
-                                                    //get the date file was uploaded
-                                                    $name_arr = explode('_', $file->file_name);
-                                                    $date_uploaded = date('F d, Y h:i:s', $name_arr[0]);
-                                                    ?>
-                                                    <td>{{ $file->fileType->title }}</td>
-                                                    <td>{{ $date_uploaded }}</td>
-                                                    <td>{{ $file->remark }}</td>
-                                                    <td><a target="blank" title="View File"
-                                                            href="{{ $file->file_url[0] }}"
-                                                            class='btn custom-outline-primary btn-xs'><i
-                                                                class="im im-icon-Information"></i>
-                                                        </a></td>
-                                                    <td><a download title="Download File" href="{{ $file->file_url[0] }}"
-                                                            class='btn btn-outline-success btn-xs'><i
-                                                                class="im im-icon-File-Edit"></i>
-                                                        </a></td>
-                                                </tr>
-
-                                            @endforeach
-                                        @else
+                                <div class="table-responsive">
+                                    <table id="file_directories" class="table table-striped table-bordered" style="display:none">
+                                        <thead>
                                             <tr>
-                                                <td colspan='4'>
-                                                    <h5>File does not exist</h5>
-                                                </td>
+                                                <th scope="col" width='25%'>File Type</th>
+                                                <th scope="col" width='25%'>Date Uploaded</th>
+                                                <th scope="col" width='40%'>Remark</th>
+                                                <th scope="col" width='10%'>Action</th>
                                             </tr>
-                                        @endif
-                                    </tbody>
-                                </table>
+                                        </thead>
+                                        <tbody>
+                                            @if (isset($file_directories))
+                                                @foreach ($file_directories as $file)
+                                                    <tr>
+                                                        <td style="display: none;">{{ $file->file_type_id }}</td>
+                                                        <?php
+                                                        //get the date file was uploaded
+                                                        $name_arr = explode('_', $file->file_name);
+                                                        $date_uploaded = date('F d, Y h:i:s', $name_arr[0]);
+                                                        ?>
+                                                        <td>{{ $file->fileType->title }}</td>
+                                                        <td>{{ $date_uploaded }}</td>
+                                                        <td>{{ $file->remark }}</td>
+                                                        <td><a target="blank" title="View File"
+                                                                href="{{ $file->file_url[0] }}"
+                                                                class='btn custom-outline-primary btn-xs'><i
+                                                                    class="im im-icon-Information"></i>
+                                                            </a></td>
+                                                        <td><a download title="Download File" href="{{ $file->file_url[0] }}"
+                                                                class='btn btn-outline-success btn-xs'><i
+                                                                    class="im im-icon-File-Edit"></i>
+                                                            </a></td>
+                                                    </tr>
+    
+                                                @endforeach
+                                            @else
+                                                <tr>
+                                                    <td colspan='4'>
+                                                        <h5>File does not exist</h5>
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
 
                         </div>

@@ -61,5 +61,7 @@ Route::post('fileDirectories', [FileDirectoryController::class, 'search'])->name
 
 Route::post('fileDirectories/records', [FileDirectoryController::class, 'records'])->name('records')->middleware('role:superadministrator');
 
+Route::get('fileDirectories/records', [FileDirectoryController::class, 'records'])->name('records')->middleware('role:superadministrator');
+
 Route::resource('users', 'UserController')->middleware('role:superadministrator', 'auth');
 

@@ -2,7 +2,7 @@
     <ul class="navigation list-unstyled" id="demo">
 
 
-        <a href="{{ URL::to('index') }}" class="logo navbar-brand mr-0 text-center mb-3">
+        <a href="{{ URL::to('dashboard') }}" class="logo navbar-brand mr-0 text-center mb-3">
             <img src="{{ asset('images/logo.png') }}">
         </a>
 
@@ -10,7 +10,7 @@
         <li {!! (Request::is('dashboard*') ? 'class="active"' : '' ) !!}>
             <a href="{{ URL::to('/dashboard') }}" class="mm-a">
                 <span class="mm-text">Dashboard</span>
-                <span class="menu-icon"><i class="fas fa-tachometer-alt text-white"></i></span>
+                <span class="menu-icon"><i class="fas fa-tachometer-alt text-white absolute-center"></i></span>
             </a>
         </li>
 

@@ -327,191 +327,197 @@
         @include('flash::message')
 
         <div class="row">
-            <div class="col-md-6 col-12 mb-3">
-                <div class="secondary-color-bg dashboard-col pl-15 pb-15 pt-15 card">
-                    <div>
-                        <div class="mt-40 col-12 mb-3 text-center">
-                            <i class="fa fa-user text-secondary" style="font-size: 4rem"></i>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="alternate-color-bg dashboard-col pl-15 pb-15 pt-15 card">
+                            <div class="row">
+                                <span class="col-lg-4 col-md-3 col-sm-3">
+                                    <i class="fa fa-users text-secondary" style="font-size: 4rem"></i>
+                                </span>
+                                <span class="text col-lg-8 col-md-9 col-sm-9 text-align-center">
+                                    <h3 class="text-white">{{ $employee_active }}
+                                        <p class="text-white " style="font-size: 1.0rem">Serving Personnel</p>
+                                </span>
+                            </div>
                         </div>
-                        <div class="col-12 mb-3 text-center">
-                            Hello {{ Auth::user()->name }}
+                    </div>
+                    <div class="col-6">
+                        <div class="bg-warning bg-gradient-warning dashboard-col pl-15 pb-15 pt-15 card">
+                            <div class="row">
+                                <span class="col-lg-4 col-md-3 col-sm-3">
+                                    <i class="fa fa-users-slash text-secondary" style="font-size: 4rem"></i>
+                                </span>
+                                <span class="text col-lg-8 col-md-9 col-sm-9  text-align-center">
+                                    <h3 class="text-white">{{ $employee_inactive }}
+                                        <p class="text-white " style="font-size: 1.0rem">Retired Personnel</p>
+                                </span>
+                            </div>
+
                         </div>
-                        <div class="col-12 mb-10 text-center">
-                            <h3 id="dayTime" class="text-white"></h3>
-                        </div>
-                        <div class="col-12 text-center">
-                            <h5 class="text-white">Active quote</h5>
-                            <blockquote id="quote" class="text-white font-italic blockquote"></blockquote>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="alternate-color-bg dashboard-col pl-15 pb-15 pt-15 card">
+                            <div class="row">
+                                <span class="col-4">
+                                    <i class="fa fa-folder text-secondary" style="font-size: 4rem"></i>
+                                </span>
+                                <span class="text col-8 text-align-center">
+                                    <h3 class="text-white">{{ $file_active_count }}
+                                        <p class="text-white " style="font-size: 1.0rem">Active Files</p>
+                                </span>
+                            </div>
                         </div>
                     </div>
 
+                    <div class="col-6">
+                        <div class="bg-warning bg-gradient-warning dashboard-col pl-15 pb-15 pt-15 card">
+                            <div class="row">
+                                <span class="col-4">
+                                    <i class="fa fa-folder text-secondary" style="font-size: 4rem"></i>
+                                </span>
+                                <span class="text col-8 text-align-center">
+                                    <h3 class="text-white">{{ $file_inactive_count }}
+                                        <p class="text-white " style="font-size: 1.0rem">Inactive Files</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="secondary-color-bg dashboard-col pl-15 pb-15 pt-15 card">
+                            <div class="row">
+                                <span class="col-4">
+                                    <i class="fa fa-user text-secondary" style="font-size: 4rem"></i>
+                                </span>
+                                <span class="text col-8 text-align-center">
+                                    <h3 class="text-white">{{ $senior_officers_count_male }}
+                                        <p class="text-white " style="font-size: 1.0rem">Male Senior Officers</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="primary-color-bg dashboard-col pl-15 pb-15 pt-15 card">
+                            <div class="row">
+                                <span class="col-4">
+                                    <i class="fa fa-user text-secondary" style="font-size: 4rem"></i>
+                                </span>
+                                <span class="text col-8 text-align-center">
+                                    <h3 class="text-white">{{ $senior_officers_count_female }}
+                                        <p class="text-white" style="font-size: 1.0rem">Female Senior Officers</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="secondary-color-bg dashboard-col pl-15 pb-15 pt-15 card">
+                            <div class="row">
+                                <span class="col-4">
+                                    <i class="fa fa-user-circle text-secondary" style="font-size: 4rem"></i>
+                                </span>
+                                <span class="text col-8 text-align-center">
+                                    <h3 class="text-white">{{ $rank_and_file_officers_count_male }}
+                                        <p class="text-white " style="font-size: 1.0rem">Male Rank and File</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="primary-color-bg dashboard-col pl-15 pb-15 pt-15 card">
+                            <div class="row">
+                                <span class="col-4">
+                                    <i class="fa fa-user-circle text-secondary" style="font-size: 4rem"></i>
+                                </span>
+                                <span class="text col-8 text-align-center">
+                                    <h3 class="text-white">{{ $rank_and_file_officers_count_female }}
+                                        <p class="text-white " style="font-size: 1.0rem">Female Rank and File</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="alternate-color-bg dashboard-col pl-15 pb-15 pt-15 card">
+                            <div class="row">
+                                <span class="col-lg-4 col-md-3 col-sm-3">
+                                    <i class="fa fa-users text-secondary" style="font-size: 4rem"></i>
+                                </span>
+                                <span class="text col-lg-8 col-md-9 col-sm-9 text-align-center">
+                                    <h3 class="text-white">{{ $staff_on_local_leave }}
+                                        <p class="text-white " style="font-size: 1.0rem">Staff on Local Leave</p>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-6">
+                        <div class="alternate-color-bg dashboard-col pl-15 pb-15 pt-15 card">
+                            <div class="row">
+                                <span class="col-lg-4 col-md-3 col-sm-3">
+                                    <i class="fa fa-users text-secondary" style="font-size: 4rem"></i>
+                                </span>
+                                <span class="text col-lg-8 col-md-9 col-sm-9 text-align-center">
+                                    <h3 class="text-white">{{ $staff_on_foreign_tour }}
+                                        <p class="text-white " style="font-size: 1.0rem">Staff on Foreign Tours</p>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="secondary-color-bg dashboard-col pl-15 pb-15 pt-15 card w-100 h-75">
+                            {{-- <canvas id="myChart4" style="width:100%;max-width:100%"></canvas> --}}
+                            <div class="calendar w-100">
+                                <div class="calendar-header">
+                                    <span class="month-picker" id="month-picker">February</span>
+                                    <div class="year-picker">
+                                        <span class="year-change" id="prev-year">
+                                            <pre><</pre>
+                                        </span>
+                                        <span id="year">2021</span>
+                                        <span class="year-change" id="next-year">
+                                            <pre>></pre>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="calendar-body">
+                                    <div class="calendar-week-day">
+                                        <div>Sun</div>
+                                        <div>Mon</div>
+                                        <div>Tue</div>
+                                        <div>Wed</div>
+                                        <div>Thu</div>
+                                        <div>Fri</div>
+                                        <div>Sat</div>
+                                    </div>
+                                    <div class="calendar-days mb-40"></div>
+                                </div>
+                                <div class="month-list"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6 col-12 mb-3">
+            <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="bg-white dashboard-col pl-15 pb-15 pt-15 card">
                     <canvas id="myChart" class=""></canvas>
                 </div>
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="col-md-6 col-xl-3 col-12 mb-3">
-                <div class="bg-success bg-gradient-success dashboard-col pl-15 pb-15 pt-15 card">
-                    <div class="row">
-                        <span class="col-4">
-                            <i class="fa fa-users text-secondary" style="font-size: 4rem"></i>
-                        </span>
-                        <span class="text col-8 text-align-center">
-                            <h3 class="text-white">{{ $employee_active }}
-                                <p class="text-white " style="font-size: 1.0rem">Active Employees</p>
-                        </span>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-md-6 col-xl-3 col-12 mb-3">
-                <div class="bg-warning bg-gradient-warning dashboard-col pl-15 pb-15 pt-15 card">
-                    <div class="row">
-                        <span class="col-4">
-                            <i class="fa fa-users-slash text-secondary" style="font-size: 4rem"></i>
-                        </span>
-                        <span class="text col-8 text-align-center">
-                            <h3 class="text-white">{{ $employee_inactive }}
-                                <p class="text-white " style="font-size: 1.0rem">Inactive Employees</p>
-                        </span>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-md-6 col-xl-3 col-12 mb-3">
-                <div class="bg-success bg-gradient-success dashboard-col pl-15 pb-15 pt-15 card">
-                    <div class="row">
-                        <span class="col-4">
-                            <i class="fa fa-folder text-secondary" style="font-size: 4rem"></i>
-                        </span>
-                        <span class="text col-8 text-align-center">
-                            <h3 class="text-white">{{ $file_active_count }}
-                                <p class="text-white " style="font-size: 1.0rem">Active Files</p>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-xl-3 col-12 mb-3">
-                <div class="bg-warning bg-gradient-warning dashboard-col pl-15 pb-15 pt-15 card">
-                    <div class="row">
-                        <span class="col-4">
-                            <i class="fa fa-folder text-secondary" style="font-size: 4rem"></i>
-                        </span>
-                        <span class="text col-8 text-align-center">
-                            <h3 class="text-white">{{ $file_inactive_count }}
-                                <p class="text-white " style="font-size: 1.0rem">Inactive Files</p>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-xl-3 col-12 mb-3">
-                <div class="bg-primary bg-gradient-primary dashboard-col pl-15 pb-15 pt-15 card">
-                    <div class="row">
-                        <span class="col-4">
-                            <i class="fa fa-user text-secondary" style="font-size: 4rem"></i>
-                        </span>
-                        <span class="text col-8 text-align-center">
-                            <h3 class="text-white">{{ $senior_officers_count_male }}
-                                <p class="text-white " style="font-size: 1.0rem">Male Senior Officers</p>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-xl-3 col-12 mb-3">
-                <div class="bg-danger bg-gradient-danger dashboard-col pl-15 pb-15 pt-15 card">
-                    <div class="row">
-                        <span class="col-4">
-                            <i class="fa fa-user text-secondary" style="font-size: 4rem"></i>
-                        </span>
-                        <span class="text col-8 text-align-center">
-                            <h3 class="text-white">{{ $senior_officers_count_female }}
-                                <p class="text-white" style="font-size: 1.0rem">Female Senior Officers</p>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-md-6 col-xl-3 col-12 mb-3">
-                <div class="bg-primary bg-gradient-primary dashboard-col pl-15 pb-15 pt-15 card">
-                    <div class="row">
-                        <span class="col-4">
-                            <i class="fa fa-user-circle text-secondary" style="font-size: 4rem"></i>
-                        </span>
-                        <span class="text col-8 text-align-center">
-                            <h3 class="text-white">{{ $rank_and_file_officers_count_male }}
-                                <p class="text-white " style="font-size: 1.0rem">Male Rank and File</p>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-xl-3 col-12 mb-3">
-                <div class="bg-danger bg-gradient-danger dashboard-col pl-15 pb-15 pt-15 card">
-                    <div class="row">
-                        <span class="col-4">
-                            <i class="fa fa-user-circle text-secondary" style="font-size: 4rem"></i>
-                        </span>
-                        <span class="text col-8 text-align-center">
-                            <h3 class="text-white">{{ $rank_and_file_officers_count_female }}
-                                <p class="text-white " style="font-size: 1.0rem">Female Rank and File</p>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="row">
-            <div class="col-md-6 col-12  mb-3">
                 <div class="bg-white dashboard-col pl-15 pb-15 pt-15 card">
                     <canvas id="myChart2"></canvas>
                 </div>
             </div>
-            <div class="col-md-6 col-12 mb-3">
-                <div class="secondary-color-bg dashboard-col pl-15 pb-15 pt-15 card">
-                    {{-- <canvas id="myChart4" style="width:100%;max-width:100%"></canvas> --}}
-                    <div class="calendar w-100">
-                        <div class="calendar-header">
-                            <span class="month-picker" id="month-picker">February</span>
-                            <div class="year-picker">
-                                <span class="year-change" id="prev-year">
-                                    <pre><</pre>
-                                </span>
-                                <span id="year">2021</span>
-                                <span class="year-change" id="next-year">
-                                    <pre>></pre>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="calendar-body">
-                            <div class="calendar-week-day">
-                                <div>Sun</div>
-                                <div>Mon</div>
-                                <div>Tue</div>
-                                <div>Wed</div>
-                                <div>Thu</div>
-                                <div>Fri</div>
-                                <div>Sat</div>
-                            </div>
-                            <div class="calendar-days"></div>
-                        </div>
-                        <div class="month-list"></div>
-                    </div>
-                </div>
-            </div>
 
         </div>
+
     </section>
 
 
@@ -519,27 +525,27 @@
     <script>
         window.onload = function() {
 
-            let qoutes = [
-                'A hero has faced it all: he need not be undefeated, but he must be undaunted.',
-                'The hero is the man who lets no obstacle prevent him from pursuing the values he has chosen.',
-                'When tempted to fight fire with fire, remember that firefighters usually use water.',
-                'Aspire rather to be a hero than merely appear one.',
-                'Hard times don’ t create heroes. It is during the hard times when the‘ hero’ within us is revealed.',
-                'More often than not, a hero’\ s most epic battle is the one you never see;it’ s the battle that goes on within him or herself.', 
-                
-            ]
+            // let qoutes = [
+            //     'A hero has faced it all: he need not be undefeated, but he must be undaunted.',
+            //     'The hero is the man who lets no obstacle prevent him from pursuing the values he has chosen.',
+            //     'When tempted to fight fire with fire, remember that firefighters usually use water.',
+            //     'Aspire rather to be a hero than merely appear one.',
+            //     'Hard times don’ t create heroes. It is during the hard times when the‘ hero’ within us is revealed.',
+            //     'More often than not, a hero’\ s most epic battle is the one you never see;it’ s the battle that goes on within him or herself.', 
 
-            document.getElementById('quote').innerHTML = '"' + qoutes[0] + '"' 
+            // ]
 
-            function changeQuote() {
-                setInterval(() => {
-                    let randNumber = Math.floor(Math.random() * (qoutes.length));
-                    document.getElementById('quote').innerHTML = '"' + qoutes[randNumber] + '"' ;
-                    console.log(qoutes[randNumber]);
-                }, 1000 * 10);
-            }
+            // document.getElementById('quote').innerHTML = '"' + qoutes[0] + '"' 
 
-            changeQuote();
+            // function changeQuote() {
+            //     setInterval(() => {
+            //         let randNumber = Math.floor(Math.random() * (qoutes.length));
+            //         document.getElementById('quote').innerHTML = '"' + qoutes[randNumber] + '"' ;
+            //         console.log(qoutes[randNumber]);
+            //     }, 1000 * 10);
+            // }
+
+            // changeQuote();
 
 
             var ctx = $('#myChart');
@@ -562,8 +568,8 @@
                     datasets: [{
                         label: 'Male',
                         data: senior_officer_count_male_array,
-                        backgroundColor: "#060c38",
-                        borderColor: "#060c38",
+                        backgroundColor: "#24106d",
+                        borderColor: "#24106d",
                         borderWidth: 2
                     }, {
                         label: 'Female',
@@ -608,8 +614,8 @@
                     datasets: [{
                         label: 'Male',
                         data: rank_and_file_count_male_array,
-                        backgroundColor: "#060c38",
-                        borderColor: "#060c38",
+                        backgroundColor: "#24106d",
+                        borderColor: "#24106d",
                         borderWidth: 2
                     }, {
                         label: 'Female',
@@ -677,13 +683,13 @@
             calendar_days.innerHTML = ''
 
             let currDate = new Date()
-            if (currDate.getHours() > 12 && currDate.getHours() < 17) {
-                dayTimeH3.innerHTML = "Good Afternoon";
-            } else if (currDate.getHours() < 12) {
-                dayTimeH3.innerHTML = "Good Morning";
-            } else if (currDate.getHours() > 17) {
-                dayTimeH3.innerHTML = "Good Evening";
-            }
+            // if (currDate.getHours() > 12 && currDate.getHours() < 17) {
+            //     dayTimeH3.innerHTML = "Good Afternoon";
+            // } else if (currDate.getHours() < 12) {
+            //     dayTimeH3.innerHTML = "Good Morning";
+            // } else if (currDate.getHours() > 17) {
+            //     dayTimeH3.innerHTML = "Good Evening";
+            // }
 
             if (!month) month = currDate.getMonth()
             if (!year) year = currDate.getFullYear()
@@ -754,12 +760,12 @@
             generateCalendar(curr_month.value, curr_year.value)
         }
 
-        let dark_mode_toggle = document.querySelector('.dark-mode-switch')
+        // let dark_mode_toggle = document.querySelector('.dark-mode-switch')
 
-        dark_mode_toggle.onclick = () => {
-            document.querySelector('body').classList.toggle('light')
-            document.querySelector('body').classList.toggle('dark')
-        }
+        // dark_mode_toggle.onclick = () => {
+        //     document.querySelector('body').classList.toggle('light')
+        //     document.querySelector('body').classList.toggle('dark')
+        // }
     </script>
 
 @stop

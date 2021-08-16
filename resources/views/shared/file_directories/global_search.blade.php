@@ -18,9 +18,12 @@
         @include('flash::message')
         <div class="card">
             <div class="card-body ml-15">
-                <table id="table" class="table table-striped table-border">
+                <div class="table-responsive">
+                    <table id="table" class="table table-striped table-bordered">
 
-                </table>
+                    </table>
+                </div>
+
             </div>
         </div>
     </div>

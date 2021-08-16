@@ -12,6 +12,7 @@ use App\Models\Shared\FileDirectory;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Humanresource\Employee;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Humanresource\EmployeeRank;
 use App\Http\Controllers\AppBaseController;
 use App\DataTables\Shared\FileDirectoryDataTable;
 use App\Http\Requests\Shared\CreateFileDirectoryRequest;
@@ -27,7 +28,7 @@ class FileDirectoryController extends AppBaseController
      * @return Response
      */
 
-     
+
 
     public function index(FileDirectoryDataTable $fileDirectoryDataTable)
     {
@@ -103,19 +104,38 @@ class FileDirectoryController extends AppBaseController
 
     public function records(Request $request)
     {
+
         $request->validate([
             'search_query' => 'required'
         ]);
-        
-        $employees = Employee::select('id', 'file_no', 'first_name','middle_name', 'last_name')
-        ->where('first_name', 'LIKE', $request['search_query'])
-        ->orWhere('last_name', 'LIKE', $request['search_query'])
-        ->orWhere('middle_name', 'LIKE', $request['search_query'])
-        ->orWhere('file_no', 'LIKE', $request['search_query'])
-        ->orderBy('file_no')
-        ->get();
 
-        // dd($employees);
+
+
+        $rank_type_id = $request['rank_type'];
+        $employees = Employee::select('id', 'file_no', 'first_name', 'middle_name', 'last_name')
+            ->orwhere('first_name', 'like', $request['search_query'])
+            ->orWhere('last_name', 'like', $request['search_query'])
+            ->orWhere('middle_name', 'like', $request['search_query'])
+            ->orWhere('file_no', '=', $request['search_query'])
+            ->orderBy('file_no')
+            ->get();
+        if ($request['rank_type'] != null) {
+            $employees = Employee::select('id', 'file_no', 'first_name', 'middle_name', 'last_name')
+                ->orwhere('first_name', 'like', $request['search_query'])
+                ->orwhere('last_name', 'like', $request['search_query'])
+                ->orwhere('middle_name', 'like', $request['search_query'])
+                ->orderBy('file_no')
+                ->get();
+
+            if (!$employees->isEmpty()) {
+                $employees = Employee::select('id', 'file_no', 'first_name', 'middle_name', 'last_name')->where('current_rank', '=', $rank_type_id)->get();
+                dd($employees);
+            }
+        }
+
+
+
+        // dd($employees->ranks());
 
         if ($employees->isEmpty()) {
             Flash::error('No Record(s) found');

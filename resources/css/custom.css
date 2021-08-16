@@ -15,6 +15,14 @@ Created by: Jyostna Designs
 
 */
 /*****  1.RESET STYLES  *****/
+@font-face {
+  font-family: poppins;
+  src: url('./fonts/Poppins/Poppins-Regular.ttf');
+}
+
+* {
+  font-family: poppins;
+}
 html {
   background: none repeat scroll 0 0 #fff;
   overflow-x: hidden;
@@ -146,7 +154,9 @@ body > .header .navbar {
 
 
 #menu .navigation {
-  padding: 0 0 15px 0; }
+  padding: 0 0 15px 0; 
+  margin: 0 -10px 0 0;
+}
 
 #menu .navigation a {
   text-align: left;
@@ -259,7 +269,7 @@ body > .header .navbar_fixed_top{
 }
 
 .employee-detail-cards {
-  height: 45%;
+  height: 53rem;
   overflow-y: scroll;
 }
 
@@ -272,27 +282,42 @@ body > .header .navbar_fixed_top{
 }
 
 .secondary-color {
-  color: #060c38;
+  color: #24106d;
 }
 
 .secondary-color-bg {
-  background-color: #060c38;
+  background-color: #24106d;
+  color: #fff
+}
+
+.primary-color-bg {
+  background-color: #db2016;
+  color: #fff
+}
+
+.tertiary-color-bg {
+  background-color: #fff500;
+  color: #fff
+}
+
+.alternate-color-bg {
+  background-color: #88D18A;
   color: #fff
 }
 
 .white-color-bg {
   background-color: #fff;
-  color: #060c38
+  color: #24106d
 }
 
 .page-item.active .page-link {
-  background-color: #1e244b;
-  border-color: #1e244b;
+  background-color: #24106d;
+  border-color: #24106d;
 }
 
 .custom-outline-primary {
   color: #060c38;
-  border-color: #060c38;
+  border-color: #24106d;
 }
 
 .modal-buttons { 
@@ -307,6 +332,7 @@ footer {
   position:absolute;
   bottom:0;
   width:100%;
+  text-align:center;
 }
 
 .main-sidebar, .main-sidebar:before {
@@ -314,4 +340,8 @@ footer {
   width: 270px;
 }
 
+
+#menu .navigation a i {
+  margin-top: 0px !important;
+}
 
