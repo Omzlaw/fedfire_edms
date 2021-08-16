@@ -362,7 +362,7 @@
                         <div class="alternate-color-bg dashboard-col pl-15 pb-15 pt-15 card">
                             <div class="row">
                                 <span class="col-4">
-                                    <i class="fa fa-folder text-secondary" style="font-size: 4rem"></i>
+                                    <i class="fa fa-folder-open text-secondary" style="font-size: 4rem"></i>
                                 </span>
                                 <span class="text col-8 text-align-center">
                                     <h3 class="text-white">{{ $file_active_count }}
