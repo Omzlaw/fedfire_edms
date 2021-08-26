@@ -221,6 +221,19 @@ if (!function_exists('enum_status')) {
     }
 }
 
+if (!function_exists('enum_employee_status')) {
+    function enum_employee_status($add_Select = TRUE)
+    {
+        $option['-1'] = 'Select...';
+        $option['0'] = 'Retired';
+        $option['1'] = 'Serving';
+        if (!$add_Select) {
+            unset($option['-1']);
+        }
+        return $option;
+    }
+}
+
 
 if (!function_exists('enum_fluency')) {
     function enum_fluency($add_Select = TRUE)

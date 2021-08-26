@@ -17,8 +17,26 @@
 </tr>
 
 <tr>
+    <th scopre="row">{!! Form::label('resumption_of_duty_date', 'Date of Resumption of Duty:') !!}</th>
+    @if (isset($employee->resumption_of_duty_date))
+        <td>{{ $employee->resumption_of_duty_date }}</td>
+    @else
+        <td></td>
+    @endif
+</tr>
+
+<tr>
     <th scopre="row">{!! Form::label('first_arrival_date', 'First Arrival Date:') !!}</th>
     <td>{{ $employee->first_arrival_date }}</td>
+</tr>
+
+<tr>
+    <th scopre="row">{!! Form::label('present_appointment_date', 'Date of Present Appointment:') !!}</th>
+    @if (isset($employee->present_appointment_date))
+        <td>{{ $employee->present_appointment_date }}</td>
+    @else
+        <td></td>
+    @endif
 </tr>
 
 
@@ -55,7 +73,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('status', 'Status:') !!}</th>
-    <td>{{ get_enum_value('enum_status', $employee->status) }}</td>
+    <td>{{ get_enum_value('enum_employee_status', $employee->status) }}</td>
 </tr>
 
 
@@ -71,10 +89,10 @@
 </tr> --}}
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('current_appointment', 'Current Appointment:') !!}</th>
     <td>{{ $employee->current_appointment }}</td>
-</tr>
+</tr> --}}
 
 
 {{-- <tr>

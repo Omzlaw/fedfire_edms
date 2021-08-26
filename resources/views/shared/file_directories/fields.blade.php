@@ -312,7 +312,7 @@
             Width: '480px',
             Height: '610px'
         }];
-        Dynamsoft.DWT.Load();
+        // Dynamsoft.DWT.Load();
 
         document.getElementById("form").addEventListener("submit", function(event) {
             let toggleStatus = toggleUpload.checked;

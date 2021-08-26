@@ -57,6 +57,8 @@ Route::resource('leaveTypes', 'Humanresource\LeaveTypeController', ["as" => 'hum
 
 Route::get('fileDirectories', [FileDirectoryController::class, 'getSearch'])->name('getSearch')->middleware('role:superadministrator');
 
+Route::post('fileDirectories/fileToPDF', [FileDirectoryController::class, 'fileToPDF'])->name('fileToPDF')->middleware('role:superadministrator');
+
 Route::post('fileDirectories', [FileDirectoryController::class, 'search'])->name('employeeSearch')->middleware('role:superadministrator');
 
 Route::post('fileDirectories/records', [FileDirectoryController::class, 'records'])->name('records')->middleware('role:superadministrator');

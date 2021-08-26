@@ -333,7 +333,7 @@
                         <div class="alternate-color-bg dashboard-col pl-15 pb-15 pt-15 card">
                             <div class="row">
                                 <span class="col-lg-4 col-md-3 col-sm-3">
-                                    <i class="fa fa-users text-secondary" style="font-size: 4rem"></i>
+                                    <i class="fa fa-users text-secondary" style="font-size: 3rem"></i>
                                 </span>
                                 <span class="text col-lg-8 col-md-9 col-sm-9 text-align-center">
                                     <h3 class="text-white">{{ $employee_active }}
@@ -346,7 +346,7 @@
                         <div class="bg-warning bg-gradient-warning dashboard-col pl-15 pb-15 pt-15 card">
                             <div class="row">
                                 <span class="col-lg-4 col-md-3 col-sm-3">
-                                    <i class="fa fa-users-slash text-secondary" style="font-size: 4rem"></i>
+                                    <i class="fa fa-users-slash text-secondary" style="font-size: 3rem"></i>
                                 </span>
                                 <span class="text col-lg-8 col-md-9 col-sm-9  text-align-center">
                                     <h3 class="text-white">{{ $employee_inactive }}
@@ -362,7 +362,7 @@
                         <div class="alternate-color-bg dashboard-col pl-15 pb-15 pt-15 card">
                             <div class="row">
                                 <span class="col-4">
-                                    <i class="fa fa-folder-open text-secondary" style="font-size: 4rem"></i>
+                                    <i class="fa fa-folder-open text-secondary" style="font-size: 3rem"></i>
                                 </span>
                                 <span class="text col-8 text-align-center">
                                     <h3 class="text-white">{{ $file_active_count }}
@@ -376,11 +376,11 @@
                         <div class="bg-warning bg-gradient-warning dashboard-col pl-15 pb-15 pt-15 card">
                             <div class="row">
                                 <span class="col-4">
-                                    <i class="fa fa-folder text-secondary" style="font-size: 4rem"></i>
+                                    <i class="fa fa-folder text-secondary" style="font-size: 3rem"></i>
                                 </span>
                                 <span class="text col-8 text-align-center">
                                     <h3 class="text-white">{{ $file_inactive_count }}
-                                        <p class="text-white " style="font-size: 1.0rem">Inactive Files</p>
+                                        <p class="text-white " style="font-size: 1.0rem">Closed Files</p>
                                 </span>
                             </div>
                         </div>
@@ -391,7 +391,7 @@
                         <div class="secondary-color-bg dashboard-col pl-15 pb-15 pt-15 card">
                             <div class="row">
                                 <span class="col-4">
-                                    <i class="fa fa-user text-secondary" style="font-size: 4rem"></i>
+                                    <i class="fa fa-star text-secondary" style="font-size: 3rem"></i>
                                 </span>
                                 <span class="text col-8 text-align-center">
                                     <h3 class="text-white">{{ $senior_officers_count_male }}
@@ -405,7 +405,7 @@
                         <div class="primary-color-bg dashboard-col pl-15 pb-15 pt-15 card">
                             <div class="row">
                                 <span class="col-4">
-                                    <i class="fa fa-user text-secondary" style="font-size: 4rem"></i>
+                                    <i class="fa fa-star text-secondary" style="font-size: 3rem"></i>
                                 </span>
                                 <span class="text col-8 text-align-center">
                                     <h3 class="text-white">{{ $senior_officers_count_female }}
@@ -420,7 +420,7 @@
                         <div class="secondary-color-bg dashboard-col pl-15 pb-15 pt-15 card">
                             <div class="row">
                                 <span class="col-4">
-                                    <i class="fa fa-user-circle text-secondary" style="font-size: 4rem"></i>
+                                    <i class="fa fa-bars text-secondary" style="font-size: 3rem"></i>
                                 </span>
                                 <span class="text col-8 text-align-center">
                                     <h3 class="text-white">{{ $rank_and_file_officers_count_male }}
@@ -434,7 +434,7 @@
                         <div class="primary-color-bg dashboard-col pl-15 pb-15 pt-15 card">
                             <div class="row">
                                 <span class="col-4">
-                                    <i class="fa fa-user-circle text-secondary" style="font-size: 4rem"></i>
+                                    <i class="fa fa-bars text-secondary" style="font-size: 3rem"></i>
                                 </span>
                                 <span class="text col-8 text-align-center">
                                     <h3 class="text-white">{{ $rank_and_file_officers_count_female }}
@@ -449,7 +449,7 @@
                         <div class="alternate-color-bg dashboard-col pl-15 pb-15 pt-15 card">
                             <div class="row">
                                 <span class="col-lg-4 col-md-3 col-sm-3">
-                                    <i class="fa fa-users text-secondary" style="font-size: 4rem"></i>
+                                    <i class="fa fa-luggage-cart text-secondary" style="font-size: 3rem"></i>
                                 </span>
                                 <span class="text col-lg-8 col-md-9 col-sm-9 text-align-center">
                                     <h3 class="text-white">{{ $staff_on_local_leave }}
@@ -463,17 +463,17 @@
                         <div class="alternate-color-bg dashboard-col pl-15 pb-15 pt-15 card">
                             <div class="row">
                                 <span class="col-lg-4 col-md-3 col-sm-3">
-                                    <i class="fa fa-users text-secondary" style="font-size: 4rem"></i>
+                                    <i class="fa fa-graduation-cap text-secondary" style="font-size: 3rem"></i>
                                 </span>
                                 <span class="text col-lg-8 col-md-9 col-sm-9 text-align-center">
                                     <h3 class="text-white">{{ $staff_on_foreign_tour }}
-                                        <p class="text-white " style="font-size: 1.0rem">Staff on Foreign Tours</p>
+                                        <p class="text-white " style="font-size: 1.0rem">Staff on Study Leave</p>
                                 </span>
                             </div>
                         </div>
 
                     </div>
-                    <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12" style="display:none;">
                         <div class="secondary-color-bg dashboard-col pl-15 pb-15 pt-15 card w-100 h-75">
                             {{-- <canvas id="myChart4" style="width:100%;max-width:100%"></canvas> --}}
                             <div class="calendar w-100">
@@ -511,7 +511,7 @@
                 <div class="bg-white dashboard-col pl-15 pb-15 pt-15 card">
                     <canvas id="myChart" class=""></canvas>
                 </div>
-                <div class="bg-white dashboard-col pl-15 pb-15 pt-15 card">
+                <div class="aboutme-textbg-white dashboard-col pl-15 pb-15 pt-15 card">
                     <canvas id="myChart2"></canvas>
                 </div>
             </div>

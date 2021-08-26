@@ -8,5 +8,4 @@
 
 <script type="text/javascript">
     document.getElementById('currentYear').innerText = new Date().getFullYear();
-
 </script>

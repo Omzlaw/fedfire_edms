@@ -22,10 +22,12 @@ class CreateEmployeesTable extends Migration
             $table->string('staff_code');
             $table->integer('gender');
             $table->date('birthdate');
-            $table->string('place_of_birth');
+            $table->string('place_of_birth')->nullable();
             $table->string('profile_picture')->nullable();
             $table->integer('marital_status_id')->unsigned();
             $table->date('first_appointment_date');
+            $table->date('resumption_of_duty_date')->nullable();
+            $table->date('present_appointment_date')->nullable();
             $table->date('first_arrival_date');
             $table->integer('nationality')->unsigned();
             $table->integer('geo_political_zone')->unsigned()->nullable();
@@ -41,7 +43,8 @@ class CreateEmployeesTable extends Migration
             $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();
             $table->integer('current_rank')->unsigned()->nullable();
-            $table->string('current_appointment');
+            $table->integer('current_qualification')->unsigned()->nullable();
+            $table->string('current_appointment')->nullable();
             $table->timestamps();
             $table->softDeletes();
             //$table->foreign('birth_certificate_upload')->references('id')->on('employee_certificates');

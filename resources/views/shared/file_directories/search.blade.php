@@ -100,6 +100,7 @@
                                                 <th scope="col" width='40%'>Remark</th>
                                                 <th scope="col" width='5%'>View</th>
                                                 <th scope="col" width='5%'>Download</th>
+                                                {{-- <th scope="col" width='5%'>Export as PDF</th> --}}
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -125,6 +126,16 @@
                                                                 class='btn btn-outline-success btn-xs'><i
                                                                     class="im im-icon-File-Edit"></i>
                                                             </a></td>
+                                                        {{-- <td>
+                                                            {!! Form::open(['route' => 'fileToPDF', 'class' => 'form-horizontal', 'files' => true]) !!}
+                                                            <div class="row">
+                                                                <div class="form-group col-8">
+                                                                    {!! Form::hidden('file', $file->file_url[0]) !!}
+                                                                    {!! Form::submit('Export', ['class' => 'btn secondary-color-bg']) !!}
+                                                                </div>
+                                                            </div>
+                                                            {!! Form::close() !!}
+                                                        </td> --}}
                                                     </tr>
 
                                                 @endforeach

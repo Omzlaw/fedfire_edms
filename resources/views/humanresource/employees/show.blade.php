@@ -59,16 +59,17 @@ $ranks = $data['ranks'];
                         </div>
 
                         <div class="card" style="width: 18rem;">
-                            {!! Form::open(['route' => 'employeeSearch', 'class' => 'form-horizontal', 'files' => true]) !!}
-                            <div class="">
+                            <div class="row mt-10 pl-3">
                                 <div class="form-group col-4">
+                                    {!! Form::open(['route' => 'employeeSearch', 'class' => 'form-horizontal', 'files' => true]) !!}
                                     {!! Form::hidden('file_no', $employee->file_no, ['class' => 'form-control']) !!}
+                                    {!! Form::submit('View Files', ['class' => 'btn custom-outline-primary   ']) !!}
+                                    {!! Form::close() !!}
                                 </div>
                                 <div class="form-group col-8">
-                                    {!! Form::submit('View Files', ['class' => 'btn custom-outline-primary   ']) !!}
+                                    <a class="btn secondary-color-bg" href="{{ asset('images/report_template.xlsx') }}" download>Generate Report</a>
                                 </div>
                             </div>
-                            {!! Form::close() !!}
                             <div class="card-header bg-secondary bg-gradient">
                                 <h6>Bio-Data</h6>
                             </div>

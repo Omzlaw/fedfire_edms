@@ -1,7 +1,7 @@
 <!-- File No Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('file_no', 'File No:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('file_no', 'Service No:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::text('file_no', null, ['class' => 'form-control']) !!}
         </div>
@@ -74,14 +74,14 @@
 
 
 <!-- Place Of Birth Field -->
-<div class="form-group">
+{{-- <div class="form-group">
     <div class="row">
         {!! Form::label('place_of_birth', 'Place Of Birth:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::text('place_of_birth', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div>
+</div> --}}
 
 
 <!-- Profile Picture  Field -->
@@ -126,6 +126,15 @@
     </script>
 @endsection --}}
 
+<!-- Date of Resumption of Duty Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('resumption_of_duty_date', 'Date of Resumption of Duty:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::date('resumption_of_duty_date', null, ['class' => 'form-control', 'id' => 'resumption_of_duty_date']) !!}
+        </div>
+    </div>
+</div>
 
 <!-- First Arrival Date Field -->
 <div class="form-group">
@@ -133,6 +142,16 @@
         {!! Form::label('first_arrival_date', 'First Arrival Date:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::date('first_arrival_date', null, ['class' => 'form-control', 'id' => 'first_arrival_date']) !!}
+        </div>
+    </div>
+</div>
+
+<!--  Present Appointment Date Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('present_appointment_date', 'Present Appointment Date:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::date('present_appointment_date', null, ['class' => 'form-control', 'id' => 'present_appointment_date']) !!}
         </div>
     </div>
 </div>
@@ -162,9 +181,16 @@
     $options = [];
     $defaultOption = '<option value="">Select...</option>';
     $options[] = $defaultOption;
+    $value = Form::getValueAttribute('nationality');
     foreach ($countries as $country) {
+        if($value == $country->id) {
+            $option = '<option selected value=' . $country->id . '' . '>' . $country->title . '</option>';
+            $options[] = $option;
+        }
+        else {
             $option = '<option value=' . $country->id . '' . '>' . $country->title . '</option>';
             $options[] = $option;
+        }
     }
     $list = implode('', $options);
     return "<select id='countrySelector' name='nationality' class='form-control' onchange='countryStateSelector()'>{$list}</select>";
@@ -187,9 +213,16 @@
     $options = [];
     $defaultOption = '<option value="">Select...</option>';
     $options[] = $defaultOption;
+    $value = Form::getValueAttribute('state_of_origin');
     foreach ($states as $state) {
+        if($value == $state->id) {
+            $option = '<option selected value=' . $state->id . ' data-country_id=' . $state->country_id . ' data-geo_political_zone_id=' . $state->geo_political_zone_id . '>' . $state->title . '</option>';
+            $options[] = $option;
+        }
+        else {
             $option = '<option value=' . $state->id . ' data-country_id=' . $state->country_id . ' data-geo_political_zone_id=' . $state->geo_political_zone_id . '>' . $state->title . '</option>';
             $options[] = $option;
+        }
     }
     $list = implode('', $options);
     return "<select id='stateSelector' name='state_of_origin' class='form-control' onchange='stateLocalGovtAreaSelector()'>{$list}</select>";
@@ -211,9 +244,16 @@
     $options = [];
     $defaultOption = '<option value="">Select...</option>';
     $options[] = $defaultOption;
+    $value = Form::getValueAttribute('geo_political_zone');
     foreach ($geoPoliticalZones as $geoPoliticalZone) {
-        $option = '<option value=' . $geoPoliticalZone->id . ' data-country_id=' . $geoPoliticalZone->country_id . '>' . $geoPoliticalZone->title . '</option>';
-        $options[] = $option;
+        if($value == $geoPoliticalZone->id){
+            $option = '<option selected value=' . $geoPoliticalZone->id . ' data-country_id=' . $geoPoliticalZone->country_id . '>' . $geoPoliticalZone->title . '</option>';
+            $options[] = $option;
+        }
+        else {
+            $option = '<option value=' . $geoPoliticalZone->id . ' data-country_id=' . $geoPoliticalZone->country_id . '>' . $geoPoliticalZone->title . '</option>';
+            $options[] = $option;
+        }
     }
     $list = implode('', $options);
     return "<select id='geoPoliticalZoneSelector' name='geo_political_zone' class='form-control' onchange=''>{$list}</select>";
@@ -237,9 +277,16 @@
     $options = [];
     $defaultOption = '<option value="">Select...</option>';
     $options[] = $defaultOption;
+    $value = Form::getValueAttribute('geo_political_zone');
     foreach ($localGovtAreas as $localGovtArea) {
-        $option = '<option value=' . $localGovtArea->id . ' data-senatorial_zone_id=' . $localGovtArea->senatorial_zone_id . ' data-state_id=' . $localGovtArea->state_id . '>' . $localGovtArea->title . '</option>';
-        $options[] = $option;
+        if($value == $localGovtArea->id){
+            $option = '<option selected value=' . $localGovtArea->id . ' data-senatorial_zone_id=' . $localGovtArea->senatorial_zone_id . ' data-state_id=' . $localGovtArea->state_id . '>' . $localGovtArea->title . '</option>';
+            $options[] = $option;
+        }
+        else{
+            $option = '<option value=' . $localGovtArea->id . ' data-senatorial_zone_id=' . $localGovtArea->senatorial_zone_id . ' data-state_id=' . $localGovtArea->state_id . '>' . $localGovtArea->title . '</option>';
+            $options[] = $option;
+        }
     }
     $list = implode('', $options);
     return "<select id='localGovtAreaSelector' name='local_govt_area' class='form-control' onchange='localGovtSelector()'>{$list}</select>";
@@ -261,9 +308,16 @@
     $options = [];
     $defaultOption = '<option value="">Select...</option>';
     $options[] = $defaultOption;
+    $value = Form::getValueAttribute('senatorial_zone');
     foreach ($senatorialZones as $senatorialZone) {
-        $option = '<option value=' . $senatorialZone->id . ' data-state_id=' . $senatorialZone->state_id . '>' . $senatorialZone->title . '</option>';
-        $options[] = $option;
+        if($value == $senatorialZone->id){
+            $option = '<option selected value=' . $senatorialZone->id . ' data-state_id=' . $senatorialZone->state_id . '>' . $senatorialZone->title . '</option>';
+            $options[] = $option;
+        }
+        else {
+            $option = '<option selected value=' . $senatorialZone->id . ' data-state_id=' . $senatorialZone->state_id . '>' . $senatorialZone->title . '</option>';
+            $options[] = $option;
+        }
     }
     $list = implode('', $options);
     return "<select id='senatorialZoneSelector' name='senatorial_zone' class='form-control' onchange=''>{$list}</select>";
@@ -341,21 +395,21 @@
     <div class="row">
         {!! Form::label('status', 'Status:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('status', enum_status(), null, ['class' => 'form-control']) !!}
+            {!! Form::select('status', enum_employee_status(), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div>
 
 
 <!-- Current Appointment Field -->
-<div class="form-group">
+{{-- <div class="form-group">
     <div class="row">
         {!! Form::label('current_appointment', 'Current Appointment:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::text('current_appointment', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div>
+</div> --}}
 
 
 <!-- Submit Field -->

@@ -52,7 +52,7 @@
             format: 'YYYY-MM-DD',
             useCurrent: true,
             sideBySide: true
-        })
+        });
 </script>
 @endsection
 
@@ -95,7 +95,7 @@
             format: 'YYYY-MM-DD',
             useCurrent: true,
             sideBySide: true
-        })
+        });
 </script>
 @endsection
 
@@ -119,7 +119,7 @@
             {!! Form::text('contract_gratuity', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div
+</div>
 
 
 <!-- Estate Gratuity Amount Paid Field -->
@@ -160,7 +160,7 @@
             format: 'YYYY-MM-DD',
             useCurrent: true,
             sideBySide: true
-        })
+        });
 </script>
 @endsection
 

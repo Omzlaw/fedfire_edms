@@ -124,7 +124,7 @@ class Employee extends Model
         'last_name' => 'Required',
         'gender' => 'Required',
         'birthdate' => 'Required',
-        'place_of_birth' => 'Required',
+        // 'place_of_birth' => 'Required',
         // 'profile_picture' => 'Required',
         'marital_status_id' => 'Required',
         'first_appointment_date' => 'Required',
@@ -142,7 +142,7 @@ class Employee extends Model
         'status' => 'Required',
      //   'created_by' => 'Required',
     //    'updated_by' => 'Required',
-        'current_appointment' => 'Required'
+        // 'current_appointment' => 'Required'
     ];
 
     public function getFullName() {
@@ -177,6 +177,11 @@ class Employee extends Model
     // {
     //     return $this->belongsTo(\App\Models\Humanresource\MaritalStatus::class, 'marital_status_id', 'id');
     // }
+
+    public function currentRank()
+    {
+        return $this->belongsTo(\App\Models\Shared\RankType::class, 'current_rank', 'id');
+    }
 
     public function country()
     {

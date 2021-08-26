@@ -47,7 +47,7 @@
                     <div class="logo">
                         <span class="db"><img src="../../asset-login/assets/images/logo-icon.png" alt="logo" width="50"
                                 height="50" /></span>
-                        <h5 class="font-medium mb-3 mt-3">Sign In to Admin</h5>
+                        <h5 class="font-medium mb-3 mt-3">Electronic Document Management System</h5>
                     </div>
                     <!-- Form -->
                     <div class="row">
@@ -89,7 +89,7 @@
                                             <input type="checkbox" class="custom-control-input" id="customCheck1"
                                                 name="remember">
                                             <label class="custom-control-label" for="customCheck1">Remember me</label>
-                                            {{-- <a href="javascript:void(0)" id="to-recover" class="text-dark float-right"><i class="fa fa-lock mr-1"></i> Forgot password?</a> --}}
+                                            <a href="javascript:void(0)" id="to-recover" class="text-dark float-right"><i class="fa fa-lock mr-1"></i> Forgot password?</a>
                                         </div>
                                     </div>
                                 </div>

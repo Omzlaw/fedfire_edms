@@ -3,8 +3,9 @@
 namespace App\DataTables\Humanresource;
 
 use App\Models\Humanresource\Employee;
-use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Services\DataTable;
+use App\Models\Humanresource\EmployeeQualification;
 
 class EmployeeDataTable extends DataTable
 {
@@ -19,22 +20,33 @@ class EmployeeDataTable extends DataTable
         $dataTable = new EloquentDataTable($query);
 
         return $dataTable
-        ->addColumn('gender', function($row){
-            return get_enum_value('enum_gender', $row->gender);
-        })
-        ->addColumn('nationality', function($row){
-            return $row->country->title;
-        })
-        ->addColumn('stateOfOrigin', function($row){
-            if(isset($row->stateOfOrigin->title))
-            {
-                return $row->stateOfOrigin->title;
-            }
-            return '';
-        })
-        ->addColumn('profile_picture', 'humanresource.employees.profile_picture')
-        ->addColumn('action', 'humanresource.employees.datatables_actions')
-        ->rawColumns(['profile_picture', 'action']);
+            ->addColumn('service no', function ($row) {
+                return $row->file_no;
+            })
+            ->addColumn('gender', function ($row) {
+                return get_enum_value('enum_gender', $row->gender);
+            })
+            ->addColumn('nationality', function ($row) {
+                return $row->country->title;
+            })
+            ->addColumn('rank', function ($row) {
+                if (isset($row->currentRank->description)) {
+                    return $row->currentRank->description;;
+                }
+                return '';
+            })
+            ->addColumn('qualification', function ($row) {
+                return EmployeeQualification::where('employee_id', '=', $row->id)->where('status', '=', '1')->first();
+            })
+            ->addColumn('stateOfOrigin', function ($row) {
+                if (isset($row->stateOfOrigin->title)) {
+                    return $row->stateOfOrigin->title;
+                }
+                return '';
+            })
+            ->addColumn('profile_picture', 'humanresource.employees.profile_picture')
+            ->addColumn('action', 'humanresource.employees.datatables_actions')
+            ->rawColumns(['profile_picture', 'action']);
     }
 
     /**
@@ -83,7 +95,7 @@ class EmployeeDataTable extends DataTable
         return [
             // 'id',
             'profile_picture',
-            'file_no',
+            'service no',
             'first_name',
             'last_name',
             'gender',
@@ -91,9 +103,12 @@ class EmployeeDataTable extends DataTable
             // 'place_of_birth',
             // 'birth_certificate_upload',
             // 'marital_status_id',
-            // 'first_appointment_date',
-            // 'first_arrival_date',
-            'nationality',
+            'first_appointment_date',
+            'rank',
+            'qualification',
+            'first_arrival_date',
+            'present_appointment_date',
+            // 'nationality',
             'stateOfOrigin',
             // 'decorations',
             // 'file_upload',

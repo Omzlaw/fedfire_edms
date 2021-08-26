@@ -10,6 +10,7 @@ use App\Http\Requests\Shared;
 use App\Models\Shared\FileType;
 use App\Models\Shared\FileDirectory;
 use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
 use App\Models\Humanresource\Employee;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Humanresource\EmployeeRank;
@@ -252,4 +253,11 @@ class FileDirectoryController extends AppBaseController
 
         return $input;
     }
+
+    public function fileToPDF(Request $request) {
+        $file = Image::make($request->file);
+        $file->save(storage_path('test.jpg'));
+        dd($file);
+
+    }   
 }
