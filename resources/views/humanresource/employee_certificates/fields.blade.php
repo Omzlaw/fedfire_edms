@@ -1,3 +1,13 @@
+<!-- Certificate Type Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('certificate_type_id', 'Certificate Type:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::select('certificate_type_id', modelDropdown($certificateTypes, 'id', 'title'), null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
 <!-- Certificate Name Field -->
 <div class="form-group">
     <div class="row">

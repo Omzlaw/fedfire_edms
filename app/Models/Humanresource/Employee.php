@@ -59,6 +59,8 @@ class Employee extends Model
         'marital_status_id',
         'first_appointment_date',
         'first_arrival_date',
+        'present_appointment_date',
+        'resumption_of_duty_date',
         'nationality',
         'geo_political_zone',
         'state_of_origin',
@@ -73,7 +75,8 @@ class Employee extends Model
         'created_by',
         'updated_by',
         'current_appointment',
-        'current_rank'
+        'current_rank',
+        'current_qualification'
     ];
 
     /**
@@ -109,7 +112,8 @@ class Employee extends Model
         'created_by' => 'integer',
         'updated_by' => 'integer',
         'current_appointment' => 'string',
-        'current_rank' => 'integer'
+        'current_rank' => 'integer',
+        'current_qualification' => 'integer'
     ];
 
     /**
@@ -183,6 +187,11 @@ class Employee extends Model
         return $this->belongsTo(\App\Models\Shared\RankType::class, 'current_rank', 'id');
     }
 
+    public function currentQualification()
+    {
+        return $this->belongsTo(\App\Models\Shared\QualificationType::class, 'current_qualification', 'id');
+    }
+
     public function country()
     {
         return $this->belongsTo(\App\Models\Shared\Country::class, 'nationality', 'id');
@@ -249,7 +258,7 @@ class Employee extends Model
 
     public function certificates()
     {
-        return $this->hasMany(EmployeeCertificates::class)->select('id', 'certificate_name', 'date_obtained', 'status');
+        return $this->hasMany(EmployeeCertificates::class)->select('id', 'certificate_name', 'date_obtained', 'status', 'certificate_type_id');
     }
 
     public function children()
@@ -306,7 +315,7 @@ class Employee extends Model
 
     public function qualifications()
     {
-        return $this->hasMany(EmployeeQualification::class)->select('id', 'qualification_name', 'date_obtained', 'status', 'remark');
+        return $this->hasMany(EmployeeQualification::class)->select('id', 'qualification_name', 'date_obtained', 'status', 'remark', 'qualification_type_id');
     }
 
     public function recordTrackers()

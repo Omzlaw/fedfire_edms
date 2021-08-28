@@ -25,7 +25,7 @@ class FileDirectoryDataTable extends DataTable
         ->addColumn('employee', function($row){
             return $row->employee->getFullName();
         })
-        ->addColumn('file_no', function($row){
+        ->addColumn('service_no', function($row){
             return $row->employee->file_no;
         })
         ->addColumn('status', function($row){
@@ -81,7 +81,7 @@ class FileDirectoryDataTable extends DataTable
             // 'id',
             // 'file_upload',
             'employee',
-            'file_no',
+            'service_no',
             'file_type',
             'status',
             'remark',

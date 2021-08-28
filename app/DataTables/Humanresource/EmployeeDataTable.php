@@ -2,6 +2,8 @@
 
 namespace App\DataTables\Humanresource;
 
+use Illuminate\Http\Request;
+use Yajra\DataTables\Html\Button;
 use App\Models\Humanresource\Employee;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Services\DataTable;
@@ -9,6 +11,7 @@ use App\Models\Humanresource\EmployeeQualification;
 
 class EmployeeDataTable extends DataTable
 {
+
     /**
      * Build DataTable class.
      *
@@ -36,11 +39,20 @@ class EmployeeDataTable extends DataTable
                 return '';
             })
             ->addColumn('qualification', function ($row) {
-                return EmployeeQualification::where('employee_id', '=', $row->id)->where('status', '=', '1')->first();
+                if (isset($row->currentQualification->title)) {
+                    return $row->currentQualification->title;
+                }
+                return '';
             })
             ->addColumn('stateOfOrigin', function ($row) {
                 if (isset($row->stateOfOrigin->title)) {
                     return $row->stateOfOrigin->title;
+                }
+                return '';
+            })
+            ->addColumn('local_govt_area', function ($row) {
+                if (isset($row->localGovtArea->title)) {
+                    return $row->localGovtArea->title;
                 }
                 return '';
             })
@@ -57,6 +69,66 @@ class EmployeeDataTable extends DataTable
      */
     public function query(Employee $model)
     {
+
+        
+        $rank = session('rank');
+        $qualification = session('qualification');
+        $state = session('state');
+        $localGovtArea = session('localGovtArea');
+
+
+        if($rank != null && $qualification != null && $state != null && $localGovtArea != null){
+            return  $model::where('current_rank', '=', $rank)
+            ->where('current_qualification', '=', $qualification)
+            ->where('state_of_origin', '=', $state)
+            ->where('local_govt_area', '=', $localGovtArea);
+        }
+
+        else if($rank != null && $state != null && $localGovtArea != null){
+            return  $model::where('current_rank', '=', $rank)
+            ->where('state_of_origin', '=', $state)
+            ->where('local_govt_area', '=', $localGovtArea);
+        }
+
+        else if($qualification != null && $state != null && $localGovtArea != null){
+            return  $model::where('current_qualification', '=', $qualification)
+            ->where('state_of_origin', '=', $state)
+            ->where('local_govt_area', '=', $localGovtArea);
+        }
+
+
+        else if($rank != null && $qualification != null){
+            return  $model::where('current_rank', '=', $rank)
+            ->where('current_qualification', '=', $qualification);
+        }
+
+        else if($state != null && $localGovtArea != null){
+            return  $model::where('state_of_origin', '=', $state)
+            ->where('local_govt_area', '=', $localGovtArea);
+        }
+
+        else if($rank != null && $state != null){
+            return  $model::where('current_rank', '=', $rank)
+            ->where('state_of_origin', '=', $state);
+        }
+
+        else if($qualification != null && $state != null){
+            return  $model::where('current_qualification', '=', $qualification)
+            ->where('state_of_origin', '=', $state);
+        }
+
+        else if($rank != null){
+            return  $model::where('current_rank', '=', $rank);
+        }
+        else if($qualification != null){
+            return  $model::where('current_qualification', '=', $qualification);
+        }
+        else if($state != null){
+            return  $model::where('state_of_origin', '=', $state);
+        }
+        else if($localGovtArea != null){
+            return  $model::where('local_govt_area', '=', $localGovtArea);
+        }
         return $model->newQuery();
     }
 
@@ -75,13 +147,16 @@ class EmployeeDataTable extends DataTable
                 'dom'       => 'Bfrtip',
                 'stateSave' => true,
                 'order'     => [[0, 'desc']],
+                'responsive' => true,
+                'filter' => true,
                 'buttons'   => [
+                    ['extend' => 'colvis','className' => 'btn btn-default btn-sm no-corner mr-3',],
                     ['extend' => 'create', 'className' => 'btn btn-default btn-sm no-corner',],
                     ['extend' => 'excel', 'className' => 'btn btn-default btn-sm no-corner',],
                     ['extend' => 'print', 'className' => 'btn btn-default btn-sm no-corner',],
                     ['extend' => 'reset', 'className' => 'btn btn-default btn-sm no-corner',],
                     ['extend' => 'reload', 'className' => 'btn btn-default btn-sm no-corner',],
-                ],
+                ]
             ]);
     }
 
@@ -110,6 +185,7 @@ class EmployeeDataTable extends DataTable
             'present_appointment_date',
             // 'nationality',
             'stateOfOrigin',
+            'local_govt_area',
             // 'decorations',
             // 'file_upload',
             // 'remark',

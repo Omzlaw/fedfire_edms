@@ -6,6 +6,7 @@ use Flash;
 use Response;
 use App\Http\Requests\Humanresource;
 use App\Models\Humanresource\Employee;
+use App\Models\Shared\QualificationType;
 use App\Http\Controllers\AppBaseController;
 use App\Models\Humanresource\EmployeeQualification;
 use App\DataTables\Humanresource\EmployeeQualificationDataTable;
@@ -33,7 +34,8 @@ class EmployeeQualificationController extends AppBaseController
     public function create()
     {
         $employees = new Employee;
-        return view('humanresource.employee_qualifications.create', compact('employees'));
+        $qualificationTypes = new QualificationType;
+        return view('humanresource.employee_qualifications.create', compact('employees', 'qualificationTypes'));
     }
 
     /**
@@ -49,6 +51,13 @@ class EmployeeQualificationController extends AppBaseController
 
         /** @var EmployeeQualification $employeeQualification */
         $employeeQualification = EmployeeQualification::create($input);
+        $employee = Employee::find($input['employee_id']);
+
+        $employee['current_qualification'] = EmployeeQualification::orderBy('id', 'DESC')
+        ->where('employee_id', '=', $employee->id)
+        ->where('status', '=', 1)
+        ->first()->qualification_type_id;
+        $employee->save();
 
         Flash::success('Employee Qualification saved successfully.');
         close_modal_refresh();
@@ -95,7 +104,8 @@ class EmployeeQualificationController extends AppBaseController
             //return redirect(route('humanresource.employeeQualifications.index'));
         }
         $employees = new Employee;
-        return view('humanresource.employee_qualifications.edit', compact('employees'))->with('employeeQualification', $employeeQualification);
+        $qualificationTypes = new QualificationType;
+        return view('humanresource.employee_qualifications.edit', compact('employees', 'qualificationTypes'))->with('employeeQualification', $employeeQualification);
     }
 
     /**
@@ -118,8 +128,17 @@ class EmployeeQualificationController extends AppBaseController
             //return redirect(route('humanresource.employeeQualifications.index'));
         }
 
-        $employeeQualification->fill($request->all());
+        $input = $request->all();
+        $employeeQualification->fill($input);
         $employeeQualification->save();
+
+        $employee = Employee::find($input['employee_id']);
+
+        $employee['current_qualification'] = EmployeeQualification::orderBy('id', 'DESC')
+        ->where('employee_id', '=', $employee->id)
+        ->where('status', '=', 1)
+        ->first()->qualification_type_id;
+        $employee->save();
 
         Flash::success('Employee Qualification updated successfully.');
         close_modal_refresh();

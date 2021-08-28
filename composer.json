@@ -16,6 +16,7 @@
     ],
     "require": {
         "php": "^7.3",
+        "barryvdh/laravel-snappy": "^0.4.8",
         "codedge/laravel-fpdf": "^1.7",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",

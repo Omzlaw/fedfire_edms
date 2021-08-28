@@ -8,6 +8,7 @@ use Laracasts\Flash\Flash;
 use App\Models\Shared\State;
 use Illuminate\Http\Request;
 use App\Models\Shared\Country;
+use App\Models\Shared\RankType;
 use Yajra\DataTables\DataTables;
 use App\Http\Requests\Humanresource;
 use App\Models\Shared\LocalGovtArea;
@@ -16,6 +17,7 @@ use App\Models\Shared\SenatorialZone;
 use App\Models\Humanresource\Employee;
 use App\Models\Shared\GeoPoliticalZone;
 use Illuminate\Support\Facades\Session;
+use App\Models\Shared\QualificationType;
 use App\Http\Controllers\AppBaseController;
 use App\DataTables\Humanresource\EmployeeDataTable;
 use App\Http\Requests\Humanresource\CreateEmployeeRequest;
@@ -32,8 +34,46 @@ class EmployeeController extends AppBaseController
      */
     public function index(EmployeeDataTable $employeeDataTable)
     {
-        return $employeeDataTable->render('humanresource.employees.index');
+
+        $qualificationTypes = new QualificationType;
+        $rankTypes = new RankType;
+        $states = new State;
+        $local_govt_areas = new LocalGovtArea;
+
+        
+        return $employeeDataTable
+        ->render('humanresource.employees.index', compact('qualificationTypes', 'rankTypes','states', 'local_govt_areas'));
     }
+
+    public function filter(EmployeeDataTable $employeeDataTable, Request $request)
+    {
+        // $qualificationTypes = new QualificationType;
+        // $rankTypes = new RankType;
+        // $states = new State;
+        // $local_govt_areas = new LocalGovtArea;
+
+
+        if ($request['action'] == 'Clear') {
+
+            session()->forget('rank');
+            session()->forget('qualification');  
+            session()->forget('state');  
+            session()->forget('localGovtArea');      
+        }
+        else {
+            $rank = $request['rank'];
+            $qualification = $request['qualification'];
+            $state = $request['state'];
+            $localGovtArea = $request['localGovtArea'];
+
+            session(['rank' => $rank, 'qualification' => $qualification, 'state' => $state, 'localGovtArea' => $localGovtArea]);
+        }
+        
+        return redirect(route('humanresource.employees.index'));
+        // return $employeeDataTable
+        // ->render('humanresource.employees.index', compact('qualificationTypes', 'rankTypes','states', 'local_govt_areas'));
+    }
+
 
     /**
      * Show the form for creating a new Employee.
@@ -132,8 +172,10 @@ class EmployeeController extends AppBaseController
         //get the certificates
 
         $data['certificates'] = $employee->certificates->map(function ($item) {
+            $item->certificate_type_id = $item->certificateType->title;
             $item->status = get_enum_value('enum_status', $item->status);
-            return $item;
+            return ['id' => $item['id'], 'certificate_name' => $item['certificate_name'], 'type' => $item['certificate_type_id'], 'date_obtained' => $item['date_obtained'], 'status' => $item['status']];
+            // return $item;
         });
 
         //get the educations
@@ -215,8 +257,10 @@ class EmployeeController extends AppBaseController
         //get the qualifications
 
         $data['qualifications'] = $employee->qualifications->map(function ($item) {
+            $item->qualification_type_id = $item->qualificationType->title;
             $item->status = get_enum_value('enum_status', $item->status);
-            return $item;
+            return ['id' => $item['id'], 'qualification_name' => $item['qualification_name'], 'type' => $item['qualification_type_id'], 'date_obtained' => $item['date_obtained'], 'status' => $item['status']];
+            // return $item;
         });
 
         //get the recordTrackers
@@ -358,5 +402,168 @@ class EmployeeController extends AppBaseController
         $input['profile_picture'] = $this->Upload($file, $file_name, $staff_code, $file_type);;
 
         return $input;
+    }
+
+    public function report() {
+                $id = session('employee_id');
+               /** @var Employee $employee */
+               $employee = Employee::find($id);
+
+               // dd($data['children']);
+       
+       
+               if (empty($employee)) {
+                   Flash::error('Employee not found');
+       
+                   return redirect(route('humanresource.employees.index'));
+               }
+       
+               $data['employee'] = $employee;
+       
+               //get the children
+       
+               $data['children'] = $employee->children->map(function ($item) {
+                   $item->gender = get_enum_value('enum_gender', $item->gender);
+                   return $item;
+               });
+       
+               //get the action sheets
+       
+               $data['actionSheets'] = $employee->actionSheets->map(function ($item) {
+                   return $item;
+               });
+       
+               //get the addresses
+       
+               $data['addresses'] = $employee->addresses->map(function ($item) {
+                   $item->status = get_enum_value('enum_status', $item->status);
+                   return $item;
+               });
+       
+               //get the censures
+       
+               $data['censures'] = $employee->censures->map(function ($item) {
+                   return $item;
+               });
+       
+               //get the certificates
+       
+               $data['certificates'] = $employee->certificates->map(function ($item) {
+                   $item->certificate_type_id = $item->certificateType->title;
+                   $item->status = get_enum_value('enum_status', $item->status);
+                   return ['id' => $item['id'], 'certificate_name' => $item['certificate_name'], 'type' => $item['certificate_type_id'], 'date_obtained' => $item['date_obtained'], 'status' => $item['status']];
+                   // return $item;
+               });
+       
+               //get the educations
+       
+               $data['educations'] = $employee->educations->map(function ($item) {
+                   $item->certificate_id = $item->certificate->title;
+                   $item->school_type_id = $item->schoolType->title;
+                   return ['id' => $item['id'], 'school_name' => $item['school_name'], 'certificate_id' => $item['certificate_id'], 'school_type_id' => $item['school_type_id'], 'remark' => $item['remark']];
+                   // return $item;
+               });
+       
+               $data['ranks'] = $employee->ranks->map(function ($item) {
+                   $item->employee_id = $item->employee->getFullName();
+                   $item->rank_type_id = $item->rankType->description;
+                   $item->status = get_enum_value('enum_status', $item->status);
+                   return ['id' => $item['id'], 'rank_type_id' => $item['rank_type_id'], 'employee_id' => $item['employee_id'], 'status' => $item['status']];
+                   // return $item;
+               });
+       
+               //get the addresses
+       
+               $data['addresses'] = $employee->addresses->map(function ($item) {
+                   return $item;
+               });
+       
+               //get the forceServices
+       
+               $data['forceServices'] = $employee->forceServices->map(function ($item) {
+                   return $item;
+               });
+       
+               //get the foreignTours
+       
+               $data['foreignTours'] = $employee->foreignTours->map(function ($item) {
+                   $item->status = get_enum_value('enum_status', $item->status);
+                   $item->leave_type_id = $item->leaveType->title;
+                   return ['id' => $item['id'], 'leave_type_id' => $item['leave_type_id'], 'from_date' => $item['from_date'], 'to_date' => $item['to_date'], 'status' => $item['status'], 'remark' => $item['remark'],];
+                   // return $item;
+               });
+       
+               //get the gratuities
+       
+               $data['gratuities'] = $employee->gratuities->map(function ($item) {
+                   $item->status = get_enum_value('enum_status', $item->status);
+                   return $item;
+               });
+       
+               //get the languages
+               $data['languages'] = $employee->languages->map(function ($item) {
+                   $item->speaking_fluency = get_enum_value('enum_fluency', $item->speaking_fluency);
+                   $item->writing_fluency = get_enum_value('enum_fluency', $item->writing_fluency);
+                   $item->language_id = $item->language->title;
+                   return ['id' => $item['id'], 'language_id' => $item['language_id'], 'writing_fluency' => $item['writing_fluency'], 'speaking_fluency' => $item['speaking_fluency']];
+                   // return $item;
+               });
+       
+               //get the localLeaves
+       
+               $data['localLeaves'] = $employee->localLeaves->map(function ($item) {
+                   $item->leave_type_id = $item->leaveType->title;
+                   return ['id' => $item['id'], 'no_of_days' => $item['no_of_days'], 'file_page_no' => $item['file_page_no'], 'leave_type_id' => $item['leave_type_id'], 'from_date' => $item['from_date'], 'to_date' => $item['to_date']];
+                   // return $item;
+               });
+       
+               //get the nextOfKins
+       
+               $data['nextOfKins'] = $employee->nextOfKins->map(function ($item) {
+                   $item->relationship_id = $item->relationship->title;
+                   return ['id' => $item['id'], 'name' => $item['name'], 'address' => $item['address'], 'relationship_id' => $item['relationship_id']];
+                   // return $item;
+               });
+       
+               //get the publicServices
+       
+               $data['publicServices'] = $employee->publicServices->map(function ($item) {
+                   return $item;
+               });
+       
+               //get the qualifications
+       
+               $data['qualifications'] = $employee->qualifications->map(function ($item) {
+                   $item->qualification_type_id = $item->qualificationType->title;
+                   $item->status = get_enum_value('enum_status', $item->status);
+                   return ['id' => $item['id'], 'qualification_name' => $item['qualification_name'], 'type' => $item['qualification_type_id'], 'date_obtained' => $item['date_obtained'], 'status' => $item['status']];
+                   // return $item;
+               });
+       
+               //get the recordTrackers
+       
+               $data['recordTrackers'] = $employee->recordTrackers->map(function ($item) {
+                   $item->status = get_enum_value('enum_status', $item->status);
+                   $item->has_profile = get_enum_value('enum_yes_no', $item->has_profile);
+                   $item->has_education = get_enum_value('enum_yes_no', $item->has_education);
+                   return $item;
+               });
+       
+               //get the terminations
+       
+               $data['terminations'] = $employee->terminations->map(function ($item) {
+                   $item->termination_id = $item->termination_type->title;
+                   $item->is_pensionable = get_enum_value('enum_yes_no', $item->is_pensionable);
+                   return ['id' => $item->id, 'termination_id' => $item['termination_id'], 'even_date' => $item['even_date'], 'is_pensionable' => $item['is_pensionable'], 'pension_amount' => $item['pension_amount']];
+                   // return $item;
+               });
+       
+               //get the spouse
+       
+               $data['spouse'] = $employee->spouse->map(function ($item) {
+                   return $item;
+               });
+       
+               return view('humanresource.employees.report_template')->with('data', $data);
     }
 }

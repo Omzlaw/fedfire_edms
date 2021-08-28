@@ -1,3 +1,13 @@
+<!-- Qualification Type Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('qualification_type_id', 'Qualification Type:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::select('qualification_type_id', modelDropdown($qualificationTypes, 'id', 'title'), null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
 <!-- Qualification Name Field -->
 <div class="form-group">
     <div class="row">

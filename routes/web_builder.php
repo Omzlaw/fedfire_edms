@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Shared\FileDirectoryController;
+use App\Http\Controllers\Humanresource\EmployeeController;
 
 Route::group(['prefix' => 'humanresource', 'middleware' => ['role:user']], function () {
     Route::resource('employeeTerminations', 'Humanresource\EmployeeTerminationController', ["as" => 'humanresource']);
@@ -53,7 +54,9 @@ Route::resource('salaryScales', 'Humanresource\SalaryScaleController', ["as" => 
 Route::resource('terminationTypes', 'Humanresource\TerminationTypeController', ["as" => 'humanresource'])->middleware('role:superadministrator');
 Route::resource('leaveTypes', 'Humanresource\LeaveTypeController', ["as" => 'humanresource'])->middleware('role:superadministrator');
 
+Route::get('report', [EmployeeController::class, 'report'])->name('report')->middleware('role:superadministrator');
 
+Route::post('humanresource/employees/filter', [EmployeeController::class, 'filter'])->name('filter')->middleware('role:superadministrator');
 
 Route::get('fileDirectories', [FileDirectoryController::class, 'getSearch'])->name('getSearch')->middleware('role:superadministrator');
 

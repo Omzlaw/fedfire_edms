@@ -36,6 +36,7 @@ class EmployeeQualification extends Model
 
     public $fillable = [
         'qualification_name',
+        'qualification_type_id',
         'date_obtained',
         'employee_id',
         'file_upload',
@@ -54,6 +55,7 @@ class EmployeeQualification extends Model
     protected $casts = [
         'id' => 'integer',
         'qualification_name' => 'string',
+        'qualification_type_id' => 'string',
         'date_obtained' => 'string',
         'employee_id' => 'integer',
         'file_upload' => 'string',
@@ -71,6 +73,7 @@ class EmployeeQualification extends Model
      */
     public static $rules = [
         'qualification_name' => 'Required',
+        'qualification_type_id' => 'Required',
         'date_obtained' => 'Required',
         'employee_id' => 'Required',
         // 'file_upload' => 'Required',
@@ -87,6 +90,14 @@ class EmployeeQualification extends Model
     public function employee()
     {
         return $this->belongsTo(\App\Models\Humanresource\Employee::class, 'employee_id', 'id');
+    }
+
+        /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function qualificationType()
+    {
+        return $this->belongsTo(\App\Models\Shared\QualificationType::class, 'qualification_type_id', 'id');
     }
 
     /**

@@ -16,6 +16,7 @@ class CreateEmployeeQualificationsTable extends Migration
         Schema::create('employee_qualifications', function (Blueprint $table) {
             $table->increments('id');
             $table->string('qualification_name');
+            $table->integer('qualification_type_id')->unsigned();
             $table->date('date_obtained');
             $table->integer('employee_id')->unsigned();
             $table->string('file_upload')->nullable();

@@ -35,7 +35,14 @@ class EmployeeNextOfKinController extends AppBaseController
     {
         $employees = new Employee;
         $relationship = new Relationship;
-        return view('humanresource.employee_next_of_kins.create', compact('employees', 'relationship'));
+        $employeeNextOfKinForCurrentEmployeeCount =  EmployeeNextOfKin::where('employee_id', '=', session('employee_id'))->count();
+        if($employeeNextOfKinForCurrentEmployeeCount == 2){
+            Flash::success('Only two next of kin details are allowed.');
+            close_modal_refresh();
+        }
+        else {
+            return view('humanresource.employee_next_of_kins.create', compact('employees', 'relationship'));
+        }
     }
 
     /**
@@ -47,13 +54,20 @@ class EmployeeNextOfKinController extends AppBaseController
      */
     public function store(CreateEmployeeNextOfKinRequest $request)
     {
-        $input = $request->all();
+        $employeeNextOfKinForCurrentEmployeeCount =  EmployeeNextOfKin::where('employee_id', '=', session('employee_id'))->count();
+        if($employeeNextOfKinForCurrentEmployeeCount == 2){
+            Flash::success('Only two next of kin details are allowed.');
+            close_modal_refresh();
+        }
+        else {
+            $input = $request->all();
 
-        /** @var EmployeeNextOfKin $employeeNextOfKin */
-        $employeeNextOfKin = EmployeeNextOfKin::create($input);
-
-        Flash::success('Employee Next Of Kin saved successfully.');
-        close_modal_refresh();
+            /** @var EmployeeNextOfKin $employeeNextOfKin */
+            $employeeNextOfKin = EmployeeNextOfKin::create($input);
+    
+            Flash::success('Employee Next Of Kin saved successfully.');
+            close_modal_refresh();
+        }
 
         //return redirect(route('humanresource.employeeNextOfKins.index'));
     }

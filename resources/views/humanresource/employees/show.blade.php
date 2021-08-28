@@ -67,7 +67,7 @@ $ranks = $data['ranks'];
                                     {!! Form::close() !!}
                                 </div>
                                 <div class="form-group col-8">
-                                    <a class="btn secondary-color-bg" href="{{ asset('images/report_template.xlsx') }}" download>Generate Report</a>
+                                    <a class="btn secondary-color-bg" href="{{ route('report') }}">Record of Service</a>
                                 </div>
                             </div>
                             <div class="card-header bg-secondary bg-gradient">

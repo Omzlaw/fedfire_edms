@@ -6,6 +6,7 @@ use Flash;
 use Response;
 use App\Http\Requests\Humanresource;
 use App\Models\Humanresource\Employee;
+use App\Models\Shared\CertificateType;
 use App\Http\Controllers\AppBaseController;
 use App\Models\Humanresource\EmployeeCertificates;
 use App\DataTables\Humanresource\EmployeeCertificatesDataTable;
@@ -33,7 +34,8 @@ class EmployeeCertificatesController extends AppBaseController
     public function create()
     {
         $employees = new Employee;
-        return view('humanresource.employee_certificates.create', compact('employees'));
+        $certificateTypes = new CertificateType;
+        return view('humanresource.employee_certificates.create', compact('employees', 'certificateTypes'));
     }
 
     /**
@@ -94,8 +96,9 @@ class EmployeeCertificatesController extends AppBaseController
             //return redirect(route('humanresource.employeeCertificates.index'));
         }
         $employees = new Employee;
+        $certificateTypes = new CertificateType;
 
-        return view('humanresource.employee_certificates.edit', compact('employees'))->with('employeeCertificates', $employeeCertificates);
+        return view('humanresource.employee_certificates.edit', compact('employees', 'certificateTypes'))->with('employeeCertificates', $employeeCertificates);
     }
 
     /**

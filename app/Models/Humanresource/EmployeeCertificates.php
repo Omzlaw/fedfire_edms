@@ -37,6 +37,7 @@ class EmployeeCertificates extends Model
 
     public $fillable = [
         'certificate_name',
+        'certificate_type_id',
         'date_obtained',
         'employee_id',
         'status',
@@ -56,6 +57,7 @@ class EmployeeCertificates extends Model
     protected $casts = [
         'id' => 'integer',
         'certificate_name' => 'string',
+        'certificate_type_id' => 'string',
         'date_obtained' => 'string',
         'employee_id' => 'integer',
         'status' => 'string',
@@ -76,6 +78,7 @@ class EmployeeCertificates extends Model
         'certificate_name' => 'Required',
         'date_obtained' => 'Required',
         'employee_id' => 'Required',
+        'certificate_type_id' => 'Required',
         'status' => 'Required',
       //        'remark' => 'Required',
         // 'checked_by' => 'Required',
@@ -84,6 +87,14 @@ class EmployeeCertificates extends Model
         // 'file_upload' => 'Required',
         // 'created_by' => 'Required'
     ];
+
+        /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function certificateType()
+    {
+        return $this->belongsTo(\App\Models\Shared\CertificateType::class, 'certificate_type_id', 'id');
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
