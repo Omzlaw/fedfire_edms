@@ -37,6 +37,7 @@ class EmployeeAddress extends Model
 
     public $fillable = [
         'address',
+        'address_type',
         'state_id',
         'local_govt_area_id',
         'country_id',
@@ -56,6 +57,7 @@ class EmployeeAddress extends Model
     protected $casts = [
         'id' => 'integer',
         'address' => 'string',
+        'address_type' => 'string',
         'state_id' => 'integer',
         'local_govt_area_id' => 'integer',
         'country_id' => 'integer',
@@ -74,6 +76,7 @@ class EmployeeAddress extends Model
      */
     public static $rules = [
         'address' => 'Required',
+        'address_type' => 'Required',
         'state_id' => 'Required',
         // 'local_govt_area_id' => 'Required',
         'country_id' => 'Required',

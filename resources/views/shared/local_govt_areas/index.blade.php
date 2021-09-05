@@ -21,7 +21,7 @@ Local Govt Areas @parent
     @include('flash::message')
 
     <div class="clearfix"></div>
-    <div class="card">
+    <div class="card mb-100">
         <section class="card-header">
             <h5 class="card-title d-inline">Local Govt Areas</h5>
             <span class="float-right">

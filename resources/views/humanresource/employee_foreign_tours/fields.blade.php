@@ -44,7 +44,7 @@
     </div>
 </div>
 
-@section('footer_scripts')
+{{-- @section('footer_scripts')
 <script type="text/javascript">
     $('#from_date').datetimepicker({
             format: 'YYYY-MM-DD',
@@ -52,7 +52,7 @@
             sideBySide: true
         });
 </script>
-@endsection
+@endsection --}}
 
 
 <!-- To Date Field -->
@@ -65,7 +65,7 @@
     </div>
 </div>
 
-@section('footer_scripts')
+{{-- @section('footer_scripts')
 <script type="text/javascript">
     $('#to_date').datetimepicker({
             format: 'YYYY-MM-DD',
@@ -73,7 +73,7 @@
             sideBySide: true
         });
 </script>
-@endsection
+@endsection --}}
 
 
 <!-- Status Field -->
@@ -108,7 +108,7 @@
     </div>
 </div>
 
-@section('footer_scripts')
+{{-- @section('footer_scripts')
 <script type="text/javascript">
     $('#date_started').datetimepicker({
             format: 'YYYY-MM-DD',
@@ -116,7 +116,7 @@
             sideBySide: true
         });
 </script>
-@endsection
+@endsection --}}
 
 
 <!-- Tour Gazette No Field -->
@@ -151,7 +151,7 @@
     </div>
 </div>
 
-@section('footer_scripts')
+{{-- @section('footer_scripts')
 <script type="text/javascript">
     $('#leave_due_date').datetimepicker({
             format: 'YYYY-MM-DD',
@@ -159,7 +159,7 @@
             sideBySide: true
         });
 </script>
-@endsection
+@endsection --}}
 
 
 <!-- Leave Departure Date Field -->
@@ -172,7 +172,7 @@
     </div>
 </div>
 
-@section('footer_scripts')
+{{-- @section('footer_scripts')
 <script type="text/javascript">
     $('#leave_departure_date').datetimepicker({
             format: 'YYYY-MM-DD',
@@ -180,7 +180,7 @@
             sideBySide: true
         });
 </script>
-@endsection
+@endsection --}}
 
 
 <!-- Leave Gazette No Field -->
@@ -204,7 +204,7 @@
     </div>
 </div>
 
-@section('footer_scripts')
+{{-- @section('footer_scripts')
 <script type="text/javascript">
     $('#return_due_date').datetimepicker({
             format: 'YYYY-MM-DD',
@@ -212,7 +212,7 @@
             sideBySide: true
         });
 </script>
-@endsection
+@endsection --}}
 
 
 <!-- Granted Extension Date Field -->
@@ -225,7 +225,7 @@
     </div>
 </div>
 
-@section('footer_scripts')
+{{-- @section('footer_scripts')
 <script type="text/javascript">
     $('#granted_extension_date').datetimepicker({
             format: 'YYYY-MM-DD',
@@ -233,7 +233,7 @@
             sideBySide: true
         });
 </script>
-@endsection
+@endsection --}}
 
 
 <!-- Duty Resumption Date Field -->
@@ -246,7 +246,7 @@
     </div>
 </div>
 
-@section('footer_scripts')
+{{-- @section('footer_scripts')
 <script type="text/javascript">
     $('#duty_resumption_date').datetimepicker({
             format: 'YYYY-MM-DD',
@@ -254,7 +254,7 @@
             sideBySide: true
         });
 </script>
-@endsection
+@endsection --}}
 
 
 <!-- Passed To Uk Field -->

@@ -15,7 +15,7 @@ Employee Action Sheet @parent
     </section>
    <div class="content">
        @include('adminlte-templates::common.errors')
-       <div class="card">
+       <div class="card mb-100">
            <div class="card-body">
                 {!! Form::model($employeeActionSheet, ['route' => ['humanresource.employeeActionSheets.update', $employeeActionSheet->id], 'method' => 'patch','class' => 'form-horizontal']) !!}
 

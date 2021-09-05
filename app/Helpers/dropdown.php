@@ -20,11 +20,9 @@ if (!function_exists('modelDropdown')) {
     {
         $modelData = $model::orderBy($value)->where('status', '=', '1')->get();
         $modelArray = array('' => 'Select...');
-        if($filter == 'nigeria_only')
-        {
+        if ($filter == 'nigeria_only') {
             $modelData = $model::orderBy($value)->where('id', '=', '160')->where('status', '=', '1')->get();
-        }
-        else if($filter == 'nigerian_state_only') {
+        } else if ($filter == 'nigerian_state_only') {
             $modelData = $model::orderBy($value)->where('country_id', '=', '160')->where('status', '=', '1')->get();
         }
 
@@ -276,6 +274,122 @@ if (!function_exists('enum_yes_no')) {
         return $option;
     }
 }
+
+if (!function_exists('enum_address_type')) {
+    function enum_address_type($add_Select = TRUE)
+    {
+        $option['-1'] = 'Select...';
+        $option['0'] = 'Permanent';
+        $option['1'] = 'Residential';
+        if (!$add_Select) {
+            unset($option['-1']);
+        }
+        return $option;
+    }
+}
+
+
+
+if (!function_exists('enum_grade_level')) {
+    function enum_grade_level($add_Select = TRUE)
+    {
+        $option['-1'] = 'Select...';
+        $option['1'] = 'Grade 1';
+        $option['2'] = 'Grade 2';
+        $option['3'] = 'Grade 3';
+        $option['4'] = 'Grade 4';
+        $option['5'] = 'Grade 5';
+        $option['6'] = 'Grade 6';
+        $option['7'] = 'Grade 7';
+        $option['8'] = 'Grade 8';
+        $option['9'] = 'Grade 9';
+        $option['10'] = 'Grade 10';
+        $option['11'] = 'Grade 11';
+        $option['12'] = 'Grade 12';
+        $option['13'] = 'Grade 13';
+        $option['14'] = 'Grade 14';
+        $option['15'] = 'Grade 15';
+        if (!$add_Select) {
+            unset($option['-1']);
+        }
+        return $option;
+    }
+}
+
+if (!function_exists('enum_type_of_appointment')) {
+    function enum_type_of_appointment($add_Select = TRUE)
+    {
+        $option['-1'] = 'Select...';
+        $option['1'] = 'Permanent';
+        $option['2'] = 'Temporary';
+        $option['3'] = 'Contract';
+        if (!$add_Select) {
+            unset($option['-1']);
+        }
+        return $option;
+    }
+}
+
+if (!function_exists('enum_zone')) {
+    function enum_zone($add_Select = TRUE)
+    {
+        $option['-1'] = 'Select...';
+        $option['1'] = 'Zone A - Markurdi';
+        $option['2'] = 'Zone B - Kaduna';
+        $option['3'] = 'Zone C - Bauchi';
+        $option['4'] = 'Zone D - Enugu';
+        $option['5'] = 'Zone E - Uyo';
+        $option['6'] = 'Zone F - Lagos';
+        $option['7'] = 'Zone G - Minna';
+        $option['8'] = 'Zone H - Sokoto';
+        $option['9'] = 'Zone I - Yola';
+        $option['10'] = 'Zone J - Owerri';
+        $option['11'] = 'Zone K - Asaba';
+        $option['12'] = 'Zone L - Osogbo';
+        $option['13'] = 'Zone M - Kano';
+        $option['14'] = 'Wuse';
+        $option['15'] = 'FED. OPS - Abuja';
+        if (!$add_Select) {
+            unset($option['-1']);
+        }
+        return $option;
+    }
+}
+
+if (!function_exists('enum_department')) {
+    function enum_department($add_Select = TRUE)
+    {
+        $option['-1'] = 'Select...';
+        $option['1'] = 'CGF';
+        $option['2'] = 'Administration';
+        $option['3'] = 'Operations';
+        $option['4'] = 'Procurement';
+        $option['5'] = 'Inspectorate, Investigations
+        &amp; Enforcement (IIE)';
+        $option['6'] = 'PPRS';
+        $option['7'] = 'National Fire Academy
+        (NFA)';
+        if (!$add_Select) {
+            unset($option['-1']);
+        }
+        return $option;
+    }
+}
+
+// if (!function_exists('enum_station')) {
+//     function enum_station($add_Select = TRUE)
+//     {
+//         $option['-1'] = 'Select...';
+//         $option['1'] = 'test 1';
+//         $option['2'] = 'test 2';
+//         $option['3'] = 'test 3';
+//         if (!$add_Select) {
+//             unset($option['-1']);
+//         }
+//         return $option;
+//     }
+// }
+
 
 if (!function_exists('enum_chilld_location')) {
     function enum_chilld_location($add_Select = TRUE)

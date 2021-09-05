@@ -1,6 +1,6 @@
 @if (isset($fileDirectory))
 
-    {!! Form::model($fileDirectory, ['route' => ['shared.fileDirectories.update', $fileDirectory->id], 'method' => 'patch', 'class' => 'form-horizontal']) !!}
+    {!! Form::model($fileDirectory, ['id' => 'form', 'route' => ['shared.fileDirectories.update', $fileDirectory->id], 'method' => 'patch', 'class' => 'form-horizontal', 'files' => true]) !!}
     <div class="row">
         <div class="col-6">
             {{-- <!-- File Name Field -->
@@ -290,12 +290,12 @@
 
 
 <script type="text/javascript">
-    Dynamsoft.DWT.ResourcesPath = "{{ asset('dynamsoft/dist') }}";
-    // Dynamsoft.DWT.ProductKey =
+    Dynamsoft.WebTwainEnv.ResourcesPath = "{{ asset('dynamsoft/dist') }}";
+    // Dynamsoft.WebTwainEnv.ProductKey =
     //     'f0078xQAAAC9Ai95ZaTJwafPTnV4iN2NLB42dv5oSr4gK++LUUtoru7rnATrhQRcwSW2OUqzRlC0mwu3dtd3itDh3LJcFl4xiYGpoDAACZCbz';
-    Dynamsoft.DWT.ProductKey =
-        't00901wAAAJ9NGZw778x/3peKo89melzLUHAi4QOWQGJQWK02d876RMXz7ki0QJ02M5/G+qjzs78K+4z3KDO1Dfz96Hv03wO7EJjvFlA6yBPUNIDZXjwQ0w1njiur';
-    Dynamsoft.DWT.RegisterEvent('OnWebTwainReady',
+    Dynamsoft.WebTwainEnv.ProductKey =
+        'f0078xQAAAC9Ai95ZaTJwafPTnV4iN2NLB42dv5oSr4gK++LUUtoru7rnATrhQRcwSW2OUqzRlC0mwu3dtd3itDh3LJcFl4xiYGpoDAACZCbz';
+    Dynamsoft.WebTwainEnv.RegisterEvent('OnWebTwainReady',
         Dynamsoft_OnReady
     ); // Register OnWebTwainReady event. This event fires as soon as Dynamic Web TWAIN is initialized and ready to be used
     window.onload = function() {
@@ -307,12 +307,12 @@
             document.getElementById('scanOptions').style.display = "none";
             document.getElementById('mobileFile').style.display = "";
         }
-        Dynamsoft.DWT.Containers = [{
+        Dynamsoft.WebTwainEnv.Containers = [{
             ContainerId: 'dwtcontrolContainer',
             Width: '480px',
             Height: '610px'
         }];
-        // Dynamsoft.DWT.Load();
+        Dynamsoft.WebTwainEnv.Load();
 
         document.getElementById("form").addEventListener("submit", function(event) {
             let toggleStatus = toggleUpload.checked;
@@ -329,7 +329,7 @@
     var DWObject;
 
     function Dynamsoft_OnReady() {
-        DWObject = Dynamsoft.DWT.GetWebTwain(
+        DWObject = Dynamsoft.WebTwainEnv.GetWebTwain(
             'dwtcontrolContainer'
         ); // Get the Dynamic Web TWAIN object that is embeded in the div with id 'dwtcontrolContainer'
         if (DWObject) {
@@ -378,6 +378,7 @@
 
 
     function uploadThroughAJAX() {
+        let url = '';
         let currentRoute = window.location.href;
         if (currentRoute.includes('create')) {
             url = "{{ route('shared.fileDirectories.store') }}";
@@ -385,19 +386,47 @@
             url =
                 "{{ isset($fileDirectory) ? route('shared.fileDirectories.update', $fileDirectory->id) : route('shared.fileDirectories.store') }}";
         }
-
+        let numberOfImagesArray = [];
+        for (let i = 0; i < DWObject.HowManyImagesInBuffer; i++) {
+            numberOfImagesArray.push(i);
+        }
         DWObject.ConvertToBlob(
-            [0, 1, 2],
-            '',
+            numberOfImagesArray,
+            Dynamsoft.EnumDWT_ImageType.IT_PDF,
             function(result, _indices, type) {
                 let fileName = "scan" + '.pdf';
                 let formData = new FormData(form);
-                formData.delete('file_upload');
-                formData.append('file_upload', result, fileName);
-                makeRequest(url, formData, false);
+                formData.set('file_upload[]', result, fileName);
+                for (var [key, value] of formData.entries()) {
+                    console.log(key, value);
+                }
+
+                $.ajax({
+                    type: "POST",
+                    enctype: 'multipart/form-data',
+                    url: url,
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    timeout: 800000,
+                    success: function (data) {
+                        window.location = url;
+                        alert('File Directory saved successfully.')
+                        // $("html").html($("html", data).html());
+                        // $("html").html(data);
+                    },
+                    error: function (e) {
+                        window.location.reload();
+                        // $("html").html($("html", e).html());
+                        // $("html").html(e);
+                    }
+                });
+                
             },
             function(errorCode, errorString) {
-                let error = "Please try again";
+                console.log(errorString);
+                let error = "Please scan an image";
                 if (errorCode == -2352) {
                     error = "Please scan a document";
                 }
@@ -407,4 +436,13 @@
             }
         );
     }
+
 </script>
+
+@section('footer_scripts')
+    <!--   page level js ----------->
+    <script src="{{ asset('vendors/toastr/js/toastr.js') }}" ></script>
+    <script src="{{ asset('js/pages/toastr.js') }}"></script>
+    <!-- end of page level js -->
+  
+@stop

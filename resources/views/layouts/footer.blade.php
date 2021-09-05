@@ -1,5 +1,5 @@
 
-<footer class="m-auto page-footer white-color-bg border-top text-center">
+<footer class="m-auto page-footer white-color-bg border-top text-center" style="">
     <div class="py-3">
         <strong id="footer-text">© <span id="currentYear"></span> Fedfire | Department of Adminstration and Supply</strong>
     </div>

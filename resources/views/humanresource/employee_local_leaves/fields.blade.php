@@ -66,15 +66,15 @@
     </div>
 </div>
 
-@section('footer_scripts')
+{{-- @section('footer_scripts')
 <script type="text/javascript">
     $('#from_date').datetimepicker({
             format: 'YYYY-MM-DD',
             useCurrent: true,
             sideBySide: true
-        })
+        });
 </script>
-@endsection
+@endsection --}}
 
 
 <!-- To Date Field -->
@@ -87,15 +87,15 @@
     </div>
 </div>
 
-@section('footer_scripts')
+{{-- @section('footer_scripts')
 <script type="text/javascript">
     $('#to_date').datetimepicker({
             format: 'YYYY-MM-DD',
             useCurrent: true,
             sideBySide: true
-        })
+        });
 </script>
-@endsection
+@endsection --}}
 
 
 <!-- Status Field -->

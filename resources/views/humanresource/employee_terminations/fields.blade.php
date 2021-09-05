@@ -46,7 +46,7 @@
     </div>
 </div>
 
-@section('footer_scripts')
+{{-- @section('footer_scripts')
 <script type="text/javascript">
     $('#even_date').datetimepicker({
             format: 'YYYY-MM-DD',
@@ -54,7 +54,7 @@
             sideBySide: true
         });
 </script>
-@endsection
+@endsection --}}
 
 
 <!-- Is Pensionable Field -->
@@ -89,7 +89,7 @@
     </div>
 </div>
 
-@section('footer_scripts')
+{{-- @section('footer_scripts')
 <script type="text/javascript">
     $('#pension_start_date').datetimepicker({
             format: 'YYYY-MM-DD',
@@ -97,7 +97,7 @@
             sideBySide: true
         });
 </script>
-@endsection
+@endsection --}}
 
 
 <!-- Gratuity Amount Field -->
@@ -154,7 +154,7 @@
     </div>
 </div>
 
-@section('footer_scripts')
+{{-- @section('footer_scripts')
 <script type="text/javascript">
     $('#widow_pension_start_date').datetimepicker({
             format: 'YYYY-MM-DD',
@@ -162,7 +162,7 @@
             sideBySide: true
         });
 </script>
-@endsection
+@endsection --}}
 
 
 <!-- Orphan Pension Amonut Field -->

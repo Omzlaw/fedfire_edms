@@ -9,10 +9,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../../asset-login/assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('asset-login/assets/images/favicon.png') }}">
     <title>Federal Fire Service EDMS </title>
     <!-- Custom CSS -->
-    <link href="../../asset-login/dist/css/style.min.css" rel="stylesheet">
+    <link href="{{ asset('asset-login/dist/css/style.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendors/bootstrapvalidator/css/bootstrapValidator.min.css')}}" rel="stylesheet" />
     <link href="{{ asset('css/auth.css') }}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -60,7 +60,7 @@
                                         <span class="input-group-text" id="basic-addon1"><i class="ti-user"></i></span>
                                     </div>
                                     <input type="text" name="email" value="{{ old('email') }}" required
-                                        class="form-control form-control-lg" placeholder="Email" aria-label="Email"
+                                        class="form-control form-control-lg @error('email') is-invalid @enderror" placeholder="Email" aria-label="Email"
                                         aria-describedby="basic-addon1" title="Input email" />
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -70,12 +70,12 @@
 
 
                                 </div>
-                                <div class="input-group mb-3  @error('password') is-invalid @enderror">
+                                <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon2"><i
                                                 class="ti-pencil"></i></span>
                                     </div>
-                                    <input type="password" name="password" class="form-control form-control-lg"
+                                    <input type="password" name="password" class="form-control form-control-lg @error('password') is-invalid @enderror"
                                         placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -155,10 +155,14 @@
     <!-- All Required js -->
     <!-- ============================================================== -->
     {{-- <script src="{{ asset('js/app.js') }}" type="text/javascript"></script> --}}
-    <script src="../../asset-login/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="{{ asset('asset-login/assets/libs/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/app.js')}}" type="text/javascript"></script>
+
+    <script src="{{ asset('vendors/bootstrapvalidator/js/bootstrapValidator.min.js')}}" type="text/javascript"></script>
+    <script type="text/javascript" src="{{asset('vendors/jquery.backstretch/js/jquery.backstretch.js')}}"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="../../asset-login/assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../../asset-login/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="{{ asset('asset-login/assets/libs/popper.js/dist/umd/popper.min.js') }}"></script>
+    <script src="{{ asset('asset-login/assets/libs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <!-- ============================================================== -->
     <!-- This page plugin js -->
     <!-- ============================================================== -->

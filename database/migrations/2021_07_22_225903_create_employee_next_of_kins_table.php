@@ -16,8 +16,9 @@ class CreateEmployeeNextOfKinsTable extends Migration
         Schema::create('employee_next_of_kins', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('address');
-            $table->integer('relationship_id')->unsigned();
+            $table->string('address')->nullable();
+            $table->string('phone');
+            $table->integer('relationship_id')->unsigned()->nullable();
             $table->integer('employee_id')->unsigned();
             $table->string('file_upload')->nullable();
             $table->string('remark')->nullable();

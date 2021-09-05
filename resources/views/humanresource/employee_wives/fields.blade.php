@@ -19,7 +19,7 @@
     </div>
 </div>
 
-@section('footer_scripts')
+{{-- @section('footer_scripts')
 <script type="text/javascript">
     $('#wife_birthdate').datetimepicker({
             format: 'YYYY-MM-DD',
@@ -27,7 +27,7 @@
             sideBySide: true
         });
 </script>
-@endsection
+@endsection --}}
 
 
 <!-- Marriage Date Field -->
@@ -40,7 +40,7 @@
     </div>
 </div>
 
-@section('footer_scripts')
+{{-- @section('footer_scripts')
 <script type="text/javascript">
     $('#marriage_date').datetimepicker({
             format: 'YYYY-MM-DD',
@@ -48,7 +48,7 @@
             sideBySide: true
         });
 </script>
-@endsection
+@endsection --}}
 
 
 <!-- Employee Id Field -->

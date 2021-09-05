@@ -14,7 +14,7 @@ Geo Political Zone @parent
     </section>
    <div class="content">
        @include('adminlte-templates::common.errors')
-       <div class="card">
+       <div class="card mb-100">
            <div class="card-body">
                 {!! Form::model($geoPoliticalZone, ['route' => ['shared.geoPoliticalZones.update', $geoPoliticalZone->id], 'method' => 'patch','class' => 'form-horizontal']) !!}
 

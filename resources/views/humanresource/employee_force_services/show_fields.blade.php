@@ -34,10 +34,10 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('file_upload', 'File Upload:') !!}</th>
     <td>{{ $employeeForceService->file_upload }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>

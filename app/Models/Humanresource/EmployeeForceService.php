@@ -4,6 +4,7 @@ namespace App\Models\Humanresource;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+
 /**
  * Class EmployeeForceService
  * @package App\Models\Humanresource
@@ -28,7 +29,7 @@ class EmployeeForceService extends Model
     use SoftDeletes;
 
     public $table = 'employee_force_services';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -38,6 +39,11 @@ class EmployeeForceService extends Model
         'area_of_service',
         'service_no',
         'last_unit',
+        'department',
+        'state',
+        'zone',
+        'region',
+        'location',
         'reason_for_leaving',
         'employee_id',
         'file_upload',
@@ -55,6 +61,11 @@ class EmployeeForceService extends Model
     protected $casts = [
         'id' => 'integer',
         'area_of_service' => 'string',
+        'location' => 'string',
+        'department' => 'string',
+        'zone' => 'string',
+        'state' => 'string',
+        'region' => 'string',
         'service_no' => 'string',
         'last_unit' => 'string',
         'reason_for_leaving' => 'string',
@@ -76,11 +87,16 @@ class EmployeeForceService extends Model
         'service_no' => 'Required',
         'last_unit' => 'Required',
         'reason_for_leaving' => 'Required',
+        'location' => 'Required',
+        'department' => 'Required',
+        'zone' => 'Required',
+        'state' => 'Required',
+        'region' => 'Required',
         'employee_id' => 'Required',
         // 'file_upload' => 'Required',
-      //        'remark' => 'Required',
-     //   'created_by' => 'Required',
-    //    'updated_by' => 'Required',
+        //        'remark' => 'Required',
+        //   'created_by' => 'Required',
+        //    'updated_by' => 'Required',
         'date_updated' => 'Required'
     ];
 
@@ -90,6 +106,22 @@ class EmployeeForceService extends Model
     public function employee()
     {
         return $this->belongsTo(\App\Models\Humanresource\Employee::class, 'employee_id', 'id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function state()
+    {
+        return $this->belongsTo(\App\Models\Shared\State::class, 'state', 'id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function region()
+    {
+        return $this->belongsTo(\App\Models\Shared\GeoPoliticalZone::class, 'region', 'id');
     }
 
     /**

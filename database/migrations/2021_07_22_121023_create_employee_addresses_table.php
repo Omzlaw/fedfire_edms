@@ -16,12 +16,13 @@ class CreateEmployeeAddressesTable extends Migration
         Schema::create('employee_addresses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('address');
-            $table->integer('state_id')->unsigned();
+            $table->integer('address_type')->unsigned(); 
+            $table->integer('state_id')->unsigned()->nullable();
             $table->integer('local_govt_area_id')->unsigned()->nullable();
-            $table->integer('country_id')->unsigned();
+            $table->integer('country_id')->unsigned()->nullable();
             $table->integer('employee_id')->unsigned();
             $table->string('file_upload')->nullable();
-            $table->integer('status')->default(1);
+            $table->integer('status')->default(1)->nullable();
             $table->text('remark')->nullable();
             $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();

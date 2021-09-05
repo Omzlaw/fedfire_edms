@@ -22,7 +22,7 @@
     </div>
 </div>
 
-@section('footer_scripts')
+{{-- @section('footer_scripts')
 <script type="text/javascript">
     $('#action_at').datetimepicker({
             format: 'YYYY-MM-DD',
@@ -30,7 +30,7 @@
             sideBySide: true
         });
 </script>
-@endsection
+@endsection --}}
 
 
 <!-- Date Cleared Field -->

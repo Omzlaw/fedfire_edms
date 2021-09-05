@@ -12,6 +12,7 @@ use App\Models\Shared\FileDirectory;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 use App\Models\Humanresource\Employee;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Humanresource\EmployeeRank;
 use App\Http\Controllers\AppBaseController;
@@ -61,7 +62,6 @@ class FileDirectoryController extends AppBaseController
         $input = $request->all();
         $fileDirectory = FileDirectory::create($this->saveFile($input));
         Flash::success('File Directory saved successfully.');
-
         return redirect(route('shared.fileDirectories.index'));
     }
 
@@ -93,7 +93,7 @@ class FileDirectoryController extends AppBaseController
 
     public function search(Request $request)
     {
-        $employee = Employee::where('file_no', '=', $request['file_no'])->first();
+        $employee = Employee::where('service_number', '=', $request['service_number'])->first();
         if (empty($employee)) {
             Flash::error('Employee not found');
             return redirect(route('employeeSearch'));
@@ -113,23 +113,23 @@ class FileDirectoryController extends AppBaseController
 
 
         $rank_type_id = $request['rank_type'];
-        $employees = Employee::select('id', 'file_no', 'first_name', 'middle_name', 'last_name')
+        $employees = Employee::select('id', 'service_number', 'first_name', 'middle_name', 'last_name')
             ->orwhere('first_name', 'like', $request['search_query'])
             ->orWhere('last_name', 'like', $request['search_query'])
             ->orWhere('middle_name', 'like', $request['search_query'])
-            ->orWhere('file_no', '=', $request['search_query'])
-            ->orderBy('file_no')
+            ->orWhere('service_number', '=', $request['search_query'])
+            ->orderBy('service_number')
             ->get();
         if ($request['rank_type'] != null) {
-            $employees = Employee::select('id', 'file_no', 'first_name', 'middle_name', 'last_name')
+            $employees = Employee::select('id', 'service_number', 'first_name', 'middle_name', 'last_name')
                 ->orwhere('first_name', 'like', $request['search_query'])
                 ->orwhere('last_name', 'like', $request['search_query'])
                 ->orwhere('middle_name', 'like', $request['search_query'])
-                ->orderBy('file_no')
+                ->orderBy('service_number')
                 ->get();
 
             if (!$employees->isEmpty()) {
-                $employees = Employee::select('id', 'file_no', 'first_name', 'middle_name', 'last_name')->where('current_rank', '=', $rank_type_id)->get();
+                $employees = Employee::select('id', 'service_number', 'first_name', 'middle_name', 'last_name')->where('current_rank', '=', $rank_type_id)->get();
             }
         }
 
@@ -254,10 +254,4 @@ class FileDirectoryController extends AppBaseController
         return $input;
     }
 
-    public function fileToPDF(Request $request) {
-        $file = Image::make($request->file);
-        $file->save(storage_path('test.jpg'));
-        dd($file);
-
-    }   
 }

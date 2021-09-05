@@ -8,6 +8,16 @@
     </div>
 </div>
 
+<!-- Address Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('address_type', 'Permanent/Residential:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::select('address_type', enum_address_type(), null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
 
 <!-- Country Id Field -->
 <div class="form-group">

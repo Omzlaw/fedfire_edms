@@ -1,15 +1,12 @@
-import { DynamsoftEnumsDBR} from "./Dynamsoft.Enum";
-import { DynamsoftEnumsDWT} from "./Dynamsoft.Enum";
+import { DynamsoftEnums } from "./Dynamsoft.Enum";
 import { WebTwain } from "./WebTwain";
 import { Settings } from "./Addon.OCRPro";
 import { FileUploader } from "./Dynamsoft.FileUploader";
 
-
 export namespace DynamsoftStatic {
     let Lib: DynamsoftLib;
     let MSG: Messages;
-    let DWT: (DWTPro & typeof DynamsoftEnumsDWT);
-    let DBR: typeof DynamsoftEnumsDBR;
+    let WebTwainEnv: WebTwainEnv;
     let managerEnv: ManagerEnv;
     let FileUploader: FileUploader;
     namespace WebTwain {
@@ -20,8 +17,6 @@ export namespace DynamsoftStatic {
         }
     }
 }
-
-
 export interface DWTInitialConfig {
     WebTwainId: string;
     Host?: string;
@@ -217,7 +212,7 @@ export interface DSLibEnv {
      */
     readonly strIEVersion: number | string;
 }
-export interface DWTPro {
+export interface WebTwainEnv {
     /**
      * Whether to install the ActiveX with CAB.
      */
@@ -345,14 +340,7 @@ export interface DWTPro {
     /**
      * Set or return the product key for the library. A product key is required to enables certain modules of the library.
      */
-    ProductKey: string;	
-    /**
-	 * LTS Settings
-	*/
-	licenseServer?: string[];
-	handshakeCode?: string;
-	sessionPassword?: string;
-	organizationID?: string;
+    ProductKey: string;
     /**
      * The product name.
      */
@@ -431,13 +419,11 @@ export interface DWTPro {
      */
 }
 export interface DisplayInfo {
-    loaderBarSource?: string;
-	loaderBarClassName?: string;
-	buttons?: any;
-    customProgressText?: any;
-    dialogText?: any;
-    errorMessages?: any;
-    generalMessages?: any;
+    buttons: any;
+    customProgressText: any;
+    dialogText: any;
+    errorMessages: any;
+    generalMessages: any;
 }
 /**
  * Define default messages.
@@ -505,5 +491,5 @@ export interface WasmConfig {
      */
 	fetchOptions: any;
 }
-declare const Dynamsoft: (typeof DynamsoftStatic);
+declare const Dynamsoft: (typeof DynamsoftEnums & typeof DynamsoftStatic);
 export default Dynamsoft;

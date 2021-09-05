@@ -15,7 +15,7 @@ Employee Wife @parent
     </section>
    <div class="content">
        @include('adminlte-templates::common.errors')
-       <div class="card">
+       <div class="card mb-100">
            <div class="card-body">
                 {!! Form::model($employeeWife, ['route' => ['humanresource.employeeWives.update', $employeeWife->id], 'method' => 'patch', 'files' => true,'class' => 'form-horizontal']) !!}
 

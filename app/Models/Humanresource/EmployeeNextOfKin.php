@@ -37,6 +37,7 @@ class EmployeeNextOfKin extends Model
     public $fillable = [
         'name',
         'address',
+        'phone',
         'relationship_id',
         'employee_id',
         'file_upload',
@@ -54,6 +55,7 @@ class EmployeeNextOfKin extends Model
         'id' => 'integer',
         'name' => 'string',
         'address' => 'string',
+        'phone' => 'string',
         'relationship_id' => 'string',
         'employee_id' => 'integer',
         'file_upload' => 'string',
@@ -70,6 +72,7 @@ class EmployeeNextOfKin extends Model
     public static $rules = [
         'name' => 'Required',
         'address' => 'Required',
+        'phone' => 'Required',
         'relationship_id' => 'Required',
         'employee_id' => 'Required',
         // 'file_upload' => 'Required',

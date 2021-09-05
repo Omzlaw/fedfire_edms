@@ -9,6 +9,11 @@
     <td>{{ $employeeAddress->address }}</td>
 </tr>
 
+<tr>
+    <th scopre="row">{!! Form::label('address_type', 'Permanent/Residential:') !!}</th>
+    <td>{{ get_enum_value('enum_address_type', $employeeAddress->address_type) }}</td>
+</tr>
+
 
 <tr>
     <th scopre="row">{!! Form::label('country_id', 'Country:') !!}</th>

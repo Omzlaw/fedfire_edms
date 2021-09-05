@@ -12,7 +12,7 @@
         "inView": true
     },
     {
-        "name": "file_no",
+        "name": "service_number",
         "dbType": "string",
         "htmlType": "text",
         "validations": "Required",

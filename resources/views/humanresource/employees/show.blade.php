@@ -19,6 +19,7 @@ $recordTrackers = $data['recordTrackers'];
 $nextOfKins = $data['nextOfKins'];
 $qualifications = $data['qualifications'];
 $ranks = $data['ranks'];
+$services = $data['services'];
 
 ?>
 @extends('layouts.default')
@@ -82,8 +83,9 @@ $ranks = $data['ranks'];
                                         data-model="{{ $addresses }}" href="#">Address</a>
                                 </li>
                                 </li>
-                                <li class="list-group-item"><a class="dt" data-route="humanresource/employeeLanguages"
-                                        data-model="{{ $languages }}" href="#">Languages</a>
+                                <li class="list-group-item"><a class="dt"
+                                        data-route="humanresource/employeeLanguages" data-model="{{ $languages }}"
+                                        href="#">Languages</a>
                                 </li>
                             </ul>
                             <div class="card-header bg-secondary bg-gradient">
@@ -95,11 +97,13 @@ $ranks = $data['ranks'];
                                         data-model="{{ $children }}" href="#">Children</a>
                                 </li>
                                 </li>
-                                <li class="list-group-item"><a class="dt" data-route="humanresource/employeeWives"
-                                        data-model="{{ $spouse }}" href="#">Spouse</a>
+                                <li class="list-group-item"><a class="dt"
+                                        data-route="humanresource/employeeWives" data-model="{{ $spouse }}"
+                                        href="#">Spouse</a>
                                 </li>
-                                <li class="list-group-item"><a class="dt" data-route="humanresource/employeeNextOfKins"
-                                        data-model="{{ $nextOfKins }}" href="#">Next
+                                <li class="list-group-item"><a class="dt"
+                                        data-route="humanresource/employeeNextOfKins" data-model="{{ $nextOfKins }}"
+                                        href="#">Next
                                         of
                                         Kins</a>
                                 </li>
@@ -113,10 +117,12 @@ $ranks = $data['ranks'];
                                         data-model="{{ $certificates }}" href="#">Certificates</a>
                                 </li>
                                 </li>
-                                <li class="list-group-item"><a class="dt" data-route="humanresource/employeeEducations"
-                                        data-model="{{ $educations }}" href="#">Education</a>
+                                <li class="list-group-item"><a class="dt"
+                                        data-route="humanresource/employeeEducations" data-model="{{ $educations }}"
+                                        href="#">Education</a>
                                 </li>
-                                <li class="list-group-item"><a class="dt" data-route="humanresource/employeeQualifications"
+                                <li class="list-group-item"><a class="dt"
+                                        data-route="humanresource/employeeQualifications"
                                         data-model="{{ $qualifications }}" href="#">Qualifications</a>
                                 </li>
                             </ul>
@@ -130,15 +136,18 @@ $ranks = $data['ranks'];
                                         Sheets</a>
                                 </li>
                                 </li>
-                                <li class="list-group-item"><a class="dt" data-route="humanresource/employeeCensures"
-                                        data-model="{{ $censures }}" href="#">Censures</a>
+                                <li class="list-group-item"><a class="dt"
+                                        data-route="humanresource/employeeCensures" data-model="{{ $censures }}"
+                                        href="#">Censures</a>
                                 </li>
-                                <li class="list-group-item"><a class="dt" data-route="humanresource/employeeRecordTrackers"
+                                <li class="list-group-item"><a class="dt"
+                                        data-route="humanresource/employeeRecordTrackers"
                                         data-model="{{ $recordTrackers }}" href="#">Record
                                         Trackers</a>
                                 </li>
-                                <li class="list-group-item"><a class="dt" data-route="humanresource/employeeRanks"
-                                        data-model="{{ $ranks }}" href="#">Ranks</a>
+                                <li class="list-group-item"><a class="dt"
+                                        data-route="humanresource/employeeRanks" data-model="{{ $ranks }}"
+                                        href="#">Ranks</a>
                                 </li>
                             </ul>
                             <div class="card-header bg-secondary bg-gradient">
@@ -146,12 +155,17 @@ $ranks = $data['ranks'];
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
+                                    <a class="dt" data-route="humanresource/employeeServices"
+                                        data-model="{{ $services }}" href="#">Services</a>
+                                </li>
+                                <li class="list-group-item">
                                     <a class="dt" data-route="humanresource/employeeForceServices"
                                         data-model="{{ $forceServices }}" href="#">Force
                                         Services</a>
                                 </li>
                                 </li>
-                                <li class="list-group-item"><a class="dt" data-route="humanresource/employeePublicServices"
+                                <li class="list-group-item"><a class="dt"
+                                        data-route="humanresource/employeePublicServices"
                                         data-model="{{ $publicServices }}" href="#">Public
                                         Services</a>
                                 </li>
@@ -165,8 +179,9 @@ $ranks = $data['ranks'];
                                         data-model="{{ $gratuities }}" href="#">Gratuity</a>
                                 </li>
                                 </li>
-                                <li class="list-group-item"><a class="dt" data-route="humanresource/employeeTerminations"
-                                        data-model="{{ $terminations }}" href="#">Termination</a>
+                                <li class="list-group-item"><a class="dt"
+                                        data-route="humanresource/employeeTerminations" data-model="{{ $terminations }}"
+                                        href="#">Termination</a>
                                 </li>
                             </ul>
                             <div class="card-header bg-secondary bg-gradient">
@@ -179,8 +194,9 @@ $ranks = $data['ranks'];
                                         Tours</a>
                                 </li>
                                 </li>
-                                <li class="list-group-item"><a class="dt" data-route="humanresource/employeeLocalLeaves"
-                                        data-model="{{ $localLeaves }}" href="#">Local
+                                <li class="list-group-item"><a class="dt"
+                                        data-route="humanresource/employeeLocalLeaves" data-model="{{ $localLeaves }}"
+                                        href="#">Local
                                         Leaves</a>
                                 </li>
                             </ul>
@@ -373,12 +389,12 @@ $ranks = $data['ranks'];
                             sortable: true,
                             ordering: true,
                             searching: true,
-                            stateSave: true,
+                            // stateSave: true,
                             "fnRowCallback": function(nRow, aData, iDisplayIndex) {
                                 nRow.setAttribute('id', aData[0]);
                             },
-                            // dom: 'Bfrtip',
-                            dom: 'lfrtip'
+                            dom: 'lfrtip',
+                            // dom: 'lfrtip',
                         });
 
                         table.column(0).visible(false);

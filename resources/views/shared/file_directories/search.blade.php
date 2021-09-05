@@ -16,7 +16,7 @@
     <div class="content">
         @include('adminlte-templates::common.errors')
         @include('flash::message')
-        <div class="card">
+        <div class="card mb-100">
             <div class="card-body ml-15 mr-15">
 
                 <div class="row">
@@ -24,7 +24,7 @@
                         {!! Form::open(['route' => 'employeeSearch', 'class' => 'form-horizontal', 'files' => true]) !!}
                         <div class="row">
                             <div class="form-group col-4">
-                                {!! Form::text('file_no', null, ['class' => 'form-control', 'placeholder' => 'Search by File Number']) !!}
+                                {!! Form::text('service_number', null, ['class' => 'form-control', 'placeholder' => 'Search by Service Number']) !!}
                             </div>
                             <div class="form-group col-8">
                                 {!! Form::submit('Search', ['class' => 'btn secondary-color-bg']) !!}
@@ -58,7 +58,7 @@
                                     <tbody>
                                         <tr>
                                             <th scope="col">File Number</th>
-                                            <td>{{ $employee->file_no }}</td>
+                                            <td>{{ $employee->service_number }}</td>
                                         </tr>
                                         <tr>
                                             <th scope="col">First Name</th>
@@ -117,12 +117,12 @@
                                                         <td>{{ $date_uploaded }}</td>
                                                         <td>{{ $file->remark }}</td>
                                                         <td><a target="blank" title="View File"
-                                                                href="{{ $file->file_url[0] }}"
+                                                                href="{{ isset($file->file_url[0]) ? $file->file_url[0] : ''}}"
                                                                 class='btn custom-outline-primary btn-xs'><i
                                                                     class="im im-icon-Information"></i>
                                                             </a></td>
                                                         <td><a download title="Download File"
-                                                                href="{{ $file->file_url[0] }}"
+                                                                href="{{ isset($file->file_url[0]) ? $file->file_url[0] : '' }}"
                                                                 class='btn btn-outline-success btn-xs'><i
                                                                     class="im im-icon-File-Edit"></i>
                                                             </a></td>
@@ -170,6 +170,7 @@
 
     function emptyTable() {
         table = document.getElementById("file_directories");
+
         rows = table.getElementsByTagName("tr");
 
         // Loops through rows and hides those with countries that don't match the filter
@@ -201,3 +202,7 @@
         }
     }
 </script>
+
+@section('footer_scripts')
+    @include('layouts.datatables_js')
+@endsection

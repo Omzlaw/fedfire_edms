@@ -143,6 +143,10 @@ $(document).ready(function () {
     //     sortField: 'text'
     // });
 
+    $('#model_modal').on('hide', function() {
+        location.reload();
+    });
+
 });
 //leftmenu collapse in active
 jQuery(function ($) {

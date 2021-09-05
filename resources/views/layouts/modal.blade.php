@@ -3,17 +3,18 @@
     <div class="modal-dialog  modal-dialog-scrollable" role="document">
         <div class="modal-content">
             <iframe name="model_frame" id="model_frame" src="" frameborder="0" height="500"></iframe>
-            <div class=""> 
+            <div class="___class_+?3___">
                 <a class="btn text-danger btn-block text-white modal-buttons" onclick="closeModal()">Close</a>
                 <a class="mb-2 modal-buttons" onclick="closeModalAndRefresh()"> Refresh</a>
-        
+
             </div>
         </div>
-        </div>
+    </div>
 </div>
 
 
 <script>
+
     function closeModal() {
         $('#model_modal').modal('toggle');
     }

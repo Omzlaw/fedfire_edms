@@ -15,21 +15,30 @@ class CreateEmployeesTable extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('file_no')->unique();
+            $table->string('service_number')->unique();
             $table->string('first_name');
             $table->string('middle_name')->nullable();
             $table->string('last_name');
+            $table->integer('religion');
             $table->string('staff_code');
             $table->integer('gender');
             $table->date('birthdate');
             $table->string('place_of_birth')->nullable();
             $table->string('profile_picture')->nullable();
             $table->integer('marital_status_id')->unsigned();
-            $table->date('first_appointment_date');
-            $table->date('resumption_of_duty_date')->nullable();
-            $table->date('present_appointment_date')->nullable();
-            $table->date('first_arrival_date');
-            $table->integer('nationality')->unsigned();
+            // $table->integer('present_department')->unsigned();
+            // $table->integer('present_station')->unsigned();
+            // $table->integer('state')->unsigned();
+            // $table->integer('zone')->unsigned();
+            // $table->integer('location')->unsigned();
+            $table->integer('gl')->unsigned();
+            $table->integer('type_of_appointment')->unsigned();
+            $table->date('date_of_first_appointment');
+            $table->date('assumption_of_duty_date')->nullable();
+            $table->date('date_of_present_appointment')->nullable();
+            $table->date('date_of_confirmation')->nullable();
+            $table->date('first_arrival_date')->nullable();
+            $table->integer('nationality')->default(160)->unsigned()->nullable();
             $table->integer('geo_political_zone')->unsigned()->nullable();
             $table->integer('state_of_origin')->unsigned()->nullable();
             $table->integer('senatorial_zone')->unsigned()->nullable();
@@ -39,7 +48,7 @@ class CreateEmployeesTable extends Migration
             $table->text('remark')->nullable();
             $table->string('email')->unique();
             $table->string('phone')->unique();
-            $table->integer('status')->default(1);
+            $table->integer('status')->default(1)->nullable();
             $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();
             $table->integer('current_rank')->unsigned()->nullable();

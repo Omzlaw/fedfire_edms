@@ -30,7 +30,7 @@
     </div>
 </div>
 
-@section('footer_scripts')
+{{-- @section('footer_scripts')
 <script type="text/javascript">
     $('#date_recieved').datetimepicker({
             format: 'YYYY-MM-DD',
@@ -38,7 +38,7 @@
             sideBySide: true
         });
 </script>
-@endsection
+@endsection --}}
 
 
 <!-- Employee Id Field -->

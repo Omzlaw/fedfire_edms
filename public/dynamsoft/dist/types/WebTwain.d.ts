@@ -1,4 +1,4 @@
-import { DynamsoftEnumsDWT } from "./Dynamsoft.Enum";
+import { DynamsoftEnums as Dynamsoft } from "./Dynamsoft.Enum";
 import { WebTwainViewer } from "./WebTwain.Viewer";
 import { BarcodeReader } from "./Addon.BarcodeReader";
 import { OCR } from "./Addon.OCR";
@@ -27,7 +27,7 @@ export interface WebTwain extends WebTwainViewer {
     /**
      * [Deprecation] This API is no longer needed.
      */
-    BorderStyle: DynamsoftEnumsDWT.EnumDWT_BorderStyle | number;
+    BorderStyle: Dynamsoft.EnumDWT_BorderStyle | number;
     /**
      * Return whether a WebTwain instance is ready to use.
      */

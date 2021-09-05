@@ -14,7 +14,7 @@
     </section>
     <div class="content">
         @include('adminlte-templates::common.errors')
-        <div class="card">
+        <div class="card mb-100">
             <div class="card-body">
                 @include('shared.file_directories.fields', [$file_types, $employees])
             </div>

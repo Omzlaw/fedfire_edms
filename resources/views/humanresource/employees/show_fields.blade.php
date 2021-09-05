@@ -5,8 +5,8 @@
 
 
 <tr>
-    <th scopre="row">{!! Form::label('file_no', 'File No:') !!}</th>
-    <td>{{ $employee->file_no }}</td>
+    <th scopre="row">{!! Form::label('service_number', 'File No:') !!}</th>
+    <td>{{ $employee->service_number }}</td>
 </tr>
 
 
@@ -27,13 +27,18 @@
 
 
 <tr>
-    <th scopre="row">{!! Form::label('gender', 'Gender:') !!}</th>
+    <th scopre="row">{!! Form::label('gender', 'Sex:') !!}</th>
     <td>{{ get_enum_value('enum_gender', $employee->gender) }}</td>
+</tr>
+
+<tr>
+    <th scopre="row">{!! Form::label('religion', 'Religion:') !!}</th>
+    <td>{{ get_enum_value('enum_religion', $employee->religion) }}</td>
 </tr>
 
 
 <tr>
-    <th scopre="row">{!! Form::label('birthdate', 'Birthdate:') !!}</th>
+    <th scopre="row">{!! Form::label('birthdate', 'Date of Birth:') !!}</th>
     <td>{{ $employee->birthdate }}</td>
 </tr>
 
@@ -59,10 +64,10 @@
     @endif
 </tr>
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('place_of_birth', 'Place Of Birth:') !!}</th>
     <td>{{ $employee->place_of_birth }}</td>
-</tr>
+</tr> --}}
 
 
 {{-- <tr>
@@ -77,12 +82,6 @@
 
 
 <tr>
-    <th scopre="row">{!! Form::label('first_appointment_date', 'First Appointment Date:') !!}</th>
-    <td>{{ $employee->first_appointment_date }}</td>
+    <th scopre="row">{!! Form::label('date_of_first_appointment', 'Date of First Appointment:') !!}</th>
+    <td>{{ $employee->date_of_first_appointment }}</td>
 </tr>
-
-
-
-
-
-

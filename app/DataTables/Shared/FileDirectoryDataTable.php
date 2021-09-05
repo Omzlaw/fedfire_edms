@@ -26,7 +26,7 @@ class FileDirectoryDataTable extends DataTable
             return $row->employee->getFullName();
         })
         ->addColumn('service_no', function($row){
-            return $row->employee->file_no;
+            return $row->employee->service_number;
         })
         ->addColumn('status', function($row){
             return get_enum_value('enum_status', $row->status);

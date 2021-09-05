@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Humanresource;
 
-use Flash;
 use Response;
+use Laracasts\Flash\Flash;
 use App\Models\Shared\State;
 use App\Models\Shared\Country;
 use App\Http\Requests\Humanresource;
@@ -39,7 +39,13 @@ class EmployeeAddressController extends AppBaseController
         $local_govt_areas = new LocalGovtArea;
         $states = new State;
         $countries = new Country;
-        return view('humanresource.employee_addresses.create', compact('employees', 'states', 'countries', 'local_govt_areas'));
+        $employeeAddressForCurrentEmployeeCount =  EmployeeAddress::where('employee_id', '=', session('employee_id'))->count();
+        if ($employeeAddressForCurrentEmployeeCount == 2) {
+            Flash::success('Only two addresses are allowed.');
+            close_modal_refresh();
+        } else {
+            return view('humanresource.employee_addresses.create', compact('employees', 'states', 'countries', 'local_govt_areas'));
+        }
     }
 
     /**
@@ -51,15 +57,21 @@ class EmployeeAddressController extends AppBaseController
      */
     public function store(CreateEmployeeAddressRequest $request)
     {
-        $input = $request->all();
+        $employeeAddressForCurrentEmployeeCount =  EmployeeAddress::where('employee_id', '=', session('employee_id'))->count();
+        if ($employeeAddressForCurrentEmployeeCount == 2) {
+            Flash::success('Only two addresses are allowed.');
+            close_modal_refresh();
+        } else {
+            $input = $request->all();
 
-        /** @var EmployeeAddress $employeeAddress */
-        $employeeAddress = EmployeeAddress::create($input);
+            /** @var EmployeeAddress $employeeAddress */
+            $employeeAddress = EmployeeAddress::create($input);
 
-        Flash::success('Employee Address saved successfully.');
-        close_modal_refresh();
+            Flash::success('Employee Address saved successfully.');
+            close_modal_refresh();
 
-        // return redirect(route('humanresource.employeeAddresses.index'));
+            // return redirect(route('humanresource.employeeAddresses.index'));
+        }
     }
 
     /**

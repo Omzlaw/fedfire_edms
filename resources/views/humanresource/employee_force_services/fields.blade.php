@@ -86,7 +86,7 @@
     </div>
 </div>
 
-@section('footer_scripts')
+{{-- @section('footer_scripts')
 <script type="text/javascript">
     $('#date_updated').datetimepicker({
             format: 'YYYY-MM-DD',
@@ -94,7 +94,7 @@
             sideBySide: true
         });
 </script>
-@endsection
+@endsection --}}
 
 
 <!-- Submit Field -->

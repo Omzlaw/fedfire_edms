@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property \App\Models\Humanresource\MaritalStatus $maritalStatus
  * @property \App\Models\User $createdBy
  * @property \App\Models\User $updatedBy
- * @property string $file_no
+ * @property string $service_number
  * @property string $first_name
  * @property string $last_name
  * @property integer $gender
@@ -47,19 +47,24 @@ class Employee extends Model
 
 
     public $fillable = [
-        'file_no',
+        'service_number',
         'first_name',
         'middle_name',
         'last_name',
         'staff_code',
+        'religion',
         'gender',
+        'gl',
         'birthdate',
         'place_of_birth',
         'profile_picture',
         'marital_status_id',
-        'first_appointment_date',
-        'first_arrival_date',
-        'present_appointment_date',
+        'date_of_first_appointment',
+        // 'first_arrival_date',
+        'assumption_of_duty_date',
+        'date_of_present_appointment',
+        'date_of_confirmation',
+        'type_of_appointment',
         'resumption_of_duty_date',
         'nationality',
         'geo_political_zone',
@@ -86,18 +91,23 @@ class Employee extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'file_no' => 'string',
+        'service_number' => 'string',
         'first_name' => 'string',
         'middle_name' => 'string',
         'last_name' => 'string',
         'staff_code' => 'string',
+        'religion' => 'integer',
         'gender' => 'integer',
+        'gl' => 'integer',
         'birthdate' => 'string',
         'place_of_birth' => 'string',
         'profile_picture' => 'string',
         'marital_status_id' => 'integer',
-        'first_appointment_date' => 'string',
-        'first_arrival_date' => 'string',
+        'date_of_first_appointment' => 'string',
+        'type_of_appointment' => 'string',
+        'assumption_of_duty_date' => 'string',
+        'date_of_present_appointment' => 'string',
+        'date_of_confirmation' => 'string',
         'nationality' => 'integer',
         'geo_political_zone' => 'integer',
         'state_of_origin' => 'integer',
@@ -122,18 +132,20 @@ class Employee extends Model
      * @var array
      */
     public static $rules = [
-        'file_no' => 'Required',
+        'service_number' => 'Required|Unique:employees',
         'first_name' => 'Required',
         // 'middle_name' => 'Required',
         'last_name' => 'Required',
         'gender' => 'Required',
+        'religion' => 'Required',
         'birthdate' => 'Required',
-        // 'place_of_birth' => 'Required',
-        // 'profile_picture' => 'Required',
+        'gl' => 'Required',
+        'type_of_appointment' => 'Required',
         'marital_status_id' => 'Required',
-        'first_appointment_date' => 'Required',
-        'first_arrival_date' => 'Required',
-        'nationality' => 'Required',
+        'date_of_first_appointment' => 'Required',
+        'date_of_present_appointment' => 'Required',
+        'assumption_of_duty_date' => 'Required',
+        // 'nationality' => 'Required',
         // 'geo_political_zone' => 'Required',
         // 'state_of_origin' => 'Required',
         // 'senatorial_zone' => 'Required',
@@ -141,9 +153,9 @@ class Employee extends Model
         // 'decorations' => 'Required',
         // 'file_upload' => 'Required',
         // 'remark' => 'Required',
-        'email' => 'Required',
-        'phone' => 'Required',
-        'status' => 'Required',
+        'email' => 'Required|Unique:employees',
+        'phone' => 'Required|Unique:employees',
+        // 'status' => 'Required',
      //   'created_by' => 'Required',
     //    'updated_by' => 'Required',
         // 'current_appointment' => 'Required'
@@ -248,7 +260,7 @@ class Employee extends Model
 
     public function addresses()
     {
-        return $this->hasMany(EmployeeAddress::class)->select('id', 'address', 'status');
+        return $this->hasMany(EmployeeAddress::class)->select('id', 'address', 'status', 'address_type');
     }
 
     public function censures()
@@ -278,6 +290,11 @@ class Employee extends Model
         return $this->hasMany(EmployeeRank::class)->select('id', 'employee_id', 'rank_type_id', 'status');
     }
 
+    public function services()
+    {
+        return $this->hasMany(EmployeeService::class)->select('id', 'present_department', 'state', 'region', 'zone', 'location', 'status', 'present_station');
+    }
+
     public function forceServices()
     {
         return $this->hasMany(EmployeeForceService::class)->select('id', 'area_of_service', 'service_no', 'last_unit', 'reason_for_leaving', 'remark');
@@ -305,7 +322,7 @@ class Employee extends Model
 
     public function nextOfKins()
     {
-        return $this->hasMany(EmployeeNextOfKin::class)->select('id', 'name', 'address', 'relationship_id');
+        return $this->hasMany(EmployeeNextOfKin::class)->select('id', 'name', 'address', 'phone', 'relationship_id');
     }
 
     public function publicServices()

@@ -1,4 +1,4 @@
-import { DynamsoftEnumsDBR } from "./Dynamsoft.Enum";
+import { DynamsoftEnums as Dynamsoft } from "./Dynamsoft.Enum";
 
 export interface BarcodeReader {
     /**
@@ -40,11 +40,11 @@ export interface TextResult {
     /**
      * The barcode format.
      */
-    barcodeFormat: DynamsoftEnumsDBR.EnumBarcodeFormat | number; 
+    barcodeFormat: Dynamsoft.EnumBarcodeFormat | number;
     /**
      * Extra barcde formats.
      */
-    barcodeFormat_2: DynamsoftEnumsDBR.EnumBarcodeFormat_2 | number;
+    barcodeFormat_2: Dynamsoft.EnumBarcodeFormat_2 | number;
     /**
      * Barcode formats as a string.
      */

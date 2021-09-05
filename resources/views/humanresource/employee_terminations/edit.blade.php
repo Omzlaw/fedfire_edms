@@ -15,7 +15,7 @@ Employee Termination @parent
     </section>
    <div class="content">
        @include('adminlte-templates::common.errors')
-       <div class="card">
+       <div class="card mb-100">
            <div class="card-body">
                 {!! Form::model($employeeTermination, ['route' => ['humanresource.employeeTerminations.update', $employeeTermination->id], 'method' => 'patch', 'files' => true,'class' => 'form-horizontal']) !!}
 

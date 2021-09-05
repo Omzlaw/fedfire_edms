@@ -15,7 +15,7 @@ Employee Education @parent
     </section>
     <div class="content">
         @include('adminlte-templates::common.errors')
-        <div class="card">
+        <div class="card mb-100">
             <div class="card-body">
                 {!! Form::open(['route' => 'humanresource.employeeEducations.store', 'files' => true,'class' => 'form-horizontal']) !!}
 

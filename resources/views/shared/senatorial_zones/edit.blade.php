@@ -14,7 +14,7 @@ Senatorial Zone @parent
     </section>
    <div class="content">
        @include('adminlte-templates::common.errors')
-       <div class="card">
+       <div class="card mb-100">
            <div class="card-body">
                 {!! Form::model($senatorialZone, ['route' => ['shared.senatorialZones.update', $senatorialZone->id], 'method' => 'patch','class' => 'form-horizontal']) !!}
 

@@ -41,6 +41,7 @@ class EmployeeEducation extends Model
 
 
     public $fillable = [
+        'qualification_type_id',
         'school_name',
         'certificate_id',
         'school_type_id',
@@ -63,6 +64,7 @@ class EmployeeEducation extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'qualification_type_id' => 'string',
         'school_name' => 'string',
         'certificate_id' => 'string',
         'school_type_id' => 'string',
@@ -85,6 +87,7 @@ class EmployeeEducation extends Model
      */
     public static $rules = [
         'school_name' => 'Required',
+        'qualification_type_id' => 'Required',
         'certificate_id' => 'Required',
         'school_type_id' => 'Required',
         'from_date' => 'Required',
@@ -105,6 +108,14 @@ class EmployeeEducation extends Model
     public function certificate()
     {
         return $this->belongsTo(\App\Models\Shared\CertificateType::class, 'certificate_id', 'id');
+    }
+
+            /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function qualificationType()
+    {
+        return $this->belongsTo(\App\Models\Shared\QualificationType::class, 'qualification_type_id', 'id');
     }
 
     /**

@@ -1,9 +1,9 @@
 <!-- File No Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('file_no', 'Service No:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('service_number', 'Service No:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('file_no', null, ['class' => 'form-control']) !!}
+            {!! Form::text('service_number', null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div>
@@ -44,9 +44,19 @@
 <!-- Gender Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('gender', 'Gender:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('gender', 'Sex:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::select('gender', enum_gender(), null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
+<!-- Religion Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('religion', 'Religion:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::select('religion', enum_religion(), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div>
@@ -55,7 +65,7 @@
 <!-- Birthdate Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('birthdate', 'Birthdate:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('birthdate', 'Date of Birth:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::date('birthdate', null, ['class' => 'form-control', 'id' => 'birthdate']) !!}
         </div>
@@ -89,7 +99,7 @@
     <div class="row">
         {!! Form::label('profile_picture', 'Profie Picture:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::file('profile_picture') !!}
+            {!! Form::file('profile_picture', array('id' => 'profile_picture')) !!}
         </div>
     </div>
 </div>
@@ -109,9 +119,9 @@
 <!-- First Appointment Date Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('first_appointment_date', 'First Appointment Date:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('date_of_first_appointment', 'Date of First Appointment :', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::date('first_appointment_date', null, ['class' => 'form-control', 'id' => 'first_appointment_date']) !!}
+            {!! Form::date('date_of_first_appointment', null, ['class' => 'form-control', 'id' => 'first_appointment_date']) !!}
         </div>
     </div>
 </div>
@@ -126,32 +136,62 @@
     </script>
 @endsection --}}
 
-<!-- Date of Resumption of Duty Field -->
+<!-- Date of Assumption of Duty Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('resumption_of_duty_date', 'Date of Resumption of Duty:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('assumption_of_duty_date', 'Assumption of Duty Date:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::date('resumption_of_duty_date', null, ['class' => 'form-control', 'id' => 'resumption_of_duty_date']) !!}
+            {!! Form::date('assumption_of_duty_date', null, ['class' => 'form-control', 'id' => 'assumption_of_duty_date']) !!}
         </div>
     </div>
 </div>
 
 <!-- First Arrival Date Field -->
-<div class="form-group">
+{{-- <div class="form-group">
     <div class="row">
         {!! Form::label('first_arrival_date', 'First Arrival Date:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::date('first_arrival_date', null, ['class' => 'form-control', 'id' => 'first_arrival_date']) !!}
         </div>
     </div>
-</div>
+</div> --}}
 
 <!--  Present Appointment Date Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('present_appointment_date', 'Present Appointment Date:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('date_of_present_appointment', 'Date of Present Appointment :', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::date('present_appointment_date', null, ['class' => 'form-control', 'id' => 'present_appointment_date']) !!}
+            {!! Form::date('date_of_present_appointment', null, ['class' => 'form-control', 'id' => 'date_of_present_appointment']) !!}
+        </div>
+    </div>
+</div>
+
+<!--  Date of Confirmation Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('date_of_confirmation', 'Date of Confirmation:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::date('date_of_confirmation', null, ['class' => 'form-control', 'id' => 'date_of_confirmation']) !!}
+        </div>
+    </div>
+</div>
+
+<!-- GL Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('gl', 'Grade Level:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::select('gl', enum_grade_level(), null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
+<!-- Type of Appointment Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('type_of_appointment', 'Type of Appointment:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::select('type_of_appointment', enum_type_of_appointment(), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div>
@@ -427,8 +467,16 @@
         $('#geoPoliticalZoneSelector').prop('disabled', 'disabled');
         $('#senatorialZoneSelector').prop('disabled', 'disabled');
         $('#localGovtAreaSelector').prop('disabled', 'disabled');
+
     }
 
+    var profilePicture = document.getElementById('profile_picture');
+    profilePicture.addEventListener('change', function(event) {
+        if(profilePicture.files[0].size > 150000) {
+            alert('File is larger then 150kB! Please reduce size')
+            $("#profile_picture").val(null);
+        }
+    })
     function countryStateSelector(event) {
 
         var countrySelect = $('#countrySelector');

@@ -89,19 +89,17 @@ $rank_types = new RankType();
                         <div class=""><strong>EDMS</strong></div>
                         <div href="#" id="date" class=""></div>
                     </div>
-                    <!-- Header Navbar: style can be found in header-->
-                    <!-- Sidebar toggle button-->
-                    <span class="">
+                    <div class="{{ Request::is('humanresource/employees') || Request::is('fileDirectories') ? 'mt-3' : '' }}">
                         {!! Form::open(['route' => 'records', 'id' => 'search-form', 'class' => 'form-horizontal', 'files' => true]) !!}
                         <span class="" style="display:flex">
-                            {!! Form::select('rank_type', modelDropdown($rank_types, 'id', 'title'), null, ['class' => 'form-control mr-3']) !!}
+                            {!! Form::select('rank_type', modelDropdown($rank_types, 'id', 'title'), null, ['class' => 'form-control']) !!}
                             {!! Form::text('search_query', null, ['required', 'class' => 'form-control', 'placeholder' => 'Employee search']) !!}
                             <a onclick="event.preventDefault();
                             document.getElementById('search-form').submit();"><i
-                                    class="fa fa-search secondary-color fs-16 mt-10 ml-10 mr-10"></i></a>
+                                    class="fa fa-search secondary-color fs-16 mt-10 ml-10"></i></a>
                         </span>
                         {!! Form::close() !!}
-                    </span>
+                    </div>
                     <div class="navbar-right">
                         <ul class="navbar-nav nav">
                             <li class="dropdown notifications-menu nav-item dropdown">

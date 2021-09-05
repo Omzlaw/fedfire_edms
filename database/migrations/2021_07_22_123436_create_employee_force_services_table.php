@@ -16,6 +16,11 @@ class CreateEmployeeForceServicesTable extends Migration
         Schema::create('employee_force_services', function (Blueprint $table) {
             $table->increments('id');
             $table->string('area_of_service');
+            $table->string('location');
+            $table->integer('department')->unsigned()->nullable();
+            $table->integer('zone')->unsigned()->nullable();
+            $table->integer('state')->unsigned()->nullable();
+            $table->integer('region')->unsigned()->nullable();
             $table->string('service_no');
             $table->string('last_unit');
             $table->string('reason_for_leaving');

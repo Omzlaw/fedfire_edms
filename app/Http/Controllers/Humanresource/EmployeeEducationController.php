@@ -8,6 +8,7 @@ use App\Models\Shared\SchoolType;
 use App\Http\Requests\Humanresource;
 use App\Models\Humanresource\Employee;
 use App\Models\Shared\CertificateType;
+use App\Models\Shared\QualificationType;
 use App\Http\Controllers\AppBaseController;
 use App\Models\Humanresource\EmployeeEducation;
 use App\DataTables\Humanresource\EmployeeEducationDataTable;
@@ -36,8 +37,9 @@ class EmployeeEducationController extends AppBaseController
     {
         $employees = new Employee;
         $certificate_types = new CertificateType;
+        $qualification_types = new QualificationType;
         $school_types = new SchoolType;
-        return view('humanresource.employee_educations.create', compact('employees', 'certificate_types', 'school_types'));
+        return view('humanresource.employee_educations.create', compact('employees', 'certificate_types', 'school_types', 'qualification_types'));
     }
 
     /**
@@ -101,7 +103,8 @@ class EmployeeEducationController extends AppBaseController
         $employees = new Employee;
         $certificate_types = new CertificateType;
         $school_types = new SchoolType;
-        return view('humanresource.employee_educations.edit', compact('employees', 'certificate_types', 'school_types'))->with('employeeEducation', $employeeEducation);
+        $qualification_types = new QualificationType;
+        return view('humanresource.employee_educations.edit', compact('employees', 'certificate_types', 'school_types', 'qualification_types'))->with('employeeEducation', $employeeEducation);
     }
 
     /**

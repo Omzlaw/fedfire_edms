@@ -125,6 +125,7 @@
                     <a href="{{ route('humanresource.employeeWives.index') }}">
                         <span class="mm-text ">Wives</span></a>
                 </li>
+
             </ul>
 </li> -->
 
@@ -273,4 +274,5 @@
         <span class="menu-icon"><i class="im im-icon-Structure"></i></span>
     </a>
 </li> --}}
+
 

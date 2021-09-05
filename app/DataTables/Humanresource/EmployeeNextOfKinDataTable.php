@@ -74,6 +74,7 @@ class EmployeeNextOfKinDataTable extends DataTable
         return [
             // 'id',
             'name',
+            'phone',
             'address',
             'relationship_type',
             'employee',

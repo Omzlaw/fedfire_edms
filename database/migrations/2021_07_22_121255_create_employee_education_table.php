@@ -15,17 +15,18 @@ class CreateEmployeeEducationTable extends Migration
     {
         Schema::create('employee_education', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('qualification_type_id')->unsigned();
             $table->string('school_name');
-            $table->integer('certificate_id')->unsigned();
-            $table->integer('school_type_id')->unsigned();
-            $table->date('from_date');
+            $table->integer('certificate_id')->unsigned()->nullable();
+            $table->integer('school_type_id')->unsigned()->nullable();
+            $table->date('from_date')->nullable();
             $table->date('to_date');
             $table->integer('employee_id')->unsigned();
             $table->string('file_upload')->nullable();
-            $table->integer('status')->default(1);
+            $table->integer('status')->default(1)->nullable();
             $table->string('remark')->nullable();
             $table->integer('checked_by')->unsigned()->nullable();
-            $table->date('checked_at');
+            $table->date('checked_at')->nullable();
             $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();
             $table->timestamps();

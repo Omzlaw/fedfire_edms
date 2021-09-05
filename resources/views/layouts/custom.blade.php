@@ -46,7 +46,7 @@
     <script src="{{ asset('vendors/perfect-scrollbar/js/perfect-scrollbar.js')}}"></script>
     {{-- <script src="{{ asset('js/moment.min.js')}}"></script>
     <script src="{{ asset('js/dateTimePicker.min.js')}}"></script> --}}
-    <script src="{{ asset('js/custom.js')}}"></script>
+    {{-- <script src="{{ asset('js/custom.js')}}"></script> --}}
     @yield('footer_scripts')
 
 </body>

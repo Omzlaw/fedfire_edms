@@ -30,7 +30,7 @@
     </div>
 </div>
 
-@section('footer_scripts')
+{{-- @section('footer_scripts')
 <script type="text/javascript">
     $('#birthday').datetimepicker({
             format: 'YYYY-MM-DD',
@@ -38,7 +38,7 @@
             sideBySide: true
         });
 </script>
-@endsection
+@endsection --}}
 
 
 <!-- Employee Id Field -->
@@ -87,7 +87,7 @@
     </div>
 </div>
 
-@section('footer_scripts')
+{{-- @section('footer_scripts')
 <script type="text/javascript">
     $('#checked_at').datetimepicker({
             format: 'YYYY-MM-DD',
@@ -95,7 +95,7 @@
             sideBySide: true
         });
 </script>
-@endsection
+@endsection --}}
 
 
 <!-- Submit Field -->

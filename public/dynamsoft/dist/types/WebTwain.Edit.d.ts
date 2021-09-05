@@ -1,4 +1,4 @@
-import { DynamsoftEnumsDWT } from "./Dynamsoft.Enum";
+import { DynamsoftEnums as Dynamsoft } from "./Dynamsoft.Enum";
 import { WebTwainBuffer } from "./WebTwain.Buffer";
 
 export interface WebTwainEdit extends WebTwainBuffer {
@@ -39,7 +39,7 @@ export interface WebTwainEdit extends WebTwainBuffer {
         index: number,
         width: number,
         height: number,
-        method: DynamsoftEnumsDWT.EnumDWT_InterpolationMethod | number,
+        method: Dynamsoft.EnumDWT_InterpolationMethod | number,
         successCallback?: () => void,
         failureCallback?: (
             errorCode: number,
@@ -63,7 +63,7 @@ export interface WebTwainEdit extends WebTwainBuffer {
         xResolution: number,
         yResolution: number,
         resample: boolean,
-        method: DynamsoftEnumsDWT.EnumDWT_InterpolationMethod | number,
+        method: Dynamsoft.EnumDWT_InterpolationMethod | number,
         successCallback?: () => void,
         failureCallback?: (
             errorCode: number,
@@ -235,7 +235,7 @@ export interface WebTwainEdit extends WebTwainBuffer {
         index: number,
         angle: number,
         keepSize: boolean,
-        method: DynamsoftEnumsDWT.EnumDWT_InterpolationMethod | number,
+        method: Dynamsoft.EnumDWT_InterpolationMethod | number,
         successCallback?: () => void,
         failureCallback?: (
             errorCode: number,

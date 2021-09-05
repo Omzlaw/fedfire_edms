@@ -15,6 +15,11 @@
     <td>{{ $employeeNextOfKin->address }}</td>
 </tr>
 
+<tr>
+    <th scopre="row">{!! Form::label('phone', 'Phone:') !!}</th>
+    <td>{{ $employeeNextOfKin->phone }}</td>
+</tr>
+
 
 <tr>
     <th scopre="row">{!! Form::label('relationship_id', 'Relationship:') !!}</th>

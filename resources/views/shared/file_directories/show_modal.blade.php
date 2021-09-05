@@ -21,7 +21,7 @@ File Directories @parent
     @include('flash::message')
 
     <div class="clearfix"></div>
-    <div class="card">
+    <div class="card mb-100">
         <div class="table-responsive">
         <table class="table table-default">
             @include('shared.file_directories.show_fields')

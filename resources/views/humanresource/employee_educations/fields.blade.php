@@ -1,3 +1,13 @@
+<!-- Qualification Type Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('qualification_type_id', 'Qualification Type:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::select('qualification_type_id', modelDropdown($qualification_types, 'id', 'title'), null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
 <!-- School Name Field -->
 <div class="form-group">
     <div class="row">
@@ -41,7 +51,7 @@
     </div>
 </div>
 
-@section('footer_scripts')
+{{-- @section('footer_scripts')
 <script type="text/javascript">
     $('#from_date').datetimepicker({
             format: 'YYYY-MM-DD',
@@ -49,7 +59,7 @@
             sideBySide: true
         });
 </script>
-@endsection
+@endsection --}}
 
 
 <!-- To Date Field -->
@@ -62,15 +72,15 @@
     </div>
 </div>
 
-@section('footer_scripts')
+{{-- @section('footer_scripts')
 <script type="text/javascript">
     $('#to_date').datetimepicker({
             format: 'YYYY-MM-DD',
             useCurrent: true,
             sideBySide: true
-        })
+        });
 </script>
-@endsection
+@endsection --}}
 
 <!-- Employee Id Field -->
 {{-- <div class="form-group">
@@ -127,7 +137,7 @@
     </div>
 </div>
 
-@section('footer_scripts')
+{{-- @section('footer_scripts')
 <script type="text/javascript">
     $('#checked_at').datetimepicker({
             format: 'YYYY-MM-DD',
@@ -135,7 +145,7 @@
             sideBySide: true
         });
 </script>
-@endsection
+@endsection --}}
 
 
 <!-- Submit Field -->

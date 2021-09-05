@@ -17,23 +17,46 @@
 </tr>
 
 <tr>
-    <th scopre="row">{!! Form::label('resumption_of_duty_date', 'Date of Resumption of Duty:') !!}</th>
-    @if (isset($employee->resumption_of_duty_date))
-        <td>{{ $employee->resumption_of_duty_date }}</td>
+    <th scopre="row">{!! Form::label('gl', 'Grade Level:') !!}</th>
+    @if (isset($employee->gl))
+        <td>{{ get_enum_value('enum_grade_level', $employee->gl) }}</td>
     @else
         <td></td>
     @endif
 </tr>
 
 <tr>
-    <th scopre="row">{!! Form::label('first_arrival_date', 'First Arrival Date:') !!}</th>
-    <td>{{ $employee->first_arrival_date }}</td>
+    <th scopre="row">{!! Form::label('type_of_appointment', 'Type of Appointment') !!}</th>
+    @if (isset($employee->type_of_appointment))
+        <td>{{ get_enum_value('enum_type_of_appointment', $employee->type_of_appointment) }}</td>
+    @else
+        <td></td>
+    @endif
 </tr>
 
 <tr>
-    <th scopre="row">{!! Form::label('present_appointment_date', 'Date of Present Appointment:') !!}</th>
-    @if (isset($employee->present_appointment_date))
-        <td>{{ $employee->present_appointment_date }}</td>
+    <th scopre="row">{!! Form::label('assumption_of_duty_date', 'Assumption of Duty Date:') !!}</th>
+    @if (isset($employee->assumption_of_duty_date))
+        <td>{{ $employee->assumption_of_duty_date }}</td>
+    @else
+        <td></td>
+    @endif
+</tr>
+
+<tr>
+    <th scopre="row">{!! Form::label('date_of_confirmation', 'Date of Confirmation:') !!}</th>
+    @if (isset($employee->date_of_confirmation))
+        <td>{{ $employee->date_of_confirmation }}</td>
+    @else
+        <td></td>
+    @endif
+</tr>
+
+
+<tr>
+    <th scopre="row">{!! Form::label('date_of_present_appointment', 'Date of Present Appointment:') !!}</th>
+    @if (isset($employee->date_of_present_appointment))
+        <td>{{ $employee->date_of_present_appointment }}</td>
     @else
         <td></td>
     @endif
@@ -44,14 +67,6 @@
     <th scopre="row">{!! Form::label('decorations', 'Decorations:') !!}</th>
     <td>{{ $employee->decorations }}</td>
 </tr>
-
-
-
-{{-- <tr>
-    <th scopre="row">{!! Form::label('file_upload', 'File Upload:') !!}</th>
-    <td>{{ $employee->file_upload }}</td>
-</tr> --}}
-
 
 <tr>
     <th scopre="row">{!! Form::label('remark', 'Remark:') !!}</th>
@@ -77,31 +92,3 @@
 </tr>
 
 
-{{-- <tr>
-    <th scopre="row">{!! Form::label('created_by', 'Created By:') !!}</th>
-    <td>{{ $employee->created_by }}</td>
-</tr>
-
-
-<tr>
-    <th scopre="row">{!! Form::label('updated_by', 'Updated By:') !!}</th>
-    <td>{{ $employee->updated_by }}</td>
-</tr> --}}
-
-
-{{-- <tr>
-    <th scopre="row">{!! Form::label('current_appointment', 'Current Appointment:') !!}</th>
-    <td>{{ $employee->current_appointment }}</td>
-</tr> --}}
-
-
-{{-- <tr>
-    <th scopre="row">{!! Form::label('created_at', 'Created At:') !!}</th>
-    <td>{{ $employee->created_at }}</td>
-</tr>
-
-
-<tr>
-    <th scopre="row">{!! Form::label('updated_at', 'Updated At:') !!}</th>
-    <td>{{ $employee->updated_at }}</td>
-</tr> --}}

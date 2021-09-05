@@ -16,7 +16,7 @@
     <div class="content">
         @include('adminlte-templates::common.errors')
         @include('flash::message')
-        <div class="card">
+        <div class="card mb-100">
             <div class="card-body ml-15">
                 <div class="table-responsive">
                     <table id="table" class="table table-striped table-bordered">

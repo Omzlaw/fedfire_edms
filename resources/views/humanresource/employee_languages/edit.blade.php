@@ -15,7 +15,7 @@ Employee Language @parent
     </section>
    <div class="content">
        @include('adminlte-templates::common.errors')
-       <div class="card">
+       <div class="card mb-100">
            <div class="card-body">
                 {!! Form::model($employeeLanguage, ['route' => ['humanresource.employeeLanguages.update', $employeeLanguage->id], 'method' => 'patch', 'files' => true,'class' => 'form-horizontal']) !!}
 

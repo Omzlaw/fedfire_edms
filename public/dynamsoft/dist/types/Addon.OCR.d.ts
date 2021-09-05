@@ -1,4 +1,4 @@
-import { DynamsoftEnumsDWT } from "./Dynamsoft.Enum";
+import { DynamsoftEnums as Dynamsoft } from "./Dynamsoft.Enum";
 
 export interface OCR {
     /**
@@ -68,17 +68,17 @@ export interface OCR {
      * Configure the OCR operation.
      * @param language Specify the target language.
      */
-    SetLanguage(language: DynamsoftEnumsDWT.EnumDWT_OCRLanguage | string): boolean;
+    SetLanguage(language: Dynamsoft.EnumDWT_OCRLanguage | string): boolean;
     /**
      * Configure the OCR operation.
      * @param format Specify the output format.
      */
-    SetOutputFormat(format: DynamsoftEnumsDWT.EnumDWT_OCROutputFormat | number): boolean;
+    SetOutputFormat(format: Dynamsoft.EnumDWT_OCROutputFormat | number): boolean;
     /**
      * Configure the OCR operation.
      * @param mode Specify the OCR page layout analysis mode.
      */
-    SetPageSetMode(mode: DynamsoftEnumsDWT.EnumDWT_OCRPageSetMode | number): boolean;
+    SetPageSetMode(mode: Dynamsoft.EnumDWT_OCRPageSetMode | number): boolean;
     /**
      * Perform OCR on the specified image in the buffer.
      * @param index Specify the image.
