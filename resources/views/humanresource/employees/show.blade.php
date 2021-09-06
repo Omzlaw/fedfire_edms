@@ -67,9 +67,9 @@ $services = $data['services'];
                                     {!! Form::submit('View Files', ['class' => 'btn custom-outline-primary   ']) !!}
                                     {!! Form::close() !!}
                                 </div>
-                                <div class="form-group col-8">
+                                {{-- <div class="form-group col-8">
                                     <a class="btn secondary-color-bg" href="{{ route('report') }}">Record of Service</a>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="card-header bg-secondary bg-gradient">
                                 <h6>Bio-Data</h6>

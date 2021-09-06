@@ -177,7 +177,7 @@ body > .header .navbar {
 
 /****** wrapper RIGHT SIDE  *******/
 .right-aside {
-  background-image: url("/images/watermark_bg.jpg");
+  background-image: url("./images/watermark_bg.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;

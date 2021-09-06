@@ -30,6 +30,20 @@ $rank_types = new RankType();
             overflow: auto;
         }
 
+        @font-face {
+            font-family: poppins;
+            src: url({{ asset('fonts/Poppins/Poppins-Regular.ttf') }});
+        }
+
+        * {
+            font-family: poppins;
+        }
+
+        .right-aside {
+            background-image: url({{ asset('images/watermark_bg.jpg') }});
+        }
+
+
         /* .side-nav {
             position: fixed;
             width: 235px;
@@ -83,15 +97,16 @@ $rank_types = new RankType();
 
                         <i class="fa fa-th-list secondary-color"></i>
                     </a>
-                    <div href="#" id="time" class=""></div>
+                    <div href="#" id="time" class="___class_+?8___"></div>
                     <div class="navbar-center ml-auto mr-auto text-center"><strong>FEDERAL FIRE SERIVICE
                         </strong>
-                        <div class=""><strong>EDMS</strong></div>
-                        <div href="#" id="date" class=""></div>
+                        <div class="___class_+?10___"><strong>EDMS</strong></div>
+                        <div href="#" id="date" class="___class_+?11___"></div>
                     </div>
-                    <div class="{{ Request::is('humanresource/employees') || Request::is('fileDirectories') ? 'mt-3' : '' }}">
+                    <div
+                        class="{{ Request::is('humanresource/employees') || Request::is('fileDirectories') ? 'mt-3' : '' }}">
                         {!! Form::open(['route' => 'records', 'id' => 'search-form', 'class' => 'form-horizontal', 'files' => true]) !!}
-                        <span class="" style="display:flex">
+                        <span class="___class_+?13___" style="display:flex">
                             {!! Form::select('rank_type', modelDropdown($rank_types, 'id', 'title'), null, ['class' => 'form-control']) !!}
                             {!! Form::text('search_query', null, ['required', 'class' => 'form-control', 'placeholder' => 'Employee search']) !!}
                             <a onclick="event.preventDefault();

@@ -41,11 +41,11 @@
         <!-- Login box.scss -->
         <!-- ============================================================== -->
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center"
-            style="background:url(../../asset-login/assets/images/big/auth-bg.jpg) no-repeat center center; background-color:rgba(255, 255, 255, 0.6); background-blend-mode:overlay;">
+            style="background:url({{ asset('asset-login/assets/images/big/auth-bg.jpg') }}) no-repeat center center; background-color:rgba(255, 255, 255, 0.6); background-blend-mode:overlay;">
             <div class="auth-box">
                 <div id="loginform">
                     <div class="logo">
-                        <span class="db"><img src="../../asset-login/assets/images/logo-icon.png" alt="logo" width="50"
+                        <span class="db"><img src="{{ asset('asset-login/assets/images/logo-icon.png') }}" alt="logo" width="50"
                                 height="50" /></span>
                         <h5 class="font-medium mb-3 mt-3">Electronic Document Management System</h5>
                     </div>
