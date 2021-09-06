@@ -51,6 +51,7 @@ class EmployeePublicServiceController extends AppBaseController
         $employeePublicService = EmployeePublicService::create($input);
 
         Flash::success('Employee Public Service saved successfully.');
+        add_audit('create', 'Employee Public Service');
         close_modal_refresh();
 
         //return redirect(route('humanresource.employeePublicServices.index'));
@@ -120,6 +121,7 @@ class EmployeePublicServiceController extends AppBaseController
 
         $employeePublicService->fill($request->all());
         $employeePublicService->save();
+        add_audit('update', 'Employee Public Service');
 
         Flash::success('Employee Public Service updated successfully.');
         close_modal_refresh();
@@ -148,6 +150,7 @@ class EmployeePublicServiceController extends AppBaseController
         }
 
         $employeePublicService->delete();
+        add_audit('delete', 'Employee Public Service');
 
         Flash::success('Employee Public Service deleted successfully.');
         return redirect(route('humanresource.employees.show', session('employee_id')));

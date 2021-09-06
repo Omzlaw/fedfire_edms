@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Requests\Humanresource;
+namespace App\Http\Requests\Shared;
 
-use Illuminate\Http\Request;
-use App\Models\Humanresource\Employee;
 use Illuminate\Foundation\Http\FormRequest;
+use App\Models\Shared\AuditTrail;
 
-class UpdateEmployeeRequest extends FormRequest
+class UpdateAuditTrailRequest extends FormRequest
 {
 
     /**
@@ -26,8 +25,7 @@ class UpdateEmployeeRequest extends FormRequest
      */
     public function rules()
     {
-        $employee = new Employee;
-        $rules = $employee->edit_rules();
+        $rules = AuditTrail::$rules;
         
         return $rules;
     }

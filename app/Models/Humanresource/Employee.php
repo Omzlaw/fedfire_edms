@@ -2,8 +2,10 @@
 
 namespace App\Models\Humanresource;
 
-use Eloquent as Model;
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Models\Shared\FileDirectory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Employee
@@ -131,10 +133,10 @@ class Employee extends Model
      *
      * @var array
      */
+
     public static $rules = [
         'service_number' => 'Required|Unique:employees',
         'first_name' => 'Required',
-        // 'middle_name' => 'Required',
         'last_name' => 'Required',
         'gender' => 'Required',
         'religion' => 'Required',
@@ -145,21 +147,30 @@ class Employee extends Model
         'date_of_first_appointment' => 'Required',
         'date_of_present_appointment' => 'Required',
         'assumption_of_duty_date' => 'Required',
-        // 'nationality' => 'Required',
-        // 'geo_political_zone' => 'Required',
-        // 'state_of_origin' => 'Required',
-        // 'senatorial_zone' => 'Required',
-        // 'local_govt_area' => 'Required',
-        // 'decorations' => 'Required',
-        // 'file_upload' => 'Required',
-        // 'remark' => 'Required',
         'email' => 'Required|Unique:employees',
-        'phone' => 'Required|Unique:employees',
-        // 'status' => 'Required',
-     //   'created_by' => 'Required',
-    //    'updated_by' => 'Required',
-        // 'current_appointment' => 'Required'
+        'phone' => 'Required|Unique:employees'
     ];
+
+    public function edit_rules() {
+        $id = session('employee_id');
+        return [
+            'service_number' => ['Required',Rule::unique('employees')->ignore($id)],
+            'first_name' => 'Required',
+            'last_name' => 'Required',
+            'gender' => 'Required',
+            'religion' => 'Required',
+            'birthdate' => 'Required',
+            'gl' => 'Required',
+            'type_of_appointment' => 'Required',
+            'marital_status_id' => 'Required',
+            'date_of_first_appointment' => 'Required',
+            'date_of_present_appointment' => 'Required',
+            'assumption_of_duty_date' => 'Required',
+            'email' => ['Required',Rule::unique('employees')->ignore($id)],
+            'phone' => ['Required',Rule::unique('employees')->ignore($id)],
+        ];
+    }
+
 
     public function getFullName() {
         

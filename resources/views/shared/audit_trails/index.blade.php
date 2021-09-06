@@ -2,18 +2,16 @@
 
 {{-- Page title --}}
 @section('title')
-Users @parent
+Audit Trails @parent
 @stop
-
-
 
 @section('content')
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div aria-label="breadcrumb" class="card-breadcrumb">
-        <h1>Users</h1>
+        <h1>Audit Trails</h1>
     </div>
-    {{-- <div class="separator-breadcrumb border-top"></div> --}}
+    <div class="separator-breadcrumb border-top"></div>
 </section>
 
 <!-- Main content -->
@@ -25,13 +23,13 @@ Users @parent
     <div class="clearfix"></div>
     <div class="card">
         <section class="card-header">
-            <h5 class="card-title d-inline">Users</h5>
-            <span class="float-right">
-                <a class="btn secondary-color-bg pull-right" href="{!! route('users.create') !!}">Add New</a>
-            </span>
+            <h5 class="card-title d-inline">Audit Trails</h5>
+            {{-- <span class="float-right">
+                <a class="btn secondary-color-bg pull-right" href="{{ route('shared.auditTrails.create') }}">Add New</a>
+            </span> --}}
         </section>
         <div class="card-body">
-            @include('users.table')
+            @include('shared.audit_trails.table')
         </div>
     </div>
     <div class="text-center">

@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(UserSeeder::class);
+        $this->call(LaratrustSeeder::class);
         $this->call(CountrySeeder::class);
         $this->call(GeoPoliticalZoneSeeder::class);
         $this->call(StateSeeder::class);
@@ -24,6 +25,5 @@ class DatabaseSeeder extends Seeder
         $this->call(LanguageSeeder::class);
         $this->call(RankTypeSeeder::class);
         $this->call(TerminationTypeSeeder::class);
-        $this->call(LaratrustSeeder::class);
     }
 }

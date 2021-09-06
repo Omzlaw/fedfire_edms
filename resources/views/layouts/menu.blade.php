@@ -1,4 +1,4 @@
-@role('administrator')
+
 <li class="{!! Request::is('fileDirectories*') ? 'active' : '' !!}">
     <a href="{{ route('getSearch') }}" class="mm-a">
         <span class="mm-text ">Search</span>
@@ -12,7 +12,6 @@
         <span class="menu-icon"><i class="fa fa-folder text-white"></i></span>
     </a>
 </li>
-@endrole
 
 <li class="{!! Request::is('humanresource/employees*') ? 'active' : '' !!}">
     <a href="{{ route('humanresource.employees.index') }}" class="mm-a">
@@ -137,6 +136,13 @@
         <span class="menu-icon"> <i class="fa fa-cog text-white"></i></span>
     </a>
     <ul class="sub-menu list-unstyled default-color-secondary">
+
+        <li class="{!! (Request::is('shared/auditTrails*') ? 'active' : '' ) !!}">
+            <a href="{{ route('shared.auditTrails.index') }}" class="mm-a">
+                <span class="mm-text ">Audit Trails</span>
+            </a>
+        </li>
+
         <li class="{!! Request::is('shared/certificateTypes*') ? 'active' : '' !!}">
             <a href="{{ route('shared.certificateTypes.index') }}" class="mm-a">
                 <span class="mm-text ">Certificate Types</span>
@@ -209,7 +215,7 @@
         </li>
 
         <li class="{!! Request::is('shared/rolesAndPermissions*') ? 'active' : '' !!}">
-            <a href="/shared/rolesAndPermissions/roles-assignment" class="mm-a">
+            <a href="{{ route('laratrust.roles-assignment.index') }}" class="mm-a">
                 <span class="mm-text ">Roles and Permissions</span></a>
         </li>
 
@@ -274,5 +280,6 @@
         <span class="menu-icon"><i class="im im-icon-Structure"></i></span>
     </a>
 </li> --}}
+
 
 

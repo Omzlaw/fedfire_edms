@@ -51,6 +51,7 @@ class EmployeeActionSheetController extends AppBaseController
         $employeeActionSheet = EmployeeActionSheet::create($input);
 
         Flash::success('Employee Action Sheet saved successfully.');
+        add_audit('create', 'Employee Action Sheet');
         close_modal_refresh();
         // return redirect(route('humanresource.employeeActionSheets.index'));
     }
@@ -119,6 +120,7 @@ class EmployeeActionSheetController extends AppBaseController
 
         $employeeActionSheet->fill($request->all());
         $employeeActionSheet->save();
+        add_audit('update', 'Employee Action Sheet');
 
         Flash::success('Employee Action Sheet updated successfully.');
         close_modal_refresh();
@@ -147,6 +149,7 @@ class EmployeeActionSheetController extends AppBaseController
         }
 
         $employeeActionSheet->delete();
+        add_audit('delete', 'Employee Action Sheet');
 
         Flash::success('Employee Action Sheet deleted successfully.');
         return redirect(route('humanresource.employees.show', session('employee_id')));

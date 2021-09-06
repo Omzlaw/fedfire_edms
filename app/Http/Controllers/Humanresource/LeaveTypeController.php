@@ -49,7 +49,6 @@ class LeaveTypeController extends AppBaseController
         $leaveType = LeaveType::create($input);
 
         Flash::success('Leave Type saved successfully.');
-
         return redirect(route('humanresource.leaveTypes.index'));
     }
 

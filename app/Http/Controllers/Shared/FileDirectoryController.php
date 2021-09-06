@@ -34,6 +34,10 @@ class FileDirectoryController extends AppBaseController
 
     public function index(FileDirectoryDataTable $fileDirectoryDataTable)
     {
+        if(!check_permission('file_directories-index')){
+            Flash::error('Permission Denied');
+            return redirect()->back();
+        }
         return $fileDirectoryDataTable->render('shared.file_directories.index');
     }
 
@@ -44,6 +48,10 @@ class FileDirectoryController extends AppBaseController
      */
     public function create()
     {
+        if(!check_permission('file_directories-create')){
+            Flash::error('Permission Denied');
+            return redirect()->back();
+        }
         $file_types = new FileType;
         $employees = new Employee;
         return view('shared.file_directories.create', compact('file_types', 'employees'));
@@ -58,10 +66,15 @@ class FileDirectoryController extends AppBaseController
      */
     public function store(CreateFileDirectoryRequest $request)
     {
+        if(!check_permission('file_directories-store')){
+            Flash::error('Permission Denied');
+            return redirect()->back();
+        }
         /** @var FileDirectory $fileDirectory */
         $input = $request->all();
         $fileDirectory = FileDirectory::create($this->saveFile($input));
         Flash::success('File Directory saved successfully.');
+        add_audit('create', 'Files');
         return redirect(route('shared.fileDirectories.index'));
     }
 
@@ -74,6 +87,10 @@ class FileDirectoryController extends AppBaseController
      */
     public function show($id)
     {
+        if(!check_permission('file_directories-show')){
+            Flash::error('Permission Denied');
+            return redirect()->back();
+        }
         /** @var FileDirectory $fileDirectory */
         $fileDirectory = FileDirectory::find($id);
 
@@ -88,11 +105,19 @@ class FileDirectoryController extends AppBaseController
 
     public function getSearch()
     {
+        if(!check_permission('file_directories-search')){
+            Flash::error('Permission Denied');
+            return redirect()->back();
+        }
         return view('shared.file_directories.search');
     }
 
     public function search(Request $request)
     {
+        if(!check_permission('file_directories-search')){
+            Flash::error('Permission Denied');
+            return redirect()->back();
+        }
         $employee = Employee::where('service_number', '=', $request['service_number'])->first();
         if (empty($employee)) {
             Flash::error('Employee not found');
@@ -100,12 +125,16 @@ class FileDirectoryController extends AppBaseController
         }
         $file_directories = FileDirectory::where('employee_id', '=', $employee->id)->get();
         $file_types = new FileType;
+        add_audit('searche', 'Employee File Records');
         return view('shared.file_directories.search', compact('employee', 'file_directories', 'file_types'));
     }
 
     public function records(Request $request)
     {
-
+        if(!check_permission('file_directories-search')){
+            Flash::error('Permission Denied');
+            return redirect()->back();
+        }
         $request->validate([
             'search_query' => 'required'
         ]);
@@ -141,6 +170,7 @@ class FileDirectoryController extends AppBaseController
             Flash::error('No Record(s) found');
             return redirect()->back();
         }
+        add_audit('searche', 'Employee Records');
 
         return view('shared.file_directories.global_search', compact('employees'));
     }
@@ -154,6 +184,10 @@ class FileDirectoryController extends AppBaseController
      */
     public function edit($id)
     {
+        if(!check_permission('file_directories-edit')){
+            Flash::error('Permission Denied');
+            return redirect()->back();
+        }
         /** @var FileDirectory $fileDirectory */
         $fileDirectory = FileDirectory::find($id);
 
@@ -177,6 +211,10 @@ class FileDirectoryController extends AppBaseController
      */
     public function update($id, UpdateFileDirectoryRequest $request)
     {
+        if(!check_permission('file_directories-update')){
+            Flash::error('Permission Denied');
+            return redirect()->back();
+        }
         /** @var FileDirectory $fileDirectory */
         $fileDirectory = FileDirectory::find($id);
 
@@ -192,6 +230,7 @@ class FileDirectoryController extends AppBaseController
 
         $fileDirectory->fill($this->saveFile($input));
         $fileDirectory->save();
+        add_audit('update', 'File');
 
         Flash::success('File Directory updated successfully.');
 
@@ -209,6 +248,10 @@ class FileDirectoryController extends AppBaseController
      */
     public function destroy($id)
     {
+        if(!check_permission('file_directories-destroy')){
+            Flash::error('Permission Denied');
+            return redirect()->back();
+        }
         /** @var FileDirectory $fileDirectory */
         $fileDirectory = FileDirectory::find($id);
 
@@ -222,6 +265,7 @@ class FileDirectoryController extends AppBaseController
         Storage::delete($file_url);
 
         $fileDirectory->delete();
+        add_audit('delete', 'File');
 
         Flash::success('File Directory deleted successfully.');
 

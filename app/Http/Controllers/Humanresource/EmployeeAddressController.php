@@ -68,6 +68,7 @@ class EmployeeAddressController extends AppBaseController
             $employeeAddress = EmployeeAddress::create($input);
 
             Flash::success('Employee Address saved successfully.');
+            add_audit('create', 'Employee Address');
             close_modal_refresh();
 
             // return redirect(route('humanresource.employeeAddresses.index'));
@@ -141,6 +142,7 @@ class EmployeeAddressController extends AppBaseController
 
         $employeeAddress->fill($request->all());
         $employeeAddress->save();
+        add_audit('update', 'Employee Address');
 
         Flash::success('Employee Address updated successfully.');
         close_modal_refresh();
@@ -169,6 +171,7 @@ class EmployeeAddressController extends AppBaseController
         }
 
         $employeeAddress->delete();
+        add_audit('delete', 'Employee Address');
 
         Flash::success('Employee Address deleted successfully.');
         return redirect(route('humanresource.employees.show', session('employee_id')));

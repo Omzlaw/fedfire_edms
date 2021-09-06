@@ -60,6 +60,7 @@ class EmployeeQualificationController extends AppBaseController
         $employee->save();
 
         Flash::success('Employee Qualification saved successfully.');
+        add_audit('create', 'Employee Qualification');
         close_modal_refresh();
 
         //return redirect(route('humanresource.employeeQualifications.index'));
@@ -141,6 +142,7 @@ class EmployeeQualificationController extends AppBaseController
         $employee->save();
 
         Flash::success('Employee Qualification updated successfully.');
+        add_audit('update', 'Employee Qualification');
         close_modal_refresh();
 
         //return redirect(route('humanresource.employeeQualifications.index'));
@@ -167,6 +169,7 @@ class EmployeeQualificationController extends AppBaseController
         }
 
         $employeeQualification->delete();
+        add_audit('delete', 'Employee Qualification');
 
         Flash::success('Employee Qualification deleted successfully.');
         return redirect(route('humanresource.employees.show', session('employee_id')));

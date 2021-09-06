@@ -57,6 +57,7 @@ class EmployeeEducationController extends AppBaseController
         $employeeEducation = EmployeeEducation::create($input);
 
         Flash::success('Employee Education saved successfully.');
+        add_audit('create', 'Employee Education');
         close_modal_refresh();
 
         //return redirect(route('humanresource.employeeEducations.index'));
@@ -129,6 +130,7 @@ class EmployeeEducationController extends AppBaseController
 
         $employeeEducation->fill($request->all());
         $employeeEducation->save();
+        add_audit('update', 'Employee Education');
 
         Flash::success('Employee Education updated successfully.');
         close_modal_refresh();
@@ -157,6 +159,7 @@ class EmployeeEducationController extends AppBaseController
         }
 
         $employeeEducation->delete();
+        add_audit('delete', 'Employee Education');
 
         Flash::success('Employee Education deleted successfully.');
         return redirect(route('humanresource.employees.show', session('employee_id')));

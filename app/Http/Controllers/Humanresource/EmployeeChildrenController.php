@@ -53,6 +53,7 @@ class EmployeeChildrenController extends AppBaseController
         $employeeChildren = EmployeeChildren::create($input);
 
         Flash::success('Employee Children saved successfully.');
+        add_audit('create', 'Employee children');
         close_modal_refresh();
 
         //return redirect(route('humanresource.employeeChildrens.index'));
@@ -122,6 +123,7 @@ class EmployeeChildrenController extends AppBaseController
 
         $employeeChildren->fill($request->all());
         $employeeChildren->save();
+        add_audit('update', 'Employee children');
 
         Flash::success('Employee Children updated successfully.');
         close_modal_refresh();
@@ -150,6 +152,7 @@ class EmployeeChildrenController extends AppBaseController
         }
 
         $employeeChildren->delete();
+        add_audit('delete', 'Employee children');
 
         Flash::success('Employee Children deleted successfully.');
 

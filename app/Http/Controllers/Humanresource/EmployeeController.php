@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Maatwebsite\Excel\Excel;
 use App\Models\Shared\Country;
 use App\Models\Shared\RankType;
+use Illuminate\Validation\Rule;
 use App\Imports\EmployeesImport;
 use Yajra\DataTables\DataTables;
 use App\Http\Requests\Humanresource;
@@ -25,6 +26,7 @@ use App\Http\Controllers\AppBaseController;
 use App\DataTables\Humanresource\EmployeeDataTable;
 use App\Http\Requests\Humanresource\CreateEmployeeRequest;
 use App\Http\Requests\Humanresource\UpdateEmployeeRequest;
+use Illuminate\Support\Facades\Validator;
 
 class EmployeeController extends AppBaseController
 {
@@ -38,6 +40,11 @@ class EmployeeController extends AppBaseController
     public function index(EmployeeDataTable $employeeDataTable)
     {
 
+        if(!check_permission('employees-index')){
+            Flash::error('Permission Denied');
+            return redirect()->back();
+        }
+
         $qualificationTypes = new QualificationType;
         $rankTypes = new RankType;
         $states = new State;
@@ -45,15 +52,16 @@ class EmployeeController extends AppBaseController
 
 
         return $employeeDataTable
-        ->render('humanresource.employees.index', compact('qualificationTypes', 'rankTypes','states', 'local_govt_areas'));
+            ->render('humanresource.employees.index', compact('qualificationTypes', 'rankTypes', 'states', 'local_govt_areas'));
     }
 
     public function filter(EmployeeDataTable $employeeDataTable, Request $request)
     {
-        // $qualificationTypes = new QualificationType;
-        // $rankTypes = new RankType;
-        // $states = new State;
-        // $local_govt_areas = new LocalGovtArea;
+
+        if(!check_permission('employees-filter')){
+            Flash::error('Permission Denied');
+            return redirect()->back();
+        }
 
 
         if ($request['action'] == 'Clear') {
@@ -64,8 +72,7 @@ class EmployeeController extends AppBaseController
             session()->forget('localGovtArea');
             session()->forget('appointment_date_to');
             session()->forget('appointment_date_from');
-        }
-        else {
+        } else {
             $rank = $request['rank'];
             $qualification = $request['qualification'];
             $state = $request['state'];
@@ -89,6 +96,11 @@ class EmployeeController extends AppBaseController
      */
     public function create()
     {
+        if(!check_permission('employees-create')){
+            Flash::error('Permission Denied');
+            return redirect()->back();
+        }
+
         $countries = new Country;
         $geo_political_zones = new GeoPoliticalZone;
         $states = new State;
@@ -106,6 +118,12 @@ class EmployeeController extends AppBaseController
      */
     public function store(CreateEmployeeRequest $request)
     {
+
+        if(!check_permission('employees-store')){
+            Flash::error('Permission Denied');
+            return redirect()->back();
+        }
+
         $input = $request->all();
         if ($input['middle_name'] == '') {
             $input['staff_code'] = $input['first_name'] . '_' . $input['last_name'] . '_' . $input['service_number'];
@@ -122,6 +140,7 @@ class EmployeeController extends AppBaseController
 
 
         Flash::success('Employee saved successfully.');
+        add_audit('create', 'Employee');
 
         return redirect(route('humanresource.employees.index'));
     }
@@ -135,6 +154,10 @@ class EmployeeController extends AppBaseController
      */
     public function show(Request $request, $id)
     {
+        if(!check_permission('employees-show')){
+            Flash::error('Permission Denied');
+            return redirect()->back();
+        }
 
         /** @var Employee $employee */
         $employee = Employee::find($id);
@@ -255,7 +278,7 @@ class EmployeeController extends AppBaseController
             $item->state = $item->state;
             $item->region = $item->regionRelation->title;
             $item->present_station = $item->present_station;
-            return ['id' => $item->id,'present_department' => $item->present_department, 'status' => $item->status, 'zone' => $item->zone, 'state' => $item->state, 'region' => $item->region, 'location' => $item->location, 'present_station'=> $item->present_station];
+            return ['id' => $item->id, 'present_department' => $item->present_department, 'status' => $item->status, 'zone' => $item->zone, 'state' => $item->state, 'region' => $item->region, 'location' => $item->location, 'present_station' => $item->present_station];
             // return $item;
         });
 
@@ -319,6 +342,10 @@ class EmployeeController extends AppBaseController
      */
     public function edit($id)
     {
+        if(!check_permission('employees-edit')){
+            Flash::error('Permission Denied');
+            return redirect()->back();
+        }
         /** @var Employee $employee */
         $employee = Employee::find($id);
 
@@ -327,6 +354,7 @@ class EmployeeController extends AppBaseController
 
             return redirect(route('humanresource.employees.index'));
         }
+        Session::put('employee_id', $employee->id);
         $countries = new Country;
         $geo_political_zones = new GeoPoliticalZone;
         $states = new State;
@@ -345,6 +373,10 @@ class EmployeeController extends AppBaseController
      */
     public function update($id, UpdateEmployeeRequest $request)
     {
+        if(!check_permission('employees-update')){
+            Flash::error('Permission Denied');
+            return redirect()->back();
+        }
         /** @var Employee $employee */
         $employee = Employee::find($id);
 
@@ -367,6 +399,7 @@ class EmployeeController extends AppBaseController
         }
 
         $employee->save();
+        add_audit('update', 'Employee');
 
         Flash::success('Employee updated successfully.');
 
@@ -384,6 +417,10 @@ class EmployeeController extends AppBaseController
      */
     public function destroy($id)
     {
+        if(!check_permission('employees-destroy')){
+            Flash::error('Permission Denied');
+            return redirect()->back();
+        }
         /** @var Employee $employee */
         $employee = Employee::find($id);
 
@@ -397,6 +434,7 @@ class EmployeeController extends AppBaseController
         Storage::delete($profile_picture);
 
         $employee->delete();
+        add_audit('delete', 'Employee');
 
         Flash::success('Employee deleted successfully.');
 
@@ -423,176 +461,189 @@ class EmployeeController extends AppBaseController
         return $input;
     }
 
-    public function report() {
-                $id = session('employee_id');
-               /** @var Employee $employee */
-               $employee = Employee::find($id);
+    public function report()
+    {
+        if(!check_permission('employees-report')){
+            Flash::error('Permission Denied');
+            return redirect()->back();
+        }
+        $id = session('employee_id');
+        /** @var Employee $employee */
+        $employee = Employee::find($id);
 
-               // dd($data['children']);
+        // dd($data['children']);
 
 
-               if (empty($employee)) {
-                   Flash::error('Employee not found');
+        if (empty($employee)) {
+            Flash::error('Employee not found');
 
-                   return redirect(route('humanresource.employees.index'));
-               }
+            return redirect(route('humanresource.employees.index'));
+        }
 
-               $data['employee'] = $employee;
+        $data['employee'] = $employee;
 
-               //get the children
+        //get the children
 
-               $data['children'] = $employee->children->map(function ($item) {
-                   $item->gender = get_enum_value('enum_gender', $item->gender);
-                   return $item;
-               });
+        $data['children'] = $employee->children->map(function ($item) {
+            $item->gender = get_enum_value('enum_gender', $item->gender);
+            return $item;
+        });
 
-               //get the action sheets
+        //get the action sheets
 
-               $data['actionSheets'] = $employee->actionSheets->map(function ($item) {
-                   return $item;
-               });
+        $data['actionSheets'] = $employee->actionSheets->map(function ($item) {
+            return $item;
+        });
 
-               //get the addresses
+        //get the addresses
 
-               $data['addresses'] = $employee->addresses->map(function ($item) {
-                $item->address_type = get_enum_value('enum_address_type', $item->address_type);
-                   $item->status = get_enum_value('enum_status', $item->status);
-                   return $item;
-               });
+        $data['addresses'] = $employee->addresses->map(function ($item) {
+            $item->address_type = get_enum_value('enum_address_type', $item->address_type);
+            $item->status = get_enum_value('enum_status', $item->status);
+            return $item;
+        });
 
-               //get the censures
+        //get the censures
 
-               $data['censures'] = $employee->censures->map(function ($item) {
-                   return $item;
-               });
+        $data['censures'] = $employee->censures->map(function ($item) {
+            return $item;
+        });
 
-               //get the certificates
+        //get the certificates
 
-               $data['certificates'] = $employee->certificates->map(function ($item) {
-                   $item->certificate_type_id = $item->certificateType->title;
-                   $item->status = get_enum_value('enum_status', $item->status);
-                   return ['id' => $item['id'], 'certificate_name' => $item['certificate_name'], 'type' => $item['certificate_type_id'], 'date_obtained' => $item['date_obtained'], 'status' => $item['status']];
-                   // return $item;
-               });
+        $data['certificates'] = $employee->certificates->map(function ($item) {
+            $item->certificate_type_id = $item->certificateType->title;
+            $item->status = get_enum_value('enum_status', $item->status);
+            return ['id' => $item['id'], 'certificate_name' => $item['certificate_name'], 'type' => $item['certificate_type_id'], 'date_obtained' => $item['date_obtained'], 'status' => $item['status']];
+            // return $item;
+        });
 
-               //get the educations
+        //get the educations
 
-               $data['educations'] = $employee->educations->map(function ($item) {
-                   $item->certificate_id = $item->certificate->title;
-                   $item->school_type_id = $item->schoolType->title;
-                   return ['id' => $item['id'], 'school_name' => $item['school_name'], 'certificate_id' => $item['certificate_id'], 'school_type_id' => $item['school_type_id'], 'remark' => $item['remark']];
-                   // return $item;
-               });
+        $data['educations'] = $employee->educations->map(function ($item) {
+            $item->certificate_id = $item->certificate->title;
+            $item->school_type_id = $item->schoolType->title;
+            return ['id' => $item['id'], 'school_name' => $item['school_name'], 'certificate_id' => $item['certificate_id'], 'school_type_id' => $item['school_type_id'], 'remark' => $item['remark']];
+            // return $item;
+        });
 
-               $data['ranks'] = $employee->ranks->map(function ($item) {
-                   $item->employee_id = $item->employee->getFullName();
-                   $item->rank_type_id = $item->rankType->description;
-                   $item->status = get_enum_value('enum_status', $item->status);
-                   return ['id' => $item['id'], 'rank_type_id' => $item['rank_type_id'], 'employee_id' => $item['employee_id'], 'status' => $item['status']];
-                   // return $item;
-               });
+        $data['ranks'] = $employee->ranks->map(function ($item) {
+            $item->employee_id = $item->employee->getFullName();
+            $item->rank_type_id = $item->rankType->description;
+            $item->status = get_enum_value('enum_status', $item->status);
+            return ['id' => $item['id'], 'rank_type_id' => $item['rank_type_id'], 'employee_id' => $item['employee_id'], 'status' => $item['status']];
+            // return $item;
+        });
 
-               //get the addresses
+        //get the addresses
 
-               $data['addresses'] = $employee->addresses->map(function ($item) {
-                   return $item;
-               });
+        $data['addresses'] = $employee->addresses->map(function ($item) {
+            return $item;
+        });
 
-               //get the forceServices
+        //get the forceServices
 
-               $data['forceServices'] = $employee->forceServices->map(function ($item) {
-                   return $item;
-               });
+        $data['forceServices'] = $employee->forceServices->map(function ($item) {
+            return $item;
+        });
 
-               //get the foreignTours
+        //get the foreignTours
 
-               $data['foreignTours'] = $employee->foreignTours->map(function ($item) {
-                   $item->status = get_enum_value('enum_status', $item->status);
-                   $item->leave_type_id = $item->leaveType->title;
-                   return ['id' => $item['id'], 'leave_type_id' => $item['leave_type_id'], 'from_date' => $item['from_date'], 'to_date' => $item['to_date'], 'status' => $item['status'], 'remark' => $item['remark'],];
-                   // return $item;
-               });
+        $data['foreignTours'] = $employee->foreignTours->map(function ($item) {
+            $item->status = get_enum_value('enum_status', $item->status);
+            $item->leave_type_id = $item->leaveType->title;
+            return ['id' => $item['id'], 'leave_type_id' => $item['leave_type_id'], 'from_date' => $item['from_date'], 'to_date' => $item['to_date'], 'status' => $item['status'], 'remark' => $item['remark'],];
+            // return $item;
+        });
 
-               //get the gratuities
+        //get the gratuities
 
-               $data['gratuities'] = $employee->gratuities->map(function ($item) {
-                   $item->status = get_enum_value('enum_status', $item->status);
-                   return $item;
-               });
+        $data['gratuities'] = $employee->gratuities->map(function ($item) {
+            $item->status = get_enum_value('enum_status', $item->status);
+            return $item;
+        });
 
-               //get the languages
-               $data['languages'] = $employee->languages->map(function ($item) {
-                   $item->speaking_fluency = get_enum_value('enum_fluency', $item->speaking_fluency);
-                   $item->writing_fluency = get_enum_value('enum_fluency', $item->writing_fluency);
-                   $item->language_id = $item->language->title;
-                   return ['id' => $item['id'], 'language_id' => $item['language_id'], 'writing_fluency' => $item['writing_fluency'], 'speaking_fluency' => $item['speaking_fluency']];
-                   // return $item;
-               });
+        //get the languages
+        $data['languages'] = $employee->languages->map(function ($item) {
+            $item->speaking_fluency = get_enum_value('enum_fluency', $item->speaking_fluency);
+            $item->writing_fluency = get_enum_value('enum_fluency', $item->writing_fluency);
+            $item->language_id = $item->language->title;
+            return ['id' => $item['id'], 'language_id' => $item['language_id'], 'writing_fluency' => $item['writing_fluency'], 'speaking_fluency' => $item['speaking_fluency']];
+            // return $item;
+        });
 
-               //get the localLeaves
+        //get the localLeaves
 
-               $data['localLeaves'] = $employee->localLeaves->map(function ($item) {
-                   $item->leave_type_id = $item->leaveType->title;
-                   return ['id' => $item['id'], 'no_of_days' => $item['no_of_days'], 'file_page_no' => $item['file_page_no'], 'leave_type_id' => $item['leave_type_id'], 'from_date' => $item['from_date'], 'to_date' => $item['to_date']];
-                   // return $item;
-               });
+        $data['localLeaves'] = $employee->localLeaves->map(function ($item) {
+            $item->leave_type_id = $item->leaveType->title;
+            return ['id' => $item['id'], 'no_of_days' => $item['no_of_days'], 'file_page_no' => $item['file_page_no'], 'leave_type_id' => $item['leave_type_id'], 'from_date' => $item['from_date'], 'to_date' => $item['to_date']];
+            // return $item;
+        });
 
-               //get the nextOfKins
+        //get the nextOfKins
 
-               $data['nextOfKins'] = $employee->nextOfKins->map(function ($item) {
-                   $item->relationship_id = $item->relationship->title;
-                   return ['id' => $item['id'], 'name' => $item['name'], 'address' => $item['address'], 'relationship_id' => $item['relationship_id']];
-                   // return $item;
-               });
+        $data['nextOfKins'] = $employee->nextOfKins->map(function ($item) {
+            $item->relationship_id = $item->relationship->title;
+            return ['id' => $item['id'], 'name' => $item['name'], 'address' => $item['address'], 'relationship_id' => $item['relationship_id']];
+            // return $item;
+        });
 
-               //get the publicServices
+        //get the publicServices
 
-               $data['publicServices'] = $employee->publicServices->map(function ($item) {
-                   return $item;
-               });
+        $data['publicServices'] = $employee->publicServices->map(function ($item) {
+            return $item;
+        });
 
-               //get the qualifications
+        //get the qualifications
 
-               $data['qualifications'] = $employee->qualifications->map(function ($item) {
-                   $item->qualification_type_id = $item->qualificationType->title;
-                   $item->status = get_enum_value('enum_status', $item->status);
-                   return ['id' => $item['id'], 'qualification_name' => $item['qualification_name'], 'type' => $item['qualification_type_id'], 'date_obtained' => $item['date_obtained'], 'status' => $item['status']];
-                   // return $item;
-               });
+        $data['qualifications'] = $employee->qualifications->map(function ($item) {
+            $item->qualification_type_id = $item->qualificationType->title;
+            $item->status = get_enum_value('enum_status', $item->status);
+            return ['id' => $item['id'], 'qualification_name' => $item['qualification_name'], 'type' => $item['qualification_type_id'], 'date_obtained' => $item['date_obtained'], 'status' => $item['status']];
+            // return $item;
+        });
 
-               //get the recordTrackers
+        //get the recordTrackers
 
-               $data['recordTrackers'] = $employee->recordTrackers->map(function ($item) {
-                   $item->status = get_enum_value('enum_status', $item->status);
-                   $item->has_profile = get_enum_value('enum_yes_no', $item->has_profile);
-                   $item->has_education = get_enum_value('enum_yes_no', $item->has_education);
-                   return $item;
-               });
+        $data['recordTrackers'] = $employee->recordTrackers->map(function ($item) {
+            $item->status = get_enum_value('enum_status', $item->status);
+            $item->has_profile = get_enum_value('enum_yes_no', $item->has_profile);
+            $item->has_education = get_enum_value('enum_yes_no', $item->has_education);
+            return $item;
+        });
 
-               //get the terminations
+        //get the terminations
 
-               $data['terminations'] = $employee->terminations->map(function ($item) {
-                   $item->termination_id = $item->termination_type->title;
-                   $item->is_pensionable = get_enum_value('enum_yes_no', $item->is_pensionable);
-                   return ['id' => $item->id, 'termination_id' => $item['termination_id'], 'even_date' => $item['even_date'], 'is_pensionable' => $item['is_pensionable'], 'pension_amount' => $item['pension_amount']];
-                   // return $item;
-               });
+        $data['terminations'] = $employee->terminations->map(function ($item) {
+            $item->termination_id = $item->termination_type->title;
+            $item->is_pensionable = get_enum_value('enum_yes_no', $item->is_pensionable);
+            return ['id' => $item->id, 'termination_id' => $item['termination_id'], 'even_date' => $item['even_date'], 'is_pensionable' => $item['is_pensionable'], 'pension_amount' => $item['pension_amount']];
+            // return $item;
+        });
 
-               //get the spouse
+        //get the spouse
 
-               $data['spouse'] = $employee->spouse->map(function ($item) {
-                   return $item;
-               });
+        $data['spouse'] = $employee->spouse->map(function ($item) {
+            return $item;
+        });
 
-               return view('humanresource.employees.report_template')->with('data', $data);
+        add_audit('generate', 'Employee report');
+
+        return view('humanresource.employees.report_template')->with('data', $data);
     }
 
     public function import(Request $request)
     {
+        if(!check_permission('employees-import')){
+            Flash::error('Permission Denied');
+            return redirect()->back();
+        }
+
         $file = $request->upload;
         (new EmployeesImport)->import($file);
 
         Flash::success('Employees saved successfully.');
+        add_audit('import', 'Employee Data');
 
         return redirect(route('humanresource.employees.index'));
     }

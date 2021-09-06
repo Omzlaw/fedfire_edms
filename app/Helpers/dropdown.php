@@ -12,7 +12,33 @@
  */
 
 
+use Laracasts\Flash\Flash;
+use App\Models\Shared\AuditTrail;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Redirect;
+
+if (!function_exists('check_permission')) {
+    function check_permission($permission_name)
+    {
+        if(Auth::user()->isAbleTo($permission_name)){
+            return true;
+        }
+    }
+}
+
+if (!function_exists('add_audit')) {
+    function add_audit($action_name, $model, $employee_name = null)
+    {
+        $user = Auth::user();
+        $audit_trail = AuditTrail::create([
+            'user_id' => $user->id,
+            'description' => $user->name . ' ' . $action_name . 'd' . ' ' . $model,
+        ]);
+    }
+}
+
+
 
 
 if (!function_exists('modelDropdown')) {

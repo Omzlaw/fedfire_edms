@@ -51,6 +51,7 @@ class EmployeeGratuityController extends AppBaseController
         $employeeGratuity = EmployeeGratuity::create($input);
 
         Flash::success('Employee Gratuity saved successfully.');
+        add_audit('create', 'Employee Gratuity');
         close_modal_refresh();
 
         //return redirect(route('humanresource.employeeGratuities.index'));
@@ -120,6 +121,7 @@ class EmployeeGratuityController extends AppBaseController
 
         $employeeGratuity->fill($request->all());
         $employeeGratuity->save();
+        add_audit('update', 'Employee Gratuity');
 
         Flash::success('Employee Gratuity updated successfully.');
         close_modal_refresh();
@@ -148,6 +150,7 @@ class EmployeeGratuityController extends AppBaseController
         }
 
         $employeeGratuity->delete();
+        add_audit('delete', 'Employee Gratuity');
 
         Flash::success('Employee Gratuity deleted successfully.');
         return redirect(route('humanresource.employees.show', session('employee_id')));

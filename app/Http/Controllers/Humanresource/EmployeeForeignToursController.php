@@ -54,6 +54,7 @@ class EmployeeForeignToursController extends AppBaseController
         $employeeForeignTours = EmployeeForeignTours::create($input);
 
         Flash::success('Employee Foreign Tours saved successfully.');
+        add_audit('create', 'Employee Foreign Tours');
         close_modal_refresh();
 
         //return redirect(route('humanresource.employeeForeignTours.index'));
@@ -123,6 +124,7 @@ class EmployeeForeignToursController extends AppBaseController
 
         $employeeForeignTours->fill($request->all());
         $employeeForeignTours->save();
+        add_audit('update', 'Employee Foreign Tours');
 
         Flash::success('Employee Foreign Tours updated successfully.');
         close_modal_refresh();
@@ -151,6 +153,7 @@ class EmployeeForeignToursController extends AppBaseController
         }
 
         $employeeForeignTours->delete();
+        add_audit('delete', 'Employee Foreign Tours');
 
         Flash::success('Employee Foreign Tours deleted successfully.');
         return redirect(route('humanresource.employees.show', session('employee_id')));

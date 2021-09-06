@@ -51,6 +51,7 @@ class EmployeeForceServiceController extends AppBaseController
         $employeeForceService = EmployeeForceService::create($input);
 
         Flash::success('Employee Force Service saved successfully.');
+        add_audit('create', 'Employee Force Service');
         close_modal_refresh();
 
         //return redirect(route('humanresource.employeeForceServices.index'));
@@ -120,6 +121,7 @@ class EmployeeForceServiceController extends AppBaseController
 
         $employeeForceService->fill($request->all());
         $employeeForceService->save();
+        add_audit('update', 'Employee Force Service');
 
         Flash::success('Employee Force Service updated successfully.');
         close_modal_refresh();
@@ -148,6 +150,7 @@ class EmployeeForceServiceController extends AppBaseController
         }
 
         $employeeForceService->delete();
+        add_audit('delete', 'Employee Force Service');
 
         Flash::success('Employee Force Service deleted successfully.');
         return redirect(route('humanresource.employees.show', session('employee_id')));

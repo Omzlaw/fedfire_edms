@@ -66,6 +66,7 @@ class EmployeeNextOfKinController extends AppBaseController
             $employeeNextOfKin = EmployeeNextOfKin::create($input);
     
             Flash::success('Employee Next Of Kin saved successfully.');
+            add_audit('create', 'Employee Next of Kin');
             close_modal_refresh();
         }
 
@@ -137,6 +138,7 @@ class EmployeeNextOfKinController extends AppBaseController
 
         $employeeNextOfKin->fill($request->all());
         $employeeNextOfKin->save();
+        add_audit('update', 'Employee Next of Kin');
 
         Flash::success('Employee Next Of Kin updated successfully.');
         close_modal_refresh();
@@ -165,6 +167,7 @@ class EmployeeNextOfKinController extends AppBaseController
         }
 
         $employeeNextOfKin->delete();
+        add_audit('delete', 'Employee Next of Kin');
 
         Flash::success('Employee Next Of Kin deleted successfully.');
         return redirect(route('humanresource.employees.show', session('employee_id')));

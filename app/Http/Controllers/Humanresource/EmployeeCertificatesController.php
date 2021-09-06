@@ -53,6 +53,7 @@ class EmployeeCertificatesController extends AppBaseController
         $employeeCertificates = EmployeeCertificates::create($input);
 
         Flash::success('Employee Certificates saved successfully.');
+        add_audit('create', 'Employee certificate');
         close_modal_refresh();
         //return redirect(route('humanresource.employeeCertificates.index'));
     }
@@ -122,6 +123,7 @@ class EmployeeCertificatesController extends AppBaseController
 
         $employeeCertificates->fill($request->all());
         $employeeCertificates->save();
+        add_audit('update', 'Employee certificate');
 
         Flash::success('Employee Certificates updated successfully.');
         close_modal_refresh();
@@ -150,6 +152,7 @@ class EmployeeCertificatesController extends AppBaseController
         }
 
         $employeeCertificates->delete();
+        add_audit('delete', 'Employee certificate');
 
         Flash::success('Employee Certificates deleted successfully.');
         return redirect(route('humanresource.employees.show', session('employee_id')));

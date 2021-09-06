@@ -53,6 +53,7 @@ class EmployeeLocalLeaveController extends AppBaseController
         $employeeLocalLeave = EmployeeLocalLeave::create($input);
 
         Flash::success('Employee Local Leave saved successfully.');
+        add_audit('create', 'Employee Local Leave');
         close_modal_refresh();
 
         //return redirect(route('humanresource.employeeLocalLeaves.index'));
@@ -123,6 +124,7 @@ class EmployeeLocalLeaveController extends AppBaseController
 
         $employeeLocalLeave->fill($request->all());
         $employeeLocalLeave->save();
+        add_audit('update', 'Employee Local Leave');
 
         Flash::success('Employee Local Leave updated successfully.');
         close_modal_refresh();
@@ -151,6 +153,7 @@ class EmployeeLocalLeaveController extends AppBaseController
         }
 
         $employeeLocalLeave->delete();
+        add_audit('delete', 'Employee Local Leave');
 
         Flash::success('Employee Local Leave deleted successfully.');
         return redirect(route('humanresource.employees.show', session('employee_id')));

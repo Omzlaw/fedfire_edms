@@ -51,6 +51,7 @@ class EmployeeRecordTrackerController extends AppBaseController
         $employeeRecordTracker = EmployeeRecordTracker::create($input);
 
         Flash::success('Employee Record Tracker saved successfully.');
+        add_audit('create', 'Employee Record Tracker');
         close_modal_refresh();
 
         //return redirect(route('humanresource.employeeRecordTrackers.index'));
@@ -120,6 +121,7 @@ class EmployeeRecordTrackerController extends AppBaseController
 
         $employeeRecordTracker->fill($request->all());
         $employeeRecordTracker->save();
+        add_audit('update', 'Employee Record Tracker');
 
         Flash::success('Employee Record Tracker updated successfully.');
         close_modal_refresh();
@@ -148,6 +150,7 @@ class EmployeeRecordTrackerController extends AppBaseController
         }
 
         $employeeRecordTracker->delete();
+        add_audit('delete', 'Employee Record Tracker');
 
         Flash::success('Employee Record Tracker deleted successfully.');
         return redirect(route('humanresource.employees.show', session('employee_id')));

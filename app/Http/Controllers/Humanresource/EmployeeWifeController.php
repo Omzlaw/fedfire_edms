@@ -51,6 +51,7 @@ class EmployeeWifeController extends AppBaseController
         $employeeWife = EmployeeWife::create($input);
 
         Flash::success('Employee Wife saved successfully.');
+        add_audit('create', 'Employee Spouse');
         close_modal_refresh();
 
         //return redirect(route('humanresource.employeeWives.index'));
@@ -120,6 +121,7 @@ class EmployeeWifeController extends AppBaseController
 
         $employeeWife->fill($request->all());
         $employeeWife->save();
+        add_audit('update', 'Employee Spouse');
 
         Flash::success('Employee Wife updated successfully.');
         close_modal_refresh();
@@ -148,6 +150,7 @@ class EmployeeWifeController extends AppBaseController
         }
 
         $employeeWife->delete();
+        add_audit('delete', 'Employee Spouse');
 
         Flash::success('Employee Wife deleted successfully.');
         return redirect(route('humanresource.employees.show', session('employee_id')));

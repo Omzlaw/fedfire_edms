@@ -53,6 +53,7 @@ class EmployeeTerminationController extends AppBaseController
         $employeeTermination = EmployeeTermination::create($input);
 
         Flash::success('Employee Termination saved successfully.');
+        add_audit('create', 'Employee Termination');
         close_modal_refresh();
 
         //return redirect(route('humanresource.employeeTerminations.index'));
@@ -124,6 +125,7 @@ class EmployeeTerminationController extends AppBaseController
 
         $employeeTermination->fill($request->all());
         $employeeTermination->save();
+        add_audit('update', 'Employee Termination');
 
         Flash::success('Employee Termination updated successfully.');
         close_modal_refresh();
@@ -152,6 +154,7 @@ class EmployeeTerminationController extends AppBaseController
         }
 
         $employeeTermination->delete();
+        add_audit('delete', 'Employee Termination');
 
         Flash::success('Employee Termination deleted successfully.');
         return redirect(route('humanresource.employees.show', session('employee_id')));

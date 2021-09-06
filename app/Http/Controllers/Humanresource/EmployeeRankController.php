@@ -63,6 +63,7 @@ class EmployeeRankController extends AppBaseController
         
 
         Flash::success('Employee Rank saved successfully.');
+        add_audit('create', 'Employee Rank');
         close_modal_refresh();
 
         // return redirect(route('humanresource.employeeRanks.index'));
@@ -148,6 +149,7 @@ class EmployeeRankController extends AppBaseController
 
 
         Flash::success('Employee Rank updated successfully.');
+        add_audit('update', 'Employee Rank');
         close_modal_refresh();
 
         // return redirect(route('humanresource.employeeRanks.index'));
@@ -174,6 +176,7 @@ class EmployeeRankController extends AppBaseController
         }
 
         $employeeRank->delete();
+        add_audit('delete', 'Employee Rank');
 
         Flash::success('Employee Rank deleted successfully.');
         return redirect(route('humanresource.employees.show', session('employee_id')));

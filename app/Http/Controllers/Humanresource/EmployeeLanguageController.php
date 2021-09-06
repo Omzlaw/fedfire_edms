@@ -53,6 +53,7 @@ class EmployeeLanguageController extends AppBaseController
         $employeeLanguage = EmployeeLanguage::create($input);
 
         Flash::success('Employee Language saved successfully.');
+        add_audit('create', 'Employee Language');
         close_modal_refresh();
 
         //return redirect(route('humanresource.employeeLanguages.index'));
@@ -122,6 +123,7 @@ class EmployeeLanguageController extends AppBaseController
 
         $employeeLanguage->fill($request->all());
         $employeeLanguage->save();
+        add_audit('update', 'Employee Language');
 
         Flash::success('Employee Language updated successfully.');
         close_modal_refresh();
@@ -150,6 +152,7 @@ class EmployeeLanguageController extends AppBaseController
         }
 
         $employeeLanguage->delete();
+        add_audit('delete', 'Employee Language');
 
         Flash::success('Employee Language deleted successfully.');
         return redirect(route('humanresource.employees.show', session('employee_id')));
