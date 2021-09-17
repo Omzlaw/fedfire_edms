@@ -18,6 +18,15 @@
     </div>
 </div>
 
+<!-- Qualification Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('qualification', 'Qualification:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::text('qualification', null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
 
 <!-- Certificate Id Field -->
 <div class="form-group">

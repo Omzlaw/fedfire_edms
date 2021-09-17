@@ -63,7 +63,7 @@ $services = $data['services'];
                             <div class="row mt-10 pl-3">
                                 <div class="form-group col-4">
                                     {!! Form::open(['route' => 'employeeSearch', 'class' => 'form-horizontal', 'files' => true]) !!}
-                                    {!! Form::hidden('file_no', $employee->file_no, ['class' => 'form-control']) !!}
+                                    {!! Form::hidden('service_number', $employee->service_number, ['class' => 'form-control']) !!}
                                     {!! Form::submit('View Files', ['class' => 'btn custom-outline-primary   ']) !!}
                                     {!! Form::close() !!}
                                 </div>
@@ -79,12 +79,12 @@ $services = $data['services'];
                                     <a href="#" id="basic-info-a">Basic Information</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <a class="dt" data-route="humanresource/employeeAddresses"
+                                    <a class="dt" data-route="{{ route('humanresource.employeeAddresses.index') }}"
                                         data-model="{{ $addresses }}" href="#">Address</a>
                                 </li>
                                 </li>
                                 <li class="list-group-item"><a class="dt"
-                                        data-route="humanresource/employeeLanguages" data-model="{{ $languages }}"
+                                        data-route="{{ route('humanresource.employeeLanguages.index') }}" data-model="{{ $languages }}"
                                         href="#">Languages</a>
                                 </li>
                             </ul>
@@ -93,16 +93,16 @@ $services = $data['services'];
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <a class="dt" data-route="humanresource/employeeChildrens"
+                                    <a class="dt" data-route="{{ route('humanresource.employeeChildrens.index') }}"
                                         data-model="{{ $children }}" href="#">Children</a>
                                 </li>
                                 </li>
                                 <li class="list-group-item"><a class="dt"
-                                        data-route="humanresource/employeeWives" data-model="{{ $spouse }}"
+                                        data-route="{{ route('humanresource.employeeWives.index') }}" data-model="{{ $spouse }}"
                                         href="#">Spouse</a>
                                 </li>
                                 <li class="list-group-item"><a class="dt"
-                                        data-route="humanresource/employeeNextOfKins" data-model="{{ $nextOfKins }}"
+                                        data-route="{{ route('humanresource.employeeNextOfKins.index') }}" data-model="{{ $nextOfKins }}"
                                         href="#">Next
                                         of
                                         Kins</a>
@@ -113,16 +113,16 @@ $services = $data['services'];
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <a class="dt" data-route="humanresource/employeeCertificates"
+                                    <a class="dt" data-route="{{ route('humanresource.employeeCertificates.index') }}"
                                         data-model="{{ $certificates }}" href="#">Certificates</a>
                                 </li>
                                 </li>
                                 <li class="list-group-item"><a class="dt"
-                                        data-route="humanresource/employeeEducations" data-model="{{ $educations }}"
+                                        data-route="{{ route('humanresource.employeeEducations.index') }}" data-model="{{ $educations }}"
                                         href="#">Education</a>
                                 </li>
                                 <li class="list-group-item"><a class="dt"
-                                        data-route="humanresource/employeeQualifications"
+                                        data-route="{{ route('humanresource.employeeQualifications.index') }}"
                                         data-model="{{ $qualifications }}" href="#">Qualifications</a>
                                 </li>
                             </ul>
@@ -131,22 +131,22 @@ $services = $data['services'];
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <a class="dt" data-route="humanresource/employeeActionSheets"
+                                    <a class="dt" data-route="{{ route('humanresource.employeeActionSheets.index') }}"
                                         data-model="{{ $actionSheets }}" href="#">Action
                                         Sheets</a>
                                 </li>
                                 </li>
                                 <li class="list-group-item"><a class="dt"
-                                        data-route="humanresource/employeeCensures" data-model="{{ $censures }}"
+                                        data-route="{{ route('humanresource.employeeCensures.index') }}" data-model="{{ $censures }}"
                                         href="#">Censures</a>
                                 </li>
                                 <li class="list-group-item"><a class="dt"
-                                        data-route="humanresource/employeeRecordTrackers"
+                                        data-route="{{ route('humanresource.employeeRecordTrackers.index') }}"
                                         data-model="{{ $recordTrackers }}" href="#">Record
                                         Trackers</a>
                                 </li>
                                 <li class="list-group-item"><a class="dt"
-                                        data-route="humanresource/employeeRanks" data-model="{{ $ranks }}"
+                                        data-route="{{ route('humanresource.employeeRanks.index') }}" data-model="{{ $ranks }}"
                                         href="#">Ranks</a>
                                 </li>
                             </ul>
@@ -155,17 +155,17 @@ $services = $data['services'];
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <a class="dt" data-route="humanresource/employeeServices"
+                                    <a class="dt" data-route="{{ route('humanresource.employeeServices.index') }}"
                                         data-model="{{ $services }}" href="#">Services</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <a class="dt" data-route="humanresource/employeeForceServices"
+                                    <a class="dt" data-route="{{ route('humanresource.employeeForceServices.index') }}"
                                         data-model="{{ $forceServices }}" href="#">Force
                                         Services</a>
                                 </li>
                                 </li>
                                 <li class="list-group-item"><a class="dt"
-                                        data-route="humanresource/employeePublicServices"
+                                        data-route="{{ route('humanresource.employeePublicServices.index') }}"
                                         data-model="{{ $publicServices }}" href="#">Public
                                         Services</a>
                                 </li>
@@ -175,12 +175,12 @@ $services = $data['services'];
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <a class="dt" data-route="humanresource/employeeGratuities"
+                                    <a class="dt" data-route="{{ route('humanresource.employeeGratuities.index') }}"
                                         data-model="{{ $gratuities }}" href="#">Gratuity</a>
                                 </li>
                                 </li>
                                 <li class="list-group-item"><a class="dt"
-                                        data-route="humanresource/employeeTerminations" data-model="{{ $terminations }}"
+                                        data-route="{{ route('humanresource.employeeTerminations.index') }}" data-model="{{ $terminations }}"
                                         href="#">Termination</a>
                                 </li>
                             </ul>
@@ -189,13 +189,13 @@ $services = $data['services'];
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <a class="dt" data-route="humanresource/employeeForeignTours"
+                                    <a class="dt" data-route="{{ route('humanresource.employeeForeignTours.index') }}"
                                         data-model="{{ $foreignTours }}" href="#">Foreign
                                         Tours</a>
                                 </li>
                                 </li>
                                 <li class="list-group-item"><a class="dt"
-                                        data-route="humanresource/employeeLocalLeaves" data-model="{{ $localLeaves }}"
+                                        data-route="{{ route('humanresource.employeeLocalLeaves.index') }}" data-model="{{ $localLeaves }}"
                                         href="#">Local
                                         Leaves</a>
                                 </li>
@@ -231,31 +231,31 @@ $services = $data['services'];
 
                 <div id="basic-info-table" class="card">
                     <div class="">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-12 col-sm-12 table-responsive">
-                                <table class="table table-default table-striped">
-                                    @include('humanresource.employees.show_fields')
+                        <div class=" row">
+                        <div class="col-lg-6 col-md-12 col-sm-12 table-responsive">
+                            <table class="table table-default table-striped">
+                                @include('humanresource.employees.show_fields')
 
-                                </table>
-                            </div>
-                            <div class="col-lg-6 col-md-12 col-sm-12 table-responsive">
-                                <table class="table table-default table-striped">
-                                    @include('humanresource.employees.show_fields2')
+                            </table>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12 table-responsive">
+                            <table class="table table-default table-striped">
+                                @include('humanresource.employees.show_fields2')
 
-                                </table>
-                            </div>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
 
 
 
 
 
-        {{-- <a href="humanresource.employees.index" class="btn secondary-color-bg">Back</a> --}}
+    {{-- <a href="humanresource.employees.index" class="btn secondary-color-bg">Back</a> --}}
     </div>
 
     <script>
@@ -267,13 +267,13 @@ $services = $data['services'];
 
 
         function getActions(id, url) {
-            let host = window.location.protocol + "//" + window.location.host;
+            // let host = window.location.protocol + "//" + window.location.host;
             return `<div class='btn-group'>
                                 <a  data-dismiss="modal" 
                                     data-toggle="modal" 
                                     data-target='#model_modal' 
                                     data-id="${id}" 
-                                    data-route="${host}/${url}/${id}" 
+                                    data-route="${url}/${id}" 
                                     href="#" title='show'
                                     class='btn custom-outline-primary btn-xs action-buttons'>
                                     <i class="im im-icon-Information"></i>
@@ -283,12 +283,12 @@ $services = $data['services'];
                                     data-toggle="modal" 
                                     data-target='#model_modal' 
                                     data-id="${id}" 
-                                    data-route="${host}/${url}/${id}/edit" 
+                                    data-route="${url}/${id}/edit" 
                                     href="#" title='edit'
                                     class='btn custom-outline-primary btn-xs action-buttons'>
                                     <i class="im im-icon-File-Edit"></i>
                                 </a>
-                                <form id="delete-form-${id}" action="${host}/${url}/${id}" method="post">
+                                <form id="delete-form-${id}" action="${url}/${id}" method="post">
                                     @csrf
                                     <input name="_method" type="hidden" value="DELETE">
                                     <button type="button"  
@@ -328,12 +328,13 @@ $services = $data['services'];
                 $('#basic-info-table').show();
             })
 
+            let currentRoute = '';
 
             $('.dt').each(function() {
+                // console.log(currentRoute);
 
                 $(this).click(function() {
-                    let createRoute = host + "/" + $(this).data("route") + "/create";
-                    $('#model_frame').attr('src', createRoute);
+                    currentRoute = $(this).data("route");
 
                     $('#basic-info-table').hide();
                     $('#details-div').show();
@@ -411,6 +412,12 @@ $services = $data['services'];
 
                 });
             });
+            $('#add-new-button').click(function() {
+                let createRoute = currentRoute + "/create";
+                $('#model_frame').attr('src', createRoute);
+                $('#model_modal').modal('show');
+            })
+
         }
     </script>
 

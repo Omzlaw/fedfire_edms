@@ -34,7 +34,7 @@ class RankTypeSeeder extends Seeder
             ['title' => 'FI', 'description' => 'Fire Inspector', 'type' => 1],
             ['title' => 'AIF', 'description' => 'Assistant Inspector Of Fire', 'type' => 1],
             ['title' => 'CFA', 'description' => 'Chief Fire Assistant', 'type' => 1],
-            ['title' => 'FA', 'description' => 'Fire Assistant', 'type' => 1],
+            ['title' => 'SFA', 'description' => 'Fire Assistant', 'type' => 1],
             ['title' => 'FA I', 'description' => 'Fire Assistant I', 'type' => 1],
             ['title' => 'FA II', 'description' => 'Fire Assistant II', 'type' => 1],
             ['title' => 'FA III', 'description' => 'Fire Assistant III', 'type' => 1],

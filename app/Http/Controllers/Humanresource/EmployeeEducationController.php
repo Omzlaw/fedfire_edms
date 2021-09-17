@@ -55,6 +55,19 @@ class EmployeeEducationController extends AppBaseController
 
         /** @var EmployeeEducation $employeeEducation */
         $employeeEducation = EmployeeEducation::create($input);
+        $employee = Employee::find($input['employee_id']);
+        $employee['entry_qualification'] = EmployeeEducation::orderBy('id', 'DESC')
+        ->where('employee_id', '=', $employee->id)
+        ->where('status', '=', 1)
+        ->first()->qualification;
+        
+        $employee['additional_qualification'] = EmployeeEducation::orderBy('id', 'DESC')
+        ->where('employee_id', '=', $employee->id)
+        ->where('status', '=', 1)
+        ->skip(1)
+        ->first()->qualification;
+
+        $employee->save();
 
         Flash::success('Employee Education saved successfully.');
         add_audit('create', 'Employee Education');
@@ -130,6 +143,19 @@ class EmployeeEducationController extends AppBaseController
 
         $employeeEducation->fill($request->all());
         $employeeEducation->save();
+        $employee = Employee::find($input['employee_id']);
+
+        $employee['entry_qualification'] = EmployeeEducation::orderBy('id', 'DESC')
+        ->where('employee_id', '=', $employee->id)
+        ->where('status', '=', 1)
+        ->first()->qualification;
+
+        $employee['additional_qualification'] = EmployeeEducation::orderBy('id', 'DESC')
+        ->where('employee_id', '=', $employee->id)
+        ->where('status', '=', 1)
+        ->skip(1)
+        ->first()->qualification;
+        $employee->save();
         add_audit('update', 'Employee Education');
 
         Flash::success('Employee Education updated successfully.');

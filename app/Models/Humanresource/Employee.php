@@ -83,7 +83,15 @@ class Employee extends Model
         'updated_by',
         'current_appointment',
         'current_rank',
-        'current_qualification'
+        'entry_qualification',
+        'additional_qualification',
+        'retirement_date_by_dob',
+        'retirement_year_by_dob',
+        'no_of_years_remained_by_dob',
+        'retirement_date_by_dofa',
+        'no_of_years_remained_by_dofa',
+        'IPPIS',
+        'cadre',
     ];
 
     /**
@@ -125,7 +133,15 @@ class Employee extends Model
         'updated_by' => 'integer',
         'current_appointment' => 'string',
         'current_rank' => 'integer',
-        'current_qualification' => 'integer'
+        'entry_qualification' => 'string',
+        'additional_qualification' => 'string',
+        'retirement_date_by_dob' => 'string',
+        'retirement_year_by_dob' => 'string',
+        'no_of_years_remained_by_dob' => 'integer',
+        'retirement_date_by_dofa' => 'string',
+        'no_of_years_remained_by_dofa' => 'integer',
+        'IPPIS' => 'integer',
+        'cadre' => 'string',
     ];
 
     /**
@@ -139,14 +155,10 @@ class Employee extends Model
         'first_name' => 'Required',
         'last_name' => 'Required',
         'gender' => 'Required',
-        'religion' => 'Required',
         'birthdate' => 'Required',
         'gl' => 'Required',
-        'type_of_appointment' => 'Required',
-        'marital_status_id' => 'Required',
         'date_of_first_appointment' => 'Required',
         'date_of_present_appointment' => 'Required',
-        'assumption_of_duty_date' => 'Required',
         'email' => 'Required|Unique:employees',
         'phone' => 'Required|Unique:employees'
     ];
@@ -162,7 +174,6 @@ class Employee extends Model
             'birthdate' => 'Required',
             'gl' => 'Required',
             'type_of_appointment' => 'Required',
-            'marital_status_id' => 'Required',
             'date_of_first_appointment' => 'Required',
             'date_of_present_appointment' => 'Required',
             'assumption_of_duty_date' => 'Required',
@@ -210,10 +221,10 @@ class Employee extends Model
         return $this->belongsTo(\App\Models\Shared\RankType::class, 'current_rank', 'id');
     }
 
-    public function currentQualification()
-    {
-        return $this->belongsTo(\App\Models\Shared\QualificationType::class, 'current_qualification', 'id');
-    }
+    // public function currentQualification()
+    // {
+    //     return $this->belongsTo(\App\Models\Shared\QualificationType::class, 'current_qualification', 'id');
+    // }
 
     public function country()
     {
@@ -293,7 +304,7 @@ class Employee extends Model
 
     public function educations()
     { 
-        return $this->hasMany(EmployeeEducation::class)->select('id', 'school_name', 'certificate_id', 'school_type_id', 'remark');
+        return $this->hasMany(EmployeeEducation::class)->select('id', 'qualification', 'school_name', 'qualification_type_id', 'remark');
     }
 
     public function ranks()
@@ -333,7 +344,7 @@ class Employee extends Model
 
     public function nextOfKins()
     {
-        return $this->hasMany(EmployeeNextOfKin::class)->select('id', 'name', 'address', 'phone', 'relationship_id');
+        return $this->hasMany(EmployeeNextOfKin::class)->select('id', 'name', 'address', 'phone');
     }
 
     public function publicServices()

@@ -21,10 +21,10 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('relationship_id', 'Relationship:') !!}</th>
     <td>{{ $employeeNextOfKin->relationship->title }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>

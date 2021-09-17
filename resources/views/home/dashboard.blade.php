@@ -595,7 +595,7 @@
                         yAxes: [{
                             ticks: {
                                 beginAtZero: true,
-                                stepSize: 1,
+                                stepSize: 100,
                                 max: employee_count
                             },
                             scaleLabel: {
@@ -641,7 +641,7 @@
                         yAxes: [{
                             ticks: {
                                 beginAtZero: true,
-                                stepSize: 1,
+                                stepSize: 100,
                                 max: employee_count
                             },
                             scaleLabel: {

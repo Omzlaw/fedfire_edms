@@ -212,9 +212,7 @@ class EmployeeController extends AppBaseController
         //get the educations
 
         $data['educations'] = $employee->educations->map(function ($item) {
-            $item->certificate_id = $item->certificate->title;
-            $item->school_type_id = $item->schoolType->title;
-            return ['id' => $item['id'], 'school_name' => $item['school_name'], 'certificate_id' => $item['certificate_id'], 'school_type_id' => $item['school_type_id'], 'remark' => $item['remark']];
+            return ['id' => $item['id'], 'qualification' => $item['qualification'],'school_name' => $item['school_name'], 'qualification_type_id' => $item['qualification_type_id'], 'remark' => $item['remark']];
             // return $item;
         });
 
@@ -276,7 +274,6 @@ class EmployeeController extends AppBaseController
             $item->status = get_enum_value('enum_status', $item->status);
             $item->zone = get_enum_value('enum_zone', $item->zone);
             $item->state = $item->state;
-            $item->region = $item->regionRelation->title;
             $item->present_station = $item->present_station;
             return ['id' => $item->id, 'present_department' => $item->present_department, 'status' => $item->status, 'zone' => $item->zone, 'state' => $item->state, 'region' => $item->region, 'location' => $item->location, 'present_station' => $item->present_station];
             // return $item;
@@ -285,8 +282,7 @@ class EmployeeController extends AppBaseController
         //get the nextOfKins
 
         $data['nextOfKins'] = $employee->nextOfKins->map(function ($item) {
-            $item->relationship_id = $item->relationship->title;
-            return ['id' => $item['id'], 'name' => $item['name'], 'address' => $item['address'], 'relationship_id' => $item['relationship_id'], 'phone' => $item['phone']];
+            return ['id' => $item['id'], 'name' => $item['name'], 'address' => $item['address'], 'phone' => $item['phone']];
             // return $item;
         });
 
@@ -432,8 +428,9 @@ class EmployeeController extends AppBaseController
 
         $profile_picture = str_replace('storage/', 'public/', $employee->profile_picture);
         Storage::delete($profile_picture);
-
+        $this->deleteEmployeeRecords($employee);
         $employee->delete();
+
         add_audit('delete', 'Employee');
 
         Flash::success('Employee deleted successfully.');
@@ -639,6 +636,11 @@ class EmployeeController extends AppBaseController
             return redirect()->back();
         }
 
+        if(!isset($request->upload)) {
+            Flash::error('Please insert an excel file.');
+            return redirect()->back();
+        }
+        
         $file = $request->upload;
         (new EmployeesImport)->import($file);
 
@@ -646,5 +648,28 @@ class EmployeeController extends AppBaseController
         add_audit('import', 'Employee Data');
 
         return redirect(route('humanresource.employees.index'));
+    }
+
+    public function deleteEmployeeRecords($employee) {
+        $employee->actionSheets()->delete();
+        $employee->addresses()->delete();
+        $employee->censures()->delete();
+        $employee->certificates()->delete();
+        $employee->children()->delete();
+        $employee->educations()->delete();
+        $employee->forceServices()->delete();
+        $employee->foreignTours()->delete();
+        $employee->gratuities()->delete();
+        $employee->languages()->delete();
+        $employee->localLeaves()->delete();
+        $employee->nextOfKins()->delete();
+        $employee->publicServices()->delete();
+        $employee->qualifications()->delete();
+        $employee->ranks()->delete();
+        $employee->recordTrackers()->delete();
+        $employee->services()->delete();
+        $employee->terminations()->delete();
+        $employee->spouse()->delete();
+
     }
 }

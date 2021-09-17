@@ -8,6 +8,26 @@
     </div>
 </div>
 
+<!-- IPPIS No Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('IPPIS', 'IPPIS No:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::number('IPPIS', null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
+<!-- Cadre Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('cadre', 'CADRE:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::text('cadre',null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
 
 <!-- First Name Field -->
 <div class="form-group">
@@ -355,7 +375,7 @@
             $options[] = $option;
         }
         else {
-            $option = '<option selected value=' . $senatorialZone->id . ' data-state_id=' . $senatorialZone->state_id . '>' . $senatorialZone->title . '</option>';
+            $option = '<option value=' . $senatorialZone->id . ' data-state_id=' . $senatorialZone->state_id . '>' . $senatorialZone->title . '</option>';
             $options[] = $option;
         }
     }
@@ -440,6 +460,55 @@
     </div>
 </div>
 
+<!-- Retirement Date By DOB Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('retirement_date_by_dob', 'Retirement Date By DOB:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::date('retirement_date_by_dob', null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
+<!-- Retirement Year By DOB Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('retirement_year_by_dob', 'Retirement Year By DOB:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::number('retirement_year_by_dob', null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
+<!-- No of Years Remained By DOB Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('no_of_years_remained_by_dob', 'No of Years Remained By DOB:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::number('no_of_years_remained_by_dob', null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
+<!-- Retirement Date By DOFA Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('retirement_date_by_dofa', 'Retirement Date By DOFA:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::date('retirement_date_by_dofa', null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
+<!-- No of Years Remained By DOFA Field -->
+<div class="form-group">
+    <div class="row">
+        {!! Form::label('no_of_years_remained_by_dofa', 'No of Years Remained By DOFA:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::number('no_of_years_remained_by_dofa', null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
 
 <!-- Current Appointment Field -->
 {{-- <div class="form-group">
@@ -467,6 +536,12 @@
         $('#geoPoliticalZoneSelector').prop('disabled', 'disabled');
         $('#senatorialZoneSelector').prop('disabled', 'disabled');
         $('#localGovtAreaSelector').prop('disabled', 'disabled');
+        if($('#countrySelector').val() > -1){
+            stateLocalGovtAreaSelector()
+        }
+        if($('#stateSelector').val() > -1){
+            stateLocalGovtAreaSelector()
+        }
 
     }
 

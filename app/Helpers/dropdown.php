@@ -320,21 +320,21 @@ if (!function_exists('enum_grade_level')) {
     function enum_grade_level($add_Select = TRUE)
     {
         $option['-1'] = 'Select...';
-        $option['1'] = 'Grade 1';
-        $option['2'] = 'Grade 2';
-        $option['3'] = 'Grade 3';
-        $option['4'] = 'Grade 4';
-        $option['5'] = 'Grade 5';
-        $option['6'] = 'Grade 6';
-        $option['7'] = 'Grade 7';
-        $option['8'] = 'Grade 8';
-        $option['9'] = 'Grade 9';
-        $option['10'] = 'Grade 10';
-        $option['11'] = 'Grade 11';
-        $option['12'] = 'Grade 12';
-        $option['13'] = 'Grade 13';
-        $option['14'] = 'Grade 14';
-        $option['15'] = 'Grade 15';
+        $option['1'] = 'CONPASS 01';
+        $option['2'] = 'CONPASS 02';
+        $option['3'] = 'CONPASS 03';
+        $option['4'] = 'CONPASS 04';
+        $option['5'] = 'CONPASS 05';
+        $option['6'] = 'CONPASS 06';
+        $option['7'] = 'CONPASS 07';
+        $option['8'] = 'CONPASS 08';
+        $option['9'] = 'CONPASS 09';
+        $option['10'] = 'CONPASS 10';
+        $option['11'] = 'CONPASS 11';
+        $option['12'] = 'CONPASS 12';
+        $option['13'] = 'CONPASS 13';
+        $option['14'] = 'CONPASS 14';
+        $option['15'] = 'CONPASS 15';
         if (!$add_Select) {
             unset($option['-1']);
         }
@@ -360,21 +360,21 @@ if (!function_exists('enum_zone')) {
     function enum_zone($add_Select = TRUE)
     {
         $option['-1'] = 'Select...';
-        $option['1'] = 'Zone A - Markurdi';
-        $option['2'] = 'Zone B - Kaduna';
-        $option['3'] = 'Zone C - Bauchi';
-        $option['4'] = 'Zone D - Enugu';
-        $option['5'] = 'Zone E - Uyo';
-        $option['6'] = 'Zone F - Lagos';
-        $option['7'] = 'Zone G - Minna';
-        $option['8'] = 'Zone H - Sokoto';
-        $option['9'] = 'Zone I - Yola';
-        $option['10'] = 'Zone J - Owerri';
-        $option['11'] = 'Zone K - Asaba';
-        $option['12'] = 'Zone L - Osogbo';
-        $option['13'] = 'Zone M - Kano';
+        $option['1'] = 'Zone A';
+        $option['2'] = 'Zone B';
+        $option['3'] = 'Zone C';
+        $option['4'] = 'Zone D';
+        $option['5'] = 'Zone E';
+        $option['6'] = 'Zone F';
+        $option['7'] = 'Zone G';
+        $option['8'] = 'Zone H';
+        $option['9'] = 'Zone I';
+        $option['10'] = 'Zone J';
+        $option['11'] = 'Zone K';
+        $option['12'] = 'Zone L';
+        $option['13'] = 'Zone M';
         $option['14'] = 'Wuse';
-        $option['15'] = 'FED. OPS - Abuja';
+        $option['15'] = 'Abuja';
         if (!$add_Select) {
             unset($option['-1']);
         }
@@ -387,14 +387,15 @@ if (!function_exists('enum_department')) {
     {
         $option['-1'] = 'Select...';
         $option['1'] = 'CGF';
-        $option['2'] = 'Administration';
+        $option['2'] = 'Admin';
         $option['3'] = 'Operations';
         $option['4'] = 'Procurement';
-        $option['5'] = 'Inspectorate, Investigations
-        &amp; Enforcement (IIE)';
-        $option['6'] = 'PPRS';
-        $option['7'] = 'National Fire Academy
-        (NFA)';
+        $option['5'] = 'I.I.E';
+        $option['6'] = 'Sport';
+        $option['7'] = 'Academy';
+        $option['8'] = 'Security';
+        $option['8'] = 'Commanding Officer Office';
+        $option['8'] = 'Band Unit';
         if (!$add_Select) {
             unset($option['-1']);
         }

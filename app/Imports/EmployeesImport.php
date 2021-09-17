@@ -2,26 +2,32 @@
 
 namespace App\Imports;
 
+use Carbon\Carbon;
+use Laracasts\Flash\Flash;
 use Maatwebsite\Excel\Row;
 use Illuminate\Support\Str;
 use App\Models\Shared\State;
+use App\Models\Shared\RankType;
 use Illuminate\Validation\Rule;
 use App\Models\Shared\LocalGovtArea;
 use Illuminate\Validation\Validator;
 use App\Models\Humanresource\Employee;
+use App\Models\Shared\GeoPoliticalZone;
 use Maatwebsite\Excel\Concerns\ToModel;
+use App\Models\Shared\QualificationType;
 use Maatwebsite\Excel\Concerns\OnEachRow;
 use Maatwebsite\Excel\Concerns\Importable;
 use Maatwebsite\Excel\Concerns\WithEvents;
 use Maatwebsite\Excel\Concerns\SkipsEmptyRows;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithValidation;
+use Maatwebsite\Excel\Concerns\WithCalculatedFormulas;
+use Maatwebsite\Excel\Concerns\WithProgressBar;
 
-
-class EmployeesImport implements OnEachRow, WithHeadingRow, WithValidation, withEvents, SkipsEmptyRows
+class EmployeesImport implements OnEachRow, WithHeadingRow, WithValidation, withEvents, SkipsEmptyRows, WithCalculatedFormulas, WithProgressBar
 {
     use Importable;
-    
+
     /**
      * @param array $row
      *
@@ -42,129 +48,230 @@ class EmployeesImport implements OnEachRow, WithHeadingRow, WithValidation, with
 
     public function onRow(Row $row)
     {
+        ini_set('max_execution_time', 600);
+
         $rowIndex = $row->getIndex();
         $row      = $row->toArray();
 
-        // Validator::make($row, [
-        //     'email' => 'required',
-        //     'phone' => 'required',
-        //     'service_number' => 'required',
-        //     'email' => 'unique:employees',
-        //     'phone' => 'unique:employees',
-        //     'service_number' => 'unique:employees',
-        // ])->validate();
 
-        // dd($row);
+        try {
 
-        $gender = $row['sex'];
-        $gender_id = 0;
-        if (Str::contains('Male', $gender) === true) {
-            $gender_index = 1;
-        }
-        else {
-            if(strlen($gender) > 4) {
+            try {
+                $file_no = $row['file_no'];
+            } catch (\Exception $e) {
+                return Flash::error('Row ' . $rowIndex . ': Ensure the file number is unique and has the right format');
+            }
+
+            try {
+                $ippis = $row['ippis'];
+            } catch (\Exception $e) {
+                return Flash::error('Row ' . $rowIndex . ': Ensure the IPPIS number is unique and has the right format');
+            }
+
+            $name_breakdown = explode(' ', $row['name']);
+            $staff_code = '';
+            try {
+                if (!isset($name_breakdown[2])) {
+                    $staff_code = $name_breakdown[0] . '_' . $name_breakdown[1] . '_' . $row['file_no'];
+                } else {
+                    $staff_code = $name_breakdown[0] . '_' . $name_breakdown[1] . '_' . $name_breakdown[2] . '_' . $row['file_no'];
+                }
+            } catch (\Exception $e) {
+                return Flash::error('Row ' . $rowIndex . ': Ensure data in the name field is formatted correctly');
+            }
+
+
+            $gender_in_excel = strtolower($row['sex']);
+            $gender_id = 0;
+            // $genders = enum_gender();
+            if(Str::contains($gender_in_excel, 'female')){
                 $gender_id = 0;
             }
-        }
-
-        $state_in_excel = $row['state_of_origin'];
-        $state_id = 0;
-        $states = State::all();
-        foreach ($states as $state) {
-            if (Str::contains($state->title, $state_in_excel) === true) {
-                $state_id = $state->id;
+            else if(Str::contains($gender_in_excel, 'male') && strlen($gender_in_excel < 5)) {
+                $gender_id = 1;
             }
-        }
-
-        $lga_in_excel = $row['lga'];
-        $lga_id = 0;
-        $lgas = LocalGovtArea::all();
-        foreach ($lgas as $lga) {
-            if (Str::contains($lga->title, $lga_in_excel) === true) {
-                $lga_id = $lga->id;
+            else {
+                // return Flash::error('Row ' . $rowIndex . ': Please insert a valid gender');
+                $gender_id = 1;
             }
-        }
+            // foreach ($genders as $key => $gender) {
+            //     if (strtolower($gender) == $gender_in_excel) {
+            //         $gender_id = $key;
+            //     }
+            // }
 
-        $religion_in_excel = $row['religion'];
-        $religion_id = 0;
-        $religions = enum_religion();
-        foreach ($religions as $key => $religion) {
-            if (Str::contains($religion, $religion_in_excel) === true) {
-                $religion_id = $key;
+            $rank_in_excel = strtolower($row['rank']);
+            $rank_id = 1;
+            $rank_types = RankType::all();
+            foreach ($rank_types as $rank_type) {
+                if (strtolower($rank_type->title) === $rank_in_excel) {
+                    $rank_id = $rank_type->id;
+                }
             }
-        }
 
-        $marital_status_in_excel = $row['marital_status'];
-        $marital_status_id = 0;
-        $marital_statuses = enum_marital_status();
-        foreach ($marital_statuses as $key => $marital_status) {
-            if (Str::contains($marital_status, $marital_status_in_excel) === true) {
-                $marital_status_id = $key;
+            $gl_in_excel = strtolower($row['gl']);
+            $gl_id = 1;
+            $gls = enum_grade_level();
+            foreach ($gls as $key => $gl) {
+                if (strtolower($gl) === $gl_in_excel) {
+                    $gl_id = $key;
+                }
             }
-        }
 
-        $type_of_appointment_in_excel = $row['type_of_appointment'];
-        $type_of_appointment_id = 1;
-        $type_of_appointments = enum_type_of_appointment();
-        foreach ($type_of_appointments as $key => $type_of_appointment) {
-            if (Str::contains($type_of_appointment, $type_of_appointment_in_excel) === true) {
-                $type_of_appointment_id = $key;
+            try {
+                $date_of_first_appointment = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row['dofa']);
+            } catch (\Exception $e) {
+                return Flash::error('Row ' . $rowIndex . ': Ensure data in the DOFA field is formatted correctly');
             }
+
+            try {
+                $date_of_present_appointment = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row['dopa']);
+            } catch (\Exception $e) {
+                return Flash::error('Row ' . $rowIndex . ': Ensure data in the DOFA field is formatted correctly');
+            }
+
+            $cadre = $row['cadre'];
+
+            $present_department_in_excel = strtolower($row['present_department']);
+            $present_department_id = 1;
+            $departments = enum_department();
+            foreach ($departments as $key => $department) {
+                if (Str::contains(strtolower($department), $present_department_in_excel) === true) {
+                    $present_department_id = $key;
+                }
+            }
+
+            $location = $row['location'];
+
+            $state_of_service = $row['state'];
+
+            $zone_in_excel = strtolower($row['zone']);
+            $zone_id = 1;
+            $zones = enum_zone();
+            foreach ($zones as $key => $zone) {
+                if (Str::contains(strtolower($zone), $zone_in_excel) === true) {
+                    $zone_id = $key;
+                }
+            }
+
+            $entry_qualification = $row['entry_qualification'];
+
+            $additional_qualification = $row['additional_qualification'];
+
+            try {
+                $date_of_birth = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row['date_of_birth']);
+            } catch (\Exception $e) {
+                return Flash::error('Row ' . $rowIndex . ': Ensure data in the Date of Birth field is formatted correctly');
+            }
+
+            $state_in_excel = strtolower($row['state_of_origin']);
+            $state_id = 0;
+            $states = State::where('country_id', '=',  160)->get();
+            foreach ($states as $state) {
+                if (Str::contains(strtolower($state->title), $state_in_excel) === true) {
+                    $state_id = $state->id;
+                }
+            }
+
+            $lga_in_excel = strtolower($row['lg']);
+            $lga_id = 0;
+            $lgas = LocalGovtArea::all();
+            foreach ($lgas as $lga) {
+                if (strtolower($lga->title) === $lga_in_excel) {
+                    $lga_id = $lga->id;
+                }
+            }
+
+            $phone = $row['phone'];
+
+            $email = $row['e_mail'];
+
+            try {
+                $retirement_date_by_dofa = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row['retirement_date_by_dofa']);
+            } catch (\Exception $e) {
+                return Flash::error('Row ' . $rowIndex . ': Ensure data in the Retirement Date By DOFA field is formatted correctly');
+            }
+
+            try {
+                $retirement_date_by_dob = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row['retirement_date_by_dob']);
+            } catch (\Exception $e) {
+                return Flash::error('Row ' . $rowIndex . ': Ensure data in the Retirement Date By DOB field is formatted correctly');
+            }
+
+            $retirement_year_by_dob = date_format($retirement_date_by_dob, "Y");;
+            $no_of_years_remained_by_dob = $row['no_of_years_remained_by_dob'];
+            $no_of_years_remained_by_dofa = $row['no_of_years_remained_by_dofa'];
+
+            // dd($retirement_year_by_dob);
+            try {
+                $employee = Employee::firstOrCreate([
+                    'first_name' => isset($name_breakdown[0]) ? $name_breakdown[0] : 'null',
+                    'middle_name' => isset($name_breakdown[1]) ? $name_breakdown[1] : '',
+                    'last_name' => isset($name_breakdown[2]) ? $name_breakdown[2] : '',
+                    'gender' => $gender_id,
+                    'birthdate' => $date_of_birth,
+                    'state_of_origin' => $state_id,
+                    'local_govt_area' => $lga_id,
+                    'phone' => $phone,
+                    'email' => $email,
+                    'service_number' => $file_no,
+                    'date_of_first_appointment' => $date_of_first_appointment,
+                    'date_of_present_appointment' => $date_of_present_appointment,
+                    'staff_code' => $staff_code,
+                    'gl' => $gl_id,
+                    'retirement_date_by_dob' => $retirement_date_by_dob,
+                    'retirement_year_by_dob' => $retirement_year_by_dob,
+                    'no_of_years_remained_by_dob' => $no_of_years_remained_by_dob,
+                    'retirement_date_by_dofa' => $retirement_date_by_dofa,
+                    'no_of_years_remained_by_dofa' => $no_of_years_remained_by_dofa,
+                    'IPPIS' => $ippis,
+                    'cadre' => $cadre,
+                    'entry_qualification' => $entry_qualification,
+                    'additional_qualification' => $additional_qualification
+                ]);
+            } catch (\Exception $e) {
+                return Flash::error('Row ' . $rowIndex . ': Ensure there is no duplicate file number, IPPIS number, email and phone number. The data must be formatted correctly');
+            }
+
+            try {
+                $rank = RankType::find($rank_id);
+                $employee->ranks()->create([
+                    'rank_type_id' => $rank_id,
+                    'status' => 1,
+                    'employee_gender' => $gender_id,
+                    'type' => $rank->type
+                ]);
+            } catch (\Exception $e) {
+                return Flash::error('Row ' . $rowIndex . ': Ensure the rank data is formatted correctly and gender field is not empty');
+            }
+
+            try {
+                $employee->educations()->create([
+                    'qualification' => $entry_qualification,
+                ]);
+                if (isset($additional_qualification)) {
+                    $employee->educations()->create([
+                        'qualification' => $additional_qualification,
+                    ]);
+                }
+            } catch (\Exception $e) {
+                return Flash::error('Row ' . $rowIndex . ': Ensure the education data is formatted correctly and not empty.');
+            }
+
+            try {
+                $employee->services()->create([
+                    'location' => $location,
+                    'present_department' => $present_department_id,
+                    'zone' => $zone_id,
+                    'status' => 1,
+                    'state' => $state_of_service,
+                ]);
+            } catch (\Exception $e) {
+                return Flash::error('Row ' . $rowIndex . ': Ensure the service record data is formatted correctly adn follows the sample format and the location field is not empty');
+            }
+        } catch (\Exception $e) {
+            return Flash::error('Row ' . $rowIndex . ': Ensure the row follows the sample format');
         }
-
-        $residential_address = $row['residential_address'];
-        $permanent_address = $row['permanent_home_address'];
-        
-        $name_breakdown = explode(' ', $row['name']);
-        $staff_code = '';
-        if(!isset($name_breakdown[1])){
-            $staff_code = $name_breakdown[0] . '_' . $name_breakdown[2] . '_' . $row['service_number'];
-        }
-        else{
-            $staff_code = $name_breakdown[0] . '_' . $name_breakdown[1] . '_' . $name_breakdown[2] . '_' . $row['service_number'];
-        }
-        $employee = Employee::firstOrCreate([
-            'first_name' => isset($name_breakdown[0]) ? $name_breakdown[0] : 'null',
-            'middle_name' => isset($name_breakdown[1]) ? $name_breakdown[1] : '',
-            'last_name' => isset($name_breakdown[2]) ? $name_breakdown[2] : '',
-            'gender' => $gender_id,
-            'religion' => $religion_id,
-            'marital_status_id' => $marital_status_id,
-            'birthdate' => date("Y-m-d", $row['date_of_birth']),
-            'state_of_origin' => $state_id,
-            'local_govt_area' => $lga_id,
-            'phone' => $row['phone'],
-            'email' => $row['e_mail'],
-            'service_number' => $row['service_number'],
-            'date_of_first_appointment' => date("Y-m-d", $row['date_of_first_appointment']),
-            'assumption_of_duty_date' => date("Y-m-d", $row['assumption_of_duty_date']),
-            'date_of_confirmation' => date("Y-m-d", $row['date_of_confirmation']),
-            'date_of_present_appointment' => date("Y-m-d", $row['date_of_present_appt']),
-            'staff_code' => $staff_code,
-            'gl' => $row['gl'],
-            'type_of_appointment' => $type_of_appointment_id
-        ]);
-    
-        // $employee->ranks()->create([
-
-        // ]);
-        // $employee->nextOfKins()->create([
-
-        // ]);
-        // $employee->educations()->create([
-
-        // ]);
-        $employee->addresses()->create([
-            'address' => $residential_address,
-            'address_type' => 1
-        ]);
-        $employee->addresses()->create([
-            'address' => $permanent_address,
-            'address_type' => 1
-        ]);
-        // $employee->services()->create([
-            
-        // ]);
     }
 
     /**
@@ -172,31 +279,16 @@ class EmployeesImport implements OnEachRow, WithHeadingRow, WithValidation, with
      */
     public function uniqueBy()
     {
-        return 'service_number';
+        return 'file_no';
     }
 
     public function registerEvents(): array
     {
-        return [
-
-        ];
+        return [];
     }
 
     public function rules(): array
     {
-        return [
-            // 'email' => [
-            //     'unique:employees',
-            //     'required',
-            // ],
-            // 'phone' => [
-            //     'unique:employees',
-            //     'required',
-            // ],
-            // 'service_number' => [
-            //     'unique:employees',
-            //     'required',
-            // ]
-        ];
+        return [];
     }
 }

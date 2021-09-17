@@ -43,6 +43,7 @@ class EmployeeEducation extends Model
     public $fillable = [
         'qualification_type_id',
         'school_name',
+        'qualification',
         'certificate_id',
         'school_type_id',
         'from_date',
@@ -66,6 +67,7 @@ class EmployeeEducation extends Model
         'id' => 'integer',
         'qualification_type_id' => 'string',
         'school_name' => 'string',
+        'qualification' => 'string',
         'certificate_id' => 'string',
         'school_type_id' => 'string',
         'from_date' => 'string',
@@ -87,17 +89,17 @@ class EmployeeEducation extends Model
      */
     public static $rules = [
         'school_name' => 'Required',
-        'qualification_type_id' => 'Required',
-        'certificate_id' => 'Required',
-        'school_type_id' => 'Required',
-        'from_date' => 'Required',
+        // 'qualification_type_id' => 'Required',
+        // 'certificate_id' => 'Required',
+        // 'school_type_id' => 'Required',
+        // 'from_date' => 'Required',
         'to_date' => 'Required',
         'employee_id' => 'Required',
         // 'file_upload' => 'Required',
         'status' => 'Required',
       //        'remark' => 'Required',
         // 'checked_by' => 'Required',
-        'checked_at' => 'Required',
+        // 'checked_at' => 'Required',
      //   'created_by' => 'Required',
     //    'updated_by' => 'Required'
     ];

@@ -17,11 +17,11 @@ class CreateEmployeeServicesTable extends Migration
             $table->increments('id');
             $table->integer('employee_id')->unsigned();
             $table->integer('present_department')->unsigned();
-            $table->integer('present_station')->unsigned();
+            $table->string('present_station')->nullable();
             $table->string('state');
             $table->integer('zone')->unsigned();
             $table->string('location');
-            $table->integer('region')->unsigned();
+            $table->integer('region')->unsigned()->nullable();
             $table->integer('status')->default(1)->nullable();
             $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();

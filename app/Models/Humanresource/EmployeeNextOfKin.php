@@ -71,9 +71,9 @@ class EmployeeNextOfKin extends Model
      */
     public static $rules = [
         'name' => 'Required',
-        'address' => 'Required',
+        // 'address' => 'Required',
         'phone' => 'Required',
-        'relationship_id' => 'Required',
+        // 'relationship_id' => 'Required',
         'employee_id' => 'Required',
         // 'file_upload' => 'Required',
       //        'remark' => 'Required',

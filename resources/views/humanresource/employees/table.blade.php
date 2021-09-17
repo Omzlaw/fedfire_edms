@@ -8,6 +8,10 @@
         white-space: nowrap;
     }
 
+    td {
+        white-space: nowrap;
+    }
+
     .main-header1, .main-header2, .main-header3{
         border-bottom: 1px solid #dee2e6 !important;
         text-align:center !important;

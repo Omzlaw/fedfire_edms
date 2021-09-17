@@ -51,13 +51,7 @@ class EmployeeQualificationController extends AppBaseController
 
         /** @var EmployeeQualification $employeeQualification */
         $employeeQualification = EmployeeQualification::create($input);
-        $employee = Employee::find($input['employee_id']);
 
-        $employee['current_qualification'] = EmployeeQualification::orderBy('id', 'DESC')
-        ->where('employee_id', '=', $employee->id)
-        ->where('status', '=', 1)
-        ->first()->qualification_type_id;
-        $employee->save();
 
         Flash::success('Employee Qualification saved successfully.');
         add_audit('create', 'Employee Qualification');
@@ -132,14 +126,6 @@ class EmployeeQualificationController extends AppBaseController
         $input = $request->all();
         $employeeQualification->fill($input);
         $employeeQualification->save();
-
-        $employee = Employee::find($input['employee_id']);
-
-        $employee['current_qualification'] = EmployeeQualification::orderBy('id', 'DESC')
-        ->where('employee_id', '=', $employee->id)
-        ->where('status', '=', 1)
-        ->first()->qualification_type_id;
-        $employee->save();
 
         Flash::success('Employee Qualification updated successfully.');
         add_audit('update', 'Employee Qualification');

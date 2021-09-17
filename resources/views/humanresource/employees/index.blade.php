@@ -55,12 +55,15 @@
                     {!! Form::open(['route' => ['import'], 'class' => 'form-horizontal', 'files' => true]) !!}
                     <div class="form-group mt-10">
                         <div class="row">
-                            {!! Form::file('upload', ['id' => 'upload', 'style'=>'width: 14rem','class' => 'form-control mr-10']) !!}
+                            {!! Form::file('upload', ['accept'=>'.xls,.xlsx,.csv', 'id' => 'upload', 'style'=>'width: 14rem','class' => 'form-control mr-10']) !!}
                             {!! Form::submit('Import', ['name' => 'action', 'class' => 'btn custom-outline-primary']) !!}
                         </div>
                     </div>
                     {!! Form::close() !!}
                 </span>
+                <div>
+                    <a class="btn secondary-color-bg" href="{{ asset('excel-format/sample.xlsx') }}" download>Download Sample Format</a>
+                </div>
             </section>
             <div class="card-body">
                 <div class="row w-75 mb-10">

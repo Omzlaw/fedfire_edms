@@ -68,7 +68,7 @@ class EmployeeService extends Model
     public static $rules = [
         'employee_id' => 'Required',
         'present_department' => 'Required',
-        'present_station' => 'Required',
+        // 'present_station' => 'Required',
         'state' => 'Required',
         'zone' => 'Required',
         'location' => 'Required',

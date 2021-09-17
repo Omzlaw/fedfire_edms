@@ -25,5 +25,6 @@ class DatabaseSeeder extends Seeder
         $this->call(LanguageSeeder::class);
         $this->call(RankTypeSeeder::class);
         $this->call(TerminationTypeSeeder::class);
+        $this->call(QualificationTypeSeeder::class);
     }
 }
