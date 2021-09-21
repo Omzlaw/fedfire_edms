@@ -198,7 +198,7 @@ class EmployeesImport implements OnEachRow, WithHeadingRow, WithValidation, with
                 return Flash::error('Row ' . $rowIndex . ': Ensure data in the Retirement Date By DOB field is formatted correctly');
             }
 
-            $retirement_year_by_dob = date_format($retirement_date_by_dob, "Y");;
+            $retirement_year_by_dob = date_format($retirement_date_by_dob, "Y");
             $no_of_years_remained_by_dob = $row['no_of_years_remained_by_dob'];
             $no_of_years_remained_by_dofa = $row['no_of_years_remained_by_dofa'];
 
@@ -257,7 +257,6 @@ class EmployeesImport implements OnEachRow, WithHeadingRow, WithValidation, with
             } catch (\Exception $e) {
                 return Flash::error('Row ' . $rowIndex . ': Ensure the education data is formatted correctly and not empty.');
             }
-
             try {
                 $employee->services()->create([
                     'location' => $location,
