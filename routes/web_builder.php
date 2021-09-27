@@ -35,6 +35,7 @@ Route::group(['prefix' => 'humanresource', 'middleware' => ['auth']], function (
     Route::resource('employees', 'Humanresource\EmployeeController', ["as" => 'humanresource']);
 });
 
+Route::post('humanresource/employees/destroyMany', [EmployeeController::class, 'destroyMany'])->name('employeeMultipleDelete')->middleware('auth');
 
 
 Route::group(['prefix' => 'shared', 'middleware' => ['role:superadministrator', 'auth']], function () {

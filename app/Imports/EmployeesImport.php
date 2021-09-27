@@ -50,7 +50,7 @@ class EmployeesImport implements OnEachRow, WithHeadingRow, WithValidation, with
     {
         ini_set('max_execution_time', 600);
 
-        $rowIndex = $row->getIndex();
+        $rowIndex = $row->getIndex() - 1;
         $row      = $row->toArray();
 
 
@@ -241,6 +241,8 @@ class EmployeesImport implements OnEachRow, WithHeadingRow, WithValidation, with
                     'employee_gender' => $gender_id,
                     'type' => $rank->type
                 ]);
+                $employee['current_rank'] = $rank_id;
+                $employee->save();
             } catch (\Exception $e) {
                 return Flash::error('Row ' . $rowIndex . ': Ensure the rank data is formatted correctly and gender field is not empty');
             }

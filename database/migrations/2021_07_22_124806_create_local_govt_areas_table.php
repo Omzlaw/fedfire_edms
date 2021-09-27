@@ -17,11 +17,11 @@ class CreateLocalGovtAreasTable extends Migration
             $table->increments('id');
             $table->text('title');
             $table->text('description')->nullable();
-            $table->integer('senatorial_zone_id')->unsigned()->nullable();
-            $table->integer('state_id')->unsigned();
+            $table->integer('senatorial_zone_id')->nullable();
+            $table->integer('state_id');
             $table->integer('status')->default(1);
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->integer('updated_by')->unsigned()->nullable();
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
             //$table->foreign('senatorial_zone_id')->references('id')->on('senatorial_zones');

@@ -18,12 +18,12 @@ class CreateEmployeeWivesTable extends Migration
             $table->string('wife_name');
             $table->date('wife_birthdate');
             $table->date('marriage_date');
-            $table->integer('employee_id')->unsigned();
+            $table->integer('employee_id');
             $table->string('file_upload')->nullable();
             $table->string('remark')->nullable();
-            $table->integer('checked_by')->unsigned()->nullable();
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->integer('updated_by')->unsigned()->nullable();
+            $table->integer('checked_by')->nullable();
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
             //$table->foreign('employee_id')->references('id')->on('employees');

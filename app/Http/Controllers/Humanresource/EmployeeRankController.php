@@ -141,11 +141,11 @@ class EmployeeRankController extends AppBaseController
         $employeeRank->fill($input);
         $employeeRank->save();
 
-        $employee['current_rank'] = EmployeeRank::orderBy('id', 'DESC')
-        ->where('employee_id', '=', $employee->id)
-        ->where('status', '=', 1)
-        ->first()->rank_type_id;
-        $employee->save();
+        // $employee['current_rank'] = EmployeeRank::orderBy('id', 'DESC')
+        // ->where('employee_id', '=', $employee->id)
+        // ->where('status', '=', 1)
+        // ->first()->rank_type_id;
+        // $employee->save();
 
 
         Flash::success('Employee Rank updated successfully.');

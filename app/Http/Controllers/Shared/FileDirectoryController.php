@@ -143,17 +143,17 @@ class FileDirectoryController extends AppBaseController
 
         $rank_type_id = $request['rank_type'];
         $employees = Employee::select('id', 'service_number', 'first_name', 'middle_name', 'last_name')
-            ->orwhere('first_name', 'like', $request['search_query'])
-            ->orWhere('last_name', 'like', $request['search_query'])
-            ->orWhere('middle_name', 'like', $request['search_query'])
+            ->orwhere('first_name',  'LIKE', "%{$request['search_query']}%")
+            ->orWhere('last_name',  'LIKE', "%{$request['search_query']}%")
+            ->orWhere('middle_name',  'LIKE', "%{$request['search_query']}%")
             ->orWhere('service_number', '=', $request['search_query'])
             ->orderBy('service_number')
             ->get();
         if ($request['rank_type'] != null) {
             $employees = Employee::select('id', 'service_number', 'first_name', 'middle_name', 'last_name')
-                ->orwhere('first_name', 'like', $request['search_query'])
-                ->orwhere('last_name', 'like', $request['search_query'])
-                ->orwhere('middle_name', 'like', $request['search_query'])
+                ->orwhere('first_name',  'LIKE', "%{$request['search_query']}%")
+                ->orwhere('last_name',  'LIKE', "%{$request['search_query']}%")
+                ->orwhere('middle_name',  'LIKE', "%{$request['search_query']}%")
                 ->orderBy('service_number')
                 ->get();
 

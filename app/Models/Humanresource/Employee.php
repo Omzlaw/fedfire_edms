@@ -170,13 +170,10 @@ class Employee extends Model
             'first_name' => 'Required',
             'last_name' => 'Required',
             'gender' => 'Required',
-            'religion' => 'Required',
             'birthdate' => 'Required',
             'gl' => 'Required',
-            'type_of_appointment' => 'Required',
             'date_of_first_appointment' => 'Required',
             'date_of_present_appointment' => 'Required',
-            'assumption_of_duty_date' => 'Required',
             'email' => ['Required',Rule::unique('employees')->ignore($id)],
             'phone' => ['Required',Rule::unique('employees')->ignore($id)],
         ];
@@ -277,7 +274,7 @@ class Employee extends Model
 
     public function actionSheets()
     {
-        return $this->hasMany(EmployeeActionSheet::class)->select('id', 'folio', 'action_at','date_cleared', 'remark');
+        return $this->hasMany(EmployeeActionSheet::class)->select('id', 'folio', 'action_at','date_cleared', 'remark')->orderBy('id', 'DESC');
     }
 
     public function addresses()

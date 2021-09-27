@@ -15,17 +15,17 @@ class CreateEmployeeLocalLeavesTable extends Migration
     {
         Schema::create('employee_local_leaves', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('employee_id')->unsigned();
+            $table->integer('employee_id');
             $table->string('file_upload')->nullable();
             $table->integer('no_of_days');
             $table->integer('file_page_no');
-            $table->integer('leave_type_id')->unsigned();
+            $table->integer('leave_type_id');
             $table->date('from_date');
             $table->date('to_date');
             $table->smallInteger('status');
             $table->text('remark');
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->integer('updated_by')->unsigned()->nullable();
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
             //$table->foreign('employee_id')->references('id')->on('employees');

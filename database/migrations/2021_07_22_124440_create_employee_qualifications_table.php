@@ -16,15 +16,15 @@ class CreateEmployeeQualificationsTable extends Migration
         Schema::create('employee_qualifications', function (Blueprint $table) {
             $table->increments('id');
             $table->string('qualification_name');
-            $table->integer('qualification_type_id')->unsigned();
+            $table->integer('qualification_type_id');
             $table->date('date_obtained');
-            $table->integer('employee_id')->unsigned();
+            $table->integer('employee_id');
             $table->string('file_upload')->nullable();
             $table->smallInteger('status');
             $table->text('remark')->nullable();
-            $table->integer('checked_by')->unsigned()->nullable();
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->integer('updated_by')->unsigned()->nullable();
+            $table->integer('checked_by')->nullable();
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
             //$table->foreign('employee_id')->references('id')->on('employees');

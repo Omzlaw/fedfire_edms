@@ -395,14 +395,14 @@
 
 
 <!-- Decorations Field -->
-<div class="form-group">
+{{-- <div class="form-group">
     <div class="row">
         {!! Form::label('decorations', 'Decorations:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::text('decorations', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div>
+</div> --}}
 
 <!-- Staff code -->
 {!! Form::hidden('staff_code', null, ['class' => 'form-control']) !!}

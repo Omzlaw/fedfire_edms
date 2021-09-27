@@ -18,8 +18,8 @@ class CreateTerminationTypesTable extends Migration
             $table->string('title');
             $table->string('description');
             $table->integer('status')->default(1);
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->integer('updated_by')->unsigned()->nullable();
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
             //$table->foreign('created_by')->references('id')->on('users');

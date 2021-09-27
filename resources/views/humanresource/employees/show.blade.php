@@ -390,6 +390,7 @@ $services = $data['services'];
                             sortable: true,
                             ordering: true,
                             searching: true,
+                            'aaSorting': [[0, 'desc']],
                             // stateSave: true,
                             "fnRowCallback": function(nRow, aData, iDisplayIndex) {
                                 nRow.setAttribute('id', aData[0]);

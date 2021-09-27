@@ -22,11 +22,12 @@ use App\Models\Shared\GeoPoliticalZone;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Shared\QualificationType;
+use Illuminate\Support\Facades\Validator;
+use App\Models\Humanresource\EmployeeRank;
 use App\Http\Controllers\AppBaseController;
 use App\DataTables\Humanresource\EmployeeDataTable;
 use App\Http\Requests\Humanresource\CreateEmployeeRequest;
 use App\Http\Requests\Humanresource\UpdateEmployeeRequest;
-use Illuminate\Support\Facades\Validator;
 
 class EmployeeController extends AppBaseController
 {
@@ -40,7 +41,7 @@ class EmployeeController extends AppBaseController
     public function index(EmployeeDataTable $employeeDataTable)
     {
 
-        if(!check_permission('employees-index')){
+        if (!check_permission('employees-index')) {
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -58,7 +59,7 @@ class EmployeeController extends AppBaseController
     public function filter(EmployeeDataTable $employeeDataTable, Request $request)
     {
 
-        if(!check_permission('employees-filter')){
+        if (!check_permission('employees-filter')) {
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -96,7 +97,7 @@ class EmployeeController extends AppBaseController
      */
     public function create()
     {
-        if(!check_permission('employees-create')){
+        if (!check_permission('employees-create')) {
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -119,7 +120,7 @@ class EmployeeController extends AppBaseController
     public function store(CreateEmployeeRequest $request)
     {
 
-        if(!check_permission('employees-store')){
+        if (!check_permission('employees-store')) {
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -154,7 +155,7 @@ class EmployeeController extends AppBaseController
      */
     public function show(Request $request, $id)
     {
-        if(!check_permission('employees-show')){
+        if (!check_permission('employees-show')) {
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -212,7 +213,7 @@ class EmployeeController extends AppBaseController
         //get the educations
 
         $data['educations'] = $employee->educations->map(function ($item) {
-            return ['id' => $item['id'], 'qualification' => $item['qualification'],'school_name' => $item['school_name'], 'qualification_type_id' => $item['qualification_type_id'], 'remark' => $item['remark']];
+            return ['id' => $item['id'], 'qualification' => $item['qualification'], 'school_name' => $item['school_name'], 'qualification_type_id' => $item['qualification_type_id'], 'remark' => $item['remark']];
             // return $item;
         });
 
@@ -338,7 +339,7 @@ class EmployeeController extends AppBaseController
      */
     public function edit($id)
     {
-        if(!check_permission('employees-edit')){
+        if (!check_permission('employees-edit')) {
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -369,7 +370,7 @@ class EmployeeController extends AppBaseController
      */
     public function update($id, UpdateEmployeeRequest $request)
     {
-        if(!check_permission('employees-update')){
+        if (!check_permission('employees-update')) {
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -394,8 +395,30 @@ class EmployeeController extends AppBaseController
             $employee->fill($input);
         }
 
+        $changed_values = $employee->getDirty();
+        $description = $employee->getFullName() . ' ';
+        // dd($changed_values);
+        foreach ($changed_values as $key => $value) {
+            if ($key == 'staff_code') {
+                continue;
+            }
+            $original = $employee->getOriginal($key);
+            $key_readable = str_replace('_', ' ', $key);
+            $key_readable = ucwords($key_readable);
+            // $description .= $key_readable . ' from ' . $original . ' to ' . $value . ', ';
+            $description .= $key_readable . ', ';
+        }
         $employee->save();
+
+        $employee_ranks = EmployeeRank::where('employee_id', '=', $employee->id)->get();
+        foreach ($employee_ranks as $employee_rank) {
+            $employee_rank['employee_gender'] = $employee->gender;
+            $employee_rank->save();
+        }
         add_audit('update', 'Employee');
+        if ($changed_values != null) {
+            add_employee_audit($description);
+        }
 
         Flash::success('Employee updated successfully.');
 
@@ -413,7 +436,7 @@ class EmployeeController extends AppBaseController
      */
     public function destroy($id)
     {
-        if(!check_permission('employees-destroy')){
+        if (!check_permission('employees-destroy')) {
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -434,6 +457,37 @@ class EmployeeController extends AppBaseController
         add_audit('delete', 'Employee');
 
         Flash::success('Employee deleted successfully.');
+
+        return redirect(route('humanresource.employees.index'));
+    }
+
+    public function destroyMany(Request $request)
+    {
+        
+        if (!check_permission('employees-destroy')) {
+            Flash::error('Permission Denied');
+            return redirect()->back();
+        }
+
+        $ids = $request['selected_employees'];
+        $ids_array = explode(',', $ids);
+        foreach ($ids_array as $id) {
+            /** @var Employee $employee */
+            $employee = Employee::find($id);
+
+            if (empty($employee)) {
+                continue;
+            }
+
+            $profile_picture = str_replace('storage/', 'public/', $employee->profile_picture);
+            Storage::delete($profile_picture);
+            $this->deleteEmployeeRecords($employee);
+            $employee->delete();
+        }
+
+        add_audit('delete', 'Many Employees');
+
+        Flash::success('Employees deleted successfully.');
 
         return redirect(route('humanresource.employees.index'));
     }
@@ -460,7 +514,7 @@ class EmployeeController extends AppBaseController
 
     public function report()
     {
-        if(!check_permission('employees-report')){
+        if (!check_permission('employees-report')) {
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -631,26 +685,27 @@ class EmployeeController extends AppBaseController
 
     public function import(Request $request)
     {
-        if(!check_permission('employees-import')){
+        if (!check_permission('employees-import')) {
             Flash::error('Permission Denied');
             return redirect()->back();
         }
 
-        if(!isset($request->upload)) {
+        if (!isset($request->upload)) {
             Flash::error('Please insert an excel file.');
             return redirect()->back();
         }
-        
+
         $file = $request->upload;
         (new EmployeesImport)->import($file);
 
         Flash::success('Employees saved successfully.');
-        add_audit('import', 'Employee Data');
+        add_audit('importe', 'Employee Data');
 
         return redirect(route('humanresource.employees.index'));
     }
 
-    public function deleteEmployeeRecords($employee) {
+    public function deleteEmployeeRecords($employee)
+    {
         $employee->actionSheets()->delete();
         $employee->addresses()->delete();
         $employee->censures()->delete();
@@ -670,6 +725,6 @@ class EmployeeController extends AppBaseController
         $employee->services()->delete();
         $employee->terminations()->delete();
         $employee->spouse()->delete();
-
+        $employee->fileDirectories()->delete();
     }
 }

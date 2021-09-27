@@ -15,15 +15,15 @@ class CreateEmployeeForeignToursTable extends Migration
     {
         Schema::create('employee_foreign_tours', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('employee_id')->unsigned();
+            $table->integer('employee_id');
             $table->string('file_upload')->nullable();
-            $table->integer('leave_type_id')->unsigned();
+            $table->integer('leave_type_id');
             $table->date('from_date');
             $table->date('to_date');
             $table->integer('status')->default(1);
             $table->text('remark')->nullable();
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->integer('updated_by')->unsigned()->nullable();
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->date('date_started')->nullable();
             $table->integer('tour_gazette_no')->nullable();
             $table->double('tour_length')->nullable();

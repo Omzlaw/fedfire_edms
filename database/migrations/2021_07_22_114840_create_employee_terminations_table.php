@@ -16,8 +16,8 @@ class CreateEmployeeTerminationsTable extends Migration
     {
         Schema::create('employee_terminations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('termination_id')->unsigned();
-            $table->integer('employee_id')->unsigned();
+            $table->integer('termination_id');
+            $table->integer('employee_id');
             $table->string('file_upload')->nullable();
             $table->date('even_date');
             $table->integer('is_pensionable')->default(0);
@@ -36,9 +36,9 @@ class CreateEmployeeTerminationsTable extends Migration
             $table->string('summary');
             $table->string('remark')->nullable();
             $table->integer('status')->default(1);
-            $table->integer('compiled_by')->unsigned();
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->integer('updated_by')->unsigned()->nullable();
+            $table->integer('compiled_by');
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
             //$table->foreign('termination_id')->references('id')->on('termination_types');

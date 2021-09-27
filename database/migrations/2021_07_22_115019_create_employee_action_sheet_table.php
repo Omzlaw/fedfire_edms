@@ -17,11 +17,11 @@ class CreateEmployeeActionSheetTable extends Migration
             $table->increments('id');
             $table->string('folio');
             $table->date('action_at');
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->integer('updated_by')->unsigned()->nullable();
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->date('date_cleared');
-            $table->integer('action_by')->unsigned();
-            $table->integer('employee_id')->unsigned();
+            $table->integer('action_by');
+            $table->integer('employee_id');
             $table->string('remark')->nullable();
             $table->timestamps();
             $table->softDeletes();

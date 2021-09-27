@@ -17,13 +17,13 @@ class CreateFileDirectoriesTable extends Migration
             $table->increments('id');
             $table->string('file_name');
             $table->json('file_upload');
-            $table->integer('file_type_id')->unsigned();
+            $table->integer('file_type_id');
             $table->json('file_url');
-            $table->integer('employee_id')->unsigned();
+            $table->integer('employee_id');
             $table->integer('status')->default(1);
             $table->string('remark')->nullable();
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->integer('updated_by')->unsigned()->nullable();
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
             //$table->foreign('employee_id')->references('id')->on('employees');

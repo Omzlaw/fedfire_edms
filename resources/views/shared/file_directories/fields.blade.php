@@ -29,9 +29,9 @@
             <!-- Staff No Field -->
             <div class="form-group">
                 <div class="row">
-                    {!! Form::label('Employee', 'Staff No:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+                    {!! Form::label('Employee', 'Employee Unique No:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
                     <div class="col-md-9 col-lg-9 col-12">
-                        {!! Form::select('employee_id', modelDropdown($employees, 'id', 'staff_code'), null, ['class' => 'form-control']) !!}
+                        {!! Form::select('employee_id', modelDropdown($employees, 'id', 'staff_code'), null, ['id' => 'staff_code','class' => 'form-control select2']) !!}
                         <a class="btn secondary-color-bg" href="{{ route('humanresource.employees.create') }}">Add
                             new</a>
                     </div>
@@ -120,7 +120,8 @@
 
         <div class="col-6">
             <div id="dwtcontrolContainer" class=""></div>
-            <div><embed id="preview" alt="preview" src="" height="50%" width="50%"></div>
+            <div><embed id=" preview" alt="preview" src=""
+                height="50%" width="50%"></div>
         </div>
     </div>
 
@@ -156,9 +157,9 @@
             <!-- Staff No Field -->
             <div class="form-group">
                 <div class="row">
-                    {!! Form::label('Employee', 'Staff No:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+                    {!! Form::label('Employee', 'Employee Unique No:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
                     <div class="col-md-9 col-lg-9 col-12">
-                        {!! Form::select('employee_id', modelDropdown($employees, 'id', 'staff_code'), null, ['class' => 'form-control']) !!}
+                        {!! Form::select('employee_id', modelDropdown($employees, 'id', 'staff_code'), null, ['id' => 'staff_code', 'class' => 'form-control select2']) !!}
                         <a class="btn secondary-color-bg" href="{{ route('humanresource.employees.create') }}">Add
                             new</a>
                     </div>
@@ -247,7 +248,8 @@
 
         <div class="col-6">
             <div id="dwtcontrolContainer" class=""></div>
-            <div><embed id="preview" alt="preview" src="" height="50%" width="50%"></div>
+            <div><embed id=" preview" alt="preview" src=""
+                height="50%" width="50%"></div>
         </div>
     </div>
 
@@ -299,6 +301,8 @@
         Dynamsoft_OnReady
     ); // Register OnWebTwainReady event. This event fires as soon as Dynamic Web TWAIN is initialized and ready to be used
     window.onload = function() {
+
+        $("#staff_code").select2();
         let form = document.getElementById('form');
         let toggleUpload = document.getElementById('toggle-upload');
         // let scanType = Dynamsoft.EnumDWT_ImageType.IT_PDF;
@@ -410,19 +414,19 @@
                     contentType: false,
                     cache: false,
                     timeout: 800000,
-                    success: function (data) {
+                    success: function(data) {
                         window.location = url;
                         alert('File Directory saved successfully.')
                         // $("html").html($("html", data).html());
                         // $("html").html(data);
                     },
-                    error: function (e) {
+                    error: function(e) {
                         window.location.reload();
                         // $("html").html($("html", e).html());
                         // $("html").html(e);
                     }
                 });
-                
+
             },
             function(errorCode, errorString) {
                 console.log(errorString);
@@ -436,13 +440,13 @@
             }
         );
     }
-
 </script>
+
 
 @section('footer_scripts')
     <!--   page level js ----------->
-    <script src="{{ asset('vendors/toastr/js/toastr.js') }}" ></script>
+    <script src="{{ asset('vendors/toastr/js/toastr.js') }}"></script>
     <script src="{{ asset('js/pages/toastr.js') }}"></script>
     <!-- end of page level js -->
-  
+
 @stop

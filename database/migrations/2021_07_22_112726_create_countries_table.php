@@ -19,8 +19,8 @@ class CreateCountriesTable extends Migration
             $table->string('code');
             $table->string('phone_code');
             $table->integer('status')->default(1);
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->integer('updated_by')->unsigned()->nullable();
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
             //$table->foreign('created_by')->references('id')->on('users');

@@ -38,6 +38,17 @@ if (!function_exists('add_audit')) {
     }
 }
 
+if (!function_exists('add_employee_audit')) {
+    function add_employee_audit($description)
+    {
+        $user = Auth::user();
+        $audit_trail = AuditTrail::create([
+            'user_id' => $user->id,
+            'description' => $user->name . ' Changed ' . $description,
+        ]);
+    }
+}
+
 
 
 
@@ -121,7 +132,7 @@ if (!function_exists('get_array_value')) {
 if (!function_exists('enum_gender')) {
     function enum_gender($add_Select = TRUE)
     {
-        $option['-1'] = 'Select...';
+        $option[''] = 'Select...';
         $option['0'] = 'Female';
         $option['1'] = 'Male';
         if (!$add_Select) {
@@ -134,7 +145,7 @@ if (!function_exists('enum_gender')) {
 if (!function_exists('enum_rank_type')) {
     function enum_rank_type($add_Select = TRUE)
     {
-        $option['-1'] = 'Select...';
+        $option[''] = 'Select...';
         $option['0'] = 'Officers Rank';
         $option['1'] = 'Rank & File';
         if (!$add_Select) {
@@ -147,7 +158,7 @@ if (!function_exists('enum_rank_type')) {
 if (!function_exists('enum_religion')) {
     function enum_religion($add_Select = TRUE)
     {
-        $option['-1'] = 'Select...';
+        $option[''] = 'Select...';
         $option['1'] = 'Christianity';
         $option['2'] = 'Islam';
         $option['3'] = 'Traditional';
@@ -162,7 +173,7 @@ if (!function_exists('enum_religion')) {
 if (!function_exists('enum_blood_group')) {
     function enum_blood_group($add_Select = TRUE)
     {
-        $option['-1'] = 'Select...';
+        $option[''] = 'Select...';
         $option['1'] = 'AA';
         $option['2'] = 'AB';
         $option['3'] = 'O Negative';
@@ -177,7 +188,7 @@ if (!function_exists('enum_blood_group')) {
 if (!function_exists('enum_study_mode')) {
     function enum_study_mode($add_Select = TRUE)
     {
-        $option['-1'] = 'Select...';
+        $option[''] = 'Select...';
         $option['0'] = 'Full-Time';
         $option['1'] = 'Part-Time';
         if (!$add_Select) {
@@ -189,7 +200,7 @@ if (!function_exists('enum_study_mode')) {
 if (!function_exists('enum_exams')) {
     function enum_exams($add_Select = TRUE)
     {
-        $option['-1'] = 'Select...';
+        $option[''] = 'Select...';
         $option['0'] = 'WASSCE';
         $option['1'] = 'NECO';
         $option['2'] = 'NABTEB';
@@ -204,7 +215,7 @@ if (!function_exists('enum_exams')) {
 if (!function_exists('enum_disability')) {
     function enum_disability($add_Select = TRUE)
     {
-        $option['-1'] = 'Select...';
+        $option[''] = 'Select...';
         $option['0'] = 'Normal';
         $option['1'] = 'Disbled';
         if (!$add_Select) {
@@ -218,7 +229,7 @@ if (!function_exists('enum_disability')) {
 if (!function_exists('enum_marital_status')) {
     function enum_marital_status($add_Select = TRUE)
     {
-        $option['-1'] = 'Select...';
+        $option[''] = 'Select...';
         $option['0'] = 'Married';
         $option['1'] = 'Single';
         $option['2'] = 'Divorced';
@@ -235,7 +246,7 @@ if (!function_exists('enum_marital_status')) {
 if (!function_exists('enum_status')) {
     function enum_status($add_Select = TRUE)
     {
-        $option['-1'] = 'Select...';
+        $option[''] = 'Select...';
         $option['0'] = 'Inactive';
         $option['1'] = 'Active';
         if (!$add_Select) {
@@ -248,7 +259,7 @@ if (!function_exists('enum_status')) {
 if (!function_exists('enum_employee_status')) {
     function enum_employee_status($add_Select = TRUE)
     {
-        $option['-1'] = 'Select...';
+        $option[''] = 'Select...';
         $option['0'] = 'Retired';
         $option['1'] = 'Serving';
         if (!$add_Select) {
@@ -262,7 +273,7 @@ if (!function_exists('enum_employee_status')) {
 if (!function_exists('enum_fluency')) {
     function enum_fluency($add_Select = TRUE)
     {
-        $option['-1'] = 'Select...';
+        $option[''] = 'Select...';
         $option['5'] = 'Excellent';
         $option['4'] = 'Good';
         $option['3'] = 'Fair';
@@ -278,7 +289,7 @@ if (!function_exists('enum_fluency')) {
 if (!function_exists('enum_enroll_status')) {
     function enum_enroll_status($add_Select = TRUE)
     {
-        $option['-1'] = 'Select...';
+        $option[''] = 'Select...';
         $option['0'] = 'Declined';
         $option['1'] = 'Admitted';
         if (!$add_Select) {
@@ -291,7 +302,7 @@ if (!function_exists('enum_enroll_status')) {
 if (!function_exists('enum_yes_no')) {
     function enum_yes_no($add_Select = TRUE)
     {
-        $option['-1'] = 'Select...';
+        $option[''] = 'Select...';
         $option['0'] = 'No';
         $option['1'] = 'Yes';
         if (!$add_Select) {
@@ -304,7 +315,7 @@ if (!function_exists('enum_yes_no')) {
 if (!function_exists('enum_address_type')) {
     function enum_address_type($add_Select = TRUE)
     {
-        $option['-1'] = 'Select...';
+        $option[''] = 'Select...';
         $option['0'] = 'Permanent';
         $option['1'] = 'Residential';
         if (!$add_Select) {
@@ -319,7 +330,7 @@ if (!function_exists('enum_address_type')) {
 if (!function_exists('enum_grade_level')) {
     function enum_grade_level($add_Select = TRUE)
     {
-        $option['-1'] = 'Select...';
+        $option[''] = 'Select...';
         $option['1'] = 'CONPASS 01';
         $option['2'] = 'CONPASS 02';
         $option['3'] = 'CONPASS 03';
@@ -345,7 +356,7 @@ if (!function_exists('enum_grade_level')) {
 if (!function_exists('enum_type_of_appointment')) {
     function enum_type_of_appointment($add_Select = TRUE)
     {
-        $option['-1'] = 'Select...';
+        $option[''] = 'Select...';
         $option['1'] = 'Permanent';
         $option['2'] = 'Temporary';
         $option['3'] = 'Contract';
@@ -359,7 +370,7 @@ if (!function_exists('enum_type_of_appointment')) {
 if (!function_exists('enum_zone')) {
     function enum_zone($add_Select = TRUE)
     {
-        $option['-1'] = 'Select...';
+        $option[''] = 'Select...';
         $option['1'] = 'Zone A';
         $option['2'] = 'Zone B';
         $option['3'] = 'Zone C';
@@ -385,7 +396,7 @@ if (!function_exists('enum_zone')) {
 if (!function_exists('enum_department')) {
     function enum_department($add_Select = TRUE)
     {
-        $option['-1'] = 'Select...';
+        $option[''] = 'Select...';
         $option['1'] = 'CGF';
         $option['2'] = 'Admin';
         $option['3'] = 'Operations';
@@ -406,7 +417,7 @@ if (!function_exists('enum_department')) {
 // if (!function_exists('enum_station')) {
 //     function enum_station($add_Select = TRUE)
 //     {
-//         $option['-1'] = 'Select...';
+//         $option[''] = 'Select...';
 //         $option['1'] = 'test 1';
 //         $option['2'] = 'test 2';
 //         $option['3'] = 'test 3';
@@ -421,7 +432,7 @@ if (!function_exists('enum_department')) {
 if (!function_exists('enum_chilld_location')) {
     function enum_chilld_location($add_Select = TRUE)
     {
-        $option['-1'] = 'Select...';
+        $option[''] = 'Select...';
         $option['1'] = 'Father';
         $option['2'] = 'Mother';
         $option['3'] = 'Other';
@@ -437,7 +448,7 @@ if (!function_exists('enum_chilld_location')) {
 if (!function_exists('enum_rating')) {
     function enum_rating($add_Select = TRUE)
     {
-        $option['-1'] = 'Select...';
+        $option[''] = 'Select...';
         $option['1'] = 'Very Poor';
         $option['2'] = 'Poor';
         $option['3'] = 'Fair';
@@ -453,7 +464,7 @@ if (!function_exists('enum_rating')) {
 if (!function_exists('enum_message_scope')) {
     function enum_message_scope($add_Select = TRUE)
     {
-        $option['-1'] = 'Select...';
+        $option[''] = 'Select...';
         $option['1'] = 'Public';
         $option['2'] = 'Staff';
         $option['3'] = 'All';
@@ -467,7 +478,7 @@ if (!function_exists('enum_message_scope')) {
 if (!function_exists('enum_account_type')) {
     function enum_account_type($add_Select = TRUE)
     {
-        $option['-1'] = 'Select...';
+        $option[''] = 'Select...';
         $option['1'] = 'Reciepts';
         $option['2'] = 'Payments';
         if (!$add_Select) {
@@ -480,7 +491,7 @@ if (!function_exists('enum_account_type')) {
 if (!function_exists('enum_register')) {
     function enum_register($add_Select = TRUE)
     {
-        $option['-1'] = 'Select...';
+        $option[''] = 'Select...';
         $option['1'] = 'Absent';
         $option['2'] = 'Present';
         if (!$add_Select) {
@@ -493,7 +504,7 @@ if (!function_exists('enum_register')) {
 if (!function_exists('enum_time_of_day')) {
     function enum_time_of_day($add_Select = TRUE)
     {
-        $option['-1'] = 'Select...';
+        $option[''] = 'Select...';
         $option['1'] = 'AM';
         $option['2'] = 'PM';
         if (!$add_Select) {
@@ -506,7 +517,7 @@ if (!function_exists('enum_time_of_day')) {
 if (!function_exists('enum_weekday')) {
     function enum_weekday($add_Select = TRUE)
     {
-        $option['-1'] = 'Select...';
+        $option[''] = 'Select...';
         $option['0']  = 'Sunday';
         $option['1']  = 'Monday';
         $option['2']  = 'Tuesday';

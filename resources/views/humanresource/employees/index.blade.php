@@ -55,14 +55,15 @@
                     {!! Form::open(['route' => ['import'], 'class' => 'form-horizontal', 'files' => true]) !!}
                     <div class="form-group mt-10">
                         <div class="row">
-                            {!! Form::file('upload', ['accept'=>'.xls,.xlsx,.csv', 'id' => 'upload', 'style'=>'width: 14rem','class' => 'form-control mr-10']) !!}
+                            {!! Form::file('upload', ['accept' => '.xls,.xlsx,.csv', 'id' => 'upload', 'style' => 'width: 14rem', 'class' => 'form-control mr-10']) !!}
                             {!! Form::submit('Import', ['name' => 'action', 'class' => 'btn custom-outline-primary']) !!}
                         </div>
                     </div>
                     {!! Form::close() !!}
                 </span>
                 <div>
-                    <a class="btn secondary-color-bg" href="{{ asset('excel-format/sample.xlsx') }}" download>Download Sample Format</a>
+                    <a class="btn secondary-color-bg" href="{{ asset('excel-format/sample.xlsx') }}" download>Download
+                        Sample Format</a>
                 </div>
             </section>
             <div class="card-body">
@@ -70,7 +71,7 @@
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         {!! Form::open(['route' => ['filter'], 'class' => 'form-horizontal']) !!}
                         {!! Form::label('qualification', 'Qualification:', ['class' => 'control-label']) !!}
-                        {!! Form::select('qualification', modelDropdown($qualificationTypes, 'id', 'title'), session('qualification'), ['class' => 'form-control select2']) !!}
+                        {!! Form::text('qualification', session('qualification'), ['class' => 'form-control select2']) !!}
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         {!! Form::label('rank', 'Rank:', ['class' => 'control-label']) !!}
@@ -146,6 +147,22 @@
                         <input id="doPrint" type="button" value="Print" class="btn custom-outline-primary mt-10">
                     </div>
                     {!! Form::close() !!}
+                    <div class="col-12">
+                        {!! Form::open(['route' => ['employeeMultipleDelete'], 'id' => 'multipleDelete', 'class' => 'form-horizontal']) !!}
+
+                        <input id="selectAll" type="button" value="Select All" class="btn custom-outline-primary mt-10"
+                            onclick="SelectAllEmployees();">
+
+                        <input id="selectNone" type="button" value="Select None" class="btn custom-outline-primary mt-10"
+                            onclick="deSelectAllEmployees();">
+
+                        {!! Form::hidden('selected_employees', null, ['id' => 'selected_employees']) !!}
+
+
+                        {!! Form::submit('Delete Multiple', ['class' => 'btn btn-outline-danger mr-10 mt-10']) !!}
+
+                        {!! Form::close() !!}
+                    </div>
 
                 </div>
                 <div class="table-responsive">
@@ -157,7 +174,32 @@
 @endsection
 
 <script>
+    function SelectAllEmployees() {
+        $('.checkbox').each(function() {
+            $(this).prop("checked", true);
+        });
+    }
+
+    function deSelectAllEmployees() {
+        $('.checkbox').each(function() {
+            $(this).prop("checked", false);
+        });
+    }
+
     window.onload = function() {
+
+        let multipleDeleteform = document.getElementById("multipleDelete");
+        multipleDeleteform.addEventListener("submit", function(event) {
+            event.preventDefault();
+            let ids = [];
+            $('.checkbox').each(function() {
+                if ($(this).prop("checked")) {
+                    ids.push($(this).data('id'));
+                }
+                $('#selected_employees').val(ids);
+                multipleDeleteform.submit();
+            });
+        });
 
         $('#localGovtAreaSelector').prop('disabled', 'disabled');
         let fromDate = $('#from');

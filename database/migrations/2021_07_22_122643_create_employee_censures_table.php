@@ -18,14 +18,14 @@ class CreateEmployeeCensuresTable extends Migration
             $table->string('title');
             $table->text('summary');
             $table->date('date_recieved');
-            $table->integer('employee_id')->unsigned();
+            $table->integer('employee_id');
             $table->string('file_upload')->nullable();
             $table->integer('status')->default(1);
             $table->text('remark');
-            $table->integer('compiled_by')->unsigned()->nullable();
+            $table->integer('compiled_by')->nullable();
             $table->date('compiled_at');
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->integer('updated_by')->unsigned()->nullable();
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
             //$table->foreign('employee_id')->references('id')->on('employees');

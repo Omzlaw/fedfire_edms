@@ -19,14 +19,14 @@ class CreateEmployeePublicServicesTable extends Migration
             $table->date('from_date');
             $table->date('to_date');
             $table->string('file_page_ref');
-            $table->integer('employee_id')->unsigned();
+            $table->integer('employee_id');
             $table->string('file_upload')->nullable();
             $table->integer('total_years_served');
             $table->decimal('total_paid')->default(0);
             $table->text('remark')->nullable();
-            $table->integer('checked_by')->unsigned()->nullable();
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->integer('updated_by')->unsigned()->nullable();
+            $table->integer('checked_by')->nullable();
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

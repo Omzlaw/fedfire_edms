@@ -39,6 +39,7 @@ class EmployeeDataTable extends DataTable
         return $dataTable
 
             ->addIndexColumn()
+            ->addColumn('select', 'humanresource.employees.checkbox')
             ->addColumn('file_no', function ($row) {
                 return $row->service_number;
             })
@@ -234,7 +235,7 @@ class EmployeeDataTable extends DataTable
             ->editColumn('retirement_date_by_dofa', function($row) {
                 return \Carbon\Carbon::parse($row->retirement_date_by_dofa)->format('d/m/Y');
             })
-            ->rawColumns(['profile_picture', 'action']);
+            ->rawColumns(['profile_picture', 'action', 'select']);
     }
 
     /**
@@ -255,8 +256,8 @@ class EmployeeDataTable extends DataTable
 
         if ($rank != null && $qualification != null && $state != null && $localGovtArea != null) {
             return  $model::where('current_rank', '=', $rank)
-                ->where('entry_qualification', '=', $qualification)
-                ->orWhere('additional_qualification', '=', $qualification)
+                ->whereLike('entry_qualification', 'LIKE', "%{$qualification}%")
+                ->orWhere('additional_qualification', 'LIKE', "%{$qualification}%")
                 ->where('state_of_origin', '=', $state)
                 ->where('local_govt_area', '=', $localGovtArea);
         } else if ($rank != null && $state != null && $localGovtArea != null) {
@@ -264,14 +265,14 @@ class EmployeeDataTable extends DataTable
                 ->where('state_of_origin', '=', $state)
                 ->where('local_govt_area', '=', $localGovtArea);
         } else if ($qualification != null && $state != null && $localGovtArea != null) {
-            return  $model::where('entry_qualification', '=', $qualification)
-                ->orWhere('additional_qualification', '=', $qualification)
+            return  $model::where('entry_qualification', 'LIKE', "%{$qualification}%")
+                ->orWhere('additional_qualification', 'LIKE', "%{$qualification}%")
                 ->where('state_of_origin', '=', $state)
                 ->where('local_govt_area', '=', $localGovtArea);
         } else if ($rank != null && $qualification != null) {
             return  $model::where('current_rank', '=', $rank)
-                ->where('entry_qualification', '=', $qualification)
-                ->orWhere('additional_qualification', '=', $qualification);
+                ->where('entry_qualification', 'LIKE', "%{$qualification}%")
+                ->orWhere('additional_qualification', 'LIKE', "%{$qualification}%");
         } else if ($state != null && $localGovtArea != null) {
             return  $model::where('state_of_origin', '=', $state)
                 ->where('local_govt_area', '=', $localGovtArea);
@@ -279,13 +280,13 @@ class EmployeeDataTable extends DataTable
             return  $model::where('current_rank', '=', $rank)
                 ->where('state_of_origin', '=', $state);
         } else if ($qualification != null && $state != null) {
-            return  $model::where('entry_qualification', '=', $qualification)
-                ->orWhere('additional_qualification', '=', $qualification)
+            return  $model::where('entry_qualification', 'LIKE', "%{$qualification}%")
+                ->orWhere('additional_qualification', 'LIKE', "%{$qualification}%")
                 ->where('state_of_origin', '=', $state);
         } else if ($rank != null) {
             return  $model::where('current_rank', '=', $rank);
         } else if ($qualification != null) {
-            return  $model::where('entry_qualification', '=', $qualification)->orWhere('additional_qualification', '=', $qualification);
+            return  $model::where('entry_qualification', 'LIKE', "%{$qualification}%")->orWhere('additional_qualification', 'LIKE', "%{$qualification}%");
         } else if ($state != null) {
             return  $model::where('state_of_origin', '=', $state);
         } else if ($localGovtArea != null) {
@@ -347,6 +348,7 @@ class EmployeeDataTable extends DataTable
     protected function getColumns()
     {
         return [
+            'select',
             'action',
             'profile_picture',
             'file_no',

@@ -15,21 +15,21 @@ class CreateEmployeeEducationTable extends Migration
     {
         Schema::create('employee_education', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('qualification_type_id')->unsigned()->nullable();
+            $table->integer('qualification_type_id')->nullable();
             $table->string('qualification');
             $table->string('school_name')->nullable();
-            $table->integer('certificate_id')->unsigned()->nullable();
-            $table->integer('school_type_id')->unsigned()->nullable();
+            $table->integer('certificate_id')->nullable();
+            $table->integer('school_type_id')->nullable();
             $table->date('from_date')->nullable();
             $table->date('to_date')->nullable();
-            $table->integer('employee_id')->unsigned();
+            $table->integer('employee_id');
             $table->string('file_upload')->nullable();
             $table->integer('status')->default(1)->nullable();
             $table->string('remark')->nullable();
-            $table->integer('checked_by')->unsigned()->nullable();
+            $table->integer('checked_by')->nullable();
             $table->date('checked_at')->nullable();
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->integer('updated_by')->unsigned()->nullable();
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
             //$table->foreign('certificate_id')->references('id')->on('employee_certificate');

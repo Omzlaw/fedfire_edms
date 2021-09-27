@@ -15,7 +15,7 @@ class CreateEmployeeGratuitiesTable extends Migration
     {
         Schema::create('employee_gratuities', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('employee_id')->unsigned();
+            $table->integer('employee_id');
             $table->string('file_upload')->nullable();
             $table->integer('file_page_no');
             $table->date('payment_date');
@@ -28,10 +28,10 @@ class CreateEmployeeGratuitiesTable extends Migration
             $table->decimal('rate_per_annum');
             $table->decimal('amount_paid');
             $table->string('remark')->nullable();
-            $table->integer('checked_by')->unsigned()->nullable();
+            $table->integer('checked_by')->nullable();
             $table->date('checked_at')->nullable();
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->integer('updated_by')->unsigned()->nullable();
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
             //$table->foreign('employee_id')->references('id')->on('emoloyees');

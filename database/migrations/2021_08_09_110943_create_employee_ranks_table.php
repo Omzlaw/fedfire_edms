@@ -15,13 +15,13 @@ class CreateEmployeeRanksTable extends Migration
     {
         Schema::create('employee_ranks', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('rank_type_id')->unsigned();
-            $table->integer('employee_id')->unsigned();
+            $table->integer('rank_type_id');
+            $table->integer('employee_id');
             $table->integer('status')->default(1)->nullable();
-            $table->integer('type')->unsigned()->nullable();
-            $table->integer('employee_gender')->unsigned()->nullable();
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->integer('updated_by')->unsigned()->nullable();
+            $table->integer('type')->nullable();
+            $table->integer('employee_gender')->nullable();
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
             // $table->foreign('rank_type_id')->references('id')->on('rank_types');

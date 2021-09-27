@@ -15,16 +15,16 @@ class CreateEmployeeServicesTable extends Migration
     {
         Schema::create('employee_services', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('employee_id')->unsigned();
-            $table->integer('present_department')->unsigned();
+            $table->integer('employee_id');
+            $table->integer('present_department');
             $table->string('present_station')->nullable();
             $table->string('state');
-            $table->integer('zone')->unsigned();
+            $table->integer('zone');
             $table->string('location');
-            $table->integer('region')->unsigned()->nullable();
+            $table->integer('region')->nullable();
             $table->integer('status')->default(1)->nullable();
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->integer('updated_by')->unsigned()->nullable();
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
             // $table->foreign('state')->references('id')->on('states');

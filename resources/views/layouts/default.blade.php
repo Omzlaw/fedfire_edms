@@ -20,7 +20,8 @@ $rank_types = new RankType();
     <!-- global css -->
     <link type="text/css" href="{{ asset('css/app.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('vendors/perfect-scrollbar/css/perfect-scrollbar.css') }}">
-    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/selectize.min.css')}}"> --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/selectize.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('vendors/select2/css/select2.min.css')}}">
     {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/dateTimePicker.min.css')}}"> --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('css/custom.css') }}">
     <style>
@@ -159,10 +160,12 @@ $rank_types = new RankType();
     <!-- end of page level js -->
     <!-- Start of vendor js -->
     <script src="{{ asset('vendors/perfect-scrollbar/js/perfect-scrollbar.js') }}"></script>
-    {{-- <script src="{{ asset('js/selectize.min.js')}}"></script> --}}
+    <script src="{{ asset('js/selectize.min.js')}}"></script>
+    <script src="{{ asset('vendors/select2/js/select2.min.js')}}"></script>
     {{-- <script src="{{ asset('js/moment.min.js')}}"></script>
     <script src="{{ asset('js/dateTimePicker.min.js')}}"></script> --}}
     <script src="{{ asset('js/custom.js') }}"></script>
+
 
 
     @yield('footer_scripts')

@@ -57,6 +57,7 @@ function checkTime(i) {
 
 
 $(document).ready(function () {
+
     $("form").attr("autocomplete", "off");
     startTime();
     $x = $(".left-aside").height();

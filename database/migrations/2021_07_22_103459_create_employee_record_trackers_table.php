@@ -15,11 +15,11 @@ class CreateEmployeeRecordTrackersTable extends Migration
     {
         Schema::create('employee_record_trackers', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('employee_id')->unsigned();
+            $table->integer('employee_id');
             $table->integer('status')->default(1);
             $table->string('remark')->nullable();
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->integer('updated_by')->unsigned()->nullable();
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->integer('has_profile');
             $table->integer('has_education');
             $table->timestamps();

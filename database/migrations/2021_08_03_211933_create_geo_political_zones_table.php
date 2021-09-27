@@ -17,9 +17,9 @@ class CreateGeoPoliticalZonesTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->integer('status')->default(1);
-            $table->integer('country_id')->unsigned();
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->integer('updated_by')->unsigned()->nullable();
+            $table->integer('country_id');
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
             // $table->foreign('country_id')->references('id')->on('countries');

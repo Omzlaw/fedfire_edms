@@ -15,7 +15,7 @@ return [
         'superadministrator' => [
             'settings' => 'i,c,s,sh,e,u,d',
             'file_directories' => 'i,c,s,sh,e,u,d,ser',
-            'employees' => 'i,c,s,sh,e,u,d,im,re,m',
+            'employees' => 'i,c,s,sh,e,u,d,im,re,m,f',
             // 'employee_action_sheets' => 'i,c,s,sh,e,u,d',
             // 'employee_addresses' => 'i,c,s,sh,e,u,d',
             // 'employee_censures' => 'i,c,s,sh,e,u,d',
