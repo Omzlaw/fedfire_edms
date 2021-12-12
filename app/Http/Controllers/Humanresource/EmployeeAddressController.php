@@ -25,7 +25,9 @@ class EmployeeAddressController extends AppBaseController
      */
     public function index(EmployeeAddressDataTable $employeeAddressDataTable)
     {
-        return $employeeAddressDataTable->render('humanresource.employee_addresses.index');
+        Flash::error('Not Allowed');
+        return back();
+        // return $employeeAddressDataTable->render('humanresource.employee_addresses.index');
     }
 
     /**

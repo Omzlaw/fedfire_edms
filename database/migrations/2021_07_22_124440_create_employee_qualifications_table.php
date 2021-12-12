@@ -20,7 +20,7 @@ class CreateEmployeeQualificationsTable extends Migration
             $table->date('date_obtained');
             $table->integer('employee_id');
             $table->string('file_upload')->nullable();
-            $table->smallInteger('status');
+            $table->smallInteger('status')->default(1);
             $table->text('remark')->nullable();
             $table->integer('checked_by')->nullable();
             $table->integer('created_by')->nullable();

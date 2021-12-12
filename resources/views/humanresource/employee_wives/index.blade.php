@@ -2,14 +2,14 @@
 
 {{-- Page title --}}
 @section('title')
-Employee Wives @parent
+Employee Spouse @parent
 @stop
 
 @section('content')
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div aria-label="breadcrumb" class="card-breadcrumb">
-        <h1>Employee Wives</h1>
+        <h1>Employee Spouse</h1>
     </div>
     {{-- <div class="separator-breadcrumb border-top"></div> --}}
 </section>

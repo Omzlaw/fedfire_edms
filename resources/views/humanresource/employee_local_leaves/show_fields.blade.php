@@ -10,11 +10,6 @@
 </tr>
 
 
-<tr>
-    <th scopre="row">{!! Form::label('file_upload', 'File Upload:') !!}</th>
-    <td>{{ $employeeLocalLeave->file_upload }}</td>
-</tr>
-
 
 <tr>
     <th scopre="row">{!! Form::label('no_of_days', 'No Of Days:') !!}</th>
@@ -36,13 +31,13 @@
 
 <tr>
     <th scopre="row">{!! Form::label('from_date', 'From Date:') !!}</th>
-    <td>{{ $employeeLocalLeave->from_date }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeLocalLeave->from_date)->format('d/m/Y') }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('to_date', 'To Date:') !!}</th>
-    <td>{{ $employeeLocalLeave->to_date }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeLocalLeave->to_date)->format('d/m/Y') }}</td>
 </tr>
 
 
@@ -80,5 +75,3 @@
     <th scopre="row">{!! Form::label('updated_at', 'Updated At:') !!}</th>
     <td>{{ $employeeLocalLeave->updated_at }}</td>
 </tr> --}}
-
-

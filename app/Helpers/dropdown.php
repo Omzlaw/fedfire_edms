@@ -5,8 +5,8 @@
  *
  * An open source application development framework for PHP 5.1.6 or newer
  *
- * @package		
- * @author		Alabi omeiza 
+ * @package
+ * @author		Alabi omeiza
  * @since		Version 1.0
  * @enum helper to print html files in pdf and excel fromat
  */
@@ -86,7 +86,7 @@ if (!function_exists('getModelColumns')) {
  * An open source application development framework for PHP 5.1.6 or newer
  *
  * @package		CodeIgniter
- * @author		Okuta omeiza 
+ * @author		Okuta omeiza
  * @since		Version 1.0
  * @enum helper to print html files in pdf and excel fromat
  */
@@ -136,7 +136,7 @@ if (!function_exists('enum_gender')) {
         $option['0'] = 'Female';
         $option['1'] = 'Male';
         if (!$add_Select) {
-            unset($option['-1']);
+            unset($option['']);
         }
         return $option;
     }
@@ -149,7 +149,7 @@ if (!function_exists('enum_rank_type')) {
         $option['0'] = 'Officers Rank';
         $option['1'] = 'Rank & File';
         if (!$add_Select) {
-            unset($option['-1']);
+            unset($option['']);
         }
         return $option;
     }
@@ -164,7 +164,7 @@ if (!function_exists('enum_religion')) {
         $option['3'] = 'Traditional';
         $option['4'] = 'Others';
         if (!$add_Select) {
-            unset($option['-1']);
+            unset($option['']);
         }
         return $option;
     }
@@ -179,7 +179,7 @@ if (!function_exists('enum_blood_group')) {
         $option['3'] = 'O Negative';
         $option['4'] = 'O positive';
         if (!$add_Select) {
-            unset($option['-1']);
+            unset($option['']);
         }
         return $option;
     }
@@ -192,7 +192,7 @@ if (!function_exists('enum_study_mode')) {
         $option['0'] = 'Full-Time';
         $option['1'] = 'Part-Time';
         if (!$add_Select) {
-            unset($option['-1']);
+            unset($option['']);
         }
         return $option;
     }
@@ -205,7 +205,7 @@ if (!function_exists('enum_exams')) {
         $option['1'] = 'NECO';
         $option['2'] = 'NABTEB';
         if (!$add_Select) {
-            unset($option['-1']);
+            unset($option['']);
         }
         return $option;
     }
@@ -219,7 +219,7 @@ if (!function_exists('enum_disability')) {
         $option['0'] = 'Normal';
         $option['1'] = 'Disbled';
         if (!$add_Select) {
-            unset($option['-1']);
+            unset($option['']);
         }
         return $option;
     }
@@ -237,7 +237,7 @@ if (!function_exists('enum_marital_status')) {
         $option['4'] = 'Widow';
         $option['5'] = 'Separated';
         if (!$add_Select) {
-            unset($option['-1']);
+            unset($option['']);
         }
         return $option;
     }
@@ -250,7 +250,7 @@ if (!function_exists('enum_status')) {
         $option['0'] = 'Inactive';
         $option['1'] = 'Active';
         if (!$add_Select) {
-            unset($option['-1']);
+            unset($option['']);
         }
         return $option;
     }
@@ -263,7 +263,7 @@ if (!function_exists('enum_employee_status')) {
         $option['0'] = 'Retired';
         $option['1'] = 'Serving';
         if (!$add_Select) {
-            unset($option['-1']);
+            unset($option['']);
         }
         return $option;
     }
@@ -280,7 +280,7 @@ if (!function_exists('enum_fluency')) {
         $option['2'] = 'Poor';
         $option['1'] = 'Very Poor';
         if (!$add_Select) {
-            unset($option['-1']);
+            unset($option['']);
         }
         return $option;
     }
@@ -293,7 +293,7 @@ if (!function_exists('enum_enroll_status')) {
         $option['0'] = 'Declined';
         $option['1'] = 'Admitted';
         if (!$add_Select) {
-            unset($option['-1']);
+            unset($option['']);
         }
         return $option;
     }
@@ -306,7 +306,7 @@ if (!function_exists('enum_yes_no')) {
         $option['0'] = 'No';
         $option['1'] = 'Yes';
         if (!$add_Select) {
-            unset($option['-1']);
+            unset($option['']);
         }
         return $option;
     }
@@ -319,7 +319,7 @@ if (!function_exists('enum_address_type')) {
         $option['0'] = 'Permanent';
         $option['1'] = 'Residential';
         if (!$add_Select) {
-            unset($option['-1']);
+            unset($option['']);
         }
         return $option;
     }
@@ -346,8 +346,23 @@ if (!function_exists('enum_grade_level')) {
         $option['13'] = 'CONPASS 13';
         $option['14'] = 'CONPASS 14';
         $option['15'] = 'CONPASS 15';
+        $option['16'] = 'CONPASS 16';
+        $option['17'] = 'CONPASS 17';
+        $option['18'] = 'CONPASS 18';
+        $option['19'] = 'CONPASS 19';
+        $option['20'] = 'CONPASS 20';
+        $option['21'] = 'CONPASS 21';
+        $option['22'] = 'CONPASS 22';
+        $option['23'] = 'CONPASS 23';
+        $option['24'] = 'CONPASS 24';
+        $option['25'] = 'CONPASS 25';
+        $option['26'] = 'CONPASS 26';
+        $option['27'] = 'CONPASS 27';
+        $option['28'] = 'CONPASS 28';
+        $option['29'] = 'CONPASS 29';
+        $option['30'] = 'CONPASS 30';
         if (!$add_Select) {
-            unset($option['-1']);
+            unset($option['']);
         }
         return $option;
     }
@@ -361,7 +376,7 @@ if (!function_exists('enum_type_of_appointment')) {
         $option['2'] = 'Temporary';
         $option['3'] = 'Contract';
         if (!$add_Select) {
-            unset($option['-1']);
+            unset($option['']);
         }
         return $option;
     }
@@ -369,6 +384,32 @@ if (!function_exists('enum_type_of_appointment')) {
 
 if (!function_exists('enum_zone')) {
     function enum_zone($add_Select = TRUE)
+    {
+        $option[''] = 'Select...';
+        $option['ZONE A'] = 'ZONE A';
+        $option['ZONE B'] = 'ZONE B';
+        $option['ZONE C'] = 'ZONE C';
+        $option['ZONE D'] = 'ZONE D';
+        $option['ZONE E'] = 'ZONE E';
+        $option['ZONE F'] = 'ZONE F';
+        $option['ZONE G'] = 'ZONE G';
+        $option['ZONE H'] = 'ZONE H';
+        $option['ZONE I'] = 'ZONE I';
+        $option['ZONE J'] = 'ZONE J';
+        $option['ZONE K'] = 'ZONE K';
+        $option['ZONE L'] = 'ZONE L';
+        $option['ZONE M'] = 'ZONE M';
+        $option['Abuja'] = 'Abuja';
+        $option['STATE COMMAND'] = 'STATE COMMAND';
+        if (!$add_Select) {
+            unset($option['']);
+        }
+        return $option;
+    }
+}
+
+if (!function_exists('enum_station')) {
+    function enum_station($add_Select = TRUE)
     {
         $option[''] = 'Select...';
         $option['1'] = 'Zone A';
@@ -387,7 +428,59 @@ if (!function_exists('enum_zone')) {
         $option['14'] = 'Wuse';
         $option['15'] = 'Abuja';
         if (!$add_Select) {
-            unset($option['-1']);
+            unset($option['']);
+        }
+        return $option;
+    }
+}
+
+if (!function_exists('enum_state')) {
+    function enum_state($add_Select = TRUE)
+    {
+
+
+        $option[''] = 'Select...';
+        $option['BENUE'] = 'BENUE';
+        $option['PLATEAU'] = 'PLATEAU';
+        $option['NASARAWA'] = 'NASARAWA';
+        $option['KADUNA'] = 'KADUNA';
+        $option['KATSINA'] = 'KATSINA';
+        $option['BAUCHI'] = 'BAUCHI';
+        $option['YOBE'] = 'YOBE';
+        $option['BORNO'] = 'BORNO';
+        $option['ENUGU'] = 'ENUGU';
+        $option['ANAMBRA'] = 'ANAMBRA';
+        $option['EBONYI'] = 'EBONYI';
+        $option['AKWA-IBOM'] = 'AKWA-IBOM';
+        $option['RIVERS'] = 'RIVERS';
+        $option['CALABAR'] = 'CALABAR';
+        $option['ABUJA'] = 'ABUJA';
+        $option['LAGOS'] = 'LAGOS';
+        $option['OGUN'] = 'OGUN';
+        $option['OYO'] = 'OYO';
+        $option['NIGER'] = 'NIGER';
+        $option['KOGI'] = 'KOGI';
+        $option['KWARA'] = 'KWARA';
+        $option['SOKOTO'] = 'SOKOTO';
+        $option['KEBBI'] = 'KABBI';
+        $option['ZAMFARA'] = 'ZAMFARA';
+        $option['ADAMAWA'] = 'ADAMAWA';
+        $option['TARABA'] = 'TARABA';
+        $option['GOMBE'] = 'GOMBE';
+        $option['IMO'] = 'IMO';
+        $option['ABIA'] = 'ABIA';
+        $option['CALABAR'] = 'CALABAR';
+        $option['DELTA'] = 'DELTA';
+        $option['EDO'] = 'EDO';
+        $option['ONDO'] = 'ONDO';
+        $option['EKITI'] = 'EKITI';
+        $option['KANO'] = 'KANO';
+        $option['JIGAWA'] = 'JIGAWA';
+        $option['ABUJA'] = 'ABUJA';
+        $option['FCT'] = 'FCT';
+
+        if (!$add_Select) {
+            unset($option['']);
         }
         return $option;
     }
@@ -397,18 +490,30 @@ if (!function_exists('enum_department')) {
     function enum_department($add_Select = TRUE)
     {
         $option[''] = 'Select...';
-        $option['1'] = 'CGF';
-        $option['2'] = 'Admin';
-        $option['3'] = 'Operations';
-        $option['4'] = 'Procurement';
-        $option['5'] = 'I.I.E';
-        $option['6'] = 'Sport';
-        $option['7'] = 'Academy';
-        $option['8'] = 'Security';
-        $option['8'] = 'Commanding Officer Office';
-        $option['8'] = 'Band Unit';
+        $option['Unassigned'] = 'Unassigned';
+        $option['ADMIN&SUPPLY'] = 'Admin&Supply';
+        $option['OFFICE OF THE CGF'] = 'OFFICE OF THE CGF';
+        $option['OFFICE OF THE CGF/INTERNAL AUDIT'] = 'OFFICE OF THE CGF/INTERNAL AUDIT';
+        $option['OFFICE OF THE CGF/STOCK VERIFYING'] = 'OFFICE OF THE CGF/STOCK VERIFYING';
+        $option['OFFICE OF THE CGF/LEGAL'] = 'OFFICE OF THE CGF/LEGAL';
+        $option['OFFICE OF THE CGF/PROTOCOL'] = 'OFFICE OF THE CGF/PROTOCOL';
+        $option['OFFICE OF THE CGF/CORPORATE SERVICES'] = 'OFFICE OF THE CGF/CORPORATE SERVICES';
+        $option['OFFICE OF THE CGF/PETTY CONTRAC'] = 'OFFICE OF THE CGF/PETTY CONTRACT';
+        $option['OFFICE OF THE CGF/LOGISTICS'] = 'OFFICE OF THE CGF/LOGISTICS';
+        $option['OFFICE OF THE CGF/STORES'] = 'OFFICE OF THE CGF/STORES';
+        $option['OFFICE OF THE CGF/PROCUREMENT'] = 'OFFICE OF THE CGF/PROCUREMENT';
+        $option['OFFICE OF THE CGF/FOWA'] = 'OFFICE OF THE CGF/FOWA';
+        $option['OFFICE OF THE CGF/SECURITY'] = 'OFFICE OF THE CGF/SECURITY';
+        $option['OFFICE OF THE CGF/PROJECTS'] = 'OFFICE OF THE CGF/PROJECTS';
+        $option['PPRS'] = 'PPRS';
+        $option['FINANCE&ACCOUNT'] = 'FINANCE&ACCOUNT';
+        $option['IIE'] = 'IIE';
+        $option['NFA'] = 'NFA';
+        $option['ZONAL COMMAND'] = 'ZONAL COMMAND';
+        $option['STATE COMMAND'] = 'STATE COMMAND';
+        $option['OPERATIONS'] = 'OPERATIONS';
         if (!$add_Select) {
-            unset($option['-1']);
+            unset($option['']);
         }
         return $option;
     }
@@ -422,7 +527,7 @@ if (!function_exists('enum_department')) {
 //         $option['2'] = 'test 2';
 //         $option['3'] = 'test 3';
 //         if (!$add_Select) {
-//             unset($option['-1']);
+//             unset($option['']);
 //         }
 //         return $option;
 //     }
@@ -437,7 +542,7 @@ if (!function_exists('enum_chilld_location')) {
         $option['2'] = 'Mother';
         $option['3'] = 'Other';
         if (!$add_Select) {
-            unset($option['-1']);
+            unset($option['']);
         }
         return $option;
     }
@@ -455,7 +560,7 @@ if (!function_exists('enum_rating')) {
         $option['4'] = 'Good';
         $option['5'] = 'Very Good';
         if (!$add_Select) {
-            unset($option['-1']);
+            unset($option['']);
         }
         return $option;
     }
@@ -469,7 +574,7 @@ if (!function_exists('enum_message_scope')) {
         $option['2'] = 'Staff';
         $option['3'] = 'All';
         if (!$add_Select) {
-            unset($option['-1']);
+            unset($option['']);
         }
         return $option;
     }
@@ -482,7 +587,7 @@ if (!function_exists('enum_account_type')) {
         $option['1'] = 'Reciepts';
         $option['2'] = 'Payments';
         if (!$add_Select) {
-            unset($option['-1']);
+            unset($option['']);
         }
         return $option;
     }
@@ -495,7 +600,7 @@ if (!function_exists('enum_register')) {
         $option['1'] = 'Absent';
         $option['2'] = 'Present';
         if (!$add_Select) {
-            unset($option['-1']);
+            unset($option['']);
         }
         return $option;
     }
@@ -508,7 +613,7 @@ if (!function_exists('enum_time_of_day')) {
         $option['1'] = 'AM';
         $option['2'] = 'PM';
         if (!$add_Select) {
-            unset($option['-1']);
+            unset($option['']);
         }
         return $option;
     }
@@ -526,7 +631,7 @@ if (!function_exists('enum_weekday')) {
         $option['5']  = 'Friday';
         $option['6']  = 'Saturday';
         if (!$add_Select) {
-            unset($option['-1']);
+            unset($option['']);
         }
         return $option;
     }
@@ -568,7 +673,7 @@ if (!function_exists('get_days')) {
 
         $days = range(1, 31);
 
-        $options['-1'] = 'Select...';
+        $options[''] = 'Select...';
 
         foreach ($days as $day) {
             $day = str_pad($day, 2, '0', STR_PAD_LEFT);
@@ -583,7 +688,7 @@ if (!function_exists('get_months')) {
     {
         $months = range(1, 12);
 
-        $options['-1'] = 'Select...';
+        $options[''] = 'Select...';
 
         foreach ($months as $month) {
             $month = str_pad($month, 2, '0', STR_PAD_LEFT);
@@ -601,7 +706,7 @@ if (!function_exists('get_years')) {
 
         $years = range($start_year, $start_year - 20);
 
-        $options['-1'] = 'Select...';
+        $options[''] = 'Select...';
 
         foreach ($years as $year) {
             $options[$year] = $year;
@@ -615,7 +720,7 @@ if (!function_exists('get_weekdays')) {
     {
         $timestamp = strtotime('next Sunday');
 
-        $options['-1'] = 'Select...';
+        $options[''] = 'Select...';
 
         for ($i = 0; $i < 7; $i++) {
             $options[$i] = strftime('%A', $timestamp);
@@ -630,7 +735,7 @@ if (!function_exists('get_hours')) {
     {
         $hours = range(0, 23);
 
-        $options['-1'] = 'Select...';
+        $options[''] = 'Select...';
 
         foreach ($hours as $hour) {
             $hour = str_pad($hour, 2, '0', STR_PAD_LEFT);
@@ -645,7 +750,7 @@ if (!function_exists('get_mins')) {
     {
         $hours = range(0, 59);
 
-        $options['-1'] = 'Select...';
+        $options[''] = 'Select...';
 
         foreach ($hours as $hour) {
             $hour = str_pad($hour, 2, '0', STR_PAD_LEFT);

@@ -23,7 +23,9 @@ class EmployeeQualificationController extends AppBaseController
      */
     public function index(EmployeeQualificationDataTable $employeeQualificationDataTable)
     {
-        return $employeeQualificationDataTable->render('humanresource.employee_qualifications.index');
+        Flash::error('Not Allowed');
+        return back();
+        // return $employeeQualificationDataTable->render('humanresource.employee_qualifications.index');
     }
 
     /**

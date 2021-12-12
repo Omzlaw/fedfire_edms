@@ -33,10 +33,6 @@
 </tr>
 
 
-<tr>
-    <th scopre="row">{!! Form::label('file_upload', 'File Upload:') !!}</th>
-    <td>{{ $employeeLanguage->file_upload }}</td>
-</tr>
 
 
 <tr>
@@ -59,7 +55,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('checked_at', 'Checked At:') !!}</th>
-    <td>{{ $employeeLanguage->checked_at }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeLanguage->checked_at)->format('d/m/Y') }}</td>
 </tr>
 
 

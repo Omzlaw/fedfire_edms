@@ -23,7 +23,9 @@ class EmployeeServiceController extends AppBaseController
      */
     public function index(EmployeeServiceDataTable $employeeServiceDataTable)
     {
-        return $employeeServiceDataTable->render('humanresource.employee_services.index');
+        Flash::error('Not Allowed');
+        return back();
+        // return $employeeServiceDataTable->render('humanresource.employee_services.index');
     }
 
     /**

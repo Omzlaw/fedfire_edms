@@ -128,22 +128,6 @@
                             <div id="items" class="dropdown-menu" style="height: 15em; overflow-y:auto;">
                             </div>
                         </div>
-                        {{-- <div class="btn-group mt-10 mr-10">
-                            <button type="button" class="btn secondary-color-bg w-140px dropdown-toggle"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Toggle Group
-                            </button>
-                            <div id="items" class="dropdown-menu" style="height: 8em; overflow-y:auto;">
-                                <a class="dropdown-item"><input class="toggle-vis-grp mr-3" data-type="personal"
-                                        data-column="0" class="column-checkbox" type="checkbox" checked>Personal Records</a>
-                                <a class="dropdown-item"><input class="toggle-vis-grp mr-3" data-type="service"
-                                        data-column="1" class="column-checkbox" type="checkbox" checked>Service Records</a>
-                                <a class="dropdown-item"><input class="toggle-vis-grp mr-3" data-type="education"
-                                        data-column="2" class="column-checkbox" type="checkbox" checked>Education</a>
-
-
-                            </div>
-                        </div> --}}
                         <input id="doPrint" type="button" value="Print" class="btn custom-outline-primary mt-10">
                     </div>
                     {!! Form::close() !!}
@@ -166,12 +150,15 @@
 
                 </div>
                 <div class="table-responsive">
+                    {{-- <input type="text" id="search-input" onkeyup="filterTable()" placeholder="Search..."
+                        title="Search through table"> --}}
                     @include('humanresource.employees.table')
                 </div>
             </div>
         </div>
     </div>
 @endsection
+
 
 <script>
     function SelectAllEmployees() {
@@ -214,7 +201,6 @@
 
         let table = $('#table').DataTable();
 
-        // let mainHeaders = ['Personal Records','Service Records', 'Education'];
         var thArray = [];
 
         let dropdown = document.getElementById('items');
@@ -230,7 +216,7 @@
                 input.classList.add("column-checkbox");
                 input.setAttribute('type', 'checkbox');
                 input.setAttribute('checked', 'checked');
-                input.setAttribute('data-column', index);
+                input.setAttribute('data-column', index + 3);
                 let text = document.createTextNode($(this).text());
                 anchor.appendChild(input);
                 anchor.appendChild(text);
@@ -250,65 +236,6 @@
             column.visible(!column.visible());
         });
 
-        // $('input.toggle-vis-grp').on('click', function(e) {
-        //     // e.preventDefault();
-
-        //     // Get the column API object
-        //     let type = $(this).attr('data-type')
-        //     let personalRecordLastindex = 15;
-        //     let serviceRecordLastIndex = 30;
-
-        //     if (type == 'personal') {
-        //         let inputs = document.getElementsByClassName('toggle-vis');
-        //         for (let i = 2; i <= personalRecordLastindex; i++) {
-        //             var column = table.column(i);
-        //             column.visible(!column.visible());
-        //         }
-        //         for (let i = 2; i < personalRecordLastindex; i++) {
-        //             if (e.target.checked == true) {
-        //                 inputs[i].setAttribute('checked', 'checked');
-        //                 var column = table.column(i);
-        //                 column.visible(true);
-        //             } else {
-        //                 inputs[i].removeAttribute('checked');
-        //             }
-        //         }
-        //     } else if (type == 'service') {
-        //         let inputs = document.getElementsByClassName('toggle-vis');
-        //         for (let i = personalRecordLastindex; i < serviceRecordLastIndex; i++) {
-        //             var column = table.column(i);
-        //             column.visible(!column.visible());
-        //         }
-        //         for (let i = personalRecordLastindex; i < serviceRecordLastIndex - 1; i++) {
-        //             if (e.target.checked == true) {
-        //                 inputs[i].setAttribute('checked', 'checked');
-        //                 var column = table.column(i);
-        //                 column.visible(true);
-        //             } else {
-        //                 inputs[i].removeAttribute('checked');
-
-        //             }
-        //         }
-        //     } else if (type == 'education') {
-        //         let inputs = document.getElementsByClassName('toggle-vis');
-        //         for (let i = serviceRecordLastIndex - 1; i < 36; i++) {
-        //             var column = table.column(i);
-        //             column.visible(!column.visible());
-        //         }
-        //         for (let i = serviceRecordLastIndex - 1; i < 35; i++) {
-        //             if (e.target.checked == true) {
-        //                 inputs[i].setAttribute('checked', 'checked');
-        //                 var column = table.column(i);
-        //                 column.visible(true);
-        //             } else {
-        //                 inputs[i].removeAttribute('checked');
-        //             }
-        //         }
-        //     }
-
-        //     // Toggle the visibility
-        //     column.visible(!column.visible());
-        // });
 
         $('#doPrint').on('click', function() {
             printData();
@@ -337,30 +264,30 @@
                         color: #757575;
                         -webkit-print-color-adjust: exact;
                     }
-                    th 
+                    th
                     {
                         white-space: nowrap;
                         -webkit-print-color-adjust: exact;
                     }
-                    table 
+                    table
                     {
                         border-collapse: collapse;
                         width: 100%;
                         -webkit-print-color-adjust: exact;
                     }
 
-                    th, td 
+                    th, td
                     {
                         text-align: left;
                         padding: 8px;
                         -webkit-print-color-adjust: exact;
                     }
 
-                    tr:nth-child(even) 
+                    tr:nth-child(even)
                     {
                         background-color: #f2f2f2; -webkit-print-color-adjust: exact;
-                    } 
-                    table, th, td 
+                    }
+                    table, th, td
                     {
                         border: 1px solid black;
                         -webkit-print-color-adjust: exact;
@@ -418,10 +345,14 @@
 
 
             columnLength = table.columns().count();
-            var columnAction1 = table.column(columnLength - 1);
-            columnAction1.visible(false);
-            var columnAction2 = table.column(1);
-            columnAction2.visible(false);
+            // var columnAction1 = table.column(columnLength - 1);
+            // columnAction1.visible(false);
+            // var columnAction2 = table.column(4);
+            // columnAction2.visible(false);
+            // var columnAction3 = table.column(5);
+            // columnAction3.visible(false);
+            // var columnAction4 = table.column(6);
+            // columnAction4.visible(false);
             var divToPrint = document.getElementById("table");
             var newWin = window.open('', '', '');
             newWin.document.write('<html><head><title>Print Employee Table</title>');
@@ -435,8 +366,10 @@
             newWin.document.write('</body></html>');
             newWin.print();
             newWin.close();
-            columnAction1.visible(true);
-            columnAction2.visible(true);
+            // columnAction1.visible(true);
+            // columnAction2.visible(true);
+            // columnAction3.visible(true);
+            // columnAction4.visible(true);
 
             htmlTable.children[0].removeChild(tr);
 

@@ -24,7 +24,9 @@ class EmployeeChildrenController extends AppBaseController
      */
     public function index(EmployeeChildrenDataTable $employeeChildrenDataTable)
     {
-        return $employeeChildrenDataTable->render('humanresource.employee_childrens.index');
+        Flash::error('Not Allowed');
+        return back();
+        // return $employeeChildrenDataTable->render('humanresource.employee_childrens.index');
     }
 
     /**

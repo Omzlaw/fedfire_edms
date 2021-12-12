@@ -33,10 +33,10 @@ class CreateEmployeeTerminationsTable extends Migration
             $table->integer('nigeria_total_service_months');
             $table->integer('nigeria_total_service_days');
             $table->decimal('total_naria_salary',30,2);
-            $table->string('summary');
+            $table->string('summary')->nullable();
             $table->string('remark')->nullable();
             $table->integer('status')->default(1);
-            $table->integer('compiled_by');
+            $table->integer('compiled_by')->nullable();
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
             $table->timestamps();

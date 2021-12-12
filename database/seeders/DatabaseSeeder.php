@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call(LocalGovtAreaSeeder::class);
         $this->call(LanguageSeeder::class);
         $this->call(RankTypeSeeder::class);
+        $this->call(FileTypeSeeder::class);
         $this->call(TerminationTypeSeeder::class);
         $this->call(QualificationTypeSeeder::class);
     }

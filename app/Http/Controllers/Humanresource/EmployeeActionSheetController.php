@@ -22,7 +22,9 @@ class EmployeeActionSheetController extends AppBaseController
      */
     public function index(EmployeeActionSheetDataTable $employeeActionSheetDataTable)
     {
-        return $employeeActionSheetDataTable->render('humanresource.employee_action_sheets.index');
+        Flash::error('Not Allowed');
+        return back();
+        // return $employeeActionSheetDataTable->render('humanresource.employee_action_sheets.index');
     }
 
     /**

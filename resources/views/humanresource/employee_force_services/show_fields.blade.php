@@ -60,7 +60,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('date_updated', 'Date Updated:') !!}</th>
-    <td>{{ $employeeForceService->date_updated }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeForceService->date_updated)->format('d/m/Y')  }}</td>
 </tr>
 
 

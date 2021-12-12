@@ -22,8 +22,8 @@ class CreateEmployeeLocalLeavesTable extends Migration
             $table->integer('leave_type_id');
             $table->date('from_date');
             $table->date('to_date');
-            $table->smallInteger('status');
-            $table->text('remark');
+            $table->smallInteger('status')->default(1);
+            $table->text('remark')->nullable();
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
             $table->timestamps();

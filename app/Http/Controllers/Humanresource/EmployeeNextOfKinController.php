@@ -23,7 +23,9 @@ class EmployeeNextOfKinController extends AppBaseController
      */
     public function index(EmployeeNextOfKinDataTable $employeeNextOfKinDataTable)
     {
-        return $employeeNextOfKinDataTable->render('humanresource.employee_next_of_kins.index');
+        Flash::error('Not Allowed');
+        return back();
+        // return $employeeNextOfKinDataTable->render('humanresource.employee_next_of_kins.index');
     }
 
     /**

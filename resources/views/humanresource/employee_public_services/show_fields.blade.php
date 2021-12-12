@@ -12,13 +12,13 @@
 
 <tr>
     <th scopre="row">{!! Form::label('from_date', 'From Date:') !!}</th>
-    <td>{{ $employeePublicService->from_date }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeePublicService->from_date)->format('d/m/Y')  }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('to_date', 'To Date:') !!}</th>
-    <td>{{ $employeePublicService->to_date }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeePublicService->to_date)->format('d/m/Y')  }}</td>
 </tr>
 
 
@@ -33,11 +33,6 @@
     <td>{{ $employeePublicService->employee->getFullName()}}</td>
 </tr>
 
-
-<tr>
-    <th scopre="row">{!! Form::label('file_upload_id', 'File Upload:') !!}</th>
-    <td>{{ $employeePublicService->file_upload_id }}</td>
-</tr>
 
 
 <tr>
@@ -58,10 +53,10 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('checked_by', 'Checked By:') !!}</th>
     <td>{{ $employeePublicService->checkedBy->name }}</td>
-</tr>
+</tr> --}}
 
 
 {{-- <tr>

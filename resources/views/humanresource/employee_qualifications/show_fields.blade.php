@@ -12,7 +12,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('date_obtained', 'Date Obtained:') !!}</th>
-    <td>{{ $employeeQualification->date_obtained }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeQualification->date_obtained)->format('d/m/Y') }}</td>
 </tr>
 
 
@@ -22,15 +22,10 @@
 </tr>
 
 
-<tr>
-    <th scopre="row">{!! Form::label('file_upload', 'File Upload:') !!}</th>
-    <td>{{ $employeeQualification->file_upload }}</td>
-</tr>
-
 
 <tr>
     <th scopre="row">{!! Form::label('status', 'Status:') !!}</th>
-    <td>{{ $employeeQualification->status }}</td>
+    <td>{{ get_enum_value('enum_status', $employeeQualification->status) }}</td>
 </tr>
 
 

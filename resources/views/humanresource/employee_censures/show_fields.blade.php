@@ -18,7 +18,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('date_recieved', 'Date Recieved:') !!}</th>
-    <td>{{ $employeeCensure->date_recieved }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeCensure->date_recieved)->format('d/m/Y') }}</td>
 </tr>
 
 
@@ -27,11 +27,6 @@
     <td>{{ $employeeCensure->employee->getFullName() }}</td>
 </tr>
 
-
-<tr>
-    <th scopre="row">{!! Form::label('file_upload', 'File Upload:') !!}</th>
-    <td>{{ $employeeCensure->file_upload }}</td>
-</tr>
 
 
 <tr>
@@ -54,7 +49,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('compiled_at', 'Compiled At:') !!}</th>
-    <td>{{ $employeeCensure->compiled_at }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeCensure->compiled_at)->format('d/m/Y') }}</td>
 </tr>
 
 

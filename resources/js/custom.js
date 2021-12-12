@@ -75,30 +75,30 @@ $(document).ready(function () {
     var ps = new PerfectScrollbar('#demo');
     $("#demo .navbar-brand h1").replaceWith('<img src="{{ asset("images/logo.png") }}">');
 
-    $(".left-aside").hover(function () {
-            if ($('.left-aside .sidebar').hasClass('sidebar-res')) {
-                $(".left-aside .sidebar").css("margin-left", "0px")
-                $("#footer-text").css("margin-left", "-130px");
-                $('#mini-logo').hide();
-            }
-            $("#demo .navbar-brand").css({
-                'margin-left': '0',
-                'transition': 'margin-left 0.3s linear'
-            });
-            $("#demo .navbar-brand h1").replaceWith('<img src="{{ asset("images/logo.png") }}">');
+    // $(".left-aside").hover(function () {
+    //         if ($('.left-aside .sidebar').hasClass('sidebar-res')) {
+    //             $(".left-aside .sidebar").css("margin-left", "0px")
+    //             $("#footer-text").css("margin-left", "-130px");
+    //             $('#mini-logo').hide();
+    //         }
+    //         $("#demo .navbar-brand").css({
+    //             'margin-left': '0',
+    //             'transition': 'margin-left 0.3s linear'
+    //         });
+    //         $("#demo .navbar-brand h1").replaceWith('<img src="{{ asset("images/logo.png") }}">');
 
-        },
-        function () {
-            if ($('.left-aside .sidebar').hasClass('sidebar-res')) {
-                $('.left-aside .sidebar').css("margin-left", "-175px");
-                $("#footer-text").css("margin-left", "-40px");
-                $('#mini-logo').show();
-            }
-            $("#demo .navbar-brand").css({
-                'transition': 'margin-left 0.3s linear'
-            });
-            $("#demo .navbar-brand h1").replaceWith('<img src="{{ asset("images/logo.png") }}">');
-        });
+    //     },
+    //     function () {
+    //         if ($('.left-aside .sidebar').hasClass('sidebar-res')) {
+    //             $('.left-aside .sidebar').css("margin-left", "-175px");
+    //             $("#footer-text").css("margin-left", "-40px");
+    //             $('#mini-logo').show();
+    //         }
+    //         $("#demo .navbar-brand").css({
+    //             'transition': 'margin-left 0.3s linear'
+    //         });
+    //         $("#demo .navbar-brand h1").replaceWith('<img src="{{ asset("images/logo.png") }}">');
+    //     });
 
     var arr;
     $('.color1').click(function () {

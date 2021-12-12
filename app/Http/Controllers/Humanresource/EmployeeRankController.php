@@ -23,7 +23,9 @@ class EmployeeRankController extends AppBaseController
      */
     public function index(EmployeeRankDataTable $employeeRankDataTable)
     {
-        return $employeeRankDataTable->render('humanresource.employee_ranks.index');
+        Flash::error('Not Allowed');
+        return back();
+        // return $employeeRankDataTable->render('humanresource.employee_ranks.index');
     }
 
     /**

@@ -16,7 +16,7 @@ class CreateRelationshipsTable extends Migration
         Schema::create('relationships', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->smallInteger('status')->default(1);
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();

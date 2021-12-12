@@ -248,7 +248,7 @@
 
         <div class="col-6">
             <div id="dwtcontrolContainer" class=""></div>
-            <div><embed id=" preview" alt="preview" src=""
+            <div><embed id="preview" alt="preview" src=""
                 height="50%" width="50%"></div>
         </div>
     </div>

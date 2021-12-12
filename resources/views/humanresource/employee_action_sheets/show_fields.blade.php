@@ -12,7 +12,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('action_at', 'Action At:') !!}</th>
-    <td>{{ $employeeActionSheet->action_at }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeActionSheet->action_at)->format('d/m/Y') }}</td>
 </tr>
 
 
@@ -32,13 +32,13 @@
 
  <tr>
     <th scopre="row">{!! Form::label('date_cleared', 'Date Cleared:') !!}</th>
-    <td>{{ $employeeActionSheet->date_cleared }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeActionSheet->date_cleared)->format('d/m/Y') }}</td>
 </tr>
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('action_by', 'Action By:') !!}</th>
     <td>{{ $employeeActionSheet->actionBy->name }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>

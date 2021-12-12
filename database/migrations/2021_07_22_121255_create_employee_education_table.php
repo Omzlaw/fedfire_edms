@@ -16,7 +16,7 @@ class CreateEmployeeEducationTable extends Migration
         Schema::create('employee_education', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('qualification_type_id')->nullable();
-            $table->string('qualification');
+            $table->string('qualification')->nullable();
             $table->string('school_name')->nullable();
             $table->integer('certificate_id')->nullable();
             $table->integer('school_type_id')->nullable();

@@ -41,11 +41,6 @@
 </tr>
 
 
-<tr>
-    <th scopre="row">{!! Form::label('file_upload', 'File Upload:') !!}</th>
-    <td>{{ $employeeAddress->file_upload }}</td>
-</tr>
-
 
 <tr>
     <th scopre="row">{!! Form::label('status', 'Status:') !!}</th>

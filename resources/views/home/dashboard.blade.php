@@ -531,11 +531,11 @@
             //     'When tempted to fight fire with fire, remember that firefighters usually use water.',
             //     'Aspire rather to be a hero than merely appear one.',
             //     'Hard times don’ t create heroes. It is during the hard times when the‘ hero’ within us is revealed.',
-            //     'More often than not, a hero’\ s most epic battle is the one you never see;it’ s the battle that goes on within him or herself.', 
+            //     'More often than not, a hero’\ s most epic battle is the one you never see;it’ s the battle that goes on within him or herself.',
 
             // ]
 
-            // document.getElementById('quote').innerHTML = '"' + qoutes[0] + '"' 
+            // document.getElementById('quote').innerHTML = '"' + qoutes[0] + '"'
 
             // function changeQuote() {
             //     setInterval(() => {
@@ -595,8 +595,9 @@
                         yAxes: [{
                             ticks: {
                                 beginAtZero: true,
-                                stepSize: 100,
-                                max: employee_count
+                                stepSize: 50,
+                                // max: employee_count,
+                                max: 1500
                             },
                             scaleLabel: {
                                 display: true,
@@ -641,8 +642,9 @@
                         yAxes: [{
                             ticks: {
                                 beginAtZero: true,
-                                stepSize: 100,
-                                max: employee_count
+                                stepSize: 50,
+                                // max: employee_count,
+                                max: 1500
                             },
                             scaleLabel: {
                                 display: true,

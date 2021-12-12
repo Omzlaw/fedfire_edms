@@ -17,9 +17,11 @@
         @include('adminlte-templates::common.errors')
         <div class="card mb-100">
             <div class="card-body">
-                {!! Form::model($employee, ['route' => ['humanresource.employees.update', $employee->id], 'method' => 'patch', 'files' => true, 'class' => 'form-horizontal']) !!}
+                {!! Form::model($employee, ['route' => ['humanresource.employees.update', $employee->id], 'method' => 'patch', 'files' => true, 'class' => 'form-horizontal', 'id' => 'employee-form']) !!}
 
-                @include('humanresource.employees.fields',[$countries, $geo_political_zones, $states, $senatorial_zones, $local_govt_areas])
+                <div class="row">
+                    @include('humanresource.employees.fields')
+                </div>
 
                 {!! Form::close() !!}
             </div>

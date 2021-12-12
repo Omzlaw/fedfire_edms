@@ -58,7 +58,7 @@ class CertificateType extends Model
      */
     public static $rules = [
         'title' => 'Required',
-        'description' => 'Required',
+        // 'description' => 'Required',
         'status' => 'Required',
      //   'created_by' => 'Required',
     //    'updated_by' => 'Required'

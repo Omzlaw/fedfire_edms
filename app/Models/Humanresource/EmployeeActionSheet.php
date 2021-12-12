@@ -73,7 +73,7 @@ class EmployeeActionSheet extends Model
         //    'updated_by' => 'Required',
         'date_cleared' => 'Required',
         'action_by' => 'Required',
-        'remark' => 'Required'
+        // 'remark' => 'Required'
     ];
 
     /**

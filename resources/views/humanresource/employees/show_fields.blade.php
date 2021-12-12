@@ -38,8 +38,8 @@
 
 
 <tr>
-    <th scopre="row">{!! Form::label('birthdate', 'Date of Birth:') !!}</th>
-    <td>{{ $employee->birthdate }}</td>
+    <th scopre="row">{!! Form::label('date_of_birth', 'Date of Birth:') !!}</th>
+    <td>{{ \Carbon\Carbon::parse($employee->date_of_birth)->format('d/m/Y') }}</td>
 </tr>
 
 <tr>
@@ -83,5 +83,25 @@
 
 <tr>
     <th scopre="row">{!! Form::label('date_of_first_appointment', 'Date of First Appointment:') !!}</th>
-    <td>{{ $employee->date_of_first_appointment }}</td>
+    <td>{{ \Carbon\Carbon::parse($employee->date_of_first_appointment)->format('d/m/Y')  }}</td>
+</tr>
+
+<tr>
+    <th scopre="row">{!! Form::label('retirement_date_by_dob', 'Retirement Date by DOB:') !!}</th>
+    <td>{{ \Carbon\Carbon::parse($employee->date_of_birth)->addYears(60)->format('d/m/Y')  }}</td>
+</tr>
+
+<tr>
+    <th scopre="row">{!! Form::label('retirement_year_by_dob', 'Retirement Year by DOB:') !!}</th>
+    <td>{{ \Carbon\Carbon::parse($employee->date_of_birth)->addYears(60)->year  }}</td>
+</tr>
+
+<tr>
+    <th scopre="row">{!! Form::label('no_of_years_remained_by_dob', 'No of Years Remained by DOB:') !!}</th>
+    <td>@php
+        $start_date = \Carbon\Carbon::now();
+        $end_date = \Carbon\Carbon::parse($employee->date_of_birth)->addYears(60);
+        $diff = $start_date->diffInYears($end_date);
+        echo $diff;
+    @endphp</td>
 </tr>

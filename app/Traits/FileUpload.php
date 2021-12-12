@@ -18,4 +18,14 @@ trait FileUpload
         return $file_path;
     }
 
+    public function policyUpload($file, $file_name, $file_type)
+    {
+        $file_extension = $file->getClientOriginalExtension();
+        $file_url = $file->storeAs(
+            'public/uploads/' . '/' . $file_type, $file_name . '.' . $file_extension
+        );
+        $file_path = str_replace('public/', 'storage/', $file_url);
+        return $file_path;
+    }
+
 }

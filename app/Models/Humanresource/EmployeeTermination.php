@@ -129,7 +129,7 @@ class EmployeeTermination extends Model
         'nigeria_total_service_months' => 'Required',
         'nigeria_total_service_days' => 'Required',
         'total_naria_salary' => 'Required',
-        'summary' => 'Required',
+        // 'summary' => 'Required',
       //        'remark' => 'Required',
         'status' => 'Required',
         // 'compiled_by' => 'Required',

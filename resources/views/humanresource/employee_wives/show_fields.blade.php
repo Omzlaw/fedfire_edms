@@ -12,13 +12,13 @@
 
 <tr>
     <th scopre="row">{!! Form::label('wife_birthdate', 'Wife Birthdate:') !!}</th>
-    <td>{{ $employeeWife->wife_birthdate }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeWife->wife_birthdate)->format('d/m/Y') }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('marriage_date', 'Marriage Date:') !!}</th>
-    <td>{{ $employeeWife->marriage_date }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeWife->marriage_date)->format('d/m/Y') }}</td>
 </tr>
 
 
@@ -27,11 +27,6 @@
     <td>{{ $employeeWife->employee->getFullName() }}</td>
 </tr>
 
-
-<tr>
-    <th scopre="row">{!! Form::label('file_upload', 'File Upload:') !!}</th>
-    <td>{{ $employeeWife->file_upload }}</td>
-</tr>
 
 
 <tr>

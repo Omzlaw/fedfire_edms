@@ -17,12 +17,12 @@ class CreateEmployeeLanguagesTable extends Migration
             $table->increments('id');
             $table->integer('speaking_fluency');
             $table->integer('writing_fluency');
-            $table->string('exam_qualified');
+            $table->string('exam_qualified')->nullable();
             $table->integer('employee_id');
             $table->integer('language_id');
             $table->string('file_upload')->nullable()->nullable();
-            $table->smallInteger('status');
-            $table->text('remark');
+            $table->smallInteger('status')->default(1);
+            $table->text('remark')->nullable();
             $table->integer('checked_by')->nullable();
             $table->date('checked_at');
             $table->integer('created_by')->nullable();

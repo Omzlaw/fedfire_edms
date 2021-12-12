@@ -22,7 +22,9 @@ class EmployeeGratuityController extends AppBaseController
      */
     public function index(EmployeeGratuityDataTable $employeeGratuityDataTable)
     {
-        return $employeeGratuityDataTable->render('humanresource.employee_gratuities.index');
+        Flash::error('Not Allowed');
+        return back();
+        // return $employeeGratuityDataTable->render('humanresource.employee_gratuities.index');
     }
 
     /**

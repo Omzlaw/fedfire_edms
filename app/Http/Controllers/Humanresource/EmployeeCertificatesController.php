@@ -23,7 +23,9 @@ class EmployeeCertificatesController extends AppBaseController
      */
     public function index(EmployeeCertificatesDataTable $employeeCertificatesDataTable)
     {
-        return $employeeCertificatesDataTable->render('humanresource.employee_certificates.index');
+        Flash::error('Not Allowed');
+        return back();
+        // return $employeeCertificatesDataTable->render('humanresource.employee_certificates.index');
     }
 
     /**

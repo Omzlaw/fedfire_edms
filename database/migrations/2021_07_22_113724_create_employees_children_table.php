@@ -21,7 +21,7 @@ class CreateEmployeesChildrenTable extends Migration
             $table->integer('employee_id');
             $table->string('file_upload')->nullable();
             $table->string('remark')->nullable();
-            $table->integer('checked_by');
+            $table->integer('checked_by')->nullable();
             $table->date('checked_at');
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();

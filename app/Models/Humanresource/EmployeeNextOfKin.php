@@ -28,7 +28,7 @@ class EmployeeNextOfKin extends Model
     use SoftDeletes;
 
     public $table = 'employee_next_of_kins';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -72,8 +72,8 @@ class EmployeeNextOfKin extends Model
     public static $rules = [
         'name' => 'Required',
         // 'address' => 'Required',
-        'phone' => 'Required',
-        // 'relationship_id' => 'Required',
+        'phone' => 'Required|min:11|max:11',
+        'relationship_id' => 'Required',
         'employee_id' => 'Required',
         // 'file_upload' => 'Required',
       //        'remark' => 'Required',

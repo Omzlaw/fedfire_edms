@@ -18,7 +18,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('birthday', 'Birthday:') !!}</th>
-    <td>{{ $employeeChildren->birthday }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeChildren->birthday)->format('d/m/Y') }}</td>
 </tr>
 
 
@@ -28,10 +28,6 @@
 </tr>
 
 
-<tr>
-    <th scopre="row">{!! Form::label('file_upload', 'File Upload:') !!}</th>
-    <td>{{ $employeeChildren->file_upload }}</td>
-</tr>
 
 
 <tr>
@@ -40,15 +36,15 @@
 </tr>
 
 
-<tr>
+{{-- <tr>
     <th scopre="row">{!! Form::label('checked_by', 'Checked By:') !!}</th>
     <td>{{ $employeeChildren->checkedBy->name }}</td>
-</tr>
+</tr> --}}
 
 
 <tr>
     <th scopre="row">{!! Form::label('checked_at', 'Checked At:') !!}</th>
-    <td>{{ $employeeChildren->checked_at }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeChildren->checked_at)->format('d/m/Y')  }}</td>
 </tr>
 
 

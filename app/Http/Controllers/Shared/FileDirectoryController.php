@@ -32,6 +32,15 @@ class FileDirectoryController extends AppBaseController
 
 
 
+    public function blank()
+    {
+        if(!check_permission('file_directories-index')){
+            Flash::error('Permission Denied');
+            return redirect()->back();
+        }
+        return view('shared.file_directories.blank');
+    }
+
     public function index(FileDirectoryDataTable $fileDirectoryDataTable)
     {
         if(!check_permission('file_directories-index')){
@@ -40,6 +49,8 @@ class FileDirectoryController extends AppBaseController
         }
         return $fileDirectoryDataTable->render('shared.file_directories.index');
     }
+
+
 
     /**
      * Show the form for creating a new FileDirectory.
@@ -297,5 +308,25 @@ class FileDirectoryController extends AppBaseController
 
         return $input;
     }
+
+    public function fileClass(Request $request) {
+        if($request['action'] == 'Policy File'){
+            return redirect(route('shared.policyDocuments.index'));
+        }
+        else if($request['action'] == 'Personnel File') {
+            return redirect(route('shared.fileDirectories.index'));
+        }
+    }
+
+    public function fileSearchClass(Request $request) {
+        if($request['action'] == 'Policy File'){
+            return view('shared.policy_documents.search');
+        }
+        else if($request['action'] == 'Personnel File') {
+            return view('shared.file_directories.search');
+        }
+    }
+
+
 
 }

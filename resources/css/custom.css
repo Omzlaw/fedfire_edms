@@ -75,11 +75,11 @@ body > .header .navbar {
   transition: margin-left 0.3s linear;
   
 }
-.left-aside .sidebar:hover
+/* .left-aside .sidebar:hover
 {
   margin-left: 0;
   transition: margin-left 0.3s linear;
-}
+} */
 
 .content {
   display: block;

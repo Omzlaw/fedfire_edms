@@ -60,7 +60,7 @@
         "inView": true
     },
     {
-        "name": "birthdate",
+        "name": "date_of_birth",
         "dbType": "dateTime",
         "htmlType": "date",
         "validations": "Required",

@@ -24,7 +24,9 @@ class EmployeeForeignToursController extends AppBaseController
      */
     public function index(EmployeeForeignToursDataTable $employeeForeignToursDataTable)
     {
-        return $employeeForeignToursDataTable->render('humanresource.employee_foreign_tours.index');
+        Flash::error('Not Allowed');
+        return back();
+        // return $employeeForeignToursDataTable->render('humanresource.employee_foreign_tours.index');
     }
 
     /**

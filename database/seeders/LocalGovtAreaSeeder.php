@@ -381,7 +381,7 @@ class LocalGovtAreaSeeder extends Seeder
             ["title" => "Gwagwalada", "state_id" => 2648, "senatorial_zone_id" => 109],
             ["title" => "Kuje", "state_id" => 2648, "senatorial_zone_id" => 109],
             ["title" => "Kwali", "state_id" => 2648, "senatorial_zone_id" => 109],
-            ["title" => "Municipal Area Council", "state_id" => 2648, "senatorial_zone_id" => 109],
+            ["title" => "Abuja Municipal Area Council", "state_id" => 2648, "senatorial_zone_id" => 109],
 
 
             ["title" => "Akko", "state_id" => 2662, "senatorial_zone_id" => 43],

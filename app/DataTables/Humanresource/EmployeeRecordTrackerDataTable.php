@@ -57,7 +57,7 @@ class EmployeeRecordTrackerDataTable extends DataTable
             ->minifiedAjax()
             ->addAction(['width' => '120px', 'printable' => false])
             ->parameters([
-                'dom'       => 'Bfrtip',
+                'dom'       => 'Blfrtip',
                 'stateSave' => true,
                 'order'     => [[0, 'desc']],
                 'buttons'   => [

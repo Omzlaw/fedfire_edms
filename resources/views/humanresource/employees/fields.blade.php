@@ -1,36 +1,21 @@
-<!-- File No Field -->
-<div class="form-group">
-    <div class="row">
-        {!! Form::label('service_number', 'Service No:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('service_number', null, ['class' => 'form-control']) !!}
-        </div>
-    </div>
+<div class="col-sm-12 form-group text-center">
+    <h6>Basic Information</h6>
 </div>
 
-<!-- IPPIS No Field -->
-<div class="form-group">
-    <div class="row">
-        {!! Form::label('IPPIS', 'IPPIS No:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::number('IPPIS', null, ['class' => 'form-control']) !!}
-        </div>
-    </div>
-</div>
 
-<!-- Cadre Field -->
-<div class="form-group">
+<!-- Profile Picture  Field -->
+<div class="col-sm-6 form-group">
     <div class="row">
-        {!! Form::label('cadre', 'CADRE:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('profile_picture', 'Profie Picture:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('cadre',null, ['class' => 'form-control']) !!}
+            {!! Form::file('profile_picture', ['id' => 'profile_picture']) !!}
         </div>
     </div>
 </div>
 
 
 <!-- First Name Field -->
-<div class="form-group">
+<div class="col-sm-6 form-group">
     <div class="row">
         {!! Form::label('first_name', 'First Name:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
@@ -40,7 +25,7 @@
 </div>
 
 <!-- Middle Name Field -->
-<div class="form-group">
+<div class="col-sm-6 form-group">
     <div class="row">
         {!! Form::label('middle_name', 'Middle Name:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
@@ -51,7 +36,7 @@
 
 
 <!-- Last Name Field -->
-<div class="form-group">
+<div class="col-sm-6 form-group">
     <div class="row">
         {!! Form::label('last_name', 'Last Name:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
@@ -62,9 +47,9 @@
 
 
 <!-- Gender Field -->
-<div class="form-group">
+<div class="col-sm-6 form-group">
     <div class="row">
-        {!! Form::label('gender', 'Sex:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('gender', 'Gender/Sex:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::select('gender', enum_gender(), null, ['class' => 'form-control']) !!}
         </div>
@@ -72,7 +57,7 @@
 </div>
 
 <!-- Religion Field -->
-<div class="form-group">
+<div class="col-sm-6 form-group">
     <div class="row">
         {!! Form::label('religion', 'Religion:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
@@ -83,18 +68,18 @@
 
 
 <!-- Birthdate Field -->
-<div class="form-group">
+<div class="col-sm-6 form-group">
     <div class="row">
-        {!! Form::label('birthdate', 'Date of Birth:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('date_of_birth', 'Date of Birth:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::date('birthdate', null, ['class' => 'form-control', 'id' => 'birthdate']) !!}
+            {!! Form::date('date_of_birth', null, ['class' => 'form-control', 'id' => 'date_of_birth']) !!}
         </div>
     </div>
 </div>
 
 {{-- @section('footer_scripts')
     <script type="text/javascript">
-        $('#birthdate').datetimepicker({
+        $('#date_of_birth').datetimepicker({
             format: 'YYYY-MM-DD',
             useCurrent: true,
             sideBySide: true
@@ -104,7 +89,7 @@
 
 
 <!-- Place Of Birth Field -->
-{{-- <div class="form-group">
+{{-- <div class="col-sm-6 form-group">
     <div class="row">
         {!! Form::label('place_of_birth', 'Place Of Birth:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
@@ -114,19 +99,10 @@
 </div> --}}
 
 
-<!-- Profile Picture  Field -->
-<div class="form-group">
-    <div class="row">
-        {!! Form::label('profile_picture', 'Profie Picture:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::file('profile_picture', array('id' => 'profile_picture')) !!}
-        </div>
-    </div>
-</div>
 
 
 <!-- Marital Status Id Field -->
-<div class="form-group">
+<div class="col-sm-6 form-group">
     <div class="row">
         {!! Form::label('marital_status_id', 'Marital Status:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
@@ -135,9 +111,205 @@
     </div>
 </div>
 
+<!-- Nationality Field -->
+{{-- <div class="col-sm-6 form-group">
+    <div class="row">
+        {!! Form::label('country_id', 'Country:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::select('nationality', modelDropdown($countries, 'id', 'title'), null, ['class' => 'form-control', 'onchange' => 'countryGeoPoliticalZoneSelector()', 'id' => 'countrySelector']) !!}
+        </div>
+    </div>
+</div> --}}
+{!! Form::macro('countrySelect', function ($countryModel) {
+    $countries = $countryModel
+        ::orderBy('title')->where('id', '=', '160')->get();
+    $options = [];
+    $defaultOption = '<option value="">Select...</option>';
+    $options[] = $defaultOption;
+    $value = Form::getValueAttribute('nationality');
+    foreach ($countries as $country) {
+        if ($value == $country->id) {
+            $option = '<option selected value=' . $country->id . '' . '>' . $country->title . '</option>';
+            $options[] = $option;
+        } else {
+            $option = '<option selected value=' . $country->id . '' . '>' . $country->title . '</option>';
+            $options[] = $option;
+        }
+    }
+    $list = implode('', $options);
+    return "<select id='countrySelector' name='nationality' class='form-control'>{$list}</select>";
+}) !!}
+
+
+<div class="col-sm-6 form-group">
+    <div class="row">
+        {!! Form::label('nationality', 'Country:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::countrySelect($countries) !!}
+        </div>
+    </div>
+</div>
+
+
+<!-- State of Origin Field -->
+{!! Form::macro('stateSelect', function ($stateModel) {
+    $states = $stateModel
+        ::orderBy('title')->where('country_id', '=', '160')->get();
+    $options = [];
+    $defaultOption = '<option value="">Select...</option>';
+    $options[] = $defaultOption;
+    $value = Form::getValueAttribute('state_of_origin');
+    foreach ($states as $state) {
+        if ($value == $state->id) {
+            $option = '<option selected value=' . $state->id . ' data-country_id=' . $state->country_id . ' data-geo_political_zone_id=' . $state->geo_political_zone_id . '>' . $state->title . '</option>';
+            $options[] = $option;
+        } else {
+            $option = '<option value=' . $state->id . ' data-country_id=' . $state->country_id . ' data-geo_political_zone_id=' . $state->geo_political_zone_id . '>' . $state->title . '</option>';
+            $options[] = $option;
+        }
+    }
+    $list = implode('', $options);
+    return "<select id='stateSelector' name='state_of_origin' class='form-control' onchange='stateLocalGovtAreaSelector()'>{$list}</select>";
+}) !!}
+
+
+<div class="col-sm-6 form-group">
+    <div class="row">
+        {!! Form::label('state_id', 'State of Origin:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::stateSelect($states) !!}
+        </div>
+    </div>
+</div>
+
+<!-- Geo-Political Zone Field -->
+{!! Form::macro('geoPoliticalZoneSelect', function ($geoPoliticalZoneModel) {
+    $geoPoliticalZones = $geoPoliticalZoneModel::orderBy('title')->get();
+    $options = [];
+    $defaultOption = '<option value="">Select...</option>';
+    $options[] = $defaultOption;
+    $value = Form::getValueAttribute('geo_political_zone');
+    foreach ($geoPoliticalZones as $geoPoliticalZone) {
+        if ($value == $geoPoliticalZone->id) {
+            $option = '<option selected value=' . $geoPoliticalZone->id . ' data-country_id=' . $geoPoliticalZone->country_id . '>' . $geoPoliticalZone->title . '</option>';
+            $options[] = $option;
+        } else {
+            $option = '<option value=' . $geoPoliticalZone->id . ' data-country_id=' . $geoPoliticalZone->country_id . '>' . $geoPoliticalZone->title . '</option>';
+            $options[] = $option;
+        }
+    }
+    $list = implode('', $options);
+    return "<select id='geoPoliticalZoneSelector' name='geo_political_zone' class='form-control' onchange=''>{$list}</select>";
+}) !!}
+
+
+<div class="col-sm-6 form-group">
+    <div class="row">
+        {!! Form::label('geo_political_zone_id', 'Geo-Political Zone:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::geoPoliticalZoneSelect($geo_political_zones) !!}
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Local Govt Area Zone Field -->
+{!! Form::macro('localGovtAreaSelect', function ($localGovtAreaModel) {
+    $localGovtAreas = $localGovtAreaModel::orderBy('title')->get();
+    $options = [];
+    $defaultOption = '<option value="">Select...</option>';
+    $options[] = $defaultOption;
+    $value = Form::getValueAttribute('local_govt_area');
+    foreach ($localGovtAreas as $localGovtArea) {
+        if ($value == $localGovtArea->id) {
+            $option = '<option selected value=' . $localGovtArea->id . ' data-senatorial_zone_id=' . $localGovtArea->senatorial_zone_id . ' data-state_id=' . $localGovtArea->state_id . '>' . $localGovtArea->title . '</option>';
+            $options[] = $option;
+        } else {
+            $option = '<option value=' . $localGovtArea->id . ' data-senatorial_zone_id=' . $localGovtArea->senatorial_zone_id . ' data-state_id=' . $localGovtArea->state_id . '>' . $localGovtArea->title . '</option>';
+            $options[] = $option;
+        }
+    }
+    $list = implode('', $options);
+    return "<select data-old-value=$value id='localGovtAreaSelector' name='local_govt_area' class='form-control' onchange='localGovtSelector()'>{$list}</select>";
+}) !!}
+
+
+<div class="col-sm-6 form-group">
+    <div class="row">
+        {!! Form::label('local_govt_area_id', 'Local Govt Area:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::localGovtAreaSelect($local_govt_areas) !!}
+        </div>
+    </div>
+</div>
+
+<!-- Senatorial Zone Field -->
+{!! Form::macro('senatorialZoneSelect', function ($senatorialZoneModel) {
+    $senatorialZones = $senatorialZoneModel::orderBy('title')->get();
+    $options = [];
+    $defaultOption = '<option value="">Select...</option>';
+    $options[] = $defaultOption;
+    $value = Form::getValueAttribute('senatorial_zone');
+    foreach ($senatorialZones as $senatorialZone) {
+        if ($value == $senatorialZone->id) {
+            $option = '<option selected value=' . $senatorialZone->id . ' data-state_id=' . $senatorialZone->state_id . '>' . $senatorialZone->title . '</option>';
+            $options[] = $option;
+        } else {
+            $option = '<option value=' . $senatorialZone->id . ' data-state_id=' . $senatorialZone->state_id . '>' . $senatorialZone->title . '</option>';
+            $options[] = $option;
+        }
+    }
+    $list = implode('', $options);
+    return "<select id='senatorialZoneSelector' name='senatorial_zone' class='form-control' onchange=''>{$list}</select>";
+}) !!}
+
+
+<div class="col-sm-6 form-group">
+    <div class="row">
+        {!! Form::label('senatorial_zone_id', 'Senatorial Zone:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::senatorialZoneSelect($senatorial_zones) !!}
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-12 form-group text-center">
+    <h6>Service Information</h6>
+</div>
+
+<!-- File No Field -->
+<div class="col-sm-6 form-group">
+    <div class="row">
+        {!! Form::label('service_number', 'Service No:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::text('service_number', null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
+<!-- IPPIS No Field -->
+<div class="col-sm-6 form-group">
+    <div class="row">
+        {!! Form::label('IPPIS', 'IPPIS No:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::number('IPPIS', null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
+<!-- Cadre Field -->
+<div class="col-sm-6 form-group">
+    <div class="row">
+        {!! Form::label('cadre', 'CADRE:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::text('cadre', null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
 
 <!-- First Appointment Date Field -->
-<div class="form-group">
+<div class="col-sm-6 form-group">
     <div class="row">
         {!! Form::label('date_of_first_appointment', 'Date of First Appointment :', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
@@ -157,7 +329,7 @@
 @endsection --}}
 
 <!-- Date of Assumption of Duty Field -->
-<div class="form-group">
+<div class="col-sm-6 form-group">
     <div class="row">
         {!! Form::label('assumption_of_duty_date', 'Assumption of Duty Date:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
@@ -167,7 +339,7 @@
 </div>
 
 <!-- First Arrival Date Field -->
-{{-- <div class="form-group">
+{{-- <div class="col-sm-6 form-group">
     <div class="row">
         {!! Form::label('first_arrival_date', 'First Arrival Date:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
@@ -177,7 +349,7 @@
 </div> --}}
 
 <!--  Present Appointment Date Field -->
-<div class="form-group">
+<div class="col-sm-6 form-group">
     <div class="row">
         {!! Form::label('date_of_present_appointment', 'Date of Present Appointment :', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
@@ -187,7 +359,7 @@
 </div>
 
 <!--  Date of Confirmation Field -->
-<div class="form-group">
+<div class="col-sm-6 form-group">
     <div class="row">
         {!! Form::label('date_of_confirmation', 'Date of Confirmation:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
@@ -197,9 +369,9 @@
 </div>
 
 <!-- GL Field -->
-<div class="form-group">
+<div class="col-sm-6 form-group">
     <div class="row">
-        {!! Form::label('gl', 'Grade Level:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('gl', 'GL:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::select('gl', enum_grade_level(), null, ['class' => 'form-control']) !!}
         </div>
@@ -207,7 +379,7 @@
 </div>
 
 <!-- Type of Appointment Field -->
-<div class="form-group">
+<div class="col-sm-6 form-group">
     <div class="row">
         {!! Form::label('type_of_appointment', 'Type of Appointment:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
@@ -215,6 +387,66 @@
         </div>
     </div>
 </div>
+
+{{-- <!-- Retirement Date By DOB Field -->
+<div class="col-sm-6 form-group">
+    <div class="row">
+        {!! Form::label('retirement_date_by_dob', 'Retirement Date By DOB:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::date('retirement_date_by_dob', null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
+<!-- Retirement Year By DOB Field -->
+<div class="col-sm-6 form-group">
+    <div class="row">
+        {!! Form::label('retirement_year_by_dob', 'Retirement Year By DOB:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::number('retirement_year_by_dob', null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
+<!-- No of Years Remained By DOB Field -->
+<div class="col-sm-6 form-group">
+    <div class="row">
+        {!! Form::label('no_of_years_remained_by_dob', 'No of Years Remained By DOB:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::number('no_of_years_remained_by_dob', null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
+<!-- Retirement Date By DOFA Field -->
+<div class="col-sm-6 form-group">
+    <div class="row">
+        {!! Form::label('retirement_date_by_dofa', 'Retirement Date By DOFA:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::date('retirement_date_by_dofa', null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
+<!-- No of Years Remained By DOFA Field -->
+<div class="col-sm-6 form-group">
+    <div class="row">
+        {!! Form::label('no_of_years_remained_by_dofa', 'No of Years Remained By DOFA:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::number('no_of_years_remained_by_dofa', null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div> --}}
+
+<!-- Current Appointment Field -->
+{{-- <div class="col-sm-6 form-group">
+    <div class="row">
+        {!! Form::label('current_appointment', 'Current Appointment:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::text('current_appointment', null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div> --}}
 
 {{-- @section('footer_scripts')
     <script type="text/javascript">
@@ -227,175 +459,11 @@
 @endsection --}}
 
 
-<!-- Nationality Field -->
-{{-- <div class="form-group">
-    <div class="row">
-        {!! Form::label('country_id', 'Country:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('nationality', modelDropdown($countries, 'id', 'title'), null, ['class' => 'form-control', 'onchange' => 'countryGeoPoliticalZoneSelector()', 'id' => 'countrySelector']) !!}
-        </div>
-    </div>
-</div> --}}
-{!! Form::macro('countrySelect', function ($countryModel) {
-    $countries = $countryModel::orderBy('title')->where('id', '=', '160')->get();
-    $options = [];
-    $defaultOption = '<option value="">Select...</option>';
-    $options[] = $defaultOption;
-    $value = Form::getValueAttribute('nationality');
-    foreach ($countries as $country) {
-        if($value == $country->id) {
-            $option = '<option selected value=' . $country->id . '' . '>' . $country->title . '</option>';
-            $options[] = $option;
-        }
-        else {
-            $option = '<option value=' . $country->id . '' . '>' . $country->title . '</option>';
-            $options[] = $option;
-        }
-    }
-    $list = implode('', $options);
-    return "<select id='countrySelector' name='nationality' class='form-control' onchange='countryStateSelector()'>{$list}</select>";
-}) !!}
 
-
-<div class="form-group">
-    <div class="row">
-        {!! Form::label('nationality', 'Country:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::countrySelect($countries) !!}
-        </div>
-    </div>
-</div>
-
-
-<!-- State of Origin Field -->
-{!! Form::macro('stateSelect', function ($stateModel) {
-    $states = $stateModel::orderBy('title')->where('country_id', '=', '160')->get();
-    $options = [];
-    $defaultOption = '<option value="">Select...</option>';
-    $options[] = $defaultOption;
-    $value = Form::getValueAttribute('state_of_origin');
-    foreach ($states as $state) {
-        if($value == $state->id) {
-            $option = '<option selected value=' . $state->id . ' data-country_id=' . $state->country_id . ' data-geo_political_zone_id=' . $state->geo_political_zone_id . '>' . $state->title . '</option>';
-            $options[] = $option;
-        }
-        else {
-            $option = '<option value=' . $state->id . ' data-country_id=' . $state->country_id . ' data-geo_political_zone_id=' . $state->geo_political_zone_id . '>' . $state->title . '</option>';
-            $options[] = $option;
-        }
-    }
-    $list = implode('', $options);
-    return "<select id='stateSelector' name='state_of_origin' class='form-control' onchange='stateLocalGovtAreaSelector()'>{$list}</select>";
-}) !!}
-
-
-<div class="form-group">
-    <div class="row">
-        {!! Form::label('state_id', 'State of Origin:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::stateSelect($states) !!}
-        </div>
-    </div>
-</div>
-
-<!-- Geo-Political Zone Field -->
-{!! Form::macro('geoPoliticalZoneSelect', function ($geoPoliticalZoneModel) {
-    $geoPoliticalZones = $geoPoliticalZoneModel::orderBy('title')->get();
-    $options = [];
-    $defaultOption = '<option value="">Select...</option>';
-    $options[] = $defaultOption;
-    $value = Form::getValueAttribute('geo_political_zone');
-    foreach ($geoPoliticalZones as $geoPoliticalZone) {
-        if($value == $geoPoliticalZone->id){
-            $option = '<option selected value=' . $geoPoliticalZone->id . ' data-country_id=' . $geoPoliticalZone->country_id . '>' . $geoPoliticalZone->title . '</option>';
-            $options[] = $option;
-        }
-        else {
-            $option = '<option value=' . $geoPoliticalZone->id . ' data-country_id=' . $geoPoliticalZone->country_id . '>' . $geoPoliticalZone->title . '</option>';
-            $options[] = $option;
-        }
-    }
-    $list = implode('', $options);
-    return "<select id='geoPoliticalZoneSelector' name='geo_political_zone' class='form-control' onchange=''>{$list}</select>";
-}) !!}
-
-
-<div class="form-group">
-    <div class="row">
-        {!! Form::label('geo_political_zone_id', 'Geo-Political Zone:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::geoPoliticalZoneSelect($geo_political_zones) !!}
-        </div>
-    </div>
-</div>
-
-
-
-<!-- Local Govt Area Zone Field -->
-{!! Form::macro('localGovtAreaSelect', function ($localGovtAreaModel) {
-    $localGovtAreas = $localGovtAreaModel::orderBy('title')->get();
-    $options = [];
-    $defaultOption = '<option value="">Select...</option>';
-    $options[] = $defaultOption;
-    $value = Form::getValueAttribute('geo_political_zone');
-    foreach ($localGovtAreas as $localGovtArea) {
-        if($value == $localGovtArea->id){
-            $option = '<option selected value=' . $localGovtArea->id . ' data-senatorial_zone_id=' . $localGovtArea->senatorial_zone_id . ' data-state_id=' . $localGovtArea->state_id . '>' . $localGovtArea->title . '</option>';
-            $options[] = $option;
-        }
-        else{
-            $option = '<option value=' . $localGovtArea->id . ' data-senatorial_zone_id=' . $localGovtArea->senatorial_zone_id . ' data-state_id=' . $localGovtArea->state_id . '>' . $localGovtArea->title . '</option>';
-            $options[] = $option;
-        }
-    }
-    $list = implode('', $options);
-    return "<select id='localGovtAreaSelector' name='local_govt_area' class='form-control' onchange='localGovtSelector()'>{$list}</select>";
-}) !!}
-
-
-<div class="form-group">
-    <div class="row">
-        {!! Form::label('local_govt_area_id', 'Local Govt Area:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::localGovtAreaSelect($local_govt_areas) !!}
-        </div>
-    </div>
-</div>
-
-<!-- Senatorial Zone Field -->
-{!! Form::macro('senatorialZoneSelect', function ($senatorialZoneModel) {
-    $senatorialZones = $senatorialZoneModel::orderBy('title')->get();
-    $options = [];
-    $defaultOption = '<option value="">Select...</option>';
-    $options[] = $defaultOption;
-    $value = Form::getValueAttribute('senatorial_zone');
-    foreach ($senatorialZones as $senatorialZone) {
-        if($value == $senatorialZone->id){
-            $option = '<option selected value=' . $senatorialZone->id . ' data-state_id=' . $senatorialZone->state_id . '>' . $senatorialZone->title . '</option>';
-            $options[] = $option;
-        }
-        else {
-            $option = '<option value=' . $senatorialZone->id . ' data-state_id=' . $senatorialZone->state_id . '>' . $senatorialZone->title . '</option>';
-            $options[] = $option;
-        }
-    }
-    $list = implode('', $options);
-    return "<select id='senatorialZoneSelector' name='senatorial_zone' class='form-control' onchange=''>{$list}</select>";
-}) !!}
-
-
-<div class="form-group">
-    <div class="row">
-        {!! Form::label('senatorial_zone_id', 'Senatorial Zone:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::senatorialZoneSelect($senatorial_zones) !!}
-        </div>
-    </div>
-</div>
 
 
 <!-- Decorations Field -->
-{{-- <div class="form-group">
+{{-- <div class="col-sm-6 form-group">
     <div class="row">
         {!! Form::label('decorations', 'Decorations:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
@@ -404,11 +472,9 @@
     </div>
 </div> --}}
 
-<!-- Staff code -->
-{!! Form::hidden('staff_code', null, ['class' => 'form-control']) !!}
 
 <!-- File Upload Field -->
-{{-- <div class="form-group">
+{{-- <div class="col-sm-6 form-group">
     <div class="row">
         {!! Form::label('file_upload', 'File Upload:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">{!! Form::file('file_upload') !!}
@@ -418,7 +484,7 @@
 
 
 <!-- Remark Field -->
-<div class="form-group ">
+<div class="col-sm-6 form-group ">
     <div class="row">
         {!! Form::label('remark', 'Remark:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
@@ -427,9 +493,22 @@
     </div>
 </div>
 
+<!-- Status Field -->
+<div class="col-sm-6 form-group">
+    <div class="row">
+        {!! Form::label('status', 'Status:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::select('status', enum_employee_status(), null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-12 form-group text-center">
+    <h6>Contact Information</h6>
+</div>
 
 <!-- Email Field -->
-<div class="form-group">
+<div class="col-sm-6 form-group">
     <div class="row">
         {!! Form::label('email', 'Email:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
@@ -440,7 +519,7 @@
 
 
 <!-- Phone Field -->
-<div class="form-group">
+<div class="col-sm-6 form-group">
     <div class="row">
         {!! Form::label('phone', 'Phone:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
@@ -449,80 +528,20 @@
     </div>
 </div>
 
+{!! Form::hidden('nationality', null) !!}
+{!! Form::hidden('state_of_origin', null) !!}
+{!! Form::hidden('local_govt_area', null) !!}
+{!! Form::hidden('geo_political_zone', null) !!}
+{!! Form::hidden('senatorial_zone', null) !!}
+<!-- Staff code -->
+{!! Form::hidden('staff_code', null, ['class' => 'form-control']) !!}
 
-<!-- Status Field -->
-<div class="form-group">
-    <div class="row">
-        {!! Form::label('status', 'Status:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('status', enum_employee_status(), null, ['class' => 'form-control']) !!}
-        </div>
-    </div>
-</div>
 
-<!-- Retirement Date By DOB Field -->
-<div class="form-group">
-    <div class="row">
-        {!! Form::label('retirement_date_by_dob', 'Retirement Date By DOB:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::date('retirement_date_by_dob', null, ['class' => 'form-control']) !!}
-        </div>
-    </div>
-</div>
 
-<!-- Retirement Year By DOB Field -->
-<div class="form-group">
-    <div class="row">
-        {!! Form::label('retirement_year_by_dob', 'Retirement Year By DOB:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::number('retirement_year_by_dob', null, ['class' => 'form-control']) !!}
-        </div>
-    </div>
-</div>
-
-<!-- No of Years Remained By DOB Field -->
-<div class="form-group">
-    <div class="row">
-        {!! Form::label('no_of_years_remained_by_dob', 'No of Years Remained By DOB:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::number('no_of_years_remained_by_dob', null, ['class' => 'form-control']) !!}
-        </div>
-    </div>
-</div>
-
-<!-- Retirement Date By DOFA Field -->
-<div class="form-group">
-    <div class="row">
-        {!! Form::label('retirement_date_by_dofa', 'Retirement Date By DOFA:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::date('retirement_date_by_dofa', null, ['class' => 'form-control']) !!}
-        </div>
-    </div>
-</div>
-
-<!-- No of Years Remained By DOFA Field -->
-<div class="form-group">
-    <div class="row">
-        {!! Form::label('no_of_years_remained_by_dofa', 'No of Years Remained By DOFA:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::number('no_of_years_remained_by_dofa', null, ['class' => 'form-control']) !!}
-        </div>
-    </div>
-</div>
-
-<!-- Current Appointment Field -->
-{{-- <div class="form-group">
-    <div class="row">
-        {!! Form::label('current_appointment', 'Current Appointment:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
-        <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('current_appointment', null, ['class' => 'form-control']) !!}
-        </div>
-    </div>
-</div> --}}
 
 
 <!-- Submit Field -->
-<div class="form-group col-sm-12">
+<div class="col-sm-6 form-group col-sm-12">
     {!! Form::submit('Save', ['class' => 'btn secondary-color-bg']) !!}
     <a href="{{ route('humanresource.employees.index') }}" class="btn btn-default text-danger">Cancel</a>
 </div>
@@ -531,174 +550,119 @@
 
 <script>
     window.onload = function() {
-        // $('#countrySelector').prop('disabled', 'disabled');
-        $('#stateSelector').prop('disabled', 'disabled');
+        $('#countrySelector').prop('disabled', 'disabled');
+        // $('#stateSelector').prop('disabled', 'disabled');
         $('#geoPoliticalZoneSelector').prop('disabled', 'disabled');
         $('#senatorialZoneSelector').prop('disabled', 'disabled');
         $('#localGovtAreaSelector').prop('disabled', 'disabled');
-        if($('#countrySelector').val() > -1){
-            stateLocalGovtAreaSelector()
+
+        if ($('#stateSelector').children("option:selected").val()) {
+            stateLocalGovtAreaSelector();
+            $('#localGovtAreaSelector').prop('disabled', false);
         }
-        if($('#stateSelector').val() > -1){
-            stateLocalGovtAreaSelector()
-        }
+
+
 
     }
 
     var profilePicture = document.getElementById('profile_picture');
     profilePicture.addEventListener('change', function(event) {
-        if(profilePicture.files[0].size > 150000) {
+        if (profilePicture.files[0].size > 150000) {
             alert('File is larger then 150kB! Please reduce size')
             $("#profile_picture").val(null);
         }
     })
-    function countryStateSelector(event) {
 
-        var countrySelect = $('#countrySelector');
-        var stateSelect = $('#stateSelector');
-        stateSelect.prop("selectedIndex", 0).val();
-        var id = $(countrySelect).children("option:selected").val();
-        $("#stateSelector > option").each(function() {
-            let country_id = $(this).data("country_id");
-            if (id == country_id) {
-                $(this).removeAttr('disabled').show();
-            } else {
-                $(this).attr('disabled', 'disabled').hide();
-            }
-        });
-        stateSelect.prop('disabled', false);
-    }
 
     function stateLocalGovtAreaSelector() {
         let stateSelect = $('#stateSelector');
         let localGovtAreaSelect = $('#localGovtAreaSelector');
         let geoPolitcalZoneSelect = $('#geoPoliticalZoneSelector');
-        localGovtAreaSelect.prop("selectedIndex", 0).val();
-        geoPolitcalZoneSelect.prop("selectedIndex", 0).val();
+
         let geo_political_zone_id = stateSelect.children("option:selected").data("geo_political_zone_id");
+
 
         $("#geoPoliticalZoneSelector > option").each(function() {
             let geo_zone_id = $(this).val();
             if (geo_political_zone_id == geo_zone_id) {
-                // $(this).attr('selected', true);
+                $(this).attr('selected', true);
                 $(this).removeAttr('disabled').show();
+                return false;
             } else {
                 $(this).attr('disabled', 'disabled').hide();
-                // $(this).attr('selected', false);
             }
         });
 
-        geoPolitcalZoneSelect.prop('disabled', false);
+        let currentOption;
 
         $("#localGovtAreaSelector > option").each(function() {
             let id = stateSelect.children("option:selected").val();
             let state_id = $(this).data("state_id");
+            let oldValue = $("#localGovtAreaSelector").data('old-value');
+
             if (id == state_id) {
                 $(this).removeAttr('disabled').show();
+                $(this).attr('selected', true);
+                if (oldValue == $(this).val()) {
+                    currentOption = $(this);
+                }
             } else {
                 $(this).attr('disabled', 'disabled').hide();
             }
         });
 
-        localGovtAreaSelect.prop('disabled', false);
+        if (currentOption) {
+            $("#localGovtAreaSelector > option").each(function() {
+                $(this).attr('selected', false);
+            });
+            currentOption.attr('selected', true);
+        }
+
+        localGovtSelector();
     }
 
     function localGovtSelector() {
+        $('#localGovtAreaSelector').prop('disabled', false);
         var localGovtAreaSelect = $('#localGovtAreaSelector');
         var senatorialZoneSelect = $('#senatorialZoneSelector');
-        senatorialZoneSelect.prop("selectedIndex", 0).val();
+
         var id = localGovtAreaSelect.children("option:selected").val();
         var senatorial_zone_id = localGovtAreaSelect.children("option:selected").data("senatorial_zone_id");
+
+
+        $("#senatorialZoneSelector > option").each(function() {
+            $(this).attr('selected', false);
+        });
 
         $("#senatorialZoneSelector > option").each(function() {
             let senate_zone_id = $(this).val();
             if (senatorial_zone_id == senate_zone_id) {
-                // $(this).attr('selected', true);
+                $(this).attr('selected', true);
                 $(this).removeAttr('disabled').show();
+                return false;
             } else {
                 $(this).attr('disabled', 'disabled').hide();
-                // $(this).attr('selected', false);
             }
         });
-        senatorialZoneSelect.prop('disabled', false);
+
     }
 
-    // function countryStateSelector(event) {
-    //     var countrySelect = $('#countrySelector');
-    //     var stateSelect = $('#stateSelector');
-    //     var id = countrySelect.children("option:selected").val();
-    //     $("#stateSelector > option").each(function() {
-    //         let country_id = $(this).data("country_id");
-    //         if (id == country_id) {
-    //             $(this).removeAttr('disabled').show();
-    //         } else {
-    //             $(this).attr('disabled', 'disabled').hide();
-    //         }
-    //     });
-    //     stateSelect.prop('disabled', false);
-    // }
+    document.getElementById("employee-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        let countrySelect = $('#countrySelector');
 
-    // function countryGeoPoliticalZoneSelector(event) {
+        let stateSelect = $('#stateSelector');
+        let localGovtAreaSelect = $('#localGovtAreaSelector');
+        let geoPolitcalZoneSelect = $('#geoPoliticalZoneSelector');
+        var senatorialZoneSelect = $('#senatorialZoneSelector');
 
-    //     var countrySelect = $('#countrySelector');
-    //     var geoPolitcalZoneSelect = $('#geoPoliticalZoneSelector');
-    //     var id = countrySelect.children("option:selected").val();
-    //     $("#GeoPoliticalZoneSelector > option").each(function() {
-    //         let country_id = $(this).data("country_id");
-    //         if (id == country_id) {
-    //             $(this).removeAttr('disabled').show();
-    //         } else {
-    //             $(this).attr('disabled', 'disabled').hide();
-    //         }
-    //     });
-    //     geoPolitcalZoneSelect.prop('disabled', false);
-    // }
 
-    // function geoPoliticalZoneStateSelector(event) {
+        $("[name='nationality']").val(countrySelect.children("option:selected").val());
+        $("[name='state_of_origin']").val(stateSelect.children("option:selected").val());
+        $("[name='local_govt_area']").val(localGovtAreaSelect.children("option:selected").val());
+        $("[name='geo_political_zone']").val(geoPolitcalZoneSelect.children("option:selected").val());
+        $("[name='senatorial_zone']").val(senatorialZoneSelect.children("option:selected").val());
 
-    //     var stateSelect = $('#stateSelector');
-    //     var geoPolitcalZoneSelect = $('#geoPoliticalZoneSelector');
-    //     var id = geoPolitcalZoneSelect.children("option:selected").val();
-    //     $("#stateSelector > option").each(function() {
-    //         let geo_political_zone_id = $(this).data("geo_political_zone_id");
-    //         if (id == geo_political_zone_id) {
-    //             $(this).removeAttr('disabled').show();
-    //         } else {
-    //             $(this).attr('disabled', 'disabled').hide();
-    //         }
-    //     });
-    //     stateSelect.prop('disabled', false);
-    // }
-
-    // function stateSenatorialZoneSelector(event) {
-
-    //     var stateSelect = $('#stateSelector');
-    //     var senatorialZoneSelect = $('#senatorialZoneSelector');
-    //     var id = stateSelect.children("option:selected").val();
-    //     $("#senatorialZoneSelector > option").each(function() {
-    //         let state_id = $(this).data("state_id");
-    //         if (id == state_id) {
-    //             $(this).removeAttr('disabled').show();
-    //         } else {
-    //             $(this).attr('disabled', 'disabled').hide();
-    //         }
-    //     });
-    //     senatorialZoneSelect.prop('disabled', false);
-    // }
-
-    // function senatorialZoneLocalGovtAreaSelector(event) {
-
-    //     var senatorialZoneSelect = $('#senatorialZoneSelector');
-    //     var localGovtAreaSelect = $('#localGovtAreaSelector');
-    //     var id = senatorialZoneSelect.children("option:selected").val();
-    //     $("#localGovtAreaSelector > option").each(function() {
-    //         let senatorial_zone_id = $(this).data("senatorial_zone_id");
-    //         if (id == senatorial_zone_id) {
-    //             $(this).removeAttr('disabled').show();
-    //         } else {
-    //             $(this).attr('disabled', 'disabled').hide();
-    //         }
-    //     });
-    //     localGovtAreaSelect.prop('disabled', false);
-    // }
+        this.submit();
+    });
 </script>

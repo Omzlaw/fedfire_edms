@@ -44,9 +44,17 @@
     $options = [];
     $defaultOption = '<option value="">Select...</option>';
     $options[] = $defaultOption;
+    $value = Form::getValueAttribute('state_id');
     foreach ($states as $state) {
-        $option = '<option value=' . $state->id . ' data-country_id=' . $state->country_id . '>' . $state->title . '</option>';
-        $options[] = $option;
+        if($value == $state->id){
+            $option = '<option selected value=' . $state->id . ' data-country_id=' . $state->country_id . '>' . $state->title . '</option>';
+             $options[] = $option;
+        }
+        else {
+            $option = '<option value=' . $state->id . ' data-country_id=' . $state->country_id . '>' . $state->title . '</option>';
+            $options[] = $option;
+        }
+
     }
     $list = implode('', $options);
     return "<select id='stateSelector' name='state_id' class='form-control' onchange='stateLocalGovtAreaSelector()'>{$list}</select>";
@@ -67,9 +75,17 @@
     $options = [];
     $defaultOption = '<option value="">Select...</option>';
     $options[] = $defaultOption;
+    $value = Form::getValueAttribute('local_govt_area_id');
     foreach ($localGovtAreas as $localGovtArea) {
-        $option = '<option value=' . $localGovtArea->id . ' data-state_id=' . $localGovtArea->state_id . '>' . $localGovtArea->title . '</option>';
-        $options[] = $option;
+        if($value == $localGovtArea->id){
+            $option = '<option selected value=' . $localGovtArea->id . ' data-state_id=' . $localGovtArea->state_id . '>' . $localGovtArea->title . '</option>';
+            $options[] = $option;
+        }
+        else {
+            $option = '<option value=' . $localGovtArea->id . ' data-state_id=' . $localGovtArea->state_id . '>' . $localGovtArea->title . '</option>';
+            $options[] = $option;
+        }
+
     }
     $list = implode('', $options);
     return "<select id='localGovtAreaSelector' name='local_govt_area_id' class='form-control'>{$list}</select>";
@@ -142,7 +158,13 @@
 <script>
     window.onload = function() {
         $('#stateSelector').prop('disabled', 'disabled');
+        if ($('#countrySelector').children("option:selected").val()) {
+            $('#stateSelector').prop('disabled', false);
+        }
         $('#localGovtAreaSelector').prop('disabled', 'disabled');
+        if ($('#stateSelector').children("option:selected").val()) {
+            $('#localGovtAreaSelector').prop('disabled', false);
+        }
     }
 
     function countryStateSelector(event) {

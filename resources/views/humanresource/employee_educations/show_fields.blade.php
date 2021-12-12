@@ -1,7 +1,3 @@
-{{-- <tr>
-    <th scopre="row">{!! Form::label('id', 'Id:') !!}</th>
-    <td>{{ $employeeEducation->id }}</td>
-</tr> --}}
 
 
 <tr>
@@ -12,13 +8,21 @@
 
 <tr>
     <th scopre="row">{!! Form::label('certificate_id', 'Certificate Type:') !!}</th>
-    <td>{{ $employeeEducation->certificateType->title }}</td>
+    @if (isset($employeeEducation->certificateType->title))
+        <td>{{ $employeeEducation->certificateType->title }}</td>
+    @else
+    <td></td>
+    @endif
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('school_type_id', 'School Type:') !!}</th>
-    <td>{{ $employeeEducation->schoolType->title }}</td>
+    @if (isset($employeeEducation->schoolType->title))
+        <td>{{ $employeeEducation->schoolType->title }}</td>
+    @else
+    <td></td>
+    @endif
 </tr>
 
 
@@ -40,11 +44,6 @@
 </tr>
 
 
-<tr>
-    <th scopre="row">{!! Form::label('file_upload', 'File Upload:') !!}</th>
-    <td>{{ $employeeEducation->file_upload }}</td>
-</tr>
-
 
 <tr>
     <th scopre="row">{!! Form::label('status', 'Status:') !!}</th>
@@ -58,15 +57,10 @@
 </tr>
 
 
-<tr>
-    <th scopre="row">{!! Form::label('checked_by', 'Checked By:') !!}</th>
-    <td>{{ $employeeEducation->checkedBy->name }}</td>
-</tr>
-
 
 <tr>
     <th scopre="row">{!! Form::label('checked_at', 'Checked At:') !!}</th>
-    <td>{{ $employeeEducation->checked_at-toDateString() }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeEducation->checked_at)->format('d/m/Y') }}</td>
 </tr>
 
 
@@ -92,5 +86,3 @@
     <th scopre="row">{!! Form::label('updated_at', 'Updated At:') !!}</th>
     <td>{{ $employeeEducation->updated_at }}</td>
 </tr> --}}
-
-

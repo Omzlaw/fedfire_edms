@@ -25,7 +25,9 @@ class EmployeeEducationController extends AppBaseController
      */
     public function index(EmployeeEducationDataTable $employeeEducationDataTable)
     {
-        return $employeeEducationDataTable->render('humanresource.employee_educations.index');
+        Flash::error('Not Allowed');
+        return back();
+        // return $employeeEducationDataTable->render('humanresource.employee_educations.index');
     }
 
     /**

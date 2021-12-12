@@ -14,7 +14,7 @@ abstract class DataTableController extends DataTable
      * @var array
      */
     protected $parameters = [
-        'dom' => 'Bfrtip',
+        'dom' => 'Blfrtip',
         'buttons' => ['excel', 'csv', 'reload'],
         'columnDefs' => [['defaultContent' => '-', 'targets' => '_all']],
         'scrollX' => true

@@ -34,23 +34,18 @@ class EmployeeDataTable extends DataTable
             $query->whereBetween('first_appointment_date', [$appointment_date_from, date("Y-m-d")]);
         }
 
+
         $dataTable = new EloquentDataTable($query);
 
         return $dataTable
 
             ->addIndexColumn()
             ->addColumn('select', 'humanresource.employees.checkbox')
-            ->addColumn('file_no', function ($row) {
-                return $row->service_number;
-            })
             ->addColumn('name', function ($row) {
                 return $row->getFullName();
             })
             ->addColumn('sex', function ($row) {
                 return get_enum_value('enum_gender', $row->gender);
-            })
-            ->addColumn('date_of_birth', function ($row) {
-                return $row->birthdate;
             })
             // ->addColumn('nationality', function ($row) {
             //     return $row->country->title;
@@ -172,7 +167,7 @@ class EmployeeDataTable extends DataTable
                 $service = EmployeeService::where('employee_id', '=', $row->id)
                     ->where('status', '=', 1)->first();
                 if (isset($service)) {
-                    return get_enum_value('enum_department', $service->present_department);
+                    return $service->present_department;
                 }
                 return '';
             })
@@ -206,7 +201,8 @@ class EmployeeDataTable extends DataTable
                 $service = EmployeeService::where('employee_id', '=', $row->id)
                     ->where('status', '=', 1)->first();
                 if (isset($service)) {
-                    return get_enum_value('enum_zone', $service->zone);
+                    // return get_enum_value('enum_zone', $service->zone);
+                    return $service->zone;
                 }
                 return '';
             })
@@ -220,20 +216,48 @@ class EmployeeDataTable extends DataTable
             // })
             ->addColumn('profile_picture', 'humanresource.employees.profile_picture')
             ->addColumn('action', 'humanresource.employees.datatables_actions')
-            ->editColumn('date_of_birth', function($row) {
-                return \Carbon\Carbon::parse($row->date_of_birth)->format('d/m/Y');
+            ->editColumn('date_of_birth', function ($row) {
+                return $row->date_of_birth ? \Carbon\Carbon::parse($row->date_of_birth)->format('d/m/Y') : null;
             })
-            ->editColumn('date_of_first_appointment', function($row) {
-                return \Carbon\Carbon::parse($row->date_of_first_appointment)->format('d/m/Y');
+            ->editColumn('date_of_first_appointment', function ($row) {
+                return $row->date_of_first_appointment ? \Carbon\Carbon::parse($row->date_of_first_appointment)->format('d/m/Y') : null;
             })
-            ->editColumn('date_of_present_appointment', function($row) {
-                return \Carbon\Carbon::parse($row->date_of_present_appointment)->format('d/m/Y');
+            ->editColumn('date_of_present_appointment', function ($row) {
+                return $row->date_of_present_appointment ? \Carbon\Carbon::parse($row->date_of_present_appointment)->format('d/m/Y') : null;
             })
-            ->editColumn('retirement_date_by_dob', function($row) {
-                return \Carbon\Carbon::parse($row->retirement_date_by_dob)->format('d/m/Y');
+            ->addColumn('retirement_date_by_dob', function ($row) {
+                return $row->date_of_birth ? \Carbon\Carbon::parse($row->date_of_birth)->addYears(60)->format('d/m/Y') : null;
             })
-            ->editColumn('retirement_date_by_dofa', function($row) {
-                return \Carbon\Carbon::parse($row->retirement_date_by_dofa)->format('d/m/Y');
+            ->addColumn('retirement_year_by_dob', function ($row) {
+                return $row->date_of_birth ? \Carbon\Carbon::parse($row->date_of_birth)->addYears(60)->year : null;
+            })
+            ->addColumn('no_of_years_remained_by_dob', function ($row) {
+                if($row->date_of_birth){
+                    $start_date = \Carbon\Carbon::now();
+                    $end_date = \Carbon\Carbon::parse($row->date_of_birth)->addYears(60);
+                    if($start_date > $end_date){
+                        return 0;
+                    }
+                    $diff = $start_date->diffInYears($end_date);
+                    return $diff  + 1;
+                }
+                return null;
+
+            })
+            ->addColumn('retirement_date_by_dofa', function ($row) {
+                return $row->date_of_first_appointment ? \Carbon\Carbon::parse($row->date_of_first_appointment)->addYears(35)->format('d/m/Y') : null;
+            })
+            ->addColumn('no_of_years_remained_by_dofa', function ($row) {
+                if($row->date_of_first_appointment){
+                    $start_date = \Carbon\Carbon::now();
+                    $end_date = \Carbon\Carbon::parse($row->date_of_first_appointment)->addYears(35);
+                    if($start_date > $end_date){
+                        return 0;
+                    }
+                    $diff = $start_date->diffInYears($end_date);
+                    return $diff + 1;
+                }
+                return null;
             })
             ->rawColumns(['profile_picture', 'action', 'select']);
     }
@@ -306,24 +330,11 @@ class EmployeeDataTable extends DataTable
     {
         return $this->builder()
             ->columns($this->getColumns())
-            ->addColumnBefore([
-                'defaultContent' => '',
-                'data'           => 'DT_RowIndex',
-                'name'           => 'DT_RowIndex',
-                'title'          => 'S/N',
-                'render'         => null,
-                'orderable'      => false,
-                'searchable'     => false,
-                'exportable'     => false,
-                'printable'      => true,
-                'footer'         => '',
-            ])
-            // ->addIndex()
             ->minifiedAjax()
             ->autoWidth(true)
             ->addAction(['width' => '120px', 'printable' => false])
             ->parameters([
-                'dom'       => 'Bfrtip',
+                'dom'       => 'Blfrtip',
                 'stateSave' => false,
                 'order'     => [[0, 'desc']],
                 'filter' => true,
@@ -348,13 +359,17 @@ class EmployeeDataTable extends DataTable
     protected function getColumns()
     {
         return [
+            'first_name' => ['visible' => false],
+            'middle_name' => ['visible' => false],
+            'last_name' => ['visible' => false],
+            'DT_RowIndex' => ['title' => 'S/N'],
             'select',
             'action',
             'profile_picture',
-            'file_no',
+            'service_number' => ['title' => 'Service No.'],
             'IPPIS',
             'name',
-            'sex',
+            'sex' => ['searchable' => true],
             'rank',
             'gl' => ['title' => 'GL'],
             'date_of_first_appointment' => ['title' => 'DOFA'],

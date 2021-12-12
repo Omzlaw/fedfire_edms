@@ -9,13 +9,21 @@
 @section('content')
     <section class="content-header">
         <div aria-label="breadcrumb" class="card-breadcrumb">
-            <h1>File Manager</h1>
+            <h1>File Manager: Personnel File</h1>
         </div>
         {{-- <div class="separator-breadcrumb border-top"></div> --}}
     </section>
     <div class="content">
         @include('adminlte-templates::common.errors')
         @include('flash::message')
+
+        <div class="row ml-1 mb-3">
+            {!! Form::open(['route' => ['fileSearchClass'], 'class' => 'form-horizontal', 'files' => true]) !!}
+            {!! Form::submit('Personnel File', ['name' => 'action', 'class' => 'btn secondary-color-bg mr-10 mt-10', 'value' => 'personnel']) !!}
+            {!! Form::submit('Policy File', ['name' => 'action', 'class' => 'mt-10 mr-10 btn custom-outline-primary', 'value' => 'policy']) !!}
+            {!! Form::close() !!}
+        </div>
+
         <div class="card mb-100">
             <div class="card-body ml-15 mr-15">
 

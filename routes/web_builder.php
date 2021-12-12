@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImportExcelController;
 use App\Http\Controllers\Shared\FileDirectoryController;
+use App\Http\Controllers\Shared\PolicyDocumentController;
 use App\Http\Controllers\Humanresource\EmployeeController;
 
 Route::group(['prefix' => 'humanresource', 'middleware' => ['permission:employees-manage', 'auth']], function () {
@@ -74,6 +75,7 @@ Route::post('humanresource/employees/import', [EmployeeController::class, 'impor
 
 Route::get('fileDirectories', [FileDirectoryController::class, 'getSearch'])->name('getSearch')->middleware('auth');
 
+
 Route::post('fileDirectories', [FileDirectoryController::class, 'search'])->name('employeeSearch')->middleware('auth');
 
 Route::post('fileDirectories/records', [FileDirectoryController::class, 'records'])->name('records')->middleware('auth');
@@ -83,3 +85,15 @@ Route::get('fileDirectories/records', [FileDirectoryController::class, 'records'
 Route::resource('users', 'UserController')->middleware('auth');
 
 
+
+Route::group(['prefix' => 'shared', 'middleware' => ['auth']], function () {
+    Route::resource('policyDocuments', 'Shared\PolicyDocumentController', ["as" => 'shared'])->middleware('auth');
+});
+
+Route::get('blank/fileDirectories', [FileDirectoryController::class, 'blank'])->name('shared.fileDirectories.blank')->middleware('auth');
+
+Route::post('fileDirectories/class', [FileDirectoryController::class, 'fileClass'])->name('fileClass')->middleware('auth');
+
+Route::post('fileDirectories/searchClass', [FileDirectoryController::class, 'fileSearchClass'])->name('fileSearchClass')->middleware('auth');
+
+Route::post('policyFiles', [PolicyDocumentController::class, 'search'])->name('policyFileSearch')->middleware('auth');

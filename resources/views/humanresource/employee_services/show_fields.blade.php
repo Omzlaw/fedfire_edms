@@ -23,13 +23,18 @@
 
 <tr>
     <th scopre="row">{!! Form::label('zone', 'Zone:') !!}</th>
-    <td>{{ get_enum_value('enum_zone',$employeeService->zone) }}</td>
+    <td>{{ get_enum_value('enum_zone', $employeeService->zone) }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('region', 'Region:') !!}</th>
-    <td>{{ $employeeService->regionRelation->title }}</td>
+    @if (isset($employeeService->regionRelation->title))
+        <td>{{ $employeeService->regionRelation->title }}</td>
+    @else
+        <td></td>
+    @endif
+
 </tr>
 
 
@@ -61,5 +66,3 @@
     <th scopre="row">{!! Form::label('updated_at', 'Updated At:') !!}</th>
     <td>{{ $employeeService->updated_at }}</td>
 </tr> --}}
-
-

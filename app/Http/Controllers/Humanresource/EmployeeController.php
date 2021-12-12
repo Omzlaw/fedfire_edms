@@ -117,6 +117,10 @@ class EmployeeController extends AppBaseController
      *
      * @return Response
      */
+    public function processRequest()
+    {
+    }
+
     public function store(CreateEmployeeRequest $request)
     {
 
@@ -177,14 +181,17 @@ class EmployeeController extends AppBaseController
         //get the children
 
         $data['children'] = $employee->children->map(function ($item) {
+            $item->birthday = \Carbon\Carbon::parse($item->birthday)->format('d/m/Y');
             $item->gender = get_enum_value('enum_gender', $item->gender);
-            return $item;
+            return ['id' => $item['id'], 'name' => $item['name'], 'gender' => $item['gender'], 'birthday' => $item['birthday']];
         });
 
         //get the action sheets
 
         $data['actionSheets'] = $employee->actionSheets->map(function ($item) {
-            return $item;
+            $item->action_at = \Carbon\Carbon::parse($item->action_at)->format('d/m/Y');
+            $item->date_cleared = \Carbon\Carbon::parse($item->date_cleared)->format('d/m/Y');
+            return ['id' => $item['id'], 'folio' => $item['folio'], 'action_at' => $item['action_at'], 'date_cleared' => $item['date_cleared']];
         });
 
         //get the addresses
@@ -192,13 +199,15 @@ class EmployeeController extends AppBaseController
         $data['addresses'] = $employee->addresses->map(function ($item) {
             $item->address_type = get_enum_value('enum_address_type', $item->address_type);
             $item->status = get_enum_value('enum_status', $item->status);
-            return $item;
+            return ['id' => $item['id'], 'address' => $item['address'], 'address_type' => $item['address_type'], 'status' => $item['status']];
         });
 
         //get the censures
 
         $data['censures'] = $employee->censures->map(function ($item) {
-            return $item;
+            $item->date_recieved = \Carbon\Carbon::parse($item->date_recieved)->format('d/m/Y');
+            $item->compiled_at = \Carbon\Carbon::parse($item->compiled_at)->format('d/m/Y');
+            return ['id' => $item['id'], 'title' => $item['title'], 'summary' => $item['summary'], 'date_recieved' => $item['date_recieved'], 'compiled_at' => $item['compiled_at']];
         });
 
         //get the certificates
@@ -206,6 +215,8 @@ class EmployeeController extends AppBaseController
         $data['certificates'] = $employee->certificates->map(function ($item) {
             $item->certificate_type_id = $item->certificateType->title;
             $item->status = get_enum_value('enum_status', $item->status);
+            $item->date_obtained = \Carbon\Carbon::parse($item->date_obtained)->format('d/m/Y');
+            $item->checked_at = \Carbon\Carbon::parse($item->checked_at)->format('d/m/Y');
             return ['id' => $item['id'], 'certificate_name' => $item['certificate_name'], 'type' => $item['certificate_type_id'], 'date_obtained' => $item['date_obtained'], 'status' => $item['status']];
             // return $item;
         });
@@ -213,7 +224,10 @@ class EmployeeController extends AppBaseController
         //get the educations
 
         $data['educations'] = $employee->educations->map(function ($item) {
-            return ['id' => $item['id'], 'qualification' => $item['qualification'], 'school_name' => $item['school_name'], 'qualification_type_id' => $item['qualification_type_id'], 'remark' => $item['remark']];
+            $item->checked_at = \Carbon\Carbon::parse($item->checked_at)->format('d/m/Y');
+            $item->from_date = \Carbon\Carbon::parse($item->from_date)->format('d/m/Y');
+            $item->to_date = \Carbon\Carbon::parse($item->to_date)->format('d/m/Y');
+            return ['id' => $item['id'], 'qualification' => $item['qualification'], 'school_name' => $item['school_name'], 'qualification_type_id' => $item['qualification_type_id'], 'remark' => $item['remark'], 'school_type' => $item['school_type']];
             // return $item;
         });
 
@@ -225,32 +239,32 @@ class EmployeeController extends AppBaseController
             // return $item;
         });
 
-        //get the addresses
-
-        $data['addresses'] = $employee->addresses->map(function ($item) {
-            return $item;
-        });
 
         //get the forceServices
 
         $data['forceServices'] = $employee->forceServices->map(function ($item) {
-            return $item;
+            return ['id' => $item['id'], 'area_of_service' => $item['area_of_service'], 'service_no' => $item['service_no'], 'last_unit' => $item['last_unit'], 'reason_for_leaving' => $item['reason_for_leaving'], 'remark' => $item['remark']];
         });
 
         //get the foreignTours
 
         $data['foreignTours'] = $employee->foreignTours->map(function ($item) {
+            $item->from_date = \Carbon\Carbon::parse($item->from_date)->format('d/m/Y');
+            $item->to_date = \Carbon\Carbon::parse($item->to_date)->format('d/m/Y');
             $item->status = get_enum_value('enum_status', $item->status);
             $item->leave_type_id = $item->leaveType->title;
-            return ['id' => $item['id'], 'leave_type_id' => $item['leave_type_id'], 'from_date' => $item['from_date'], 'to_date' => $item['to_date'], 'status' => $item['status'], 'remark' => $item['remark'],];
+            return ['id' => $item['id'], 'leave_type_id' => $item['leave_type_id'], 'from_date' => $item['from_date'], 'to_date' => $item['to_date'], 'status' => $item['status'], 'remark' => $item['remark']];
             // return $item;
         });
 
         //get the gratuities
 
         $data['gratuities'] = $employee->gratuities->map(function ($item) {
+            $item->from_date = \Carbon\Carbon::parse($item->from_date)->format('d/m/Y');
+            $item->to_date = \Carbon\Carbon::parse($item->to_date)->format('d/m/Y');
+            $item->payment_date = \Carbon\Carbon::parse($item->payment_date)->format('d/m/Y');
             $item->status = get_enum_value('enum_status', $item->status);
-            return $item;
+            return ['id' => $item['id'], 'file_page_no' => $item['file_page_no'], 'from_date' => $item['from_date'], 'to_date' => $item['to_date'], 'status' => $item['status'], 'remark' => $item['remark'], 'payment_date' => $item['payment_date']];
         });
 
         //get the languages
@@ -265,32 +279,36 @@ class EmployeeController extends AppBaseController
         //get the localLeaves
 
         $data['localLeaves'] = $employee->localLeaves->map(function ($item) {
+            $item->from_date = \Carbon\Carbon::parse($item->from_date)->format('d/m/Y');
+            $item->to_date = \Carbon\Carbon::parse($item->to_date)->format('d/m/Y');
             $item->leave_type_id = $item->leaveType->title;
             return ['id' => $item['id'], 'no_of_days' => $item['no_of_days'], 'file_page_no' => $item['file_page_no'], 'leave_type_id' => $item['leave_type_id'], 'from_date' => $item['from_date'], 'to_date' => $item['to_date']];
             // return $item;
         });
 
         $data['services'] = $employee->services->map(function ($item) {
-            $item->present_department = get_enum_value('enum_department', $item->present_department);
+            // $item->present_department = get_enum_value('enum_department', $item->present_department);
             $item->status = get_enum_value('enum_status', $item->status);
-            $item->zone = get_enum_value('enum_zone', $item->zone);
+            // $item->zone = get_enum_value('enum_zone', $item->zone);
             $item->state = $item->state;
             $item->present_station = $item->present_station;
-            return ['id' => $item->id, 'present_department' => $item->present_department, 'status' => $item->status, 'zone' => $item->zone, 'state' => $item->state, 'region' => $item->region, 'location' => $item->location, 'present_station' => $item->present_station];
+            return ['id' => $item->id, 'present_department' => $item->present_department, 'status' => $item->status, 'zone' => $item->zone, 'state' => $item->state, 'region' => $item->region, 'location' => $item->location];
             // return $item;
         });
 
         //get the nextOfKins
 
         $data['nextOfKins'] = $employee->nextOfKins->map(function ($item) {
-            return ['id' => $item['id'], 'name' => $item['name'], 'address' => $item['address'], 'phone' => $item['phone']];
+            return ['id' => $item['id'], 'name' => $item['name'], 'address' => $item['address'], 'phone' => $item['phone'], 'relationship' => $item->relationship->title];
             // return $item;
         });
 
         //get the publicServices
 
         $data['publicServices'] = $employee->publicServices->map(function ($item) {
-            return $item;
+            $item->from_date = \Carbon\Carbon::parse($item->from_date)->format('d/m/Y');
+            $item->to_date = \Carbon\Carbon::parse($item->to_date)->format('d/m/Y');
+            return ['id' => $item['id'], 'employer_name' => $item['employer_name'], 'from_date' => $item['from_date'], 'to_date' => $item['to_date'], 'file_page_ref' => $item['file_page_ref']];
         });
 
         //get the qualifications
@@ -298,6 +316,7 @@ class EmployeeController extends AppBaseController
         $data['qualifications'] = $employee->qualifications->map(function ($item) {
             $item->qualification_type_id = $item->qualificationType->title;
             $item->status = get_enum_value('enum_status', $item->status);
+            $item->date_obtained = \Carbon\Carbon::parse($item->date_obtained)->format('d/m/Y');
             return ['id' => $item['id'], 'qualification_name' => $item['qualification_name'], 'type' => $item['qualification_type_id'], 'date_obtained' => $item['date_obtained'], 'status' => $item['status']];
             // return $item;
         });
@@ -308,13 +327,14 @@ class EmployeeController extends AppBaseController
             $item->status = get_enum_value('enum_status', $item->status);
             $item->has_profile = get_enum_value('enum_yes_no', $item->has_profile);
             $item->has_education = get_enum_value('enum_yes_no', $item->has_education);
-            return $item;
+            return ['id' => $item['id'], 'status' => $item['status'], 'has_profile' => $item['has_profile'], 'has_education' => $item['has_education'], 'remark' => $item['remark']];
         });
 
         //get the terminations
 
         $data['terminations'] = $employee->terminations->map(function ($item) {
             $item->termination_id = $item->termination_type->title;
+            $item->even_date = \Carbon\Carbon::parse($item->even_date)->format('d/m/Y');
             $item->is_pensionable = get_enum_value('enum_yes_no', $item->is_pensionable);
             return ['id' => $item->id, 'termination_id' => $item['termination_id'], 'even_date' => $item['even_date'], 'is_pensionable' => $item['is_pensionable'], 'pension_amount' => $item['pension_amount']];
             // return $item;
@@ -323,7 +343,9 @@ class EmployeeController extends AppBaseController
         //get the spouse
 
         $data['spouse'] = $employee->spouse->map(function ($item) {
-            return $item;
+            $item->wife_birthdate = \Carbon\Carbon::parse($item->wife_birthdate)->format('d/m/Y');
+            $item->marriage_date = \Carbon\Carbon::parse($item->marriage_date)->format('d/m/Y');
+            return ['id' => $item['id'], 'wife_name' => $item['wife_name'], 'wife_birthdate' => $item['wife_birthdate'], 'marriage_date' => $item['marriage_date'], 'remark' => $item['remark']];
         });
 
         Session::put('employee_id', $id);
@@ -382,6 +404,8 @@ class EmployeeController extends AppBaseController
 
             return redirect(route('humanresource.employees.index'));
         }
+
+
         $input = $request->all();
         if ($input['middle_name'] == '') {
             $input['staff_code'] = $input['first_name'] . '_' . $input['last_name'] . '_' . $input['service_number'];
@@ -395,19 +419,97 @@ class EmployeeController extends AppBaseController
             $employee->fill($input);
         }
 
+        $description = '';
         $changed_values = $employee->getDirty();
-        $description = $employee->getFullName() . ' ';
-        // dd($changed_values);
-        foreach ($changed_values as $key => $value) {
-            if ($key == 'staff_code') {
+
+        foreach ($changed_values as $key => $new) {
+
+            $original = $employee->getOriginal($key);
+            $old_value = $original;
+            $new_value = $new;
+
+            if ($original == $new) {
                 continue;
             }
-            $original = $employee->getOriginal($key);
+
+            switch ($key) {
+                case 'updated_at':
+                    continue 2;
+                case 'staff_code':
+                    continue 2;
+                case 'cadre':
+                    if ($original == null && $new == null) {
+                        continue 2;
+                    }
+                    break;
+                case 'gender':
+                    $old_value = get_enum_value('enum_gender', $original);
+                    $new_value = get_enum_value('enum_gender', $new);
+                    break;
+
+                case 'religion':
+                    $old_value = get_enum_value('enum_religion', $original);
+                    $new_value = get_enum_value('enum_religion', $new);
+                    break;
+
+                case 'marital_status_id':
+                    $old_value = get_enum_value('enum_marital_status', $original);
+                    $new_value = get_enum_value('enum_marital_status', $new);
+                    break;
+
+                case 'state_of_origin':
+                    $old_value = State::find($original)->title;
+                    $new_value = State::find($new)->title;
+                    break;
+
+                case 'nationality':
+                    $old_value = Country::find($original)->title;
+                    $new_value = Country::find($new)->title;
+                    break;
+
+                case 'local_govt_area':
+                    $old_value = LocalGovtArea::find($original)->title;
+                    $new_value = LocalGovtArea::find($new)->title;
+                    break;
+
+                case 'geo_political_zone':
+                    $old_value = GeoPoliticalZone::find($original)->title;
+                    $new_value = GeoPoliticalZone::find($new)->title;
+                    break;
+
+                case 'senatorial_zone':
+                    $old_value = SenatorialZone::find($original)->title;
+                    $new_value = SenatorialZone::find($new)->title;
+                    break;
+
+                case 'gl':
+                    $old_value = get_enum_value('enum_grade_level', $original);
+                    $new_value = get_enum_value('enum_grade_level', $new);
+                    break;
+                case 'status':
+                    $old_value = get_enum_value('enum_employee_status', $original);
+                    $new_value = get_enum_value('enum_employee_status', $new);
+                    break;
+            }
+
             $key_readable = str_replace('_', ' ', $key);
+            $key_readable = str_replace('Id', ' ', $key_readable);
             $key_readable = ucwords($key_readable);
-            // $description .= $key_readable . ' from ' . $original . ' to ' . $value . ', ';
-            $description .= $key_readable . ', ';
+            $employee_name = '';
+
+            if ($employee->getOriginal('middle_name') == '') {
+                $employee_name = $employee->getOriginal('first_name') . ' ' . $employee->getOriginal('last_name');
+            } else {
+                $employee_name = $employee->getOriginal('first_name') . ' ' . $employee->getOriginal('middle_name') . ' ' . $employee->getOriginal('last_name');
+            }
+
+            if (isset($employee->currentRank)) {
+                $description .= $key_readable . ' of ' . $employee->currentRank->title . ' ' . $employee_name . ' from ' . $old_value . ' to ' . $new_value .  ', ';
+            } else {
+                $description .= $key_readable . ' of ' . 'no rank set ' . ' ' . $employee_name . ' from ' . $old_value . ' to ' . $new_value .  ', ';
+            }
         }
+
         $employee->save();
 
         $employee_ranks = EmployeeRank::where('employee_id', '=', $employee->id)->get();
@@ -415,10 +517,11 @@ class EmployeeController extends AppBaseController
             $employee_rank['employee_gender'] = $employee->gender;
             $employee_rank->save();
         }
-        add_audit('update', 'Employee');
-        if ($changed_values != null) {
-            add_employee_audit($description);
+
+        if ($changed_values != []) {
+            add_employee_audit($description . ' on ' . date("F jS, Y") . '.');
         }
+
 
         Flash::success('Employee updated successfully.');
 
@@ -463,7 +566,7 @@ class EmployeeController extends AppBaseController
 
     public function destroyMany(Request $request)
     {
-        
+
         if (!check_permission('employees-destroy')) {
             Flash::error('Permission Denied');
             return redirect()->back();
@@ -531,156 +634,10 @@ class EmployeeController extends AppBaseController
             return redirect(route('humanresource.employees.index'));
         }
 
-        $data['employee'] = $employee;
-
-        //get the children
-
-        $data['children'] = $employee->children->map(function ($item) {
-            $item->gender = get_enum_value('enum_gender', $item->gender);
-            return $item;
-        });
-
-        //get the action sheets
-
-        $data['actionSheets'] = $employee->actionSheets->map(function ($item) {
-            return $item;
-        });
-
-        //get the addresses
-
-        $data['addresses'] = $employee->addresses->map(function ($item) {
-            $item->address_type = get_enum_value('enum_address_type', $item->address_type);
-            $item->status = get_enum_value('enum_status', $item->status);
-            return $item;
-        });
-
-        //get the censures
-
-        $data['censures'] = $employee->censures->map(function ($item) {
-            return $item;
-        });
-
-        //get the certificates
-
-        $data['certificates'] = $employee->certificates->map(function ($item) {
-            $item->certificate_type_id = $item->certificateType->title;
-            $item->status = get_enum_value('enum_status', $item->status);
-            return ['id' => $item['id'], 'certificate_name' => $item['certificate_name'], 'type' => $item['certificate_type_id'], 'date_obtained' => $item['date_obtained'], 'status' => $item['status']];
-            // return $item;
-        });
-
-        //get the educations
-
-        $data['educations'] = $employee->educations->map(function ($item) {
-            $item->certificate_id = $item->certificate->title;
-            $item->school_type_id = $item->schoolType->title;
-            return ['id' => $item['id'], 'school_name' => $item['school_name'], 'certificate_id' => $item['certificate_id'], 'school_type_id' => $item['school_type_id'], 'remark' => $item['remark']];
-            // return $item;
-        });
-
-        $data['ranks'] = $employee->ranks->map(function ($item) {
-            $item->employee_id = $item->employee->getFullName();
-            $item->rank_type_id = $item->rankType->description;
-            $item->status = get_enum_value('enum_status', $item->status);
-            return ['id' => $item['id'], 'rank_type_id' => $item['rank_type_id'], 'employee_id' => $item['employee_id'], 'status' => $item['status']];
-            // return $item;
-        });
-
-        //get the addresses
-
-        $data['addresses'] = $employee->addresses->map(function ($item) {
-            return $item;
-        });
-
-        //get the forceServices
-
-        $data['forceServices'] = $employee->forceServices->map(function ($item) {
-            return $item;
-        });
-
-        //get the foreignTours
-
-        $data['foreignTours'] = $employee->foreignTours->map(function ($item) {
-            $item->status = get_enum_value('enum_status', $item->status);
-            $item->leave_type_id = $item->leaveType->title;
-            return ['id' => $item['id'], 'leave_type_id' => $item['leave_type_id'], 'from_date' => $item['from_date'], 'to_date' => $item['to_date'], 'status' => $item['status'], 'remark' => $item['remark'],];
-            // return $item;
-        });
-
-        //get the gratuities
-
-        $data['gratuities'] = $employee->gratuities->map(function ($item) {
-            $item->status = get_enum_value('enum_status', $item->status);
-            return $item;
-        });
-
-        //get the languages
-        $data['languages'] = $employee->languages->map(function ($item) {
-            $item->speaking_fluency = get_enum_value('enum_fluency', $item->speaking_fluency);
-            $item->writing_fluency = get_enum_value('enum_fluency', $item->writing_fluency);
-            $item->language_id = $item->language->title;
-            return ['id' => $item['id'], 'language_id' => $item['language_id'], 'writing_fluency' => $item['writing_fluency'], 'speaking_fluency' => $item['speaking_fluency']];
-            // return $item;
-        });
-
-        //get the localLeaves
-
-        $data['localLeaves'] = $employee->localLeaves->map(function ($item) {
-            $item->leave_type_id = $item->leaveType->title;
-            return ['id' => $item['id'], 'no_of_days' => $item['no_of_days'], 'file_page_no' => $item['file_page_no'], 'leave_type_id' => $item['leave_type_id'], 'from_date' => $item['from_date'], 'to_date' => $item['to_date']];
-            // return $item;
-        });
-
-        //get the nextOfKins
-
-        $data['nextOfKins'] = $employee->nextOfKins->map(function ($item) {
-            $item->relationship_id = $item->relationship->title;
-            return ['id' => $item['id'], 'name' => $item['name'], 'address' => $item['address'], 'relationship_id' => $item['relationship_id']];
-            // return $item;
-        });
-
-        //get the publicServices
-
-        $data['publicServices'] = $employee->publicServices->map(function ($item) {
-            return $item;
-        });
-
-        //get the qualifications
-
-        $data['qualifications'] = $employee->qualifications->map(function ($item) {
-            $item->qualification_type_id = $item->qualificationType->title;
-            $item->status = get_enum_value('enum_status', $item->status);
-            return ['id' => $item['id'], 'qualification_name' => $item['qualification_name'], 'type' => $item['qualification_type_id'], 'date_obtained' => $item['date_obtained'], 'status' => $item['status']];
-            // return $item;
-        });
-
-        //get the recordTrackers
-
-        $data['recordTrackers'] = $employee->recordTrackers->map(function ($item) {
-            $item->status = get_enum_value('enum_status', $item->status);
-            $item->has_profile = get_enum_value('enum_yes_no', $item->has_profile);
-            $item->has_education = get_enum_value('enum_yes_no', $item->has_education);
-            return $item;
-        });
-
-        //get the terminations
-
-        $data['terminations'] = $employee->terminations->map(function ($item) {
-            $item->termination_id = $item->termination_type->title;
-            $item->is_pensionable = get_enum_value('enum_yes_no', $item->is_pensionable);
-            return ['id' => $item->id, 'termination_id' => $item['termination_id'], 'even_date' => $item['even_date'], 'is_pensionable' => $item['is_pensionable'], 'pension_amount' => $item['pension_amount']];
-            // return $item;
-        });
-
-        //get the spouse
-
-        $data['spouse'] = $employee->spouse->map(function ($item) {
-            return $item;
-        });
 
         add_audit('generate', 'Employee report');
 
-        return view('humanresource.employees.report_template')->with('data', $data);
+        return view('humanresource.employees.record_of_service', compact('employee'));
     }
 
     public function import(Request $request)

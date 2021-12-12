@@ -20,7 +20,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $first_name
  * @property string $last_name
  * @property integer $gender
- * @property string $birthdate
+ * @property string $date_of_birth
  * @property string $place_of_birth
  * @property integer $birth_certificate_upload
  * @property integer $marital_status_id
@@ -42,9 +42,8 @@ class Employee extends Model
     use SoftDeletes;
 
     public $table = 'employees';
-    
 
-    protected $dates = ['deleted_at'];
+    protected $dates = ['deleted_at', 'date_of_birth', 'date_of_first_appointment', 'date_of_present_appointment'];
 
 
 
@@ -57,7 +56,7 @@ class Employee extends Model
         'religion',
         'gender',
         'gl',
-        'birthdate',
+        'date_of_birth',
         'place_of_birth',
         'profile_picture',
         'marital_status_id',
@@ -109,7 +108,7 @@ class Employee extends Model
         'religion' => 'integer',
         'gender' => 'integer',
         'gl' => 'integer',
-        'birthdate' => 'string',
+        'date_of_birth' => 'string',
         'place_of_birth' => 'string',
         'profile_picture' => 'string',
         'marital_status_id' => 'integer',
@@ -155,12 +154,12 @@ class Employee extends Model
         'first_name' => 'Required',
         'last_name' => 'Required',
         'gender' => 'Required',
-        'birthdate' => 'Required',
+        'date_of_birth' => 'Required',
         'gl' => 'Required',
         'date_of_first_appointment' => 'Required',
         'date_of_present_appointment' => 'Required',
-        'email' => 'Required|Unique:employees',
-        'phone' => 'Required|Unique:employees'
+        'email' => 'Required|email|Unique:employees',
+        'phone' => 'Required|min:11|max:11|Unique:employees',
     ];
 
     public function edit_rules() {
@@ -170,7 +169,7 @@ class Employee extends Model
             'first_name' => 'Required',
             'last_name' => 'Required',
             'gender' => 'Required',
-            'birthdate' => 'Required',
+            'date_of_birth' => 'Required',
             'gl' => 'Required',
             'date_of_first_appointment' => 'Required',
             'date_of_present_appointment' => 'Required',
@@ -181,7 +180,7 @@ class Employee extends Model
 
 
     public function getFullName() {
-        
+
         if($this->attributes['middle_name'] == ''){
             return $this->attributes['first_name'] . " " . $this->attributes['last_name'];
         }
@@ -189,7 +188,7 @@ class Employee extends Model
         else {
             return $this->attributes['first_name'] . " " . $this->attributes['middle_name'] . " " . $this->attributes['last_name'];
         }
-        
+
     }
 
     // public function getCurrentRank() {
@@ -274,98 +273,98 @@ class Employee extends Model
 
     public function actionSheets()
     {
-        return $this->hasMany(EmployeeActionSheet::class)->select('id', 'folio', 'action_at','date_cleared', 'remark')->orderBy('id', 'DESC');
+        return $this->hasMany(EmployeeActionSheet::class)->orderBy('id', 'DESC');
     }
 
     public function addresses()
     {
-        return $this->hasMany(EmployeeAddress::class)->select('id', 'address', 'status', 'address_type');
+        return $this->hasMany(EmployeeAddress::class);
     }
 
     public function censures()
     {
-        return $this->hasMany(EmployeeCensure::class)->select('id', 'title', 'summary', 'compiled_at');
+        return $this->hasMany(EmployeeCensure::class);
     }
 
     public function certificates()
     {
-        return $this->hasMany(EmployeeCertificates::class)->select('id', 'certificate_name', 'date_obtained', 'status', 'certificate_type_id');
+        return $this->hasMany(EmployeeCertificates::class);
     }
 
     public function children()
     {
-       return $this->hasMany(EmployeeChildren::class)->select('id', 'name', 'gender', 'birthday');
- 
+       return $this->hasMany(EmployeeChildren::class);
+
     }
-        
+
 
     public function educations()
-    { 
-        return $this->hasMany(EmployeeEducation::class)->select('id', 'qualification', 'school_name', 'qualification_type_id', 'remark');
+    {
+        return $this->hasMany(EmployeeEducation::class);
     }
 
     public function ranks()
-    { 
-        return $this->hasMany(EmployeeRank::class)->select('id', 'employee_id', 'rank_type_id', 'status');
+    {
+        return $this->hasMany(EmployeeRank::class);
     }
 
     public function services()
     {
-        return $this->hasMany(EmployeeService::class)->select('id', 'present_department', 'state', 'region', 'zone', 'location', 'status', 'present_station');
+        return $this->hasMany(EmployeeService::class);
     }
 
     public function forceServices()
     {
-        return $this->hasMany(EmployeeForceService::class)->select('id', 'area_of_service', 'service_no', 'last_unit', 'reason_for_leaving', 'remark');
+        return $this->hasMany(EmployeeForceService::class);
     }
 
     public function foreignTours()
     {
-        return $this->hasMany(EmployeeForeignTours::class)->select('id', 'leave_type_id', 'from_date', 'to_date', 'status', 'remark');
+        return $this->hasMany(EmployeeForeignTours::class);
     }
 
     public function gratuities()
     {
-        return $this->hasMany(EmployeeGratuity::class)->select('id', 'file_page_no', 'payment_date', 'from_date', 'to_date', 'status');
+        return $this->hasMany(EmployeeGratuity::class);
     }
 
     public function languages()
     {
-        return $this->hasMany(EmployeeLanguage::class)->select('id', 'language_id', 'writing_fluency', 'speaking_fluency');
+        return $this->hasMany(EmployeeLanguage::class);
     }
 
     public function localLeaves()
     {
-        return $this->hasMany(EmployeeLocalLeave::class)->select('id', 'no_of_days', 'file_page_no', 'leave_type_id', 'from_date', 'to_date');
+        return $this->hasMany(EmployeeLocalLeave::class);
     }
 
     public function nextOfKins()
     {
-        return $this->hasMany(EmployeeNextOfKin::class)->select('id', 'name', 'address', 'phone');
+        return $this->hasMany(EmployeeNextOfKin::class);
     }
 
     public function publicServices()
     {
-        return $this->hasMany(EmployeePublicService::class)->select('id', 'employer_name', 'from_date', 'to_date', 'file_page_ref');
+        return $this->hasMany(EmployeePublicService::class);
     }
 
     public function qualifications()
     {
-        return $this->hasMany(EmployeeQualification::class)->select('id', 'qualification_name', 'date_obtained', 'status', 'remark', 'qualification_type_id');
+        return $this->hasMany(EmployeeQualification::class);
     }
 
     public function recordTrackers()
     {
-        return $this->hasMany(EmployeeRecordTracker::class)->select('id', 'status', 'remark', 'has_profile', 'has_education');
+        return $this->hasMany(EmployeeRecordTracker::class);
     }
 
     public function terminations()
     {
-        return $this->hasMany(EmployeeTermination::class)->select('id', 'termination_id', 'even_date', 'is_pensionable', 'pension_amount');
+        return $this->hasMany(EmployeeTermination::class);
     }
 
     public function spouse()
     {
-        return $this->hasMany(EmployeeWife::class)->select('id', 'wife_name', 'wife_birthdate', 'marriage_date', 'remark');
+        return $this->hasMany(EmployeeWife::class);
     }
 }

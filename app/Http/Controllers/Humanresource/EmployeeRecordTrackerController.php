@@ -22,7 +22,9 @@ class EmployeeRecordTrackerController extends AppBaseController
      */
     public function index(EmployeeRecordTrackerDataTable $employeeRecordTrackerDataTable)
     {
-        return $employeeRecordTrackerDataTable->render('humanresource.employee_record_trackers.index');
+        Flash::error('Not Allowed');
+        return back();
+        // return $employeeRecordTrackerDataTable->render('humanresource.employee_record_trackers.index');
     }
 
     /**

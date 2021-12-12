@@ -1,20 +1,21 @@
 
 <li class="{!! Request::is('fileDirectories*') ? 'active' : '' !!}">
-    <a href="{{ route('getSearch') }}" class="mm-a">
+    <a title="Employee Search" href="{{ route('getSearch') }}" class="mm-a">
         <span class="mm-text ">Search</span>
         <span class="menu-icon"><i class="fa fa-search text-white"></i></span>
     </a>
 </li>
 
-<li class="{!! Request::is('shared/fileDirectories*') ? 'active' : '' !!}">
-    <a href="{{ route('shared.fileDirectories.index') }}" class="mm-a">
+<li class="{!!  Request::is('blank/fileDirectories') ||Request::is('shared/fileDirectories*') || !! Request::is('shared/policyDocuments*')? 'active' : '' !!}">
+    <a title="File Directory" href="{{ route('shared.fileDirectories.blank') }}" class="mm-a">
         <span class="mm-text ">File Directory</span>
         <span class="menu-icon"><i class="fa fa-folder text-white"></i></span>
     </a>
 </li>
 
+
 <li class="{!! Request::is('humanresource/employees*') ? 'active' : '' !!}">
-    <a href="{{ route('humanresource.employees.index') }}" class="mm-a">
+    <a title="Employee Management" href="{{ route('humanresource.employees.index') }}" class="mm-a">
         <span class="mm-text ">Employees</span>
         <span class="menu-icon"><i class="fa fa-users text-white"></i></span>
     </a>
@@ -36,7 +37,7 @@
                 <span class="menu-icon "> <i class="fa fa-briefcase"></i></span>
                 <span class="im im-icon-Arrow-Right imicon"></span>
             </a>
-            <ul class="sub-menu list-unstyled">                
+            <ul class="sub-menu list-unstyled">
 
                 <li class="{!! Request::is('humanresource/employeeAddresses*') ? 'active' : '' !!}">
                     <a href="{{ route('humanresource.employeeAddresses.index') }}">
@@ -131,7 +132,7 @@
 
 @role('superadministrator')
    <li {!! Request::is('table') || Request::is('data_table') ? 'class="menu-dropdown active"' : "class='menu-dropdown'" !!}>
-    <a href="#" class="mm-a">
+    <a title="Manage Settings" href="#" class="mm-a">
         <span class="mm-text ">Manage Settings</span>
         <span class="menu-icon"> <i class="fa fa-cog text-white"></i></span>
     </a>
@@ -240,10 +241,10 @@
                 <span class="mm-text ">Service Exits</span></a>
         </li>
 
-        <li class="{!! Request::is('shared/settings*') ? 'active' : '' !!}">
+        {{-- <li class="{!! Request::is('shared/settings*') ? 'active' : '' !!}">
             <a href="{{ route('shared.settings.index') }}" class="mm-a">
                 <span class="mm-text ">Settings</span></a>
-        </li>
+        </li> --}}
 
         <li class="{!! Request::is('shared/states*') ? 'active' : '' !!}">
             <a href="{{ route('shared.states.index') }}" class="mm-a">
@@ -258,9 +259,9 @@
         <li class="{{ Request::is('users*') ? 'active' : '' }}">
             <a href="{!! route('users.index') !!}" class="mm-a"><span>Users</span></a>
         </li>
-        
+
     </ul>
-</li> 
+</li>
 @endrole
 
 
@@ -282,4 +283,10 @@
 </li> --}}
 
 
+{{-- <li class="{!! (Request::is('shared/policyDocuments*') ? 'active' : '' ) !!}">
+    <a href="{{ route('shared.policyDocuments.index') }}">
+        <span class="mm-text ">Policy Documents</span>
+        <span class="menu-icon"><i class="im im-icon-Structure"></i></span>
+    </a>
+</li> --}}
 

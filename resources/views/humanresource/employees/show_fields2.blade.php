@@ -37,7 +37,7 @@
 <tr>
     <th scopre="row">{!! Form::label('assumption_of_duty_date', 'Assumption of Duty Date:') !!}</th>
     @if (isset($employee->assumption_of_duty_date))
-        <td>{{ $employee->assumption_of_duty_date }}</td>
+        <td>{{ \Carbon\Carbon::parse($employee->assumption_of_duty_date)->format('d/m/Y') }}</td>
     @else
         <td></td>
     @endif
@@ -46,7 +46,7 @@
 <tr>
     <th scopre="row">{!! Form::label('date_of_confirmation', 'Date of Confirmation:') !!}</th>
     @if (isset($employee->date_of_confirmation))
-        <td>{{ $employee->date_of_confirmation }}</td>
+        <td>{{ \Carbon\Carbon::parse($employee->date_of_confirmation)->format('d/m/Y') }}</td>
     @else
         <td></td>
     @endif
@@ -56,7 +56,7 @@
 <tr>
     <th scopre="row">{!! Form::label('date_of_present_appointment', 'Date of Present Appointment:') !!}</th>
     @if (isset($employee->date_of_present_appointment))
-        <td>{{ $employee->date_of_present_appointment }}</td>
+        <td>{{ \Carbon\Carbon::parse($employee->date_of_present_appointment)->format('d/m/Y') }}</td>
     @else
         <td></td>
     @endif
@@ -92,3 +92,17 @@
 </tr>
 
 
+<tr>
+    <th scopre="row">{!! Form::label('retirement_date_by_dofa', 'Retirement Date by DOFA:') !!}</th>
+    <td>{{ \Carbon\Carbon::parse($employee->date_of_first_appointment)->addYears(35)->format('d/m/Y') }}</td>
+</tr>
+
+<tr>
+    <th scopre="row">{!! Form::label('no_of_years_remained_by_dofa', 'No of Years Remained by DOFA:') !!}</th>
+    <td>@php
+        $start_date = \Carbon\Carbon::now();
+        $end_date = \Carbon\Carbon::parse($employee->date_of_first_appointment)->addYears(35);
+        $diff = $start_date->diffInYears($end_date);
+        echo $diff;
+    @endphp</td>
+</tr>

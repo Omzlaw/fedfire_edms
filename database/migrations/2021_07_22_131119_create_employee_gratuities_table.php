@@ -25,8 +25,8 @@ class CreateEmployeeGratuitiesTable extends Migration
             $table->integer('months')->nullable();
             $table->integer('days')->nullable();
             $table->integer('status')->default(1);
-            $table->decimal('rate_per_annum');
-            $table->decimal('amount_paid');
+            $table->decimal('rate_per_annum',8,2);
+            $table->decimal('amount_paid',20,2);
             $table->string('remark')->nullable();
             $table->integer('checked_by')->nullable();
             $table->date('checked_at')->nullable();

@@ -125,7 +125,7 @@
 <!-- Estate Gratuity Amount Paid Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('estate_gratuity_amount_paid', 'Estate Gratuity Amount Paid:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('estate_gratuity_amount_paid', 'Estimate Gratuity Amount Paid:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::number('estate_gratuity_amount_paid', null, ['class' => 'form-control']) !!}
         </div>
@@ -212,7 +212,7 @@
 <!-- Total Naria Salary Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('total_naria_salary', 'Total Naria Salary:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('total_naria_salary', 'Total Naira Salary:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::number('total_naria_salary', null, ['class' => 'form-control']) !!}
         </div>

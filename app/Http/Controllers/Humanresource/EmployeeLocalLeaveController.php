@@ -23,7 +23,9 @@ class EmployeeLocalLeaveController extends AppBaseController
      */
     public function index(EmployeeLocalLeaveDataTable $employeeLocalLeaveDataTable)
     {
-        return $employeeLocalLeaveDataTable->render('humanresource.employee_local_leaves.index');
+        Flash::error('Not Allowed');
+        return back();
+        // return $employeeLocalLeaveDataTable->render('humanresource.employee_local_leaves.index');
     }
 
     /**

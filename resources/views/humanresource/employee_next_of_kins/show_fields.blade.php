@@ -9,6 +9,11 @@
     <td>{{ $employeeNextOfKin->name }}</td>
 </tr>
 
+<tr>
+    <th scopre="row">{!! Form::label('relationship', 'Relationship:') !!}</th>
+    <td>{{ $employeeNextOfKin->relationship->title }}</td>
+</tr>
+
 
 <tr>
     <th scopre="row">{!! Form::label('address', 'Address:') !!}</th>

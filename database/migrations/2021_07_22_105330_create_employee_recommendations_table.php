@@ -16,7 +16,7 @@ class CreateEmployeeRecommendationsTable extends Migration
         Schema::create('employee_recommendations', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('summary');
+            $table->string('summary')->nullable();
             $table->date('date_received');
             $table->integer('employee_id');
             $table->string('file_upload')->nullable();

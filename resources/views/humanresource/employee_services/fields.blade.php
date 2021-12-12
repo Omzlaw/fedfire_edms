@@ -11,14 +11,14 @@
 </div>
 
 <!-- Present Station Field -->
-<div class="form-group">
+{{-- <div class="form-group">
     <div class="row">
         {!! Form::label('present_station', 'Present Station:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::select('present_station', [-1 => 'Choose Station...'], null, ['id' => 'present_station', 'class' => 'form-control']) !!}
+            {!! Form::select('present_station', enum_station(), null, ['id' => 'present_station', 'class' => 'form-control']) !!}
         </div>
     </div>
-</div>
+</div> --}}
 
 <!-- Location Field -->
 <div class="form-group ">
@@ -130,10 +130,7 @@
     <div class="row">
         {!! Form::label('state', 'State:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            <select id="zoneSelect" disabled name="state" class="form-control">
-                <option value="" disabled selected>Choose state under selected zone</option>
-                <option></option>
-            </select>
+            {!! Form::select('state', enum_state(), null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div>
@@ -180,16 +177,16 @@
 
 <script>
     window.onload = function() {
-        $('#present_station').prop('disabled', 'disabled');
-        let current_department = $('#present_department').val();
-        let current_zone = $('#zone').val();
-        if ($('#present_department').val() > -1) {
-            makeStationSubMenu(current_department);
-        }
+        // $('#present_station').prop('disabled', 'disabled');
+        // let current_department = $('#present_department').val();
+        // let current_zone = $('#zone').val();
+        // if ($('#present_department').val() > -1) {
+        //     makeStationSubMenu(current_department);
+        // }
 
-        if ($('#zone').val() > -1) {
-            makeSubmenu(current_zone);
-        }
+        // if ($('#zone').val() > -1) {
+        //     makeSubmenu(current_zone);
+        // }
 
 
     }

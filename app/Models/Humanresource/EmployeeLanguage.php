@@ -79,7 +79,7 @@ class EmployeeLanguage extends Model
     public static $rules = [
         'speaking_fluency' => 'Required',
         'writing_fluency' => 'Required',
-        'exam_qualified' => 'Required',
+        // 'exam_qualified' => 'Required',
         'employee_id' => 'Required',
         'language_id' => 'Required',
         // 'file_upload' => 'Required',

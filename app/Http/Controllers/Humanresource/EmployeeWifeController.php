@@ -22,7 +22,9 @@ class EmployeeWifeController extends AppBaseController
      */
     public function index(EmployeeWifeDataTable $employeeWifeDataTable)
     {
-        return $employeeWifeDataTable->render('humanresource.employee_wives.index');
+        Flash::error('Not Allowed');
+        return back();
+        // return $employeeWifeDataTable->render('humanresource.employee_wives.index');
     }
 
     /**

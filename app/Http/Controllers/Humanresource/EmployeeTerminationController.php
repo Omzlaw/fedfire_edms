@@ -23,7 +23,9 @@ class EmployeeTerminationController extends AppBaseController
      */
     public function index(EmployeeTerminationDataTable $employeeTerminationDataTable)
     {
-        return $employeeTerminationDataTable->render('humanresource.employee_terminations.index');
+        Flash::error('Not Allowed');
+        return back();
+        // return $employeeTerminationDataTable->render('humanresource.employee_terminations.index');
     }
 
     /**

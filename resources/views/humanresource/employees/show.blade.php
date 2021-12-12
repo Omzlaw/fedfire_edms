@@ -64,12 +64,14 @@ $services = $data['services'];
                                 <div class="form-group col-4">
                                     {!! Form::open(['route' => 'employeeSearch', 'class' => 'form-horizontal', 'files' => true]) !!}
                                     {!! Form::hidden('service_number', $employee->service_number, ['class' => 'form-control']) !!}
-                                    {!! Form::submit('View Files', ['class' => 'btn custom-outline-primary   ']) !!}
+                                    {!! Form::submit('View Files', ['class' => 'btn custom-outline-primary']) !!}
                                     {!! Form::close() !!}
                                 </div>
-                                {{-- <div class="form-group col-8">
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-12 ml-3 ">
                                     <a class="btn secondary-color-bg" href="{{ route('report') }}">Record of Service</a>
-                                </div> --}}
+                                </div>
                             </div>
                             <div class="card-header bg-secondary bg-gradient">
                                 <h6>Bio-Data</h6>
@@ -79,13 +81,14 @@ $services = $data['services'];
                                     <a href="#" id="basic-info-a">Basic Information</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <a class="dt" data-route="{{ route('humanresource.employeeAddresses.index') }}"
+                                    <a class="dt"
+                                        data-route="{{ route('humanresource.employeeAddresses.index') }}"
                                         data-model="{{ $addresses }}" href="#">Address</a>
                                 </li>
                                 </li>
                                 <li class="list-group-item"><a class="dt"
-                                        data-route="{{ route('humanresource.employeeLanguages.index') }}" data-model="{{ $languages }}"
-                                        href="#">Languages</a>
+                                        data-route="{{ route('humanresource.employeeLanguages.index') }}"
+                                        data-model="{{ $languages }}" href="#">Languages</a>
                                 </li>
                             </ul>
                             <div class="card-header bg-secondary bg-gradient">
@@ -93,17 +96,18 @@ $services = $data['services'];
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <a class="dt" data-route="{{ route('humanresource.employeeChildrens.index') }}"
+                                    <a class="dt"
+                                        data-route="{{ route('humanresource.employeeChildrens.index') }}"
                                         data-model="{{ $children }}" href="#">Children</a>
                                 </li>
                                 </li>
                                 <li class="list-group-item"><a class="dt"
-                                        data-route="{{ route('humanresource.employeeWives.index') }}" data-model="{{ $spouse }}"
-                                        href="#">Spouse</a>
+                                        data-route="{{ route('humanresource.employeeWives.index') }}"
+                                        data-model="{{ $spouse }}" href="#">Spouse</a>
                                 </li>
                                 <li class="list-group-item"><a class="dt"
-                                        data-route="{{ route('humanresource.employeeNextOfKins.index') }}" data-model="{{ $nextOfKins }}"
-                                        href="#">Next
+                                        data-route="{{ route('humanresource.employeeNextOfKins.index') }}"
+                                        data-model="{{ $nextOfKins }}" href="#">Next
                                         of
                                         Kins</a>
                                 </li>
@@ -113,13 +117,14 @@ $services = $data['services'];
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <a class="dt" data-route="{{ route('humanresource.employeeCertificates.index') }}"
+                                    <a class="dt"
+                                        data-route="{{ route('humanresource.employeeCertificates.index') }}"
                                         data-model="{{ $certificates }}" href="#">Certificates</a>
                                 </li>
                                 </li>
                                 <li class="list-group-item"><a class="dt"
-                                        data-route="{{ route('humanresource.employeeEducations.index') }}" data-model="{{ $educations }}"
-                                        href="#">Education</a>
+                                        data-route="{{ route('humanresource.employeeEducations.index') }}"
+                                        data-model="{{ $educations }}" href="#">Education</a>
                                 </li>
                                 <li class="list-group-item"><a class="dt"
                                         data-route="{{ route('humanresource.employeeQualifications.index') }}"
@@ -131,14 +136,15 @@ $services = $data['services'];
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <a class="dt" data-route="{{ route('humanresource.employeeActionSheets.index') }}"
+                                    <a class="dt"
+                                        data-route="{{ route('humanresource.employeeActionSheets.index') }}"
                                         data-model="{{ $actionSheets }}" href="#">Action
                                         Sheets</a>
                                 </li>
                                 </li>
                                 <li class="list-group-item"><a class="dt"
-                                        data-route="{{ route('humanresource.employeeCensures.index') }}" data-model="{{ $censures }}"
-                                        href="#">Censures</a>
+                                        data-route="{{ route('humanresource.employeeCensures.index') }}"
+                                        data-model="{{ $censures }}" href="#">Censures</a>
                                 </li>
                                 <li class="list-group-item"><a class="dt"
                                         data-route="{{ route('humanresource.employeeRecordTrackers.index') }}"
@@ -146,8 +152,8 @@ $services = $data['services'];
                                         Trackers</a>
                                 </li>
                                 <li class="list-group-item"><a class="dt"
-                                        data-route="{{ route('humanresource.employeeRanks.index') }}" data-model="{{ $ranks }}"
-                                        href="#">Ranks</a>
+                                        data-route="{{ route('humanresource.employeeRanks.index') }}"
+                                        data-model="{{ $ranks }}" href="#">Ranks</a>
                                 </li>
                             </ul>
                             <div class="card-header bg-secondary bg-gradient">
@@ -155,11 +161,13 @@ $services = $data['services'];
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <a class="dt" data-route="{{ route('humanresource.employeeServices.index') }}"
+                                    <a class="dt"
+                                        data-route="{{ route('humanresource.employeeServices.index') }}"
                                         data-model="{{ $services }}" href="#">Services</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <a class="dt" data-route="{{ route('humanresource.employeeForceServices.index') }}"
+                                    <a class="dt"
+                                        data-route="{{ route('humanresource.employeeForceServices.index') }}"
                                         data-model="{{ $forceServices }}" href="#">Force
                                         Services</a>
                                 </li>
@@ -175,13 +183,14 @@ $services = $data['services'];
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <a class="dt" data-route="{{ route('humanresource.employeeGratuities.index') }}"
+                                    <a class="dt"
+                                        data-route="{{ route('humanresource.employeeGratuities.index') }}"
                                         data-model="{{ $gratuities }}" href="#">Gratuity</a>
                                 </li>
                                 </li>
                                 <li class="list-group-item"><a class="dt"
-                                        data-route="{{ route('humanresource.employeeTerminations.index') }}" data-model="{{ $terminations }}"
-                                        href="#">Termination</a>
+                                        data-route="{{ route('humanresource.employeeTerminations.index') }}"
+                                        data-model="{{ $terminations }}" href="#">Termination</a>
                                 </li>
                             </ul>
                             <div class="card-header bg-secondary bg-gradient">
@@ -189,14 +198,15 @@ $services = $data['services'];
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <a class="dt" data-route="{{ route('humanresource.employeeForeignTours.index') }}"
+                                    <a class="dt"
+                                        data-route="{{ route('humanresource.employeeForeignTours.index') }}"
                                         data-model="{{ $foreignTours }}" href="#">Foreign
                                         Tours</a>
                                 </li>
                                 </li>
                                 <li class="list-group-item"><a class="dt"
-                                        data-route="{{ route('humanresource.employeeLocalLeaves.index') }}" data-model="{{ $localLeaves }}"
-                                        href="#">Local
+                                        data-route="{{ route('humanresource.employeeLocalLeaves.index') }}"
+                                        data-model="{{ $localLeaves }}" href="#">Local
                                         Leaves</a>
                                 </li>
                             </ul>
@@ -219,7 +229,8 @@ $services = $data['services'];
 
                             <div class="card-body">
                                 <div id="details" class="table-responsive">
-
+                                    {{-- <input type="text" id="search-input" onkeyup="filterTable()" placeholder="Search..."
+                                        title="Search through table"> --}}
                                 </div>
                             </div>
 
@@ -250,13 +261,8 @@ $services = $data['services'];
         </div>
     </div>
 
-
-
-
-
-
-    {{-- <a href="humanresource.employees.index" class="btn secondary-color-bg">Back</a> --}}
     </div>
+
 
     <script>
         window.onload = intialiseFunctions;
@@ -267,23 +273,22 @@ $services = $data['services'];
 
 
         function getActions(id, url) {
-            // let host = window.location.protocol + "//" + window.location.host;
             return `<div class='btn-group'>
-                                <a  data-dismiss="modal" 
-                                    data-toggle="modal" 
-                                    data-target='#model_modal' 
-                                    data-id="${id}" 
-                                    data-route="${url}/${id}" 
+                                <a  data-dismiss="modal"
+                                    data-toggle="modal"
+                                    data-target='#model_modal'
+                                    data-id="${id}"
+                                    data-route="${url}/${id}"
                                     href="#" title='show'
                                     class='btn custom-outline-primary btn-xs action-buttons'>
                                     <i class="im im-icon-Information"></i>
                                 </a>
 
-                                <a  data-dismiss="modal" 
-                                    data-toggle="modal" 
-                                    data-target='#model_modal' 
-                                    data-id="${id}" 
-                                    data-route="${url}/${id}/edit" 
+                                <a  data-dismiss="modal"
+                                    data-toggle="modal"
+                                    data-target='#model_modal'
+                                    data-id="${id}"
+                                    data-route="${url}/${id}/edit"
                                     href="#" title='edit'
                                     class='btn custom-outline-primary btn-xs action-buttons'>
                                     <i class="im im-icon-File-Edit"></i>
@@ -291,7 +296,7 @@ $services = $data['services'];
                                 <form id="delete-form-${id}" action="${url}/${id}" method="post">
                                     @csrf
                                     <input name="_method" type="hidden" value="DELETE">
-                                    <button type="button"  
+                                    <button type="button"
                                         title='delete'
                                         class='btn btn-outline-danger btn-xs'
                                         onclick="confirmation(${id})">
@@ -334,6 +339,7 @@ $services = $data['services'];
                 // console.log(currentRoute);
 
                 $(this).click(function() {
+
                     currentRoute = $(this).data("route");
 
                     $('#basic-info-table').hide();
@@ -346,9 +352,9 @@ $services = $data['services'];
 
                     let div = document.getElementById('details');
                     div.removeChild(div.lastChild);
-                    var table = document.createElement('table');
-                    var thead = document.createElement('thead');
-                    var tbody = document.createElement('tbody');
+                    let table = document.createElement('table');
+                    let thead = document.createElement('thead');
+                    let tbody = document.createElement('tbody');
 
                     table.classList.add("table");
                     table.classList.add("table-bordered");
@@ -358,15 +364,15 @@ $services = $data['services'];
 
                     document.getElementById('details').appendChild(table);
 
-                    var columns = [];
+                    let columns = [];
                     if (data[0] != null || data[0] != undefined) {
                         columnNames = Object.keys(data[0]);
-                        for (var i in columnNames) {
+                        for (let i in columnNames) {
 
                             columns.push({
                                 data: columnNames[i],
                                 title: firstLetterUpper(columnNames[i].replace('_', ' ').replace(
-                                    'id', '').replace('_', ''))
+                                    'id', '').replace('_', ' '))
                             });
 
                         }
@@ -390,7 +396,9 @@ $services = $data['services'];
                             sortable: true,
                             ordering: true,
                             searching: true,
-                            'aaSorting': [[0, 'desc']],
+                            'aaSorting': [
+                                [0, 'desc']
+                            ],
                             // stateSave: true,
                             "fnRowCallback": function(nRow, aData, iDisplayIndex) {
                                 nRow.setAttribute('id', aData[0]);

@@ -17,14 +17,8 @@
 
 
 <tr>
-    <th scopre="row">{!! Form::label('file_upload', 'File Upload:') !!}</th>
-    <td>{{ $employeeTermination->file_upload }}</td>
-</tr>
-
-
-<tr>
     <th scopre="row">{!! Form::label('even_date', 'Even Date:') !!}</th>
-    <td>{{ $employeeTermination->even_date }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeTermination->even_date)->format('d/m/Y') }}</td>
 </tr>
 
 
@@ -42,7 +36,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('pension_start_date', 'Pension Start Date:') !!}</th>
-    <td>{{ $employeeTermination->pension_start_date }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeTermination->pension_start_date)->format('d/m/Y') }}</td>
 </tr>
 
 
@@ -59,7 +53,7 @@
 
 
 <tr>
-    <th scopre="row">{!! Form::label('estate_gratuity_amount_paid', 'Estate Gratuity Amount Paid:') !!}</th>
+    <th scopre="row">{!! Form::label('estate_gratuity_amount_paid', 'Estimate Gratuity Amount Paid:') !!}</th>
     <td>{{ $employeeTermination->estate_gratuity_amount_paid }}</td>
 </tr>
 
@@ -72,7 +66,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('widow_pension_start_date', 'Widow Pension Start Date:') !!}</th>
-    <td>{{ $employeeTermination->widow_pension_start_date }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeTermination->widow_pension_start_date)->format('d/m/Y') }}</td>
 </tr>
 
 

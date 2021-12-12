@@ -23,7 +23,9 @@ class EmployeeLanguageController extends AppBaseController
      */
     public function index(EmployeeLanguageDataTable $employeeLanguageDataTable)
     {
-        return $employeeLanguageDataTable->render('humanresource.employee_languages.index');
+        Flash::error('Not Allowed');
+        return back();
+        // return $employeeLanguageDataTable->render('humanresource.employee_languages.index');
     }
 
     /**

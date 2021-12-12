@@ -10,11 +10,6 @@
 </tr>
 
 
-<tr>
-    <th scopre="row">{!! Form::label('file_upload', 'File Upload:') !!}</th>
-    <td>{{ $employeeGratuity->file_upload }}</td>
-</tr>
-
 
 <tr>
     <th scopre="row">{!! Form::label('file_page_no', 'File Page No:') !!}</th>
@@ -24,19 +19,19 @@
 
 <tr>
     <th scopre="row">{!! Form::label('payment_date', 'Payment Date:') !!}</th>
-    <td>{{ $employeeGratuity->payment_date }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeGratuity->payment_date)->format('d/m/Y') }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('from_date', 'From Date:') !!}</th>
-    <td>{{ $employeeGratuity->from_date }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeGratuity->from_date)->format('d/m/Y') }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('to_date', 'To Date:') !!}</th>
-    <td>{{ $employeeGratuity->to_date }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeGratuity->to_date)->format('d/m/Y') }}</td>
 </tr>
 
 
@@ -90,7 +85,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('checked_at', 'Checked At:') !!}</th>
-    <td>{{ $employeeGratuity->checked_at }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeGratuity->checked_at)->format('d/m/Y') }}</td>
 </tr>
 
 

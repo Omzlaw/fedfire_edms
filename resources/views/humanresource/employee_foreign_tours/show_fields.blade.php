@@ -24,13 +24,13 @@
 
 <tr>
     <th scopre="row">{!! Form::label('from_date', 'From Date:') !!}</th>
-    <td>{{ $employeeForeignTours->from_date }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeForeignTours->from_date)->format('d/m/Y') }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('to_date', 'To Date:') !!}</th>
-    <td>{{ $employeeForeignTours->to_date }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeForeignTours->to_date)->format('d/m/Y') }}</td>
 </tr>
 
 
@@ -60,7 +60,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('date_started', 'Date Started:') !!}</th>
-    <td>{{ $employeeForeignTours->date_started }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeForeignTours->date_started)->format('d/m/Y') }}</td>
 </tr>
 
 
@@ -78,13 +78,13 @@
 
 <tr>
     <th scopre="row">{!! Form::label('leave_due_date', 'Leave Due Date:') !!}</th>
-    <td>{{ $employeeForeignTours->leave_due_date }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeForeignTours->leave_due_date)->format('d/m/Y') }}</td>
 </tr>
 
 
 <tr>
     <th scopre="row">{!! Form::label('leave_departure_date', 'Leave Departure Date:') !!}</th>
-    <td>{{ $employeeForeignTours->leave_departure_date }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeForeignTours->leave_departure_date)->format('d/m/Y') }}</td>
 </tr>
 
 
@@ -96,7 +96,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('return_due_date', 'Return Due Date:') !!}</th>
-    <td>{{ $employeeForeignTours->return_due_date }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeForeignTours->return_due_date)->format('d/m/Y') }}</td>
 </tr>
 
 
@@ -108,7 +108,7 @@
 
 <tr>
     <th scopre="row">{!! Form::label('duty_resumption_date', 'Duty Resumption Date:') !!}</th>
-    <td>{{ $employeeForeignTours->duty_resumption_date }}</td>
+    <td>{{ \Carbon\Carbon::parse($employeeForeignTours->duty_resumption_date)->format('d/m/Y') }}</td>
 </tr>
 
 

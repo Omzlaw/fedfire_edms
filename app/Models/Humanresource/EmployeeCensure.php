@@ -78,7 +78,7 @@ class EmployeeCensure extends Model
      */
     public static $rules = [
         'title' => 'Required',
-        'summary' => 'Required',
+        // 'summary' => 'Required',
         'date_recieved' => 'Required',
         'employee_id' => 'Required',
         // 'file_upload' => 'Required',

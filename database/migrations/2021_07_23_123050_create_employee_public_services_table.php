@@ -22,7 +22,7 @@ class CreateEmployeePublicServicesTable extends Migration
             $table->integer('employee_id');
             $table->string('file_upload')->nullable();
             $table->integer('total_years_served');
-            $table->decimal('total_paid')->default(0);
+            $table->decimal('total_paid', 20,2)->default(0);
             $table->text('remark')->nullable();
             $table->integer('checked_by')->nullable();
             $table->integer('created_by')->nullable();

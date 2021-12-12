@@ -16,12 +16,12 @@ class CreateEmployeeCensuresTable extends Migration
         Schema::create('employee_censures', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->text('summary');
+            $table->text('summary')->nullable();
             $table->date('date_recieved');
             $table->integer('employee_id');
             $table->string('file_upload')->nullable();
             $table->integer('status')->default(1);
-            $table->text('remark');
+            $table->text('remark')->nullable();
             $table->integer('compiled_by')->nullable();
             $table->date('compiled_at');
             $table->integer('created_by')->nullable();

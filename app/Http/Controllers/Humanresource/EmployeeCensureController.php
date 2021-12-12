@@ -22,7 +22,9 @@ class EmployeeCensureController extends AppBaseController
      */
     public function index(EmployeeCensureDataTable $employeeCensureDataTable)
     {
-        return $employeeCensureDataTable->render('humanresource.employee_censures.index');
+        Flash::error('Not Allowed');
+        return back();
+        // return $employeeCensureDataTable->render('humanresource.employee_censures.index');
     }
 
     /**

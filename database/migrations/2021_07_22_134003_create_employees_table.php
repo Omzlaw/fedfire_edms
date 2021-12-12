@@ -15,14 +15,15 @@ class CreateEmployeesTable extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('service_number')->unique();
+            // $table->string('service_number')->unique();
+            $table->string('service_number')->nullable();
             $table->string('first_name');
             $table->string('middle_name')->nullable();
             $table->string('last_name');
             $table->integer('religion')->nullable();
             $table->string('staff_code')->nullable();
             $table->integer('gender');
-            $table->date('birthdate');
+            $table->date('date_of_birth')->nullable()->default(null);
             $table->string('place_of_birth')->nullable();
             $table->string('profile_picture')->nullable();
             $table->integer('marital_status_id')->nullable();
@@ -33,9 +34,9 @@ class CreateEmployeesTable extends Migration
             // $table->integer('location');
             $table->integer('gl');
             $table->integer('type_of_appointment')->nullable();
-            $table->date('date_of_first_appointment');
+            $table->date('date_of_first_appointment')->nullable()->default(null);
             $table->date('assumption_of_duty_date')->nullable();
-            $table->date('date_of_present_appointment');
+            $table->date('date_of_present_appointment')->nullable()->default(null);
             $table->date('date_of_confirmation')->nullable();
             $table->date('first_arrival_date')->nullable();
             $table->integer('nationality')->default(160)->nullable();
@@ -46,8 +47,8 @@ class CreateEmployeesTable extends Migration
             $table->string('decorations')->nullable();
             $table->string('file_upload')->nullable();
             $table->text('remark')->nullable();
-            $table->string('email')->unique();
-            $table->string('phone')->unique();
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
             $table->integer('status')->default(1)->nullable();
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
@@ -55,11 +56,11 @@ class CreateEmployeesTable extends Migration
             $table->string('entry_qualification')->nullable();
             $table->string('additional_qualification')->nullable();
             $table->string('current_appointment')->nullable();
-            $table->date('retirement_date_by_dob')->nullable();
-            $table->integer('retirement_year_by_dob')->nullable();
-            $table->integer('no_of_years_remained_by_dob')->nullable();
-            $table->date('retirement_date_by_dofa')->nullable();
-            $table->integer('no_of_years_remained_by_dofa')->nullable();
+            // $table->date('retirement_date_by_dob')->nullable();
+            // $table->integer('retirement_year_by_dob')->nullable();
+            // $table->integer('no_of_years_remained_by_dob')->nullable();
+            // $table->date('retirement_date_by_dofa')->nullable();
+            // $table->integer('no_of_years_remained_by_dofa')->nullable();
             $table->integer('IPPIS')->nullable();
             $table->string('cadre')->nullable();
             $table->timestamps();

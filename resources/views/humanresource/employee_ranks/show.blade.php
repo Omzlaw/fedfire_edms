@@ -28,7 +28,5 @@ Employee Ranks @parent
             </table>
         </div>
     </div>
-    <a href="{{ route('humanresource.employeeRanks.index') }}"
-                class="btn btn-primary">Back</a>
 </div>
 @endsection
