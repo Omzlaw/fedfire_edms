@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $termination_id
  * @property integer $employee_id
  * @property string $file_upload
- * @property string $even_date
+ * @property string $date
  * @property integer $is_pensionable
  * @property number $pension_amount
  * @property string $pension_start_date
@@ -42,7 +42,7 @@ class EmployeeTermination extends Model
     use SoftDeletes;
 
     public $table = 'employee_terminations';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -52,7 +52,7 @@ class EmployeeTermination extends Model
         'termination_id',
         'employee_id',
         'file_upload',
-        'even_date',
+        'date',
         'is_pensionable',
         'pension_amount',
         'pension_start_date',
@@ -65,7 +65,7 @@ class EmployeeTermination extends Model
         'nigeria_total_service_years',
         'nigeria_total_service_months',
         'nigeria_total_service_days',
-        'total_naria_salary',
+        'aggregate_salary_in_nigeria',
         'summary',
         'remark',
         'status',
@@ -84,7 +84,7 @@ class EmployeeTermination extends Model
         'termination_id' => 'string',
         'employee_id' => 'integer',
         'file_upload' => 'string',
-        'even_date' => 'string',
+        'date' => 'string',
         'is_pensionable' => 'string',
         'pension_amount' => 'decimal:2',
         'pension_start_date' => 'string',
@@ -97,7 +97,7 @@ class EmployeeTermination extends Model
         'nigeria_total_service_years' => 'integer',
         'nigeria_total_service_months' => 'integer',
         'nigeria_total_service_days' => 'integer',
-        'total_naria_salary' => 'decimal:2',
+        'aggregate_salary_in_nigeria' => 'decimal:2',
         'summary' => 'string',
         'remark' => 'string',
         'status' => 'integer',
@@ -115,7 +115,7 @@ class EmployeeTermination extends Model
         'termination_id' => 'Required',
         'employee_id' => 'Required',
         // 'file_upload' => 'Required',
-        'even_date' => 'Required',
+        'date' => 'Required',
         'is_pensionable' => 'Required',
         'pension_amount' => 'Required',
         'pension_start_date' => 'Required',
@@ -128,7 +128,7 @@ class EmployeeTermination extends Model
         'nigeria_total_service_years' => 'Required',
         'nigeria_total_service_months' => 'Required',
         'nigeria_total_service_days' => 'Required',
-        'total_naria_salary' => 'Required',
+        'aggregate_salary_in_nigeria' => 'Required',
         // 'summary' => 'Required',
       //        'remark' => 'Required',
         'status' => 'Required',

@@ -20,6 +20,9 @@ $nextOfKins = $data['nextOfKins'];
 $qualifications = $data['qualifications'];
 $ranks = $data['ranks'];
 $services = $data['services'];
+$birthParticulars= $data['birthParticulars'];
+$serviceRecords = $data['serviceRecords'];
+$emoluments = $data['emoluments'];
 
 ?>
 @extends('layouts.default')
@@ -85,6 +88,11 @@ $services = $data['services'];
                                         data-route="{{ route('humanresource.employeeAddresses.index') }}"
                                         data-model="{{ $addresses }}" href="#">Address</a>
                                 </li>
+                                <li class="list-group-item">
+                                    <a class="dt"
+                                        data-route="{{ route('humanresource.employeeBirthParticulars.index') }}"
+                                        data-model="{{ $birthParticulars }}" href="#">Birth Particulars</a>
+                                </li>
                                 </li>
                                 <li class="list-group-item"><a class="dt"
                                         data-route="{{ route('humanresource.employeeLanguages.index') }}"
@@ -134,6 +142,16 @@ $services = $data['services'];
                             <div class="card-header bg-secondary bg-gradient">
                                 <h6>Records</h6>
                             </div>
+                            <li class="list-group-item"><a class="dt"
+                                data-route="{{ route('humanresource.employeeEmolumentRecords.index') }}"
+                                data-model="{{ $emoluments }}" href="#">Record of
+                                Emolument</a>
+                            </li>
+                            <li class="list-group-item"><a class="dt"
+                                data-route="{{ route('humanresource.employeeServiceRecords.index') }}"
+                                data-model="{{ $serviceRecords }}" href="#">Record of
+                                Service</a>
+                            </li>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
                                     <a class="dt"
@@ -151,6 +169,7 @@ $services = $data['services'];
                                         data-model="{{ $recordTrackers }}" href="#">Record
                                         Trackers</a>
                                 </li>
+
                                 <li class="list-group-item"><a class="dt"
                                         data-route="{{ route('humanresource.employeeRanks.index') }}"
                                         data-model="{{ $ranks }}" href="#">Ranks</a>

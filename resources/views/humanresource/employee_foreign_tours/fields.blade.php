@@ -10,6 +10,8 @@
 </div> --}}
 {!! Form::hidden('employee_id', Session::get('employee_id'), ['class' => 'form-control']) !!}
 
+{!! Form::hidden('checked_by', Auth::user()->id, ['class' => 'form-control']) !!}
+
 
 <!-- File Upload Field -->
 {{--<div class="form-group">
@@ -122,9 +124,9 @@
 <!-- Tour Gazette No Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('tour_gazette_no', 'Tour Gazette No:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('tour_gazette_notice_leave', 'Tour Gazette Notice Leave:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::number('tour_gazette_no', null, ['class' => 'form-control']) !!}
+            {!! Form::number('tour_gazette_notice_leave', null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div>

@@ -290,3 +290,24 @@
     </a>
 </li> --}}
 
+{{-- <li class="{!! (Request::is('humanresource/employeeBirthParticulars*') ? 'active' : '' ) !!}">
+    <a href="{{ route('humanresource.employeeBirthParticulars.index') }}">
+        <span class="mm-text ">Employee Birth Particulars</span>
+        <span class="menu-icon"><i class="im im-icon-Structure"></i></span>
+    </a>
+</li> --}}
+
+{{-- <li class="{!! (Request::is('humanresource/employeeServiceRecords*') ? 'active' : '' ) !!}">
+    <a href="{{ route('humanresource.employeeServiceRecords.index') }}">
+        <span class="mm-text ">Employee Service Records</span>
+        <span class="menu-icon"><i class="im im-icon-Structure"></i></span>
+    </a>
+</li>
+
+<li class="{!! (Request::is('humanresource/employeeEmolumentRecords*') ? 'active' : '' ) !!}">
+    <a href="{{ route('humanresource.employeeEmolumentRecords.index') }}">
+        <span class="mm-text ">Employee Emolument Records</span>
+        <span class="menu-icon"><i class="im im-icon-Structure"></i></span>
+    </a>
+</li> --}}
+

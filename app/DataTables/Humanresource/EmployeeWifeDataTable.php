@@ -22,8 +22,8 @@ class EmployeeWifeDataTable extends DataTable
         ->addColumn('employee', function($row){
             return $row->employee->staff_code;
         })
-        ->addColumn('wife_birthdate', function($row){
-            return $row->wife_birthdate->toDateString();
+        ->addColumn('spouse_birthdate', function($row){
+            return $row->spouse_birthdate->toDateString();
         })
         ->addColumn('marriage_date', function($row){
             return $row->marriage_date->toDateString();
@@ -76,8 +76,8 @@ class EmployeeWifeDataTable extends DataTable
     {
         return [
             // 'id',
-            'wife_name',
-            'wife_birthdate',
+            'spouse_name',
+            'spouse_birthdate',
             'marriage_date',
             'employee',
             // 'file_upload',

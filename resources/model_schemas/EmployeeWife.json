@@ -12,7 +12,7 @@
         "inView": true
     },
     {
-        "name": "wife_name",
+        "name": "spouse_name",
         "dbType": "string",
         "htmlType": "text",
         "validations": "Required",
@@ -24,7 +24,7 @@
         "inView": true
     },
     {
-        "name": "wife_birthdate",
+        "name": "spouse_birthdate",
         "dbType": "dateTime",
         "htmlType": "date",
         "validations": "Required",

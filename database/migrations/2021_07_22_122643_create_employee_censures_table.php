@@ -20,6 +20,7 @@ class CreateEmployeeCensuresTable extends Migration
             $table->date('date_recieved');
             $table->integer('employee_id');
             $table->string('file_upload')->nullable();
+            $table->string('file_page_number');
             $table->integer('status')->default(1);
             $table->text('remark')->nullable();
             $table->integer('compiled_by')->nullable();

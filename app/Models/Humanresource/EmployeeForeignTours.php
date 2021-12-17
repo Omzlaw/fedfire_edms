@@ -44,7 +44,7 @@ class EmployeeForeignTours extends Model
     use SoftDeletes;
 
     public $table = 'employee_foreign_tours';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -61,13 +61,14 @@ class EmployeeForeignTours extends Model
         'created_by',
         'updated_by',
         'date_started',
-        'tour_gazette_no',
+        'tour_gazette_notice_leave',
         'tour_length',
         'leave_due_date',
         'leave_departure_date',
         'leave_gazette_no',
         'return_due_date',
         'granted_extension_date',
+        'salary_rule_for_extension',
         'duty_resumption_date',
         'passed_to_uk',
         'passed_from_uk',
@@ -94,13 +95,14 @@ class EmployeeForeignTours extends Model
         'created_by' => 'integer',
         'updated_by' => 'integer',
         'date_started' => 'string',
-        'tour_gazette_no' => 'integer',
+        'tour_gazette_notice_leave' => 'string',
         'tour_length' => 'double',
         'leave_due_date' => 'string',
         'leave_departure_date' => 'string',
         'leave_gazette_no' => 'integer',
         'return_due_date' => 'string',
         'granted_extension_date' => 'string',
+        'salary_rule_for_extension' => 'string',
         'duty_resumption_date' => 'string',
         'passed_to_uk' => 'string',
         'passed_from_uk' => 'string',
@@ -126,13 +128,14 @@ class EmployeeForeignTours extends Model
      //   'created_by' => 'Required',
     //    'updated_by' => 'Required',
         'date_started' => 'Required',
-        'tour_gazette_no' => 'Required',
+        'tour_gazette_notice_leave' => 'Required',
         'tour_length' => 'Required',
         'leave_due_date' => 'Required',
         'leave_departure_date' => 'Required',
         'leave_gazette_no' => 'Required',
         'return_due_date' => 'Required',
         'granted_extension_date' => 'Required',
+        'salary_rule_for_extension' => 'Required',
         'duty_resumption_date' => 'Required',
         'passed_to_uk' => 'Required',
         'passed_from_uk' => 'Required',

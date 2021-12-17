@@ -61,7 +61,7 @@ class Employee extends Model
         'profile_picture',
         'marital_status_id',
         'date_of_first_appointment',
-        // 'first_arrival_date',
+        'first_arrival_date',
         'assumption_of_duty_date',
         'date_of_present_appointment',
         'date_of_confirmation',
@@ -72,7 +72,7 @@ class Employee extends Model
         'state_of_origin',
         'senatorial_zone',
         'local_govt_area',
-        'decorations',
+        'decoration',
         'file_upload',
         'remark',
         'email',
@@ -81,6 +81,8 @@ class Employee extends Model
         'created_by',
         'updated_by',
         'current_appointment',
+        'substantive_appointment',
+        'substantive_appointment_date',
         'current_rank',
         'entry_qualification',
         'additional_qualification',
@@ -122,7 +124,7 @@ class Employee extends Model
         'state_of_origin' => 'integer',
         'senatorial_zone' => 'integer',
         'local_govt_area' => 'integer',
-        'decorations' => 'string',
+        'decoration' => 'string',
         'file_upload' => 'string',
         'remark' => 'string',
         'email' => 'string',
@@ -131,6 +133,8 @@ class Employee extends Model
         'created_by' => 'integer',
         'updated_by' => 'integer',
         'current_appointment' => 'string',
+        'substantive_appointment' => 'string',
+        'substantive_appointment_date' => 'string',
         'current_rank' => 'integer',
         'entry_qualification' => 'string',
         'additional_qualification' => 'string',
@@ -141,6 +145,7 @@ class Employee extends Model
         'no_of_years_remained_by_dofa' => 'integer',
         'IPPIS' => 'integer',
         'cadre' => 'string',
+        'first_arrival_date' => 'string',
     ];
 
     /**
@@ -217,6 +222,11 @@ class Employee extends Model
         return $this->belongsTo(\App\Models\Shared\RankType::class, 'current_rank', 'id');
     }
 
+    public function substantiveAppointment()
+    {
+        return $this->belongsTo(\App\Models\Shared\RankType::class, 'substantive_appointment', 'id');
+    }
+
     // public function currentQualification()
     // {
     //     return $this->belongsTo(\App\Models\Shared\QualificationType::class, 'current_qualification', 'id');
@@ -281,6 +291,13 @@ class Employee extends Model
         return $this->hasMany(EmployeeAddress::class);
     }
 
+    public function birthParticulars()
+    {
+       return $this->hasMany(EmployeeBirthParticular::class);
+
+    }
+
+
     public function censures()
     {
         return $this->hasMany(EmployeeCensure::class);
@@ -297,6 +314,10 @@ class Employee extends Model
 
     }
 
+    public function emoluments()
+    {
+        return $this->hasMany(EmployeeEmolumentRecord::class);
+    }
 
     public function educations()
     {
@@ -366,5 +387,10 @@ class Employee extends Model
     public function spouse()
     {
         return $this->hasMany(EmployeeWife::class);
+    }
+
+    public function serviceRecords()
+    {
+        return $this->hasMany(EmployeeServiceRecord::class);
     }
 }

@@ -1,9 +1,9 @@
 <!-- Wife Name Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('wife_name', 'Wife Name:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('spouse_name', 'Spouse Name:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('wife_name', null, ['class' => 'form-control']) !!}
+            {!! Form::text('spouse_name', null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div>
@@ -12,16 +12,16 @@
 <!-- Wife Birthdate Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('wife_birthdate', 'Wife Birthdate:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('spouse_birthdate', 'Spouse Birthdate:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::date('wife_birthdate', null, ['class' => 'form-control','id'=>'wife_birthdate']) !!}
+            {!! Form::date('spouse_birthdate', null, ['class' => 'form-control','id'=>'spouse_birthdate']) !!}
         </div>
     </div>
 </div>
 
 {{-- @section('footer_scripts')
 <script type="text/javascript">
-    $('#wife_birthdate').datetimepicker({
+    $('#spouse_birthdate').datetimepicker({
             format: 'YYYY-MM-DD',
             useCurrent: true,
             sideBySide: true
@@ -62,6 +62,8 @@
     </div>
 </div> --}}
 {!! Form::hidden('employee_id', Session::get('employee_id'), ['class' => 'form-control']) !!}
+
+{!! Form::hidden('checked_by', Auth::user()->id, ['class' => 'form-control']) !!}
 
 
 <!-- File Upload Field -->

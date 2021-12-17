@@ -135,6 +135,8 @@
     </div>
 </div>
 
+{!! Form::hidden('checked_by', Auth::user()->id, ['class' => 'form-control']) !!}
+
 
 <!-- Checked At Field -->
 <div class="form-group">

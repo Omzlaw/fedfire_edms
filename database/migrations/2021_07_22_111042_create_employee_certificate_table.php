@@ -17,7 +17,8 @@ class CreateEmployeeCertificateTable extends Migration
             $table->increments('id');
             $table->string('certificate_name');
             $table->integer('certificate_type_id');
-            $table->date('date_obtained');
+            $table->date('from_date');
+            $table->date('to_date');
             $table->integer('employee_id');
             $table->integer('status')->default(1);
             $table->string('remark')->nullable();

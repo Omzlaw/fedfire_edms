@@ -44,7 +44,7 @@ class CreateEmployeesTable extends Migration
             $table->integer('state_of_origin')->nullable();
             $table->integer('senatorial_zone')->nullable();
             $table->integer('local_govt_area')->nullable();
-            $table->string('decorations')->nullable();
+            $table->string('decoration')->nullable();
             $table->string('file_upload')->nullable();
             $table->text('remark')->nullable();
             $table->string('email')->nullable();
@@ -56,6 +56,8 @@ class CreateEmployeesTable extends Migration
             $table->string('entry_qualification')->nullable();
             $table->string('additional_qualification')->nullable();
             $table->string('current_appointment')->nullable();
+            $table->integer('substantive_appointment')->nullable();
+            $table->date('substantive_appointment_date')->nullable();
             // $table->date('retirement_date_by_dob')->nullable();
             // $table->integer('retirement_year_by_dob')->nullable();
             // $table->integer('no_of_years_remained_by_dob')->nullable();

@@ -14,8 +14,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property \App\Models\User $checkedBy
  * @property \App\Models\User $createdBy
  * @property \App\Models\User $updatedBy
- * @property string $wife_name
- * @property string $wife_birthdate
+ * @property string $spouse_name
+ * @property string $spouse_birthdate
  * @property string $marriage_date
  * @property integer $employee_id
  * @property string $file_upload
@@ -29,15 +29,15 @@ class EmployeeWife extends Model
     use SoftDeletes;
 
     public $table = 'employee_wives';
-    
+
 
     protected $dates = ['deleted_at'];
 
 
 
     public $fillable = [
-        'wife_name',
-        'wife_birthdate',
+        'spouse_name',
+        'spouse_birthdate',
         'marriage_date',
         'employee_id',
         'file_upload',
@@ -54,8 +54,8 @@ class EmployeeWife extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'wife_name' => 'string',
-        'wife_birthdate' => 'string',
+        'spouse_name' => 'string',
+        'spouse_birthdate' => 'string',
         'marriage_date' => 'string',
         'employee_id' => 'integer',
         'file_upload' => 'string',
@@ -71,8 +71,8 @@ class EmployeeWife extends Model
      * @var array
      */
     public static $rules = [
-        'wife_name' => 'Required',
-        'wife_birthdate' => 'Required',
+        'spouse_name' => 'Required',
+        'spouse_birthdate' => 'Required',
         'marriage_date' => 'Required',
         'employee_id' => 'Required',
         // 'file_upload' => 'Required',

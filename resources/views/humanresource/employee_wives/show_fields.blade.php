@@ -5,14 +5,14 @@
 
 
 <tr>
-    <th scopre="row">{!! Form::label('wife_name', 'Wife Name:') !!}</th>
-    <td>{{ $employeeWife->wife_name }}</td>
+    <th scopre="row">{!! Form::label('spouse_name', 'Wife Name:') !!}</th>
+    <td>{{ $employeeWife->spouse_name }}</td>
 </tr>
 
 
 <tr>
-    <th scopre="row">{!! Form::label('wife_birthdate', 'Wife Birthdate:') !!}</th>
-    <td>{{ \Carbon\Carbon::parse($employeeWife->wife_birthdate)->format('d/m/Y') }}</td>
+    <th scopre="row">{!! Form::label('spouse_birthdate', 'Wife Birthdate:') !!}</th>
+    <td>{{ \Carbon\Carbon::parse($employeeWife->spouse_birthdate)->format('d/m/Y') }}</td>
 </tr>
 
 

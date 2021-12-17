@@ -15,8 +15,8 @@ class CreateEmployeeWivesTable extends Migration
     {
         Schema::create('employee_wives', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('wife_name');
-            $table->date('wife_birthdate');
+            $table->string('spouse_name');
+            $table->date('spouse_birthdate');
             $table->date('marriage_date');
             $table->integer('employee_id');
             $table->string('file_upload')->nullable();

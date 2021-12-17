@@ -25,13 +25,14 @@ class CreateEmployeeForeignToursTable extends Migration
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
             $table->date('date_started')->nullable();
-            $table->integer('tour_gazette_no')->nullable();
+            $table->string('tour_gazette_notice_leave')->nullable();
             $table->double('tour_length')->nullable();
             $table->date('leave_due_date')->nullable();
             $table->date('leave_departure_date')->nullable();
             $table->integer('leave_gazette_no')->nullable();
             $table->date('return_due_date')->nullable();
             $table->date('granted_extension_date')->nullable();
+            $table->string('salary_rule_for_extension')->nullable();
             $table->date('duty_resumption_date')->nullable();
             $table->text('passed_to_uk')->nullable();
             $table->string('passed_from_uk')->nullable();

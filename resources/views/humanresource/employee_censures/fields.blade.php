@@ -19,6 +19,16 @@
     </div>
 </div>
 
+<!-- File Page Number Field -->
+<div class="form-group ">
+    <div class="row">
+        {!! Form::label('file_page_number', 'File Page Number:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::text('file_page_number', null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
 
 <!-- Date Recieved Field -->
 <div class="form-group">
@@ -52,6 +62,8 @@
     </div>
 </div> --}}
 {!! Form::hidden('employee_id', Session::get('employee_id'), ['class' => 'form-control']) !!}
+
+{!! Form::hidden('checked_by', Auth::user()->id, ['class' => 'form-control']) !!}
 
 
 <!-- File Upload Field -->

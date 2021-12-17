@@ -29,7 +29,7 @@ class EmployeeCertificates extends Model
     use SoftDeletes;
 
     public $table = 'employee_certificate';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -38,7 +38,8 @@ class EmployeeCertificates extends Model
     public $fillable = [
         'certificate_name',
         'certificate_type_id',
-        'date_obtained',
+        'from_date',
+        'to_date',
         'employee_id',
         'status',
         'remark',
@@ -58,7 +59,8 @@ class EmployeeCertificates extends Model
         'id' => 'integer',
         'certificate_name' => 'string',
         'certificate_type_id' => 'string',
-        'date_obtained' => 'string',
+        'from_date' => 'string',
+        'to_date' => 'string',
         'employee_id' => 'integer',
         'status' => 'string',
         'remark' => 'string',
@@ -76,7 +78,8 @@ class EmployeeCertificates extends Model
      */
     public static $rules = [
         'certificate_name' => 'Required',
-        'date_obtained' => 'Required',
+        'from_date' => 'Required',
+        'to_date' => 'Required',
         'employee_id' => 'Required',
         'certificate_type_id' => 'Required',
         'status' => 'Required',

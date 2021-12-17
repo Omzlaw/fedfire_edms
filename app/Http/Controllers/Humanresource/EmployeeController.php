@@ -107,7 +107,8 @@ class EmployeeController extends AppBaseController
         $states = new State;
         $senatorial_zones = new SenatorialZone;
         $local_govt_areas = new LocalGovtArea;
-        return view('humanresource.employees.create', compact('countries', 'geo_political_zones', 'states', 'senatorial_zones', 'local_govt_areas'));
+        $rank_types = new RankType;
+        return view('humanresource.employees.create', compact('countries', 'geo_political_zones', 'states', 'senatorial_zones', 'local_govt_areas', 'rank_types'));
     }
 
     /**
@@ -202,12 +203,19 @@ class EmployeeController extends AppBaseController
             return ['id' => $item['id'], 'address' => $item['address'], 'address_type' => $item['address_type'], 'status' => $item['status']];
         });
 
+        //get the birth Particulars
+
+        $data['birthParticulars'] = $employee->birthParticulars->map(function ($item) {
+            $item->date = \Carbon\Carbon::parse($item->date)->format('d/m/Y');
+            return ['id' => $item['id'], 'home_place' => $item['home_place'], 'proof' => $item['proof'], 'date' => $item['date']];
+        });
+
         //get the censures
 
         $data['censures'] = $employee->censures->map(function ($item) {
             $item->date_recieved = \Carbon\Carbon::parse($item->date_recieved)->format('d/m/Y');
             $item->compiled_at = \Carbon\Carbon::parse($item->compiled_at)->format('d/m/Y');
-            return ['id' => $item['id'], 'title' => $item['title'], 'summary' => $item['summary'], 'date_recieved' => $item['date_recieved'], 'compiled_at' => $item['compiled_at']];
+            return ['id' => $item['id'], 'title' => $item['title'], 'summary' => $item['summary'], 'date_recieved' => $item['date_recieved'], 'compiled_at' => $item['compiled_at'], 'file_page_number' => $item['file_page_number']];
         });
 
         //get the certificates
@@ -228,6 +236,15 @@ class EmployeeController extends AppBaseController
             $item->from_date = \Carbon\Carbon::parse($item->from_date)->format('d/m/Y');
             $item->to_date = \Carbon\Carbon::parse($item->to_date)->format('d/m/Y');
             return ['id' => $item['id'], 'qualification' => $item['qualification'], 'school_name' => $item['school_name'], 'qualification_type_id' => $item['qualification_type_id'], 'remark' => $item['remark'], 'school_type' => $item['school_type']];
+            // return $item;
+        });
+
+        //get the emoluments
+
+        $data['emoluments'] = $employee->emoluments->map(function ($item) {
+            $item->date_entry_made = \Carbon\Carbon::parse($item->date_entry_made)->format('d/m/Y');
+            $item->salary_scale = $item->salaryScale->title;
+            return ['id' => $item['id'], 'date_entry_made' => $item['date_entry_made'], 'salary_scale' => $item['salary_scale'], 'basic_salary_pa' => $item['basic_salary_pa'], 'inducement_pay_pa' => $item['inducement_pay_pa']];
             // return $item;
         });
 
@@ -296,6 +313,15 @@ class EmployeeController extends AppBaseController
             // return $item;
         });
 
+        //get the service records
+
+        $data['serviceRecords'] = $employee->serviceRecords->map(function ($item) {
+            $item->date_of_entry_made = \Carbon\Carbon::parse($item->date_of_entry_made)->format('d/m/Y');
+            $item->certified_by = $item->certifiedBy->name;
+            return ['id' => $item['id'], 'date of entry made' => $item['date_of_entry_made'], 'detail' => $item['detail']];
+            // return $item;
+        });
+
         //get the nextOfKins
 
         $data['nextOfKins'] = $employee->nextOfKins->map(function ($item) {
@@ -334,18 +360,18 @@ class EmployeeController extends AppBaseController
 
         $data['terminations'] = $employee->terminations->map(function ($item) {
             $item->termination_id = $item->termination_type->title;
-            $item->even_date = \Carbon\Carbon::parse($item->even_date)->format('d/m/Y');
+            $item->even_date = \Carbon\Carbon::parse($item->date)->format('d/m/Y');
             $item->is_pensionable = get_enum_value('enum_yes_no', $item->is_pensionable);
-            return ['id' => $item->id, 'termination_id' => $item['termination_id'], 'even_date' => $item['even_date'], 'is_pensionable' => $item['is_pensionable'], 'pension_amount' => $item['pension_amount']];
+            return ['id' => $item->id, 'termination_id' => $item['termination_id'], 'date' => $item['date'], 'is_pensionable' => $item['is_pensionable'], 'pension_amount' => $item['pension_amount']];
             // return $item;
         });
 
         //get the spouse
 
         $data['spouse'] = $employee->spouse->map(function ($item) {
-            $item->wife_birthdate = \Carbon\Carbon::parse($item->wife_birthdate)->format('d/m/Y');
+            $item->spouse_birthdate = \Carbon\Carbon::parse($item->spouse_birthdate)->format('d/m/Y');
             $item->marriage_date = \Carbon\Carbon::parse($item->marriage_date)->format('d/m/Y');
-            return ['id' => $item['id'], 'wife_name' => $item['wife_name'], 'wife_birthdate' => $item['wife_birthdate'], 'marriage_date' => $item['marriage_date'], 'remark' => $item['remark']];
+            return ['id' => $item['id'], 'spouse_name' => $item['spouse_name'], 'spouse_birthdate' => $item['spouse_birthdate'], 'marriage_date' => $item['marriage_date'], 'remark' => $item['remark']];
         });
 
         Session::put('employee_id', $id);
@@ -379,7 +405,8 @@ class EmployeeController extends AppBaseController
         $states = new State;
         $senatorial_zones = new SenatorialZone;
         $local_govt_areas = new LocalGovtArea;
-        return view('humanresource.employees.edit', compact('countries', 'geo_political_zones', 'states', 'senatorial_zones', 'local_govt_areas'))->with('employee', $employee);
+        $rank_types = new RankType;
+        return view('humanresource.employees.edit', compact('countries', 'geo_political_zones', 'states', 'senatorial_zones', 'local_govt_areas', 'rank_types'))->with('employee', $employee);
     }
 
     /**
@@ -633,6 +660,7 @@ class EmployeeController extends AppBaseController
 
             return redirect(route('humanresource.employees.index'));
         }
+
 
 
         add_audit('generate', 'Employee report');

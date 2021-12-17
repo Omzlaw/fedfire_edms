@@ -24,6 +24,8 @@
 </div> --}}
 {!! Form::hidden('employee_id', Session::get('employee_id'), ['class' => 'form-control']) !!}
 
+{!! Form::hidden('checked_by', Auth::user()->id, ['class' => 'form-control']) !!}
+
 
 <!-- File Upload Field -->
 {{--<div class="form-group">
@@ -39,16 +41,16 @@
 <!-- Even Date Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('even_date', 'Even Date:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('date', 'Date:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::date('even_date', null, ['class' => 'form-control','id'=>'even_date']) !!}
+            {!! Form::date('date', null, ['class' => 'form-control','id'=>'date']) !!}
         </div>
     </div>
 </div>
 
 {{-- @section('footer_scripts')
 <script type="text/javascript">
-    $('#even_date').datetimepicker({
+    $('#date').datetimepicker({
             format: 'YYYY-MM-DD',
             useCurrent: true,
             sideBySide: true
@@ -125,7 +127,7 @@
 <!-- Estate Gratuity Amount Paid Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('estate_gratuity_amount_paid', 'Estimate Gratuity Amount Paid:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('estate_gratuity_amount_paid', 'Estate Gratuity Amount Paid:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::number('estate_gratuity_amount_paid', null, ['class' => 'form-control']) !!}
         </div>
@@ -212,9 +214,9 @@
 <!-- Total Naria Salary Field -->
 <div class="form-group">
     <div class="row">
-        {!! Form::label('total_naria_salary', 'Total Naira Salary:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('aggregate_salary_in_nigeria', 'Aggregate Salary in Nigeria:',['class'=>'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::number('total_naria_salary', null, ['class' => 'form-control']) !!}
+            {!! Form::number('aggregate_salary_in_nigeria', null, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div>

@@ -31,7 +31,7 @@ class EmployeeCensure extends Model
     use SoftDeletes;
 
     public $table = 'employee_censures';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -43,6 +43,7 @@ class EmployeeCensure extends Model
         'date_recieved',
         'employee_id',
         'file_upload',
+        'file_page_number',
         'status',
         'remark',
         'compiled_by',
@@ -63,6 +64,7 @@ class EmployeeCensure extends Model
         'date_recieved' => 'string',
         'employee_id' => 'integer',
         'file_upload' => 'string',
+        'file_page_number' => 'string',
         'status' => 'integer',
         'remark' => 'string',
         'compiled_by' => 'integer',
@@ -81,6 +83,7 @@ class EmployeeCensure extends Model
         // 'summary' => 'Required',
         'date_recieved' => 'Required',
         'employee_id' => 'Required',
+        'file_page_number' => 'Required',
         // 'file_upload' => 'Required',
         'status' => 'Required',
       //        'remark' => 'Required',

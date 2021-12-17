@@ -20,6 +20,8 @@
 </div> --}}
 {!! Form::hidden('employee_id', Session::get('employee_id'), ['class' => 'form-control']) !!}
 
+{!! Form::hidden('checked_by', Auth::user()->id, ['class' => 'form-control']) !!}
+
 
 <!-- Status Field -->
 <div class="form-group">

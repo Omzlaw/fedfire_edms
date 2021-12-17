@@ -308,6 +308,26 @@
     </div>
 </div>
 
+<!-- Substantive Appointment Field -->
+<div class="col-sm-6 form-group">
+    <div class="row">
+        {!! Form::label('substantive_appointment', 'Substantive Appointment:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::select('substantive_appointment', modelDropdown($rank_types, 'id', 'title'), null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
+<!-- First Appointment Date Field -->
+<div class="col-sm-6 form-group">
+    <div class="row">
+        {!! Form::label('substantive_appointment_date', 'Substantive Appointment Date:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        <div class="col-md-9 col-lg-9 col-12">
+            {!! Form::date('substantive_appointment_date', null, ['class' => 'form-control', 'id' => 'first_appointment_date']) !!}
+        </div>
+    </div>
+</div>
+
 <!-- First Appointment Date Field -->
 <div class="col-sm-6 form-group">
     <div class="row">
@@ -339,14 +359,14 @@
 </div>
 
 <!-- First Arrival Date Field -->
-{{-- <div class="col-sm-6 form-group">
+<div class="col-sm-6 form-group">
     <div class="row">
-        {!! Form::label('first_arrival_date', 'First Arrival Date:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('first_arrival_date', 'Date of First Arrival:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
             {!! Form::date('first_arrival_date', null, ['class' => 'form-control', 'id' => 'first_arrival_date']) !!}
         </div>
     </div>
-</div> --}}
+</div>
 
 <!--  Present Appointment Date Field -->
 <div class="col-sm-6 form-group">
@@ -463,14 +483,14 @@
 
 
 <!-- Decorations Field -->
-{{-- <div class="col-sm-6 form-group">
+<div class="col-sm-6 form-group">
     <div class="row">
-        {!! Form::label('decorations', 'Decorations:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
+        {!! Form::label('decoration', 'Decoration:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
         <div class="col-md-9 col-lg-9 col-12">
-            {!! Form::text('decorations', null, ['class' => 'form-control']) !!}
+            {!! Form::text('decoration', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div> --}}
+</div>
 
 
 <!-- File Upload Field -->

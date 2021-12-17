@@ -19,7 +19,7 @@ class CreateEmployeeTerminationsTable extends Migration
             $table->integer('termination_id');
             $table->integer('employee_id');
             $table->string('file_upload')->nullable();
-            $table->date('even_date');
+            $table->date('date');
             $table->integer('is_pensionable')->default(0);
             $table->decimal('pension_amount',30,2)->default(0);
             $table->date('pension_start_date');
@@ -32,7 +32,7 @@ class CreateEmployeeTerminationsTable extends Migration
             $table->integer('nigeria_total_service_years');
             $table->integer('nigeria_total_service_months');
             $table->integer('nigeria_total_service_days');
-            $table->decimal('total_naria_salary',30,2);
+            $table->decimal('aggregate_salary_in_nigeria',30,2);
             $table->string('summary')->nullable();
             $table->string('remark')->nullable();
             $table->integer('status')->default(1);

@@ -53,6 +53,8 @@
 </div> --}}
 {!! Form::hidden('employee_id', Session::get('employee_id'), ['class' => 'form-control']) !!}
 
+{!! Form::hidden('checked_by', Auth::user()->id, ['class' => 'form-control']) !!}
+
 <!-- File Upload Field -->
 {{--<div class="form-group">
     <div class="row">

@@ -12,6 +12,8 @@
 
 {!! Form::hidden('action_by', Auth::user()->id, ['class' => 'form-control']) !!}
 
+{!! Form::hidden('checked_by', Auth::user()->id, ['class' => 'form-control']) !!}
+
 <!-- Action At Field -->
 <div class="form-group">
     <div class="row">
@@ -73,7 +75,7 @@
             {!! Form::textarea('remark', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-</div> 
+</div>
 
 
 <!-- Submit Field -->

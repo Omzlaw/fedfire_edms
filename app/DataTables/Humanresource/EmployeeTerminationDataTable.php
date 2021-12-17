@@ -87,7 +87,7 @@ class EmployeeTerminationDataTable extends DataTable
             'termination_type',
             'employee',
             // 'file_upload',
-            'even_date',
+            'date',
             'is_pensionable',
             'pension_amount',
             'pension_start_date',
