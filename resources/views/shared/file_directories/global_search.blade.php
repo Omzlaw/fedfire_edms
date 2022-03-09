@@ -35,14 +35,20 @@
     };
 
     function getActions(id) {
-        let employee = window.location.protocol + "//" + window.location.host + "/humanresource/employees/" + id;
+        let employee = "{{ route('humanresource.employees.index') }}/" + id;
 
         return `<div class='btn-group'>
-                                <a
-                                    href="${employee}" title='view'
-                                    class='btn custom-outline-primary btn-xs action-buttons'>
-                                    <i class="im im-icon-Information"></i>
-                                </a>
+                        @permission('employees-view')
+                            <a href="${employee}" title='view' class='btn custom-outline-primary btn-xs action-buttons'>
+                                <i class="im im-icon-Information"></i>
+                            </a>
+                        @endpermission
+
+                        @permission('employees-edit')
+                            <a href="${employee}/edit" title='edit' class='btn custom-outline-primary btn-xs action-buttons'>
+                                <i class="im im-icon-File-Edit"></i>
+                            </a>
+                        @endpermission
 
                     </div>`;
     }
