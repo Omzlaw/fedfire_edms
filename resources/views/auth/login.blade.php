@@ -89,7 +89,7 @@
                                             <input type="checkbox" class="custom-control-input" id="customCheck1"
                                                 name="remember">
                                             <label class="custom-control-label" for="customCheck1">Remember me</label>
-                                            <a href="javascript:void(0)" id="to-recover" class="text-dark float-right"><i class="fa fa-lock mr-1"></i> Forgot password?</a>
+                                            {{-- <a href="javascript:void(0)" id="to-recover" class="text-dark float-right"><i class="fa fa-lock mr-1"></i> Forgot password?</a> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -169,9 +169,9 @@
     <script>
         $('[data-toggle="tooltip"]').tooltip();
         $(".preloader").fadeOut();
-        // ============================================================== 
-        // Login and Recover Password 
-        // ============================================================== 
+        // ==============================================================
+        // Login and Recover Password
+        // ==============================================================
         $('#to-recover').on("click", function() {
             $("#loginform").slideUp();
             $("#recoverform").fadeIn();

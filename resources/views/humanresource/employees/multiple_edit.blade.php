@@ -2,26 +2,31 @@
 
 {{-- Page title --}}
 @section('title')
-    User @parent
+    Employee @parent
 @stop
 
 @section('content')
     <section class="content-header">
         <div aria-label="breadcrumb" class="card-breadcrumb">
-            <h1>{{ __('Edit') }} User</h1>
+            <h1>{{ __('Edit') }} Employees</h1>
         </div>
         {{-- <div class="separator-breadcrumb border-top"></div> --}}
     </section>
     <div class="content">
         @include('adminlte-templates::common.errors')
-        <div class="card">
+        <div class="card mb-100">
             <div class="card-body">
-                {!! Form::model($user, ['route' => ['users.update', $user->id], 'method' => 'patch']) !!}
+                {!! Form::open(['route' => 'employeeMultipleEdit', 'files' => true, 'class' => 'form-horizontal', 'id' => 'employee-form']) !!}
 
-                @include('users.fields')
+                <div class="row">
+                    @include('humanresource.employees.editMultiplefields')
+                </div>
+
 
                 {!! Form::close() !!}
             </div>
         </div>
     </div>
 @endsection
+
+

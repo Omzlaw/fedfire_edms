@@ -21,7 +21,7 @@
         <div class="row ml-1 mb-3">
             {!! Form::open(['route' => ['fileSearchClass'], 'class' => 'form-horizontal', 'files' => true]) !!}
             {!! Form::submit('Personnel File', ['name' => 'action', 'class' => 'btn secondary-color-bg mr-10 mt-10', 'value' => 'personnel']) !!}
-            {!! Form::submit('Policy File', ['name' => 'action', 'class' => 'mt-10 mr-10 btn custom-outline-primary', 'value' => 'policy']) !!}
+            {!! Form::submit('Policy File', ['name' => 'action', 'class' => 'text-white mt-10 mr-10 btn', 'value' => 'policy', 'style' => 'background-color: #DA2016']) !!}
             {!! Form::close() !!}
         </div>
 

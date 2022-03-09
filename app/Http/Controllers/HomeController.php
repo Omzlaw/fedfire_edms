@@ -34,6 +34,7 @@ class HomeController extends Controller
 
     public function dashboard()
     {
+        session(['status' => '1']);
 
         $employee = Employee::all();
         $employee_active = $employee->where('status', '=', 1)->count();

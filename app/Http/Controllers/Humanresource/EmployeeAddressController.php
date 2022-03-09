@@ -37,6 +37,9 @@ class EmployeeAddressController extends AppBaseController
      */
     public function create()
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $employees = new Employee;
         $local_govt_areas = new LocalGovtArea;
         $states = new State;
@@ -59,6 +62,9 @@ class EmployeeAddressController extends AppBaseController
      */
     public function store(CreateEmployeeAddressRequest $request)
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $employeeAddressForCurrentEmployeeCount =  EmployeeAddress::where('employee_id', '=', session('employee_id'))->count();
         if ($employeeAddressForCurrentEmployeeCount == 2) {
             Flash::success('Only two addresses are allowed.');
@@ -86,6 +92,9 @@ class EmployeeAddressController extends AppBaseController
      */
     public function show($id)
     {
+        if (!check_permission('employees-view')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeAddress $employeeAddress */
         $employeeAddress = EmployeeAddress::find($id);
 
@@ -107,6 +116,9 @@ class EmployeeAddressController extends AppBaseController
      */
     public function edit($id)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeAddress $employeeAddress */
         $employeeAddress = EmployeeAddress::find($id);
 
@@ -132,6 +144,9 @@ class EmployeeAddressController extends AppBaseController
      */
     public function update($id, UpdateEmployeeAddressRequest $request)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeAddress $employeeAddress */
         $employeeAddress = EmployeeAddress::find($id);
 
@@ -163,6 +178,9 @@ class EmployeeAddressController extends AppBaseController
      */
     public function destroy($id)
     {
+        if (!check_permission('employees-destroy')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeAddress $employeeAddress */
         $employeeAddress = EmployeeAddress::find($id);
 

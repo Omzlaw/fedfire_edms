@@ -34,7 +34,7 @@ class FileDirectoryController extends AppBaseController
 
     public function blank()
     {
-        if(!check_permission('file_directories-index')){
+        if (!check_permission('file_directories-view')) {
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -43,7 +43,7 @@ class FileDirectoryController extends AppBaseController
 
     public function index(FileDirectoryDataTable $fileDirectoryDataTable)
     {
-        if(!check_permission('file_directories-index')){
+        if (!check_permission('file_directories-view')) {
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -59,7 +59,7 @@ class FileDirectoryController extends AppBaseController
      */
     public function create()
     {
-        if(!check_permission('file_directories-create')){
+        if (!check_permission('file_directories-create')) {
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -77,7 +77,7 @@ class FileDirectoryController extends AppBaseController
      */
     public function store(CreateFileDirectoryRequest $request)
     {
-        if(!check_permission('file_directories-store')){
+        if (!check_permission('file_directories-create')) {
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -98,7 +98,7 @@ class FileDirectoryController extends AppBaseController
      */
     public function show($id)
     {
-        if(!check_permission('file_directories-show')){
+        if (!check_permission('file_directories-view')) {
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -116,7 +116,7 @@ class FileDirectoryController extends AppBaseController
 
     public function getSearch()
     {
-        if(!check_permission('file_directories-search')){
+        if (!check_permission('file_directories-view')) {
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -125,11 +125,11 @@ class FileDirectoryController extends AppBaseController
 
     public function search(Request $request)
     {
-        if(!check_permission('file_directories-search')){
+        if (!check_permission('file_directories-view')) {
             Flash::error('Permission Denied');
             return redirect()->back();
         }
-        $employee = Employee::where('service_number', '=', $request['service_number'])->first();
+        $employee = Employee::where('status', '=', 1)->where('service_number', '=', $request['service_number'])->first();
         if (empty($employee)) {
             Flash::error('Employee not found');
             return redirect(route('employeeSearch'));
@@ -142,40 +142,51 @@ class FileDirectoryController extends AppBaseController
 
     public function records(Request $request)
     {
-        if(!check_permission('file_directories-search')){
+        if (!check_permission('employees-view')) {
             Flash::error('Permission Denied');
             return redirect()->back();
         }
         $request->validate([
-            'search_query' => 'required'
+            // 'search_query' => 'required'
         ]);
 
 
 
+
+
         $rank_type_id = $request['rank_type'];
-        $employees = Employee::select('id', 'service_number', 'first_name', 'middle_name', 'last_name')
-            ->orwhere('first_name',  'LIKE', "%{$request['search_query']}%")
-            ->orWhere('last_name',  'LIKE', "%{$request['search_query']}%")
-            ->orWhere('middle_name',  'LIKE', "%{$request['search_query']}%")
-            ->orWhere('service_number', '=', $request['search_query'])
+        $search_query = $request['search_query'];
+        if($rank_type_id == null && $search_query == null) {
+            Flash::error('No Record(s) found');
+            return redirect()->back();
+        }
+
+
+        $employees = Employee::where('status', '=', 1)->select('id', 'service_number', 'first_name', 'middle_name', 'last_name')
+            ->where('first_name',  'LIKE', $search_query)
+            ->orWhere('last_name',  'LIKE', $search_query)
+            ->orWhere('middle_name',  'LIKE', $search_query)
+            ->orWhere('service_number', '=', $search_query)
             ->orderBy('service_number')
             ->get();
+
         if ($request['rank_type'] != null) {
-            $employees = Employee::select('id', 'service_number', 'first_name', 'middle_name', 'last_name')
-                ->orwhere('first_name',  'LIKE', "%{$request['search_query']}%")
-                ->orwhere('last_name',  'LIKE', "%{$request['search_query']}%")
-                ->orwhere('middle_name',  'LIKE', "%{$request['search_query']}%")
+            $employees = Employee::where('status', '=', 1)->select('id', 'service_number', 'first_name', 'middle_name', 'last_name')
+                ->where('current_rank', '=', $rank_type_id)
+                ->orWhere('first_name',  'LIKE', $search_query)
+                ->orWhere('last_name',  'LIKE', $search_query)
+                ->orWhere('middle_name',  'LIKE', $search_query)
+                ->orWhere('service_number', '=', $search_query)
                 ->orderBy('service_number')
                 ->get();
 
-            if (!$employees->isEmpty()) {
-                $employees = Employee::select('id', 'service_number', 'first_name', 'middle_name', 'last_name')->where('current_rank', '=', $rank_type_id)->get();
+            if ($request['rank_type'] != null && $search_query == '') {
+                $employees = Employee::where('status', '=', 1)->select('id', 'service_number', 'first_name', 'middle_name', 'last_name')->where('current_rank', '=', $rank_type_id)->get();
             }
         }
 
 
 
-        // dd($employees->ranks());
 
         if ($employees->isEmpty()) {
             Flash::error('No Record(s) found');
@@ -195,7 +206,7 @@ class FileDirectoryController extends AppBaseController
      */
     public function edit($id)
     {
-        if(!check_permission('file_directories-edit')){
+        if (!check_permission('file_directories-edit')) {
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -222,7 +233,7 @@ class FileDirectoryController extends AppBaseController
      */
     public function update($id, UpdateFileDirectoryRequest $request)
     {
-        if(!check_permission('file_directories-update')){
+        if (!check_permission('file_directories-edit')) {
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -259,7 +270,7 @@ class FileDirectoryController extends AppBaseController
      */
     public function destroy($id)
     {
-        if(!check_permission('file_directories-destroy')){
+        if (!check_permission('file_directories-destroy')) {
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -309,24 +320,29 @@ class FileDirectoryController extends AppBaseController
         return $input;
     }
 
-    public function fileClass(Request $request) {
-        if($request['action'] == 'Policy File'){
+    public function fileClass(Request $request)
+    {
+        if ($request['action'] == 'Policy File') {
             return redirect(route('shared.policyDocuments.index'));
-        }
-        else if($request['action'] == 'Personnel File') {
+        } else if ($request['action'] == 'Personnel File') {
             return redirect(route('shared.fileDirectories.index'));
         }
     }
 
-    public function fileSearchClass(Request $request) {
-        if($request['action'] == 'Policy File'){
+    public function fileSearchClass(Request $request)
+    {
+        if ($request['action'] == 'Policy File') {
+            if (!check_permission('policy_documents-view')) {
+                Flash::error('Permission Denied');
+                return view('shared.file_directories.search');
+            }
             return view('shared.policy_documents.search');
-        }
-        else if($request['action'] == 'Personnel File') {
+        } else if ($request['action'] == 'Personnel File') {
+            if (!check_permission('file_directories-view')) {
+                Flash::error('Permission Denied');
+                return redirect()->back();
+            }
             return view('shared.file_directories.search');
         }
     }
-
-
-
 }

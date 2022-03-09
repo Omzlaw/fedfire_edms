@@ -35,6 +35,9 @@ class EmployeeTerminationController extends AppBaseController
      */
     public function create()
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $employees = new Employee;
         $termination_types = new TerminationType;
         return view('humanresource.employee_terminations.create', compact('employees', 'termination_types'));
@@ -49,6 +52,9 @@ class EmployeeTerminationController extends AppBaseController
      */
     public function store(CreateEmployeeTerminationRequest $request)
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $input = $request->all();
 
         /** @var EmployeeTermination $employeeTermination */
@@ -70,6 +76,9 @@ class EmployeeTerminationController extends AppBaseController
      */
     public function show($id)
     {
+        if (!check_permission('employees-view')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeTermination $employeeTermination */
         $employeeTermination = EmployeeTermination::find($id);
 
@@ -91,6 +100,9 @@ class EmployeeTerminationController extends AppBaseController
      */
     public function edit($id)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeTermination $employeeTermination */
         $employeeTermination = EmployeeTermination::find($id);
 
@@ -115,6 +127,9 @@ class EmployeeTerminationController extends AppBaseController
      */
     public function update($id, UpdateEmployeeTerminationRequest $request)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeTermination $employeeTermination */
         $employeeTermination = EmployeeTermination::find($id);
 
@@ -146,6 +161,9 @@ class EmployeeTerminationController extends AppBaseController
      */
     public function destroy($id)
     {
+        if (!check_permission('employees-destroy')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeTermination $employeeTermination */
         $employeeTermination = EmployeeTermination::find($id);
 

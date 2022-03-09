@@ -35,6 +35,9 @@ class EmployeeLanguageController extends AppBaseController
      */
     public function create()
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $employees = new Employee;
         $languages = new Language;
         return view('humanresource.employee_languages.create', compact('employees', 'languages'));
@@ -49,6 +52,9 @@ class EmployeeLanguageController extends AppBaseController
      */
     public function store(CreateEmployeeLanguageRequest $request)
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $input = $request->all();
 
         /** @var EmployeeLanguage $employeeLanguage */
@@ -70,6 +76,9 @@ class EmployeeLanguageController extends AppBaseController
      */
     public function show($id)
     {
+        if (!check_permission('employees-view')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeLanguage $employeeLanguage */
         $employeeLanguage = EmployeeLanguage::find($id);
 
@@ -91,6 +100,9 @@ class EmployeeLanguageController extends AppBaseController
      */
     public function edit($id)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeLanguage $employeeLanguage */
         $employeeLanguage = EmployeeLanguage::find($id);
 
@@ -114,6 +126,9 @@ class EmployeeLanguageController extends AppBaseController
      */
     public function update($id, UpdateEmployeeLanguageRequest $request)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeLanguage $employeeLanguage */
         $employeeLanguage = EmployeeLanguage::find($id);
 
@@ -144,6 +159,9 @@ class EmployeeLanguageController extends AppBaseController
      */
     public function destroy($id)
     {
+        if (!check_permission('employees-destroy')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeLanguage $employeeLanguage */
         $employeeLanguage = EmployeeLanguage::find($id);
 

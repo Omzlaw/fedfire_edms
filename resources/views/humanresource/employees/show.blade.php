@@ -293,25 +293,36 @@ $emoluments = $data['emoluments'];
 
         function getActions(id, url) {
             return `<div class='btn-group'>
-                                <a  data-dismiss="modal"
-                                    data-toggle="modal"
-                                    data-target='#model_modal'
-                                    data-id="${id}"
-                                    data-route="${url}/${id}"
-                                    href="#" title='show'
-                                    class='btn custom-outline-primary btn-xs action-buttons'>
-                                    <i class="im im-icon-Information"></i>
-                                </a>
+                                @permission('employees-view')
 
-                                <a  data-dismiss="modal"
-                                    data-toggle="modal"
-                                    data-target='#model_modal'
-                                    data-id="${id}"
-                                    data-route="${url}/${id}/edit"
-                                    href="#" title='edit'
-                                    class='btn custom-outline-primary btn-xs action-buttons'>
-                                    <i class="im im-icon-File-Edit"></i>
-                                </a>
+                                    <a  data-dismiss="modal"
+                                        data-toggle="modal"
+                                        data-target='#model_modal'
+                                        data-id="${id}"
+                                        data-route="${url}/${id}"
+                                        href="#" title='show'
+                                        class='btn custom-outline-primary btn-xs action-buttons'>
+                                        <i class="im im-icon-Information"></i>
+                                    </a>
+
+                                @endpermission
+
+                                @permission('employees-edit')
+
+                                    <a  data-dismiss="modal"
+                                        data-toggle="modal"
+                                        data-target='#model_modal'
+                                        data-id="${id}"
+                                        data-route="${url}/${id}/edit"
+                                        href="#" title='edit'
+                                        class='btn custom-outline-primary btn-xs action-buttons'>
+                                        <i class="im im-icon-File-Edit"></i>
+                                    </a>
+
+                                @endpermission
+
+                                @permission('employees-destroy')
+
                                 <form id="delete-form-${id}" action="${url}/${id}" method="post">
                                     @csrf
                                     <input name="_method" type="hidden" value="DELETE">
@@ -322,6 +333,8 @@ $emoluments = $data['emoluments'];
                                         <i class="im im-icon-Remove"></i>
                                     </button>
                                 </form>
+
+                                @endpermission
 
                     </div>`;
         }

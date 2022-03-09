@@ -35,6 +35,9 @@ class EmployeeCertificatesController extends AppBaseController
      */
     public function create()
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $employees = new Employee;
         $certificateTypes = new CertificateType;
         return view('humanresource.employee_certificates.create', compact('employees', 'certificateTypes'));
@@ -49,6 +52,9 @@ class EmployeeCertificatesController extends AppBaseController
      */
     public function store(CreateEmployeeCertificatesRequest $request)
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $input = $request->all();
 
         /** @var EmployeeCertificates $employeeCertificates */
@@ -69,6 +75,9 @@ class EmployeeCertificatesController extends AppBaseController
      */
     public function show($id)
     {
+        if (!check_permission('employees-view')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeCertificates $employeeCertificates */
         $employeeCertificates = EmployeeCertificates::find($id);
 
@@ -90,6 +99,9 @@ class EmployeeCertificatesController extends AppBaseController
      */
     public function edit($id)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeCertificates $employeeCertificates */
         $employeeCertificates = EmployeeCertificates::find($id);
 
@@ -114,6 +126,9 @@ class EmployeeCertificatesController extends AppBaseController
      */
     public function update($id, UpdateEmployeeCertificatesRequest $request)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeCertificates $employeeCertificates */
         $employeeCertificates = EmployeeCertificates::find($id);
 
@@ -144,6 +159,9 @@ class EmployeeCertificatesController extends AppBaseController
      */
     public function destroy($id)
     {
+        if (!check_permission('employees-destroy')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeCertificates $employeeCertificates */
         $employeeCertificates = EmployeeCertificates::find($id);
 

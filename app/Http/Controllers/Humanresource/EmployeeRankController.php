@@ -35,6 +35,9 @@ class EmployeeRankController extends AppBaseController
      */
     public function create()
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $rank_types = new RankType;
         return view('humanresource.employee_ranks.create', compact('rank_types'));
     }
@@ -48,21 +51,33 @@ class EmployeeRankController extends AppBaseController
      */
     public function store(CreateEmployeeRankRequest $request)
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $input = $request->all();
         $rank = RankType::find($input['rank_type_id']);
         $employee = Employee::find($input['employee_id']);
-        
+
+        if($input['status'] == 1) {
+            $employee_ranks = $employee->ranks;
+            foreach ($employee_ranks as $rank) {
+                $rank->status = 0;
+                $rank->save();
+            }
+        }
+
         $input['type'] = $rank->type;
         $input['employee_gender'] = $employee->gender;
 
         /** @var EmployeeRank $employeeRank */
         $employeeRank = EmployeeRank::create($input);
+
         $employee['current_rank'] = EmployeeRank::orderBy('id', 'DESC')
         ->where('employee_id', '=', $employee->id)
         ->where('status', '=', 1)
         ->first()->rank_type_id;
         $employee->save();
-        
+
 
         Flash::success('Employee Rank saved successfully.');
         add_audit('create', 'Employee Rank');
@@ -80,6 +95,9 @@ class EmployeeRankController extends AppBaseController
      */
     public function show($id)
     {
+        if (!check_permission('employees-view')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeRank $employeeRank */
         $employeeRank = EmployeeRank::find($id);
 
@@ -101,6 +119,9 @@ class EmployeeRankController extends AppBaseController
      */
     public function edit($id)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeRank $employeeRank */
         $employeeRank = EmployeeRank::find($id);
 
@@ -125,6 +146,9 @@ class EmployeeRankController extends AppBaseController
      */
     public function update($id, UpdateEmployeeRankRequest $request)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeRank $employeeRank */
         $employeeRank = EmployeeRank::find($id);
 
@@ -168,6 +192,9 @@ class EmployeeRankController extends AppBaseController
      */
     public function destroy($id)
     {
+        if (!check_permission('employees-destroy')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeRank $employeeRank */
         $employeeRank = EmployeeRank::find($id);
 

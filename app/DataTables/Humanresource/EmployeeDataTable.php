@@ -25,14 +25,27 @@ class EmployeeDataTable extends DataTable
      */
     public function dataTable($query)
     {
-        $appointment_date_to = session('appointment_date_to');
-        $appointment_date_from = session('appointment_date_from');
+        $date_of_present_appointment = session('date_of_present_appointment');
+        $date_of_first_appointment = session('date_of_first_appointment');
+        $status = session('status');
 
-        if ($appointment_date_to != null && $appointment_date_from != null) {
-            $query->whereBetween('first_appointment_date', [$appointment_date_from, $appointment_date_to]);
-        } else if ($appointment_date_from != null) {
-            $query->whereBetween('first_appointment_date', [$appointment_date_from, date("Y-m-d")]);
+        if ($date_of_present_appointment != null) {
+            $query->where('date_of_present_appointment', $date_of_present_appointment);
         }
+
+        if ($date_of_first_appointment != null) {
+            $query->where('date_of_first_appointment', $date_of_first_appointment);
+        }
+
+        if ($date_of_present_appointment != null && $date_of_first_appointment != null) {
+            $query->where('date_of_first_appointment', $date_of_first_appointment)
+                ->where('date_of_present_appointment', $date_of_present_appointment);
+        }
+
+        if($status != null) {
+            $query->where('status', $status);
+        }
+
 
 
         $dataTable = new EloquentDataTable($query);
@@ -47,66 +60,20 @@ class EmployeeDataTable extends DataTable
             ->addColumn('sex', function ($row) {
                 return get_enum_value('enum_gender', $row->gender);
             })
-            // ->addColumn('nationality', function ($row) {
-            //     return $row->country->title;
-            // })
-            // ->addColumn('residential_address', function ($row) {
-            //     $addressModel = EmployeeAddress::where('employee_id', '=', $row->id)
-            //         ->where('address_type', '=', 1)
-            //         ->where('status', '=',  1)->first();
-            //     if (isset($addressModel)) {
-            //         return $addressModel->address;
-            //     }
-            //     return '';
-            // })
-            // ->addColumn('permanent_home_address', function ($row) {
-            //     $address_model = EmployeeAddress::where('employee_id', '=', $row->id)
-            //         ->where('address_type', '=', 0)
-            //         ->where('status', '=',  1)->first();
-            //     if (isset($address_model)) {
-            //         return $address_model->address;
-            //     }
-            //     return '';
-            // })
-            // ->addColumn('next_of_kin', function ($row) {
-            //     if (isset($row->nextOfKins->first()->name)) {
-            //         return $row->nextOfKins->first()->name;
-            //     }
-            //     return '';
-            // })
-            // ->addColumn('NOK_phone', function ($row) {
-            //     if (isset($row->nextOfKins->first()->phone)) {
-            //         return $row->nextOfKins->first()->phone;
-            //     }
-            //     return '';
-            // })
-            // ->addColumn('marital_status', function ($row) {
-            //     return get_enum_value('enum_marital_status', $row->marital_status_id);
-            // })
             ->addColumn('rank', function ($row) {
-                $rank = EmployeeRank::where('employee_id', '=', $row->id)
+                $rank = EmployeeRank::orderBy('id', 'desc')->where('employee_id', '=', $row->id)
                     ->where('status', '=', 1)->first();
-                if (isset($rank)) {
+                if (isset($rank->rankType)) {
                     return $rank->rankType->title;
                 }
                 return '';
             })
-            // ->addColumn('religion', function ($row) {
-
-            //     return get_enum_value('enum_religion', $row->religion);
-            // })
             ->addColumn('state_of_origin', function ($row) {
                 if (isset($row->stateOfOrigin->title)) {
                     return $row->stateOfOrigin->title;
                 }
                 return '';
             })
-            // ->addColumn('type_of_appointment', function ($row) {
-            //     if (isset($row->type_of_appointment)) {
-            //         return get_enum_value('enum_type_of_appointment', $row->type_of_appointment);
-            //     }
-            //     return '';
-            // })
             ->addColumn('gl', function ($row) {
                 if (isset($row->gl)) {
                     return get_enum_value('enum_grade_level', $row->gl);
@@ -127,20 +94,6 @@ class EmployeeDataTable extends DataTable
                 }
                 return '';
             })
-            // ->addColumn('year', function ($row) {
-            //     $education = EmployeeEducation::where('employee_id', '=', $row->id)
-            //         ->where('status', '=', 1)->first();
-            //     if (isset($education)) {
-            //         return $education->to_date;
-            //     }
-            //     return '';
-            // })
-            // ->addColumn('awarding_institution', function ($row) {
-            //     if (isset($row->educations->first()->school_name)) {
-            //         return $row->educations->first()->school_name;
-            //     }
-            //     return '';
-            // })
             ->addColumn('additional_qualification', function ($row) {
                 $education = EmployeeEducation::where('employee_id', '=', $row->id)
                     ->where('status', '=', 1)->skip(1)->first();
@@ -149,20 +102,6 @@ class EmployeeDataTable extends DataTable
                 }
                 return '';
             })
-            // ->addColumn('year ', function ($row) {
-            //     $education = EmployeeEducation::where('employee_id', '=', $row->id)
-            //         ->where('status', '=', 1)->skip(1)->first();
-            //     if (isset($education)) {
-            //         return $education->to_date;
-            //     }
-            //     return '';
-            // })
-            // ->addColumn('awarding_institution ', function ($row) {
-            //     if (isset($row->educations->skip(1)->first()->school_name)) {
-            //         return $row->educations->skip(1)->first()->school_name;
-            //     }
-            //     return '';
-            // })
             ->addColumn('present_department', function ($row) {
                 $service = EmployeeService::where('employee_id', '=', $row->id)
                     ->where('status', '=', 1)->first();
@@ -180,15 +119,6 @@ class EmployeeDataTable extends DataTable
                 }
                 return '';
             })
-            // ->addColumn('present_station', function ($row) {
-
-            //     $service = EmployeeService::where('employee_id', '=', $row->id)
-            //         ->where('status', '=', 1)->first();
-            //     if (isset($service)) {
-            //         return $service->present_station;
-            //     }
-            //     return '';
-            // })
             ->addColumn('state', function ($row) {
                 $service = EmployeeService::where('employee_id', '=', $row->id)
                     ->where('status', '=', 1)->first();
@@ -201,19 +131,10 @@ class EmployeeDataTable extends DataTable
                 $service = EmployeeService::where('employee_id', '=', $row->id)
                     ->where('status', '=', 1)->first();
                 if (isset($service)) {
-                    // return get_enum_value('enum_zone', $service->zone);
                     return $service->zone;
                 }
                 return '';
             })
-            // ->addColumn('region', function ($row) {
-            //     $service = EmployeeService::where('employee_id', '=', $row->id)
-            //         ->where('status', '=', 1)->first();
-            //     if (isset($service)) {
-            //         return $service->regionRelation->title;
-            //     }
-            //     return '';
-            // })
             ->addColumn('profile_picture', 'humanresource.employees.profile_picture')
             ->addColumn('action', 'humanresource.employees.datatables_actions')
             ->editColumn('date_of_birth', function ($row) {
@@ -232,26 +153,25 @@ class EmployeeDataTable extends DataTable
                 return $row->date_of_birth ? \Carbon\Carbon::parse($row->date_of_birth)->addYears(60)->year : null;
             })
             ->addColumn('no_of_years_remained_by_dob', function ($row) {
-                if($row->date_of_birth){
+                if ($row->date_of_birth) {
                     $start_date = \Carbon\Carbon::now();
                     $end_date = \Carbon\Carbon::parse($row->date_of_birth)->addYears(60);
-                    if($start_date > $end_date){
+                    if ($start_date > $end_date) {
                         return 0;
                     }
                     $diff = $start_date->diffInYears($end_date);
                     return $diff  + 1;
                 }
                 return null;
-
             })
             ->addColumn('retirement_date_by_dofa', function ($row) {
                 return $row->date_of_first_appointment ? \Carbon\Carbon::parse($row->date_of_first_appointment)->addYears(35)->format('d/m/Y') : null;
             })
             ->addColumn('no_of_years_remained_by_dofa', function ($row) {
-                if($row->date_of_first_appointment){
+                if ($row->date_of_first_appointment) {
                     $start_date = \Carbon\Carbon::now();
                     $end_date = \Carbon\Carbon::parse($row->date_of_first_appointment)->addYears(35);
-                    if($start_date > $end_date){
+                    if ($start_date > $end_date) {
                         return 0;
                     }
                     $diff = $start_date->diffInYears($end_date);
@@ -336,17 +256,9 @@ class EmployeeDataTable extends DataTable
             ->parameters([
                 'dom'       => 'Blfrtip',
                 'stateSave' => false,
-                'order'     => [[0, 'desc']],
+                'order'     => [[11, 'desc']],
                 'filter' => true,
-                // 'stateSave' => true,
                 'buttons'   => [
-                    // 'colvis',
-                    // ['extend' => 'create', 'className' => 'btn btn-default btn-sm no-corner',],
-                    // ['extend' => 'excel', 'className' => 'btn btn-default btn-sm no-corner',],
-                    // ['extend' => 'print', 'className' => 'btn btn-default btn-sm no-corner', 'exportOptions' => ['columns' => 'visible'],],
-                    // ['extend' => 'reset', 'className' => 'btn btn-default btn-sm no-corner',],
-                    // ['extend' => 'reload', 'className' => 'btn btn-default btn-sm no-corner',],
-                    // ['extend' => 'colvis', 'className' => 'btn btn-default btn-sm no-corner',],
                 ],
             ]);
     }
@@ -362,7 +274,7 @@ class EmployeeDataTable extends DataTable
             'first_name' => ['visible' => false],
             'middle_name' => ['visible' => false],
             'last_name' => ['visible' => false],
-            'DT_RowIndex' => ['title' => 'S/N'],
+            'DT_RowIndex' => ['title' => 'S/N', 'searchable' => false],
             'select',
             'action',
             'profile_picture',

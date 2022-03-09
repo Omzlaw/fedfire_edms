@@ -278,7 +278,7 @@ class Employee extends Model
      **/
     public function fileDirectories()
     {
-        return $this->hasMany(FileDirectory::class);
+        return $this->hasMany(FileDirectory::class)->orderBy('id', 'DESC');
     }
 
     public function actionSheets()
@@ -288,12 +288,12 @@ class Employee extends Model
 
     public function addresses()
     {
-        return $this->hasMany(EmployeeAddress::class);
+        return $this->hasMany(EmployeeAddress::class)->orderBy('id', 'DESC');
     }
 
     public function birthParticulars()
     {
-       return $this->hasMany(EmployeeBirthParticular::class);
+       return $this->hasMany(EmployeeBirthParticular::class)->orderBy('id', 'DESC');
 
     }
 
@@ -326,71 +326,71 @@ class Employee extends Model
 
     public function ranks()
     {
-        return $this->hasMany(EmployeeRank::class);
+        return $this->hasMany(EmployeeRank::class)->orderBy('id', 'DESC')->orderBy('status', 'DESC');
     }
 
     public function services()
     {
-        return $this->hasMany(EmployeeService::class);
+        return $this->hasMany(EmployeeService::class)->orderBy('id', 'DESC');
     }
 
     public function forceServices()
     {
-        return $this->hasMany(EmployeeForceService::class);
+        return $this->hasMany(EmployeeForceService::class)->orderBy('id', 'DESC');
     }
 
     public function foreignTours()
     {
-        return $this->hasMany(EmployeeForeignTours::class);
+        return $this->hasMany(EmployeeForeignTours::class)->orderBy('id', 'DESC');
     }
 
     public function gratuities()
     {
-        return $this->hasMany(EmployeeGratuity::class);
+        return $this->hasMany(EmployeeGratuity::class)->orderBy('id', 'DESC');
     }
 
     public function languages()
     {
-        return $this->hasMany(EmployeeLanguage::class);
+        return $this->hasMany(EmployeeLanguage::class)->orderBy('id', 'DESC');
     }
 
     public function localLeaves()
     {
-        return $this->hasMany(EmployeeLocalLeave::class);
+        return $this->hasMany(EmployeeLocalLeave::class)->orderBy('id', 'DESC');
     }
 
     public function nextOfKins()
     {
-        return $this->hasMany(EmployeeNextOfKin::class);
+        return $this->hasMany(EmployeeNextOfKin::class)->orderBy('id', 'DESC');
     }
 
     public function publicServices()
     {
-        return $this->hasMany(EmployeePublicService::class);
+        return $this->hasMany(EmployeePublicService::class)->orderBy('id', 'DESC');
     }
 
     public function qualifications()
     {
-        return $this->hasMany(EmployeeQualification::class);
+        return $this->hasMany(EmployeeQualification::class)->orderBy('id', 'DESC');
     }
 
     public function recordTrackers()
     {
-        return $this->hasMany(EmployeeRecordTracker::class);
+        return $this->hasMany(EmployeeRecordTracker::class)->orderBy('id', 'DESC');
     }
 
     public function terminations()
     {
-        return $this->hasMany(EmployeeTermination::class);
+        return $this->hasMany(EmployeeTermination::class)->orderBy('id', 'DESC');
     }
 
     public function spouse()
     {
-        return $this->hasMany(EmployeeWife::class);
+        return $this->hasMany(EmployeeWife::class)->orderBy('id', 'DESC');
     }
 
     public function serviceRecords()
     {
-        return $this->hasMany(EmployeeServiceRecord::class);
+        return $this->hasMany(EmployeeServiceRecord::class)->orderBy('id', 'DESC');
     }
 }

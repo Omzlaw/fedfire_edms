@@ -41,7 +41,7 @@ class EmployeeController extends AppBaseController
     public function index(EmployeeDataTable $employeeDataTable)
     {
 
-        if (!check_permission('employees-index')) {
+        if (!check_permission('employees-view')) {
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -71,17 +71,19 @@ class EmployeeController extends AppBaseController
             session()->forget('qualification');
             session()->forget('state');
             session()->forget('localGovtArea');
-            session()->forget('appointment_date_to');
-            session()->forget('appointment_date_from');
+            session()->forget('date_of_present_appointment');
+            session()->forget('date_of_first_appointment');
+            session()->forget('status');
         } else {
             $rank = $request['rank'];
             $qualification = $request['qualification'];
             $state = $request['state'];
             $localGovtArea = $request['localGovtArea'];
-            $appointment_date_to = $request['appointment_date_to'];
-            $appointment_date_from = $request['appointment_date_from'];
+            $date_of_present_appointment = $request['date_of_present_appointment'];
+            $date_of_first_appointment = $request['date_of_first_appointment'];
+            $status = $request['status'];
 
-            session(['rank' => $rank, 'qualification' => $qualification, 'state' => $state, 'localGovtArea' => $localGovtArea, 'appointment_date_to' => $appointment_date_to, 'appointment_date_from' => $appointment_date_from]);
+            session(['rank' => $rank, 'qualification' => $qualification, 'state' => $state, 'localGovtArea' => $localGovtArea, 'date_of_present_appointment' => $date_of_present_appointment, 'date_of_first_appointment' => $date_of_first_appointment, 'status' => $status]);
         }
 
         return redirect(route('humanresource.employees.index'));
@@ -125,7 +127,7 @@ class EmployeeController extends AppBaseController
     public function store(CreateEmployeeRequest $request)
     {
 
-        if (!check_permission('employees-store')) {
+        if (!check_permission('employees-create')) {
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -160,7 +162,7 @@ class EmployeeController extends AppBaseController
      */
     public function show(Request $request, $id)
     {
-        if (!check_permission('employees-show')) {
+        if (!check_permission('employees-view')) {
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -419,7 +421,7 @@ class EmployeeController extends AppBaseController
      */
     public function update($id, UpdateEmployeeRequest $request)
     {
-        if (!check_permission('employees-update')) {
+        if (!check_permission('employees-edit')) {
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -545,6 +547,33 @@ class EmployeeController extends AppBaseController
             $employee_rank->save();
         }
 
+        if ($employee->status == 0) {
+            $files = $employee->fileDirectories;
+            $locaLeaves = $employee->localLeaves;
+            $foreignTours = $employee->foreignTours;
+            $ranks = $employee->ranks;
+
+            foreach ($files as $file) {
+                $file->status = 0;
+                $file->save();
+            }
+
+            foreach ($locaLeaves as $locaLeave) {
+                $locaLeave->status = 0;
+                $locaLeave->save();
+            }
+
+            foreach ($foreignTours as $foreignTour) {
+                $foreignTour->status = 0;
+                $foreignTour->save();
+            }
+
+            foreach ($ranks as $rank) {
+                $rank->status = 0;
+                $rank->save();
+            }
+        }
+
         if ($changed_values != []) {
             add_employee_audit($description . ' on ' . date("F jS, Y") . '.');
         }
@@ -618,6 +647,94 @@ class EmployeeController extends AppBaseController
         add_audit('delete', 'Many Employees');
 
         Flash::success('Employees deleted successfully.');
+
+        return redirect(route('humanresource.employees.index'));
+    }
+
+    public function editManyView(Request $request) {
+
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+            return redirect()->back();
+        }
+
+        $ids = $request['selected_employees_edit'];
+        $rank_types = new RankType;
+
+        return view('humanresource.employees.multiple_edit', compact('ids', 'rank_types'));
+
+    }
+
+    public function editMany(Request $request)
+    {
+
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+            return redirect()->back();
+        }
+
+        $input = $request->all();
+        $ids = $input['ids'];
+        $ids_array = explode(',', $ids);
+        $status = $input['status'];
+        $rank = $input['rank_type_id'];
+
+        $rank_type = RankType::find($rank);
+
+        foreach ($ids_array as $id) {
+            /** @var Employee $employee */
+            $employee = Employee::find($id);
+
+            if (empty($employee)) {
+                continue;
+            }
+
+            if($rank != null) {
+                $employee_ranks = $employee->ranks;
+                foreach ($employee_ranks as $rank) {
+                    $rank->status = 0;
+                    $rank->save();
+                }
+                EmployeeRank::create([
+                    'employee_id' => $id,
+                    'status' => 1,
+                    'rank_type_id' => $rank,
+                    'type' => $rank_type->type,
+                    'employee_gender' => $employee->gender
+                ]);
+            }
+
+            if($status == 0) {
+                $files = $employee->fileDirectories;
+                $locaLeaves = $employee->localLeaves;
+                $foreignTours = $employee->foreignTours;
+                $ranks = $employee->ranks;
+                foreach ($files as $file) {
+                    $file->status = 0;
+                    $file->save();
+                }
+
+                foreach ($locaLeaves as $locaLeave) {
+                    $locaLeave->status = 0;
+                    $locaLeave->save();
+                }
+
+                foreach ($foreignTours as $foreignTour) {
+                    $foreignTour->status = 0;
+                    $foreignTour->save();
+                }
+
+                foreach ($ranks as $rank) {
+                    $rank->status = 0;
+                    $rank->save();
+                }
+            }
+            $employee->save();
+        }
+
+        add_audit('delete', 'Many Employees');
+
+        Flash::success('Employees edited successfully.');
 
         return redirect(route('humanresource.employees.index'));
     }

@@ -108,12 +108,16 @@
                 </div>
                 <div class="row w-50 mt-10">
                     <div class="col-lg-6 col-md-6 col-sm-6">
-                        {!! Form::label('appointment_date_from', 'Appointment Date (From):', ['class' => 'control-label']) !!}
-                        {!! Form::date('appointment_date_from', session('appointment_date_from'), ['id' => 'from', 'class' => 'form-control']) !!}
+                        {!! Form::label('date_of_first_appointment', 'Date of First Appointment:', ['class' => 'control-label']) !!}
+                        {!! Form::date('date_of_first_appointment', session('date_of_first_appointment'), ['id' => 'from', 'class' => 'form-control']) !!}
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
-                        {!! Form::label('appointment_date_to', 'Appointment Date (To):', ['class' => 'control-label']) !!}
-                        {!! Form::date('appointment_date_to', session('appointment_date_to'), ['id' => 'to', 'class' => 'form-control']) !!}
+                        {!! Form::label('date_of_present_appointment', 'Date of Present Appointment:', ['class' => 'control-label']) !!}
+                        {!! Form::date('date_of_present_appointment', session('date_of_present_appointment'), ['id' => 'to', 'class' => 'form-control']) !!}
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 mt-3">
+                        {!! Form::label('status', 'Employment Status:', ['class' => 'control-label']) !!}
+                        {!! Form::select('status', enum_employee_status(), session('status'), ['class' => 'form-control']) !!}
                     </div>
                 </div>
                 <div class="row w-75 mb-10">
@@ -131,22 +135,36 @@
                         <input id="doPrint" type="button" value="Print" class="btn custom-outline-primary mt-10">
                     </div>
                     {!! Form::close() !!}
+                    @permission('employees-destroy')
+                        <div class="col-12">
+                            {!! Form::open(['route' => ['employeeMultipleDelete'], 'id' => 'multipleDelete', 'class' => 'form-horizontal']) !!}
+
+                            <input id="selectAll" type="button" value="Select All" class="btn custom-outline-primary mt-10"
+                                onclick="SelectAllEmployees();">
+
+                            <input id="selectNone" type="button" value="Select None" class="btn custom-outline-primary mt-10"
+                                onclick="deSelectAllEmployees();">
+
+                                {!! Form::hidden('selected_employees', null, ['id' => 'selected_employees']) !!}
+
+
+                            {!! Form::submit('Delete Multiple', ['class' => 'btn btn-outline-danger mr-10 mt-10']) !!}
+
+                            {!! Form::close() !!}
+                        </div>
+                    @endpermission
+
+                    @permission('employees-edit')
                     <div class="col-12">
-                        {!! Form::open(['route' => ['employeeMultipleDelete'], 'id' => 'multipleDelete', 'class' => 'form-horizontal']) !!}
+                        {!! Form::open(['route' => ['employeeMultipleEditView'], 'id' => 'multipleEdit', 'class' => 'form-horizontal']) !!}
 
-                        <input id="selectAll" type="button" value="Select All" class="btn custom-outline-primary mt-10"
-                            onclick="SelectAllEmployees();">
+                        {!! Form::hidden('selected_employees_edit', null, ['id' => 'selected_employees_edit']) !!}
 
-                        <input id="selectNone" type="button" value="Select None" class="btn custom-outline-primary mt-10"
-                            onclick="deSelectAllEmployees();">
-
-                        {!! Form::hidden('selected_employees', null, ['id' => 'selected_employees']) !!}
-
-
-                        {!! Form::submit('Delete Multiple', ['class' => 'btn btn-outline-danger mr-10 mt-10']) !!}
+                        {!! Form::submit('Edit Multiple', ['class' => 'btn custom-outline-primary mr-10 mt-10']) !!}
 
                         {!! Form::close() !!}
                     </div>
+                    @endpermission
 
                 </div>
                 <div class="table-responsive">
@@ -188,16 +206,30 @@
             });
         });
 
-        $('#localGovtAreaSelector').prop('disabled', 'disabled');
-        let fromDate = $('#from');
-        let toDate = $('#to');
-
-        if (fromDate.val() == '') {
-            toDate.prop('disabled', 'disabled');
-        }
-        fromDate.change(function() {
-            toDate.prop('disabled', false);
+        let multipleEditform = document.getElementById("multipleEdit");
+        multipleEditform.addEventListener("submit", function(event) {
+            event.preventDefault();
+            let ids = [];
+            $('.checkbox').each(function() {
+                if ($(this).prop("checked")) {
+                    ids.push($(this).data('id'));
+                }
+                console.log(ids);
+                $('#selected_employees_edit').val(ids);
+                multipleEditform.submit();
+            });
         });
+
+        $('#localGovtAreaSelector').prop('disabled', 'disabled');
+        // let fromDate = $('#from');
+        // let toDate = $('#to');
+
+        // if (fromDate.val() == '') {
+        //     toDate.prop('disabled', 'disabled');
+        // }
+        // fromDate.change(function() {
+        //     toDate.prop('disabled', false);
+        // });
 
         let table = $('#table').DataTable();
 

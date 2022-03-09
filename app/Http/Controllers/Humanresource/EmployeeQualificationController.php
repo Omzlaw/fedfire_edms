@@ -35,6 +35,9 @@ class EmployeeQualificationController extends AppBaseController
      */
     public function create()
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $employees = new Employee;
         $qualificationTypes = new QualificationType;
         return view('humanresource.employee_qualifications.create', compact('employees', 'qualificationTypes'));
@@ -49,6 +52,9 @@ class EmployeeQualificationController extends AppBaseController
      */
     public function store(CreateEmployeeQualificationRequest $request)
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $input = $request->all();
 
         /** @var EmployeeQualification $employeeQualification */
@@ -71,6 +77,9 @@ class EmployeeQualificationController extends AppBaseController
      */
     public function show($id)
     {
+        if (!check_permission('employees-view')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeQualification $employeeQualification */
         $employeeQualification = EmployeeQualification::find($id);
 
@@ -92,6 +101,9 @@ class EmployeeQualificationController extends AppBaseController
      */
     public function edit($id)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeQualification $employeeQualification */
         $employeeQualification = EmployeeQualification::find($id);
 
@@ -115,6 +127,9 @@ class EmployeeQualificationController extends AppBaseController
      */
     public function update($id, UpdateEmployeeQualificationRequest $request)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeQualification $employeeQualification */
         $employeeQualification = EmployeeQualification::find($id);
 
@@ -147,6 +162,9 @@ class EmployeeQualificationController extends AppBaseController
      */
     public function destroy($id)
     {
+        if (!check_permission('employees-destroy')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeQualification $employeeQualification */
         $employeeQualification = EmployeeQualification::find($id);
 

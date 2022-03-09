@@ -33,6 +33,9 @@ class EmployeeServiceRecordController extends AppBaseController
      */
     public function create()
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         return view('humanresource.employee_service_records.create');
     }
 
@@ -45,6 +48,9 @@ class EmployeeServiceRecordController extends AppBaseController
      */
     public function store(CreateEmployeeServiceRecordRequest $request)
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $input = $request->all();
 
         /** @var EmployeeServiceRecord $employeeServiceRecord */
@@ -66,6 +72,9 @@ class EmployeeServiceRecordController extends AppBaseController
      */
     public function show($id)
     {
+        if (!check_permission('employees-view')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeServiceRecord $employeeServiceRecord */
         $employeeServiceRecord = EmployeeServiceRecord::find($id);
 
@@ -87,6 +96,9 @@ class EmployeeServiceRecordController extends AppBaseController
      */
     public function edit($id)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeServiceRecord $employeeServiceRecord */
         $employeeServiceRecord = EmployeeServiceRecord::find($id);
 
@@ -109,6 +121,9 @@ class EmployeeServiceRecordController extends AppBaseController
      */
     public function update($id, UpdateEmployeeServiceRecordRequest $request)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeServiceRecord $employeeServiceRecord */
         $employeeServiceRecord = EmployeeServiceRecord::find($id);
 
@@ -139,6 +154,9 @@ class EmployeeServiceRecordController extends AppBaseController
      */
     public function destroy($id)
     {
+        if (!check_permission('employees-destroy')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeServiceRecord $employeeServiceRecord */
         $employeeServiceRecord = EmployeeServiceRecord::find($id);
 

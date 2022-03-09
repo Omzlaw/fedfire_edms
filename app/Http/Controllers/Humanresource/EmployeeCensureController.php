@@ -34,6 +34,9 @@ class EmployeeCensureController extends AppBaseController
      */
     public function create()
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $employees = new Employee;
         return view('humanresource.employee_censures.create', compact('employees'));
     }
@@ -47,6 +50,9 @@ class EmployeeCensureController extends AppBaseController
      */
     public function store(CreateEmployeeCensureRequest $request)
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $input = $request->all();
 
         /** @var EmployeeCensure $employeeCensure */
@@ -68,6 +74,9 @@ class EmployeeCensureController extends AppBaseController
      */
     public function show($id)
     {
+        if (!check_permission('employees-view')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeCensure $employeeCensure */
         $employeeCensure = EmployeeCensure::find($id);
 
@@ -89,6 +98,9 @@ class EmployeeCensureController extends AppBaseController
      */
     public function edit($id)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeCensure $employeeCensure */
         $employeeCensure = EmployeeCensure::find($id);
 
@@ -111,6 +123,9 @@ class EmployeeCensureController extends AppBaseController
      */
     public function update($id, UpdateEmployeeCensureRequest $request)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeCensure $employeeCensure */
         $employeeCensure = EmployeeCensure::find($id);
 
@@ -142,6 +157,9 @@ class EmployeeCensureController extends AppBaseController
      */
     public function destroy($id)
     {
+        if (!check_permission('employees-destroy')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeCensure $employeeCensure */
         $employeeCensure = EmployeeCensure::find($id);
 

@@ -35,6 +35,9 @@ class EmployeeNextOfKinController extends AppBaseController
      */
     public function create()
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $employees = new Employee;
         $relationship = new Relationship;
         $employeeNextOfKinForCurrentEmployeeCount =  EmployeeNextOfKin::where('employee_id', '=', session('employee_id'))->count();
@@ -56,6 +59,9 @@ class EmployeeNextOfKinController extends AppBaseController
      */
     public function store(CreateEmployeeNextOfKinRequest $request)
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $employeeNextOfKinForCurrentEmployeeCount =  EmployeeNextOfKin::where('employee_id', '=', session('employee_id'))->count();
         if($employeeNextOfKinForCurrentEmployeeCount == 2){
             Flash::success('Only two next of kin details are allowed.');
@@ -66,7 +72,7 @@ class EmployeeNextOfKinController extends AppBaseController
 
             /** @var EmployeeNextOfKin $employeeNextOfKin */
             $employeeNextOfKin = EmployeeNextOfKin::create($input);
-    
+
             Flash::success('Employee Next Of Kin saved successfully.');
             add_audit('create', 'Employee Next of Kin');
             close_modal_refresh();
@@ -84,6 +90,9 @@ class EmployeeNextOfKinController extends AppBaseController
      */
     public function show($id)
     {
+        if (!check_permission('employees-view')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeNextOfKin $employeeNextOfKin */
         $employeeNextOfKin = EmployeeNextOfKin::find($id);
 
@@ -105,6 +114,9 @@ class EmployeeNextOfKinController extends AppBaseController
      */
     public function edit($id)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeNextOfKin $employeeNextOfKin */
         $employeeNextOfKin = EmployeeNextOfKin::find($id);
 
@@ -128,6 +140,9 @@ class EmployeeNextOfKinController extends AppBaseController
      */
     public function update($id, UpdateEmployeeNextOfKinRequest $request)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeNextOfKin $employeeNextOfKin */
         $employeeNextOfKin = EmployeeNextOfKin::find($id);
 
@@ -159,6 +174,9 @@ class EmployeeNextOfKinController extends AppBaseController
      */
     public function destroy($id)
     {
+        if (!check_permission('employees-destroy')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeNextOfKin $employeeNextOfKin */
         $employeeNextOfKin = EmployeeNextOfKin::find($id);
 

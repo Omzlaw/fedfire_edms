@@ -44,7 +44,7 @@
                 <div class="row">
                     {!! Form::label('status', 'Status:', ['class' => 'col-md-3 col-lg-3 col-12 control-label']) !!}
                     <div class="col-md-9 col-lg-9 col-12">
-                        {!! Form::select('status', enum_status(), null, ['class' => 'form-control']) !!}
+                        {!! Form::select('status', enum_file_status(), null, ['class' => 'form-control']) !!}
                     </div>
                 </div>
             </div>

@@ -37,6 +37,9 @@ class EmployeeEducationController extends AppBaseController
      */
     public function create()
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $employees = new Employee;
         $certificate_types = new CertificateType;
         $qualification_types = new QualificationType;
@@ -53,6 +56,9 @@ class EmployeeEducationController extends AppBaseController
      */
     public function store(CreateEmployeeEducationRequest $request)
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $input = $request->all();
 
         /** @var EmployeeEducation $employeeEducation */
@@ -62,7 +68,7 @@ class EmployeeEducationController extends AppBaseController
         ->where('employee_id', '=', $employee->id)
         ->where('status', '=', 1)
         ->first()->qualification;
-        
+
         $employee['additional_qualification'] = EmployeeEducation::orderBy('id', 'DESC')
         ->where('employee_id', '=', $employee->id)
         ->where('status', '=', 1)
@@ -87,6 +93,9 @@ class EmployeeEducationController extends AppBaseController
      */
     public function show($id)
     {
+        if (!check_permission('employees-view')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeEducation $employeeEducation */
         $employeeEducation = EmployeeEducation::find($id);
 
@@ -108,6 +117,9 @@ class EmployeeEducationController extends AppBaseController
      */
     public function edit($id)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeEducation $employeeEducation */
         $employeeEducation = EmployeeEducation::find($id);
 
@@ -133,6 +145,9 @@ class EmployeeEducationController extends AppBaseController
      */
     public function update($id, UpdateEmployeeEducationRequest $request)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeEducation $employeeEducation */
         $employeeEducation = EmployeeEducation::find($id);
 
@@ -177,6 +192,9 @@ class EmployeeEducationController extends AppBaseController
      */
     public function destroy($id)
     {
+        if (!check_permission('employees-destroy')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeEducation $employeeEducation */
         $employeeEducation = EmployeeEducation::find($id);
 

@@ -26,7 +26,7 @@ class PolicyDocumentController extends AppBaseController
      */
     public function index(PolicyDocumentDataTable $policyDocumentDataTable)
     {
-        if(!check_permission('policy_documents-index')){
+        if(!check_permission('policy_documents-view')){
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -57,7 +57,7 @@ class PolicyDocumentController extends AppBaseController
     public function store(CreatePolicyDocumentRequest $request)
     {
 
-        if(!check_permission('policy_documents-store')){
+        if(!check_permission('policy_documents-create')){
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -82,7 +82,7 @@ class PolicyDocumentController extends AppBaseController
      */
     public function show($id)
     {
-        if(!check_permission('policy_documents-show')){
+        if(!check_permission('policy_documents-view')){
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -134,7 +134,7 @@ class PolicyDocumentController extends AppBaseController
     public function update($id, UpdatePolicyDocumentRequest $request)
     {
 
-        if(!check_permission('policy_documents-update')){
+        if(!check_permission('policy_documents-edit')){
             Flash::error('Permission Denied');
             return redirect()->back();
         }
@@ -222,7 +222,7 @@ class PolicyDocumentController extends AppBaseController
 
     public function search(Request $request)
     {
-        if(!check_permission('policy_documents-search')){
+        if(!check_permission('policy_documents-view')){
             Flash::error('Permission Denied');
             return redirect()->back();
         }

@@ -42,7 +42,7 @@ class FileDirectoryDataTable extends DataTable
      */
     public function query(FileDirectory $model)
     {
-        return $model->newQuery();
+        return $model->where('status', '=', 1)->newQuery();
     }
 
     /**

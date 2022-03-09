@@ -33,6 +33,9 @@ class EmployeeBirthParticularController extends AppBaseController
      */
     public function create()
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         return view('humanresource.employee_birth_particulars.create');
     }
 
@@ -45,6 +48,9 @@ class EmployeeBirthParticularController extends AppBaseController
      */
     public function store(CreateEmployeeBirthParticularRequest $request)
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $input = $request->all();
 
         /** @var EmployeeBirthParticular $employeeBirthParticular */
@@ -66,6 +72,9 @@ class EmployeeBirthParticularController extends AppBaseController
      */
     public function show($id)
     {
+        if (!check_permission('employees-view')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeBirthParticular $employeeBirthParticular */
         $employeeBirthParticular = EmployeeBirthParticular::find($id);
 
@@ -87,6 +96,9 @@ class EmployeeBirthParticularController extends AppBaseController
      */
     public function edit($id)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeBirthParticular $employeeBirthParticular */
         $employeeBirthParticular = EmployeeBirthParticular::find($id);
 
@@ -109,6 +121,9 @@ class EmployeeBirthParticularController extends AppBaseController
      */
     public function update($id, UpdateEmployeeBirthParticularRequest $request)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeBirthParticular $employeeBirthParticular */
         $employeeBirthParticular = EmployeeBirthParticular::find($id);
 
@@ -140,6 +155,9 @@ class EmployeeBirthParticularController extends AppBaseController
      */
     public function destroy($id)
     {
+        if (!check_permission('employees-destroy')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeBirthParticular $employeeBirthParticular */
         $employeeBirthParticular = EmployeeBirthParticular::find($id);
 

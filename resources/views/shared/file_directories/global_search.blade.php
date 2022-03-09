@@ -38,7 +38,7 @@
         let employee = window.location.protocol + "//" + window.location.host + "/humanresource/employees/" + id;
 
         return `<div class='btn-group'>
-                                <a 
+                                <a
                                     href="${employee}" title='view'
                                     class='btn custom-outline-primary btn-xs action-buttons'>
                                     <i class="im im-icon-Information"></i>
@@ -65,8 +65,7 @@
 
             columns.push({
                 data: columnNames[i],
-                title: firstLetterUpper(columnNames[i].replace('_', ' ').replace(
-                    'id', '').replace('_', ''))
+                title: firstLetterUpper(columnNames[i].replace('_', ' ').replace('_', ''))
             });
 
         }

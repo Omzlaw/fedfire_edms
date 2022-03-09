@@ -34,6 +34,9 @@ class EmployeeActionSheetController extends AppBaseController
      */
     public function create()
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $employees = new Employee;
         return view('humanresource.employee_action_sheets.create', compact('employees'));
     }
@@ -47,6 +50,9 @@ class EmployeeActionSheetController extends AppBaseController
      */
     public function store(CreateEmployeeActionSheetRequest $request)
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $input = $request->all();
 
         /** @var EmployeeActionSheet $employeeActionSheet */
@@ -67,6 +73,9 @@ class EmployeeActionSheetController extends AppBaseController
      */
     public function show($id)
     {
+        if (!check_permission('employees-view')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeActionSheet $employeeActionSheet */
         $employeeActionSheet = EmployeeActionSheet::find($id);
 
@@ -88,6 +97,9 @@ class EmployeeActionSheetController extends AppBaseController
      */
     public function edit($id)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeActionSheet $employeeActionSheet */
         $employeeActionSheet = EmployeeActionSheet::find($id);
 
@@ -110,6 +122,9 @@ class EmployeeActionSheetController extends AppBaseController
      */
     public function update($id, UpdateEmployeeActionSheetRequest $request)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeActionSheet $employeeActionSheet */
         $employeeActionSheet = EmployeeActionSheet::find($id);
 
@@ -141,6 +156,9 @@ class EmployeeActionSheetController extends AppBaseController
      */
     public function destroy($id)
     {
+        if (!check_permission('employees-destroy')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeActionSheet $employeeActionSheet */
         $employeeActionSheet = EmployeeActionSheet::find($id);
 

@@ -35,6 +35,9 @@ class EmployeeServiceController extends AppBaseController
      */
     public function create()
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $states = new State;
         $geo_political_zones = new GeoPoliticalZone;
         return view('humanresource.employee_services.create', compact('states', 'geo_political_zones'));
@@ -49,6 +52,9 @@ class EmployeeServiceController extends AppBaseController
      */
     public function store(CreateEmployeeServiceRequest $request)
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $input = $request->all();
 
         /** @var EmployeeService $employeeService */
@@ -70,6 +76,9 @@ class EmployeeServiceController extends AppBaseController
      */
     public function show($id)
     {
+        if (!check_permission('employees-view')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeService $employeeService */
         $employeeService = EmployeeService::find($id);
 
@@ -91,6 +100,9 @@ class EmployeeServiceController extends AppBaseController
      */
     public function edit($id)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeService $employeeService */
         $employeeService = EmployeeService::find($id);
 
@@ -115,6 +127,9 @@ class EmployeeServiceController extends AppBaseController
      */
     public function update($id, UpdateEmployeeServiceRequest $request)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeService $employeeService */
         $employeeService = EmployeeService::find($id);
 
@@ -145,6 +160,9 @@ class EmployeeServiceController extends AppBaseController
      */
     public function destroy($id)
     {
+        if (!check_permission('employees-destroy')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeService $employeeService */
         $employeeService = EmployeeService::find($id);
 

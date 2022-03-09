@@ -380,7 +380,7 @@
                                 </span>
                                 <span class="text col-8 text-align-center">
                                     <h3 class="text-white">{{ $file_inactive_count }}
-                                        <p class="text-white " style="font-size: 1.0rem">Closed Files</p>
+                                        <p class="text-white " style="font-size: 1.0rem">Retired Files</p>
                                 </span>
                             </div>
                         </div>
@@ -395,7 +395,7 @@
                                 </span>
                                 <span class="text col-8 text-align-center">
                                     <h3 class="text-white">{{ $senior_officers_count_male }}
-                                        <p class="text-white " style="font-size: 1.0rem">Male Senior Officers</p>
+                                        <p class="text-white " style="font-size: 1.0rem">Male Officers</p>
                                 </span>
                             </div>
                         </div>
@@ -409,7 +409,7 @@
                                 </span>
                                 <span class="text col-8 text-align-center">
                                     <h3 class="text-white">{{ $senior_officers_count_female }}
-                                        <p class="text-white" style="font-size: 1.0rem">Female Senior Officers</p>
+                                        <p class="text-white" style="font-size: 1.0rem">Female Officers</p>
                                 </span>
                             </div>
                         </div>
@@ -508,11 +508,13 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12">
-                <div class="bg-white dashboard-col pl-15 pb-15 pt-15 card">
-                    <canvas id="myChart" class=""></canvas>
-                </div>
                 <div class="aboutme-textbg-white dashboard-col pl-15 pb-15 pt-15 card">
                     <canvas id="myChart2"></canvas>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="bg-white dashboard-col pl-15 pb-15 pt-15 card">
+                    <canvas id="myChart" class=""></canvas>
                 </div>
             </div>
 
@@ -582,7 +584,7 @@
                 options: {
                     title: {
                         display: true,
-                        text: 'Senior Officers'
+                        text: 'Officers'
                     },
                     legend: {
                         display: true,

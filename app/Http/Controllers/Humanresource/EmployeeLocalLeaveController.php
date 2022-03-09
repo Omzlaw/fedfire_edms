@@ -35,6 +35,9 @@ class EmployeeLocalLeaveController extends AppBaseController
      */
     public function create()
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $employees = new Employee;
         $leave_types = new LeaveType;
         return view('humanresource.employee_local_leaves.create', compact('employees', 'leave_types'));
@@ -49,6 +52,9 @@ class EmployeeLocalLeaveController extends AppBaseController
      */
     public function store(CreateEmployeeLocalLeaveRequest $request)
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $input = $request->all();
 
         /** @var EmployeeLocalLeave $employeeLocalLeave */
@@ -70,6 +76,9 @@ class EmployeeLocalLeaveController extends AppBaseController
      */
     public function show($id)
     {
+        if (!check_permission('employees-view')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeLocalLeave $employeeLocalLeave */
         $employeeLocalLeave = EmployeeLocalLeave::find($id);
 
@@ -91,6 +100,9 @@ class EmployeeLocalLeaveController extends AppBaseController
      */
     public function edit($id)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeLocalLeave $employeeLocalLeave */
         $employeeLocalLeave = EmployeeLocalLeave::find($id);
 
@@ -114,6 +126,9 @@ class EmployeeLocalLeaveController extends AppBaseController
      */
     public function update($id, UpdateEmployeeLocalLeaveRequest $request)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeLocalLeave $employeeLocalLeave */
         $employeeLocalLeave = EmployeeLocalLeave::find($id);
 
@@ -145,6 +160,9 @@ class EmployeeLocalLeaveController extends AppBaseController
      */
     public function destroy($id)
     {
+        if (!check_permission('employees-destroy')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeLocalLeave $employeeLocalLeave */
         $employeeLocalLeave = EmployeeLocalLeave::find($id);
 

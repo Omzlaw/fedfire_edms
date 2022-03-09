@@ -256,6 +256,19 @@ if (!function_exists('enum_status')) {
     }
 }
 
+if (!function_exists('enum_file_status')) {
+    function enum_file_status($add_Select = TRUE)
+    {
+        $option[''] = 'Select...';
+        $option['0'] = 'Retired';
+        $option['1'] = 'Active';
+        if (!$add_Select) {
+            unset($option['']);
+        }
+        return $option;
+    }
+}
+
 if (!function_exists('enum_employee_status')) {
     function enum_employee_status($add_Select = TRUE)
     {

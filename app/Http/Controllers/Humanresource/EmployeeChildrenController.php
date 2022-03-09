@@ -36,6 +36,9 @@ class EmployeeChildrenController extends AppBaseController
      */
     public function create()
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $employees = new Employee;
         return view('humanresource.employee_childrens.create', compact('employees'));
     }
@@ -49,6 +52,9 @@ class EmployeeChildrenController extends AppBaseController
      */
     public function store(CreateEmployeeChildrenRequest $request)
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $input = $request->all();
 
         /** @var EmployeeChildren $employeeChildren */
@@ -70,6 +76,9 @@ class EmployeeChildrenController extends AppBaseController
      */
     public function show($id)
     {
+        if (!check_permission('employees-view')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeChildren $employeeChildren */
         $employeeChildren = EmployeeChildren::find($id);
 
@@ -91,6 +100,9 @@ class EmployeeChildrenController extends AppBaseController
      */
     public function edit($id)
     {
+        if (!check_permission('employees-view')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeChildren $employeeChildren */
         $employeeChildren = EmployeeChildren::find($id);
 
@@ -113,6 +125,9 @@ class EmployeeChildrenController extends AppBaseController
      */
     public function update($id, UpdateEmployeeChildrenRequest $request)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeChildren $employeeChildren */
         $employeeChildren = EmployeeChildren::find($id);
 
@@ -144,6 +159,9 @@ class EmployeeChildrenController extends AppBaseController
      */
     public function destroy($id)
     {
+        if (!check_permission('employees-destroy')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeChildren $employeeChildren */
         $employeeChildren = EmployeeChildren::find($id);
 

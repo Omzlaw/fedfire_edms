@@ -34,6 +34,9 @@ class EmployeeEmolumentRecordController extends AppBaseController
      */
     public function create()
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $salary_scales = new SalaryScale;
         return view('humanresource.employee_emolument_records.create', compact('salary_scales'));
     }
@@ -47,6 +50,9 @@ class EmployeeEmolumentRecordController extends AppBaseController
      */
     public function store(CreateEmployeeEmolumentRecordRequest $request)
     {
+        if (!check_permission('employees-create')) {
+            Flash::error('Permission Denied');
+        }
         $input = $request->all();
 
         /** @var EmployeeEmolumentRecord $employeeEmolumentRecord */
@@ -68,6 +74,9 @@ class EmployeeEmolumentRecordController extends AppBaseController
      */
     public function show($id)
     {
+        if (!check_permission('employees-view')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeEmolumentRecord $employeeEmolumentRecord */
         $employeeEmolumentRecord = EmployeeEmolumentRecord::find($id);
 
@@ -89,6 +98,9 @@ class EmployeeEmolumentRecordController extends AppBaseController
      */
     public function edit($id)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeEmolumentRecord $employeeEmolumentRecord */
         $employeeEmolumentRecord = EmployeeEmolumentRecord::find($id);
 
@@ -112,6 +124,9 @@ class EmployeeEmolumentRecordController extends AppBaseController
      */
     public function update($id, UpdateEmployeeEmolumentRecordRequest $request)
     {
+        if (!check_permission('employees-edit')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeEmolumentRecord $employeeEmolumentRecord */
         $employeeEmolumentRecord = EmployeeEmolumentRecord::find($id);
 
@@ -142,6 +157,9 @@ class EmployeeEmolumentRecordController extends AppBaseController
      */
     public function destroy($id)
     {
+        if (!check_permission('employees-destroy')) {
+            Flash::error('Permission Denied');
+        }
         /** @var EmployeeEmolumentRecord $employeeEmolumentRecord */
         $employeeEmolumentRecord = EmployeeEmolumentRecord::find($id);
 
