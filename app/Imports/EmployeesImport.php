@@ -118,7 +118,7 @@ class EmployeesImport implements OnEachRow, WithHeadingRow, WithValidation, with
             }
 
             $cadre = trim($row['cadre']);
-            $present_department = trim($row['present_departmentunit']);
+            $present_department = trim($row['present_department']);
 
             // $present_department_in_excel = strtolower($row['present_departmentunit']);
             // $present_department_id = 1;

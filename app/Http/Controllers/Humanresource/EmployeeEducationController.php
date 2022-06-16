@@ -158,7 +158,8 @@ class EmployeeEducationController extends AppBaseController
             //return redirect(route('humanresource.employeeEducations.index'));
         }
 
-        $employeeEducation->fill($request->all());
+        $input = $request->all();
+        $employeeEducation->fill($input);
         $employeeEducation->save();
         $employee = Employee::find($input['employee_id']);
 

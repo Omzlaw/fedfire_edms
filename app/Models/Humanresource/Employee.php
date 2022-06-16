@@ -297,7 +297,6 @@ class Employee extends Model
 
     }
 
-
     public function censures()
     {
         return $this->hasMany(EmployeeCensure::class);

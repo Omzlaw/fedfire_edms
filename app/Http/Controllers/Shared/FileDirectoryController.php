@@ -129,7 +129,8 @@ class FileDirectoryController extends AppBaseController
             Flash::error('Permission Denied');
             return redirect()->back();
         }
-        $employee = Employee::where('status', '=', 1)->where('service_number', '=', $request['service_number'])->first();
+        // $employee = Employee::where('status', '=', 1)->where('service_number', '=', $request['service_number'])->first();
+        $employee = Employee::where('service_number', '=', $request['service_number'])->first();
         if (empty($employee)) {
             Flash::error('Employee not found');
             return redirect(route('employeeSearch'));
@@ -162,7 +163,7 @@ class FileDirectoryController extends AppBaseController
         }
 
 
-        $employees = Employee::where('status', '=', 1)->select('id', 'service_number', 'first_name', 'middle_name', 'last_name')
+        $employees = Employee::select('id', 'service_number', 'first_name', 'middle_name', 'last_name')
             ->where('first_name',  'LIKE', $search_query)
             ->orWhere('last_name',  'LIKE', $search_query)
             ->orWhere('middle_name',  'LIKE', $search_query)
@@ -171,7 +172,7 @@ class FileDirectoryController extends AppBaseController
             ->get();
 
         if ($request['rank_type'] != null) {
-            $employees = Employee::where('status', '=', 1)->select('id', 'service_number', 'first_name', 'middle_name', 'last_name')
+            $employees = Employee::select('id', 'service_number', 'first_name', 'middle_name', 'last_name')
                 ->where('current_rank', '=', $rank_type_id)
                 ->orWhere('first_name',  'LIKE', $search_query)
                 ->orWhere('last_name',  'LIKE', $search_query)
@@ -181,7 +182,7 @@ class FileDirectoryController extends AppBaseController
                 ->get();
 
             if ($request['rank_type'] != null && $search_query == '') {
-                $employees = Employee::where('status', '=', 1)->select('id', 'service_number', 'first_name', 'middle_name', 'last_name')->where('current_rank', '=', $rank_type_id)->get();
+                $employees = Employee::select('id', 'service_number', 'first_name', 'middle_name', 'last_name')->where('current_rank', '=', $rank_type_id)->get();
             }
         }
 

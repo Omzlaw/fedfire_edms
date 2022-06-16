@@ -80,6 +80,7 @@ class FileDirectoryDataTable extends DataTable
         return [
             // 'id',
             // 'file_upload',
+            'file_name' => ['visible' => false],
             'employee',
             'service_no',
             'file_type',

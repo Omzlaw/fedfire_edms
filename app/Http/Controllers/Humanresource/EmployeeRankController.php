@@ -64,6 +64,9 @@ class EmployeeRankController extends AppBaseController
                 $rank->status = 0;
                 $rank->save();
             }
+
+            $employee->current_rank = $rank->id;
+            $employee->save();
         }
 
         $input['type'] = $rank->type;
@@ -167,12 +170,12 @@ class EmployeeRankController extends AppBaseController
         $employeeRank->fill($input);
         $employeeRank->save();
 
-        // $employee['current_rank'] = EmployeeRank::orderBy('id', 'DESC')
-        // ->where('employee_id', '=', $employee->id)
-        // ->where('status', '=', 1)
-        // ->first()->rank_type_id;
-        // $employee->save();
+        if($employeeRank->status == 1) {
+            $employee->current_rank = $rank->id;
+            $employee->save();
+        }
 
+        
 
         Flash::success('Employee Rank updated successfully.');
         add_audit('update', 'Employee Rank');

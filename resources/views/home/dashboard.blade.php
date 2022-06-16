@@ -327,6 +327,11 @@
         @include('flash::message')
 
         <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="bg-white dashboard-col pl-15 pb-15 pt-15 card">
+                    <canvas id="myChart" class=""></canvas>
+                </div>
+            </div>
             <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="row">
                     <div class="col-6">
@@ -512,11 +517,6 @@
                     <canvas id="myChart2"></canvas>
                 </div>
             </div>
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="bg-white dashboard-col pl-15 pb-15 pt-15 card">
-                    <canvas id="myChart" class=""></canvas>
-                </div>
-            </div>
 
         </div>
 
@@ -584,7 +584,8 @@
                 options: {
                     title: {
                         display: true,
-                        text: 'Officers'
+                        text: 'OFFICERS',
+                        fontColor: '#000',
                     },
                     legend: {
                         display: true,
@@ -631,7 +632,8 @@
                 options: {
                     title: {
                         display: true,
-                        text: 'Rank and File'
+                        text: 'RANK AND FILE',
+                        fontColor: '#000',
                     },
                     legend: {
                         display: true,

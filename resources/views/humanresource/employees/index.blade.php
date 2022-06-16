@@ -26,6 +26,12 @@
             border: 1px solid #dee2e6;
             margin-bottom: 1rem;
             color: #757575;
+            overflow-y: auto;
+        }
+
+        .th {
+            position: sticky;
+            top: 0;
         }
 
     </style>

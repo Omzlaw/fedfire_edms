@@ -237,7 +237,8 @@ class EmployeeController extends AppBaseController
             $item->checked_at = \Carbon\Carbon::parse($item->checked_at)->format('d/m/Y');
             $item->from_date = \Carbon\Carbon::parse($item->from_date)->format('d/m/Y');
             $item->to_date = \Carbon\Carbon::parse($item->to_date)->format('d/m/Y');
-            return ['id' => $item['id'], 'qualification' => $item['qualification'], 'school_name' => $item['school_name'], 'qualification_type_id' => $item['qualification_type_id'], 'remark' => $item['remark'], 'school_type' => $item['school_type']];
+            // $item->qualification_type_id = $item->qualificationType->title;
+            return ['id' => $item['id'], 'qualification' => $item['qualification'], 'school_name' => $item['school_name'], 'remark' => $item['remark']];
             // return $item;
         });
 
@@ -487,27 +488,48 @@ class EmployeeController extends AppBaseController
                     break;
 
                 case 'state_of_origin':
-                    $old_value = State::find($original)->title;
+                    $state = State::find($original);
+                    $old_value = "";
+                    if(!empty($state)) {
+                        $old_value = $state->title;
+                    }
                     $new_value = State::find($new)->title;
                     break;
 
                 case 'nationality':
-                    $old_value = Country::find($original)->title;
+                    $nationality = Country::find($original);
+                    $old_value = "";
+                    if(!empty($nationality)) {
+                        $old_value = $nationality->title;
+                    }
                     $new_value = Country::find($new)->title;
                     break;
 
                 case 'local_govt_area':
-                    $old_value = LocalGovtArea::find($original)->title;
+                    $local_govt_area = LocalGovtArea::find($original);
+                    $old_value = "";
+                    if(!empty($local_govt_area)) {
+                        $old_value = $local_govt_area->title;
+                    }
                     $new_value = LocalGovtArea::find($new)->title;
                     break;
 
                 case 'geo_political_zone':
-                    $old_value = GeoPoliticalZone::find($original)->title;
+                    $geo_political_zone = GeoPoliticalZone::find($original);
+                    $old_value = "";
+                    if(!empty($geo_political_zone)) {
+                        $old_value = $geo_political_zone->title;
+                    }
                     $new_value = GeoPoliticalZone::find($new)->title;
                     break;
 
                 case 'senatorial_zone':
-                    $old_value = SenatorialZone::find($original)->title;
+                    $senatorial_zone = SenatorialZone::find($original);
+                    $old_value = "";
+                    if(!empty($senatorial_zone)) {
+                        $old_value = $senatorial_zone->title;
+                    }
+
                     $new_value = SenatorialZone::find($new)->title;
                     break;
 
@@ -547,11 +569,12 @@ class EmployeeController extends AppBaseController
             $employee_rank->save();
         }
 
+        $files = $employee->fileDirectories;
+        $locaLeaves = $employee->localLeaves;
+        $foreignTours = $employee->foreignTours;
+        $ranks = $employee->ranks;
+
         if ($employee->status == 0) {
-            $files = $employee->fileDirectories;
-            $locaLeaves = $employee->localLeaves;
-            $foreignTours = $employee->foreignTours;
-            $ranks = $employee->ranks;
 
             foreach ($files as $file) {
                 $file->status = 0;
@@ -570,6 +593,33 @@ class EmployeeController extends AppBaseController
 
             foreach ($ranks as $rank) {
                 $rank->status = 0;
+                $rank->save();
+            }
+        }
+
+        else {
+            $files = $employee->fileDirectories;
+            $locaLeaves = $employee->localLeaves;
+            $foreignTours = $employee->foreignTours;
+            $ranks = $employee->ranks;
+
+            foreach ($files as $file) {
+                $file->status = 1;
+                $file->save();
+            }
+
+            foreach ($locaLeaves as $locaLeave) {
+                $locaLeave->status = 1;
+                $locaLeave->save();
+            }
+
+            foreach ($foreignTours as $foreignTour) {
+                $foreignTour->status = 1;
+                $foreignTour->save();
+            }
+
+            foreach ($ranks as $rank) {
+                $rank->status = 1;
                 $rank->save();
             }
         }
@@ -702,13 +752,17 @@ class EmployeeController extends AppBaseController
                     'type' => $rank_type->type,
                     'employee_gender' => $employee->gender
                 ]);
+
+                $employee->current_rank = $rank_type->id;
+                $employee->save();
             }
 
+            $files = $employee->fileDirectories;
+            $locaLeaves = $employee->localLeaves;
+            $foreignTours = $employee->foreignTours;
+            $ranks = $employee->ranks;
             if($status == 0) {
-                $files = $employee->fileDirectories;
-                $locaLeaves = $employee->localLeaves;
-                $foreignTours = $employee->foreignTours;
-                $ranks = $employee->ranks;
+
                 foreach ($files as $file) {
                     $file->status = 0;
                     $file->save();
@@ -726,6 +780,28 @@ class EmployeeController extends AppBaseController
 
                 foreach ($ranks as $rank) {
                     $rank->status = 0;
+                    $rank->save();
+                }
+            }
+
+            else {
+                foreach ($files as $file) {
+                    $file->status = 1;
+                    $file->save();
+                }
+
+                foreach ($locaLeaves as $locaLeave) {
+                    $locaLeave->status = 1;
+                    $locaLeave->save();
+                }
+
+                foreach ($foreignTours as $foreignTour) {
+                    $foreignTour->status = 1;
+                    $foreignTour->save();
+                }
+
+                foreach ($ranks as $rank) {
+                    $rank->status = 1;
                     $rank->save();
                 }
             }

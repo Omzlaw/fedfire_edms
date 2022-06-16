@@ -237,7 +237,10 @@ class EmployeeDataTable extends DataTable
             return  $model::where('local_govt_area', '=', $localGovtArea);
         }
 
-        return $model->newQuery();
+        return $model->orderBy('current_rank', 'asc')
+        ->orderBy('date_of_present_appointment', 'asc')
+        ->orderBy('date_of_first_appointment', 'asc')
+        ->orderBy('service_number', 'asc')->newQuery();
     }
 
 
@@ -256,7 +259,7 @@ class EmployeeDataTable extends DataTable
             ->parameters([
                 'dom'       => 'Blfrtip',
                 'stateSave' => false,
-                'order'     => [[11, 'desc']],
+                // 'order'     => [[11, 'desc']],
                 'filter' => true,
                 'buttons'   => [
                 ],
